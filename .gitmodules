@@ -1,0 +1,3 @@
+[submodule "themes/themes/even"]
+	path = themes/themes/even
+	url = https://github.com/xiang578/hexo-theme-even.git
