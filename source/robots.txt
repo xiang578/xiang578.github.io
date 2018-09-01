@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /tags/
+Disallow: /page/
+Disallow: /categories/
+Sitemap: https://www.xiang578.com/sitemap.xml
+Sitemap: https://www.xiang578.com/baidusitemap.xml
