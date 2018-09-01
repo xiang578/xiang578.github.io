@@ -94,6 +94,6 @@ baidusitemap:
 deploy:
   type: git
   repository: 
-    a: https://git.coding.net/xiang578/xiang578.git,master
+  #a: https://git.coding.net/xiang578/xiang578.git,master
     b: https://github.com/xiang578/xiang578.github.io.git,master
   # repo: git@git.coding.net:xian578/xiang578.git,master
