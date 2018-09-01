@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="第七届蓝桥杯决赛杂记"/>
+
+
+
+
+  <meta name="keywords" content="acm, RyenX" />
+
+
+
+  <meta name="baidu-site-verification" content="xf6fMthFjE" />
+
+
+
+  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="RyenX">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.8.0" />
+
+
+
+<link rel="canonical" href="http://xiang578.com/2016/06/04/lanqiaobei2016/"/>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.8.0" />
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz",
+      appKey: "SHpy5xi5vjhNA7cz7THf03vk"
+    });
+  </script>
+
+
+
+
+<script>
+  window.config = {"title":"RyenX","subtitle":null,"description":null,"author":"RyenX","language":"en","timezone":null,"url":"http://xiang578.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":["README.md","issue_template.md"],"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":{"color":"Default","toc":true,"fancybox":true,"pjax":true},"deploy":{"type":"git","repository":{"a":"https://git.coding.net/xiang578/xiang578.git,master","b":"https://github.com/xiang578/xiang578.github.io.git,master"}},"ignore":[],"index_generator":{"per_page":0,"order_by":"-date","path":""},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"sitemap":{"path":"sitemap.xml"},"baidusitemap":{"path":"baidusitemap.xml"},"category_generator":{"per_page":0},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":null,"Tech":"/tech","Tags":"/tags","Categories":"/categories","About":"/about"},"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":"/img/wechat.jpg","alipay":"/img/alipay.jpg"},"social":{"email":"i@xiang578.com","stack-overflow":null,"twitter":"https://twitter.com/xiang578","facebook":"https://www.facebook.com/profile.php?id=100009528134157","linkedin":"https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/","google":null,"github":"https://github.com/xiang578","weibo":"https://weibo.com/u/1630193304","zhihu":"https://www.zhihu.com/people/xiang578/activities","douban":"https://www.douban.com/people/xiang578/","pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"baidu_analytics":"d0cbaae42702a7213f06cb394a34a120","baidu_verification":"xf6fMthFjE","google_analytics":null,"google_verification":"TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8","disqus_shortname":"xiang578","changyan":{"appid":null,"appkey":null},"baidu_push":true,"livere_datauid":null,"version":"2.8.0"};
+</script>
+
+    <title> 第七届蓝桥杯决赛杂记 - RyenX </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">RyenX</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/tech">
+        <li class="mobile-menu-item">
+          
+          
+            Tech
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">RyenX</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tech">
+            
+            
+              Tech
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          第七届蓝桥杯决赛杂记
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-06-04
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/军机处/">军机处</a>
+            
+          </div>
+        
+        
+        <div class="post-visits"
+             data-url="/2016/06/04/lanqiaobei2016/"
+             data-title="第七届蓝桥杯决赛杂记">
+            阅读次数 0
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        <p>反正最近不想干什么正经事，回忆一下这些东西也好。</p>
+<a id="more"></a>
+<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E6%80%BB%E5%86%B3%E8%B5%9B.jpg" alt=""></p>
+<p>总的来说，这是我第二次去北京参加蓝桥杯决赛。去年获得了优秀奖，换句话来说就是重在参与。不过，今年成绩比去年好一点。</p>
+<p>（订的宾馆一如既往的温馨就不说了）首先，今年我的比赛地点是在北京建筑大学（西城校区）。顾名思义就知道这所学校的建筑系比较有名，不过这和我没有什么关系。这学校位于北京市内，又由于建的比较早，所以进去之后发现植被非常的茂盛，另一方面就是校园建筑看起比较破旧，或者是有历史感。比较有意思的是，他们的计算中心是位于地下的，所以比赛的时候我就是在地下编程了……</p>
+<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E5%8C%97%E4%BA%AC%E5%BB%BA%E7%AD%91%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6.jpg" alt=""></p>
+<p>决赛从周六上午9点开始到下午1点结束，一共4个小时。题目有6道，两道填空题，一道代码填空题，和三道编程题。第一题，就是解一个二元一次方程x+y的最小值。第二题，是一个大暴力题，自己想了好久才想出一种方法，不幸的是最后和别人对答案的时候，发现自己想错了。第三题，我模拟了一下正确的转换方式和题目中代码给的转换方式对比想出填入的代码。第四题，枚举了一个每一行第一个字母暴力解出来。第五题是一道计算几何的题目，好像是外国比赛的原题，反正我连凸包都不会。第六题是什么生成树计数，本来想写一个暴力绝杀的，但是在最后还有10分钟的时候发现自己写了40分钟的代码是错的，多么绝望。其实后来发现，这后面两道题目的区分度几乎为0，周神都只写了暴力的上去，不知道理工的final选手有没有完全写出来。</p>
+<p>周六下午我就开始干来北京的正事了，和周神坐地铁来到天安门。参观了天安门广场、中国国家博物馆、并且还登上了天安门城楼。最后，还是感觉中国国家博物馆有意思，很多原来在课堂上见过的藏品都亲眼所见了，不过自己上的艺术课程还是太少了，对于很多东西没有鉴赏能力。不过也有遗憾，毛主席纪念馆是每天上午8点到12点开放，没有去成，故宫是从天安门后面的午门进入，不过每天4点停止售票，也没有去成。</p>
+<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E5%A4%A9%E5%AE%89%E9%97%A8%E5%9F%8E%E6%A5%BC.jpg" alt=""></p>
+<p>周日就是到北大领取小礼品和参加颁奖典礼，虽然我们三个人都是观众。由于去的比较早，我们在未名湖边坐了一会儿。对岸的未名湖石碑人来人往，感觉能看一整天。坐着那里才会明白，为什么那么多人向往着北大。我们在学校中只是生存，他们却是生活，鸟语花香，春意盎然。</p>
+<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E6%9C%AA%E5%90%8D%E6%B9%96%E4%B8%80%E8%A7%92.jpg" alt=""></p>
+<p>颁奖典礼在邱德拔体育馆举行，这也是2008年奥运会乒乓球场馆，里面到现在为止还保留着奥运元素。典礼是一个奖项颁奖加一个或两个节目交叉进行的。也请了一些小明星过来唱歌，其中映象比较深刻的是《明天的烦恼交给明天》的mv。自己觉得拍的很有创意，两名歌手一个来自北大的历史专业，另一个来自考古专业。其他的就是看着理工的三个人拿着四架无人机回去，都可以玩无人机编队了……</p>
+<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E5%8C%97%E5%A4%A7%E4%BD%93%E8%82%B2%E9%A6%86.jpg" alt=""></p>
+<p>当天晚上和其他三个人一起去了全聚德前门起源店。到达后，发现人比较多，取了号后等了一会儿。</p>
+<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E5%85%A8%E8%81%9A%E5%BE%B7%E5%89%8D%E9%97%A8%E5%BA%97.jpg" alt=""></p>
+<p>之后就是普通的点菜，一只优秀的鸭子比普通的鸭子才贵30块，不过其他菜还是比较贵的。</p>
+<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E5%8C%97%E4%BA%AC%E7%83%A4%E9%B8%AD.jpg" alt=""></p>
+<p>厨师切好拼盘后，服务员还不忘提醒我们拍照发朋友圈。我和老王纷纷表示，没有周神，怎么可能吃这么高档的东西。</p>
+<p>最后，周一下午做火车回到杭州，结束了北京之旅。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="http://xiang578.com">RyenX</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="http://xiang578.com/2016/06/04/lanqiaobei2016/">http://xiang578.com/2016/06/04/lanqiaobei2016/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/acm/">acm</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/06/23/switchyomege/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">SwitchyOmege自动切换功能</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/05/03/just-for-fun/">
+        <span class="next-text nav-default">只是为了好玩——Linux之父林纳斯自传</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://twitter.com/xiang578" class="iconfont icon-twitter" title="twitter"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.facebook.com/profile.php?id=100009528134157" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/xiang578" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+        
+          <a href="https://weibo.com/u/1630193304" class="iconfont icon-weibo" title="weibo"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/xiang578/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.douban.com/people/xiang578/" class="iconfont icon-douban" title="douban"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="hosted-by-coding-pages">
+    Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+  </span>
+  <br/>
+  <span id="busuanzi">
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  PV: <span id="busuanzi_value_site_pv"></span> | UV: <span id="busuanzi_value_site_uv"></span>
+  </span>
+  
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">RyenX</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://xiang578.com/2016/06/04/lanqiaobei2016/';
+        this.page.identifier = '2016/06/04/lanqiaobei2016/';
+        this.page.title = '第七届蓝桥杯决赛杂记';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//xiang578.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.8.0"></script>
+
+  </body>
+</html>

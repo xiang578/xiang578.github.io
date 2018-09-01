@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="月读|软技能——代码之外的生存指南"/>
+
+
+
+
+  <meta name="keywords" content="gtd, RyenX" />
+
+
+
+  <meta name="baidu-site-verification" content="xf6fMthFjE" />
+
+
+
+  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="RyenX">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.8.0" />
+
+
+
+<link rel="canonical" href="http://xiang578.com/2018/05/28/soft-skills/"/>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.8.0" />
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz",
+      appKey: "SHpy5xi5vjhNA7cz7THf03vk"
+    });
+  </script>
+
+
+
+
+<script>
+  window.config = {"title":"RyenX","subtitle":null,"description":null,"author":"RyenX","language":"en","timezone":null,"url":"http://xiang578.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":["README.md","issue_template.md"],"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":{"color":"Default","toc":true,"fancybox":true,"pjax":true},"deploy":{"type":"git","repository":{"a":"https://git.coding.net/xiang578/xiang578.git,master","b":"https://github.com/xiang578/xiang578.github.io.git,master"}},"ignore":[],"index_generator":{"per_page":0,"order_by":"-date","path":""},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"sitemap":{"path":"sitemap.xml"},"baidusitemap":{"path":"baidusitemap.xml"},"category_generator":{"per_page":0},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":null,"Tech":"/tech","Tags":"/tags","Categories":"/categories","About":"/about"},"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":"/img/wechat.jpg","alipay":"/img/alipay.jpg"},"social":{"email":"i@xiang578.com","stack-overflow":null,"twitter":"https://twitter.com/xiang578","facebook":"https://www.facebook.com/profile.php?id=100009528134157","linkedin":"https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/","google":null,"github":"https://github.com/xiang578","weibo":"https://weibo.com/u/1630193304","zhihu":"https://www.zhihu.com/people/xiang578/activities","douban":"https://www.douban.com/people/xiang578/","pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"baidu_analytics":"d0cbaae42702a7213f06cb394a34a120","baidu_verification":"xf6fMthFjE","google_analytics":null,"google_verification":"TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8","disqus_shortname":"xiang578","changyan":{"appid":null,"appkey":null},"baidu_push":true,"livere_datauid":null,"version":"2.8.0"};
+</script>
+
+    <title> 月读|软技能——代码之外的生存指南 - RyenX </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">RyenX</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/tech">
+        <li class="mobile-menu-item">
+          
+          
+            Tech
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">RyenX</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tech">
+            
+            
+              Tech
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          月读|软技能——代码之外的生存指南
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-28
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/月读/">月读</a>
+            
+          </div>
+        
+        
+        <div class="post-visits"
+             data-url="/2018/05/28/soft-skills/"
+             data-title="月读|软技能——代码之外的生存指南">
+            阅读次数 0
+          </div>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#自我营销"><span class="toc-text">自我营销</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生产力"><span class="toc-text">生产力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>本月推荐的书是 John Z. Sonmez 写的<a href="https://book.douban.com/subject/26835090/" target="_blank" rel="noopener">《软技能——代码之外的生存指南》</a>。本书作者之前是一名程序员，目前更多的是充当程序员的人生导师角色，通过博客、播客、vlog等多种形式介绍自己的软技能，借此希望能推动其他人事业进步，过上更充实的生活。</p>
+<p>本书总共分成七大篇：</p>
+<ul>
+<li>职业篇，介绍了程序员从公司选择、面试、工作、辞职、创业等职业相关的方方面面内容</li>
+<li>自我营销篇，从博客开始，打造自己的个人品牌</li>
+<li>学习篇，作者自己领悟的「十步学习法」学习新的知识</li>
+<li>生产力篇，自由职业者的自我管理方法</li>
+<li>理财篇，探讨收入、投资、债务以及退休等问题</li>
+<li>健身篇，下面的图片就是作者本人，和一般的程序员形象有很大的区别</li>
+<li>精神篇，心灵、情感等问题探讨</li>
+</ul>
+<p><img src="http://
+7xkpe5.com1.z0.glb.clouddn.com/15275002437247.jpg" alt="作者博客"></p>
+<p>从上面的介绍可以看出，这本书基本上把一个程序员可以面对的所有问题，都给囊括了。从形式上来看，这本书像是各种主题的博文合集，有些散乱。总的来说都是关注于「更好地经营生活」。</p>
+<h2 id="自我营销"><a href="#自我营销" class="headerlink" title="自我营销"></a>自我营销</h2><p>这一个主题是书中我最感兴趣的内容。知识付费的兴起，朋友圈中经常能看到有人分享付费课程的图片，图片中的老师各种头衔酷炫狂霸叼咋天，自我营销的成本真的是已经低到一种程度。万物互联，每一个人都有一次成名的机会。</p>
+<p>本书中的自我营销，介绍了一系列的过程，作者推荐个人品牌的建立从博客开始。对于程序员来说，维护一个自建博客是很轻松的事情，而且可以分享的内容也很广泛，工作中的技能学习、遇到的问题分析。将博客当成自己的名片，从而实现让更多的人认识你，认可你。</p>
+<p>书中介绍维护一个博客，要从两个方面入手，一是内容质量，二是更新计划。之前，自己的博客都是随心所欲的更新。重新思考一下，给博客增加了几个栏目：</p>
+<p>-【每周分享】：每周六不定时更新，记录过去一周，我看到值得分享的内容<br>-【月读】：每月不定时更新，推荐本月我阅读的一本书<br>-【数字生活】：我的数字生活实践<br>-【博客公告】：分享与这个博客维护相关的内容</p>
+<p>另外一方面，对于我这样的博客来说，最主要的流量来源是搜索引擎，所以花时间进行了一些 SEO 优化。通过在百度搜索和谷歌搜索相关页面提交网站，实现文章更快的收入。除此之外，需要在社交账号中更多的绑定博客，寻求其他的主动点击。</p>
+<h2 id="生产力"><a href="#生产力" class="headerlink" title="生产力"></a>生产力</h2><p>这个主题，是我大半年以来一直感兴趣的。之前没有注意到，像作者这样的自由职业者更应该是效率大师。其实各种效率方法流程大致相同，更多的是细节的实现。作者在做周计划时，倾向于利用看板来展示任务，这个给我一个新的启示。我考虑过利用 Github + Zenhub 来管理一些大的项目，不过平时没有什么动力打开 Github 网站。</p>
+<p><img src="http://
+7xkpe5.com1.z0.glb.clouddn.com/15275062870334.jpg" alt="Github Issues"></p>
+<p>所以，需要一种更加简单地方法。网上查找了一下，发现一个网站 <a href="https://kanban.ist" target="_blank" rel="noopener">Kanbanist | The Missing Kanban Board for Todoist</a>。Kanbanist 最大的优势是能直接读取 Todoist 的数据，用起来会更加方便吧。不过，如何融合进入日常工作流中，又值得我自己仔细思考一下。</p>
+<p><img src="http://
+7xkpe5.com1.z0.glb.clouddn.com/15275066078950.jpg" alt="Kanbanist"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>读这本书，最大的感受是读到很多点的时候，我都打开了电脑进行实践。功利来说，这是一本使用的书，推荐大家有空都来挑选自己感兴趣的内容阅读。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="http://xiang578.com">RyenX</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="http://xiang578.com/2018/05/28/soft-skills/">http://xiang578.com/2018/05/28/soft-skills/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/gtd/">gtd</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/06/01/week-issue-1/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">每周分享第 1 期</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/05/28/use-travis-ci-to-auto-update/">
+        <span class="next-text nav-default">博客公告：使用 Travis CI 自动部署</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://twitter.com/xiang578" class="iconfont icon-twitter" title="twitter"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.facebook.com/profile.php?id=100009528134157" class="iconfont icon-facebook" title="facebook"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/xiang578" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+        
+          <a href="https://weibo.com/u/1630193304" class="iconfont icon-weibo" title="weibo"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/xiang578/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.douban.com/people/xiang578/" class="iconfont icon-douban" title="douban"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="hosted-by-coding-pages">
+    Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+  </span>
+  <br/>
+  <span id="busuanzi">
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  PV: <span id="busuanzi_value_site_pv"></span> | UV: <span id="busuanzi_value_site_uv"></span>
+  </span>
+  
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">RyenX</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://xiang578.com/2018/05/28/soft-skills/';
+        this.page.identifier = '2018/05/28/soft-skills/';
+        this.page.title = '月读|软技能——代码之外的生存指南';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//xiang578.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.8.0"></script>
+
+  </body>
+</html>
