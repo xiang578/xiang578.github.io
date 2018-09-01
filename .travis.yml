@@ -1,0 +1,41 @@
+language: node_js
+node_js:
+- 9.11.1
+cache:
+  directories:
+  - node_modules
+before_install:
+- export TZ='Asia/Shanghai'
+- npm install hexo-cli -g
+install:
+- npm install
+script:
+- hexo clean
+- hexo generate
+after_script:
+  -  git clone https://${GH_REF} .deploy_git  # GH_REF是最下面配置的仓库地址
+  - cd .deploy_git
+  - git checkout master
+  - cd ../
+  - mv .deploy_git/.git/ ./public/ 
+  - cd ./public
+  - git config user.name "xiang578"
+  - git config user.email "xiang578@foxmail.com"
+  - git add .
+  # - git commit -m "Deploy at $(date +"%Y-%m-%d %T")"
+  - git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"
+  # Github Pages
+  - git push --force --quiet "https://${CI_TOKEN}@${GH_REF}" master:master 
+  # Coding Pages
+  # - git push --force --quiet "https://xiang578:${Coding_TOKEN}@${CO_REF}" master:master
+
+branches:
+  only:
+  - hexo
+
+env:
+ global:
+   # Github Pages
+   - GH_REF: github.com/xiang578/xiang578.github.io
+   # Coding Pages
+   # - CO_REF: git.coding.net/xiang578/xiang578.git
