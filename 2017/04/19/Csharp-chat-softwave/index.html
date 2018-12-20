@@ -282,7 +282,7 @@
 <li><p>利用socket完成通信，大致的过程如下图所示。</p>
 </li>
 </ol>
-<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG" alt=""></p>
+<p><img src="http://media.xiang578.com/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG" alt=""></p>
 <ol>
 <li><p>服务器上开两个线程<code>threadListenConnect</code>和<code>threadReceivePacket</code>。服务器上的<code>socket</code>利用<code>bind</code>绑定服务器的ip和端口号。第一个线程死循环监听端口，是否有新的<code>connect</code>请求，并将新的连接<code>socket</code>保存到list中。再利用第二个线程接受客户端发来的数据包，并拆包执行进行相关功能。服务器之后，按照包中的内容判断是否需要发送到其他特定的客户端还是广播消息。</p>
 </li>
@@ -297,9 +297,9 @@
 <li><p>最后相关代码放在github上面<a href="https://github.com/xiang578/NewChat" target="_blank" rel="noopener"></a></p>
 </li>
 </ol>
-<p>服务器端：<img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg" alt=""></p>
-<p>客户端1：<img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg" alt=""></p>
-<p>客户端2：<img src="http://7xkpe5.com1.z0.glb.clouddn.com/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg" alt=""></p>
+<p>服务器端：<img src="http://media.xiang578.com/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg" alt=""></p>
+<p>客户端1：<img src="http://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg" alt=""></p>
+<p>客户端2：<img src="http://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg" alt=""></p>
 
       
     </div>

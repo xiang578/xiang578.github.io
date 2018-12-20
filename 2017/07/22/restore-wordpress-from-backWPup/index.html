@@ -281,7 +281,7 @@
 <p>早上起来将wordpress以及BackWPup装好.然后就在BackWPup里面翻了好久都没有发现怎么还原的按钮…又用百度谷歌搜了一下,也没有教程…</p>
 <p>没有办法,只好硬着头皮去看插件的官网,然后发现了<a href="http://docs.backwpup.com/article/127-how-to-restore-a-wordpress-backup" target="_blank" rel="noopener">这边文章</a>,按照这里面的描述成功的恢复了wordpress.</p>
 <h2 id="恢复数据库"><a href="#恢复数据库" class="headerlink" title="恢复数据库"></a>恢复数据库</h2><p>由于我用的是<code>phpmyadmin</code>,所以登录到服务器的<code>phpmyadmin</code>管理页面.选择数据库<code>wordpress</code>,点击导入,上传BackWPup备份压缩文件中的<code>.sql</code>文件,点击执行,这样数据库中的内容就还原了.</p>
-<p><img src="http://7xkpe5.com1.z0.glb.clouddn.com/15006908280096.jpg" alt="-w1277"></p>
+<p><img src="http://media.xiang578.com/15006908280096.jpg" alt="-w1277"></p>
 <h2 id="恢复wordpress文件"><a href="#恢复wordpress文件" class="headerlink" title="恢复wordpress文件"></a>恢复wordpress文件</h2><p>这一步只需要将备份文件里面的文件上传到服务器新的网站目录下覆盖就可以了.由于我用的是iTerm2,所以可以在本地使用<code>scp</code>命令</p>
 <h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>zz插件,连个一键还原都没有…</p>
 
