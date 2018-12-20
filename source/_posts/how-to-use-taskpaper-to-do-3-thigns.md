@@ -19,23 +19,23 @@ categories: 七年之旅
 
 有点遗憾的是，TaskPaper 只用 macOS 版本，其他平台只能通过文本编辑器+插件的方式实现，比如 Sublime Text 中有一个能实现类似功能的插件 [aziz/PlainTasks: An opinionated todo-list plugin for Sublime Text editor (version 2 and 3)](https://github.com/aziz/PlainTasks)。
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15230982087065.jpg)
+media.xiang578.com/15230982087065.jpg)
 
 ## 系统工作流
 
 其实，能想起来用 Taskpaper 做三件事情，是受到了[《18分钟》：如何用18分钟变身效率达人？| 狗熊月读64](https://www.bilibili.com/video/av18698116)影响。视频中，大狗熊老师介绍了一个习惯，会每天在文本文档中，列出5项需要完成的任务（对的，比三件事情多出了两项），而且会对事情进行估计，包括四象限中的位置、预计完成时间以及和自己人生的那个目标有关。
 
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15230987994151.png)
+media.xiang578.com/15230987994151.png)
 
 四象限法则是时间管理中的一个重要理论，它将我们需要处理的事情分成了下图显示的四类，并且指导在日常生活中应该关注重要但是不紧急的事情，也就是第二象限。
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15230990545088.jpg)
+media.xiang578.com/15230990545088.jpg)
 
 一般的 GUI 任务管理软件，列出事情还算比较方便，但是做评论却没有那么便利。TaskPaper 比起在文本文档中直接写，体现出强大的整合能力。比如，我可以选定 MachineLerninginAction 的标签，可以快速的将我之前安排过的相关任务整合到一起。
 
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15230993446908.jpg)
+media.xiang578.com/15230993446908.jpg)
 
 所以，每天晚上睡觉前的 10 分钟，我会回顾一下今天完成的事情，并给第二天安排需要做的 3 Things。确保第二天醒来，我可以直接开始做当天的重点。达到从头到尾、逐一处理、不避不拖、一次一事的 GTD 执行境界。
 
@@ -46,6 +46,6 @@ categories: 七年之旅
 - [TaskPaper 使用指南的所有文章 - 少数派](https://sspai.com/series/22/list)
 
 ![IMG_0233](http://
-7xkpe5.com1.z0.glb.clouddn.com/IMG_0233.JPG)
+media.xiang578.com/IMG_0233.JPG)
 
 

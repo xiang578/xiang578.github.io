@@ -66,6 +66,6 @@ categories: 生活志
 查看更多我的随笔，请点击 [ZenTalk](http://xiang578.com/)
 
 ![IMG_0233](http://
-7xkpe5.com1.z0.glb.clouddn.com/IMG_0233.JPG)
+media.xiang578.com/IMG_0233.JPG)
 
 

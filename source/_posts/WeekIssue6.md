@@ -30,7 +30,7 @@ categories: 每周分享
 ## 工具
 
 - `Mweb 3`：是 Mac 上一款专业的 markdown 写作软件。目前，我自己用它来管理平时的卡片写作、机器学习笔记以及博客文章更新。最近，这个软件正在搞首发优惠，比较惊喜得是发现软件中隐藏的沉浸模式。
-![Mweb3](7xkpe5.com1.z0.glb.clouddn.com/15307063751497.jpg)
+![Mweb3](media.xiang578.com/15307063751497.jpg)
 
 
 

@@ -32,5 +32,5 @@ categories: 生活志
 PS：前几天独立、客观、第三方的在学校贴吧发的贴子都被删……
  
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15139837811983.jpg)
+media.xiang578.com/15139837811983.jpg)
 

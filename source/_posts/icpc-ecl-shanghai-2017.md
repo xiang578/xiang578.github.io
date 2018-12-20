@@ -19,12 +19,12 @@ categories: 军机处
 
 算上打星队伍的排名大概是73名，获得银奖。
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15135845100259.jpg)
+media.xiang578.com/15135845100259.jpg)
 
 最后在等待领证书的时候，一个志愿者突然跑过来，问我们要一包零食，说上午到现在都没有吃东西。我拿出一包豆腐干给了他，祝福每一个努力拼搏的人。ACM生涯在续费一年之后，就结束了。
 
 照片不知道为什么不能调整方向，就放在这里治疗颈椎病吧
 ![get_thumbnail](http://
-7xkpe5.com1.z0.glb.clouddn.com/get_thumbnail.jpeg)
+media.xiang578.com/get_thumbnail.jpeg)
 
 

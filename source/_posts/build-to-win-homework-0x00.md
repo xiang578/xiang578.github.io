@@ -55,7 +55,7 @@ categories: 构建之法
 前文也提到了，以我的目前的情况来看，大学中接受的教育和自己所学的技能都是和市场脱节的。所以，前一段时间也很迷茫，自己能做什么。所幸看到之前公司的同事所写的知乎专栏文章「谈“圈外”在校生如何更靠谱的拿到大厂算法/ML实习机会」（不知道为什么被删除了，所以无法提供链接），大意就是可以曲线救国，先就业再择业。
 
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15236805736051.jpg)
+media.xiang578.com/15236805736051.jpg)
 
 所以，我还是推荐出去实习的。不仅是走出象牙塔，感受一下工业界的需求。更重要的是大一点的企业都会安排专人对实习生进行相应的指导，使其能更快地朝工程师方向发展。
 
@@ -69,6 +69,6 @@ categories: 构建之法
 5. [xiang578/MachineLearningAction: 《机器学习实战》](https://github.com/xiang578/MachineLearningAction)
 
 ![IMG_0233](http://
-7xkpe5.com1.z0.glb.clouddn.com/IMG_0233.JPG)
+media.xiang578.com/IMG_0233.JPG)
 
 

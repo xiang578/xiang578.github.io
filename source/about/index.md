@@ -45,7 +45,7 @@ date: 2015-08-15 10:59:25
 
 ### 请我喝一杯咖啡
 
-![赞助不会给你带来什么，也不会让你失去什么](http://7xkpe5.com1.z0.glb.clouddn.com/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg)
+![赞助不会给你带来什么，也不会让你失去什么](http://media.xiang578.com/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg)
 
 #### 致谢
 

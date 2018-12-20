@@ -22,7 +22,7 @@ categories: 每周分享
 
 1、中国看待世界的方法。小时候总以为世界上只有两个国家，中国和外国。
 ![IMG_0520](http://
-7xkpe5.com1.z0.glb.clouddn.com/IMG_0520.jpg)
+media.xiang578.com/IMG_0520.jpg)
 
 ## 视频
 

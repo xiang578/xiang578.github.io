@@ -21,11 +21,11 @@ categories: 每周分享
 ## 工具
 - [Thought Train for MacOS – Simple Note App for MacOS](https://www.thoughttrain.cc/#download)：有意思的小工具，在 Mac 状态栏上显示一些话。
  ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15280104676054.jpg)
+media.xiang578.com/15280104676054.jpg)
 
 - [Rooster for Chrome™](https://chrome.google.com/webstore/detail/rooster-for-chrome/pimolnhbniceppehbgmibnbgcnhpkhfh)：在新标签页统计每天浏览各个网站的时间。
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15283589946007.jpg)
+media.xiang578.com/15283589946007.jpg)
 
 
 ## 文摘
@@ -40,7 +40,7 @@ categories: 每周分享
 
 1、索引卡的妙用
 ![Jietu20180608-074432](http://
-7xkpe5.com1.z0.glb.clouddn.com/Jietu20180608-074432.jpg)
+media.xiang578.com/Jietu20180608-074432.jpg)
 
 
 ## 视频

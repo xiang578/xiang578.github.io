@@ -10,12 +10,12 @@ categories: 程序园
 但是当我第一次运行这个脚本时，生成的文件中所有的中文字符都变成了问号。
 
 ![错误](http://
-7xkpe5.com1.z0.glb.clouddn.com/15202379974944.jpg)
+media.xiang578.com/15202379974944.jpg)
 
 由于，之前没有接触过中文显示为问号的问题。所以，与少数派教程的作者联系，他很快给我回复了一份邮件，并给出两个建议。
 
 ![回信](http://
-7xkpe5.com1.z0.glb.clouddn.com/15202381199945.jpg)
+media.xiang578.com/15202381199945.jpg)
 
 按照邮件中的建议，我进行了下面三个尝试。
 
@@ -27,20 +27,20 @@ categories: 程序园
 
 如下图所示，该脚本将需要输出的字符串指定为`Unicode text` 格式，用 `write` 将这个字符串写进文本中。
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15202388604296.jpg)
+media.xiang578.com/15202388604296.jpg)
 
 根据之前的编程经验，输出文本一般都能指定编码方式。所以又用 `Dash` 来查看 AppleScript 中 `Write` 的相关语法。
 
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15202391269270.jpg)
+media.xiang578.com/15202391269270.jpg)
 
 最终，找到 `as` 可以用来指定编码方式，成功解决乱码问题。
 
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15202392024378.jpg)
+media.xiang578.com/15202392024378.jpg)
 
 ![IMG_0233](http://
-7xkpe5.com1.z0.glb.clouddn.com/IMG_0233.JPG)
+media.xiang578.com/IMG_0233.JPG)
 
 
 

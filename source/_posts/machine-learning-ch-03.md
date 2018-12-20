@@ -23,7 +23,7 @@ $${f(x_i)=wx_i+b，使得f(x_i)\simeq y_i}$$
 
 使用平方损失函数作为衡量线性规划模型性能的指标，${f(x)}$ 与 ${y}$ 越接近，代表平方损失函数越小。即得到：
 ![](http://
-7xkpe5.com1.z0.glb.clouddn.com/15285348597249.jpg)
+media.xiang578.com/15285348597249.jpg)
 
 
 
