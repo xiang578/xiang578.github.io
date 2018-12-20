@@ -279,12 +279,12 @@
 <p>屋漏偏风连夜雨，不知道从什么时候开始，七牛云不允许图片使用测试域名，所以整个博客的图片都挂了。自己也一直没有修复，让这一段时间访问我博客的小伙伴受累了。另外，这一段时间也不是完全没有分享。在这个页面的上方有一个 <code>Tech</code> 的标签，可以连接到我新搭的博客。目前使用的 hexo 主题我没有配置数学公式显示，所以准备在新的地方分享一些算法学习的笔记。大家感兴趣的可以访问一下，不过也没有太多的内容。 </p>
 <p>今天研究了一下如何修复这个图床问题。官方有一个帮助页面<a href="https://developer.qiniu.com/fusion/kb/1322/how-to-configure-cname-domain-name" target="_blank" rel="noopener">如何配置域名的 CNAME - 七牛开发者中心</a>，大概就是你的存储空间之前有一个测试域名（比如我的是 7xkpe5.com1.z0.glb.clouddn.com），然后需要绑定一个备案过的域名才可以正常访问。所以我们需要两个步骤完成改造：首先，给空间绑定一个域名（比如现在使用的是；最后，在域名解析平台添加一个 CNAME，将你指定的域名转发到七牛的记录上。</p>
 <p>完成上一步侯，图片还是不能正常显示，应该之前的文章中，图片的链接都是以测试域名开头的比如<code>7xkpe5.com1.z0.glb.clouddn.com/15283589946007.jpg</code> 现在我们要将它改成 下面的形式 <code>media.xiang578.com/15283589946007.jpg</code>。简单的方法是，打开文本编辑软件，然后使用查找替换功能，一个一个文件处理。显然这很无聊，而且进入 <code>source/_posts</code> 目录下利用 <code>grep 7xkpe5 *.md | wc</code> 统计了一个，我大概需要修改的有 142 处。</p>
-<p><img src="media.xiang578.com/15453335377518.jpg" alt="需要替换的字符串"></p>
+<p><img src="http://media.xiang578.com/15453335377518.jpg" alt="需要替换的字符串"></p>
 <p>幸运地是 linux 系统下有两大文本处理利器 <code>sed</code> 和 <code>awk</code>。我们使用 <code>sed</code> 可以将一个字符串转换为另外一个字符串。网上搜索了一下用法，很快写了出来 </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i -r "s/7xkpe5\.com1\.z0\.glb\.clouddn\.com/media\.xiang578\.com/g" *.md</span><br></pre></td></tr></table></figure>
 <p>这条命令中原始形态可以表示为 <code>sed &#39;s/原字符串/替换字符串/g&#39;</code>。其中参数 <code>-i</code> 代表替换文件中的所有匹配项，<code>-r</code> 代表批量替换支持扩展表达式。在原字符串和替换字符串中都出现了 <code>\.</code>，应为 <code>.</code> 在 <code>sed</code> 命令中代表匹配任意单个字符，加上转移字符后可以代表它本身。最后 <code>*md</code> 代表对目录下的 <code>md</code> 文件进行处理。</p>
 <p>运行完成之后，我们在统计一下测试域名和正式域名的数量，可以发现完美的解决了这个问题。</p>
-<p><img src="media.xiang578.com/15453344578555.jpg" alt="修改后"></p>
+<p><img src="http://media.xiang578.com/15453344578555.jpg" alt="修改后"></p>
 <p>多学点命令还是有好处的。不过如果有钱直接在主机上放置图片，也不会遇到这个问题了……一切都是因为贫穷。</p>
 
       
