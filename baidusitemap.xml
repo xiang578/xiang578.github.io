@@ -5,13 +5,87 @@
     
     
     
+    
   <url>
-    <loc>http://xiang578.com/2017/01/29/icpc-beijing-2016/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2018/06/01/week-issue-1/</loc>
+    <lastmod>2019-01-13T11:14:31.599Z</lastmod>
     <data>
         <display>
-        <title>2016年北京区域赛</title>
-        <pubTime>2017-01-29T14:13:28.000Z</pubTime>
+        <title>每周分享第 1 期</title>
+        <pubTime>2018-06-01T15:15:33.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xiang578.com/2018/06/11/week-issue-2/</loc>
+    <lastmod>2019-01-13T11:14:31.599Z</lastmod>
+    <data>
+        <display>
+        <title>每周分享第 2 期</title>
+        <pubTime>2018-06-11T15:34:50.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://xiang578.com/2018/06/23/week-issue-4/</loc>
+    <lastmod>2019-01-13T11:14:31.599Z</lastmod>
+    <data>
+        <display>
+        <title>每周分享第 4 期</title>
+        <pubTime>2018-06-23T15:29:43.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xiang578.com/2018/06/30/week-issue-5/</loc>
+    <lastmod>2019-01-13T11:14:31.599Z</lastmod>
+    <data>
+        <display>
+        <title>每周分享第 5 期</title>
+        <pubTime>2018-06-29T23:52:43.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xiang578.com/2017/04/23/zjp-2017/</loc>
+    <lastmod>2019-01-13T11:14:31.599Z</lastmod>
+    <data>
+        <display>
+        <title>浙江省第十四届程序设计竞赛总结</title>
+        <pubTime>2017-04-23T14:11:10.000Z</pubTime>
         
         <tag>acm</tag>
          
@@ -25,42 +99,20 @@
     </url>
 
     
-    
   <url>
-    <loc>http://xiang578.com/2017/12/31/2017/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2016/04/26/zjp2016/</loc>
+    <lastmod>2019-01-13T11:14:31.599Z</lastmod>
     <data>
         <display>
-        <title>2017 迷茫</title>
-        <pubTime>2017-12-31T04:40:45.000Z</pubTime>
+        <title>浙江省第十三届程序设计竞赛总结</title>
+        <pubTime>2016-04-26T05:59:02.000Z</pubTime>
         
-        <tag>life</tag>
-         
-        <tag>book</tag>
-         
-        <tag>movie</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiang578.com/2019/01/13/2018-consumer-report/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
-    <data>
-        <display>
-        <title>2018 年消费指南</title>
-        <pubTime>2019-01-13T11:05:14.000Z</pubTime>
-        
-        <tag>life</tag>
+        <tag>acm</tag>
          
          
            
              
-              <breadCrumb title="生活志" url="http://xiang578.com/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"/>
+              <breadCrumb title="军机处" url="http://xiang578.com/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"/>
           
         </display>
     </data>
@@ -68,108 +120,17 @@
 
     
   <url>
-    <loc>http://xiang578.com/2018/03/05/AppleScript-encode-error/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2018/06/16/week-issue-3/</loc>
+    <lastmod>2019-01-13T11:14:31.599Z</lastmod>
     <data>
         <display>
-        <title>解决 OmniFocus 中 Applescrpit 脚本输出文件中文乱码问题</title>
-        <pubTime>2018-03-05T08:45:30.000Z</pubTime>
+        <title>每周分享第 3 期</title>
+        <pubTime>2018-06-16T09:39:04.000Z</pubTime>
         
-        <tag>applescript</tag>
-         
-        <tag>omnifocus</tag>
-         
-        <tag>dash</tag>
-         
          
            
              
-              <breadCrumb title="程序园" url="http://xiang578.com/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiang578.com/2018/07/07/AutoWorkflow/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
-    <data>
-        <display>
-        <title>我常用的自动化流程</title>
-        <pubTime>2018-07-07T06:09:22.000Z</pubTime>
-        
-        <tag>workflow</tag>
-         
-        <tag>alfred</tag>
-         
-        <tag>ifttt</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活志" url="http://xiang578.com/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiang578.com/2018/07/03/BlogLog/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
-    <data>
-        <display>
-        <title>博客维护日志</title>
-        <pubTime>2018-07-03T05:39:49.000Z</pubTime>
-        
-        <tag>blog</tag>
-         
-        <tag>hexo</tag>
-         
-        <tag>vps</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiang578.com/2017/04/19/Csharp-chat-softwave/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
-    <data>
-        <display>
-        <title>C#聊天软件实现</title>
-        <pubTime>2017-04-19T12:42:55.000Z</pubTime>
-        
-        <tag>network</tag>
-         
-         
-           
-             
-              <breadCrumb title="程序园" url="http://xiang578.com/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiang578.com/2018/09/04/ImportanceOffont/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
-    <data>
-        <display>
-        <title>字体的重要性</title>
-        <pubTime>2018-09-03T23:41:14.000Z</pubTime>
-        
-        <tag>font</tag>
-         
-         
-           
-             
-              <breadCrumb title="程序园" url="http://xiang578.com/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"/>
+              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
           
         </display>
     </data>
@@ -178,7 +139,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/07/21/Sleep/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>月读 | 睡眠革命</title>
@@ -198,7 +159,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/09/04/UseTravisCIToAutoBuildBlog/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>使用 Travis CI 自动部署博客</title>
@@ -224,7 +185,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/07/07/WeekIssue6/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>每周分享第 6 期</title>
@@ -242,7 +203,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/07/16/WeekIssue7/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>每周分享第 7 期</title>
@@ -260,7 +221,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/07/20/WeekIssue8/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>每周分享第 8 期</title>
@@ -278,7 +239,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/07/28/WeekIssue9/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>每周分享第 9 期：拼多多</title>
@@ -296,7 +257,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/08/05/WeekIssues10/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>每周分享第 10 期</title>
@@ -314,7 +275,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/12/09/a-small-things/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>记一件小事</title>
@@ -336,7 +297,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/02/11/add-return-button-to-blog/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>为博客添加返回顶部按钮</title>
@@ -358,7 +319,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/07/02/alfred-lists/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>Alfred 使用记录</title>
@@ -380,7 +341,7 @@
     
   <url>
     <loc>http://xiang578.com/2014/08/29/before-go-to-univisity/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>钱塘江的风</title>
@@ -402,7 +363,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/04/16/build-to-win-homework-0x00/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>构建之法 第 0 次个人作业</title>
@@ -422,7 +383,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/04/29/computer-base-network/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>计算机基础：计算机网络</title>
@@ -444,7 +405,7 @@
     
   <url>
     <loc>http://xiang578.com/2016/03/06/english-writing-01/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>道长写作每日一句01-20</title>
@@ -466,7 +427,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/03/07/excerpt-2018-03-07/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>「只言片语」| 2018/03/07</title>
@@ -486,7 +447,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/12/21/fix-qiniu-test-url-error/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>博客公告：修复七牛云测试域名失效问题</title>
@@ -508,7 +469,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/02/28/gtd-one-month/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>GTD 实践 1 个月心得</title>
@@ -534,7 +495,7 @@
     
   <url>
     <loc>http://xiang578.com/2015/09/13/hdu200/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>杭电OJ AC200题</title>
@@ -556,7 +517,7 @@
     
   <url>
     <loc>http://xiang578.com/2015/12/11/hdu300/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>杭电OJ AC300题</title>
@@ -578,7 +539,7 @@
     
   <url>
     <loc>http://xiang578.com/2016/03/26/hdu400/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>杭电OJ AC400题</title>
@@ -600,7 +561,7 @@
     
   <url>
     <loc>http://xiang578.com/2016/08/08/hdu500/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>杭电OJ AC500题</title>
@@ -622,7 +583,7 @@
     
   <url>
     <loc>http://xiang578.com/2015/08/06/hello-world/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>System.out.println("hello world!");</title>
@@ -644,7 +605,7 @@
     
   <url>
     <loc>http://xiang578.com/2015/08/15/how-to-build-a-hexo-blog/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>从零开始利用 hexo + Github/Coding 搭建个人博客</title>
@@ -666,7 +627,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/04/08/how-to-use-taskpaper-to-do-3-thigns/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>使用 TaskPaper 实现 3 Things</title>
@@ -686,10 +647,29 @@
     </url>
 
     
+  <url>
+    <loc>http://xiang578.com/2017/01/29/icpc-beijing-2016/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
+    <data>
+        <display>
+        <title>2016年北京区域赛</title>
+        <pubTime>2017-01-29T14:13:28.000Z</pubTime>
+        
+        <tag>acm</tag>
+         
+         
+           
+             
+              <breadCrumb title="军机处" url="http://xiang578.com/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://xiang578.com/2017/12/18/icpc-ecl-shanghai-2017/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>2017年上海 ACM/ICPC ECL-Final</title>
@@ -709,7 +689,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/11/05/icpc-xian-2017/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>2017年西安区域赛</title>
@@ -729,7 +709,7 @@
     
   <url>
     <loc>http://xiang578.com/2012/07/23/if/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>如果，高一</title>
@@ -749,7 +729,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/04/21/interview/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>采访一则</title>
@@ -769,7 +749,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/12/30/iphone5s/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>iPhone软件清单</title>
@@ -791,7 +771,7 @@
     
   <url>
     <loc>http://xiang578.com/2016/05/03/just-for-fun/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>只是为了好玩——Linux之父林纳斯自传</title>
@@ -811,7 +791,7 @@
     
   <url>
     <loc>http://xiang578.com/2016/06/04/lanqiaobei2016/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>第七届蓝桥杯决赛杂记</title>
@@ -831,7 +811,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/09/18/mac-software/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>Mac软件清单</title>
@@ -853,7 +833,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/06/06/machine-learning-ch-01/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>《机器学习》 第 1 章 绪论 读书笔记</title>
@@ -873,7 +853,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/06/09/machine-learning-ch-03/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>《机器学习》 第 3 章 线性模型 读书笔记</title>
@@ -893,7 +873,7 @@
     
   <url>
     <loc>http://xiang578.com/2016/11/25/newipad/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>iPad Pro 开箱</title>
@@ -913,7 +893,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/06/07/podcast-list/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>那些年听过的播客</title>
@@ -933,7 +913,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/02/21/primary-school-classmate-10th-anniversary-party/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>小学十周年同学聚会</title>
@@ -953,7 +933,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/01/13/rebuild-notebook-system/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>重构笔记本系统</title>
@@ -972,7 +952,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/07/22/restore-wordpress-from-backWPup/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>使用BackWPup恢复wordpress</title>
@@ -991,7 +971,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/06/29/shadowsocks/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>Shadowsocks 配置以及使用</title>
@@ -1011,7 +991,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/05/28/soft-skills/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>月读|软技能——代码之外的生存指南</title>
@@ -1031,7 +1011,7 @@
     
   <url>
     <loc>http://xiang578.com/2014/06/10/something-about-high-school/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>毕业杂感</title>
@@ -1051,7 +1031,7 @@
     
   <url>
     <loc>http://xiang578.com/2016/06/23/switchyomege/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>SwitchyOmege自动切换功能</title>
@@ -1071,7 +1051,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/05/07/the-beauty-of-math/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>月读 | 数学之美</title>
@@ -1089,7 +1069,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/06/14/universiy-booklist/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>大学书单</title>
@@ -1111,7 +1091,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/04/28/use-gtd-to-speach/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>利用 GTD 原则完成一次讲座</title>
@@ -1133,7 +1113,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/05/28/use-travis-ci-to-auto-update/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>博客公告：使用 Travis CI 自动部署</title>
@@ -1157,7 +1137,7 @@
     
   <url>
     <loc>http://xiang578.com/2017/01/19/use-wiznote-to-write-blog/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
         <title>为知笔记写博客测试</title>
@@ -1180,17 +1160,17 @@
 
     
   <url>
-    <loc>http://xiang578.com/2018/06/01/week-issue-1/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2016/02/10/2015/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
-        <title>每周分享第 1 期</title>
-        <pubTime>2018-06-01T15:15:33.000Z</pubTime>
+        <title>2015年总结</title>
+        <pubTime>2016-02-09T17:59:51.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+              <breadCrumb title="生活志" url="http://xiang578.com/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"/>
           
         </display>
     </data>
@@ -1198,17 +1178,40 @@
 
     
   <url>
-    <loc>http://xiang578.com/2018/06/11/week-issue-2/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2017/12/31/2017/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
-        <title>每周分享第 2 期</title>
-        <pubTime>2018-06-11T15:34:50.000Z</pubTime>
+        <title>2017 迷茫</title>
+        <pubTime>2017-12-31T04:40:45.000Z</pubTime>
         
+        <tag>life</tag>
+         
+        <tag>book</tag>
+         
+        <tag>movie</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xiang578.com/2019/01/13/2018-consumer-report/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
+    <data>
+        <display>
+        <title>2018 年消费指南</title>
+        <pubTime>2019-01-13T11:05:14.000Z</pubTime>
+        
+        <tag>life</tag>
+         
          
            
              
-              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+              <breadCrumb title="生活志" url="http://xiang578.com/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"/>
           
         </display>
     </data>
@@ -1216,17 +1219,23 @@
 
     
   <url>
-    <loc>http://xiang578.com/2018/06/16/week-issue-3/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2018/03/05/AppleScript-encode-error/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
-        <title>每周分享第 3 期</title>
-        <pubTime>2018-06-16T09:39:04.000Z</pubTime>
+        <title>解决 OmniFocus 中 Applescrpit 脚本输出文件中文乱码问题</title>
+        <pubTime>2018-03-05T08:45:30.000Z</pubTime>
         
+        <tag>applescript</tag>
+         
+        <tag>omnifocus</tag>
+         
+        <tag>dash</tag>
+         
          
            
              
-              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+              <breadCrumb title="程序园" url="http://xiang578.com/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"/>
           
         </display>
     </data>
@@ -1234,17 +1243,23 @@
 
     
   <url>
-    <loc>http://xiang578.com/2018/06/23/week-issue-4/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2018/07/07/AutoWorkflow/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
-        <title>每周分享第 4 期</title>
-        <pubTime>2018-06-23T15:29:43.000Z</pubTime>
+        <title>我常用的自动化流程</title>
+        <pubTime>2018-07-07T06:09:22.000Z</pubTime>
         
+        <tag>workflow</tag>
+         
+        <tag>alfred</tag>
+         
+        <tag>ifttt</tag>
+         
          
            
              
-              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+              <breadCrumb title="生活志" url="http://xiang578.com/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"/>
           
         </display>
     </data>
@@ -1252,17 +1267,40 @@
 
     
   <url>
-    <loc>http://xiang578.com/2018/06/30/week-issue-5/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2018/07/03/BlogLog/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
-        <title>每周分享第 5 期</title>
-        <pubTime>2018-06-29T23:52:43.000Z</pubTime>
+        <title>博客维护日志</title>
+        <pubTime>2018-07-03T05:39:49.000Z</pubTime>
         
+        <tag>blog</tag>
+         
+        <tag>hexo</tag>
+         
+        <tag>vps</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xiang578.com/2017/04/19/Csharp-chat-softwave/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
+    <data>
+        <display>
+        <title>C#聊天软件实现</title>
+        <pubTime>2017-04-19T12:42:55.000Z</pubTime>
+        
+        <tag>network</tag>
+         
          
            
              
-              <breadCrumb title="每周分享" url="http://xiang578.com/categories/%E6%AF%8F%E5%91%A8%E5%88%86%E4%BA%AB/"/>
+              <breadCrumb title="程序园" url="http://xiang578.com/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"/>
           
         </display>
     </data>
@@ -1270,39 +1308,19 @@
 
     
   <url>
-    <loc>http://xiang578.com/2017/04/23/zjp-2017/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
+    <loc>http://xiang578.com/2018/09/04/ImportanceOffont/</loc>
+    <lastmod>2019-01-13T11:14:31.595Z</lastmod>
     <data>
         <display>
-        <title>浙江省第十四届程序设计竞赛总结</title>
-        <pubTime>2017-04-23T14:11:10.000Z</pubTime>
+        <title>字体的重要性</title>
+        <pubTime>2018-09-03T23:41:14.000Z</pubTime>
         
-        <tag>acm</tag>
+        <tag>font</tag>
          
          
            
              
-              <breadCrumb title="军机处" url="http://xiang578.com/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xiang578.com/2016/04/26/zjp2016/</loc>
-    <lastmod>2019-01-13T11:09:31.405Z</lastmod>
-    <data>
-        <display>
-        <title>浙江省第十三届程序设计竞赛总结</title>
-        <pubTime>2016-04-26T05:59:02.000Z</pubTime>
-        
-        <tag>acm</tag>
-         
-         
-           
-             
-              <breadCrumb title="军机处" url="http://xiang578.com/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"/>
+              <breadCrumb title="程序园" url="http://xiang578.com/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"/>
           
         </display>
     </data>
@@ -1311,7 +1329,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/02/13/007-and-me/</loc>
-    <lastmod>2019-01-13T11:09:31.401Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.591Z</lastmod>
     <data>
         <display>
         <title>007 不出局活动与我</title>
@@ -1332,26 +1350,8 @@
 
     
   <url>
-    <loc>http://xiang578.com/2016/02/10/2015/</loc>
-    <lastmod>2019-01-13T11:09:31.401Z</lastmod>
-    <data>
-        <display>
-        <title>2015年总结</title>
-        <pubTime>2016-02-09T17:59:51.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="生活志" url="http://xiang578.com/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://xiang578.com/2012/01/23/2011/</loc>
-    <lastmod>2019-01-13T11:09:31.401Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.591Z</lastmod>
     <data>
         <display>
         <title>2011</title>
@@ -1369,7 +1369,7 @@
     
   <url>
     <loc>http://xiang578.com/2018/06/21/007-aciton-reflection/</loc>
-    <lastmod>2019-01-13T11:09:31.401Z</lastmod>
+    <lastmod>2019-01-13T11:14:31.591Z</lastmod>
     <data>
         <display>
         <title>007 践行反思</title>
