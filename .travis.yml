@@ -6,6 +6,7 @@ cache:
   - node_modules
 before_install:
 - export TZ='Asia/Shanghai'
+- npm install npm@6.4.1 -g
 - npm install hexo-cli -g
 install:
 - npm install
