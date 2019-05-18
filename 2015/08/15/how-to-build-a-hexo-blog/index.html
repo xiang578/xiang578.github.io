@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
   <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
 <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="从零开始利用 hexo + Github/Coding 搭建个人博客"><meta name="keywords" content="blog, hexo, RyenX"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="RyenX"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<meta name="description" content="从零开始利用 hexo + Github/Coding 搭建个人博客"><meta name="keywords" content="blog, hexo, 算法花园"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="算法花园"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
 <link rel="canonical" href="http://xiang578.com/2015/08/15/how-to-build-a-hexo-blog/">
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
@@ -51,12 +51,12 @@
   window.config = {"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"toc":true,"fancybox":true,"pjax":true,"latex":false};
 </script>
 
-    <title>从零开始利用 hexo + Github/Coding 搭建个人博客 - RyenX</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <title>从零开始利用 hexo + Github/Coding 搭建个人博客 - 算法花园</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
-    <a href="/." class="logo">RyenX</a>
+    <a href="/." class="logo">算法花园</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -67,30 +67,30 @@
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list"><a href="/">
-        <li class="mobile-menu-item">Home
+        <li class="mobile-menu-item">首页
           </li>
       </a><a href="https://alg.xiang578.com">
         <li class="mobile-menu-item">Tech
           </li>
       </a><a href="/tags">
-        <li class="mobile-menu-item">Tags
+        <li class="mobile-menu-item">标签
           </li>
       </a><a href="/categories">
-        <li class="mobile-menu-item">Categories
+        <li class="mobile-menu-item">分类
           </li>
       </a><a href="/about">
-        <li class="mobile-menu-item">About
+        <li class="mobile-menu-item">关于
           </li>
       </a></ul>
 </nav>
 <div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">RyenX</a>
+  <a href="/." class="logo">算法花园</a>
 </div>
 
 <nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
           <a class="menu-item-link" href="/">
-            Home
+            首页
             </a>
         </li>
       <li class="menu-item">
@@ -100,17 +100,17 @@
         </li>
       <li class="menu-item">
           <a class="menu-item-link" href="/tags">
-            Tags
+            标签
             </a>
         </li>
       <li class="menu-item">
           <a class="menu-item-link" href="/categories">
-            Categories
+            分类
             </a>
         </li>
       <li class="menu-item">
           <a class="menu-item-link" href="/about">
-            About
+            关于
             </a>
         </li>
       </ul></nav>
@@ -136,7 +136,7 @@
     </header>
 
     <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
+    <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装git和Node-js"><span class="toc-text">安装git和Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo"><span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署hexo"><span class="toc-text">部署hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装依赖包"><span class="toc-text">安装依赖包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一次本地查看博客"><span class="toc-text">第一次本地查看博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#github相关部署和ssh设置"><span class="toc-text">github相关部署和ssh设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发布功能部署"><span class="toc-text">发布功能部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装主题（以NexT为例）"><span class="toc-text">安装主题（以NexT为例）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启用主题"><span class="toc-text">启用主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题优化"><span class="toc-text">主题优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#next主题404页面改造"><span class="toc-text">next主题404页面改造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多说评论改造"><span class="toc-text">多说评论改造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名绑定"><span class="toc-text">域名绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为-next-主题添加分类"><span class="toc-text">为 next 主题添加分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#去除-Coding-Pages-等待跳转页面"><span class="toc-text">去除 Coding Pages 等待跳转页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改Even主题的首页"><span class="toc-text">修改Even主题的首页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加文章统计"><span class="toc-text">添加文章统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改页脚"><span class="toc-text">修改页脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双更新"><span class="toc-text">双更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动备份博客相关的源文件"><span class="toc-text">自动备份博客相关的源文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文章："><span class="toc-text">参考文章：</span></a></li></ol>
     </div>
@@ -232,15 +232,15 @@ media.xiang578.com/15220746795739.jpg" alt></p>
       </div>
       <div class="post-copyright">
     <p class="copyright-item">
-      <span>Author: </span>
+      <span>原文作者: </span>
       <a href="http://xiang578.com">RyenX</a>
     </p>
     <p class="copyright-item">
-      <span>Link: </span>
+      <span>原文链接: </span>
       <a href="http://xiang578.com/2015/08/15/how-to-build-a-hexo-blog/">http://xiang578.com/2015/08/15/how-to-build-a-hexo-blog/</a>
     </p>
     <p class="copyright-item">
-      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
   </div>
       <footer class="post-footer">
@@ -252,11 +252,11 @@ media.xiang578.com/15220746795739.jpg" alt></p>
         <nav class="post-nav"><a class="prev" href="/2015/09/13/hdu200/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">杭电OJ AC200题</span>
-        <span class="prev-text nav-mobile">Prev</span>
+        <span class="prev-text nav-mobile">上一篇</span>
       </a>
     <a class="next" href="/2015/08/06/hello-world/">
         <span class="next-text nav-default">System.out.println("hello world!");</span>
-        <span class="prev-text nav-mobile">Next</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     </nav></footer>
