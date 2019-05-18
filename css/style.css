@@ -346,7 +346,7 @@ textarea {
 
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X. id:100
  */
 optgroup {
   font-weight: bold; }
