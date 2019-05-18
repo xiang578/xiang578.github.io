@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 <meta name="description" content="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)"><meta name="keywords" content="cnn, alexnet, 算法花园"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="算法花园"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
-<link rel="canonical" href="http://xiang578.com/2019/03/16/alexnet/">
+<link rel="canonical" href="http://xiang578.com/2019/05/18/alexnet/">
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
@@ -125,11 +125,11 @@
 
       <div class="post-meta">
         <span class="post-time">
-          2019-03-16
+          2019-05-18
         </span><span class="post-category">
             <a href="/categories/机器学习/">机器学习</a>
             </span>
-        <span class="post-visits" data-url="/2019/03/16/alexnet/" data-title="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)">
+        <span class="post-visits" data-url="/2019/05/18/alexnet/" data-title="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)">
           Visits 0
         </span>
         </div>
@@ -156,7 +156,8 @@
 </ul>
 <h2 id="模型-实验-结论"><a href="#模型-实验-结论" class="headerlink" title="模型/实验/结论"></a>模型/实验/结论</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><ul>
 <li>由于当时的 GPU 显存限制，无法将所有的数据加载到单独 GPU 中，作者使用两个 GPU 并行训练。</li>
-<li>整个模型如下图所示，由 5 个卷积层以及 3 个全连接层组成。其中在 CONV3、FC1、FC2、FC3 层进行两个 GPU 的数据交互。<ul>
+<li><p>整个模型如下图所示，由 5 个卷积层以及 3 个全连接层组成。其中在 CONV3、FC1、FC2、FC3 层进行两个 GPU 的数据交互。</p>
+<ul>
 <li>[227, 227, 3] INPUT: 原始论文中 224 为笔误。</li>
 <li>[55, 55, 96] CONV1: (11*11*3,96) filters, Stride 4, pad 0</li>
 <li>[27, 27, 96] MAX POOL1: (3*3) filters, Stride 2</li>
@@ -173,7 +174,8 @@
 <li>[1000] FC3: FC2 进行全连接，最后输出分类结果</li>
 </ul>
 </li>
-<li>参数数量 60 million</li>
+<li><p>参数数量 60 million</p>
+</li>
 </ul>
 <p><img src="http://media.xiang578.com/15580111160071.jpg" alt></p>
 <ul>
@@ -215,7 +217,7 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="http://xiang578.com/2019/03/16/alexnet/">http://xiang578.com/2019/03/16/alexnet/</a>
+      <a href="http://xiang578.com/2019/05/18/alexnet/">http://xiang578.com/2019/05/18/alexnet/</a>
     </p>
     <p class="copyright-item">
       <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
@@ -227,13 +229,8 @@
             <a href="/tags/alexnet/">alexnet</a>
             </div>
         
-        <nav class="post-nav"><a class="prev" href="/2019/04/10/2018/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">2018 探索</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
-    <a class="next" href="/2019/01/13/2018-consumer-report/">
-        <span class="next-text nav-default">2018 年消费指南</span>
+        <nav class="post-nav"><a class="next" href="/2019/04/10/2018/">
+        <span class="next-text nav-default">2018 探索</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
@@ -279,8 +276,8 @@
       </div>
     </div><script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://xiang578.com/2019/03/16/alexnet/';
-        this.page.identifier = '2019/03/16/alexnet/';
+        this.page.url = 'http://xiang578.com/2019/05/18/alexnet/';
+        this.page.identifier = '2019/05/18/alexnet/';
         this.page.title = 'ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)';
     };
     (function() {

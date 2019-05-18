@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)"><meta name="keywords" content="cnn, ml, 算法花园"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="算法花园"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
-<link rel="canonical" href="http://xiang578.com/2019/05/18/week-issues-11/">
+<meta name="description" content="每周分享第 11 期"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="算法花园"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="http://xiang578.com/2019/03/16/week-issues-11/">
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
@@ -51,7 +51,7 @@
   window.config = {"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"toc":true,"fancybox":true,"pjax":true,"latex":false};
 </script>
 
-    <title>ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet) - 算法花园</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <title>每周分享第 11 期 - 算法花园</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -120,22 +120,53 @@
         <div class="content-wrapper">
           <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)
+      <h1 class="post-title">每周分享第 11 期
         </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2019-05-18
+          2019-03-16
         </span><span class="post-category">
-            <a href="/categories/机器学习/">机器学习</a>
+            <a href="/categories/每周分享/">每周分享</a>
             </span>
-        <span class="post-visits" data-url="/2019/05/18/week-issues-11/" data-title="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)">
+        <span class="post-visits" data-url="/2019/03/16/week-issues-11/" data-title="每周分享第 11 期">
           Visits 0
         </span>
         </div>
     </header>
 
-    <div class="post-content">
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#观点"><span class="toc-text">观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#读书《刻意练习》"><span class="toc-text">读书《刻意练习》</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文章"><span class="toc-text">文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视频"><span class="toc-text">视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><blockquote>
+<p>这里记录过去一周，我看到的值得分享的东西，每周六不定时更新。</p>
+</blockquote>
+<h2 id="观点"><a href="#观点" class="headerlink" title="观点"></a>观点</h2><ul>
+<li>美团和滴滴为什么要互相开展对方的业务：<ol>
+<li>我记得罗振宇在某一年时间的朋友中提到一个观点：O2O 领域会出现一个超级公司，业务横跨所有场景。</li>
+<li>从技术角度分析，外卖中比较难的点在于分单、时间估计以及路径规划。这也是出行服务中的技术难点。不过各有侧重，外卖中路径规划相当于最多不超过 20 个点（10 个商家处取餐，10 个顾客中送餐）的 TSP 问题。出行服务最关键的是如何有效的获取道路信息。（我有一个观点，人是有主观能动性的，会抄各种小道）</li>
+<li>这两个服务都严重依赖地推服务，所以双方本身都有一支庞大的城市地推人员。我想开展不同业务的切换难度应该会小一些。</li>
+</ol>
+</li>
+</ul>
+<h2 id="读书《刻意练习》"><a href="#读书《刻意练习》" class="headerlink" title="读书《刻意练习》"></a>读书《刻意练习》</h2><p>听这个名字很容易认为是一本鸡汤书，英文小标题中提到 New science of Experitse。本书打破的是之前很流行的 1 万小时天才理论，这个理论认为很多天才之所以是天才是他们的技能经过长时间的训练，有量变引起质变。新的研究发现，学习的本质是在大脑中建立心理表征，它是一种长时记忆单元，也是我们习得技能的结果。刻意练习就是如何高效地获得这个心理表征。鉴于这是一本脑科学的书，方法是否正确还应该是自己亲身体验才能知道。</p>
+<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><ul>
+<li><a href="https://sspai.com/post/46056" target="_blank" rel="noopener">经过一年的思考，我重新梳理了我的印象笔记使用方法 - 少数派</a>：不知道为什么，我对这类文章特别地喜欢。这篇文章带来的新意是对知识的六种分类，之前我自己没有考虑过。不要过度沉溺于研究工具，而忘记学习的初心。</li>
+<li><a href="https://www.zhihu.com/question/280483874/answer/420024531" target="_blank" rel="noopener">教授说没有写过一千行代码就别想上大公司，这种说法对吗？ - 知乎</a>：之前看到这个问题就想直接喷，写一千行代码怎么去大公司。看完其他人的回答，才发现又一次陷入到了思维定势。从数学角度来说，写一千行代码去大公司是一个必要不充分条件，去大公司确实需要写代码，一千行是被包括的，但可能远远不够。</li>
+<li><a href="https://blog.yitianshijie.net/2017/09/14/chinese-translation-of-steve-jobs-recording-on-iphone-x-event/" target="_blank" rel="noopener">iPhone X 发布会乔布斯录音的中译（或当代汉语现状） – 一天世界</a>：一段英文白话翻译以及文言翻译对比，又一次体会到古典之美。<ul>
+<li>There’s lots of ways to be as a person, and some people express their deep appreciation in different ways. But one of the ways that I believe people express their appreciation to the rest of humanity is to make something wonderful and put it out there. You never meet the people, you never shake their hands, you never hear their stories or tell yours. But somehow in the act of making something with a great deal of care and love, something’s transmitted there. And it’s a way of expressing to the rest of our species our deep appreciation. So we need to be true to who we are and remember what’s really important to us. That’s what’s gonna keep Apple, Apple, is if we keep us, us.</li>
+<li>「李如一」译文：人生而有别，感恩之心亦可谓十人十色。创造神奇，示之于人，此为对人性感恩之一种也。彼二人或未曾握手相见，对各自生平事故复无相闻，惟细巧体贴之创造即足以千里传音。此即吾等人类传递感恩之心之法门也。故人必诚于其本色，忠于其所信。林檎之为林檎，端赖吾辈不忘初心也。愿与诸君共勉。</li>
+<li>「@东莞大唐和尚」译文：人与人的生活方式千差万别，表达感恩的方式也是多种多样。但我认为，做出一件绝妙的东西，才是向这个世界表达感恩的最最深刻的方式。你没见过那些人，没跟他们握过手，你没听过他们的故事，也没跟他们讲过自己的经历，但就是通过你倾注心血做出的这样一件东西，你传达给了他们一些东西。这是向其他人表达我们感激的最深刻的方式。我们需要真诚地面对自我，永远记住对自己最重要的东西是什么。苹果之所以是苹果，我们之所以是我们，正在于此。</li>
+</ul>
+</li>
+</ul>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><ul>
+<li><a href="https://www.bilibili.com/bangumi/media/md97952/" target="_blank" rel="noopener">人生一串 _ 纪录片 _ bilibili _ 哔哩哔哩弹幕视频网</a>：属于国人的深夜食堂，再搭配上神级文案，完美展示烧烤江湖。</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这半年自己写的东西有点少，从第 10 期到这一次拖了好久。最初，是在阮一峰的鼓舞下开始这种形式的分享。不过后来由于种种原因，又展现出自己的本质。有些事情还是要坚持的，所以将这些存货发布出来。</p>
+
       </div>
       <div class="post-copyright">
     <p class="copyright-item">
@@ -144,20 +175,21 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="http://xiang578.com/2019/05/18/week-issues-11/">http://xiang578.com/2019/05/18/week-issues-11/</a>
+      <a href="http://xiang578.com/2019/03/16/week-issues-11/">http://xiang578.com/2019/03/16/week-issues-11/</a>
     </p>
     <p class="copyright-item">
       <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
   </div>
       <footer class="post-footer">
-        <div class="post-tags">
-            <a href="/tags/cnn/">cnn</a>
-            <a href="/tags/ml/">ml</a>
-            </div>
         
-        <nav class="post-nav"><a class="next" href="/2019/04/10/2018/">
-        <span class="next-text nav-default">2018 探索</span>
+        <nav class="post-nav"><a class="prev" href="/2019/04/10/2018/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">2018 探索</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    <a class="next" href="/2019/01/13/2018-consumer-report/">
+        <span class="next-text nav-default">2018 年消费指南</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
@@ -203,9 +235,9 @@
       </div>
     </div><script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://xiang578.com/2019/05/18/week-issues-11/';
-        this.page.identifier = '2019/05/18/week-issues-11/';
-        this.page.title = 'ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)';
+        this.page.url = 'http://xiang578.com/2019/03/16/week-issues-11/';
+        this.page.identifier = '2019/03/16/week-issues-11/';
+        this.page.title = '每周分享第 11 期';
     };
     (function() {
     var d = document, s = d.createElement('script');
