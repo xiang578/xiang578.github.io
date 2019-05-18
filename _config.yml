@@ -98,8 +98,8 @@ baidusitemap:
 ##b: git@git.coding.net:xian578/xiang578.git,master
 deploy:
   type: cos
-  secretId: COS_ID
-  secretKey: COS_KEY
+  secretId: XXX_ID
+  secretKey: XXX_KEY
   appId: 1252086360
   bucket: blog-1252086360
   region: ap-shanghai
