@@ -39,5 +39,5 @@ branches:
 env:
  global:
    - GH_REF: github.com/xiang578/xiang578.github.io
-   - SecretId: ${COS_ID}
-   - SecretKey: ${COS_KEY}
+   - secretId: ${COS_ID}
+   - secretKey: ${COS_KEY}
