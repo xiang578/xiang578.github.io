@@ -69,7 +69,7 @@
   <ul class="mobile-menu-list"><a href="/">
         <li class="mobile-menu-item">首页
           </li>
-      </a><a href="https://alg.xiang578.com">
+      </a><a href="/tech">
         <li class="mobile-menu-item">Tech
           </li>
       </a><a href="/tags">
@@ -94,7 +94,7 @@
             </a>
         </li>
       <li class="menu-item">
-          <a class="menu-item-link" href="https://alg.xiang578.com">
+          <a class="menu-item-link" href="/tech">
             Tech
             </a>
         </li>
@@ -155,7 +155,8 @@
 <li>top-1 和 top-5 错误率为指标</li>
 </ul>
 <h2 id="模型-实验-结论"><a href="#模型-实验-结论" class="headerlink" title="模型/实验/结论"></a>模型/实验/结论</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><ul>
-<li>由于当时的 GPU 显存限制，无法将所有的数据加载到单独 GPU 中，作者使用两个 GPU 并行训练。</li>
+<li><p>由于当时的 GPU 显存限制，无法将所有的数据加载到单独 GPU 中，作者使用两个 GPU 并行训练。</p>
+</li>
 <li><p>整个模型如下图所示，由 5 个卷积层以及 3 个全连接层组成。其中在 CONV3、FC1、FC2、FC3 层进行两个 GPU 的数据交互。</p>
 <ul>
 <li>[227, 227, 3] INPUT: 原始论文中 224 为笔误。</li>
