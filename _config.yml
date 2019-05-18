@@ -92,10 +92,16 @@ baidusitemap:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repository: 
-    a: https://github.com/xiang578/xiang578.github.io.git,master
-    b: git@git.coding.net:xian578/xiang578.git,master
+  	a: https://github.com/xiang578/xiang578.github.io.git,master
+  	b: git@git.coding.net:xian578/xiang578.git,master
+- type: cos
+  appId: 1252086360
+  secretId: ${COS_ID}
+  secretKey: ${COS_KEY}
+  bucket: blog-1252086360
+  region: ap-shanghai
 
 markdown_it_plus:
   highlight: true
@@ -115,3 +121,4 @@ markdown_it_plus:
         enable: false
 
 latex: true
+
