@@ -101,8 +101,6 @@ deploy:
   appId: 1252086360
   bucket: blog-1252086360
   region: ap-shanghai
-  secretId: ${COS_ID}
-  secretKey: ${COS_KEY}
 
 
 markdown_it_plus:
