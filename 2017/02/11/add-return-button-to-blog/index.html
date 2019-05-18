@@ -1,70 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
-<meta name="theme-color" content="#f8f5ec" />
+<meta name="theme-color" content="#f8f5ec">
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
+<meta name="description" content="为博客添加返回顶部按钮"><meta name="keywords" content="blog, wordpress, RyenX"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="RyenX"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="http://xiang578.com/2017/02/11/add-return-button-to-blog/">
 
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
 
-  <meta name="description" content="为博客添加返回顶部按钮"/>
-
-
-
-
-  <meta name="keywords" content="blog, wordpress, RyenX" />
-
-
-
-  <meta name="baidu-site-verification" content="xf6fMthFjE" />
-
-
-
-  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="RyenX">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.8.0" />
-
-
-
-<link rel="canonical" href="http://xiang578.com/2017/02/11/add-return-button-to-blog/"/>
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
-
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.8.0" />
-
-
-
-  
-  <script id="baidu_analytics">
+<script id="baidu_analytics">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -72,12 +27,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script>
-
-
-
-
-  <script id="baidu_push">
+  </script><script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -91,27 +41,17 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
   <script id="leancloud">
     AV.init({
       appId: "rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz",
       appKey: "SHpy5xi5vjhNA7cz7THf03vk"
     });
-  </script>
-
-
-
-
-<script>
-  window.config = {"title":"RyenX","subtitle":null,"description":null,"author":"RyenX","language":"en","timezone":null,"url":"http://xiang578.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":["README.md","issue_template.md"],"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":{"color":"Default","toc":true,"fancybox":true,"pjax":true},"deploy":{"type":"git","repository":{"a":"https://github.com/xiang578/xiang578.github.io.git,master","b":"git@git.coding.net:xian578/xiang578.git,master"}},"ignore":[],"index_generator":{"per_page":0,"order_by":"-date","path":""},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"sitemap":{"path":"sitemap.xml"},"baidusitemap":{"path":"baidusitemap.xml"},"markdown_it_plus":{"highlight":true,"html":true,"xhtmlOut":true,"breaks":true,"langPrefix":null,"linkify":true,"typographer":null,"quotes":"“”‘’","plugins":[{"plugin":{"name":"markdown-it-katex","enable":true}},{"plugin":{"name":"markdown-it-mark","enable":false}}]},"category_generator":{"per_page":0},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":null,"Tech":"https://alg.xiang578.com","Tags":"/tags","Categories":"/categories","About":"/about"},"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":"/img/wechat.jpg","alipay":"/img/alipay.jpg"},"social":{"email":"i@xiang578.com","stack-overflow":null,"twitter":"https://twitter.com/xiang578","facebook":"https://www.facebook.com/profile.php?id=100009528134157","linkedin":"https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/","google":null,"github":"https://github.com/xiang578","weibo":"https://weibo.com/u/1630193304","zhihu":"https://www.zhihu.com/people/xiang578/activities","douban":"https://www.douban.com/people/xiang578/","pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"baidu_analytics":"d0cbaae42702a7213f06cb394a34a120","baidu_verification":"xf6fMthFjE","google_analytics":null,"google_verification":"TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8","disqus_shortname":"xiang578","changyan":{"appid":null,"appkey":null},"baidu_push":true,"livere_datauid":null,"version":"2.8.0"};
+  </script><script>
+  window.config = {"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"toc":true,"fancybox":true,"pjax":true,"latex":false};
 </script>
 
-    <title> 为博客添加返回顶部按钮 - RyenX </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <title>为博客添加返回顶部按钮 - RyenX</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -126,156 +66,76 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            Home
-          
-        </li>
-      </a>
-    
-      <a href="https://alg.xiang578.com">
-        <li class="mobile-menu-item">
-          
-          
-            Tech
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/about">
-        <li class="mobile-menu-item">
-          
-          
-            About
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="https://alg.xiang578.com">
+        <li class="mobile-menu-item">Tech
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">RyenX</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
           <a class="menu-item-link" href="/">
-            
-            
-              Home
-            
-          </a>
+            Home
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="https://alg.xiang578.com">
-            
-            
-              Tech
-            
-          </a>
+            Tech
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
+            Tags
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
+            Categories
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/about">
-            
-            
-              About
-            
-          </a>
+            About
+            </a>
         </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+      </ul></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          为博客添加返回顶部按钮
-        
-      </h1>
+      <h1 class="post-title">为博客添加返回顶部按钮
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2017-02-11
+        </span><span class="post-category">
+            <a href="/categories/程序园/">程序园</a>
+            </span>
+        <span class="post-visits" data-url="/2017/02/11/add-return-button-to-blog/" data-title="为博客添加返回顶部按钮">
+          Visits 0
         </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/程序园/">程序园</a>
-            
-          </div>
-        
-        
-        <div class="post-visits"
-             data-url="/2017/02/11/add-return-button-to-blog/"
-             data-title="为博客添加返回顶部按钮">
-            阅读次数 0
-          </div>
-        
-      </div>
+        </div>
     </header>
 
-    
-    
-
-    <div class="post-content">
-      
-        <blockquote>
+    <div class="post-content"><blockquote>
 <p>适用于WordPress</p>
 </blockquote>
 <p>由于主题没有自带的返回顶部按钮，所以我一直在寻找一种解决方案。之前使用的是wordpress插件提供的返回顶部按钮，后来在网上乱逛，发现有Xnces – 衔铁部落的返回顶部按钮非常的酷炫，正是我要寻找的。于是，我在那个博客下留言询问制作方法。<br>前几天，看到那个博客上出现了一篇文章<a href="https://www.xnces.com/back-to-top.html" target="_blank" rel="noopener">-本博客的返回顶部效果</a>。<br>按照上面的方法，折腾一会儿，我也制作出来了，特地记录一下。</p>
@@ -292,14 +152,8 @@
 <p><code>themes.js</code>文件中代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bigfa_scroll = &#123;</span><br><span class="line">    drawCircle: <span class="function"><span class="keyword">function</span>(<span class="params">id, percentage, color</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> width = jQuery(id).width();</span><br><span class="line">        <span class="keyword">var</span> height = jQuery(id).height();</span><br><span class="line">        <span class="keyword">var</span> radius = <span class="built_in">parseInt</span>(width / <span class="number">2.20</span>);</span><br><span class="line">        <span class="keyword">var</span> position = width;</span><br><span class="line">        <span class="keyword">var</span> positionBy2 = position / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> bg = jQuery(id)[<span class="number">0</span>];</span><br><span class="line">        id = id.split(<span class="string">"#"</span>);</span><br><span class="line">        <span class="keyword">var</span> ctx = bg.getContext(<span class="string">"2d"</span>);</span><br><span class="line">        <span class="keyword">var</span> imd = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">var</span> circ = <span class="built_in">Math</span>.PI * <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> quart = <span class="built_in">Math</span>.PI / <span class="number">2</span>;</span><br><span class="line">        ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">        ctx.beginPath();</span><br><span class="line">        ctx.strokeStyle = color;</span><br><span class="line">        ctx.lineCap = <span class="string">"square"</span>;</span><br><span class="line">        ctx.closePath();</span><br><span class="line">        ctx.fill();</span><br><span class="line">        ctx.lineWidth = <span class="number">3</span>;</span><br><span class="line">        imd = ctx.getImageData(<span class="number">0</span>, <span class="number">0</span>, position, position);</span><br><span class="line">        <span class="keyword">var</span> draw = <span class="function"><span class="keyword">function</span>(<span class="params">current, ctxPass</span>) </span>&#123;</span><br><span class="line">            ctxPass.putImageData(imd, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">            ctxPass.beginPath();</span><br><span class="line">            ctxPass.arc(positionBy2, positionBy2, radius, -(quart), ((circ) * current) - quart, <span class="literal">false</span>);</span><br><span class="line">            ctxPass.stroke();</span><br><span class="line">        &#125;</span><br><span class="line">        draw(percentage / <span class="number">100</span>, ctx);</span><br><span class="line">    &#125;,</span><br><span class="line">    backToTop: <span class="function"><span class="keyword">function</span>(<span class="params">$this</span>) </span>&#123;</span><br><span class="line">        $<span class="keyword">this</span>.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            jQuery(<span class="string">"body,html"</span>).animate(&#123;</span><br><span class="line">                scrollTop: <span class="number">0</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="number">800</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    scrollHook: <span class="function"><span class="keyword">function</span>(<span class="params">$this, color</span>) </span>&#123;</span><br><span class="line">        color = color ? color: <span class="string">"#000000"</span>;</span><br><span class="line">        $<span class="keyword">this</span>.scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> docHeight = (jQuery(<span class="built_in">document</span>).height() - jQuery(<span class="built_in">window</span>).height()),</span><br><span class="line">            $windowObj = $<span class="keyword">this</span>,</span><br><span class="line">            $per = jQuery(<span class="string">".per"</span>),</span><br><span class="line">            percentage = <span class="number">0</span>;</span><br><span class="line">            defaultScroll = $windowObj.scrollTop();</span><br><span class="line">            percentage = <span class="built_in">parseInt</span>((defaultScroll / docHeight) * <span class="number">100</span>);</span><br><span class="line">            <span class="keyword">var</span> backToTop = jQuery(<span class="string">"#backtoTop"</span>);</span><br><span class="line">            <span class="keyword">if</span> (backToTop.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> ($windowObj.scrollTop() &gt; <span class="number">200</span>) &#123;</span><br><span class="line">                    backToTop.addClass(<span class="string">"button--show"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    backToTop.removeClass(<span class="string">"button--show"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                $per.attr(<span class="string">"data-percent"</span>, percentage);</span><br><span class="line">                bigfa_scroll.drawCircle(<span class="string">"#backtoTopCanvas"</span>, percentage, color);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    jQuery(<span class="string">"body"</span>).append(<span class="string">'&lt;div id="backtoTop" data-action="gototop"&gt;&lt;canvas id="backtoTopCanvas" width="48" height="48"&gt;&lt;/canvas&gt;&lt;div class="per"&gt;&lt;/div&gt;&lt;/div&gt;'</span>);</span><br><span class="line">    <span class="keyword">var</span> T = bigfa_scroll;</span><br><span class="line">    T.backToTop(jQuery(<span class="string">"#backtoTop"</span>));</span><br><span class="line">    T.scrollHook(jQuery(<span class="built_in">window</span>), <span class="string">"#555555"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>CSS文件要添加的代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#backtoTop</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#eee</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">bottom</span>:<span class="number">10%</span>;<span class="attribute">height</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">position</span>:fixed;</span><br><span class="line">    <span class="attribute">right</span>:-<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">transition</span>:<span class="number">0.5s</span>;</span><br><span class="line">    <span class="attribute">-webkit-transition</span>:<span class="number">0.5s</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#backtoTop</span><span class="selector-class">.button--show</span>&#123;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">10px</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.per</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#555</span>;</span><br><span class="line">    <span class="attribute">cursor</span>:pointer</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.per</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="built_in">attr</span>(data-percent)</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.per</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">"↑"</span>;<span class="attribute">font-size</span>:<span class="number">20px</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-      
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
+      </div>
+      <div class="post-copyright">
     <p class="copyright-item">
       <span>Author: </span>
       <a href="http://xiang578.com">RyenX</a>
@@ -309,176 +163,66 @@
       <a href="http://xiang578.com/2017/02/11/add-return-button-to-blog/">http://xiang578.com/2017/02/11/add-return-button-to-blog/</a>
     </p>
     <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
   </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/blog/">blog</a>
+            <a href="/tags/wordpress/">wordpress</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/blog/">blog</a>
-            
-              <a href="/tags/wordpress/">wordpress</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2017/04/19/Csharp-chat-softwave/">
+        <nav class="post-nav"><a class="prev" href="/2017/04/19/Csharp-chat-softwave/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">C#聊天软件实现</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2017/01/29/icpc-beijing-2016/">
+    <a class="next" href="/2017/01/29/icpc-beijing-2016/">
         <span class="next-text nav-default">2016年北京区域赛</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
           <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
-    
-  </div>
-
-
-        </div>
+    </div></div>
       </main>
 
-      <footer id="footer" class="footer">
-
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://twitter.com/xiang578" class="iconfont icon-twitter" title="twitter"></a>
-        
-      
-    
-      
-        
-          <a href="https://www.facebook.com/profile.php?id=100009528134157" class="iconfont icon-facebook" title="facebook"></a>
-        
-      
-    
-      
-        
-          <a href="https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/" class="iconfont icon-linkedin" title="linkedin"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://github.com/xiang578" class="iconfont icon-github" title="github"></a>
-        
-      
-    
-      
-        
-          <a href="https://weibo.com/u/1630193304" class="iconfont icon-weibo" title="weibo"></a>
-        
-      
-    
-      
-        
-          <a href="https://www.zhihu.com/people/xiang578/activities" class="iconfont icon-zhihu" title="zhihu"></a>
-        
-      
-    
-      
-        
-          <a href="https://www.douban.com/people/xiang578/" class="iconfont icon-douban" title="douban"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-    
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://twitter.com/xiang578" class="iconfont icon-twitter" title="twitter"></a>
+        <a href="https://www.facebook.com/profile.php?id=100009528134157" class="iconfont icon-facebook" title="facebook"></a>
+        <a href="https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a href="https://github.com/xiang578" class="iconfont icon-github" title="github"></a>
+        <a href="https://weibo.com/u/1630193304" class="iconfont icon-weibo" title="weibo"></a>
+        <a href="https://www.zhihu.com/people/xiang578/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        <a href="https://www.douban.com/people/xiang578/" class="iconfont icon-douban" title="douban"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
   <span class="hosted-by-coding-pages">
     Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
   </span>
-  <br/>
+  <br>
   <span id="busuanzi">
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   PV: <span id="busuanzi_value_site_pv"></span> | UV: <span id="busuanzi_value_site_uv"></span>
   </span>
   
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2015 - 
-    
-    2019
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2015 - 2019<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">RyenX</span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
+    </div><script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'http://xiang578.com/2017/02/11/add-return-button-to-blog/';
         this.page.identifier = '2017/02/11/add-return-button-to-blog/';
@@ -492,51 +236,13 @@
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-  
-
-
-
-  
-  
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
-  
-
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.8.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.8.0"></script>
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.11.0"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-  </body>
+</body>
 </html>

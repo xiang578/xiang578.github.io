@@ -1,70 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
-<meta name="theme-color" content="#f8f5ec" />
+<meta name="theme-color" content="#f8f5ec">
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
+<meta name="description" content="Shadowsocks 配置以及使用"><meta name="keywords" content="shadowsocks, RyenX"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="RyenX"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="http://xiang578.com/2018/06/29/shadowsocks/">
 
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
 
-  <meta name="description" content="Shadowsocks 配置以及使用"/>
-
-
-
-
-  <meta name="keywords" content="shadowsocks, RyenX" />
-
-
-
-  <meta name="baidu-site-verification" content="xf6fMthFjE" />
-
-
-
-  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="RyenX">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.8.0" />
-
-
-
-<link rel="canonical" href="http://xiang578.com/2018/06/29/shadowsocks/"/>
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
-
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css" />
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.8.0" />
-
-
-
-  
-  <script id="baidu_analytics">
+<script id="baidu_analytics">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -72,12 +27,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script>
-
-
-
-
-  <script id="baidu_push">
+  </script><script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -91,27 +41,17 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
   <script id="leancloud">
     AV.init({
       appId: "rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz",
       appKey: "SHpy5xi5vjhNA7cz7THf03vk"
     });
-  </script>
-
-
-
-
-<script>
-  window.config = {"title":"RyenX","subtitle":null,"description":null,"author":"RyenX","language":"en","timezone":null,"url":"http://xiang578.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":["README.md","issue_template.md"],"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":0,"pagination_dir":"page","theme":{"color":"Default","toc":true,"fancybox":true,"pjax":true},"deploy":{"type":"git","repository":{"a":"https://github.com/xiang578/xiang578.github.io.git,master","b":"git@git.coding.net:xian578/xiang578.git,master"}},"ignore":[],"index_generator":{"per_page":0,"order_by":"-date","path":""},"archive_generator":{"per_page":0,"yearly":true,"monthly":true,"daily":false},"sitemap":{"path":"sitemap.xml"},"baidusitemap":{"path":"baidusitemap.xml"},"markdown_it_plus":{"highlight":true,"html":true,"xhtmlOut":true,"breaks":true,"langPrefix":null,"linkify":true,"typographer":null,"quotes":"“”‘’","plugins":[{"plugin":{"name":"markdown-it-katex","enable":true}},{"plugin":{"name":"markdown-it-mark","enable":false}}]},"category_generator":{"per_page":0},"feed":{"type":"atom","limit":20,"hub":"","content":true,"content_limit":140,"content_limit_delim":"","path":"atom.xml"},"tag_generator":{"per_page":0},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2015,"favicon":"/favicon.ico","rss":"default","menu":{"Home":null,"Tech":"https://alg.xiang578.com","Tags":"/tags","Categories":"/categories","About":"/about"},"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":"/img/wechat.jpg","alipay":"/img/alipay.jpg"},"social":{"email":"i@xiang578.com","stack-overflow":null,"twitter":"https://twitter.com/xiang578","facebook":"https://www.facebook.com/profile.php?id=100009528134157","linkedin":"https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/","google":null,"github":"https://github.com/xiang578","weibo":"https://weibo.com/u/1630193304","zhihu":"https://www.zhihu.com/people/xiang578/activities","douban":"https://www.douban.com/people/xiang578/","pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"baidu_analytics":"d0cbaae42702a7213f06cb394a34a120","baidu_verification":"xf6fMthFjE","google_analytics":null,"google_verification":"TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8","disqus_shortname":"xiang578","changyan":{"appid":null,"appkey":null},"baidu_push":true,"livere_datauid":null,"version":"2.8.0"};
+  </script><script>
+  window.config = {"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"toc":true,"fancybox":true,"pjax":true,"latex":false};
 </script>
 
-    <title> Shadowsocks 配置以及使用 - RyenX </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <title>Shadowsocks 配置以及使用 - RyenX</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -126,171 +66,89 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            Home
-          
-        </li>
-      </a>
-    
-      <a href="https://alg.xiang578.com">
-        <li class="mobile-menu-item">
-          
-          
-            Tech
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/about">
-        <li class="mobile-menu-item">
-          
-          
-            About
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="https://alg.xiang578.com">
+        <li class="mobile-menu-item">Tech
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/categories">
+        <li class="mobile-menu-item">Categories
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">RyenX</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
           <a class="menu-item-link" href="/">
-            
-            
-              Home
-            
-          </a>
+            Home
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="https://alg.xiang578.com">
-            
-            
-              Tech
-            
-          </a>
+            Tech
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
+            Tags
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
+            Categories
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/about">
-            
-            
-              About
-            
-          </a>
+            About
+            </a>
         </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+      </ul></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          Shadowsocks 配置以及使用
-        
-      </h1>
+      <h1 class="post-title">Shadowsocks 配置以及使用
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2018-06-29
+        </span><span class="post-category">
+            <a href="/categories/程序园/">程序园</a>
+            </span>
+        <span class="post-visits" data-url="/2018/06/29/shadowsocks/" data-title="Shadowsocks 配置以及使用">
+          Visits 0
         </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/程序园/">程序园</a>
-            
-          </div>
-        
-        
-        <div class="post-visits"
-             data-url="/2018/06/29/shadowsocks/"
-             data-title="Shadowsocks 配置以及使用">
-            阅读次数 0
-          </div>
-        
-      </div>
+        </div>
     </header>
 
-    
-    
-  <div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器购买和配置"><span class="toc-text">服务器购买和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端配置"><span class="toc-text">客户端配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器配置"><span class="toc-text">浏览器配置</span></a></li></ol>
     </div>
-  </div>
-
-
-    <div class="post-content">
-      
-        <p>前几年，一直不要脸的蹭同学的 ss 服务器使用。去年 10 月份左右，开始和其他人合资购买蓝灯的服务，由于蓝灯无法再 iOS 系统上使用，所以也有一些不方便。正好有人问服务器相关的问题，自己尝试了购买服务器并配置 Shadowsocks ，尝试的过程写在这里和大家分享。</p>
+  </div><div class="post-content"><p>前几年，一直不要脸的蹭同学的 ss 服务器使用。去年 10 月份左右，开始和其他人合资购买蓝灯的服务，由于蓝灯无法再 iOS 系统上使用，所以也有一些不方便。正好有人问服务器相关的问题，自己尝试了购买服务器并配置 Shadowsocks ，尝试的过程写在这里和大家分享。</p>
 <h2 id="服务器购买和配置"><a href="#服务器购买和配置" class="headerlink" title="服务器购买和配置"></a>服务器购买和配置</h2><p>国外有很多家云服务器提供商，我没有比较就选择了 <a href="https://www.vultr.com/?ref=7463730" target="_blank" rel="noopener">vultr</a>（这是我的邀请链接，不知道你点击这个注册之后会给我什么好处，反正我会分给你一半）。 当然也可以去网上找一下优惠码或者优惠链接，我就找到了一个充10美元送25美元的链接注册（这个活动只能使用信用卡或者 paypal 支付，正常充值可以使用支付宝）。他家的服务器有下面几种选择，其实用来搞 ss 服务，这些配置都是可以的，只需要关注流量问题就好了。2.5 美元一个月的服务，写着 ipv6 only，我不知道是什么意思，所以自己选择的是 5 美元的那一档，1 t 流量也是绰绰有余的。</p>
 <p><img src="http://
-media.xiang578.com/15302534391376.jpg" alt=""></p>
+media.xiang578.com/15302534391376.jpg" alt></p>
 <p>选择方案之后，会让你选择操作系统以及机房位置，这些东西一般用他默认的就好了。完成之后，可以在控制面板看见服务器的相关信息。拿到 ip 地址、用户名和密码，利用 ssh 登录服务器。<br><img src="http://
-media.xiang578.com/15302541061041.jpg" alt=""></p>
+media.xiang578.com/15302541061041.jpg" alt></p>
 <p>网上找到一篇教程 <a href="https://teddysun.com/486.html" target="_blank" rel="noopener">Shadowsocks 一键安装脚本（四合一） | 秋水逸冰</a>，跟着敲了几行指令就完成了 ss 服务的安装。最终会显示 ss 相关设置，这些在配置客户端时会有用。</p>
 <p><img src="http://
-media.xiang578.com/15302546455992.jpg" alt=""></p>
+media.xiang578.com/15302546455992.jpg" alt></p>
 <p>为了增强性能，可以参考 <a href="https://teddysun.com/489.html" target="_blank" rel="noopener">一键安装最新内核并开启 BBR 脚本 | 秋水逸冰</a> 这篇教程配置 BBR 服务。到这一步服务器最基础的配置以及完成，可以实现科学上网服务。</p>
 <p>其实针对我这种流量绰绰有余的情况，可以和其他人一起合资购买服务器。这时候，可以参考<a href="https://www.flyzy2005.com/fan-qiang/shadowsocks/shadowsocks-config-multiple-users/" target="_blank" rel="noopener">shadowsocks配置多用户多密码 各种多用户配置方法总结 - flyzy小站</a>这篇文章继续配置服务器。最后，服务器性能不错，所以应该也可以利用在上面搭建其他服务，一个小机器是可以玩的很花的。</p>
 <h2 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h2><p>客户端可以实现将我们的一些流量打到服务器上去。我主要配置 iPhone、iPad 和 mbp 三台设备。iPhone 和 iPad 配置方法相类似，所以合并成 iOS 来写。</p>
@@ -298,20 +156,14 @@ media.xiang578.com/15302546455992.jpg" alt=""></p>
 <p><img src="http://
 media.xiang578.com/IMG_0552.png" alt="IMG_0552"></p>
 <p>至于 Mac，可以从 <a href="https://github.com/shadowsocks/ShadowsocksX-NG" target="_blank" rel="noopener">shadowsocks/ShadowsocksX-NG: Next Generation of ShadowsocksX</a> 这个库中下载客户端。配置方式也很简单。而且这个也支持多种模式，PAC 自动模式和 Potatso Lite 的智能路由相类似。全局模式可以将电脑上的全部流量走 ss 通道。不过，我在使用谷歌的 Backup and Sync 应用时，会出现网络错误。所以，搜索了一下找到可以控制应用是否走 ss 通道的 Proxifier ，使用方式可以参考 <a href="https://www.flyzy2005.com/fan-qiang/shadowsocks/proxifier-with-shadowsocks/" target="_blank" rel="noopener">Proxifier配合Shadowsocks实现全局代理 - flyzy小站</a>。完成之后，就可以正常使用了。<br><img src="http://
-media.xiang578.com/15302558024622.jpg" alt=""></p>
+media.xiang578.com/15302558024622.jpg" alt></p>
 <h2 id="浏览器配置"><a href="#浏览器配置" class="headerlink" title="浏览器配置"></a>浏览器配置</h2><p>利用 Proxifier 可以实现应用的访问方式，有些时候浏览某些网站时，我们也希望可以这样控制，Chrome 中可以使用插件 SwitchyOmega。这个软件通过情景模式实现访问的控制，我们可以先创建通过 ss 服务器的情景模式，如下图所示，这里面的代理服务器和代理端口不是 ss 服务器中的配置，而是本地的 Shadowsocks 客户端中的配置（可以打开软件中偏好设置查看）。</p>
 <p><img src="http://
-media.xiang578.com/15302560137907.jpg" alt=""><br>如果需要实现对网页的智能路由功能，可以参考我在几年前写的博文 <a href="https://xiang578.com/2016/06/23/switchyomege/">SwitchyOmege自动切换功能 - RyenX</a>。</p>
+media.xiang578.com/15302560137907.jpg" alt><br>如果需要实现对网页的智能路由功能，可以参考我在几年前写的博文 <a href="https://xiang578.com/2016/06/23/switchyomege/">SwitchyOmege自动切换功能 - RyenX</a>。</p>
 <p>如果还有什么疑问，可以在文章下方留言和我讨论。👊</p>
 
-      
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
+      </div>
+      <div class="post-copyright">
     <p class="copyright-item">
       <span>Author: </span>
       <a href="http://xiang578.com">RyenX</a>
@@ -321,174 +173,65 @@ media.xiang578.com/15302560137907.jpg" alt=""><br>如果需要实现对网页的
       <a href="http://xiang578.com/2018/06/29/shadowsocks/">http://xiang578.com/2018/06/29/shadowsocks/</a>
     </p>
     <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+      <span>License: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
     </p>
   </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/shadowsocks/">shadowsocks</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/shadowsocks/">shadowsocks</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2018/06/30/week-issue-5/">
+        <nav class="post-nav"><a class="prev" href="/2018/06/30/week-issue-5/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">每周分享第 5 期</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2018/06/23/week-issue-4/">
+    <a class="next" href="/2018/06/23/week-issue-4/">
         <span class="next-text nav-default">每周分享第 4 期</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
           <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
-    
-  </div>
-
-
-        </div>
+    </div></div>
       </main>
 
-      <footer id="footer" class="footer">
-
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://twitter.com/xiang578" class="iconfont icon-twitter" title="twitter"></a>
-        
-      
-    
-      
-        
-          <a href="https://www.facebook.com/profile.php?id=100009528134157" class="iconfont icon-facebook" title="facebook"></a>
-        
-      
-    
-      
-        
-          <a href="https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/" class="iconfont icon-linkedin" title="linkedin"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://github.com/xiang578" class="iconfont icon-github" title="github"></a>
-        
-      
-    
-      
-        
-          <a href="https://weibo.com/u/1630193304" class="iconfont icon-weibo" title="weibo"></a>
-        
-      
-    
-      
-        
-          <a href="https://www.zhihu.com/people/xiang578/activities" class="iconfont icon-zhihu" title="zhihu"></a>
-        
-      
-    
-      
-        
-          <a href="https://www.douban.com/people/xiang578/" class="iconfont icon-douban" title="douban"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-    
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://twitter.com/xiang578" class="iconfont icon-twitter" title="twitter"></a>
+        <a href="https://www.facebook.com/profile.php?id=100009528134157" class="iconfont icon-facebook" title="facebook"></a>
+        <a href="https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/" class="iconfont icon-linkedin" title="linkedin"></a>
+        <a href="https://github.com/xiang578" class="iconfont icon-github" title="github"></a>
+        <a href="https://weibo.com/u/1630193304" class="iconfont icon-weibo" title="weibo"></a>
+        <a href="https://www.zhihu.com/people/xiang578/activities" class="iconfont icon-zhihu" title="zhihu"></a>
+        <a href="https://www.douban.com/people/xiang578/" class="iconfont icon-douban" title="douban"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
   <span class="hosted-by-coding-pages">
     Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
   </span>
-  <br/>
+  <br>
   <span id="busuanzi">
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   PV: <span id="busuanzi_value_site_pv"></span> | UV: <span id="busuanzi_value_site_uv"></span>
   </span>
   
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2015 - 
-    
-    2019
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2015 - 2019<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">RyenX</span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
+    </div><script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'http://xiang578.com/2018/06/29/shadowsocks/';
         this.page.identifier = '2018/06/29/shadowsocks/';
@@ -502,51 +245,13 @@ media.xiang578.com/15302560137907.jpg" alt=""><br>如果需要实现对网页的
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-  
-
-
-
-  
-  
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
-  
-
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.8.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.8.0"></script>
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.11.0"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-  </body>
+</body>
 </html>

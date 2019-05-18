@@ -346,7 +346,7 @@ textarea {
 
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X. id:94
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
 optgroup {
   font-weight: bold; }
@@ -512,8 +512,7 @@ h6 {
     text-align: center; } }
 
 .posts {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #e6e6e6; }
+  margin-bottom: 20px; }
 
 .post {
   padding: 1.5em 0; }
@@ -623,11 +622,6 @@ h6 {
     font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
   .post .post-content .headerlink:hover {
     border-bottom: 0; }
-  .post .post-content .headerlink::before {
-    content: "";
-    margin-right: 5px;
-    font-size: 1.1em;
-    color: #c05b4d; }
   .post .post-content a {
     color: #c05b4d;
     word-break: break-all; }
@@ -635,6 +629,11 @@ h6 {
       border-bottom: 1px solid #c05b4d; }
     .post .post-content a.fancybox {
       border: 0; }
+  .post .post-content ul {
+    padding-left: 0;
+    list-style: inside; }
+    .post .post-content ul li input[type="checkbox"] {
+      margin-right: 5px; }
   .post .post-content blockquote {
     margin: 2em 0;
     padding: 10px 20px;
@@ -653,16 +652,16 @@ h6 {
     margin-bottom: 20px;
     overflow: auto;
     border: 3px double #f4efe1; }
-    .post .post-content .table-responsive table {
-      width: 100%;
-      max-width: 100%;
-      border-spacing: 0;
-      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125); }
-      .post .post-content .table-responsive table thead {
-        background: #f8f5ec; }
-      .post .post-content .table-responsive table th, .post .post-content .table-responsive table td {
-        padding: 5px 15px;
-        border: 1px double #f4efe1; }
+  .post .post-content table {
+    width: 100%;
+    max-width: 100%;
+    border-spacing: 0;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125); }
+    .post .post-content table thead {
+      background: #f8f5ec; }
+    .post .post-content table th, .post .post-content table td {
+      padding: 5px 15px;
+      border: 1px double #f4efe1; }
   .post .post-content code, .post .post-content pre {
     padding: 7px;
     font-size: 13px;
@@ -679,7 +678,8 @@ h6 {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
     position: relative; }
     .post .post-content .highlight table {
-      position: relative; }
+      position: relative;
+      max-width: none; }
       .post .post-content .highlight table::after {
         position: absolute;
         top: 0;
@@ -1410,3 +1410,7 @@ h6 {
 #nprogress .spinner-icon {
   border-top-color: #c05b4d;
   border-left-color: #c05b4d; }
+
+.mjx-chtml:focus {
+  padding: 1px 0;
+  outline: none; }
