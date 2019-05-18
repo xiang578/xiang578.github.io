@@ -15,6 +15,7 @@ script:
 - hexo clean
 - hexo generate
 - hexo d
+- echo ${secretId}
 after_script:
   - git clone https://${GH_REF} .deploy_git  # GH_REF是最下面配置的仓库地址
   - cd .deploy_git
