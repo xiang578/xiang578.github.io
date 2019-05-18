@@ -15,8 +15,8 @@ install:
 script:
 - hexo clean
 - hexo generate
-- sed -i "s/COS_ID/${COS_ID}" _config.yml
-- sed -i "s/COS_KEY/${COS_KEY}" _config.yml
+- sed -i "s~COS_ID~${COS_ID}" _config.yml
+- sed -i "s~COS_KEY~${COS_KEY}" _config.yml
 - hexo d
 
 after_script:
