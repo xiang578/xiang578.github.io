@@ -1,11 +1,12 @@
 ---
 title: ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)
-date: 2019-03-16 20:56:43
+date: 2019-05-18 20:56:43
 tags: [cnn, alexnet]
 categories: 机器学习
 ---
 
 ## 作者以及相关性
+
 - Alex Krizhevsky
 - Ilya Sutskever
 - Geoffrey E. Hinton
@@ -17,6 +18,7 @@ categories: 机器学习
 - 解决深度网络难训练（速度慢）以及容易过拟合问题（更多数据或者网络技巧）
 
 ## 数据集与指标
+
 - ImageNet LSVRC-2010 contest: 图片 1000 分类
 - top-1 和 top-5 错误率为指标
 
@@ -40,6 +42,7 @@ categories: 机器学习
     -  [4096] FC1: 两个 GPU 中的 CONV 层结果进行全连接
     -  [4096] FC2: FC1 进行全连接
     -  [1000] FC3: FC2 进行全连接，最后输出分类结果
+    
 -  参数数量 60 million
     
 ![](http://media.xiang578.com/15580111160071.jpg)
@@ -59,6 +62,7 @@ $$
 - Dropout：每次训练的时候，从模型中 sample 出一个小的模型，减少过拟合。
 
 ### 实验
+
 - 参数：dropout 0.5，batch size 128， SGD Momentum 0.9， Learning rate 1e-2 reduce by 10，L2 weight decay 5e-4
 
 - 测试集上结果
