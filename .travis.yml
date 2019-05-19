@@ -10,7 +10,8 @@ before_install:
 - npm install npm@6.4.1 -g
 - npm install hexo-cli -g
 - sudo apt-get install -y pandoc
-pandoc -v
+- pandoc -v
+
 install:
 - npm install
 
