@@ -13,8 +13,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="算法花园"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
-<link rel="canonical" href="http://xiang578.com/archives/2015/">
+<meta name="description" content="博客折腾记：迁移博客到腾讯云COS以及解决百度收录"><meta name="keywords" content="blog, travis, cos, 算法花园"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="算法花园"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="http://xiang578.com/2019/05/19/use_cos_to_store_blog/">
 
 <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
@@ -51,8 +51,7 @@
   window.config = {"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"toc":true,"fancybox":true,"pjax":true,"latex":false};
 </script>
 
-    <title>归档 - 算法花园
-  </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <title>博客折腾记：迁移博客到腾讯云COS以及解决百度收录 - 算法花园</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -119,55 +118,66 @@
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content"><section id="archive" class="archive"><div class="archive-title">
-          <span class="archive-post-counter">
-            目前共计 71 篇日志
-          </span>
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">博客折腾记：迁移博客到腾讯云COS以及解决百度收录
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-05-19
+        </span><span class="post-category">
+            <a href="/categories/站务/">站务</a>
+            </span>
+        <span class="post-visits" data-url="/2019/05/19/use_cos_to_store_blog/" data-title="博客折腾记：迁移博客到腾讯云COS以及解决百度收录">
+          Visits 0
+        </span>
         </div>
-      <div class="collection-title">
-            <h2 class="archive-year">2015</h2>
-          </div>
-        <div class="archive-post">
-        <span class="archive-post-time">
-          12-11
-          </span>
-        <span class="archive-post-title">
-          <a href="/2015/12/11/hdu300/" class="archive-post-link">
-            杭电OJ AC300题
-          </a>
-        </span>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-主题更新"><span class="toc-text">1. 主题更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-迁移博客到腾讯云"><span class="toc-text">2. 迁移博客到腾讯云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-百度收录"><span class="toc-text">3. 百度收录</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>本周有空对博客进行新一轮折腾，现在将这些尝试记下来和大家分享。</p>
+<h3 id="1-主题更新"><a href="#1-主题更新" class="headerlink" title="1. 主题更新"></a>1. 主题更新</h3><p>我在</p>
+<h3 id="2-迁移博客到腾讯云"><a href="#2-迁移博客到腾讯云" class="headerlink" title="2. 迁移博客到腾讯云"></a>2. 迁移博客到腾讯云</h3><h3 id="3-百度收录"><a href="#3-百度收录" class="headerlink" title="3. 百度收录"></a>3. 百度收录</h3><p>如果直接将</p>
+
       </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          09-13
-          </span>
-        <span class="archive-post-title">
-          <a href="/2015/09/13/hdu200/" class="archive-post-link">
-            杭电OJ AC200题
-          </a>
-        </span>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://xiang578.com">RyenX</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://xiang578.com/2019/05/19/use_cos_to_store_blog/">http://xiang578.com/2019/05/19/use_cos_to_store_blog/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/blog/">blog</a>
+            <a href="/tags/travis/">travis</a>
+            <a href="/tags/cos/">cos</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2019/05/18/alexnet/">
+        <span class="next-text nav-default">ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          08-15
-          </span>
-        <span class="archive-post-title">
-          <a href="/2015/08/15/how-to-build-a-hexo-blog/" class="archive-post-link">
-            从零开始利用 hexo + Github/Coding 搭建个人博客
-          </a>
-        </span>
-      </div>
-    <div class="archive-post">
-        <span class="archive-post-time">
-          08-06
-          </span>
-        <span class="archive-post-title">
-          <a href="/2015/08/06/hello-world/" class="archive-post-link">
-            System.out.println("hello world!");
-          </a>
-        </span>
-      </div>
-    </section><nav class="pagination"></nav></div></div>
+    </div></div>
       </main>
 
       <footer id="footer" class="footer"><div class="social-links"><a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
@@ -196,7 +206,21 @@
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+    </div><script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://xiang578.com/2019/05/19/use_cos_to_store_blog/';
+        this.page.identifier = '2019/05/19/use_cos_to_store_blog/';
+        this.page.title = '博客折腾记：迁移博客到腾讯云COS以及解决百度收录';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//xiang578.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
   <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
