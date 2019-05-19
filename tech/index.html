@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="Paper  CNN 系列  (AlexNet)ImageNet Classiﬁcation with Deep Convolutional Neural Networks  FM 系列  Course  CS231n  Book  🍉书  第 1 章 绪论    ​">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-19T14:18:03.041Z">
+<meta property="og:updated_time" content="2019-05-19T23:54:16.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tech">
 <meta name="twitter:description" content="Paper  CNN 系列  (AlexNet)ImageNet Classiﬁcation with Deep Convolutional Neural Networks  FM 系列  Course  CS231n  Book  🍉书  第 1 章 绪论    ​">
@@ -1090,7 +1090,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
   
@@ -1104,6 +1104,38 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 
   
 

@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://media.xiang578.com/%E5%8C%97%E5%A4%A7%E4%BD%93%E8%82%B2%E9%A6%86.jpg">
 <meta property="og:image" content="http://media.xiang578.com/%E5%85%A8%E8%81%9A%E5%BE%B7%E5%89%8D%E9%97%A8%E5%BA%97.jpg">
 <meta property="og:image" content="http://media.xiang578.com/%E5%8C%97%E4%BA%AC%E7%83%A4%E9%B8%AD.jpg">
-<meta property="og:updated_time" content="2019-05-19T14:18:02.937Z">
+<meta property="og:updated_time" content="2019-05-19T23:54:15.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第七届蓝桥杯决赛杂记">
 <meta name="twitter:description" content="反正最近不想干什么正经事，回忆一下这些东西也好。">
@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-19 22:18:02" itemprop="dateModified" datetime="2019-05-19T22:18:02+08:00">2019-05-19</time>
+                <time title="修改时间：2019-05-20 07:54:15" itemprop="dateModified" datetime="2019-05-20T07:54:15+08:00">2019-05-20</time>
               
             
           </span>
@@ -1212,7 +1212,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
   
@@ -1226,6 +1226,38 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 
   
 

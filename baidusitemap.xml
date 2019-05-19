@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xiang578.com/2016/11/25/newipad/</loc>
+    <loc>https://xiang578.com/2019/05/19/use_cos_to_store_blog/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2018/06/07/podcast-list/</loc>
-    <lastmod>2019-05-19</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/2018/02/21/primary-school-classmate-10th-anniversary-party/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2018/01/13/rebuild-notebook-system/</loc>
@@ -31,16 +28,16 @@
     <loc>https://xiang578.com/2018/05/07/the-beauty-of-math/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2018/06/14/universiy-booklist/</loc>
+    <loc>https://xiang578.com/2018/04/28/use-gtd-to-speach/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2018/05/28/use-travis-ci-to-auto-update/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2017/01/19/use-wiznote-to-write-blog/</loc>
+    <loc>https://xiang578.com/2016/11/25/newipad/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2019/05/19/use_cos_to_store_blog/</loc>
+    <loc>https://xiang578.com/2018/02/21/primary-school-classmate-10th-anniversary-party/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2018/06/01/week-issue-1/</loc>
@@ -67,7 +64,10 @@
     <loc>https://xiang578.com/2017/04/23/zjp_2017/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2018/04/28/use-gtd-to-speach/</loc>
+    <loc>https://xiang578.com/2018/06/14/universiy-booklist/</loc>
+    <lastmod>2019-05-19</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/2017/01/19/use-wiznote-to-write-blog/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2015/08/06/hello-world/</loc>
@@ -100,10 +100,16 @@
     <loc>https://xiang578.com/2017/09/18/mac-software/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2018/06/06/machine-learning-ch-01/</loc>
+    <loc>https://xiang578.com/2018/02/13/007-and-me/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2018/06/09/machine-learning-ch-03/</loc>
+    <lastmod>2019-05-19</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/2018/06/21/007-aciton-reflection/</loc>
+    <lastmod>2019-05-19</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/2016/02/10/2015/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2019/04/10/2018/</loc>
@@ -166,13 +172,7 @@
     <loc>https://xiang578.com/2018/02/28/gtd-one-month/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2015/09/13/hdu200/</loc>
-    <lastmod>2019-05-19</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/2015/12/11/hdu300/</loc>
-    <lastmod>2019-05-19</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/2016/03/26/hdu400/</loc>
+    <loc>https://xiang578.com/2012/01/23/2011/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2019/01/13/2018-consumer-report/</loc>
@@ -193,7 +193,7 @@
     <loc>https://xiang578.com/2015/08/15/how-to-build-a-hexo-blog/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2016/08/08/hdu500/</loc>
+    <loc>https://xiang578.com/2015/09/13/hdu200/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/2017/12/31/2017/</loc>
@@ -202,16 +202,16 @@
     <loc>https://xiang578.com/2012/07/23/if/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2012/01/23/2011/</loc>
+    <loc>https://xiang578.com/2015/12/11/hdu300/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2018/02/13/007-and-me/</loc>
+    <loc>https://xiang578.com/2016/03/26/hdu400/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2016/02/10/2015/</loc>
+    <loc>https://xiang578.com/2016/08/08/hdu500/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/2018/06/21/007-aciton-reflection/</loc>
+    <loc>https://xiang578.com/2018/06/06/machine-learning-ch-01/</loc>
     <lastmod>2019-05-19</lastmod>
   </url>
 </urlset>

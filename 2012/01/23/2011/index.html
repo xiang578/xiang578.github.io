@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="已过 2011年早已过去二十多天。原本打算在元旦完成这篇，可谁知一拖就到了春节。从公历新年到了农历新年。写这些东西，也不完全是一时心血来潮的想法，而是希望留下一些关于2011的记录（毕竟记忆力这东西不牢靠），加上借此机会反思一下自己一年来的行为。 回忆起2011，有什么特别？卡扎菲之死？乔布斯之死？金正日之死？或者三国杀完结？斗破完结？姚明退役？一件件大事跃然纸上，仔细一看却都不是什么好事。更实际">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-19T14:18:02.933Z">
+<meta property="og:updated_time" content="2019-05-19T23:54:15.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2011">
 <meta name="twitter:description" content="已过 2011年早已过去二十多天。原本打算在元旦完成这篇，可谁知一拖就到了春节。从公历新年到了农历新年。写这些东西，也不完全是一时心血来潮的想法，而是希望留下一些关于2011的记录（毕竟记忆力这东西不牢靠），加上借此机会反思一下自己一年来的行为。 回忆起2011，有什么特别？卡扎菲之死？乔布斯之死？金正日之死？或者三国杀完结？斗破完结？姚明退役？一件件大事跃然纸上，仔细一看却都不是什么好事。更实际">
@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-19 22:18:02" itemprop="dateModified" datetime="2019-05-19T22:18:02+08:00">2019-05-19</time>
+                <time title="修改时间：2019-05-20 07:54:15" itemprop="dateModified" datetime="2019-05-20T07:54:15+08:00">2019-05-20</time>
               
             
           </span>
@@ -1175,7 +1175,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
   
@@ -1189,6 +1189,38 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 
   
 

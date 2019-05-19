@@ -114,7 +114,7 @@
 <meta property="og:image" content="http://%20media.xiang578.com/15098883805024.jpg">
 <meta property="og:image" content="http://%20media.xiang578.com/15098884634419.jpg">
 <meta property="og:image" content="http://%20media.xiang578.com/15098885107468.jpg">
-<meta property="og:updated_time" content="2019-05-19T14:18:02.937Z">
+<meta property="og:updated_time" content="2019-05-19T23:54:15.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017年西安区域赛">
 <meta name="twitter:description" content="怎么开头呢？ 10月20多号的时候，教练通知我们，一定要在赛前训练一场。仔细一想，上次训练在5个月前……整容倒是没有太大变化，周神（通过微软、腾讯、今日头条、京东和拼多多面试）和God王（曾经在阿里实习过），三个人暑假都在外面实习，回到学校之后也没有心情训练。10月25日（周三），我们拉了一场貌似是印度那边的区域赛，打了一下，感觉手感还行。周四就带着学弟学妹们坐火车前往西安，这也是我校继2015年">
@@ -470,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-19 22:18:02" itemprop="dateModified" datetime="2019-05-19T22:18:02+08:00">2019-05-19</time>
+                <time title="修改时间：2019-05-20 07:54:15" itemprop="dateModified" datetime="2019-05-20T07:54:15+08:00">2019-05-20</time>
               
             
           </span>
@@ -1227,7 +1227,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
   
@@ -1241,6 +1241,38 @@
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 
   
 

@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://media.xiang578.com/15581816832571.jpg">
 <meta property="og:image" content="http://media.xiang578.com/15581833748303.jpg">
 <meta property="og:image" content="http://media.xiang578.com/15581820979738.jpg">
-<meta property="og:updated_time" content="2019-05-19T14:18:02.937Z">
+<meta property="og:updated_time" content="2019-05-19T23:54:15.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)">
 <meta name="twitter:description" content="作者以及相关性  Alex Krizhevsky Ilya Sutskever Geoffrey E. Hinton 本文被认为是这一轮深度学习浪潮的开端  主题  将 CNN 技术最先应用到图像识别领域，利用 CNN 参数共享的特性，减少网络的规模 解决深度网络难训练（速度慢）以及容易过拟合问题（更多数据或者网络技巧）  数据集与指标  ImageNet LSVRC-2010 contest:">
@@ -468,7 +468,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-19 22:18:02" itemprop="dateModified" datetime="2019-05-19T22:18:02+08:00">2019-05-19</time>
+                <time title="修改时间：2019-05-20 07:54:15" itemprop="dateModified" datetime="2019-05-20T07:54:15+08:00">2019-05-20</time>
               
             
           </span>
@@ -1328,7 +1328,7 @@ b_{x, y}^{i}=a_{x, y}^{i} /\left(k+\alpha \sum_{j=\max (0, i-n / 2)}^{\min (N-1,
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
   
@@ -1342,6 +1342,38 @@ b_{x, y}^{i}=a_{x, y}^{i} /\left(k+\alpha \sum_{j=\max (0, i-n / 2)}^{\min (N-1,
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
 
   
 
