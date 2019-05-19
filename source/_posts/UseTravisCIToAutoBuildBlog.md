@@ -1,8 +1,8 @@
 ---
-title: 使用 Travis CI 自动部署博客
+title: 博客折腾记：使用 Travis CI 自动部署博客
 date: 2018-09-04 07:05:50
-tags: [hexo,blog,github,travis-ci]
-categories: 程序园
+tags: [hexo,blog,github,travisci]
+categories: 站务
 ---
 
 之前一周，都在接受公司的项目开发培训，了解公司的项目开发全流程。其中有一点是服务的稳定性。不知道为什么，前几天自己的博客崩溃了，输入域名只能看到 404 页面。当时以为是 Travis CI 的原因，所以进行了全面的一次排查。最终发现问题在 Github Pages 的 Custom domain 上。具体的问题表现是：通过 Travis CI 推送博客静态文件到仓库中的 master 后，下图框中的域名就会变成空的，导致无法访问。解决方法也很简单，在源文件的 source 目录下创建一个 CNAME 文件，写上你自己的域名。

@@ -1,8 +1,8 @@
 ---
-title: 博客公告：使用 Travis CI 自动部署
+title: 博客折腾记：使用 Travis CI 自动部署
 date: 2018-05-28 15:44:09
-tags: [hexo,travis,blog]
-categories: 博客公告
+tags: [hexo,travis]
+categories: 站务
 ---
 
 前几天，看到其他人在 V2 上讨论利用 Docker 更新 hexo 博客。不过自己对使用 Docker 不是很感兴趣，倒是了解到 Travis CI 的作用。
