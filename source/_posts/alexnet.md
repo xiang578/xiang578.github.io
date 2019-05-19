@@ -3,6 +3,7 @@ title: ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)
 date: 2019-05-18 20:56:43
 tags: [cnn, alexnet]
 categories: 机器学习
+mathjax: true
 ---
 
 ## 作者以及相关性
