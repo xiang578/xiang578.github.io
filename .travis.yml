@@ -2,6 +2,7 @@ language: node_js
 node_js:
 - 10.8.0
 cache:
+  - pandoc
   directories:
   - node_modules
 before_install:
@@ -9,9 +10,8 @@ before_install:
 - npm i -g npm@6.4.1 -g
 - npm install npm@6.4.1 -g
 - npm install hexo-cli -g
-- sudo apt-get install cabal-install
-- cabal update
-- cabal install pandoc
+- wget https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb
+- sudo dpkg -i pandoc*.deb
 - pandoc -v
 
 install:
