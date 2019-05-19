@@ -1,7 +1,7 @@
 ---
 title: 007 不出局活动与我
 date: 2018-02-13 15:32:02
-tags: [life,007]
+tags: [life, 007]
 categories: 七年之旅
 ---
 
