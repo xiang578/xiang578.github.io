@@ -21,7 +21,6 @@
     "hexo-inject": "^1.0.0",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-markdown-it-plus": "^1.0.3",
-    "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-pandoc": "^0.3.0",
     "hexo-renderer-sass": "^0.3.2",
     "hexo-renderer-scss": "^1.2.0",
