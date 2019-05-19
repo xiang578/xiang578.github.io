@@ -1,268 +1,960 @@
 <!DOCTYPE html>
-<html lang="cn">
-  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
-<meta name="theme-color" content="#f8f5ec">
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="月读 | 睡眠革命"><meta name="keywords" content="Sleep, 算法花园"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="算法花园"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
-<link rel="canonical" href="http://xiang578.com/2018/07/21/Sleep/">
 
-<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
 
-<script id="baidu_analytics">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-<script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
-  <script id="leancloud">
-    AV.init({
-      appId: "rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz",
-      appKey: "SHpy5xi5vjhNA7cz7THf03vk"
-    });
-  </script><script>
-  window.config = {"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"toc":true,"fancybox":true,"pjax":true,"latex":false};
+  };
 </script>
 
-    <title>月读 | 睡眠革命 - 算法花园</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  </head>
 
-  <body><div id="mobile-navbar" class="mobile-navbar">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
-    <a href="/." class="logo">算法花园</a>
+  
+
+
+
+
+  <meta name="description" content="前一段时间作息混乱，晚上躺在床上睡不着，然后玩手机，导致更加睡不着。第二天下午又很困，只好趴着睡一会儿。从而导致晚上睡不着又玩手机的恶性循环。当时一度觉得自己都不能从这个圈里面走出来了。不过，想起来之前在少数派看到过一篇文章，推荐过一本和睡眠相关的书——睡眠革命，抱着死马当活马医的心态看了一下。 书中作者主要介绍昼夜节律、睡眠类型、睡眠周期、睡前醒后、日间小睡、睡眠环境等多个方面的内容，我将自己在">
+<meta name="keywords" content="Sleep">
+<meta property="og:type" content="article">
+<meta property="og:title" content="月读 | 睡眠革命">
+<meta property="og:url" content="http://xiang578.com/2018/07/21/Sleep/index.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="前一段时间作息混乱，晚上躺在床上睡不着，然后玩手机，导致更加睡不着。第二天下午又很困，只好趴着睡一会儿。从而导致晚上睡不着又玩手机的恶性循环。当时一度觉得自己都不能从这个圈里面走出来了。不过，想起来之前在少数派看到过一篇文章，推荐过一本和睡眠相关的书——睡眠革命，抱着死马当活马医的心态看了一下。 书中作者主要介绍昼夜节律、睡眠类型、睡眠周期、睡前醒后、日间小睡、睡眠环境等多个方面的内容，我将自己在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://xiang578.com/2018/07/21/Sleep/media.xiang578.com/15321615677483.jpg">
+<meta property="og:updated_time" content="2019-05-19T12:56:49.306Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="月读 | 睡眠革命">
+<meta name="twitter:description" content="前一段时间作息混乱，晚上躺在床上睡不着，然后玩手机，导致更加睡不着。第二天下午又很困，只好趴着睡一会儿。从而导致晚上睡不着又玩手机的恶性循环。当时一度觉得自己都不能从这个圈里面走出来了。不过，想起来之前在少数派看到过一篇文章，推荐过一本和睡眠相关的书——睡眠革命，抱着死马当活马医的心态看了一下。 书中作者主要介绍昼夜节律、睡眠类型、睡眠周期、睡前醒后、日间小睡、睡眠环境等多个方面的内容，我将自己在">
+<meta name="twitter:image" content="http://xiang578.com/2018/07/21/Sleep/media.xiang578.com/15321615677483.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://xiang578.com/2018/07/21/Sleep/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>月读 | 睡眠革命 | 算法花园</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">算法花园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
   </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
 </div>
 
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list"><a href="/">
-        <li class="mobile-menu-item">首页
-          </li>
-      </a><a href="/tech">
-        <li class="mobile-menu-item">Tech
-          </li>
-      </a><a href="/tags">
-        <li class="mobile-menu-item">标签
-          </li>
-      </a><a href="/categories">
-        <li class="mobile-menu-item">分类
-          </li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">关于
-          </li>
-      </a></ul>
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
 </nav>
-<div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">算法花园</a>
+
+
+
+  
+
+
+
 </div>
-
-<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
-          <a class="menu-item-link" href="/">
-            首页
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/tech">
-            Tech
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            标签
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            分类
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/about">
-            关于
-            </a>
-        </li>
-      </ul></nav>
-</header>
-
-      <main id="main" class="main">
-        <div class="content-wrapper">
-          <div id="content" class="content"><article class="post">
-    <header class="post-header">
-      <h1 class="post-title">月读 | 睡眠革命
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-07-21
-        </span><span class="post-category">
-            <a href="/categories/月读/">月读</a>
-            </span>
-        <span class="post-visits" data-url="/2018/07/21/Sleep/" data-title="月读 | 睡眠革命">
-          Visits 0
-        </span>
-        </div>
     </header>
 
-    <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#核心收获"><span class="toc-text">核心收获</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#昼夜节律"><span class="toc-text">昼夜节律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#睡眠类型"><span class="toc-text">睡眠类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#睡眠周期"><span class="toc-text">睡眠周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#睡前醒后"><span class="toc-text">睡前醒后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日间小睡"><span class="toc-text">日间小睡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#睡眠环境"><span class="toc-text">睡眠环境</span></a></li></ol>
-    </div>
-  </div><div class="post-content"><p>前一段时间作息混乱，晚上躺在床上睡不着，然后玩手机，导致更加睡不着。第二天下午又很困，只好趴着睡一会儿。从而导致晚上睡不着又玩手机的恶性循环。当时一度觉得自己都不能从这个圈里面走出来了。不过，想起来之前在少数派看到过一篇文章，推荐过一本和睡眠相关的书——<a href="https://book.douban.com/subject/27023900/" target="_blank" rel="noopener">睡眠革命</a>，抱着死马当活马医的心态看了一下。</p>
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiang578.com/2018/07/21/Sleep/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RyenX">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">月读 | 睡眠革命
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-21 17:28:48" itemprop="dateCreated datePublished" datetime="2018-07-21T17:28:48+08:00">2018-07-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-19 20:56:49" itemprop="dateModified" datetime="2019-05-19T20:56:49+08:00">2019-05-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/月读/" itemprop="url" rel="index"><span itemprop="name">月读</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前一段时间作息混乱，晚上躺在床上睡不着，然后玩手机，导致更加睡不着。第二天下午又很困，只好趴着睡一会儿。从而导致晚上睡不着又玩手机的恶性循环。当时一度觉得自己都不能从这个圈里面走出来了。不过，想起来之前在少数派看到过一篇文章，推荐过一本和睡眠相关的书——<a href="https://book.douban.com/subject/27023900/" target="_blank" rel="noopener">睡眠革命</a>，抱着死马当活马医的心态看了一下。</p>
 <p>书中作者主要介绍昼夜节律、睡眠类型、睡眠周期、睡前醒后、日间小睡、睡眠环境等多个方面的内容，我将自己在阅读时候记录的笔记整理一下，与大家分享。</p>
-<h2 id="核心收获"><a href="#核心收获" class="headerlink" title="核心收获"></a>核心收获</h2><p>读完这本书最大的几个收获：</p>
+<h2 id="核心收获">核心收获</h2>
+<p>读完这本书最大的几个收获：</p>
 <ul>
 <li>人的睡眠类型有两种：早睡类型和晚睡类型。</li>
 <li>失眠是过度清醒造成的，过度清醒又是担心自己会失眠所产生的。</li>
 </ul>
-<h2 id="昼夜节律"><a href="#昼夜节律" class="headerlink" title="昼夜节律"></a>昼夜节律</h2><p><img src="media.xiang578.com/15321615677483.jpg" alt></p>
+<h2 id="昼夜节律">昼夜节律</h2>
+<p><img src="media.xiang578.com/15321615677483.jpg"></p>
 <blockquote>
 <p>昼夜节律是生命体24小时的内循环，受我们的内置生物钟的管理。我们大脑中的这一生物钟，24小时调节着我们的多个内部系统，包括睡眠和饮食习惯、激素的分泌、体温、灵敏度、情绪和消化，使其与地球的自转相一致。我们的生物钟是根据一些外部线索而设定的，其中最主要的是日光，此外还包括温度、进食时间等其他因素。</p>
 </blockquote>
 <p>上面是书中的一张插图和一段文字。核心思想是，人的一天活动受自然规律控制，所以要在正确的时间干正确的事情。如同我最开始描述的状态一样，人体内也有一种正常的循环状态。在晚上褪黑素产生的时候，开始准备睡觉，我们会在2~3点时进入一个高效的睡眠阶段，从而在早晨可以按时起床，那么晚上对于睡眠的需求又会达到峰值，为我们再一次提供最佳的入睡时机。</p>
-<h2 id="睡眠类型"><a href="#睡眠类型" class="headerlink" title="睡眠类型"></a>睡眠类型</h2><p>一直以来，我们的文化都提倡一点：早睡早起。但是在现实中，我们很多人却很喜欢睡懒觉。作者在书中指出，从基因上来看，人的睡眠分成两类：早睡早起类型 和 晚睡晚起类型。不应该强制两类人在相同的时间躺下和起床，而是寻找最合适他们的睡眠规律，如果昼夜节律图中描述的内容一样。当然，作者强调需要严格遵守自己的睡眠规律，不要轻易的打破，比如周末睡懒觉之类的。</p>
+<h2 id="睡眠类型">睡眠类型</h2>
+<p>一直以来，我们的文化都提倡一点：早睡早起。但是在现实中，我们很多人却很喜欢睡懒觉。作者在书中指出，从基因上来看，人的睡眠分成两类：早睡早起类型 和 晚睡晚起类型。不应该强制两类人在相同的时间躺下和起床，而是寻找最合适他们的睡眠规律，如果昼夜节律图中描述的内容一样。当然，作者强调需要严格遵守自己的睡眠规律，不要轻易的打破，比如周末睡懒觉之类的。</p>
 <blockquote>
-<p>睡眠类型：智慧睡眠的7个要点<br>1．了解你和你的亲朋好友属于哪种睡眠类型。如果你不能确定，可以使用慕尼黑大学的问卷调查表。<br>2．巧妙规划好你一天的日程，在你状态最佳时做最重要的工作。<br>3．把咖啡因当成高效的表现增强剂使用，而不是出于习惯去喝咖啡，并且一天的咖啡因摄入量不要超过400毫克。<br>4．晚睡星人——如果你想要克服社交时差，就不要在周末睡懒觉。<br>5．在会议室、办公室和办公桌配置日光灯，提高员工的灵敏度、工作效率，并改善他们的工作情绪。<br>6．知道何时该上前、何时该退后。如果你是一个早起型的人，那么你该不该自告奋勇地在深夜比赛中参加点球大战呢？<br>7．如果你和你的伴侣属于不同的睡眠类型，你们应该学会彼此协调、彼此适应。</p>
+<p>睡眠类型：智慧睡眠的7个要点 1．了解你和你的亲朋好友属于哪种睡眠类型。如果你不能确定，可以使用慕尼黑大学的问卷调查表。 2．巧妙规划好你一天的日程，在你状态最佳时做最重要的工作。 3．把咖啡因当成高效的表现增强剂使用，而不是出于习惯去喝咖啡，并且一天的咖啡因摄入量不要超过400毫克。 4．晚睡星人——如果你想要克服社交时差，就不要在周末睡懒觉。 5．在会议室、办公室和办公桌配置日光灯，提高员工的灵敏度、工作效率，并改善他们的工作情绪。 6．知道何时该上前、何时该退后。如果你是一个早起型的人，那么你该不该自告奋勇地在深夜比赛中参加点球大战呢？ 7．如果你和你的伴侣属于不同的睡眠类型，你们应该学会彼此协调、彼此适应。</p>
 </blockquote>
-<h2 id="睡眠周期"><a href="#睡眠周期" class="headerlink" title="睡眠周期"></a>睡眠周期</h2><p>在我们的常识中，一直有一个8小时的推荐睡眠时间。作者澄清，8小时是每晚人均睡眠时间，一味追求8小时的睡眠会造成巨大的压力，反而对我们的睡眠起着破坏性极强的反作用，让我们无法获得真正需要的、因人而异的睡眠时间。</p>
-<p>作者提倡一种新的睡眠时间方法：</p>
-<blockquote>
-<p>“R90”指的是以90分钟为一个周期，获得身体修复。“90”这个数字，并不是我从1—100中随意选择的。从临床上说，90分钟是一个人经历各个睡眠阶段所需的时间。这些睡眠阶段组成了一个睡眠周期。 我们的睡眠周期由4个（有时是5个）不同的睡眠阶段组成。你可以把度过不同的睡眠阶段、完成一个睡眠周期的过程，想象成走下几段楼梯、完成一段行程。当我们关灯上床、准备睡觉时，就像站在这几段楼梯之上，而想要得到的深睡眠，就像走到了这几段楼梯之下。</p>
-</blockquote>
+<h2 id="睡眠周期">睡眠周期</h2>
+<p>在我们的常识中，一直有一个8小时的推荐睡眠时间。作者澄清，8小时是每晚人均睡眠时间，一味追求8小时的睡眠会造成巨大的压力，反而对我们的睡眠起着破坏性极强的反作用，让我们无法获得真正需要的、因人而异的睡眠时间。</p>
+<p>作者提倡一种新的睡眠时间方法： &gt;“R90”指的是以90分钟为一个周期，获得身体修复。“90”这个数字，并不是我从1—100中随意选择的。从临床上说，90分钟是一个人经历各个睡眠阶段所需的时间。这些睡眠阶段组成了一个睡眠周期。 我们的睡眠周期由4个（有时是5个）不同的睡眠阶段组成。你可以把度过不同的睡眠阶段、完成一个睡眠周期的过程，想象成走下几段楼梯、完成一段行程。当我们关灯上床、准备睡觉时，就像站在这几段楼梯之上，而想要得到的深睡眠，就像走到了这几段楼梯之下。</p>
 <p>实践这个 R90 睡眠方法的关键是，对睡眠进行统计。以周为统计周期，争取每周达到 35 个睡眠周期。然后根据自己的工作性质，确定一个固定的起床时间，反向推导出你应该在什么时候入睡。</p>
-<h2 id="睡前醒后"><a href="#睡前醒后" class="headerlink" title="睡前醒后"></a>睡前醒后</h2><p>一般而言，我们只关心什么时候睡觉，而忽视了睡眠前以及醒来后的90分钟。从作者观点来看，应该利用好这一段时间，提高睡眠的质量。</p>
+<h2 id="睡前醒后">睡前醒后</h2>
+<p>一般而言，我们只关心什么时候睡觉，而忽视了睡眠前以及醒来后的90分钟。从作者观点来看，应该利用好这一段时间，提高睡眠的质量。</p>
 <blockquote>
-<p>睡眠前后的例行程序：智慧睡眠的7个要点<br>1．睡眠前后的例行程序将直接影响你睡眠的质量，以及你清醒的一天：如果予以重视，整个白天和整个晚上就会更加高效。<br>2．在日间偶尔脱离电子设备，将此作为一种犒劳，并通过这种方式训练你的身体和心灵。<br>3．对于晚睡星人来说，睡眠后例行程序至关重要，如果他们不想输给早起星人的话。不要因为青睐于止闹按钮，而轻易放弃这些睡眠后例行程序。<br>4．不要在头脑不清醒的时候发送消息！先让自己清醒一点，再去拿手机。<br>5．让你的身体感受从温暖到凉爽的变化，有利于带来自然的体温下降。快速洗个温水浴，然后选择较凉爽的睡眠环境，能帮助你达到目的。<br>6．在上床前整理你的卧室，放空你的大脑，“下载”你的一天，就不会在该睡觉的时候想东想西、难以入眠。<br>7．执行睡眠前例行程序，是为了结束过去的一天——用鼻子呼吸、放松心情、实现从明亮到昏暗的过渡。执行睡眠后例行程序，是为了开启不匆不忙的新一天。这两段时间都只属于你，不属于别人。</p>
+<p>睡眠前后的例行程序：智慧睡眠的7个要点 1．睡眠前后的例行程序将直接影响你睡眠的质量，以及你清醒的一天：如果予以重视，整个白天和整个晚上就会更加高效。 2．在日间偶尔脱离电子设备，将此作为一种犒劳，并通过这种方式训练你的身体和心灵。 3．对于晚睡星人来说，睡眠后例行程序至关重要，如果他们不想输给早起星人的话。不要因为青睐于止闹按钮，而轻易放弃这些睡眠后例行程序。 4．不要在头脑不清醒的时候发送消息！先让自己清醒一点，再去拿手机。 5．让你的身体感受从温暖到凉爽的变化，有利于带来自然的体温下降。快速洗个温水浴，然后选择较凉爽的睡眠环境，能帮助你达到目的。 6．在上床前整理你的卧室，放空你的大脑，“下载”你的一天，就不会在该睡觉的时候想东想西、难以入眠。 7．执行睡眠前例行程序，是为了结束过去的一天——用鼻子呼吸、放松心情、实现从明亮到昏暗的过渡。执行睡眠后例行程序，是为了开启不匆不忙的新一天。这两段时间都只属于你，不属于别人。</p>
 </blockquote>
-<h2 id="日间小睡"><a href="#日间小睡" class="headerlink" title="日间小睡"></a>日间小睡</h2><p>日间小睡分成两个部分：午睡以及傍晚的小憩。这一部分的睡眠的作用是对夜晚睡眠周期的补充，一般而言30分钟的小睡可以媲美晚上的一整个睡眠周期。</p>
+<h2 id="日间小睡">日间小睡</h2>
+<p>日间小睡分成两个部分：午睡以及傍晚的小憩。这一部分的睡眠的作用是对夜晚睡眠周期的补充，一般而言30分钟的小睡可以媲美晚上的一整个睡眠周期。</p>
 <p>书中引用到美国国家航空航天局的一项调查专门研究了日间小睡的功效，在对执行长途飞行的飞行员进行调查后，他们得出结论：“日间小睡有助于维持或改善随后的表现，提高生理和心理的灵敏度，并能有效改善情绪。”</p>
 <blockquote>
-<p>日间小睡：智慧睡眠的7个要点<br>1．利用午后休憩时机（下午1—3点）给自己安排一个可控修复期，是弥补夜间睡眠周期的完美方法，这也与你的昼夜节律彼此协调。<br>2．黄昏（下午5—7点）是次优的休憩时机，因为此时人的睡眠需求极高。但这一时段的日间小睡应控制在30分钟之内，这样才不会影响晚上的睡眠。<br>3．白天睡不着？没关系。只要花30分钟放松一会儿，暂时脱离周围的世界片刻。<br>4．至少每隔90分钟休息一会儿，消除大脑的疲劳，提高注意力的集中水平。在休息时不要使用电子设备，你无需让自己自始至终地受到电子设备的控制。<br>5．不要受到你所在的企业文化的影响，切莫先入为主地给那些白天睡觉的人贴上“懒惰”的标签，而应着手构建一种接受日间小睡和休憩的企业文化——你若不打盹儿，就会输得很惨。<br>6．使用冥想或正念应用软件，或者把玩某个珍爱的私人物品，暂时脱离当前的环境。<br>7．如果你真的无法脱身，那就巧妙地安排一天的工作。在午后倦怠期，不要让自己困于太费神的工作</p>
+<p>日间小睡：智慧睡眠的7个要点 1．利用午后休憩时机（下午1—3点）给自己安排一个可控修复期，是弥补夜间睡眠周期的完美方法，这也与你的昼夜节律彼此协调。 2．黄昏（下午5—7点）是次优的休憩时机，因为此时人的睡眠需求极高。但这一时段的日间小睡应控制在30分钟之内，这样才不会影响晚上的睡眠。 3．白天睡不着？没关系。只要花30分钟放松一会儿，暂时脱离周围的世界片刻。 4．至少每隔90分钟休息一会儿，消除大脑的疲劳，提高注意力的集中水平。在休息时不要使用电子设备，你无需让自己自始至终地受到电子设备的控制。 5．不要受到你所在的企业文化的影响，切莫先入为主地给那些白天睡觉的人贴上“懒惰”的标签，而应着手构建一种接受日间小睡和休憩的企业文化——你若不打盹儿，就会输得很惨。 6．使用冥想或正念应用软件，或者把玩某个珍爱的私人物品，暂时脱离当前的环境。 7．如果你真的无法脱身，那就巧妙地安排一天的工作。在午后倦怠期，不要让自己困于太费神的工作</p>
 </blockquote>
-<h2 id="睡眠环境"><a href="#睡眠环境" class="headerlink" title="睡眠环境"></a>睡眠环境</h2><p>上面讲了那么多，都是一些比较虚的东西，最后分享一些作者对于睡眠环境的建议。首先一点，作者提倡在卧室中尽量只睡觉，不干其他活动。其次，作者提倡采用像婴儿一样的侧卧睡眠方式，要点包括：膝盖自然弯曲、两条手臂放在身前，并轻轻交叠在一起，颈部、脊柱和臀部形成一条平滑的直线。</p>
+<h2 id="睡眠环境">睡眠环境</h2>
+<p>上面讲了那么多，都是一些比较虚的东西，最后分享一些作者对于睡眠环境的建议。首先一点，作者提倡在卧室中尽量只睡觉，不干其他活动。其次，作者提倡采用像婴儿一样的侧卧睡眠方式，要点包括：膝盖自然弯曲、两条手臂放在身前，并轻轻交叠在一起，颈部、脊柱和臀部形成一条平滑的直线。</p>
 <p>最后，是一些关于寝具套装选择的建议：</p>
 <blockquote>
-<p>1．学会以胎儿姿势睡眠，躺向非主要的身体一侧（惯用左手的人向右侧睡，惯用右手的人向左侧睡）。<br>2．检测床垫，了解什么样的床垫对你来说软硬适中。让你的伴侣也这样做。<br>3．循序渐进：7年间分两次各花500英镑在你的床垫上，而不是一次花1000英镑。可以考虑购买能够经常换洗的床垫。<br>4．使用低过敏性、透气舒适的床上用品，无论你是否属于过敏体质。避免潜在的睡眠障碍因素，并注意调节好温度。<br>5．床的尺寸很重要——能买多大，就买多大。特大号床垫是值得一对儿夫妇考虑的最小型号（只要卧室中放得下）。双人床是给一个人睡的。<br>6．不要盲目购置寝具！可以根据销售人员的介绍，了解你能买到什么样的寝具。但在做出最后决定时，记得运用你在本章中学到的知识。<br>7．记住床垫和床架重要性比率：你可以把100％的预算全部花在购置床垫上，因为床架主要是装饰性的</p>
+<p>1．学会以胎儿姿势睡眠，躺向非主要的身体一侧（惯用左手的人向右侧睡，惯用右手的人向左侧睡）。 2．检测床垫，了解什么样的床垫对你来说软硬适中。让你的伴侣也这样做。 3．循序渐进：7年间分两次各花500英镑在你的床垫上，而不是一次花1000英镑。可以考虑购买能够经常换洗的床垫。 4．使用低过敏性、透气舒适的床上用品，无论你是否属于过敏体质。避免潜在的睡眠障碍因素，并注意调节好温度。 5．床的尺寸很重要——能买多大，就买多大。特大号床垫是值得一对儿夫妇考虑的最小型号（只要卧室中放得下）。双人床是给一个人睡的。 6．不要盲目购置寝具！可以根据销售人员的介绍，了解你能买到什么样的寝具。但在做出最后决定时，记得运用你在本章中学到的知识。 7．记住床垫和床架重要性比率：你可以把100％的预算全部花在购置床垫上，因为床架主要是装饰性的</p>
 </blockquote>
 
-      </div>
-      <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://xiang578.com">RyenX</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://xiang578.com/2018/07/21/Sleep/">http://xiang578.com/2018/07/21/Sleep/</a>
-    </p>
-    <p class="copyright-item">
-      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-      <footer class="post-footer">
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
         <div class="post-tags">
-            <a href="/tags/Sleep/">Sleep</a>
-            </div>
-        
-        <nav class="post-nav"><a class="prev" href="/2018/07/28/WeekIssue9/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">每周分享第 9 期：拼多多</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
-    <a class="next" href="/2018/07/20/WeekIssue8/">
-        <span class="next-text nav-default">每周分享第 8 期</span>
-        <span class="prev-text nav-mobile">下一篇</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    </nav></footer>
-    </article></div><div class="comments" id="comments"><div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div></div>
-      </main>
+          
+            <a href="/tags/Sleep/" rel="tag"># Sleep</a>
+          
+        </div>
+      
 
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://twitter.com/xiang578" class="iconfont icon-twitter" title="twitter"></a>
-        <a href="https://www.facebook.com/profile.php?id=100009528134157" class="iconfont icon-facebook" title="facebook"></a>
-        <a href="https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/" class="iconfont icon-linkedin" title="linkedin"></a>
-        <a href="https://github.com/xiang578" class="iconfont icon-github" title="github"></a>
-        <a href="https://weibo.com/u/1630193304" class="iconfont icon-weibo" title="weibo"></a>
-        <a href="https://www.zhihu.com/people/xiang578/activities" class="iconfont icon-zhihu" title="zhihu"></a>
-        <a href="https://www.douban.com/people/xiang578/" class="iconfont icon-douban" title="douban"></a>
-        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    </div><div class="copyright">
-  <span id="busuanzi">
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  PV: <span id="busuanzi_value_site_pv"></span> | UV: <span id="busuanzi_value_site_uv"></span>
-  </span>
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/20/WeekIssue8/" rel="next" title="每周分享第 8 期">
+                <i class="fa fa-chevron-left"></i> 每周分享第 8 期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/28/WeekIssue9/" rel="prev" title="每周分享第 9 期：拼多多">
+                每周分享第 9 期：拼多多 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
   
-  <span class="copyright-year">&copy;2015 - 2019<span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">RyenX</span>
-  </span>
-</div>
-</footer>
+  
+  
+  </article>
 
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">RyenX</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">53</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
       </div>
-    </div><script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'http://xiang578.com/2018/07/21/Sleep/';
-        this.page.identifier = '2018/07/21/Sleep/';
-        this.page.title = '月读 | 睡眠革命';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
 
-    s.src = '//xiang578.disqus.com/embed.js';
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
 
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
-  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
-  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.11.0"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心收获"><span class="nav-number">1.</span> <span class="nav-text">核心收获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#昼夜节律"><span class="nav-number">2.</span> <span class="nav-text">昼夜节律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#睡眠类型"><span class="nav-number">3.</span> <span class="nav-text">睡眠类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#睡眠周期"><span class="nav-number">4.</span> <span class="nav-text">睡眠周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#睡前醒后"><span class="nav-number">5.</span> <span class="nav-text">睡前醒后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日间小睡"><span class="nav-number">6.</span> <span class="nav-text">日间小睡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#睡眠环境"><span class="nav-number">7.</span> <span class="nav-text">睡眠环境</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RyenX</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>

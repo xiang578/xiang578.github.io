@@ -1,257 +1,945 @@
 <!DOCTYPE html>
-<html lang="cn">
-  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
-<meta name="theme-color" content="#f8f5ec">
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-<meta name="description" content="每周分享第 2 期"><meta name="baidu-site-verification" content="xf6fMthFjE"><meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8"><link rel="alternate" href="/atom.xml" title="算法花园"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
-<link rel="canonical" href="http://xiang578.com/2018/06/11/week-issue-2/">
 
-<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
 
-<script id="baidu_analytics">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-<script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
-  <script id="leancloud">
-    AV.init({
-      appId: "rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz",
-      appKey: "SHpy5xi5vjhNA7cz7THf03vk"
-    });
-  </script><script>
-  window.config = {"leancloud":{"app_id":"rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz","app_key":"SHpy5xi5vjhNA7cz7THf03vk"},"toc":true,"fancybox":true,"pjax":true,"latex":false};
+  };
 </script>
 
-    <title>每周分享第 2 期 - 算法花园</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  </head>
 
-  <body><div id="mobile-navbar" class="mobile-navbar">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="mobile-header-logo">
-    <a href="/." class="logo">算法花园</a>
+  
+
+
+
+
+  <meta name="description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。 毕业季脱更几天  新闻 1、EffectiveMac - EffectiveMac 一份 Mac 系统教程 2、Evernote 和印象笔记终于拆分了，国内的公司独立开发。为知笔记半死不活的情况下，还是希望印象笔记能给我们带来更多的惊喜。来源 3、离开毛坦厂，去吻我爱的女孩：又是一年高考时，这篇文章从不同的角度去感受被称为高考军工厂的毛坦厂">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每周分享第 2 期">
+<meta property="og:url" content="http://xiang578.com/2018/06/11/week-issue-2/index.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。 毕业季脱更几天  新闻 1、EffectiveMac - EffectiveMac 一份 Mac 系统教程 2、Evernote 和印象笔记终于拆分了，国内的公司独立开发。为知笔记半死不活的情况下，还是希望印象笔记能给我们带来更多的惊喜。来源 3、离开毛坦厂，去吻我爱的女孩：又是一年高考时，这篇文章从不同的角度去感受被称为高考军工厂的毛坦厂">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://xiang578.com/2018/06/11/week-issue-2/%20media.xiang578.com/15280104676054.jpg">
+<meta property="og:image" content="http://xiang578.com/2018/06/11/week-issue-2/%20media.xiang578.com/15283589946007.jpg">
+<meta property="og:image" content="http://xiang578.com/2018/06/11/week-issue-2/%20media.xiang578.com/Jietu20180608-074432.jpg">
+<meta property="og:updated_time" content="2019-05-19T12:56:49.318Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每周分享第 2 期">
+<meta name="twitter:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。 毕业季脱更几天  新闻 1、EffectiveMac - EffectiveMac 一份 Mac 系统教程 2、Evernote 和印象笔记终于拆分了，国内的公司独立开发。为知笔记半死不活的情况下，还是希望印象笔记能给我们带来更多的惊喜。来源 3、离开毛坦厂，去吻我爱的女孩：又是一年高考时，这篇文章从不同的角度去感受被称为高考军工厂的毛坦厂">
+<meta name="twitter:image" content="http://xiang578.com/2018/06/11/week-issue-2/%20media.xiang578.com/15280104676054.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://xiang578.com/2018/06/11/week-issue-2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>每周分享第 2 期 | 算法花园</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">算法花园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
   </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
 </div>
 
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list"><a href="/">
-        <li class="mobile-menu-item">首页
-          </li>
-      </a><a href="/tech">
-        <li class="mobile-menu-item">Tech
-          </li>
-      </a><a href="/tags">
-        <li class="mobile-menu-item">标签
-          </li>
-      </a><a href="/categories">
-        <li class="mobile-menu-item">分类
-          </li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">关于
-          </li>
-      </a></ul>
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
 </nav>
-<div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">算法花园</a>
+
+
+
+  
+
+
+
 </div>
-
-<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
-          <a class="menu-item-link" href="/">
-            首页
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/tech">
-            Tech
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            标签
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            分类
-            </a>
-        </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/about">
-            关于
-            </a>
-        </li>
-      </ul></nav>
-</header>
-
-      <main id="main" class="main">
-        <div class="content-wrapper">
-          <div id="content" class="content"><article class="post">
-    <header class="post-header">
-      <h1 class="post-title">每周分享第 2 期
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-06-11
-        </span><span class="post-category">
-            <a href="/categories/每周分享/">每周分享</a>
-            </span>
-        <span class="post-visits" data-url="/2018/06/11/week-issue-2/" data-title="每周分享第 2 期">
-          Visits 0
-        </span>
-        </div>
     </header>
 
-    <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#新闻"><span class="toc-text">新闻</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-text">工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文摘"><span class="toc-text">文摘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片"><span class="toc-text">图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视频"><span class="toc-text">视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#金句"><span class="toc-text">金句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微博写作训练"><span class="toc-text">微博写作训练</span></a></li></ol>
-    </div>
-  </div><div class="post-content"><blockquote>
-<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。<br>毕业季脱更几天</p>
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xiang578.com/2018/06/11/week-issue-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RyenX">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">每周分享第 2 期
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-06-11 23:34:50" itemprop="dateCreated datePublished" datetime="2018-06-11T23:34:50+08:00">2018-06-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-19 20:56:49" itemprop="dateModified" datetime="2019-05-19T20:56:49+08:00">2019-05-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/每周分享/" itemprop="url" rel="index"><span itemprop="name">每周分享</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。 毕业季脱更几天</p>
 </blockquote>
-<h2 id="新闻"><a href="#新闻" class="headerlink" title="新闻"></a>新闻</h2><p>1、<a href="https://bestswifter.gitbook.io/effectivemac/" target="_blank" rel="noopener">EffectiveMac - EffectiveMac</a> 一份 Mac 系统教程</p>
+<h2 id="新闻">新闻</h2>
+<p>1、<a href="https://bestswifter.gitbook.io/effectivemac/" target="_blank" rel="noopener">EffectiveMac - EffectiveMac</a> 一份 Mac 系统教程</p>
 <p>2、Evernote 和印象笔记终于拆分了，国内的公司独立开发。为知笔记半死不活的情况下，还是希望印象笔记能给我们带来更多的惊喜。<a href="https://mp.weixin.qq.com/s/7kKSrZROTi8Q968WAGrRwA" target="_blank" rel="noopener">来源</a></p>
 <p>3、<a href="https://zhuanlan.zhihu.com/p/37781310" target="_blank" rel="noopener">离开毛坦厂，去吻我爱的女孩</a>：又是一年高考时，这篇文章从不同的角度去感受被称为高考军工厂的毛坦厂，可惜当年我没有这样的感受。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
-<li><p><a href="https://www.thoughttrain.cc/#download" target="_blank" rel="noopener">Thought Train for MacOS – Simple Note App for MacOS</a>：有意思的小工具，在 Mac 状态栏上显示一些话。<br><img src="http://
-media.xiang578.com/15280104676054.jpg" alt></p>
-</li>
-<li><p><a href="https://chrome.google.com/webstore/detail/rooster-for-chrome/pimolnhbniceppehbgmibnbgcnhpkhfh" target="_blank" rel="noopener">Rooster for Chrome™</a>：在新标签页统计每天浏览各个网站的时间。<br><img src="http://
-media.xiang578.com/15283589946007.jpg" alt></p>
-</li>
+<h2 id="工具">工具</h2>
+<ul>
+<li><p><a href="https://www.thoughttrain.cc/#download" target="_blank" rel="noopener">Thought Train for MacOS – Simple Note App for MacOS</a>：有意思的小工具，在 Mac 状态栏上显示一些话。 <img src="http://%20media.xiang578.com/15280104676054.jpg"></p></li>
+<li><p><a href="https://chrome.google.com/webstore/detail/rooster-for-chrome/pimolnhbniceppehbgmibnbgcnhpkhfh" target="_blank" rel="noopener">Rooster for Chrome™</a>：在新标签页统计每天浏览各个网站的时间。 <img src="http://%20media.xiang578.com/15283589946007.jpg"></p></li>
 </ul>
-<h2 id="文摘"><a href="#文摘" class="headerlink" title="文摘"></a>文摘</h2><p>1、<a href="http://www.infoq.com/cn/articles/kanban-step-guide?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" target="_blank" rel="noopener">看板使用指南：从三列看板到灵活的布局设计</a><br>思考了一下，个人管理在于项目比较少的时候不是很适合这种方法，还是比较适合软件团队使用。看完这篇文章，学习到的是泳道这个概念。</p>
+<h2 id="文摘">文摘</h2>
+<p>1、<a href="http://www.infoq.com/cn/articles/kanban-step-guide?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" target="_blank" rel="noopener">看板使用指南：从三列看板到灵活的布局设计</a> 思考了一下，个人管理在于项目比较少的时候不是很适合这种方法，还是比较适合软件团队使用。看完这篇文章，学习到的是泳道这个概念。</p>
 <p>2、<a href="https://www.zhihu.com/question/19714540/answer/334686351" target="_blank" rel="noopener">如何理解傅里叶变换公式？ - 知乎</a></p>
 <p>3、<a href="https://ift.tt/2sgdQCo" target="_blank" rel="noopener">机器学习最佳实践：Google 官方指南</a></p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>1、索引卡的妙用<br><img src="http://
-media.xiang578.com/Jietu20180608-074432.jpg" alt="Jietu20180608-074432"></p>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p>1、<a href="https://www.youtube.com/watch?v=UM19H3CC5UE" target="_blank" rel="noopener">預告分析 《蜘蛛人：返校日》 ： 少年超級英雄的進化(一) | 誰不重要 - YouTube</a><br>台湾一名电影自媒体，看问题的方式更加的深刻。</p>
-<h2 id="金句"><a href="#金句" class="headerlink" title="金句"></a>金句</h2><p>1、这是创业者最坏的时代，因为你很难再打情怀牌同情牌，要直面巨头们的烧钱大战。你能做的极限就是杀进决赛接受巨头投资。这也是创业者最好的时代，因为靠包装和营销的骗子们更加难以持续，劣币的离场速度显然是快于良币的。世界最终未必是你的，但一定是属于和你一样的人的。 </p>
-<p>2、评家罗世宏说，脸书作恶并非首次，“脸书强大的信息过滤和投放能力，代替人们开展正常的社交活动，也代替了人们自行选择接触什么信息的决定权。这次脸书再度陷入丑闻，或许最好的结果并不是脸书从此幡然改悟，善尽社交媒体平台的社会责任，而是扎克伯格的总统梦破灭了。（我并）不期待它从此改邪归正，但盼最终能把脸书这样的网络巨人和它所掌控的超大权力，逐步关到笼子里面去。 </p>
-<p>3、在一个知识更新如此迅猛的时代里，人们借助各种工具，将日常碎片化的时间充分利用起来，以更少的时间快速获取知识。这一点本来无可厚非。鲁迅先生也曾说，“哪里有天才,我是把别人喝咖啡的时间都用在写作上了”。但是，碎片化的学习不代表知识获得可以有捷径可走，更不等于打着知识付费的旗号去做知识的买卖。 </p>
-<p>4、其实，消费的本质就是考量成本与收益。这些新的名词后面的内核，是重新回到消费的本源，是为了使用价值而不是符号价值去消费；是为了提高生活品质的需要去消费，而不是追求炫耀的资本；为了获得身体和内心的享受去消费，而不是仅仅满足自己被裹挟的欲望。 </p>
-<h2 id="微博写作训练"><a href="#微博写作训练" class="headerlink" title="微博写作训练"></a>微博写作训练</h2><p>1、淘宝与拼多多的商业模式</p>
+<h2 id="图片">图片</h2>
+<p>1、索引卡的妙用 <img src="http://%20media.xiang578.com/Jietu20180608-074432.jpg" alt="Jietu20180608-074432"></p>
+<h2 id="视频">视频</h2>
+<p>1、<a href="https://www.youtube.com/watch?v=UM19H3CC5UE" target="_blank" rel="noopener">預告分析 《蜘蛛人：返校日》 ： 少年超級英雄的進化(一) | 誰不重要 - YouTube</a> 台湾一名电影自媒体，看问题的方式更加的深刻。</p>
+<h2 id="金句">金句</h2>
+<p>1、这是创业者最坏的时代，因为你很难再打情怀牌同情牌，要直面巨头们的烧钱大战。你能做的极限就是杀进决赛接受巨头投资。这也是创业者最好的时代，因为靠包装和营销的骗子们更加难以持续，劣币的离场速度显然是快于良币的。世界最终未必是你的，但一定是属于和你一样的人的。</p>
+<p>2、评家罗世宏说，脸书作恶并非首次，“脸书强大的信息过滤和投放能力，代替人们开展正常的社交活动，也代替了人们自行选择接触什么信息的决定权。这次脸书再度陷入丑闻，或许最好的结果并不是脸书从此幡然改悟，善尽社交媒体平台的社会责任，而是扎克伯格的总统梦破灭了。（我并）不期待它从此改邪归正，但盼最终能把脸书这样的网络巨人和它所掌控的超大权力，逐步关到笼子里面去。</p>
+<p>3、在一个知识更新如此迅猛的时代里，人们借助各种工具，将日常碎片化的时间充分利用起来，以更少的时间快速获取知识。这一点本来无可厚非。鲁迅先生也曾说，“哪里有天才,我是把别人喝咖啡的时间都用在写作上了”。但是，碎片化的学习不代表知识获得可以有捷径可走，更不等于打着知识付费的旗号去做知识的买卖。</p>
+<p>4、其实，消费的本质就是考量成本与收益。这些新的名词后面的内核，是重新回到消费的本源，是为了使用价值而不是符号价值去消费；是为了提高生活品质的需要去消费，而不是追求炫耀的资本；为了获得身体和内心的享受去消费，而不是仅仅满足自己被裹挟的欲望。</p>
+<h2 id="微博写作训练">微博写作训练</h2>
+<p>1、淘宝与拼多多的商业模式</p>
 <blockquote>
 <p>淘宝由于通过商品展示赚钱，倾向于推荐客单价比较大的商品，很多长尾商家就没有那么多导入流量。拼多多正是瞄准这一点，利用微信进行裂变式发展，做低价标品的拼团。此外为了促进消费，拼多多在系统的设计上取消了购物车、收藏夹、评论等功能。</p>
 </blockquote>
 
-      </div>
-      <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://xiang578.com">RyenX</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://xiang578.com/2018/06/11/week-issue-2/">http://xiang578.com/2018/06/11/week-issue-2/</a>
-    </p>
-    <p class="copyright-item">
-      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/09/machine-learning-ch-03/" rel="next" title="《机器学习》 第 3 章 线性模型 读书笔记">
+                <i class="fa fa-chevron-left"></i> 《机器学习》 第 3 章 线性模型 读书笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/14/universiy-booklist/" rel="prev" title="大学书单">
+                大学书单 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
-      <footer class="post-footer">
-        
-        <nav class="post-nav"><a class="prev" href="/2018/06/14/universiy-booklist/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">大学书单</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
-    <a class="next" href="/2018/06/09/machine-learning-ch-03/">
-        <span class="next-text nav-default">《机器学习》 第 3 章 线性模型 读书笔记</span>
-        <span class="prev-text nav-mobile">下一篇</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    </nav></footer>
-    </article></div><div class="comments" id="comments"><div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div></div>
-      </main>
-
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:i@xiang578.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://twitter.com/xiang578" class="iconfont icon-twitter" title="twitter"></a>
-        <a href="https://www.facebook.com/profile.php?id=100009528134157" class="iconfont icon-facebook" title="facebook"></a>
-        <a href="https://www.linkedin.com/in/%E9%97%B0%E5%86%B6-%E9%A1%B9-a2b708134/" class="iconfont icon-linkedin" title="linkedin"></a>
-        <a href="https://github.com/xiang578" class="iconfont icon-github" title="github"></a>
-        <a href="https://weibo.com/u/1630193304" class="iconfont icon-weibo" title="weibo"></a>
-        <a href="https://www.zhihu.com/people/xiang578/activities" class="iconfont icon-zhihu" title="zhihu"></a>
-        <a href="https://www.douban.com/people/xiang578/" class="iconfont icon-douban" title="douban"></a>
-        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    </div><div class="copyright">
-  <span id="busuanzi">
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  PV: <span id="busuanzi_value_site_pv"></span> | UV: <span id="busuanzi_value_site_uv"></span>
-  </span>
   
-  <span class="copyright-year">&copy;2015 - 2019<span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">RyenX</span>
-  </span>
-</div>
-</footer>
+  
+  
+  </article>
 
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">RyenX</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">categories</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">53</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
       </div>
-    </div><script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'http://xiang578.com/2018/06/11/week-issue-2/';
-        this.page.identifier = '2018/06/11/week-issue-2/';
-        this.page.title = '每周分享第 2 期';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
 
-    s.src = '//xiang578.disqus.com/embed.js';
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
 
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
-  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
-  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.11.0"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" integrity="sha384-TEMocfGvRuD1rIAacqrknm5BQZ7W7uWitoih+jMNFXQIbNl16bO8OZmylH/Vi/Ei" crossorigin="anonymous"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#新闻"><span class="nav-number">1.</span> <span class="nav-text">新闻</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">2.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文摘"><span class="nav-number">3.</span> <span class="nav-text">文摘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">4.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视频"><span class="nav-number">5.</span> <span class="nav-text">视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#金句"><span class="nav-number">6.</span> <span class="nav-text">金句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微博写作训练"><span class="nav-number">7.</span> <span class="nav-text">微博写作训练</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RyenX</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
