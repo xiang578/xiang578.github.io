@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8">
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="xf6fMthFjE">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="什么是自动化 日常工作学习中，我们需要使用不同的工具来应对各种各样的任务。比如，用印象笔记收集网页，利用图库管理博客中的图片。但是，由于大部分工具不是同一家公司发布的，彼此之间很难进行简单的协作。如果你有编程能力，可以利用很多工具提供的 API（应用程序接口），让信息在不同的软件中流动。 对于普通人而言，目前市面上也有很多 App 提供这种功能，可以解决少部分的问题。我对这些功能的定义就是自动化流">
+<meta name="keywords" content="workflow,alfred,ifttt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我常用的自动化流程">
+<meta property="og:url" content="https://xiang578.com/AutoWorkflow.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="什么是自动化 日常工作学习中，我们需要使用不同的工具来应对各种各样的任务。比如，用印象笔记收集网页，利用图库管理博客中的图片。但是，由于大部分工具不是同一家公司发布的，彼此之间很难进行简单的协作。如果你有编程能力，可以利用很多工具提供的 API（应用程序接口），让信息在不同的软件中流动。 对于普通人而言，目前市面上也有很多 App 提供这种功能，可以解决少部分的问题。我对这些功能的定义就是自动化流">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15309425389934.jpg">
+<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15309430608042.png">
+<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15309434519054.jpg">
+<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15309318778409.png">
+<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15309335067450.jpg">
+<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15309336298823.jpg">
+<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15309338021730.jpg">
+<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15309346475002.jpg">
+<meta property="og:updated_time" content="2019-05-21T12:56:07.411Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我常用的自动化流程">
+<meta name="twitter:description" content="什么是自动化 日常工作学习中，我们需要使用不同的工具来应对各种各样的任务。比如，用印象笔记收集网页，利用图库管理博客中的图片。但是，由于大部分工具不是同一家公司发布的，彼此之间很难进行简单的协作。如果你有编程能力，可以利用很多工具提供的 API（应用程序接口），让信息在不同的软件中流动。 对于普通人而言，目前市面上也有很多 App 提供这种功能，可以解决少部分的问题。我对这些功能的定义就是自动化流">
+<meta name="twitter:image" content="https://xiang578.com/media.xiang578.com/15309425389934.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://xiang578.com/AutoWorkflow">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>我常用的自动化流程 | 算法花园</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">算法花园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+
+    
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tech">
+
+    
+    
+    
+
+    
+
+    <a href="/tech/" rel="section">技术</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+
+    
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+
+    
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/xiang578" class="github-corner" title="Find me on GitHub" aria-label="Find me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/AutoWorkflow.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RyenX">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">我常用的自动化流程
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-07 14:09:22" itemprop="dateCreated datePublished" datetime="2018-07-07T14:09:22+08:00">2018-07-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-21 20:56:07" itemprop="dateModified" datetime="2019-05-21T20:56:07+08:00">2019-05-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/生活志/" itemprop="url" rel="index"><span itemprop="name">生活志</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/AutoWorkflow.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="AutoWorkflow.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/AutoWorkflow.html" class="leancloud_visitors" data-flag-title="我常用的自动化流程">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是自动化">什么是自动化</h2>
+<p>日常工作学习中，我们需要使用不同的工具来应对各种各样的任务。比如，用印象笔记收集网页，利用图库管理博客中的图片。但是，由于大部分工具不是同一家公司发布的，彼此之间很难进行简单的协作。如果你有编程能力，可以利用很多工具提供的 API（应用程序接口），让信息在不同的软件中流动。 对于普通人而言，目前市面上也有很多 App 提供这种功能，可以解决少部分的问题。我对这些功能的定义就是自动化流程，通过使用这些功能，可以减少一些重复机械的工作，使我们更好的享受生活。老罗在吹锤子系统时，提到过「One Step」，在我心目中也是自动化的一种。自动化流程指的是我自己在实践中，配置的一些软件使用流程。</p>
+<h2 id="workflow">Workflow</h2>
+<p>Workflow (新手入门请看<a href="https://sspai.com/post/43849" target="_blank" rel="noopener">iOS 效率神器 Workflow 怎么用？跟着这篇入门指南从零开始 | 新手问号</a>）是 iOS 上的一款自动化软件。似乎是去年被苹果收购，现在在 App Store 中可以免费下载。前一段时间的 WWDC 上，也公布了进行版本，能利用 Siri 的「捷径」App。</p>
+<p><img src="media.xiang578.com/15309425389934.jpg"></p>
+<p>在 iPhone 上，我最常用的 workflow 动作是碎片知识摘记，实现利用 iPhone 阅读时，将值得多次阅读的内容，集中保存到印象笔记中。有关这个动作更多的介绍可以查看 <a href="https://sspai.com/post/35281" target="_blank" rel="noopener">Workflow + 印象笔记，定制高效碎片知识管理工作流 | Matrix 精选 - 少数派</a>。</p>
+<p>《奇特的一生》在时间管理领域如雷贯耳，很多人都按照柳比歇夫的那种方法进行时间。如果你希望可以使用 Workflow 来记录时间，可以进一步阅读少数派中 <a href="https://sspai.com/post/44579" target="_blank" rel="noopener">想学柳比歇夫？用这个Workflow来帮你一把</a>。</p>
+<p>最后，授人以鱼不如授人以渔，少数派的 <a href="http://workflow.sspai.com/#/main/workflow" target="_blank" rel="noopener">Workflow Gallery</a> 提供很多相关的工作下载，可以自行前往挑选。</p>
+<h2 id="aflred">Aflred</h2>
+<p>Aflred 是 Mac 上的一款效率工具。之前我在自己的博客中也有分享过，<a href="https://xiang578.com/2017/07/02/alfred-lists/">Alfred 使用记录 - RyenX</a>。这里，我就补充介绍几个自己目前在用的功能。</p>
+<p>由于我平时是使用 Markdown 进行写作的，难免会遇到需要插入很多链接的时候，比如现在正在写的这一篇文章。Afled 中有一个 workflows 「<a href="https://github.com/fallroot/copy-url-for-alfred" target="_blank" rel="noopener">fallroot/copy-url-for-alfred</a>」，通过这个动作可以将 Chrome 或者 Safari 中的当前正在浏览的网页的标题以及网址以 Anchor 、URL、Title、Markdown 等多种形式复制到当前的输入框或者是剪贴板。 <img src="media.xiang578.com/15309430608042.png"> <a href="https://github.com/ngreenstein/alfred-process-killer" target="_blank" rel="noopener">ngreenstein/alfred-process-killer: An Alfred 2 workflow that makes it easy to kill misbehaving processes. It is, in essence, a way to easily find processes by name and kill them using <code>kill -9</code>.</a>：快速结束 Mac 中的某些进程。 <img src="media.xiang578.com/15309434519054.jpg" alt="-w607"></p>
+<h2 id="ifttt">IFTTT</h2>
+<p>Workflow 和 Aflred 需要在自己的 iPhone 或者 Mac 上才可以运行，说起来多少还有些不自动。我经常使用的另外一个自动化服务「<a href="https://ifttt.com/" target="_blank" rel="noopener">IFTTT</a>」就可以解决这个问题。IFTTT 是什么？它是英文 <strong>IF This Then That</strong> 的首字母缩写，它是一个提供自动化服务的网站。它的功能可以从字面猜测出来大概，完整地解释是「如果A完成事件1，那么就让B完成事件2」。简单来说，你可以通过设置一些规则，让它帮你自动完成一些重复工作。比如设置规则实现当你发布一条微博后，IFTTT 自动将微博同步到印象笔记中。所以，IFTTT 对我的意义是将不同的应用连接在了一下，方便我造各种工作流。</p>
+<p><img src="media.xiang578.com/15309318778409.png"></p>
+<p>与上面的形式相同，继续介绍一下我目前在使用的规则。</p>
+<h3 id="碎片阅读">碎片阅读</h3>
+<p>互联网的发展，使每个人有更多表达自己的机会，越来越多的人开始通过文字展示自己。碎片阅读指的正是阅读这些散落在不同平台上的文章。对于我而言，一般是先将在网上看到的想要阅读的文章放到稍后读软件 <a href="https://getpocket.com/" target="_blank" rel="noopener">Pocket</a> 中。之后在自己空闲时，打开 Pocket 网站阅读。比起直接阅读这样的好处有二： 1. 不是每一个网站或者平台都有良好的阅读环境，比如很多广告、字体字号。 2. Pocket 提供丰富的 API 接口，通过 IFTTT 可以很好的和 Evernote、Airtable 等软件写作。</p>
+<p><a href="https://ifttt.com/applets/79292089d-if-new-favorite-item-then-append-to-a-note-in-evernote" target="_blank" rel="noopener">If New favorite item, then Append to a note in Evernote - IFTTT</a>：古语「不动笔墨不读书」，很多文章有值得记录地方，而且也希望可以将自己所做的笔记集中在一处。针对这个问题，很多人会复杂，并且再粘贴到某一个文档中。这种方法做起来简单粗暴，却打断了阅读的连续性。通过我这个动作，可以将在 Pocket 中高亮的句子，直接添加到印象笔记的一条特定笔记中。</p>
+<figure>
+<img src="media.xiang578.com/15309335067450.jpg" alt="印象笔记中效果"><figcaption>印象笔记中效果</figcaption>
+</figure>
+<p><a href="https://ifttt.com/applets/75619425d-if-item-archived-then-create-record-in-airtable" target="_blank" rel="noopener">If item archived , then create record in airtable</a>：这一个动作是实现阅读数据的统计，当我在 Pocket 中归档一篇文章之后，会在 Airatble 指定的表单里添加一条相关的阅读记录。</p>
+<figure>
+<img src="media.xiang578.com/15309336298823.jpg" alt="Airtable record"><figcaption>Airtable record</figcaption>
+</figure>
+<h3 id="任务管理">任务管理</h3>
+<ul>
+<li><a href="https://ifttt.com/applets/75605766d-github-issues-assigned-to-me-todoist" target="_blank" rel="noopener">Github issues assigned to me Todoist</a>：这个规则可以实现，在 Github 中有人分配给我 issue 时，自动在 Todoist 中创建相关任务。</li>
+<li><a href="https://ifttt.com/applets/75612887d-log-completed-todoist-tasks-to-airtable" target="_blank" rel="noopener">Log completed Todoist Tasks to Airtable</a>：记录所有完成的任务到 Airtable 中。</li>
+<li><a href="https://ifttt.com/applets/75612567d-if-todoist-task-with-label-is-completed-create-new-task" target="_blank" rel="noopener">If Todoist task with label is completed, create new task - IFTTT</a>：实现 Todoist 中的任务循环。</li>
+</ul>
+<h3 id="创意">创意</h3>
+<p>IFTTT 中有一个与 RSS 相关的触发器，而且如下图所示，提供了对文章进行关键字匹配的选项。 <img src="media.xiang578.com/15309338021730.jpg" alt="IFTTT RSS"></p>
+<p>前一阵子是 618 年中大促，正好我想购买一个 QC35 的耳机。为了追求优惠，大部分人会不停的查看想购买商品的页面，看看有没有什么新的变化。而我利用 IFTTT 搞了一个监控 QC35 全网优惠的监控。具体思路如下：什么值得买中有一个<a href="https://www.smzdm.com/jingxuan/" target="_blank" rel="noopener">精选好价</a>的频道，很多人会在上面爆料商品的优惠信息。幸运的是，这个频道提供 RSS 订阅链接。所以，配合上面提到的 RSS 相关触发器，我写了 <a href="https://ifttt.com/applets/75671738d-if-new-feed-item-matches-qc35-from-http-faxian-smzdm-com-feed-then-send-me-an-email-at-xiang578-foxmail-com" target="_blank" rel="noopener">If new feed item matches 'qc35' from http://faxian.smzdm.com/feed, then send me an email at xiang578@foxmail.com - IFTTT</a> 以及 <a href="https://ifttt.com/applets/75621100d-if-new-feed-item-matches-qc35-from-http-feed-smzdm-com-then-send-me-an-email-at-xiang578-foxmail-com" target="_blank" rel="noopener">If new feed item matches 'QC35' from http://feed.smzdm.com, then send me an email at xiang578@foxmail.com - IFTTT</a> 两个规则。从而实现，有人爆料 QC35 相关的价格优惠时，我会收到一条由 IFTTT 发送的邮件。</p>
+<figure>
+<img src="media.xiang578.com/15309346475002.jpg" alt="qc"><figcaption>qc</figcaption>
+</figure>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://sspai.com/post/43731" target="_blank" rel="noopener">玩转 IFTTT，互联网自动化也可以很简单 - 少数派</a></li>
+</ul>
+<h2 id="changelog">Changelog</h2>
+<ul>
+<li>20180707：完成初稿</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/workflow/" rel="tag"># workflow</a>
+          
+            <a href="/tags/alfred/" rel="tag"># alfred</a>
+          
+            <a href="/tags/ifttt/" rel="tag"># ifttt</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/WeekIssue6.html" rel="next" title="每周分享第 6 期">
+                <i class="fa fa-chevron-left"></i> 每周分享第 6 期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/WeekIssue7.html" rel="prev" title="每周分享第 7 期">
+                每周分享第 7 期 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">RyenX</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">53</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xiang578" title="GitHub &rarr; https://github.com/xiang578" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:i@xiang578.com" title="E-Mail &rarr; mailto:i@xiang578.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是自动化"><span class="nav-number">1.</span> <span class="nav-text">什么是自动化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#workflow"><span class="nav-number">2.</span> <span class="nav-text">Workflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aflred"><span class="nav-number">3.</span> <span class="nav-text">Aflred</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ifttt"><span class="nav-number">4.</span> <span class="nav-text">IFTTT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#碎片阅读"><span class="nav-number">4.1.</span> <span class="nav-text">碎片阅读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务管理"><span class="nav-number">4.2.</span> <span class="nav-text">任务管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创意"><span class="nav-number">4.3.</span> <span class="nav-text">创意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#changelog"><span class="nav-number">6.</span> <span class="nav-text">Changelog</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-RyenX"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RyenX</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script id="dsq-count-scr" src="https://xiang578.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://xiang578.com/AutoWorkflow.html";
+    this.page.identifier = "AutoWorkflow.html";
+    this.page.title = '我常用的自动化流程';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://xiang578.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/algolia-search.js?v=7.1.1"></script>
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
+                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+</body>
+</html>
