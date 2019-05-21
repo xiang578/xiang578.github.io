@@ -100,19 +100,23 @@
 
 
 
-  <meta name="description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。  卡片写作 熊猫慢递 上周《纪实72小时》，北京熊猫慢递。写给未来的一封这个概念很早就接触过，自己之前也尝试写过。再看那封信会有一些伤心，辜负了过去努力的自己。有一段时间为了使自己在考试时集中注意力，都会在试卷写上一句，不要辜负过去点点滴滴的努力。有机会，就去这个熊猫慢递写给两年后的自己一封信。 文章  细枝末节都交给 App，我只负责享受">
+  <meta name="description" content="本周有空对博客进行新一轮折腾，现在将这些尝试记下来和大家分享。 1. 主题更新 我在 博客折腾记：使用 Travis CI 自动部署 中提到将主题以 modules 的形式加入主仓库。而且现在使用的主题 git 仓库是我自己 fork 的，也有一些修改。几个天之前，hexo-theme-even 的 master 接受 feat: add LaTeX support by JieJiSS · Pu">
+<meta name="keywords" content="blog,travis,cos">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每周分享第 6 期">
-<meta property="og:url" content="https://xiang578.com/WeekIssue6.html">
+<meta property="og:title" content="博客折腾记：主题更新、迁移博客到腾讯云COS以及解决百度收录">
+<meta property="og:url" content="https://xiang578.com/use-cos-to-store-blog.html">
 <meta property="og:site_name" content="算法花园">
-<meta property="og:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。  卡片写作 熊猫慢递 上周《纪实72小时》，北京熊猫慢递。写给未来的一封这个概念很早就接触过，自己之前也尝试写过。再看那封信会有一些伤心，辜负了过去努力的自己。有一段时间为了使自己在考试时集中注意力，都会在试卷写上一句，不要辜负过去点点滴滴的努力。有机会，就去这个熊猫慢递写给两年后的自己一封信。 文章  细枝末节都交给 App，我只负责享受">
+<meta property="og:description" content="本周有空对博客进行新一轮折腾，现在将这些尝试记下来和大家分享。 1. 主题更新 我在 博客折腾记：使用 Travis CI 自动部署 中提到将主题以 modules 的形式加入主仓库。而且现在使用的主题 git 仓库是我自己 fork 的，也有一些修改。几个天之前，hexo-theme-even 的 master 接受 feat: add LaTeX support by JieJiSS · Pu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://xiang578.com/media.xiang578.com/15307063751497.jpg">
-<meta property="og:updated_time" content="2019-05-21T12:58:29.327Z">
+<meta property="og:image" content="http://media.xiang578.com/15582362469640.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15582366459115.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15582343082714.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15582352091163.jpg">
+<meta property="og:updated_time" content="2019-05-21T14:16:51.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="每周分享第 6 期">
-<meta name="twitter:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。  卡片写作 熊猫慢递 上周《纪实72小时》，北京熊猫慢递。写给未来的一封这个概念很早就接触过，自己之前也尝试写过。再看那封信会有一些伤心，辜负了过去努力的自己。有一段时间为了使自己在考试时集中注意力，都会在试卷写上一句，不要辜负过去点点滴滴的努力。有机会，就去这个熊猫慢递写给两年后的自己一封信。 文章  细枝末节都交给 App，我只负责享受">
-<meta name="twitter:image" content="https://xiang578.com/media.xiang578.com/15307063751497.jpg">
+<meta name="twitter:title" content="博客折腾记：主题更新、迁移博客到腾讯云COS以及解决百度收录">
+<meta name="twitter:description" content="本周有空对博客进行新一轮折腾，现在将这些尝试记下来和大家分享。 1. 主题更新 我在 博客折腾记：使用 Travis CI 自动部署 中提到将主题以 modules 的形式加入主仓库。而且现在使用的主题 git 仓库是我自己 fork 的，也有一些修改。几个天之前，hexo-theme-even 的 master 接受 feat: add LaTeX support by JieJiSS · Pu">
+<meta name="twitter:image" content="http://media.xiang578.com/15582362469640.jpg">
 
 
 
@@ -122,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://xiang578.com/WeekIssue6">
+  <link rel="canonical" href="https://xiang578.com/use-cos-to-store-blog">
 
 
 
@@ -132,7 +136,7 @@
   };
 </script>
 
-  <title>每周分享第 6 期 | 算法花园</title>
+  <title>博客折腾记：主题更新、迁移博客到腾讯云COS以及解决百度收录 | 算法花园</title>
   
 
 
@@ -404,7 +408,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiang578.com/WeekIssue6.html">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/use-cos-to-store-blog.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RyenX">
@@ -421,7 +425,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">每周分享第 6 期
+          <h2 class="post-title" itemprop="name headline">博客折腾记：主题更新、迁移博客到腾讯云COS以及解决百度收录
 
               
             
@@ -447,7 +451,7 @@
                 
               
 
-              <time title="创建时间：2018-07-07 10:06:17" itemprop="dateCreated datePublished" datetime="2018-07-07T10:06:17+08:00">2018-07-07</time>
+              <time title="创建时间：2019-05-19 15:44:09" itemprop="dateCreated datePublished" datetime="2019-05-19T15:44:09+08:00">2019-05-19</time>
             
 
             
@@ -464,7 +468,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-21 20:58:29" itemprop="dateModified" datetime="2019-05-21T20:58:29+08:00">2019-05-21</time>
+                <time title="修改时间：2019-05-21 22:16:51" itemprop="dateModified" datetime="2019-05-21T22:16:51+08:00">2019-05-21</time>
               
             
           </span>
@@ -481,7 +485,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/每周分享/" itemprop="url" rel="index"><span itemprop="name">每周分享</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/站务/" itemprop="url" rel="index"><span itemprop="name">站务</span></a></span>
 
                 
                 
@@ -500,8 +504,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/WeekIssue6.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="WeekIssue6.html" itemprop="commentCount"></span>
+                <a href="/use-cos-to-store-blog.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="use-cos-to-store-blog.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -509,7 +513,7 @@
 
           
           
-            <span id="/WeekIssue6.html" class="leancloud_visitors" data-flag-title="每周分享第 6 期">
+            <span id="/use-cos-to-store-blog.html" class="leancloud_visitors" data-flag-title="博客折腾记：主题更新、迁移博客到腾讯云COS以及解决百度收录">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -540,30 +544,48 @@
       
 
       
-        <blockquote>
-<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。</p>
-</blockquote>
-<h2 id="卡片写作">卡片写作</h2>
-<h3 id="熊猫慢递">熊猫慢递</h3>
-<p>上周《纪实72小时》，北京熊猫慢递。写给未来的一封这个概念很早就接触过，自己之前也尝试写过。再看那封信会有一些伤心，辜负了过去努力的自己。有一段时间为了使自己在考试时集中注意力，都会在试卷写上一句，不要辜负过去点点滴滴的努力。有机会，就去这个熊猫慢递写给两年后的自己一封信。</p>
-<h2 id="文章">文章</h2>
+        <p>本周有空对博客进行新一轮折腾，现在将这些尝试记下来和大家分享。</p>
+<h3 id="主题更新">1. 主题更新</h3>
+<p>我在 <a href="http://xiang578.com/2018/05/28/use-travis-ci-to-auto-update/">博客折腾记：使用 Travis CI 自动部署</a> 中提到将主题以 modules 的形式加入主仓库。而且现在使用的主题 git 仓库是我自己 fork 的，也有一些修改。几个天之前，hexo-theme-even 的 master 接受 <a href="https://github.com/ahonn/hexo-theme-even/pull/236" target="_blank" rel="noopener">feat: add LaTeX support by JieJiSS · Pull Request #236</a> ，完成对 LaTeX 公式的支持。所以，我需要将使用的代码和最新的代码合并。</p>
+<p>这里使用的是 github Pull request 功能。在你自己 fork 的仓库的网页上点击 <code>new pull request</code>，然后按照下图修改。就会生成一个新的 Pull request 。 <img src="http://media.xiang578.com/15582362469640.jpg" alt="-w1009"></p>
+<p>而且，如果你没有修改过原来的代码，PR 能自动合并。不过由于我对代码做了一些修改，会产生一些冲突，需要手动解决冲突（这里推荐使用 VS code）。出现下图的情况即成功合并两个库。 <img src="http://media.xiang578.com/15582366459115.jpg" alt="-w1046"></p>
+<p>完成 PR 后，进入你站点下面的对应主题目录，使用 <code>git checkout master</code> 切换到主题的 master 分支，使用 <code>git pull origin master</code> 拉取最新的代码。回退到站点目录下，利用 <code>git add</code> 更新。</p>
+<h3 id="迁移博客到腾讯云cos">2. 迁移博客到腾讯云COS</h3>
+<p>利用腾讯云存储博客的静态文件，并配合使用 CDN 可以加快国内的访问速度。参考 <a href="https://segmentfault.com/a/1190000018752657?utm_source=tag-newest" target="_blank" rel="noopener">Hexo博客迁移之旅（Coding到腾讯云COS）+ Travis CI持续集成 - 个人文章 - SegmentFault 思否</a> 以及 <a href="https://cloud.tencent.com/developer/article/1185253" target="_blank" rel="noopener">如何在腾讯云COS部署HEXO博客 - 云+社区 - 腾讯云</a> 。</p>
+<p>记录两个我遇到的坑。</p>
+<h4 id="新的域名解析">新的域名解析</h4>
+<p>完成 COS 配置后，需要将博客域名解析到腾讯提供CDN节点上的地址。</p>
+<h4 id="添加持续集成自动发布到costravis-ci">添加持续集成自动发布到COS（Travis CI）</h4>
+<p>为了发布到 COS，站点的 <code>_config.yml</code> 会添加下面的代码。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr"> deploy:</span></span><br><span class="line"><span class="attr">- type:</span> <span class="string">cos</span></span><br><span class="line"><span class="attr">  secretId:</span> <span class="string">XXX_ID</span></span><br><span class="line"><span class="attr">  secretKey:</span> <span class="string">XXX_KEY</span></span><br><span class="line"><span class="attr">  appId:</span> <span class="number">1252086360</span></span><br><span class="line"><span class="attr">  bucket:</span> <span class="string">blog-1252086360</span></span><br><span class="line"><span class="attr">  region:</span> <span class="string">ap-shanghai</span></span><br></pre></td></tr></table></figure>
+<p>其中出现的 secretId 以及 secretKey 是私钥，不要在公开仓库展示。通过Travis-ci 中添加 Environment Variables 解决。</p>
+<p>很多教程里，他们的 <code>_config.yml</code> 不会出现 secretId 和 secretKey 这两行，取而代之的是让你在 <code>.travis.yml</code> 添加几行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">script </span><br><span class="line">- hexo d</span><br><span class="line">env:</span><br><span class="line"> global:</span><br><span class="line">   - secretId: $&#123;secretId&#125; # Environment Variables 中配置</span><br><span class="line">   - secretKey: $&#123;secretKey&#125; # Environment Variables 中配置</span><br></pre></td></tr></table></figure>
+<p>按照这样设置，build 时，出现错误提示如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123; error:</span><br><span class="line">   &#123; Code: &apos;InvalidAccessKeyId&apos;,</span><br><span class="line">     Message: &apos;The access key Id format you provided is invalid.&apos;,</span><br><span class="line">     Resource:</span><br><span class="line">      &apos;blog-1252086360.cos.ap-shanghai.myqcloud.com/2012/01/23/2011/index.html&apos;,</span><br><span class="line">     RequestId: &apos;NWNlMDU3NzlfNWI5ZDA4MDlfNWVlMF81ZWUzNTg=&apos;,</span><br><span class="line">     TraceId:</span><br><span class="line">      &apos;OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OTQyYWVlY2QwZTk2MDVmZDQ3MmI2Y2I4ZmI5ZmM4ODFjMDU3YThkNThjZmQ1NWVkMGY2ZDBiNGM1YTEyNGIzMGM=&apos; &#125;,</span><br><span class="line">  statusCode: 403,</span><br><span class="line">  headers:</span><br><span class="line">   &#123; &apos;content-type&apos;: &apos;application/xml&apos;,</span><br><span class="line">     &apos;content-length&apos;: &apos;513&apos;,</span><br><span class="line">     connection: &apos;keep-alive&apos;,</span><br><span class="line">     date: &apos;Sat, 18 May 2019 19:05:29 GMT&apos;,</span><br><span class="line">     server: &apos;tencent-cos&apos;,</span><br><span class="line">     &apos;x-cos-request-id&apos;: &apos;NWNlMDU3NzlfNWI5ZDA4MDlfNWVlMF81ZWUzNTg=&apos;,</span><br><span class="line">     &apos;x-cos-trace-id&apos;:</span><br><span class="line">      &apos;OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OTQyYWVlY2QwZTk2MDVmZDQ3MmI2Y2I4ZmI5ZmM4ODFjMDU3YThkNThjZmQ1NWVkMGY2ZDBiNGM1YTEyNGIzMGM=&apos; &#125; &#125;</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError: Cannot read property &apos;statusCode&apos; of undefined</span><br><span class="line">    at uploadFileToCOS.catch.then.data (/home/travis/build/xiang578/xiang578.github.io/node_modules/hexo-deployer-cos/lib/deployer.js:42:16)</span><br><span class="line">    at process._tickCallback (internal/process/next_tick.js:68:7)</span><br></pre></td></tr></table></figure>
+<p>出现这个问题是 <code>hexo -d</code> 时，_config.yml 无法获得环境变量 secretId 和 secretKey 的。会导致没有秘钥。</p>
+<p>参考 <a href="https://zhuanlan.zhihu.com/p/37014376" target="_blank" rel="noopener">使用 Travis CI 部署你的 Hexo 博客 - 知乎</a> ，在 .trvis.yml 文件的 <code>hexo d</code> 命令前，加入下面两行即可解决。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- sed -i &quot;s~XXX_ID~$&#123;secretId&#125;~&quot; _config.yml</span><br><span class="line">- sed -i &quot;s~XXX_KEY~$&#123;secretKey&#125;~&quot; _config.yml</span><br></pre></td></tr></table></figure>
+<p>之后build 时，会自动利用环境变量中 secretId 和 secretKey 的值替换 <code>_config.yml</code> 文件缺省的值。</p>
+<p>最后提供我的两份配置文件给大家参考：<a href="https://github.com/xiang578/xiang578.github.io/blob/hexo/_config.yml" target="_blank" rel="noopener">_config.yml</a>、<a href="https://github.com/xiang578/xiang578.github.io/blob/hexo/.travis.yml" target="_blank" rel="noopener">.travis.yml</a>。</p>
+<h3 id="百度收录">3. 百度收录</h3>
+<p>之前，我一直将博客的静态文件存储在 github 的项目中，也使用插件生成 <a href="https://xiang578.com/baidusitemap.xml">baidusitemap</a> 文件。但是由于一些不为人知的秘密，百度的爬虫实际上无法爬取 github 上的资源，导致博客最新的文章没有被收录到百度中。</p>
+<p>而且从百度提供的抓取诊断上来看，配置腾讯云 COS 后，百度的爬虫依然访问的是 github 上的仓库。</p>
+<figure>
+<img src="http://media.xiang578.com/15582343082714.jpg" alt="-w558"><figcaption>-w558</figcaption>
+</figure>
+<p>一顿搜索之后，找到一个主动提交 hexo 博客链接至百度的插件 <a href="https://github.com/huiwang/hexo-baidu-url-submit" target="_blank" rel="noopener">huiwang/hexo-baidu-url-submit</a>。</p>
+<p>参考 <a href="https://hui-wang.info/2016/10/23/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8B%E7%99%BE%E5%BA%A6%E4%B8%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E9%93%BE%E6%8E%A5/" target="_blank" rel="noopener">Hexo插件之百度主动提交链接 | 王辉的博客</a> 以及 <a href="https://www.jianshu.com/p/f37452d4978e" target="_blank" rel="noopener">Hexo百度主动提交链接 - 简书</a> 完成配置。</p>
 <ul>
-<li><a href="http://ifoxfactory.com/2017/01/17/2016-and-My-Digital-Life/" target="_blank" rel="noopener">细枝末节都交给 App，我只负责享受生活 | 2016与我的数字生活 - 沨沄的博客 | FoxGeeker Blog</a>：博主从意识到数字生活开始的一系列改变，文章内容很充实。</li>
-<li><a href="https://zhuanlan.zhihu.com/p/38850313" target="_blank" rel="noopener">LPL心理教练黄菁：“心”备竞赛（上）——RNG的锐变</a>：看了半年多的 LPL，了解一下背后的故事。</li>
-<li><a href="http://ishanshan.top/selfedu/HbOutputOwetoWorkFlowy.html" target="_blank" rel="noopener">卡片助力输入输出，工具我选 WorkFlowy | ishanshan's blog</a>：使用印象笔记之后，创建了很多只有几句话的笔记。这种情况下印象笔记很难管理，需要去寻找另外一个工具，有幸发现 Workflowy 这类大纲软件。</li>
-<li><a href="http://ishanshan.top/selfedu/TipsWeekly.html" target="_blank" rel="noopener">用心写周报的同事，绩效不会太差 | ishanshan's blog</a>：与上一篇文章的作者相同，最近自己也要入职了，拿这一篇文章来参考一下，其实不光工作可以写周报，学习也可以尝试写周报，反思是取得进步的途径。题外话，作者是来自开智学堂的，从我侧面的一些了解，这家公司对于工作规范要求比较高，也可以当成数字生活的参考。</li>
+<li>安装插件 <code>cnpm install hexo-baidu-url-submit --save</code></li>
+<li>修改根目录下面的 <code>config.yml</code> 文件，配置 baidu_url_submit 和 deploy。</li>
 </ul>
-<h2 id="金句">金句</h2>
-<ul>
-<li>哪里会有人喜欢孤独，不过不喜欢失望。（挪威森林）</li>
-<li>感谢大学四年里遇到的所有人，或萍水，或至交；或平平淡淡四年的柴米油盐，或惊鸿一瞥不期的遇见；或心酸的讥讽，不屑的嘲笑；或热情的洋溢，真心的赞美；所有形形色色的人和林林总总的事，无论是相逢于青山绿水还是最终相忘于江湖，感谢你们漫步庭前看花谢，坐卧塔下笑清风。人生匆忙，百年过往，他日相逢，此情莫忘。泛菊杯深，吹梅角远， 同在京城，聚散匆匆， 教人怎不伤情？ 觉几度，魂飞梦惊。 后夜相思，尘随马去，月逐舟行。诸位，一世顺意！</li>
-<li>直到毕业的时候我才明白，当你要致谢的人和环境并没有那么美好时，有些话是无论如何都说不出口的。于是乎，我也使用了前人的套路，留下几句客套话后便匆匆赶往下一站了。</li>
-<li>高考做错的每一道题，都是为了遇见对的人。</li>
-</ul>
-<h2 id="工具">工具</h2>
-<ul>
-<li><code>Mweb 3</code>：是 Mac 上一款专业的 markdown 写作软件。目前，我自己用它来管理平时的卡片写作、机器学习笔记以及博客文章更新。最近，这个软件正在搞首发优惠，比较惊喜得是发现软件中隐藏的沉浸模式。 <img src="media.xiang578.com/15307063751497.jpg" alt="Mweb3"></li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">baidu_url_submit:</span><br><span class="line">  count: 100 ## 比如3，代表提交最新的三个链接</span><br><span class="line">  host: xiang578.com ## 在百度站长平台中注册的域名</span><br><span class="line">  token: your_token ## 请注意这是您的秘钥， 请不要发布在公众仓库里!</span><br><span class="line">  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">- type: cos</span><br><span class="line">  secretId: XXX_ID</span><br><span class="line">  secretKey: XXX_KEY</span><br><span class="line">  appId: 1252086360</span><br><span class="line">  bucket: blog-1252086360</span><br><span class="line">  region: ap-shanghai</span><br><span class="line">- type: baidu_url_submitter</span><br></pre></td></tr></table></figure>
+<p>上面的代码中出现一个 token，由于这是一个私有的，不能出现在 github 公开的仓库中。所以也需要 Travis-ci 中添加 Environment Variables 解决。和前文提到相同，在 <code>.travis.yml</code> 中添加 <code>- sed -i "s~your_token~${BD_TOKEN}~" _config.yml</code> 解决私钥问题。</p>
+<p>最终在 travis-ci 中发现下面的日志即配置成功。另外一点，百度的站长平台的数据不能及时展示我们提交后的结果，需要耐心等待。</p>
+<figure>
+<img src="http://media.xiang578.com/15582352091163.jpg" alt="-w866"><figcaption>-w866</figcaption>
+</figure>
 
       
     </div>
@@ -585,6 +607,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/travis/" rel="tag"># travis</a>
+          
+            <a href="/tags/cos/" rel="tag"># cos</a>
+          
+        </div>
+      
 
       
       
@@ -594,8 +626,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/BlogLog.html" rel="next" title="博客维护日志">
-                <i class="fa fa-chevron-left"></i> 博客维护日志
+              <a href="/alexnet.html" rel="next" title="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)">
+                <i class="fa fa-chevron-left"></i> ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)
               </a>
             
           </div>
@@ -603,10 +635,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/AutoWorkflow.html" rel="prev" title="我常用的自动化流程">
-                我常用的自动化流程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -919,7 +947,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#卡片写作"><span class="nav-number">1.</span> <span class="nav-text">卡片写作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#熊猫慢递"><span class="nav-number">1.1.</span> <span class="nav-text">熊猫慢递</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章"><span class="nav-number">2.</span> <span class="nav-text">文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#金句"><span class="nav-number">3.</span> <span class="nav-text">金句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">4.</span> <span class="nav-text">工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题更新"><span class="nav-number">1.</span> <span class="nav-text">1. 主题更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#迁移博客到腾讯云cos"><span class="nav-number">2.</span> <span class="nav-text">2. 迁移博客到腾讯云COS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新的域名解析"><span class="nav-number">2.1.</span> <span class="nav-text">新的域名解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加持续集成自动发布到costravis-ci"><span class="nav-number">2.2.</span> <span class="nav-text">添加持续集成自动发布到COS（Travis CI）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度收录"><span class="nav-number">3.</span> <span class="nav-text">3. 百度收录</span></a></li></ol></div>
             
 
           </div>
@@ -1104,9 +1132,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://xiang578.com/WeekIssue6.html";
-    this.page.identifier = "WeekIssue6.html";
-    this.page.title = '每周分享第 6 期';
+    this.page.url = "https://xiang578.com/use-cos-to-store-blog.html";
+    this.page.identifier = "use-cos-to-store-blog.html";
+    this.page.title = '博客折腾记：主题更新、迁移博客到腾讯云COS以及解决百度收录';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
