@@ -108,7 +108,7 @@
 <meta property="og:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。  卡片写作 熊猫慢递 上周《纪实72小时》，北京熊猫慢递。写给未来的一封这个概念很早就接触过，自己之前也尝试写过。再看那封信会有一些伤心，辜负了过去努力的自己。有一段时间为了使自己在考试时集中注意力，都会在试卷写上一句，不要辜负过去点点滴滴的努力。有机会，就去这个熊猫慢递写给两年后的自己一封信。 文章  细枝末节都交给 App，我只负责享受">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://xiang578.com/media.xiang578.com/15307063751497.jpg">
-<meta property="og:updated_time" content="2019-05-21T14:16:51.691Z">
+<meta property="og:updated_time" content="2019-05-22T00:14:57.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每周分享第 6 期">
 <meta name="twitter:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。  卡片写作 熊猫慢递 上周《纪实72小时》，北京熊猫慢递。写给未来的一封这个概念很早就接触过，自己之前也尝试写过。再看那封信会有一些伤心，辜负了过去努力的自己。有一段时间为了使自己在考试时集中注意力，都会在试卷写上一句，不要辜负过去点点滴滴的努力。有机会，就去这个熊猫慢递写给两年后的自己一封信。 文章  细枝末节都交给 App，我只负责享受">
@@ -464,7 +464,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-21 22:16:51" itemprop="dateModified" datetime="2019-05-21T22:16:51+08:00">2019-05-21</time>
+                <time title="修改时间：2019-05-22 08:14:57" itemprop="dateModified" datetime="2019-05-22T08:14:57+08:00">2019-05-22</time>
               
             
           </span>
@@ -1145,66 +1145,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

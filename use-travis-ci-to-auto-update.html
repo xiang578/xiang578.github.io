@@ -111,7 +111,7 @@
 <meta property="og:image" content="http://media.xiang578.com/15274940169141.jpg">
 <meta property="og:image" content="http://media.xiang578.com/15274942502764.jpg">
 <meta property="og:image" content="http://media.xiang578.com/15274943487052.jpg">
-<meta property="og:updated_time" content="2019-05-21T14:16:51.691Z">
+<meta property="og:updated_time" content="2019-05-22T00:14:57.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客折腾记：使用 Travis CI 自动部署">
 <meta name="twitter:description" content="前几天，看到其他人在 V2 上讨论利用 Docker 更新 hexo 博客。不过自己对使用 Docker 不是很感兴趣，倒是了解到 Travis CI 的作用。 参考使用 Travis 自动构建 Hexo 到 GitHub | Zthxxx&apos;s Blog和使用travis-ci自动部署Hexo到github和coding - 掘金这两篇文章，完成了博客自动部署的修改，也解决了一些，之前没有在意的问">
@@ -467,7 +467,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-21 22:16:51" itemprop="dateModified" datetime="2019-05-21T22:16:51+08:00">2019-05-21</time>
+                <time title="修改时间：2019-05-22 08:14:57" itemprop="dateModified" datetime="2019-05-22T08:14:57+08:00">2019-05-22</time>
               
             
           </span>
@@ -1116,66 +1116,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

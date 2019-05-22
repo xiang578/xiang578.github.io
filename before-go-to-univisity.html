@@ -109,7 +109,7 @@
 <meta property="og:description" content="几年前读到过，前方纵然山花烂漫,诺是跃不过眼前窄窄的独木桥，就无法扑向那芬芳绽放的原野，眺望美景只能深深叹息。现在，已经过了。 高考前，路是黑的，只有前方亮着一盏灯，于是你只能坚定的朝那个方向走，而高考后，周围忽然亮了，很多条路在你面前，你反而不知道该往哪儿走了。我想起了罗伯特弗罗斯特的《未选择的路the road not taken》,以前是感叹选择的艰难，现在是体验艰难的选择。也只能和他一样选">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://%20media.xiang578.com/15139837811983.jpg">
-<meta property="og:updated_time" content="2019-05-21T14:16:51.683Z">
+<meta property="og:updated_time" content="2019-05-22T00:14:57.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="钱塘江的风">
 <meta name="twitter:description" content="几年前读到过，前方纵然山花烂漫,诺是跃不过眼前窄窄的独木桥，就无法扑向那芬芳绽放的原野，眺望美景只能深深叹息。现在，已经过了。 高考前，路是黑的，只有前方亮着一盏灯，于是你只能坚定的朝那个方向走，而高考后，周围忽然亮了，很多条路在你面前，你反而不知道该往哪儿走了。我想起了罗伯特弗罗斯特的《未选择的路the road not taken》,以前是感叹选择的艰难，现在是体验艰难的选择。也只能和他一样选">
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-21 22:16:51" itemprop="dateModified" datetime="2019-05-21T22:16:51+08:00">2019-05-21</time>
+                <time title="修改时间：2019-05-22 08:14:57" itemprop="dateModified" datetime="2019-05-22T08:14:57+08:00">2019-05-22</time>
               
             
           </span>
@@ -1117,66 +1117,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

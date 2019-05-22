@@ -109,7 +109,7 @@
 <meta property="og:description" content="前几天在刷微博时，突然发现 Checked 休更。蛮震惊的，于是在他下面留了言。  后来仔细一想，接触播客也快四年多了。刚开始疯狂地时候，走路的时候也带着耳机在听。不过现在胆子越来越小，主要在跑步的时候通过无线耳机收听节目。四年多的时间里面，有播客听过，有播客开始，也有些播客半死不活。正好借这个机会分享一下我听过的播客。 播客是什么？其实有两种解释：一是一种数字广播，制作方将节目以音频的形式放在指">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://%20media.xiang578.com/15283538399580.jpg">
-<meta property="og:updated_time" content="2019-05-21T14:16:51.691Z">
+<meta property="og:updated_time" content="2019-05-22T00:14:57.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="那些年听过的播客">
 <meta name="twitter:description" content="前几天在刷微博时，突然发现 Checked 休更。蛮震惊的，于是在他下面留了言。  后来仔细一想，接触播客也快四年多了。刚开始疯狂地时候，走路的时候也带着耳机在听。不过现在胆子越来越小，主要在跑步的时候通过无线耳机收听节目。四年多的时间里面，有播客听过，有播客开始，也有些播客半死不活。正好借这个机会分享一下我听过的播客。 播客是什么？其实有两种解释：一是一种数字广播，制作方将节目以音频的形式放在指">
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-21 22:16:51" itemprop="dateModified" datetime="2019-05-21T22:16:51+08:00">2019-05-21</time>
+                <time title="修改时间：2019-05-22 08:14:57" itemprop="dateModified" datetime="2019-05-22T08:14:57+08:00">2019-05-22</time>
               
             
           </span>
@@ -1156,66 +1156,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .done(function() {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.time + 1);
-              })
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

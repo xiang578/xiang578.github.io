@@ -1,5 +1,3 @@
-[![TODO board](https://imdone.io/api/1.0/projects/5bac17629d45e3257f534fe1/badge)](https://imdone.io/app#/board/xiang578/xiang578.github.io)
-
 <h1 align="center">
 <a href="https://github.com/xiang578/xiang578.github.io/issues">Issues Life· xiang578/xiang578.github.io</a>
 <h5 align="center", style="color, #666">
