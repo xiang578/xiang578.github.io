@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8">
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="xf6fMthFjE">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="之前一周，都在接受公司的项目开发培训，了解公司的项目开发全流程。其中有一点是服务的稳定性。不知道为什么，前几天自己的博客崩溃了，输入域名只能看到 404 页面。当时以为是 Travis CI 的原因，所以进行了全面的一次排查。最终发现问题在 Github Pages 的 Custom domain 上。具体的问题表现是：通过 Travis CI 推送博客静态文件到仓库中的 master 后，下图框">
+<meta name="keywords" content="blog,hexo,github,travisci">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客折腾记：使用 Travis CI 自动部署博客">
+<meta property="og:url" content="https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="之前一周，都在接受公司的项目开发培训，了解公司的项目开发全流程。其中有一点是服务的稳定性。不知道为什么，前几天自己的博客崩溃了，输入域名只能看到 404 页面。当时以为是 Travis CI 的原因，所以进行了全面的一次排查。最终发现问题在 Github Pages 的 Custom domain 上。具体的问题表现是：通过 Travis CI 推送博客静态文件到仓库中的 master 后，下图框">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://media.xiang578.com/15358143289885.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15359362837525.jpg">
+<meta property="og:updated_time" content="2019-05-23T01:37:34.586Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博客折腾记：使用 Travis CI 自动部署博客">
+<meta name="twitter:description" content="之前一周，都在接受公司的项目开发培训，了解公司的项目开发全流程。其中有一点是服务的稳定性。不知道为什么，前几天自己的博客崩溃了，输入域名只能看到 404 页面。当时以为是 Travis CI 的原因，所以进行了全面的一次排查。最终发现问题在 Github Pages 的 Custom domain 上。具体的问题表现是：通过 Travis CI 推送博客静态文件到仓库中的 master 后，下图框">
+<meta name="twitter:image" content="http://media.xiang578.com/15358143289885.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://xiang578.com/post/use-travis-ci-to-auto-build-blog">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>博客折腾记：使用 Travis CI 自动部署博客 | 算法花园</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">算法花园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+
+    
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tech">
+
+    
+    
+    
+
+    
+
+    <a href="/tech/" rel="section">技术</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+
+    
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+
+    
+
+    <a href="/categories/" rel="section">分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/xiang578" class="github-corner" title="Find me on GitHub" aria-label="Find me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RyenX">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">博客折腾记：使用 Travis CI 自动部署博客
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-04 07:05:50" itemprop="dateCreated datePublished" datetime="2018-09-04T07:05:50+08:00">2018-09-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-23 09:37:34" itemprop="dateModified" datetime="2019-05-23T09:37:34+08:00">2019-05-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/站务/" itemprop="url" rel="index"><span itemprop="name">站务</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/post/use-travis-ci-to-auto-build-blog.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/use-travis-ci-to-auto-build-blog.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/post/use-travis-ci-to-auto-build-blog.html" class="leancloud_visitors" data-flag-title="博客折腾记：使用 Travis CI 自动部署博客">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前一周，都在接受公司的项目开发培训，了解公司的项目开发全流程。其中有一点是服务的稳定性。不知道为什么，前几天自己的博客崩溃了，输入域名只能看到 404 页面。当时以为是 Travis CI 的原因，所以进行了全面的一次排查。最终发现问题在 Github Pages 的 Custom domain 上。具体的问题表现是：通过 Travis CI 推送博客静态文件到仓库中的 master 后，下图框中的域名就会变成空的，导致无法访问。解决方法也很简单，在源文件的 source 目录下创建一个 CNAME 文件，写上你自己的域名。</p>
+<figure>
+<img src="http://media.xiang578.com/15358143289885.jpg" alt="-w768"><figcaption>-w768</figcaption>
+</figure>
+<h2 id="travis-ci">Travis CI</h2>
+<p>其实看一眼就应该知道，我的博客是基于 hexo 搭建的，文件托管在 github 仓库中。不过，按照之前的设想博客应该在 Coding 中也有一份备份。后来由于一些原因，在利用 hexo 生成静态文件之后，自动推送到 Coding 上的命令不起作用。自己也没有时间去排查问题，所以最近访问速度有点慢。</p>
+<p>传统的 hexo 博客更新过程是：在完成写作之后，利用命令行调用 <code>hexo g &amp;&amp; hexo d</code> 来生成静态博客文件以及并推送到远端的仓库中。这种方法会产生三个痛点： 1. 每一次修改源文件后都需要重新生成一边静态文件，当大量修改时，步骤就变得繁琐且无趣。 2. 生成文件依赖电脑中的 hexo 和 node.js 环境，不方便在外出时临时写或修改博客。 3. 博客源文件没有自动的备份功能，不符合安全原则。</p>
+<p>Travis CI 是一种持续集成开发所使用的工具，在写作过程中引入他可以解决上面我提到的痛点。Travis CI 具体的含义我也不是很清楚，直接介绍我是怎么使用的。和大部分人一样，这个博客的静态文件保存在 github 的 xiang578.github.io 仓库 master 分支中。但是，我还创建了一个新的分支 hexo，用来保存博客源文件。每一次修改博客源文件之后，我不在本地生成静态文件，而是利用 git 命令，将所有的修改内容推送到仓库中的 hexo 分支。Travis CI 服务监听到新的 push 时，会根据你的配置将 git 仓库拉倒他的服务器上，编译源文件成为静态文件，并推送生成的文件到指定仓库的指定分支中。而且，如果编译静态文件失败，他也会通过邮件通知你结果。</p>
+<figure>
+<img src="http://media.xiang578.com/15359362837525.jpg" alt="编译成功截图"><figcaption>编译成功截图</figcaption>
+</figure>
+<h2 id="流程">流程</h2>
+<ol type="1">
+<li>将 github 上存放静态博客源文件的仓库拉下来，利用 <code>git checkout -b hexo</code> 创建并进入新的分支，删除分支内所有的文件。</li>
+<li>将博客源文件复制到第一步中的文件夹中。</li>
+<li>添加一个 <code>.travis.yml</code> 文件，文件内容可以参考下一节 Travis-ci 配置文件。</li>
+<li>https://travis-ci.org/ 提供免费的持续集成服务，可以通过 github 登入，直接选择需要管理相关的项目。</li>
+<li>第一次将源文件上传到 github 时，可能会遇到问题。因为 themes/xxx 文件夹也是一个git仓库。可以利用 <code>git submodule add</code> 命令添加一个依赖，来解决这 个问题。</li>
+</ol>
+<h2 id="travis-ci-配置文件">Travis-ci 配置文件</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">- 9.11.1</span><br><span class="line">cache:</span><br><span class="line">  directories:</span><br><span class="line">  - node_modules</span><br><span class="line">before_install:</span><br><span class="line">- export TZ=&apos;Asia/Shanghai&apos;</span><br><span class="line">- npm install hexo-cli -g</span><br><span class="line">install:</span><br><span class="line">- npm install</span><br><span class="line">script:</span><br><span class="line">- hexo clean</span><br><span class="line">- hexo generate</span><br><span class="line">after_script:</span><br><span class="line">  -  git clone https://$&#123;GH_REF&#125; .deploy_git  # GH_REF是最下面配置的仓库地址</span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ../</span><br><span class="line">  - mv .deploy_git/.git/ ./public/ </span><br><span class="line">  - cd ./public</span><br><span class="line">  - git config user.name &quot;xiang578&quot;</span><br><span class="line">  - git config user.email &quot;xiang578@foxmail.com&quot;</span><br><span class="line">  - git add .</span><br><span class="line">  # - git commit -m &quot;Deploy at $(date +&quot;%Y-%m-%d %T&quot;)&quot;</span><br><span class="line">  - git commit -m &quot;Travis CI Auto Builder at `date +&quot;%Y-%m-%d %H:%M&quot;`&quot;</span><br><span class="line">  # Github Pages</span><br><span class="line">  - git push --force --quiet &quot;https://$&#123;CI_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:master </span><br><span class="line">  # Coding Pages</span><br><span class="line">  # - git push --force --quiet &quot;https://xiang578:$&#123;Coding_TOKEN&#125;@$&#123;CO_REF&#125;&quot; master:master</span><br><span class="line"></span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">  - hexo</span><br><span class="line"></span><br><span class="line">env:</span><br><span class="line"> global:</span><br><span class="line">   # Github Pages</span><br><span class="line">   - GH_REF: github.com/xiang578/xiang578.github.io</span><br><span class="line">   # Coding Pages</span><br><span class="line">   # - CO_REF: git.coding.net/xiang578/xiang578.git</span><br></pre></td></tr></table></figure>
+<h2 id="hexo-两个错误">hexo 两个错误</h2>
+<p>在这一次的过程中，又遇到了两个本地编译 hexo 的错误，一同记录一下。错误表现如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-sass</span><br><span class="line">Error: Cannot find module 'node-sass'</span><br><span class="line">    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)</span><br><span class="line">    at Function.Module._load (internal/modules/cjs/loader.js:507:25)</span><br><span class="line">    at Module.require (internal/modules/cjs/loader.js:637:17)</span><br><span class="line">    at require (internal/modules/cjs/helpers.js:20:18)</span><br><span class="line">    at Object.&lt;anonymous&gt; (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo-renderer-sass/lib/renderer.js:4:12)</span><br><span class="line">    at Module._compile (internal/modules/cjs/loader.js:689:30)</span><br><span class="line">    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)</span><br><span class="line">    at Module.load (internal/modules/cjs/loader.js:599:32)</span><br><span class="line">    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)</span><br><span class="line">    at Function.Module._load (internal/modules/cjs/loader.js:530:3)</span><br><span class="line">    at Module.require (internal/modules/cjs/loader.js:637:17)</span><br><span class="line">    at require (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo/lib/hexo/index.js:219:21)</span><br><span class="line">    at /Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo-renderer-sass/index.js:4:20</span><br><span class="line">    at fs.readFile.then.script (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo/lib/hexo/index.js:232:12)</span><br><span class="line">    at tryCatcher (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:512:31)</span><br><span class="line">    at Promise._settlePromise (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:569:18)</span><br><span class="line">    at Promise._settlePromise0 (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:614:10)</span><br><span class="line">    at Promise._settlePromises (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:693:18)</span><br><span class="line">    at Promise._fulfill (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:638:18)</span><br><span class="line">    at Promise._resolveCallback (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:432:57)</span><br><span class="line">    at Promise._settlePromiseFromHandler (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:524:17)</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-scss</span><br><span class="line">Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)</span><br><span class="line">For more information on which environments are supported please see:</span><br><span class="line">https://github.com/sass/node-sass/releases/tag/v4.8.3</span><br><span class="line">    at module.exports (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo-renderer-scss/node_modules/node-sass/lib/binding.js:13:13)</span><br><span class="line">    at Object.&lt;anonymous&gt; (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo-renderer-scss/node_modules/node-sass/lib/index.js:14:35)</span><br><span class="line">    at Module._compile (internal/modules/cjs/loader.js:689:30)</span><br><span class="line">    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)</span><br><span class="line">    at Module.load (internal/modules/cjs/loader.js:599:32)</span><br><span class="line">    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)</span><br><span class="line">    at Function.Module._load (internal/modules/cjs/loader.js:530:3)</span><br><span class="line">    at Module.require (internal/modules/cjs/loader.js:637:17)</span><br><span class="line">    at require (internal/modules/cjs/helpers.js:20:18)</span><br><span class="line">    at Object.&lt;anonymous&gt; (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo-renderer-scss/lib/renderer.js:1:76)</span><br><span class="line">    at Module._compile (internal/modules/cjs/loader.js:689:30)</span><br><span class="line">    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)</span><br><span class="line">    at Module.load (internal/modules/cjs/loader.js:599:32)</span><br><span class="line">    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)</span><br><span class="line">    at Function.Module._load (internal/modules/cjs/loader.js:530:3)</span><br><span class="line">    at Module.require (internal/modules/cjs/loader.js:637:17)</span><br><span class="line">    at require (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo/lib/hexo/index.js:219:21)</span><br><span class="line">    at /Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo-renderer-scss/index.js:1:81</span><br><span class="line">    at fs.readFile.then.script (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/hexo/lib/hexo/index.js:232:12)</span><br><span class="line">    at tryCatcher (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:512:31)</span><br><span class="line">    at Promise._settlePromise (/Users/didi/Documents/Personal/xiang578.github.io/node_modules/bluebird/js/release/promise.js:569:18)</span><br></pre></td></tr></table></figure>
+<p>大概总结是下载两个插件时，出现错误。网上的建议是修改 npm 的源地址为淘宝的镜像，并且重新下载这两个包。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm install hexo-renderer-sass --save</span><br><span class="line">npm install hexo-renderer-scss --save</span><br></pre></td></tr></table></figure>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://blog.csdn.net/qq_23079443/article/details/79015225" target="_blank" rel="noopener">用TravisCI持续集成自动部署Hexo博客的个人实践 - CSDN博客</a></li>
+<li><a href="https://segmentfault.com/a/1190000009928515" target="_blank" rel="noopener">关于 git-submodule 的一些基本操作 - 个人文章 - SegmentFault 思否</a></li>
+<li><a href="https://www.v2ex.com/t/260832" target="_blank" rel="noopener">安装 npm install hexo-renderer-sass --save 出错，有什么办法没 - V2EX</a></li>
+<li><a href="https://blog.csdn.net/xs20691718/article/details/81873921" target="_blank" rel="noopener">hexo 发布之后 gitpage 自定义域名失效 - CSDN博客</a></li>
+</ul>
+<h2 id="changelog">ChangeLog</h2>
+<ul>
+<li>180904：完成初稿</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+            <a href="/tags/travisci/" rel="tag"># travisci</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/week-issue-10.html" rel="next" title="每周分享第 10 期">
+                <i class="fa fa-chevron-left"></i> 每周分享第 10 期
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/ImportanceOffont.html" rel="prev" title="字体的重要性">
+                字体的重要性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">RyenX</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">71</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">53</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xiang578" title="GitHub &rarr; https://github.com/xiang578" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:i@xiang578.com" title="E-Mail &rarr; mailto:i@xiang578.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#travis-ci"><span class="nav-number">1.</span> <span class="nav-text">Travis CI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程"><span class="nav-number">2.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#travis-ci-配置文件"><span class="nav-number">3.</span> <span class="nav-text">Travis-ci 配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-两个错误"><span class="nav-number">4.</span> <span class="nav-text">hexo 两个错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#changelog"><span class="nav-number">6.</span> <span class="nav-text">ChangeLog</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-RyenX"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RyenX</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script id="dsq-count-scr" src="https://xiang578.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html";
+    this.page.identifier = "post/use-travis-ci-to-auto-build-blog.html";
+    this.page.title = '博客折腾记：使用 Travis CI 自动部署博客';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://xiang578.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/algolia-search.js?v=7.1.1"></script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+</body>
+</html>
