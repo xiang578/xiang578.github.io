@@ -1,9 +1,12 @@
-title: System.out.println("hello world!");
+title: hello world!
 date: 2015-08-06 20:58:27
 tags: [blog,life]
 categories: 程序园
 ---
 
+由于与 hexo-leancloud-counter-security 软件冲突，将标题从 `System.out.println("hello world!");` 修改成 `hello world!`。具体问题分析见 
+
+---
 除去前几篇为了测试hexo博客的各项功能所发的博文，这是为新博客所写的第一篇文章。标题取自刚开始学习编程语言时输出的字符串，"hello world！" 。
 
 之前，在QQ空间、博客园、csdn上都开过博客，但是结果都不尽如人意。毕竟免费用人家的东西，也不能奢求什么都朝着自己的意愿改变，情怀本身就敌不过他们的kpi。除此之外，也可以自己购买服务器和域名架设博客。可受限于现阶段经济实力，上面的方法也无法实现。所幸github+hexo架设博客的方式，给了我创造一片自由空间的机会。
