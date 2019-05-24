@@ -109,7 +109,7 @@
 <meta property="og:description" content="前一段时间作息混乱，晚上躺在床上睡不着，然后玩手机，导致更加睡不着。第二天下午又很困，只好趴着睡一会儿。从而导致晚上睡不着又玩手机的恶性循环。当时一度觉得自己都不能从这个圈里面走出来了。不过，想起来之前在少数派看到过一篇文章，推荐过一本和睡眠相关的书——睡眠革命，抱着死马当活马医的心态看了一下。 书中作者主要介绍昼夜节律、睡眠类型、睡眠周期、睡前醒后、日间小睡、睡眠环境等多个方面的内容，我将自己在">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://xiang578.com/post/media.xiang578.com/15321615677483.jpg">
-<meta property="og:updated_time" content="2019-05-24T17:18:07.461Z">
+<meta property="og:updated_time" content="2019-05-24T17:29:35.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="月读 | 睡眠革命">
 <meta name="twitter:description" content="前一段时间作息混乱，晚上躺在床上睡不着，然后玩手机，导致更加睡不着。第二天下午又很困，只好趴着睡一会儿。从而导致晚上睡不着又玩手机的恶性循环。当时一度觉得自己都不能从这个圈里面走出来了。不过，想起来之前在少数派看到过一篇文章，推荐过一本和睡眠相关的书——睡眠革命，抱着死马当活马医的心态看了一下。 书中作者主要介绍昼夜节律、睡眠类型、睡眠周期、睡前醒后、日间小睡、睡眠环境等多个方面的内容，我将自己在">
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-25 01:18:07" itemprop="dateModified" datetime="2019-05-25T01:18:07+08:00">2019-05-25</time>
+                <time title="修改时间：2019-05-25 01:29:35" itemprop="dateModified" datetime="2019-05-25T01:29:35+08:00">2019-05-25</time>
               
             
           </span>
@@ -1168,6 +1168,64 @@
 
 
   
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
+                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
 
   
 

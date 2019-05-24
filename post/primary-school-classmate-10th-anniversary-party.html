@@ -118,7 +118,7 @@
 <meta property="og:image" content="http://%20media.xiang578.com/WechatIMG18.jpeg">
 <meta property="og:image" content="http://%20media.xiang578.com/WechatIMG27.jpeg">
 <meta property="og:image" content="http://%20media.xiang578.com/IMG_0233.JPG">
-<meta property="og:updated_time" content="2019-05-24T17:18:07.473Z">
+<meta property="og:updated_time" content="2019-05-24T17:29:35.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小学十周年同学聚会">
 <meta name="twitter:description" content="不知不觉中，小学毕业快要十年了（2008-2018）。前几个月，就有同学开始策划组织聚会。就这样把我的思绪拉回十年前的。  学校校门  看上面的图可以知道，学校的名字叫做——晓村小学。值得注意地是，晓村不是地名。根据一般的套路，这样取名都是有故事的。查阅百科可以看到下面的介绍：「晓村小学位于沿海的椒北平原，创办于1929年2月26日，当年，中共地下党员、著名教育家林迪生、地下党的外围组织—“乙丑读">
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-25 01:18:07" itemprop="dateModified" datetime="2019-05-25T01:18:07+08:00">2019-05-25</time>
+                <time title="修改时间：2019-05-25 01:29:35" itemprop="dateModified" datetime="2019-05-25T01:29:35+08:00">2019-05-25</time>
               
             
           </span>
@@ -1160,6 +1160,64 @@
 
 
   
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
+                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
 
   
 

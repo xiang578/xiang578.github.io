@@ -114,7 +114,7 @@
 <meta property="og:image" content="http://%20media.xiang578.com/15202391269270.jpg">
 <meta property="og:image" content="http://%20media.xiang578.com/15202392024378.jpg">
 <meta property="og:image" content="http://%20media.xiang578.com/IMG_0233.JPG">
-<meta property="og:updated_time" content="2019-05-24T17:18:07.461Z">
+<meta property="og:updated_time" content="2019-05-24T17:29:35.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决 OmniFocus 中 Applescrpit 脚本输出文件中文乱码问题">
 <meta name="twitter:description" content="在学习OmniFocus 入门与进阶 - 少数派教程中，了解到了一个 Applescript 脚本 Weekly project report generator（周报生成器）。这个脚本可以将 OmniFocus 中前七天活跃的项目以及完成的动作导出成为一个.md文件。这样子，可以大大减轻周回顾时回忆本周完成任务的压力，也可以将生成的文本粘贴到周报中使用。 但是当我第一次运行这个脚本时，生成的文件">
@@ -470,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-25 01:18:07" itemprop="dateModified" datetime="2019-05-25T01:18:07+08:00">2019-05-25</time>
+                <time title="修改时间：2019-05-25 01:29:35" itemprop="dateModified" datetime="2019-05-25T01:29:35+08:00">2019-05-25</time>
               
             
           </span>
@@ -1135,6 +1135,64 @@
 
 
   
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
+                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
 
   
 

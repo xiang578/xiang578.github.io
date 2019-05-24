@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://xiang578.com/post/media.xiang578.com/15309336298823.jpg">
 <meta property="og:image" content="https://xiang578.com/post/media.xiang578.com/15309338021730.jpg">
 <meta property="og:image" content="https://xiang578.com/post/media.xiang578.com/15309346475002.jpg">
-<meta property="og:updated_time" content="2019-05-24T17:18:07.461Z">
+<meta property="og:updated_time" content="2019-05-24T17:29:35.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我常用的自动化流程">
 <meta name="twitter:description" content="什么是自动化 日常工作学习中，我们需要使用不同的工具来应对各种各样的任务。比如，用印象笔记收集网页，利用图库管理博客中的图片。但是，由于大部分工具不是同一家公司发布的，彼此之间很难进行简单的协作。如果你有编程能力，可以利用很多工具提供的 API（应用程序接口），让信息在不同的软件中流动。 对于普通人而言，目前市面上也有很多 App 提供这种功能，可以解决少部分的问题。我对这些功能的定义就是自动化流">
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-25 01:18:07" itemprop="dateModified" datetime="2019-05-25T01:18:07+08:00">2019-05-25</time>
+                <time title="修改时间：2019-05-25 01:29:35" itemprop="dateModified" datetime="2019-05-25T01:29:35+08:00">2019-05-25</time>
               
             
           </span>
@@ -1184,6 +1184,64 @@
 
 
   
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
+                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
 
   
 

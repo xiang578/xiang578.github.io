@@ -109,7 +109,7 @@
 <meta property="og:description" content="几天前在手机上使用为知笔记时，发现已经完成创建1000条笔记的成就。记不太清楚这个账号是什么时候开始使用的，但是笔记的数量确实吓自己跳。原来已经这么多了，说句实话，很多内容也只是简单的收藏了一下，之后都再没有碰过，而且自己的笔记本分类很混乱，借这个机会准备重构笔记本系统。 知乎上面关于笔记本系统或者体系的讨论有很多，之前就是参考相关回答的，但都没有坚持搞下去。所以，这次的重构我找的是其他的参考资料">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://%20media.xiang578.com/笔记本系统v1.1.png">
-<meta property="og:updated_time" content="2019-05-24T17:18:07.473Z">
+<meta property="og:updated_time" content="2019-05-24T17:29:35.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重构笔记本系统">
 <meta name="twitter:description" content="几天前在手机上使用为知笔记时，发现已经完成创建1000条笔记的成就。记不太清楚这个账号是什么时候开始使用的，但是笔记的数量确实吓自己跳。原来已经这么多了，说句实话，很多内容也只是简单的收藏了一下，之后都再没有碰过，而且自己的笔记本分类很混乱，借这个机会准备重构笔记本系统。 知乎上面关于笔记本系统或者体系的讨论有很多，之前就是参考相关回答的，但都没有坚持搞下去。所以，这次的重构我找的是其他的参考资料">
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-25 01:18:07" itemprop="dateModified" datetime="2019-05-25T01:18:07+08:00">2019-05-25</time>
+                <time title="修改时间：2019-05-25 01:29:35" itemprop="dateModified" datetime="2019-05-25T01:29:35+08:00">2019-05-25</time>
               
             
           </span>
@@ -1097,6 +1097,64 @@
 
 
   
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
+                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
 
   
 

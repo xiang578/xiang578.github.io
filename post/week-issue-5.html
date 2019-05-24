@@ -108,7 +108,7 @@
 <meta property="og:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。  文章  想尝鲜 iOS 12，请先看这份 Public Beta 升降级指南 - 少数派：前几周就尝试开发者预览版了，升级之后，明显可以感觉到流畅度的提升，而且也多了屏幕时间等一些统计数据。 澎湃新闻的英文版发表这篇 Outside the Green Bubble of China’s Super-App，介绍一些人为什么要逃离微信？从">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://media.xiang578.com/DgHl0dzV4AA1pxP.jpg">
-<meta property="og:updated_time" content="2019-05-24T17:18:07.473Z">
+<meta property="og:updated_time" content="2019-05-24T17:29:35.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每周分享第 5 期">
 <meta name="twitter:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。  文章  想尝鲜 iOS 12，请先看这份 Public Beta 升降级指南 - 少数派：前几周就尝试开发者预览版了，升级之后，明显可以感觉到流畅度的提升，而且也多了屏幕时间等一些统计数据。 澎湃新闻的英文版发表这篇 Outside the Green Bubble of China’s Super-App，介绍一些人为什么要逃离微信？从">
@@ -464,7 +464,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-25 01:18:07" itemprop="dateModified" datetime="2019-05-25T01:18:07+08:00">2019-05-25</time>
+                <time title="修改时间：2019-05-25 01:29:35" itemprop="dateModified" datetime="2019-05-25T01:29:35+08:00">2019-05-25</time>
               
             
           </span>
@@ -1147,6 +1147,64 @@
 
 
   
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
+                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
 
   
 

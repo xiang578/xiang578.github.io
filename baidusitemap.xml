@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
-    <lastmod>2019-05-24</lastmod>
-  </url>  <url>
     <loc>https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
-    <lastmod>2019-05-24</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/universiy-booklist.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/zjp-2017.html</loc>
@@ -25,7 +19,7 @@
     <loc>https://xiang578.com/post/week-issue-8.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/week-issue-7.html</loc>
+    <loc>https://xiang578.com/post/use-travis-ci-to-auto-update.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/week-issue-6.html</loc>
@@ -52,7 +46,13 @@
     <loc>https://xiang578.com/post/use-wiznote-to-write-blog.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/use-travis-ci-to-auto-update.html</loc>
+    <loc>https://xiang578.com/post/week-issue-7.html</loc>
+    <lastmod>2019-05-24</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/universiy-booklist.html</loc>
+    <lastmod>2019-05-24</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/use-gtd-to-speach.html</loc>
@@ -88,10 +88,10 @@
     <loc>https://xiang578.com/post/newipad.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/icpc-xian-2017.html</loc>
+    <loc>https://xiang578.com/post/machine-learning-ch-03.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/machine-learning-ch-03.html</loc>
+    <loc>https://xiang578.com/post/mac-software.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/lanqiaobei-2016.html</loc>
@@ -106,7 +106,13 @@
     <loc>https://xiang578.com/post/interview.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/mac-software.html</loc>
+    <loc>https://xiang578.com/post/machine-learning-ch-01.html</loc>
+    <lastmod>2019-05-24</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/if.html</loc>
+    <lastmod>2019-05-24</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/icpc-xian-2017.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/icpc-ecl-shanghai-2017.html</loc>
@@ -116,12 +122,6 @@
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/how-to-use-taskpaper-to-do-3-thigns.html</loc>
-    <lastmod>2019-05-24</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/machine-learning-ch-01.html</loc>
-    <lastmod>2019-05-24</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/if.html</loc>
     <lastmod>2019-05-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/hello-world.html</loc>
