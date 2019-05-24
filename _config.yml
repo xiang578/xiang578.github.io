@@ -111,3 +111,11 @@ deploy:
   bucket: blog-1252086360
   region: ap-shanghai
 - type: baidu_url_submitter
+- type: leancloud_counter_security_sync
+
+leancloud_counter_security:
+  enable_sync: true
+  app_id: rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz
+  app_key: SHpy5xi5vjhNA7cz7THf03vk
+  username: xianghexoblognext
+  password: testdqvvrd

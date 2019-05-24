@@ -19,6 +19,7 @@
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-inject": "^1.0.0",
+    "hexo-leancloud-counter-security": "^1.4.0",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-markdown-it-plus": "^1.0.3",
     "hexo-renderer-pandoc": "^0.3.0",
