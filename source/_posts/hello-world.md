@@ -1,10 +1,11 @@
 title: hello world!
 date: 2015-08-06 20:58:27
-tags: [blog,life]
+tags: [blog, life]
 categories: 程序园
 ---
 
 由于与 hexo-leancloud-counter-security 软件冲突，将标题从 `System.out.println("hello world!");` 修改成 `hello world!`。具体问题分析见 
+ [博客折腾记：hexo-leancloud-counter-security 与标题中的引号冲突](https://xiang578.com/post/meet-leancloud-counter-security-problem.html)。
 
 ---
 除去前几篇为了测试hexo博客的各项功能所发的博文，这是为新博客所写的第一篇文章。标题取自刚开始学习编程语言时输出的字符串，"hello world！" 。
