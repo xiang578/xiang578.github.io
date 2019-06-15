@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8">
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="xf6fMthFjE">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="引言 如何将汉字输入到计算机中是一个有趣的编码问题，目前市面上主流的方案主要分成音码、形码、音形码等多种输入方案。和大多数人一样，之前我一直使用全拼，而且得益于当前的 NLP 技术的发展，使用诸如搜狗输入法等拥有云词库的输入方案，输入效率可以媲美五笔输入法。 但是今天要和大家分享的是，我从今年年初开始使用的全新音码输入方案——小鹤双拼。最初接触到双拼是在李笑来的《把时间当作朋友》：  在很长的一">
+<meta name="keywords" content="rime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Rime 鼠须管」小鹤双拼配置指南">
+<meta property="og:url" content="https://xiang578.com/post/rime.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="引言 如何将汉字输入到计算机中是一个有趣的编码问题，目前市面上主流的方案主要分成音码、形码、音形码等多种输入方案。和大多数人一样，之前我一直使用全拼，而且得益于当前的 NLP 技术的发展，使用诸如搜狗输入法等拥有云词库的输入方案，输入效率可以媲美五笔输入法。 但是今天要和大家分享的是，我从今年年初开始使用的全新音码输入方案——小鹤双拼。最初接触到双拼是在李笑来的《把时间当作朋友》：  在很长的一">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://media.xiang578.com/15599183665365.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15600908556759.jpg">
+<meta property="og:updated_time" content="2019-06-15T09:52:11.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「Rime 鼠须管」小鹤双拼配置指南">
+<meta name="twitter:description" content="引言 如何将汉字输入到计算机中是一个有趣的编码问题，目前市面上主流的方案主要分成音码、形码、音形码等多种输入方案。和大多数人一样，之前我一直使用全拼，而且得益于当前的 NLP 技术的发展，使用诸如搜狗输入法等拥有云词库的输入方案，输入效率可以媲美五笔输入法。 但是今天要和大家分享的是，我从今年年初开始使用的全新音码输入方案——小鹤双拼。最初接触到双拼是在李笑来的《把时间当作朋友》：  在很长的一">
+<meta name="twitter:image" content="http://media.xiang578.com/15599183665365.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://xiang578.com/post/rime">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>「Rime 鼠须管」小鹤双拼配置指南 | 算法花园</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">算法花园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+
+    
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tech">
+
+    
+    
+    
+
+    
+
+    <a href="/tech/" rel="section">技术</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-books">
+
+    
+    
+    
+
+    
+
+    <a href="/books/" rel="section">读书</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-movies">
+
+    
+    
+    
+
+    
+
+    <a href="/movies/" rel="section">观影</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+
+    
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/xiang578" class="github-corner" title="Find me on GitHub" aria-label="Find me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/rime.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RyenX">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">「Rime 鼠须管」小鹤双拼配置指南
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-15 21:21:14 / 修改时间：17:52:11" itemprop="dateCreated datePublished" datetime="2019-06-15T21:21:14+08:00">2019-06-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/post/rime.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/rime.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/post/rime.html" class="leancloud_visitors" data-flag-title="「Rime 鼠须管」小鹤双拼配置指南">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://media.xiang578.com/15599183665365.jpg"></p>
+<h2 id="引言">引言</h2>
+<p>如何将汉字输入到计算机中是一个有趣的编码问题，目前市面上主流的方案主要分成音码、形码、音形码等多种输入方案。和大多数人一样，之前我一直使用全拼，而且得益于当前的 NLP 技术的发展，使用诸如搜狗输入法等拥有云词库的输入方案，输入效率可以媲美五笔输入法。</p>
+<p>但是今天要和大家分享的是，我从今年年初开始使用的全新音码输入方案——小鹤双拼。最初接触到双拼是在李笑来的《把时间当作朋友》：</p>
+<blockquote>
+<p>在很长的一段时间里，我常言之凿凿地对同学们说“练习打字完全是浪费时间。”我当时的逻辑是这样的。首先，我认为王码五笔字型输入法是给打字员用的。为什么要学它？难道你将来想要当个打字员？我总觉得五笔字型知识一种抄写输入法，因为用他输入时只能边看边打。而对真正创造内容的人来说，先用纸和笔写出来再录入电脑，还有比这更荒诞的事情吗？学习拆字学法已经很累人了，还要练什么指法，见鬼。更不用说这种所谓的输入法对思考的干扰——不仅要把字拆开再输入，还要按照莫名其妙的方法拆字。其次，盲打。我现在不是盲打，只是两根手指输入速度就已经很快了（至少比手写快）。 这样看来，我还有必要学习什么五笔字型和盲打吗？ 在我有了这些定见很久之后，发生了一件事情。 那是在1997年，我25岁。当时互联网除了聊天室和论坛，几乎没有什么实际的应用。适逢windows捆绑了哈尔滨工业大学开发的“微软拼音输入法1.0”，某天下午，当我在网上和一位永远都不会知道是谁的女生放肆地聊了两个小时之后，突然发现自己竟已无师自通地学会了所谓的“盲打”了！在这之后的一段时间里，我身边甚至很多人羡慕我打字的速度。为了让自己的打字速度再快一点，我索性花了差不多20分钟，把原本默认的“全拼输入”改成了“”双拼输入“。而这还远远不够。后来，我增设了”慢放模糊音“（不区分z/zh、c/ch、s⇧），又把打字速度提高了一些。这时我第一次意识到‘有些认识，哪怕是简单的常识，也需要亲身经历后才能真正体会”。只有拥有无与伦比的打字速度，才会体会打字速度快的好处。 打字速度提升后，我发现自己不再讨厌在读书的时候做笔记了，因为在键盘上敲字相对于笔写字来说轻松太多。我开始大段地纪录感悟，有时甚至干脆整篇摘抄原文！</p>
+</blockquote>
+<p>李笑来思考的问题正是如何利用最小的代价快速的输入文字。这里代价包括两个方面，输入方案的学习成本以及输入文字的速度。简单分析一下，主流输入法需要用户在键盘上敲击一些字符，然后映射汉字。就是说输入文字的速度和两个因数有关：敲击键盘的次数（对应计算机中的码长）以及重码的字符数量（对于拼音输入法来说，这里指的是每个拼音对应多少的字）。</p>
+<p>从这两个指标来说，五笔应该是接近输入法的极限，五下敲击键盘肯定能选定你需要的汉字。但是学习五笔需要记忆大量的说是有序其实没有太多规律的字根，学习曲线不是一般的陡峭。</p>
+<p>这时候要介绍一下双拼输入法，它是一种基于全拼的激进改良版拼音输入法。简单来说，它将一个汉字的拼音分成声母和韵母两个部分，输入一个拼音只需要按两个键（减少键盘的敲击次数但是没有减少重码率）。比如对于“拼音”两个字来说，全拼需要输入 <code>pinyin</code> 六个字符，换成是双拼，只需要输入 4 个字符 <code>pbyb</code>。具体介绍可以看 <a href="https://sspai.com/post/32809" target="_blank" rel="noopener">做少数派中的少数派：双拼输入快速入门</a>。</p>
+<p>由于双拼有声母和韵母，需要先从键盘上进行一次映射，所以有很多的输入方案。我自己入门使用的是小鹤双拼，也推荐大家使用这个方案。主要原因有两点：声母和韵母全部放在字母键上（微软双拼中要用到 <code>;</code> 键，以及 iOS12 和 MacOS 中自带的输入法都支持这个方案（国内那几个流氓输入法更不用提）。</p>
+<p>下图是一张小鹤双拼的输入法键位图，其中黑色的字符代表是键盘上的什么键，棕色的代表这个键表示声母时是什么，蓝色的代表这个键表示韵母时是什么。学习双拼的过程也很简单，拼音本身就会，无非是熟悉键位。从我自己的角度来说，每天抽出几分看一下键位图，再在 <a href="https://api.ihint.me/shuang/" target="_blank" rel="noopener">双拼练习 @ BlueSky</a> （相关的介绍可以看：<a href="https://sspai.com/post/40185" target="_blank" rel="noopener">快速上手双拼，可以尝试这个练习平台 - 少数派</a>）网站上练习 5 分钟，一周后可以完全脱离键位图来打字，之后就是孰能生巧的过程。</p>
+<p><img src="http://media.xiang578.com/15600908556759.jpg"></p>
+<p>说回来当你学习了这么强大的内功之后，自然需要神兵来辅助你输入。在饱受国内的流氓输入法侵害之后（比如输入到一半给你跳一个什么斗图功能提示），我遇到今天的主角 <a href="https://rime.im/" target="_blank" rel="noopener">RIME | 中州韻輸入法引擎</a>，它是由佛振开发的一种开源输入框架，业内人士称之为「神级输入法」。上一个有类似拉风的称号的软件还是「神级编辑器」—— Vim。Rime 有趣的一点是在不同的平台上有不同的名字，包括 Linux 上的「中州韵」，Win 上的「小狼毫」以及 Mac 上的「鼠须管」。稍微有文化的人可以反应过来，后面两个正是两种不同的毛笔名字。</p>
+<p>简单总结一下为什么要使用鼠须管：一是安全，不会出现什么输入法读取你个人信息更甚者是密码发送到服务器，也不知道他们用来机器学习什么；二是配置全平台同步，解决多台设备的输入法配置问题；三是快，不会出现输入法跟不上我的打字速度而导致思路中断的情况。</p>
+<h2 id="安装">安装</h2>
+<p>在 <a href="https://rime.im/download/" target="_blank" rel="noopener">下載及安裝 | RIME | 中州韻輸入法引擎</a> 主页，你可以找到对应不同平台的安装方法。</p>
+<p>对于 MacOS 来说，可以在终端中使用 <code>curl -fsSL https://git.io/rime-install | bash -s -- :preset double-pinyin</code> 安装软件本体。<code>preset double-pinyin</code> 指定下载的时候默认包括双拼输入方案。</p>
+<h2 id="配置">配置</h2>
+<p>防止配置时候出现各种意想不到的情况，首先推荐阅读官方文档 <a href="https://github.com/rime/home/wiki/CustomizationGuide" target="_blank" rel="noopener">CustomizationGuide · rime/home Wiki</a>。</p>
+<p>Rime 的配置文件默认放在 <code>~/Library/Rime</code>，而且是一种扩展 yaml 文件。默认的文件名为 <code>.schema.yaml</code>，比如小鹤双拼相关的默认配置在 <code>double_pinyin_flpy.schema.yaml</code> 中。如果我们自己想添加一些设置，推荐写在以<code>.custom.yaml</code> 结尾的新文件中，比如 <code>double_pinyin_flypy.custom.yaml</code></p>
+<h3 id="default.custom.yaml">default.custom.yaml</h3>
+<p>这个文件写一些全局的配置。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line"><span class="attr">  switcher:</span></span><br><span class="line"><span class="attr">    caption:</span> <span class="string">〔方案选单〕</span></span><br><span class="line"><span class="attr">    hotkeys:</span> <span class="string">Control+grave</span></span><br><span class="line">  <span class="comment"># 候选词数量</span></span><br><span class="line"><span class="attr">  menu:</span></span><br><span class="line"><span class="attr">    page_size:</span> <span class="number">9</span></span><br><span class="line">  <span class="comment"># 使用的输入方案</span></span><br><span class="line"><span class="attr">  schema_list:</span></span><br><span class="line"><span class="attr">    - schema:</span> <span class="string">luna_pinyin_simp</span></span><br><span class="line"><span class="attr">    - schema:</span> <span class="string">luna_pinyin</span></span><br><span class="line"><span class="attr">    - schema:</span> <span class="string">double_pinyin_flypy</span></span><br><span class="line">  <span class="comment"># 输入法中英文状态快捷键</span></span><br><span class="line">  <span class="string">ascii_composer/switch_key:</span></span><br><span class="line"><span class="attr">    Caps_Lock:</span> <span class="string">commit_code</span></span><br><span class="line"><span class="attr">    Control_L:</span> <span class="string">noop</span></span><br><span class="line"><span class="attr">    Control_R:</span> <span class="string">noop</span></span><br><span class="line">    <span class="comment"># 按下左 shift 英文字符直接上屏，不需要再次回车，输入法保持英文状态</span></span><br><span class="line"><span class="attr">    Shift_L:</span> <span class="string">noop</span></span><br><span class="line"><span class="attr">    Shift_R:</span> <span class="string">noop</span></span><br><span class="line">  <span class="comment"># 在一些软件中默认使用英文输入状态</span></span><br><span class="line"><span class="attr">  app_options:</span></span><br><span class="line">    <span class="string">com.apple.finder:</span> <span class="meta">&amp;a</span></span><br><span class="line"><span class="attr">      ascii_mode:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">      no_inline:</span> <span class="literal">true</span></span><br><span class="line">    <span class="string">com.googlecode.iterm2:</span> <span class="meta">*a</span></span><br><span class="line">    <span class="string">com.alfredapp.Alfred:</span> <span class="meta">*a</span></span><br><span class="line">    <span class="string">com.runningwithcrayons.Alfred-2:</span> <span class="meta">*a</span></span><br><span class="line">    <span class="string">org.vim.MacVim:</span> <span class="meta">*a</span></span><br><span class="line">    <span class="string">com.apple.Terminal:</span> <span class="meta">*a</span></span><br></pre></td></tr></table></figure>
+<p>最后在修改配置时，可以查阅 <a href="https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md" target="_blank" rel="noopener">Rime_collections/Rime_description.md at master · LEOYoon-Tsaw/Rime_collections</a> 寻找相关信息。</p>
+<h3 id="installation.yaml">installation.yaml</h3>
+<p>配置文件多平台同步相关文件，<code>sync_dir</code> 指定同步文件夹的位置，配合例如坚果云之类的软件实现备份同步。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">distribution_code_name:</span> <span class="string">Squirrel</span></span><br><span class="line"><span class="attr">distribution_name:</span> <span class="string">"鼠鬚管"</span></span><br><span class="line"><span class="attr">distribution_version:</span> <span class="number">0.11</span><span class="number">.0</span></span><br><span class="line"><span class="attr">install_time:</span> <span class="string">"Sun Dec 23 23:42:01 2018"</span></span><br><span class="line"><span class="attr">installation_id:</span> <span class="string">"mac_didi"</span></span><br><span class="line"><span class="attr">sync_dir:</span> <span class="string">"/Users/didi/Documents/rime_sync"</span></span><br><span class="line"><span class="attr">rime_version:</span> <span class="number">1.4</span><span class="number">.0</span></span><br><span class="line"><span class="attr">update_time:</span> <span class="string">"Mon Jun  3 07:18:30 2019"</span></span><br></pre></td></tr></table></figure>
+<h3 id="double_pinyin_flypy.custom.yaml">double_pinyin_flypy.custom.yaml</h3>
+<p>小鹤双拼相关的自用配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">  <span class="comment"># 引用 `symbols.custom` 文件里面的符号</span></span><br><span class="line">  <span class="comment"># 'punctuator/import_preset': symbols.custom</span></span><br><span class="line">  <span class="string">'recognizer/patterns/punct'</span><span class="string">:</span> <span class="string">"^/([a-z]+|[0-9])$"</span></span><br><span class="line">  <span class="comment"># 載入朙月拼音擴充詞庫</span></span><br><span class="line">  <span class="string">"translator/dictionary"</span><span class="string">:</span> <span class="string">ryen</span></span><br><span class="line">  <span class="comment"># 更改‘西文’为‘英文’，‘增广’为‘扩展集’</span></span><br><span class="line"><span class="attr">  punctuator:</span></span><br><span class="line"><span class="attr">    import_preset:</span> <span class="string">symbols.custom</span></span><br><span class="line"><span class="attr">    half_shape:</span></span><br><span class="line">      <span class="string">"#"</span><span class="string">:</span> <span class="string">"#"</span></span><br><span class="line">      <span class="string">"`"</span><span class="string">:</span> <span class="string">"`"</span></span><br><span class="line">      <span class="string">"~"</span><span class="string">:</span> <span class="string">"~"</span></span><br><span class="line">      <span class="string">"@"</span><span class="string">:</span> <span class="string">"@"</span></span><br><span class="line">      <span class="string">"="</span><span class="string">:</span> <span class="string">"="</span></span><br><span class="line">      <span class="string">"/"</span><span class="string">:</span> <span class="string">["/",</span> <span class="string">"÷"</span><span class="string">]</span></span><br><span class="line">      <span class="string">'\': ["、", '</span><span class="string">\']</span></span><br><span class="line">      <span class="string">"'"</span><span class="string">:</span> <span class="string">&#123;pair:</span> <span class="string">["「",</span> <span class="string">"」"</span><span class="string">]&#125;</span></span><br><span class="line">      <span class="string">"["</span><span class="string">:</span> <span class="string">["【",</span> <span class="string">"["</span><span class="string">]</span></span><br><span class="line">      <span class="string">"]"</span><span class="string">:</span> <span class="string">["】",</span> <span class="string">"]"</span><span class="string">]</span></span><br><span class="line">      <span class="string">"$"</span><span class="string">:</span> <span class="string">["¥",</span> <span class="string">"$"</span><span class="string">,</span> <span class="string">"€"</span><span class="string">,</span> <span class="string">"£"</span><span class="string">,</span> <span class="string">"¢"</span><span class="string">,</span> <span class="string">"¤"</span><span class="string">]</span></span><br><span class="line">      <span class="string">"&lt;"</span><span class="string">:</span> <span class="string">["《",</span> <span class="string">"〈"</span><span class="string">,</span> <span class="string">"«"</span><span class="string">,</span> <span class="string">"&lt;"</span><span class="string">]</span></span><br><span class="line">      <span class="string">"&gt;"</span><span class="string">:</span> <span class="string">["》",</span> <span class="string">"〉"</span><span class="string">,</span> <span class="string">"»"</span><span class="string">,</span> <span class="string">"&gt;"</span><span class="string">]</span></span><br><span class="line"><span class="attr">  switches:</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">ascii_mode</span></span><br><span class="line"><span class="attr">      reset:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">      states:</span> <span class="string">["中文",</span> <span class="string">"英文"</span><span class="string">]</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">full_shape</span></span><br><span class="line"><span class="attr">      states:</span> <span class="string">["半角",</span> <span class="string">"全角"</span><span class="string">]</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">zh_simp</span></span><br><span class="line"><span class="attr">      reset:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">      states:</span> <span class="string">["漢字","汉字"]</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">ascii_punct</span></span><br><span class="line"><span class="attr">      states:</span> <span class="string">["，。",</span> <span class="string">"，．"</span><span class="string">]</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">extended_charset</span> <span class="comment">#生僻字开关</span></span><br><span class="line"><span class="attr">      states:</span> <span class="string">["通用",</span> <span class="string">"扩展集"</span><span class="string">]</span></span><br><span class="line"><span class="attr">    - name:</span> <span class="string">show_emoji</span> <span class="comment"># 该项为表情输入，具体内容可见下文中 [关于表情输入] 部分</span></span><br><span class="line"><span class="attr">      reset:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">      states:</span> <span class="string">[</span> <span class="string">"🈚️️\uFE0E"</span><span class="string">,</span> <span class="string">"🈶️️\uFE0F"</span> <span class="string">]</span></span><br><span class="line">  <span class="comment"># 输入双拼码的时候不转化为全拼码</span></span><br><span class="line">  <span class="string">translator/preedit_format:</span> <span class="string">&#123;&#125;</span></span><br><span class="line"><span class="attr">  simplifier:</span></span><br><span class="line"><span class="attr">    option_name:</span> <span class="string">zh_simp</span></span><br><span class="line">  <span class="comment"># 分号上屏二候选词；引号上屏三候选词</span></span><br><span class="line">  <span class="string">"key_binder/bindings"</span><span class="string">:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">&#123;</span> <span class="attr">when:</span> <span class="string">has_menu,</span> <span class="attr">accept:</span> <span class="string">semicolon,</span> <span class="attr">send:</span> <span class="number">2</span> <span class="string">&#125;</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">&#123;</span> <span class="attr">when:</span> <span class="string">has_menu,</span> <span class="attr">accept:</span> <span class="string">apostrophe,</span> <span class="attr">send:</span> <span class="number">3</span> <span class="string">&#125;</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">&#123;</span> <span class="attr">when:</span> <span class="string">paging,</span> <span class="attr">accept:</span> <span class="string">bracketleft,</span> <span class="attr">send:</span> <span class="string">Page_Up</span> <span class="string">&#125;</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">&#123;</span> <span class="attr">when:</span> <span class="string">has_menu,</span> <span class="attr">accept:</span> <span class="string">bracketright,</span> <span class="attr">send:</span> <span class="string">Page_Down</span> <span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="squirrel.custom.yaml">squirrel.custom.yaml</h3>
+<p>自定义皮肤相关文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line"><span class="attr">  style:</span></span><br><span class="line"><span class="attr">    color_scheme:</span> <span class="string">psionics</span></span><br><span class="line"><span class="attr">    horizontal:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    inline_preedit:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    candidate_format:</span> <span class="string">"%c\u2005%@ \u2005"</span>   <span class="comment"># 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。</span></span><br><span class="line"><span class="attr">    font_point:</span> <span class="number">16</span>                          <span class="comment"># 候选文字大小</span></span><br><span class="line"><span class="attr">    label_font_point:</span> <span class="number">14</span>                    <span class="comment"># 候选编号大小</span></span><br><span class="line"><span class="attr">    corner_radius:</span> <span class="number">5</span>                        <span class="comment"># 候选条圆角</span></span><br><span class="line"><span class="attr">    border_height:</span> <span class="number">0</span>                        <span class="comment"># 窗口边界高度，大于圆角半径才生效</span></span><br><span class="line"><span class="attr">    border_width:</span> <span class="number">0</span>                         <span class="comment"># 窗口边界宽度，大于圆角半径才生效</span></span><br></pre></td></tr></table></figure>
+<p>最后，我的配置在 <a href="https://github.com/xiang578/rime" target="_blank" rel="noopener">xiang578/rime</a> 同步。</p>
+<h2 id="debug">DEBUG</h2>
+<p>Debug 是折腾 rime 不得不面对的一步，主要通过查看 rime 部署的時候 log 文件实现。对于鼠鬚管， log 文件保存在 <code>$TMPDIR/rime.squirrel.*</code> 中。首先在命令行中输入 <code>echo $TMPDIR</code> 获得路径，然后将地址输入到 「访达-前往-前往文件夹...」跳转。点击 <code>rime.squirrel.WARNING</code> 选择显示原身，利用文本编辑器打开。</p>
+<p>文件格式类似于下面：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Log</span> <span class="string">file</span> <span class="string">created</span> <span class="attr">at:</span> <span class="number">2019</span><span class="string">/06/07</span> <span class="number">23</span><span class="string">:31:54</span></span><br><span class="line"><span class="string">Running</span> <span class="string">on</span> <span class="attr">machine:</span> <span class="string">didideMiBook-Pro.local</span></span><br><span class="line"><span class="string">Log</span> <span class="string">line</span> <span class="attr">format:</span> <span class="string">[IWEF]mmdd</span> <span class="attr">hh:mm:ss.uuuuuu</span> <span class="string">threadid</span> <span class="attr">file:line]</span> <span class="string">msg</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:31:54.549346</span> <span class="number">162086912</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:31:54.554167</span> <span class="number">162086912</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:31:54.560144</span> <span class="number">162086912</span> <span class="string">deployment_tasks.cc:179]</span> <span class="string">schema</span> <span class="string">list</span> <span class="string">not</span> <span class="string">defined.</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.133517</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.135843</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.149406</span> <span class="number">161013760</span> <span class="string">config_data.cc:62]</span> <span class="string">nonexistent</span> <span class="string">config</span> <span class="string">file</span> <span class="string">'/Users/didi/Library/Rime/luna_pinyin_simp.custom.yaml'</span><span class="string">.</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.154920</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.156643</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.331344</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.333066</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.668072</span> <span class="number">161013760</span> <span class="string">config_data.cc:62]</span> <span class="string">nonexistent</span> <span class="string">config</span> <span class="string">file</span> <span class="string">'/Users/didi/Library/Rime/stroke.custom.yaml'</span><span class="string">.</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.670761</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.672724</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:14.281919</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:14.283246</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="string">inaccessible</span> <span class="attr">node:</span> <span class="string">key_bindings.custom:/patch</span></span><br></pre></td></tr></table></figure>
+<h2 id="按右-shift-切换输入法">按右 shift 切换输入法</h2>
+<p>之前使用搜狗输入法时，特别喜欢的一个功能：按右 shift 切换输入法的输入状态，实现暂时切换到英文状态。Rime 作者在 <a href="https://gist.github.com/lotem/2981316" target="_blank" rel="noopener">使用 Control 鍵切換中西文，上屏已輸入的編碼；令 Caps Lock 改變字母的大小寫</a> 中提到一种方案。例如下面：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">  <span class="string">ascii_composer/good_old_caps_lock:</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">ascii_composer/switch_key:</span></span><br><span class="line"><span class="attr">    Caps_Lock:</span> <span class="string">commit_code</span></span><br><span class="line"><span class="attr">    Shift_L:</span> <span class="string">noop</span></span><br><span class="line"><span class="attr">    Shift_R:</span> <span class="string">commit_code</span></span><br><span class="line"><span class="attr">    Control_L:</span> <span class="string">commit_code</span></span><br><span class="line"><span class="attr">    Control_R:</span> <span class="string">commit_code</span></span><br></pre></td></tr></table></figure>
+<p>然而这样修改完成之后，不论按哪个 Shift 键，都会切换到英文输入状态。看前面那个网页下面作者与其他人的讨论中发现，鼠须管无法区分 Shift 键。</p>
+<p>网上查了一下，简单实现的方法是通过 karabiner 软件来改键。详细步骤可以参考 <a href="https://github.com/rime/squirrel/wiki/%E7%A6%81%E7%94%A8-Squirrel-%E8%8B%B1%E6%96%87%E6%A8%A1%E5%BC%8F%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%B7%A6%E4%BE%A7-Shift-%E5%88%87%E6%8D%A2%E4%B8%AD%E8%8B%B1" target="_blank" rel="noopener">禁用 Squirrel 英文模式，使用左侧 Shift 切换中英 · rime/squirrel Wiki</a>。</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/xiang578/xiang578.github.io/issues/37" target="_blank" rel="noopener">双拼 · Issue #37 · xiang578/xiang578.github.io</a></li>
+<li><a href="http://zhizhi.betahouse.us/2018/10/17/rime-setup/" target="_blank" rel="noopener">基于Rime的鼠须管输入法配置记录</a></li>
+<li><a href="https://withdewhua.space/2019/01/30/rime-configuration" target="_blank" rel="noopener">Rime 输入法配置记录</a></li>
+<li><a href="https://mritd.me/2019/03/23/oh-my-rime/" target="_blank" rel="noopener">Mac 下调校 Rime - 漠然的博客 | mritd Blog</a></li>
+<li><a href="https://jdhao.github.io/2019/02/18/rime_configuration_intro/" target="_blank" rel="noopener">最新版 Rime 输入法使用 - jdhao's blog</a></li>
+<li><a href="https://scomper.me/gtd/-shu-xu-guan-de-diao-jiao-bi-ji" target="_blank" rel="noopener">「鼠须管」的调教笔记</a></li>
+<li><a href="https://scomper.me/gtd/-shu-xu-guan-de-an-zhuang-he-bu-shu" target="_blank" rel="noopener">「鼠须管」输入方案的添加</a></li>
+<li><a href="https://whyhow.tk/2016/04/29/rime0429.html" target="_blank" rel="noopener">RIME输入法在Finder中自动切换成英文 @ Why &amp; How</a></li>
+<li><a href="https://placeless.net/blog/rime-squirrel-customization-2019#article" target="_blank" rel="noopener">鼠须管配置 2019</a></li>
+<li><a href="https://github.com/rime/squirrel/wiki/%E7%A6%81%E7%94%A8-Squirrel-%E8%8B%B1%E6%96%87%E6%A8%A1%E5%BC%8F%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%B7%A6%E4%BE%A7-Shift-%E5%88%87%E6%8D%A2%E4%B8%AD%E8%8B%B1" target="_blank" rel="noopener">禁用 Squirrel 英文模式，使用左侧 Shift 切换中英 · rime/squirrel Wiki</a></li>
+<li><a href="https://github.com/rime-aca/dictionaries" target="_blank" rel="noopener">rime-aca/dictionaries: Rime詞庫</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/rime/" rel="tag"># rime</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/blog-log.html" rel="next" title="博客维护日志 beta 0.1">
+                <i class="fa fa-chevron-left"></i> 博客维护日志 beta 0.1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">RyenX</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">54</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xiang578" title="GitHub &rarr; https://github.com/xiang578" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:i@xiang578.com" title="E-Mail &rarr; mailto:i@xiang578.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#default.custom.yaml"><span class="nav-number">3.1.</span> <span class="nav-text">default.custom.yaml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#installation.yaml"><span class="nav-number">3.2.</span> <span class="nav-text">installation.yaml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#double_pinyin_flypy.custom.yaml"><span class="nav-number">3.3.</span> <span class="nav-text">double_pinyin_flypy.custom.yaml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#squirrel.custom.yaml"><span class="nav-number">3.4.</span> <span class="nav-text">squirrel.custom.yaml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#debug"><span class="nav-number">4.</span> <span class="nav-text">DEBUG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按右-shift-切换输入法"><span class="nav-number">5.</span> <span class="nav-text">按右 shift 切换输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-RyenX"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RyenX</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script id="dsq-count-scr" src="https://xiang578.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://xiang578.com/post/rime.html";
+    this.page.identifier = "post/rime.html";
+    this.page.title = '「Rime 鼠须管」小鹤双拼配置指南';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://xiang578.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/algolia-search.js?v=7.1.1"></script>
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
+                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+</body>
+</html>
