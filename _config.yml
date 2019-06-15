@@ -119,3 +119,18 @@ leancloud_counter_security:
   app_key: SHpy5xi5vjhNA7cz7THf03vk
   username: xianghexoblognext
   password: testdqvvrd
+
+douban:
+  user: xiang578
+  builtin: false
+  book:
+    title: '书柜'
+    quote: '读万卷书'
+  movie:
+    title: '影院'
+    quote: '光与影的艺术'
+  game:
+    title: 'This is my game title'
+    quote: 'This is my game quote'
+  timeout: 10000 
+

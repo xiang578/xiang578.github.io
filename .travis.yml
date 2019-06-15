@@ -22,7 +22,8 @@ script:
 - sed -i "s~XXX_ID~${COS_ID}~" _config.yml
 - sed -i "s~XXX_KEY~${COS_KEY}~" _config.yml
 - sed -i "s~your_token~${BD_TOKEN}~" _config.yml
-- hexo d
+- hexo douban
+- hexo deploy
 
 after_script:
   - git clone https://${GH_REF} .deploy_git  # GH_REF是最下面配置的仓库地址
