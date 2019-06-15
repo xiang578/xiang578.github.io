@@ -1,3 +1,4 @@
+https://xiang578.com/post/blog-log.html
 https://xiang578.com/post/meet-leancloud-counter-security-problem.html
 https://xiang578.com/post/use-cos-to-store-blog.html
 https://xiang578.com/post/alexnet.html
@@ -14,7 +15,6 @@ https://xiang578.com/post/week-issue-8.html
 https://xiang578.com/post/week-issue-7.html
 https://xiang578.com/post/auto-workflow.html
 https://xiang578.com/post/week-issue-6.html
-https://xiang578.com/post/BlogLog.html
 https://xiang578.com/post/week-issue-5.html
 https://xiang578.com/post/shadowsocks.html
 https://xiang578.com/post/week-issue-4.html
