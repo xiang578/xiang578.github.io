@@ -14,14 +14,12 @@ categories: 每周分享
   
 ## 图片
 - 微博中图片，有一种共建二流的错觉。好的学校创建世界一流，普通学校创建国内一流，就没有安心当二流的学校。
-![697c1dc3gy1fsg9wk289aj21400u0di3](http://
-media.xiang578.com/697c1dc3gy1fsg9wk289aj21400u0di3.jpg)
+![697c1dc3gy1fsg9wk289aj21400u0di3](http://media.xiang578.com/697c1dc3gy1fsg9wk289aj21400u0di3.jpg)
 
 ## 视频
 - [2018世界杯足彩竞猜：一个稳赚不赔的方法是什么？李永乐老师教你足球彩票对冲套利（2018最新） - YouTube](https://www.youtube.com/watch?v=YXW6GxYafp8)
 最近世界杯，网上一大堆赌球的截图。这个视频虽然标题写的是稳赚不赔的方法，看完这个方法的数学原理之后才发现足彩公司的强大。
-![Jietu20180619-162246](http://
-media.xiang578.com/Jietu20180619-162246.jpg)
+![Jietu20180619-162246](http://media.xiang578.com/Jietu20180619-162246.jpg)
 
 ## 金句
 
