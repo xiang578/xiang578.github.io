@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
+    <lastmod>2019-06-15</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/universiy-booklist.html</loc>
+    <lastmod>2019-06-15</lastmod>
+  </url>  <url>
     <loc>https://xiang578.com/post/zjp-2017.html</loc>
     <lastmod>2019-06-15</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/week-issue-6.html</loc>
+    <loc>https://xiang578.com/post/zjp-2016.html</loc>
     <lastmod>2019-06-15</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/week-issues-11.html</loc>
@@ -16,19 +22,10 @@
     <loc>https://xiang578.com/post/week-issue-8.html</loc>
     <lastmod>2019-06-15</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/week-issue-7.html</loc>
+    <loc>https://xiang578.com/post/use-cos-to-store-blog.html</loc>
     <lastmod>2019-06-15</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/zjp-2016.html</loc>
-    <lastmod>2019-06-15</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
-    <lastmod>2019-06-15</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/universiy-booklist.html</loc>
-    <lastmod>2019-06-15</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
+    <loc>https://xiang578.com/post/week-issue-6.html</loc>
     <lastmod>2019-06-15</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/week-issue-5.html</loc>
@@ -58,7 +55,10 @@
     <loc>https://xiang578.com/post/use-gtd-to-speach.html</loc>
     <lastmod>2019-06-15</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/use-cos-to-store-blog.html</loc>
+    <loc>https://xiang578.com/post/week-issue-7.html</loc>
+    <lastmod>2019-06-15</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
     <lastmod>2019-06-15</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/the-beauty-of-math.html</loc>
