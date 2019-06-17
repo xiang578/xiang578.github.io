@@ -9,8 +9,9 @@ comments: true
 
 ### Paper
 - CNN 系列
-    - [(AlexNet)ImageNet Classiﬁcation with Deep Convolutional Neural Networks](https://xiang578.com/2019/05/18/alexnet/)
+    - [(AlexNet)ImageNet Classiﬁcation with Deep Convolutional Neural Networks](https://xiang578.com/post/alexnet.html)
 - FM 系列
+    - [(gbdt + fm)Practical Lessons from Predicting Clicks on Ads at Facebook](https://xiang578.com/post/gbdt_lr.html)
 
 ### Course
 - CS231n
