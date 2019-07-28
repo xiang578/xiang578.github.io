@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/universiy-booklist.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/rime.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
     <loc>https://xiang578.com/post/zjp-2017.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
@@ -14,18 +26,6 @@
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/week-issue-9.html</loc>
-    <lastmod>2019-07-28</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
-    <lastmod>2019-07-28</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/universiy-booklist.html</loc>
-    <lastmod>2019-07-28</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/rime.html</loc>
-    <lastmod>2019-07-28</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/week-issue-8.html</loc>
@@ -53,6 +53,9 @@
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/week-issue-1.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/wdr.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/use-wiznote-to-write-blog.html</loc>
@@ -97,19 +100,13 @@
     <loc>https://xiang578.com/post/meet-leancloud-counter-security-problem.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/computer-base-network.html</loc>
+    <loc>https://xiang578.com/post/interview.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/machine-learning-ch-03.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/mac-software.html</loc>
-    <lastmod>2019-07-28</lastmod>
-  </url>  <url>
     <loc>https://xiang578.com/post/lanqiaobei-2016.html</loc>
-    <lastmod>2019-07-28</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/2018.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/just-for-fun.html</loc>
@@ -118,7 +115,7 @@
     <loc>https://xiang578.com/post/iphone5s.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/interview.html</loc>
+    <loc>https://xiang578.com/post/mac-software.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/icpc-xian-2017.html</loc>
@@ -128,6 +125,12 @@
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/icpc-beijing-2016.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/machine-learning-ch-01.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/if.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/how-to-use-taskpaper-to-do-3-thigns.html</loc>
@@ -163,7 +166,7 @@
     <loc>https://xiang578.com/post/excerpt-2018-03-07.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/machine-learning-ch-01.html</loc>
+    <loc>https://xiang578.com/post/007-and-me.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/blog-log.html</loc>
@@ -184,7 +187,7 @@
     <loc>https://xiang578.com/post/alexnet.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/AppleScript-encode-error.html</loc>
+    <loc>https://xiang578.com/post/2011.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/2018-consumer-report.html</loc>
@@ -214,19 +217,19 @@
     <loc>https://xiang578.com/post/2017.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/if.html</loc>
+    <loc>https://xiang578.com/post/007-aciton-reflection.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/2011.html</loc>
+    <loc>https://xiang578.com/post/AppleScript-encode-error.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/007-and-me.html</loc>
+    <loc>https://xiang578.com/post/2018.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/2015.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/007-aciton-reflection.html</loc>
+    <loc>https://xiang578.com/post/computer-base-network.html</loc>
     <lastmod>2019-07-28</lastmod>
   </url>
 </urlset>
