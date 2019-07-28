@@ -100,13 +100,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="算法花园">
-<meta property="og:url" content="https://xiang578.com/tags/life/index.html">
+  <meta name="description" content="Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在 2010 年提出,是一种常用的因子机模型。 FM 假设现在有一个电影评分的任务，给定如下如所示的特征向量 x（包括用户名、当前在看的电影、已经打分的电影、时间特征、之前看的电影），预测用户对当前观看电影的评分。  电影评分  作者在线性回归模型的基础上，添加">
+<meta name="keywords" content="fm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(FM) Factorization Machines">
+<meta property="og:url" content="https://xiang578.com/post/fm.html">
 <meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在 2010 年提出,是一种常用的因子机模型。 FM 假设现在有一个电影评分的任务，给定如下如所示的特征向量 x（包括用户名、当前在看的电影、已经打分的电影、时间特征、之前看的电影），预测用户对当前观看电影的评分。  电影评分  作者在线性回归模型的基础上，添加">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://media.xiang578.com/15643023365227.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15643037118475.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15643059963915.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15643076111641.jpg">
+<meta property="og:image" content="http://media.xiang578.com/15643086043204.jpg">
+<meta property="og:updated_time" content="2019-07-28T10:23:22.868Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法花园">
+<meta name="twitter:title" content="(FM) Factorization Machines">
+<meta name="twitter:description" content="Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在 2010 年提出,是一种常用的因子机模型。 FM 假设现在有一个电影评分的任务，给定如下如所示的特征向量 x（包括用户名、当前在看的电影、已经打分的电影、时间特征、之前看的电影），预测用户对当前观看电影的评分。  电影评分  作者在线性回归模型的基础上，添加">
+<meta name="twitter:image" content="http://media.xiang578.com/15643023365227.jpg">
 
 
 
@@ -116,7 +127,7 @@
 
   
   
-  <link rel="canonical" href="https://xiang578.com/tags/life/">
+  <link rel="canonical" href="https://xiang578.com/post/fm">
 
 
 
@@ -126,7 +137,7 @@
   };
 </script>
 
-  <title>标签: life | 算法花园</title>
+  <title>(FM) Factorization Machines | 算法花园</title>
   
 
 
@@ -184,7 +195,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -297,7 +308,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -338,34 +349,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -425,239 +408,305 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>life<small>标签</small>
-        </h2>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/fm.html">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RyenX">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/post/2018.html" itemprop="url">
-            
-              <span itemprop="name">2018 探索</span>
-            
-          </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">(FM) Factorization Machines
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-10T12:40:45+08:00" content="2019-04-10">
-          04-10
-        </time>
-      </div>
+              
+            
+          </h2>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-28 18:18:52 / 修改时间：18:23:22" itemprop="dateCreated datePublished" datetime="2019-07-28T18:18:52+08:00">2019-07-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/post/fm.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/fm.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/post/fm.html" class="leancloud_visitors" data-flag-title="(FM) Factorization Machines">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/post/2018-consumer-report.html" itemprop="url">
-            
-              <span itemprop="name">2018 年消费指南</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-13T19:05:14+08:00" content="2019-01-13">
-          01-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/post/007-and-me.html" itemprop="url">
-            
-              <span itemprop="name">007 不出局活动与我</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-13T15:32:02+08:00" content="2018-02-13">
-          02-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/post/2017.html" itemprop="url">
-            
-              <span itemprop="name">2017 迷茫</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-12-31T12:40:45+08:00" content="2017-12-31">
-          12-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/post/hello-world.html" itemprop="url">
-            
-              <span itemprop="name">hello world!</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2015-08-06T20:58:27+08:00" content="2015-08-06">
-          08-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/post/before-go-to-univisity.html" itemprop="url">
-            
-              <span itemprop="name">钱塘江的风</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2014-08-29T07:02:06+08:00" content="2014-08-29">
-          08-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/post/something-about-high-school.html" itemprop="url">
-            
-              <span itemprop="name">毕业杂感</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2014-06-10T07:06:26+08:00" content="2014-06-10">
-          06-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/post/if.html" itemprop="url">
-            
-              <span itemprop="name">如果，高一</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2012-07-23T07:17:32+08:00" content="2012-07-23">
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在 2010 年提出,是一种常用的因子机模型。</p>
+<h2 id="fm">FM</h2>
+<p>假设现在有一个电影评分的任务，给定如下如所示的特征向量 x（包括用户名、当前在看的电影、已经打分的电影、时间特征、之前看的电影），预测用户对当前观看电影的评分。</p>
+<figure>
+<img src="http://media.xiang578.com/15643023365227.jpg" alt="电影评分"><figcaption>电影评分</figcaption>
+</figure>
+<p>作者在线性回归模型的基础上，添加交叉项部分，用来自动组合二阶特征。 <span class="math display">\[\hat y(x):= w_0 + \sum_{i=1}^{n} w_ix_i + \sum_{i=1}^n \sum_{j=i+1}^n \left \langle v_i,v_j \right \rangle x_iy_i\]</span></p>
+<p>其中交叉特征的权重由两个向量的点积得到，可以解决没有在模型中出现的特征组合权重问题，以及减少参数数量。</p>
+<p><span class="math display">\[W_{i,j}=\left \langle v_i,v_j \right \rangle = \sum_{f=1}^kv_{i,f} \cdot v_{j,f}\]</span></p>
+<p>通过下面的方法来化简交叉项权重计算，算法复杂度降到线性。</p>
+<p><span class="math display">\[\sum_{i=1}^n \sum_{j=i+1}^n \left \langle v_i,v_j \right \rangle x_iy_i = \frac{1}{2}\sum^k_{f=1} \left( \left(\sum_{i=1}^nv_{i,f}x_i \right)^2 - \sum^n_{i=1} v^2_{i,f} x_i^2 \right)\]</span></p>
+<p>对交叉项部分的求导：</p>
+<p><span class="math display">\[\frac{\partial}{\partial \theta} \hat y \left( x \right) =
+\begin{cases}
+1, &amp; \text{ if $\theta$ is $w_0$} \\
+x_i, &amp; \text{ if $\theta$ is ${w_i}$} \\
+x_i\sum^n_{j=1} v_{j,f}x_j - v_{i,f}x_i^2, &amp;\text{if $\theta$ is ${v_{i,f}}$}  
+\end{cases}\]</span></p>
+<p>其中 <span class="math inline">\({\sum^n_{j=1} v_{j,f}x_j}\)</span> 与 <span class="math inline">\({x_i}\)</span> 无关，可以在计算导数前预处理出来。</p>
+<h3 id="fm-vs-svm">FM vs SVM</h3>
+<p>对于经典的特征组合问题，不难想到使用 SVM 求解。Steffen 在论文中也多次将 FM 和 SVM 做对比。</p>
+<p>在考虑 SVM 的 Polynomial kernel 为 <span class="math inline">\({K(\mathbf{x}, \mathbf{z}) :=(\langle\mathbf{x}, \mathbf{z}\rangle+ 1)^{2}}\)</span>，映射 <span class="math display">\[
+\begin{array}{l}{\phi(\mathbf{x}) :=\left(1, \sqrt{2} x_{1}, \ldots, \sqrt{2} x_{n}, x_{1}^{2}, \ldots, x_{n}^{2}\right.} {\sqrt{2} x_{1} x_{2}, \ldots, \sqrt{2} x_{1} x_{n}, \sqrt{2} x_{2} x_{3}, \ldots, \sqrt{2} x_{n-1} x_{n} )}\end{array}
+\]</span></p>
+<p>SVM 的公式可以转化为：</p>
+<p><span class="math display">\[
+\begin{aligned} \hat{y}(\mathbf{x})=w_{0}+\sqrt{2} \sum_{i=1}^{n} w_{i} x_{i}+\sum_{i=1}^{n} w_{i, i}^{(2)} x_{i}^{2} &amp;+\sqrt{2} \sum_{i=1}^{n} \sum_{j=i+1}^{n} w_{i, j}^{(2)} x_{i} x_{j} \end{aligned}
+\]</span></p>
+<p>论文中提到一句上面的公式中 <span class="math inline">\({w_{i}}\)</span> 和 <span class="math inline">\({w_{i,i}}\)</span> 表达能力类似，我猜这也是为什么 FM 中没有自身交叉项的原因吧。</p>
+<p>FM 相比于 SVM 有下面三个特点： 1. SVM 中虽然也有特征交叉项，但是只能在样本中含有相对应的特征交叉数据时才能学习。但是 FM 能在数据稀疏的时候学习到交叉项的参数。 2. SVM 问题无法直接求解，常用的方法是根据拉格朗日对偶性将原始问题转化为对偶问题。 3. 在使用模型预测时，SVM 依赖部分训练数据（支持向量），FM 模型则没有这种依赖。</p>
+<h3 id="rank">Rank</h3>
+<p>FM 用来做回归和分类都很好理解，简单写一下如何应用到排序任务中。以 pairwise 为例。假设排序结果有两个文档 <span class="math inline">\({x_i}\)</span> 和 <span class="math inline">\({x_j}\)</span>，显然用户点击文档有先后顺序，如果先点击 <span class="math inline">\({x_i}\)</span>，记 label <span class="math inline">\({y_{ij}=1}\)</span>，反之点击 <span class="math inline">\({x_j}\)</span>，label <span class="math inline">\({y_{ij}=0}\)</span>。模型需要去预测 <span class="math inline">\({\hat y_{ij} = sigmoid(\hat y_i - \hat y_j)}\)</span>。</p>
+<p>参考逻辑回归，用最大似然对参数进行估计，得到损失函数为 <span class="math inline">\({L=\log(1+\exp(-(\hat y(x_i)-\hat y(x_j))}\)</span>。优化过程和前面提到类似。</p>
+<h2 id="nfm">NFM</h2>
+<p>NFM 和 AFM 两篇论文是同一个作者写的，所以文章的结构很相近。</p>
+<p>FM 模型由于复杂度问题，一般只使用特征二阶交叉的形式，缺少对 higher-order 以及 non-liner 特征的交叉能力。NFM 尝试通过引入 NN 来解决这个问题。</p>
+<p>NFM 的结构如下：第一项和第二项是线性回归，第三项是神经网络。神经网络中利用 FM 模型的二阶特征交叉结果做为输入，学习数据之间的高阶特征。与直接使用高阶 FM 模型相比，可以降低模型的训练复杂度，加快训练速度。</p>
+<p><span class="math display">\[
+\hat{y}_{N F M}(\mathbf{x})=w_{0}+\sum_{i=1}^{n} w_{i} x_{i}+f(\mathbf{x})
+\]</span></p>
+<p>NFM 的神经网络部分包含 4 层，分别是 Embedding Layer、Bi-Interaction Layer、Hidden Layers、Prediction Score。</p>
+<figure>
+<img src="http://media.xiang578.com/15643037118475.jpg" alt="NFM"><figcaption>NFM</figcaption>
+</figure>
+<ul>
+<li>Embedding Layer 层对输入的稀疏数据进行 Embedding 操作。最常见的 Embedding 操作是在一张权值表中进行 lookup ，论文中作者强调他们这一步会将 Input Feture Vector 中的值与 Embedding 向量相乘。</li>
+<li>Bi-Interaction Layer 层是这篇论文的创新，对 embedding 之后的特征两两之间做 element-wise product，并将结果相加得到一个 k 维（Embeding 大小）向量。这一步相当于对特征的二阶交叉，与 FM 类似，这个公式也能进行化简：</li>
+</ul>
+<p><span class="math display">\[
+f_{B I}\left(\mathcal{V}_{x}\right)=\sum_{i=1}^{n} \sum_{j=i+1}^{n} x_{i} \mathbf{v}_{i} \odot x_{j} \mathbf{v}_{j} =\frac{1}{2}\left[\left(\sum_{i=1}^{n} x_{i} \mathbf{v}_{i}\right)^{2}-\sum_{i=1}^{n}\left(x_{i} \mathbf{v}_{i}\right)^{2}\right]
+\]</span></p>
+<ul>
+<li>Hidden Layers 层利用常规的 DNN 学习高阶特征交叉</li>
+<li>Prdiction Layer 层输出最终的结果： <span class="math display">\[
+\begin{aligned} \hat{y}_{N F M}(\mathbf{x}) &amp;=w_{0}+\sum_{i=1}^{n} w_{i} x_{i} +\mathbf{h}^{T} \sigma_{L}\left(\mathbf{W}_{L}\left(\ldots \sigma_{1}\left(\mathbf{W}_{1} f_{B I}\left(\mathcal{V}_{x}\right)+\mathbf{b}_{1}\right) \ldots\right)+\mathbf{b}_{L}\right) \end{aligned}
+\]</span></li>
+</ul>
+<p>实验结果：</p>
+<p><img src="http://media.xiang578.com/15643059963915.jpg"></p>
+<h2 id="afm">AFM</h2>
+<p>AFM(Attentional Factorization Machine), 在 FM 的基础上将 Attention 机制引入到交叉项部分，用来区分不同特征组合的权重。</p>
+<p><span class="math display">\[
+\hat{y}_{A F M}(\mathbf{x})=w_{0}+\sum_{i=1}^{n} w_{i} x_{i}+\mathbf{p}^{T} \sum_{i=1}^{n} \sum_{j=i+1}^{n} a_{i j}\left(\mathbf{v}_{i} \odot \mathbf{v}_{j}\right) x_{i} x_{j}
+\]</span></p>
+<p>单独看上面公式中的第三项结构：</p>
+<p><img src="http://media.xiang578.com/15643076111641.jpg"></p>
+<ul>
+<li>Embedding Layer 与 NFM 里面的作用一样，转化特征。</li>
+<li>Pair-wise Interaction Layer 是将特征两两交叉，如果对这一步的结果求和就是 FM 中的交叉项。</li>
+<li>Attention 机制在 Attention-based Pooling 层引入。将 Pair-wise Interaction Layer 中的结果输入到 Attention Net 中，得到特征组合的 score <span class="math inline">\({a_{i j}^{\prime} }\)</span>，然后利用 softmax 得到权重矩阵 <span class="math inline">\({a_{ij}}\)</span>。 <span class="math display">\[
+\begin{aligned} a_{i j}^{\prime} &amp;=\mathbf{h}^{T} \operatorname{Re} L U\left(\mathbf{W}\left(\mathbf{v}_{i} \odot \mathbf{v}_{j}\right) x_{i} x_{j}+\mathbf{b}\right) \\ a_{i j} &amp;=\frac{\exp \left(a_{i j}^{\prime}\right)}{\sum_{(i, j) \in \mathcal{R}_{x}} \exp \left(a_{i j}^{\prime}\right)} \end{aligned}
+\]</span></li>
+<li>最后将 Pair-wise Interaction Layer 中的二阶交叉结果和权重矩阵对应相乘求和得到 AFM 的交叉项。</li>
+</ul>
+<p><img src="http://media.xiang578.com/15643086043204.jpg"></p>
+<p>和前一节的实验结果对比，AFM 效果比 NFM 要差一些。这大概就能说明为什么论文中提到 NFM，但是最后没有把 NFM 的结果贴出来，实在是机智。又回到，发论文是需要方法有创新，还是一味追求 state-of-the-art。</p>
+<h2 id="参考资料">参考资料</h2>
+<blockquote>
+<ul>
+<li><a href="http://kubicode.me/2018/02/23/Deep%20Learning/Deep-in-out-Factorization-Machines-Series/#NFM" target="_blank" rel="noopener">深入浅出Factorization Machines系列 | Kubi Code'Blog</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/34666996" target="_blank" rel="noopener">FM模型在LTR类问题中的应用 - 知乎</a></li>
+</ul>
+</blockquote>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/fm/" rel="tag"># fm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/wide-and-deep.html" rel="next" title="(Wide&Deep) Wide & Deep Learning for Recommender Systems">
+                <i class="fa fa-chevron-left"></i> (Wide&Deep) Wide & Deep Learning for Recommender Systems
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -677,8 +726,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -936,6 +994,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fm"><span class="nav-number">1.</span> <span class="nav-text">FM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fm-vs-svm"><span class="nav-number">1.1.</span> <span class="nav-text">FM vs SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rank"><span class="nav-number">1.2.</span> <span class="nav-text">Rank</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nfm"><span class="nav-number">2.</span> <span class="nav-text">NFM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#afm"><span class="nav-number">3.</span> <span class="nav-text">AFM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -1090,6 +1165,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -1108,9 +1187,28 @@
   <script id="dsq-count-scr" src="https://xiang578.disqus.com/count.js" async></script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://xiang578.com/post/fm.html";
+    this.page.identifier = "post/fm.html";
+    this.page.title = '(FM) Factorization Machines';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://xiang578.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
 
 
 
+
+
+  
 
 
   
@@ -1135,38 +1233,30 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
           }
         })
         .fail(function ({ responseJSON }) {
@@ -1191,9 +1281,7 @@
             });
           };
           
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
+            addCount(Counter);
           
         });
     });
