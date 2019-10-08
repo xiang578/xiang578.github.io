@@ -1,14 +1,13 @@
 ---
-title: cs231n-summary
+title: Standford CS231n 2017 课程部分总结
 date: 2019-10-08 21:58:26
-tags:
-categories:
+tags: 
+categories:  机器学习
 ---
 
-# Standford CS231n 2017 Summary 
+> 大部分是去年整理的，课程看到一半就看不下去，笔记也整理不下去。现在直接发表出来做为一个留念，真心推荐刚入门的人好好去看一下这个课程。
 
-- 我的课程课程笔记
-- 部分内容参考 [mbadry1/CS231n-2017-Summary](https://github.com/mbadry1/CS231n-2017-Summary/blob/master/README.md)
+- 大量内容参考 [mbadry1/CS231n-2017-Summary](https://github.com/mbadry1/CS231n-2017-Summary/blob/master/README.md)
 
 
 ## Table of contents
