@@ -3,9 +3,11 @@ title: Standford CS231n 2017 课程部分总结
 date: 2019-10-08 21:58:26
 tags: 
 categories:  机器学习
+mathjax: true
 ---
 
-> 大部分是去年整理的，课程看到一半就看不下去，笔记也整理不下去。现在直接发表出来做为一个留念，真心推荐刚入门的人好好去看一下这个课程。
+> 去年学习这门做的部分笔记，现在分享出来。
+> 笔记格式有些问题，持续整理中。
 
 - 大量内容参考 [mbadry1/CS231n-2017-Summary](https://github.com/mbadry1/CS231n-2017-Summary/blob/master/README.md)
 
@@ -39,7 +41,7 @@ categories:  机器学习
 
 - 视觉地出现促进了物种竞争。
 - ImageNet 是由李飞飞维护的一个大型图像数据集。
-- 自从 2012 年 CNN 出现之后，图像分类的错误率大幅度下降。 神经网络的深度也从 7 层增加到 2015 年的 152 层。
+- 自从 2012 年 CNN 出现之后，图像分类的错误率大幅度下降。 神经网络的深度也从 7 层增加到 2015 年的 152 层。截止到目前，机器分类准确率已经超过人类，所以 ImageNet 也不再举办相关比赛。
 - CNN 在 1998 年就被提出，但是这几年才流行开来。主要原因有：1) 硬件发展，并行计算速度提到 2）大规模带标签的数据集。
 - Gola: Understand how to write from scratch, debug and train convolutional neural networks.
 
