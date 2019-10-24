@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xiang578.com/post/zjp-2017.html</loc>
+    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/zjp-2016.html</loc>
+    <loc>https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/universiy-booklist.html</loc>
@@ -13,10 +13,10 @@
     <loc>https://xiang578.com/post/rime.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
+    <loc>https://xiang578.com/post/zjp-2017.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
+    <loc>https://xiang578.com/post/zjp-2016.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/wide-and-deep.html</loc>
@@ -100,19 +100,13 @@
     <loc>https://xiang578.com/post/meet-leancloud-counter-security-problem.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/computer-base-network.html</loc>
+    <loc>https://xiang578.com/post/icpc-xian-2017.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/machine-learning-ch-03.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/mac-software.html</loc>
-    <lastmod>2019-10-24</lastmod>
-  </url>  <url>
     <loc>https://xiang578.com/post/lanqiaobei-2016.html</loc>
-    <lastmod>2019-10-24</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/if.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/just-for-fun.html</loc>
@@ -124,7 +118,7 @@
     <loc>https://xiang578.com/post/interview.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/icpc-xian-2017.html</loc>
+    <loc>https://xiang578.com/post/mac-software.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/icpc-ecl-shanghai-2017.html</loc>
@@ -134,6 +128,12 @@
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/how-to-use-taskpaper-to-do-3-thigns.html</loc>
+    <lastmod>2019-10-24</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/machine-learning-ch-01.html</loc>
+    <lastmod>2019-10-24</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/if.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/hello-world.html</loc>
@@ -169,25 +169,25 @@
     <loc>https://xiang578.com/post/ctr.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/machine-learning-ch-01.html</loc>
+    <loc>https://xiang578.com/post/007-and-me.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/cs231n-summary.html</loc>
+    <loc>https://xiang578.com/post/blog-log.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/how-to-build-a-hexo-blog.html</loc>
+    <loc>https://xiang578.com/post/best-of-iphone-2019.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/english-writing-01.html</loc>
+    <loc>https://xiang578.com/post/before-go-to-univisity.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/build-to-win-homework-0x00.html</loc>
-    <lastmod>2019-10-24</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/ImportanceOffont.html</loc>
+    <loc>https://xiang578.com/post/auto-workflow.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/alfred-lists.html</loc>
+    <lastmod>2019-10-24</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/alexnet.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/2011.html</loc>
@@ -199,19 +199,19 @@
     <loc>https://xiang578.com/post/Sleep.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/auto-workflow.html</loc>
+    <loc>https://xiang578.com/post/build-to-win-homework-0x00.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/before-go-to-univisity.html</loc>
+    <loc>https://xiang578.com/post/english-writing-01.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/best-of-iphone-2019.html</loc>
+    <loc>https://xiang578.com/post/how-to-build-a-hexo-blog.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/add-return-button-to-blog.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/alexnet.html</loc>
+    <loc>https://xiang578.com/post/ImportanceOffont.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/Csharp-chat-softwave.html</loc>
@@ -220,10 +220,10 @@
     <loc>https://xiang578.com/post/2017.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/blog-log.html</loc>
+    <loc>https://xiang578.com/post/cs231n-summary.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/007-and-me.html</loc>
+    <loc>https://xiang578.com/post/007-aciton-reflection.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/AppleScript-encode-error.html</loc>
@@ -235,7 +235,7 @@
     <loc>https://xiang578.com/post/2015.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/007-aciton-reflection.html</loc>
+    <loc>https://xiang578.com/post/computer-base-network.html</loc>
     <lastmod>2019-10-24</lastmod>
   </url>
 </urlset>
