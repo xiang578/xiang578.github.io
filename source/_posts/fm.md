@@ -11,7 +11,7 @@ Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在
 
 假设现在有一个电影评分的任务，给定如下如所示的特征向量 x（包括用户名、当前在看的电影、已经打分的电影、时间特征、之前看的电影），预测用户对当前观看电影的评分。
 
-![电影评分](http://media.xiang578.com/15643023365227.jpg)
+![电影评分](/file/15643023365227.jpg)
 
 作者在线性回归模型的基础上，添加交叉项部分，用来自动组合二阶特征。
 $$\hat y(x):= w_0 + \sum_{i=1}^{n} w_ix_i + \sum_{i=1}^n \sum_{j=i+1}^n \left \langle v_i,v_j \right \rangle x_iy_i$$
@@ -79,7 +79,7 @@ $$
 
 NFM 的神经网络部分包含 4 层，分别是 Embedding Layer、Bi-Interaction Layer、Hidden Layers、Prediction Score。
 
-![NFM](http://media.xiang578.com/15643037118475.jpg)
+![NFM](/file/15643037118475.jpg)
 
 - Embedding Layer 层对输入的稀疏数据进行 Embedding 操作。最常见的 Embedding 操作是在一张权值表中进行 lookup ，论文中作者强调他们这一步会将 Input Feture Vector 中的值与 Embedding 向量相乘。
 - Bi-Interaction Layer 层是这篇论文的创新，对 embedding 之后的特征两两之间做 element-wise product，并将结果相加得到一个 k 维（Embeding 大小）向量。这一步相当于对特征的二阶交叉，与 FM 类似，这个公式也能进行化简：
@@ -96,7 +96,7 @@ $$
 
 实验结果：
 
-![](http://media.xiang578.com/15643059963915.jpg)
+![](/file/15643059963915.jpg)
 
 
 ## AFM
@@ -110,7 +110,7 @@ $$
 
 单独看上面公式中的第三项结构：
 
-![](http://media.xiang578.com/15643076111641.jpg)
+![](/file/15643076111641.jpg)
 
 - Embedding Layer 与 NFM 里面的作用一样，转化特征。
 - Pair-wise Interaction Layer 是将特征两两交叉，如果对这一步的结果求和就是 FM 中的交叉项。
@@ -122,7 +122,7 @@ $$
 
 
 
-![](http://media.xiang578.com/15643086043204.jpg)
+![](/file/15643086043204.jpg)
 
 和前一节的实验结果对比，AFM 效果比 NFM 要差一些。这大概就能说明为什么论文中提到 NFM，但是最后没有把 NFM 的结果贴出来，实在是机智。又回到，发论文是需要方法有创新，还是一味追求 state-of-the-art。
 

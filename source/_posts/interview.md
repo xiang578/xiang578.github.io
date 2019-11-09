@@ -65,7 +65,5 @@ categories: 生活志
 [新闻稿的链接](https://info.zufe.edu.cn/xx_nry.jsp?urltype=news.NewsContentUrl&wbtreeid=1074&wbnewsid=7926)
 查看更多我的随笔，请点击 [ZenTalk](http://xiang578.com/)
 
-![IMG_0233](http://
-media.xiang578.com/IMG_0233.JPG)
 
 

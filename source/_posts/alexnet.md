@@ -47,7 +47,7 @@ mathjax: true
     
 -  参数数量 60 million
     
-![](http://media.xiang578.com/15580111160071.jpg)
+![](/file/15580111160071.jpg)
 
 - 使用 ReLU 作为激活函数：比 tanh 计算开销小，以及收敛速度快。根据问题的特点选择激活函数（大模型、大数据集）
 - Local Response Normalization(Norm Layers)：局部响应归一化层，后来很少使用。
@@ -68,14 +68,14 @@ $$
 - 参数：dropout 0.5，batch size 128， SGD Momentum 0.9， Learning rate 1e-2 reduce by 10，L2 weight decay 5e-4
 
 - 测试集上结果
-![](http://media.xiang578.com/15581816832571.jpg)
+![](/file/15581816832571.jpg)
 
 - 取出 CONV1 相关的 filters卷积侧重点不同，GPU1 颜色无关，GPU2 颜色相关。多次实验发现都存在这种现象，说明使用多个 GPU 训练是必要的，模型可以捕捉更多信息。
-![](http://media.xiang578.com/15581833748303.jpg)
+![](/file/15581833748303.jpg)
 
 
 - 取所有最后一个隐层向量，找到与测试图片欧拉距离最小的训练图片（下图中第一列为测试图片，之后几列是欧拉距离最小的训练集中图片）。肉眼可以发现，同一分类的图片有很大关联性。证明模型能学习图片之间的关系。
-![](http://media.xiang578.com/15581820979738.jpg)
+![](/file/15581820979738.jpg)
 
 ### 结论
 

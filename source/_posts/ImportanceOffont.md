@@ -19,6 +19,6 @@ categories: 程序园
 
 说完这两个问题，回到主题，每天和字母打交到，选着一款合适的字体是非常重要的。推荐一款我在几年前就使用的编程字体——[Hack: A typeface designed for source code](https://github.com/source-foundry/Hack)。
 
-![Hack 字体示意](http://media.xiang578.com/15348602272400.png)
+![Hack 字体示意](/file/15348602272400.png)
 
 上图就是这款字体的示意，最喜欢的点是 `0` 中间有一个小竖点，非常的传神。 以至于现在 IDE 中的 0 不是想上面这样处理，我都感觉不会编程了。

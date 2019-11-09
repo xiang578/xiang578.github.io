@@ -14,7 +14,7 @@ categories: 生活志
 
 Workflow (新手入门请看[iOS 效率神器 Workflow 怎么用？跟着这篇入门指南从零开始 | 新手问号](https://sspai.com/post/43849)）是 iOS 上的一款自动化软件。似乎是去年被苹果收购，现在在 App Store 中可以免费下载。前一段时间的 WWDC 上，也公布了进行版本，能利用 Siri 的「捷径」App。
 
-![](media.xiang578.com/15309425389934.jpg)
+![](/file/15309425389934.jpg)
 
 在 iPhone 上，我最常用的 workflow 动作是碎片知识摘记，实现利用 iPhone 阅读时，将值得多次阅读的内容，集中保存到印象笔记中。有关这个动作更多的介绍可以查看 [Workflow + 印象笔记，定制高效碎片知识管理工作流 | Matrix 精选 - 少数派](https://sspai.com/post/35281)。
 
@@ -27,15 +27,15 @@ Workflow (新手入门请看[iOS 效率神器 Workflow 怎么用？跟着这篇�
 Aflred 是 Mac 上的一款效率工具。之前我在自己的博客中也有分享过，[Alfred 使用记录 - RyenX](https://xiang578.com/2017/07/02/alfred-lists/)。这里，我就补充介绍几个自己目前在用的功能。
 
 由于我平时是使用 Markdown 进行写作的，难免会遇到需要插入很多链接的时候，比如现在正在写的这一篇文章。Afled 中有一个 workflows 「[fallroot/copy-url-for-alfred](https://github.com/fallroot/copy-url-for-alfred)」，通过这个动作可以将 Chrome 或者 Safari 中的当前正在浏览的网页的标题以及网址以 Anchor 、URL、Title、Markdown 等多种形式复制到当前的输入框或者是剪贴板。
-![](media.xiang578.com/15309430608042.png)
+![](/file/15309430608042.png)
 [ngreenstein/alfred-process-killer: An Alfred 2 workflow that makes it easy to kill misbehaving processes. It is, in essence, a way to easily find processes by name and kill them using `kill -9`.](https://github.com/ngreenstein/alfred-process-killer)：快速结束 Mac 中的某些进程。
-![-w607](media.xiang578.com/15309434519054.jpg)
+![-w607](/file/15309434519054.jpg)
 
 ## IFTTT
 
 Workflow 和 Aflred 需要在自己的 iPhone 或者 Mac 上才可以运行，说起来多少还有些不自动。我经常使用的另外一个自动化服务「[IFTTT](https://ifttt.com/)」就可以解决这个问题。IFTTT 是什么？它是英文 **IF This Then That** 的首字母缩写，它是一个提供自动化服务的网站。它的功能可以从字面猜测出来大概，完整地解释是「如果A完成事件1，那么就让B完成事件2」。简单来说，你可以通过设置一些规则，让它帮你自动完成一些重复工作。比如设置规则实现当你发布一条微博后，IFTTT 自动将微博同步到印象笔记中。所以，IFTTT 对我的意义是将不同的应用连接在了一下，方便我造各种工作流。
 
-![](media.xiang578.com/15309318778409.png)
+![](/file/15309318778409.png)
 
 与上面的形式相同，继续介绍一下我目前在使用的规则。
 
@@ -47,11 +47,11 @@ Workflow 和 Aflred 需要在自己的 iPhone 或者 Mac 上才可以运行，�
 
 [If New favorite item, then Append to a note in Evernote - IFTTT](https://ifttt.com/applets/79292089d-if-new-favorite-item-then-append-to-a-note-in-evernote)：古语「不动笔墨不读书」，很多文章有值得记录地方，而且也希望可以将自己所做的笔记集中在一处。针对这个问题，很多人会复杂，并且再粘贴到某一个文档中。这种方法做起来简单粗暴，却打断了阅读的连续性。通过我这个动作，可以将在 Pocket 中高亮的句子，直接添加到印象笔记的一条特定笔记中。
 
-![印象笔记中效果](media.xiang578.com/15309335067450.jpg)
+![印象笔记中效果](/file/15309335067450.jpg)
 
 [If item archived , then create record in airtable](https://ifttt.com/applets/75619425d-if-item-archived-then-create-record-in-airtable)：这一个动作是实现阅读数据的统计，当我在 Pocket 中归档一篇文章之后，会在 Airatble 指定的表单里添加一条相关的阅读记录。
 
-![Airtable record](media.xiang578.com/15309336298823.jpg)
+![Airtable record](/file/15309336298823.jpg)
 
 
 ### 任务管理
@@ -63,11 +63,11 @@ Workflow 和 Aflred 需要在自己的 iPhone 或者 Mac 上才可以运行，�
 ### 创意
 
 IFTTT 中有一个与 RSS 相关的触发器，而且如下图所示，提供了对文章进行关键字匹配的选项。
-![IFTTT RSS](media.xiang578.com/15309338021730.jpg)
+![IFTTT RSS](/file/15309338021730.jpg)
 
 前一阵子是 618 年中大促，正好我想购买一个 QC35 的耳机。为了追求优惠，大部分人会不停的查看想购买商品的页面，看看有没有什么新的变化。而我利用 IFTTT 搞了一个监控 QC35 全网优惠的监控。具体思路如下：什么值得买中有一个[精选好价](https://www.smzdm.com/jingxuan/)的频道，很多人会在上面爆料商品的优惠信息。幸运的是，这个频道提供 RSS 订阅链接。所以，配合上面提到的 RSS 相关触发器，我写了 [If new feed item matches 'qc35' from http://faxian.smzdm.com/feed, then send me an email at xiang578@foxmail.com - IFTTT](https://ifttt.com/applets/75671738d-if-new-feed-item-matches-qc35-from-http-faxian-smzdm-com-feed-then-send-me-an-email-at-xiang578-foxmail-com) 以及 [If new feed item matches 'QC35' from http://feed.smzdm.com, then send me an email at xiang578@foxmail.com - IFTTT](https://ifttt.com/applets/75621100d-if-new-feed-item-matches-qc35-from-http-feed-smzdm-com-then-send-me-an-email-at-xiang578-foxmail-com) 两个规则。从而实现，有人爆料 QC35 相关的价格优惠时，我会收到一条由 IFTTT 发送的邮件。
 
-![qc](media.xiang578.com/15309346475002.jpg)
+![qc](/file/15309346475002.jpg)
 
 ## Reference
 - [玩转 IFTTT，互联网自动化也可以很简单 - 少数派](https://sspai.com/post/43731)

@@ -12,10 +12,10 @@ categories: 站务
 我在 [博客折腾记：使用 Travis CI 自动部署](http://xiang578.com/2018/05/28/use-travis-ci-to-auto-update/) 中提到将主题以 modules 的形式加入主仓库。而且现在使用的主题 git 仓库是我自己 fork 的，也有一些修改。几个天之前，hexo-theme-even 的 master 接受 [feat: add LaTeX support by JieJiSS · Pull Request #236 ](https://github.com/ahonn/hexo-theme-even/pull/236) ，完成对  LaTeX 公式的支持。所以，我需要将使用的代码和最新的代码合并。
 
 这里使用的是 github Pull request 功能。在你自己 fork 的仓库的网页上点击 `new pull request`，然后按照下图修改。就会生成一个新的  Pull request 。
-![-w1009](http://media.xiang578.com/15582362469640.jpg)
+![-w1009](/file/15582362469640.jpg)
 
 而且，如果你没有修改过原来的代码，PR 能自动合并。不过由于我对代码做了一些修改，会产生一些冲突，需要手动解决冲突（这里推荐使用 VS code）。出现下图的情况即成功合并两个库。
-![-w1046](http://media.xiang578.com/15582366459115.jpg)
+![-w1046](/file/15582366459115.jpg)
 
 完成 PR 后，进入你站点下面的对应主题目录，使用 `git checkout master` 切换到主题的 master 分支，使用 `git pull origin master` 拉取最新的代码。回退到站点目录下，利用 `git add` 更新。
 
@@ -99,7 +99,7 @@ TypeError: Cannot read property 'statusCode' of undefined
 
 而且从百度提供的抓取诊断上来看，配置腾讯云 COS 后，百度的爬虫依然访问的是 github 上的仓库。
 
-![-w558](http://media.xiang578.com/15582343082714.jpg)
+![-w558](/file/15582343082714.jpg)
 
 一顿搜索之后，找到一个主动提交 hexo 博客链接至百度的插件 [huiwang/hexo-baidu-url-submit](https://github.com/huiwang/hexo-baidu-url-submit)。
 
@@ -129,4 +129,4 @@ deploy:
 
 最终在 travis-ci 中发现下面的日志即配置成功。另外一点，百度的站长平台的数据不能及时展示我们提交后的结果，需要耐心等待。
 
-![-w866](http://media.xiang578.com/15582352091163.jpg)
+![-w866](/file/15582352091163.jpg)
