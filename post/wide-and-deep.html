@@ -101,21 +101,21 @@
 
 
   <meta name="description" content="背景 这是一篇推荐系统相关的论文，场景是谷歌 Play Store 的 App 推荐。文章开头，作者点明推荐系统需要解决的两个能力： memorization 和 generalization。 memorization 指的是学习数据中出现过的组合特征能力。最常使用的算法是 Logistic Regression，简单、粗暴、可解释性强，而且会人工对特征进行交叉，从而提升效果。但是，对于在训练数">
-<meta name="keywords" content="lr,dnn,ctr">
+<meta name="keywords" content="ctr,dnn,lr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(Wide&amp;Deep) Wide &amp; Deep Learning for Recommender Systems">
 <meta property="og:url" content="https://xiang578.com/post/wide-and-deep.html">
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="背景 这是一篇推荐系统相关的论文，场景是谷歌 Play Store 的 App 推荐。文章开头，作者点明推荐系统需要解决的两个能力： memorization 和 generalization。 memorization 指的是学习数据中出现过的组合特征能力。最常使用的算法是 Logistic Regression，简单、粗暴、可解释性强，而且会人工对特征进行交叉，从而提升效果。但是，对于在训练数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://media.xiang578.com/15610337156969.jpg">
-<meta property="og:image" content="http://media.xiang578.com/15611212418726.jpg">
-<meta property="og:image" content="http://media.xiang578.com/15610335523493.jpg">
-<meta property="og:updated_time" content="2019-11-09T03:33:31.277Z">
+<meta property="og:image" content="https://xiang578.com/file/15610337156969.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15611212418726.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15610335523493.jpg">
+<meta property="og:updated_time" content="2019-11-09T04:35:40.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(Wide&amp;Deep) Wide &amp; Deep Learning for Recommender Systems">
 <meta name="twitter:description" content="背景 这是一篇推荐系统相关的论文，场景是谷歌 Play Store 的 App 推荐。文章开头，作者点明推荐系统需要解决的两个能力： memorization 和 generalization。 memorization 指的是学习数据中出现过的组合特征能力。最常使用的算法是 Logistic Regression，简单、粗暴、可解释性强，而且会人工对特征进行交叉，从而提升效果。但是，对于在训练数">
-<meta name="twitter:image" content="http://media.xiang578.com/15610337156969.jpg">
+<meta name="twitter:image" content="https://xiang578.com/file/15610337156969.jpg">
 
 
 
@@ -482,7 +482,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-09 11:33:31" itemprop="dateModified" datetime="2019-11-09T11:33:31+08:00">2019-11-09</time>
+                <time title="修改时间：2019-11-09 12:35:40" itemprop="dateModified" datetime="2019-11-09T12:35:40+08:00">2019-11-09</time>
               
             
           </span>
@@ -594,7 +594,7 @@
 <h2 id="模型">模型</h2>
 <p>从文章题目中顾名思义，Wide &amp; Deep 是融合 Wide Models 和 Deep Models 得到，下图形象地展示出来。</p>
 <figure>
-<img src="http://media.xiang578.com/15610337156969.jpg" alt="Wide &amp; Deep Models"><figcaption>Wide &amp; Deep Models</figcaption>
+<img src="/file/15610337156969.jpg" alt="Wide &amp; Deep Models"><figcaption>Wide &amp; Deep Models</figcaption>
 </figure>
 <p><strong>Wide Component</strong> 是由一个常见的广义线性模型：<span class="math inline">\({y=w^Tx+b}\)</span>。其中输入的特征向量 <span class="math inline">\({x}\)</span> 包括两种类型：原始输入特征（raw input features）和组合特征（transformed features）。</p>
 <p>常用的组合特征公式如下： <span class="math display">\[{\phi_k(x)=\prod_{i=1}^dx_i^{c_{ki}},c_{ki}\in\{0,1\}}\]</span> <span class="math inline">\({c_{ki}}\)</span> 代表对于第k个组合特征是否包含第i个特征。<span class="math inline">\({x_i}\)</span>是布尔变量，代表第i个特征是否出现。例如对于组合特征 <code>AND(gender=female, language=en)</code> 当且仅当 x 满足<code>(“gender=female” and “language=en”)</code>时，<span class="math inline">\({\phi_k(x)=1}\)</span>。</p>
@@ -603,11 +603,11 @@
 <p>预测时，会将 Wide 和 Deep 的输出加权得到结果。在训练时，使用 logistic loss function 做为损失函数。模型优化时，利用 mini-batch stochastic optimization 将梯度信息传到 Wide 和 Deep 部分。然后，Wide 部分通过 FTRL + L1 优化，Deep 部分通过 AdaGrad 优化。</p>
 <h2 id="实验">实验</h2>
 <p>本篇论文选择的实验场景是谷歌 app 商店的应用推荐，根据用户相关的历史信息，推荐最有可能会下载的 App。</p>
-<p>使用的模型如下： <img src="http://media.xiang578.com/15611212418726.jpg" alt="Wide &amp; Deep model structure for apps recommendation."></p>
+<p>使用的模型如下： <img src="/file/15611212418726.jpg" alt="Wide &amp; Deep model structure for apps recommendation."></p>
 <p>一些细节： - 对于出现超过一定次数的 categorical feature，ID 化后放入到模型中。 - Continuous real-valued features 通过 cumulative distribution function 归一化到 [0, 1] 区间。 - categorical feature 由 32 维 embedding 向量组成，最终的输入到 Deep 部分的向量大概在 1200 维。 - 每天在前一天 embedding 和模型的基础上进行增量更新。</p>
 <p>实验结果：</p>
 <figure>
-<img src="http://media.xiang578.com/15610335523493.jpg" alt="实验结果"><figcaption>实验结果</figcaption>
+<img src="/file/15610335523493.jpg" alt="实验结果"><figcaption>实验结果</figcaption>
 </figure>
 <p>Wide &amp; Deep 模型相对于其他两个模型毫无疑问有提升。但结果中也一个反常的现象：单独使用 Deep 模型离线 AUC 指标比单独使用 Wide 模型差，但是线上对比实验时却有较大的提升。论文中作者用了一句：线下实验中的特征是固定的，线上实验会遇到很多没有出现过的特征组合，Deep 相对于 Wide 有更好的模型泛化能力，所以会有反常现象。由于笔者工作中不关注 AUC，也没有办法继续分析。</p>
 <h2 id="总结">总结</h2>
@@ -640,11 +640,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/lr/" rel="tag"># lr</a>
+            <a href="/tags/ctr/" rel="tag"># ctr</a>
           
             <a href="/tags/dnn/" rel="tag"># dnn</a>
           
-            <a href="/tags/ctr/" rel="tag"># ctr</a>
+            <a href="/tags/lr/" rel="tag"># lr</a>
           
         </div>
       

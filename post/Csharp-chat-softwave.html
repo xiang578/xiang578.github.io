@@ -108,15 +108,15 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="前几天面试，被问如何实现一个类似微信的聊天软件。当时说了一个大概的想法，面试官没有怎么评价，只是最后建议我有空多做一些项目。正好最近不怎么忙，就实现一下。写了一个简易的模型，在这个过程中应用了很多原来学过的东西，当然还有很多问题没有解决。  这个软件选择C/S架构，所以写了一个服务器端程序和一个客户端程序，然后通信使用的是TCP协议。 利用socket完成通信，大致的过程如下图所示。   3. 服">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://media.xiang578.com/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG">
-<meta property="og:image" content="http://media.xiang578.com/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg">
-<meta property="og:image" content="http://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg">
-<meta property="og:image" content="http://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg">
-<meta property="og:updated_time" content="2019-11-09T03:33:31.265Z">
+<meta property="og:image" content="https://xiang578.com/file/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG">
+<meta property="og:image" content="https://xiang578.com/file/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg">
+<meta property="og:image" content="https://xiang578.com/file/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg">
+<meta property="og:image" content="https://xiang578.com/file/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg">
+<meta property="og:updated_time" content="2019-11-09T04:35:40.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#聊天软件实现">
 <meta name="twitter:description" content="前几天面试，被问如何实现一个类似微信的聊天软件。当时说了一个大概的想法，面试官没有怎么评价，只是最后建议我有空多做一些项目。正好最近不怎么忙，就实现一下。写了一个简易的模型，在这个过程中应用了很多原来学过的东西，当然还有很多问题没有解决。  这个软件选择C/S架构，所以写了一个服务器端程序和一个客户端程序，然后通信使用的是TCP协议。 利用socket完成通信，大致的过程如下图所示。   3. 服">
-<meta name="twitter:image" content="http://media.xiang578.com/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG">
+<meta name="twitter:image" content="https://xiang578.com/file/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG">
 
 
 
@@ -483,7 +483,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-09 11:33:31" itemprop="dateModified" datetime="2019-11-09T11:33:31+08:00">2019-11-09</time>
+                <time title="修改时间：2019-11-09 12:35:40" itemprop="dateModified" datetime="2019-11-09T12:35:40+08:00">2019-11-09</time>
               
             
           </span>
@@ -592,7 +592,7 @@
 <li><p>这个软件选择C/S架构，所以写了一个服务器端程序和一个客户端程序，然后通信使用的是TCP协议。</p></li>
 <li><p>利用socket完成通信，大致的过程如下图所示。</p></li>
 </ol>
-<p><img src="http://media.xiang578.com/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG"> 3. 服务器上开两个线程<code>threadListenConnect</code>和<code>threadReceivePacket</code>。服务器上的<code>socket</code>利用<code>bind</code>绑定服务器的ip和端口号。第一个线程死循环监听端口，是否有新的<code>connect</code>请求，并将新的连接<code>socket</code>保存到list中。再利用第二个线程接受客户端发来的数据包，并拆包执行进行相关功能。服务器之后，按照包中的内容判断是否需要发送到其他特定的客户端还是广播消息。</p>
+<p><img src="/file/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG"> 3. 服务器上开两个线程<code>threadListenConnect</code>和<code>threadReceivePacket</code>。服务器上的<code>socket</code>利用<code>bind</code>绑定服务器的ip和端口号。第一个线程死循环监听端口，是否有新的<code>connect</code>请求，并将新的连接<code>socket</code>保存到list中。再利用第二个线程接受客户端发来的数据包，并拆包执行进行相关功能。服务器之后，按照包中的内容判断是否需要发送到其他特定的客户端还是广播消息。</p>
 <ol start="4" type="1">
 <li><p>客户端中开一个线程<code>threadReceivePacket</code>。先和服务器连接，然后利用这个线程接受服务器发过来的数据包。这里也实现了发送给某个特定的客户端和广播。发包和拆包过程和服务器上差不多。</p></li>
 <li><p>数据包主要包括发送方ip、端口和接收方ip、端口，以及操作代码。不同的数据段用‘|’分割，接收方也按这样拆包就可以了。</p></li>
@@ -600,9 +600,9 @@
 <li><p>这个程序还可以加上数据库搞出注册以及保存聊天消息，然后自己也没有去写消息的排序以及私聊功能，待做。</p></li>
 <li><p>最后相关代码放在github上面<a href="https://github.com/xiang578/NewChat" target="_blank" rel="noopener"></a></p></li>
 </ol>
-<p>服务器端：<img src="http://media.xiang578.com/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg"></p>
-<p>客户端1：<img src="http://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg"></p>
-<p>客户端2：<img src="http://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg"></p>
+<p>服务器端：<img src="/file/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg"></p>
+<p>客户端1：<img src="/file/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg"></p>
+<p>客户端2：<img src="/file/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg"></p>
 
       
     </div>

@@ -108,15 +108,15 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="作者以及相关性  Alex Krizhevsky Ilya Sutskever Geoffrey E. Hinton 本文被认为是这一轮深度学习浪潮的开端  主题  将 CNN 技术最先应用到图像识别领域，利用 CNN 参数共享的特性，减少网络的规模 解决深度网络难训练（速度慢）以及容易过拟合问题（更多数据或者网络技巧）  数据集与指标  ImageNet LSVRC-2010 contest:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://media.xiang578.com/15580111160071.jpg">
-<meta property="og:image" content="http://media.xiang578.com/15581816832571.jpg">
-<meta property="og:image" content="http://media.xiang578.com/15581833748303.jpg">
-<meta property="og:image" content="http://media.xiang578.com/15581820979738.jpg">
-<meta property="og:updated_time" content="2019-11-09T03:33:31.265Z">
+<meta property="og:image" content="https://xiang578.com/file/15580111160071.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15581816832571.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15581833748303.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15581820979738.jpg">
+<meta property="og:updated_time" content="2019-11-09T04:35:40.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)">
 <meta name="twitter:description" content="作者以及相关性  Alex Krizhevsky Ilya Sutskever Geoffrey E. Hinton 本文被认为是这一轮深度学习浪潮的开端  主题  将 CNN 技术最先应用到图像识别领域，利用 CNN 参数共享的特性，减少网络的规模 解决深度网络难训练（速度慢）以及容易过拟合问题（更多数据或者网络技巧）  数据集与指标  ImageNet LSVRC-2010 contest:">
-<meta name="twitter:image" content="http://media.xiang578.com/15580111160071.jpg">
+<meta name="twitter:image" content="https://xiang578.com/file/15580111160071.jpg">
 
 
 
@@ -483,7 +483,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-11-09 11:33:31" itemprop="dateModified" datetime="2019-11-09T11:33:31+08:00">2019-11-09</time>
+                <time title="修改时间：2019-11-09 12:35:40" itemprop="dateModified" datetime="2019-11-09T12:35:40+08:00">2019-11-09</time>
               
             
           </span>
@@ -627,7 +627,7 @@
 </ul></li>
 <li><p>参数数量 60 million</p></li>
 </ul>
-<p><img src="http://media.xiang578.com/15580111160071.jpg"></p>
+<p><img src="/file/15580111160071.jpg"></p>
 <ul>
 <li>使用 ReLU 作为激活函数：比 tanh 计算开销小，以及收敛速度快。根据问题的特点选择激活函数（大模型、大数据集）</li>
 <li>Local Response Normalization(Norm Layers)：局部响应归一化层，后来很少使用。 在经过 ReLU 作用之后，对相同空间位置上（<span class="math inline">\({b_{x,y}}\)</span>）的相邻深度（<span class="math inline">\({b^j}\)</span> ）的卷积结果做归一化。n 指定相邻卷积核数目，N 为该层所有卷积的数目。<span class="math inline">\({k, n, \alpha, \beta}\)</span> 都是超参数。本文使用 <span class="math inline">\({k=2, n=5, \alpha=10^{-4}, \beta = 0.75}\)</span>, 分别降低 top-1 和 top-5 错误 1.4% 和 1.2%</li>
@@ -647,9 +647,9 @@ b_{x, y}^{i}=a_{x, y}^{i} /\left(k+\alpha \sum_{j=\max (0, i-n / 2)}^{\min (N-1,
 <h3 id="实验">实验</h3>
 <ul>
 <li><p>参数：dropout 0.5，batch size 128， SGD Momentum 0.9， Learning rate 1e-2 reduce by 10，L2 weight decay 5e-4</p></li>
-<li><p>测试集上结果 <img src="http://media.xiang578.com/15581816832571.jpg"></p></li>
-<li><p>取出 CONV1 相关的 filters卷积侧重点不同，GPU1 颜色无关，GPU2 颜色相关。多次实验发现都存在这种现象，说明使用多个 GPU 训练是必要的，模型可以捕捉更多信息。 <img src="http://media.xiang578.com/15581833748303.jpg"></p></li>
-<li><p>取所有最后一个隐层向量，找到与测试图片欧拉距离最小的训练图片（下图中第一列为测试图片，之后几列是欧拉距离最小的训练集中图片）。肉眼可以发现，同一分类的图片有很大关联性。证明模型能学习图片之间的关系。 <img src="http://media.xiang578.com/15581820979738.jpg"></p></li>
+<li><p>测试集上结果 <img src="/file/15581816832571.jpg"></p></li>
+<li><p>取出 CONV1 相关的 filters卷积侧重点不同，GPU1 颜色无关，GPU2 颜色相关。多次实验发现都存在这种现象，说明使用多个 GPU 训练是必要的，模型可以捕捉更多信息。 <img src="/file/15581833748303.jpg"></p></li>
+<li><p>取所有最后一个隐层向量，找到与测试图片欧拉距离最小的训练图片（下图中第一列为测试图片，之后几列是欧拉距离最小的训练集中图片）。肉眼可以发现，同一分类的图片有很大关联性。证明模型能学习图片之间的关系。 <img src="/file/15581820979738.jpg"></p></li>
 </ul>
 <h3 id="结论">结论</h3>
 <ul>
