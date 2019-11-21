@@ -49,4 +49,13 @@ categories:
 - 20180501：PV: 657 | UV: 242
 - 20180528：使用 Travis CI 自动部署
 
+## 除虫记录
+
+### Error: Cannot find module 'node-sass-magic-importer'
+
+[ERROR in Cannot find module 'node-sass'（已解决） - line - CSDN博客](https://blog.csdn.net/Nalaluky/article/details/82598300)
+
+```bash
+cnpm install node-sass@latest
+```
 
