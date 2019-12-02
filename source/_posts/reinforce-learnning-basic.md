@@ -3,6 +3,7 @@ title: 强化学习基础知识
 date: 2019-11-21 20:50:36
 tags: [algorithm, reinforcementlearning]
 categories: 机器学习
+mathjax: true
 ---
 
 这篇博文是李弘毅教授深度强化学习课程相关笔记。

@@ -1,7 +1,7 @@
 ---
 title: Standford CS231n 2017 课程部分总结
 date: 2019-10-08 21:58:26
-tags: 
+tags: ml, course
 categories:  机器学习
 mathjax: true
 ---
