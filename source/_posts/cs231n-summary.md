@@ -1,6 +1,6 @@
 ---
 title: Standford CS231n 2017 课程部分总结
-date: 2019-10-08 21:58:26
+date: 2019-12-04 17:58:39
 tags: ml, course
 categories:  机器学习
 mathjax: true
@@ -319,48 +319,49 @@ class MultuplyGate(object):
         - Powers of two are often chosen to be the mini-batch size, e.g., 16, 32, 64, 128.
     - SGD + Momentun
         - 动量更新：从物理学角度启发最优化问题
-        - `v = rho * vx + learning_rate * dx; x += v`
+        - `V[t+1] = rho * v[t] + dx; x[t+1] = x[t] - learningRate * V[t+1]`
         - rho 被看做是动量，其物理意义与摩擦系数想类似，常取 0.9 或0.99
+        - 和 momentun 项更新方向相同的可以快速更新。
+        - 在 dx 中改变梯度方向后， rho 可以减少更新。momentun 能在相关方向加速 SGD，抑制震荡，加快收敛。
     - Nestrov momentum
         - ![](/file/2019-10-08-15499574039274.jpg)
         - `v_prev = v; v = mu * v - learning_rate * dx; x += -mu * v_prev + (1 + mu) * v`
     - AdaGrad
-
-       ```python
-      grad_squared = 0
-      while(True):
-        dx = compute_gradient(x)
-        
-        # here is a problem, the grad_squared isn't decayed (gets so large)
-        grad_squared += dx * dx			
-        
-        x -= (learning_rate*dx) / (np.sqrt(grad_squared) + 1e-7)
-      ```
-      
+        - $n_t=n_{t-1}+g^2_t$
+        - $\Delta \theta _t = -\frac{\eta}{\sqrt{n_t+\epsilon}}$
+        - 下面根号中会递推形成一个约束项。前期这一项比较大，能够放大梯度。后期这一项比较小，能约束梯度。
+        - gt 的平方累积会使梯度趋向于 0
     - RMSProp
+        - RMS 均方根
         - 自适应学习率方法
-        - cache =  decay_rate * cache + (1 - decay_rate) * dx**2
-        - x += - learning_rate * dx / (np.sqrt(cache) + eps)
+        - 求梯度的平方和平均数：`cache =  decay_rate * cache + (1 - decay_rate) * dx**2`
+        - `x += - learning_rate * dx / (sqrt(cache) + eps)`
+        - 依赖全局学习率
     - Adam
         - RMSProp + Momentum
         - It calculates an exponentially weighted average of past gradients, and stores it in variables $v$ (before bias correction) and $v^{corrected}$ (with bias correction). 
         - It calculates an exponentially weighted average of the squares of the past gradients, and  stores it in variables $s$ (before bias correction) and $s^{corrected}$ (with bias correction). 
+        - 一阶到导数累积，二阶导数累积
         - It updates parameters in a direction based on combining information from "1" and "2".
         - The update rule is, for $l = 1, ..., L$: 
-$$\begin{cases}
-v_{dW^{[l]}} = \beta_1 v_{dW^{[l]}} + (1 - \beta_1) \frac{\partial \mathcal{J} }{ \partial W^{[l]} } \\
-v^{corrected}_{dW^{[l]}} = \frac{v_{dW^{[l]}}}{1 - (\beta_1)^t} \\
-s_{dW^{[l]}} = \beta_2 s_{dW^{[l]}} + (1 - \beta_2) (\frac{\partial \mathcal{J} }{\partial W^{[l]} })^2 \\
-s^{corrected}_{dW^{[l]}} = \frac{s_{dW^{[l]}}}{1 - (\beta_1)^t} \\
-W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{dW^{[l]}}} + \varepsilon}
-\end{cases}$$
+        $$\begin{cases}
+        v_{dW^{[l]}} = \beta_1 v_{dW^{[l]}} + (1 - \beta_1) \frac{\partial \mathcal{J} }{ \partial W^{[l]} } \\
+        v^{corrected}_{dW^{[l]}} = \frac{v_{dW^{[l]}}}{1 - (\beta_1)^t} \\
+        s_{dW^{[l]}} = \beta_2 s_{dW^{[l]}} + (1 - \beta_2) (\frac{\partial \mathcal{J} }{\partial W^{[l]} })^2 \\
+        s^{corrected}_{dW^{[l]}} = \frac{s_{dW^{[l]}}}{1 - (\beta_1)^t} \\
+        W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{dW^{[l]}}} + \varepsilon}
+        \end{cases}$$
+        
         where:
         - t counts the number of steps taken of Adam 
         - L is the number of layers
         - $\beta_1$ and $\beta_2$ are hyperparameters that control the two exponentially weighted averages. 
         - $\alpha$ is the learning rate
         - $\varepsilon$ is a very small number to avoid dividing by zero
-
+        
+        特点：
+        - 适用于大数据集和高维空间。
+        - 对不同的参数计算不同的自适应学习率。
     - Learning decay
         - 学习率随着训练变化，比如每一轮在前一轮的基础上减少一半。
         - 防止学习停止
@@ -410,3 +411,6 @@ W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{
     
 
 
+## Reference
+
+- [深度学习最全优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam） - 知乎](https://zhuanlan.zhihu.com/p/22252270)
