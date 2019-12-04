@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://xiang578.com/file/2019-10-08-15499574039274.jpg">
 <meta property="og:image" content="https://xiang578.com/file/2019-10-08-15705415499052.jpg">
 <meta property="og:image" content="https://xiang578.com/file/2019-10-08-15705420412305.jpg">
-<meta property="og:updated_time" content="2019-12-02T02:24:36.168Z">
+<meta property="og:updated_time" content="2019-12-04T10:47:47.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Standford CS231n 2017 课程部分总结">
 <meta name="twitter:description" content="去年学习这门做的部分笔记，现在分享出来。 笔记格式有些问题，持续整理中。   大量内容参考 mbadry1/CS231n-2017-Summary  Table of contents  Standford CS231n 2017 Summary  Table of contents Course Info 01. Introduction to CNN for visual recogniti">
@@ -472,24 +472,12 @@
                 
               
 
-              <time title="创建时间：2019-10-08 21:58:26" itemprop="dateCreated datePublished" datetime="2019-10-08T21:58:26+08:00">2019-10-08</time>
+              <time title="创建时间：2019-12-04 17:58:39 / 修改时间：18:47:47" itemprop="dateCreated datePublished" datetime="2019-12-04T17:58:39+08:00">2019-12-04</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-12-02 10:24:36" itemprop="dateModified" datetime="2019-12-02T10:24:36+08:00">2019-12-02</time>
               
             
           </span>
@@ -559,7 +547,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">10k</span>
+                <span title="本文字数">11k</span>
               
 
               
@@ -573,7 +561,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">9 分钟</span>
+                <span title="阅读时长">10 分钟</span>
               
             </div>
           
@@ -996,61 +984,79 @@
 <ul>
 <li>Optimization Algorithms:
 <ul>
-<li><p>SGD 的问题</p>
+<li>SGD 的问题
 <ul>
 <li><code>x += - learning_rate * dx</code></li>
 <li>梯度在某一个方向下降速度快，在其他方向下降缓慢</li>
 <li>遇到局部最小值点，鞍点</li>
 </ul></li>
-<li><p>mini-batches GD</p>
+<li>mini-batches GD
 <ul>
 <li>Shuffling and Partitioning are the two steps required to build mini-batches</li>
 <li>Powers of two are often chosen to be the mini-batch size, e.g., 16, 32, 64, 128.</li>
 </ul></li>
-<li><p>SGD + Momentun</p>
+<li>SGD + Momentun
 <ul>
 <li>动量更新：从物理学角度启发最优化问题</li>
-<li><code>v = rho * vx + learning_rate * dx; x += v</code></li>
+<li><code>V[t+1] = rho * v[t] + dx; x[t+1] = x[t] - learningRate * V[t+1]</code></li>
 <li>rho 被看做是动量，其物理意义与摩擦系数想类似，常取 0.9 或0.99</li>
+<li>和 momentun 项更新方向相同的可以快速更新。</li>
+<li>在 dx 中改变梯度方向后， rho 可以减少更新。momentun 能在相关方向加速 SGD，抑制震荡，加快收敛。</li>
 </ul></li>
-<li><p>Nestrov momentum</p>
+<li>Nestrov momentum
 <ul>
 <li><img src="/file/2019-10-08-15499574039274.jpg"></li>
 <li><code>v_prev = v; v = mu * v - learning_rate * dx; x += -mu * v_prev + (1 + mu) * v</code></li>
 </ul></li>
-<li><p>AdaGrad</p>
-<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">grad_squared = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">  dx = compute_gradient(x)</span><br><span class="line">  </span><br><span class="line">  <span class="comment"># here is a problem, the grad_squared isn't decayed (gets so large)</span></span><br><span class="line">  grad_squared += dx * dx			</span><br><span class="line">  </span><br><span class="line">  x -= (learning_rate*dx) / (np.sqrt(grad_squared) + <span class="number">1e-7</span>)</span><br></pre></td></tr></table></figure></p></li>
-<li><p>RMSProp</p>
+<li>AdaGrad
 <ul>
-<li>自适应学习率方法</li>
-<li>cache = decay_rate * cache + (1 - decay_rate) * dx**2</li>
-<li>x += - learning_rate * dx / (np.sqrt(cache) + eps)</li>
+<li><span class="math inline">\(n_t=n_{t-1}+g^2_t\)</span></li>
+<li><span class="math inline">\(\Delta \theta _t = -\frac{\eta}{\sqrt{n_t+\epsilon}}\)</span></li>
+<li>下面根号中会递推形成一个约束项。前期这一项比较大，能够放大梯度。后期这一项比较小，能约束梯度。</li>
+<li>gt 的平方累积会使梯度趋向于 0</li>
 </ul></li>
-<li><p>Adam</p>
+<li>RMSProp
+<ul>
+<li>RMS 均方根</li>
+<li>自适应学习率方法</li>
+<li>求梯度的平方和平均数：<code>cache =  decay_rate * cache + (1 - decay_rate) * dx**2</code></li>
+<li><code>x += - learning_rate * dx / (sqrt(cache) + eps)</code></li>
+<li>依赖全局学习率</li>
+</ul></li>
+<li>Adam
 <ul>
 <li>RMSProp + Momentum</li>
 <li>It calculates an exponentially weighted average of past gradients, and stores it in variables <span class="math inline">\(v\)</span> (before bias correction) and <span class="math inline">\(v^{corrected}\)</span> (with bias correction).</li>
 <li>It calculates an exponentially weighted average of the squares of the past gradients, and stores it in variables <span class="math inline">\(s\)</span> (before bias correction) and <span class="math inline">\(s^{corrected}\)</span> (with bias correction).</li>
+<li>一阶到导数累积，二阶导数累积</li>
 <li>It updates parameters in a direction based on combining information from "1" and "2".</li>
 <li>The update rule is, for <span class="math inline">\(l = 1, ..., L\)</span>: <span class="math display">\[\begin{cases}
-v_{dW^{[l]}} = \beta_1 v_{dW^{[l]}} + (1 - \beta_1) \frac{\partial \mathcal{J} }{ \partial W^{[l]} } \\
-v^{corrected}_{dW^{[l]}} = \frac{v_{dW^{[l]}}}{1 - (\beta_1)^t} \\
-s_{dW^{[l]}} = \beta_2 s_{dW^{[l]}} + (1 - \beta_2) (\frac{\partial \mathcal{J} }{\partial W^{[l]} })^2 \\
-s^{corrected}_{dW^{[l]}} = \frac{s_{dW^{[l]}}}{1 - (\beta_1)^t} \\
-W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{dW^{[l]}}} + \varepsilon}
-\end{cases}\]</span> where:</li>
+  v_{dW^{[l]}} = \beta_1 v_{dW^{[l]}} + (1 - \beta_1) \frac{\partial \mathcal{J} }{ \partial W^{[l]} } \\
+  v^{corrected}_{dW^{[l]}} = \frac{v_{dW^{[l]}}}{1 - (\beta_1)^t} \\
+  s_{dW^{[l]}} = \beta_2 s_{dW^{[l]}} + (1 - \beta_2) (\frac{\partial \mathcal{J} }{\partial W^{[l]} })^2 \\
+  s^{corrected}_{dW^{[l]}} = \frac{s_{dW^{[l]}}}{1 - (\beta_1)^t} \\
+  W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{dW^{[l]}}} + \varepsilon}
+  \end{cases}\]</span></li>
+</ul>
+where:
+<ul>
 <li>t counts the number of steps taken of Adam</li>
 <li>L is the number of layers</li>
 <li><span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are hyperparameters that control the two exponentially weighted averages.</li>
 <li><span class="math inline">\(\alpha\)</span> is the learning rate</li>
 <li><span class="math inline">\(\varepsilon\)</span> is a very small number to avoid dividing by zero</li>
+</ul>
+特点：
+<ul>
+<li>适用于大数据集和高维空间。</li>
+<li>对不同的参数计算不同的自适应学习率。</li>
 </ul></li>
-<li><p>Learning decay</p>
+<li>Learning decay
 <ul>
 <li>学习率随着训练变化，比如每一轮在前一轮的基础上减少一半。</li>
 <li>防止学习停止</li>
 </ul></li>
-<li><p>Second order optimization</p></li>
+<li>Second order optimization</li>
 </ul></li>
 <li>Regularization
 <ul>
@@ -1121,6 +1127,10 @@ W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{
 <li>如果网络已经达到最优，继续加深网络，residual mapping会被设置为 0，一直保存网络最优的情况。</li>
 </ul></li>
 </ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/22252270" target="_blank" rel="noopener">深度学习最全优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam） - 知乎</a></li>
+</ul>
 
       
     </div>
@@ -1157,8 +1167,8 @@ W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/wdr.html" rel="next" title="(WDR) Learning to Estimate the Travel Time">
-                <i class="fa fa-chevron-left"></i> (WDR) Learning to Estimate the Travel Time
+              <a href="/post/reinforce-learnning-basic.html" rel="next" title="强化学习基础知识">
+                <i class="fa fa-chevron-left"></i> 强化学习基础知识
               </a>
             
           </div>
@@ -1166,10 +1176,6 @@ W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/ctr.html" rel="prev" title="推荐系统 CTR Paper 阅读小结">
-                推荐系统 CTR Paper 阅读小结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1506,7 +1512,7 @@ W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#table-of-contents"><span class="nav-number">1.</span> <span class="nav-text">Table of contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#course-info"><span class="nav-number">2.</span> <span class="nav-text">Course Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-cnn-for-visual-recognition"><span class="nav-number">3.</span> <span class="nav-text">01. Introduction to CNN for visual recognition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-classification"><span class="nav-number">4.</span> <span class="nav-text">02. Image classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loss-function-and-optimization"><span class="nav-number">5.</span> <span class="nav-text">03. Loss function and optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-neural-network"><span class="nav-number">6.</span> <span class="nav-text">04. Introduction to Neural network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convolutional-neural-networks-cnns"><span class="nav-number">7.</span> <span class="nav-text">05. Convolutional neural networks (CNNs)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#training-neural-networks-i"><span class="nav-number">8.</span> <span class="nav-text">06. Training neural networks I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#training-neural-networks-ii"><span class="nav-number">9.</span> <span class="nav-text">07. Training neural networks II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cnn-architectures"><span class="nav-number">10.</span> <span class="nav-text">09. CNN architectures</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#table-of-contents"><span class="nav-number">1.</span> <span class="nav-text">Table of contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#course-info"><span class="nav-number">2.</span> <span class="nav-text">Course Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-cnn-for-visual-recognition"><span class="nav-number">3.</span> <span class="nav-text">01. Introduction to CNN for visual recognition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-classification"><span class="nav-number">4.</span> <span class="nav-text">02. Image classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loss-function-and-optimization"><span class="nav-number">5.</span> <span class="nav-text">03. Loss function and optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-neural-network"><span class="nav-number">6.</span> <span class="nav-text">04. Introduction to Neural network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convolutional-neural-networks-cnns"><span class="nav-number">7.</span> <span class="nav-text">05. Convolutional neural networks (CNNs)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#training-neural-networks-i"><span class="nav-number">8.</span> <span class="nav-text">06. Training neural networks I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#training-neural-networks-ii"><span class="nav-number">9.</span> <span class="nav-text">07. Training neural networks II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cnn-architectures"><span class="nav-number">10.</span> <span class="nav-text">09. CNN architectures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">11.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
