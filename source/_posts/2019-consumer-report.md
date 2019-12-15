@@ -13,7 +13,7 @@ categories: 生活志
 
 iPhone XR 刚出来的时候，一直被吐槽是大边框。不过随着在电商网站上不断降价，越来越被当成是无边框手机……在忍受不了使用多年 iPhone 6 的卡顿，以及很难脱离 iOS 生态的现实。终于在苏宁上下单 $(Product)^{read}$ 版的 XR。经过半年多的使用，这部手机实用但是不出彩。
 
-![Apple Watch 圆环图](file/15764169455007.jpg)
+![Apple Watch 圆环图](/file/15764169455007.jpg)
 
 购买 Apple Watch Series 4(AW) 理由很简单：在去公司健身房锻炼的时候，希望有一个可以记录运动数据的设备。事实 AW 自带的运动软件很不错，可以满足我的运动记录需求。但是例如 Keep 之类的第三方 App 适配不好。另外，AW 很好扩展 iPhone 和 Mac 的使用，比如可以解锁 Mac、查看 iPhone 上的信息等等。到头来，AW 还只是一块需要一天一充的电子表。
 
@@ -23,7 +23,7 @@ Nintendo Switch(NS) 是任天堂在 2017 年推出的，集掌机和主机于一
 
 简单统计一下，我在 NS 上花费的时间大概有 200 多小时，购入游戏也花费上千元……反应能力不知道有没有上去，但是享受到游戏的快乐。
 
-![任天堂就是世界的主宰](file/15764170682610.jpg)
+![任天堂就是世界的主宰](/file/15764170682610.jpg)
 
 Nintendo Switch 目前可以选的有 Nintendo Switch、Nintendo Switch 续航版、Nintendo Switch Lite。
 
@@ -31,7 +31,7 @@ Nintendo Switch 目前可以选的有 Nintendo Switch、Nintendo Switch 续航�
 
 大概是 5 月末，通过公司内部闲置群出了使用 5 年多的 Kindle PaperWhite 2 后，从淘宝上购入美版 Kindle Oasis 2 。可惜的是，1 个月不到的时间，亚马逊推出 Kindle Oasis 3 ……
 
-![kindle oasis 2 和 kindle 2 对比图](file/%E2%80%9CWechatIMG260%E2%80%9D%E7%9A%84%E5%89%AF%E6%9C%AC%202.jpg)
+![kindle oasis 2 和 kindle 2 对比图](/file/%E2%80%9CWechatIMG260%E2%80%9D%E7%9A%84%E5%89%AF%E6%9C%AC%202.jpg)
 
 和 KPW2 相比，KO2 主要带来一下几个方面的提升：
 
@@ -54,7 +54,7 @@ Nintendo Switch 目前可以选的有 Nintendo Switch、Nintendo Switch 续航�
 
 写日记是这么多年以来坚持的一件小事情。之前一直是在笔记本上写，后来慢慢的尝试通过印象笔记来写。2月份，订阅 Day One ，开始尝试迁移到它上面去。作为一个专业的软件，体验真的比之前的方式不知道好多少。Day One 上也有很多数据统计，多少可以拿来得瑟用。另外，自己干的一件事情就是把印象笔记中的日记慢慢转移到 Day one 。写在笔记本上的日记，也被我拍成一张又一张的照片，只不过这个迁移起来比较麻烦。
 
-![Day one 按年统计图](file/15764175403738.jpg)
+![Day one 按年统计图](/file/15764175403738.jpg)
 
 ### 任务管理
 
@@ -68,7 +68,7 @@ Nintendo Switch 目前可以选的有 Nintendo Switch、Nintendo Switch 续航�
 
 MoneyWiz 是在少数派上了解到记账软件，Setapp 中可以免费使用。和国内那些整天搞社区和卖理财的记账软件相比，只是纯粹的一个记账软件。Beancount 是无意中从[BYvoid](https://www.byvoid.com/zhs/blog/beyond-the-void)文章中了解的一款纯文本记账软件。最大的优点是扩展性强。在使用过程中，搭配一些简单的脚本，可以实现每月底花一个小时就能把这个月的开销记录明白。
 
-![Beancount fava](file/15764177497946.jpg)
+![Beancount fava](/file/15764177497946.jpg)
 
 #### 从 1Password 到 KeePass
 
