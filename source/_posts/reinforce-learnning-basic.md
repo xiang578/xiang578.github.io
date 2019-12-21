@@ -1,12 +1,10 @@
 ---
-title: 强化学习基础知识
+title: 李宏毅强化学习课程笔记
 date: 2019-11-21 20:50:36
 tags: [algorithm, reinforcementlearning]
 categories: 机器学习
 mathjax: true
 ---
-
-这篇博文是李弘毅教授深度强化学习课程相关笔记。
 
 课件下载：[Hung-yi Lee - Deep Reinforcement Learning](http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html)
 

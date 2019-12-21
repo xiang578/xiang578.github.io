@@ -31,7 +31,7 @@ Nintendo Switch 目前可以选的有 Nintendo Switch、Nintendo Switch 续航�
 
 大概是 5 月末，通过公司内部闲置群出了使用 5 年多的 Kindle PaperWhite 2 后，从淘宝上购入美版 Kindle Oasis 2 。可惜的是，1 个月不到的时间，亚马逊推出 Kindle Oasis 3 ……
 
-![kindle oasis 2 和 kindle 2 对比图](/file/%E2%80%9CWechatIMG260%E2%80%9D%E7%9A%84%E5%89%AF%E6%9C%AC%202.jpg)
+![kindle oasis 2 和 kindle 2 对比图](/file/kindle_2_oasis.jpg)
 
 和 KPW2 相比，KO2 主要带来一下几个方面的提升：
 
