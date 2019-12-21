@@ -1,0 +1,42 @@
+<blockquote>
+<p>FTRL 经常和在线学习系统一起提起。常规的优化方法是基于 batch 数据进行训练</p>
+</blockquote>
+<h2 id="基础知识">基础知识</h2>
+<ul>
+<li>次梯度：对于 L1 正则在 <span class="math inline">\(x=0\)</span> 处不可导的情况，使用次梯度下降来解决。次梯度对应一个集合 <span class="math inline">\(\{v: v(x-x_t) \le f(x)-f(x_t)\}\)</span>，集合中的任意一个元素都能被当成次梯度。对于 L1 正则来说，非零点梯度是 1 或 -1，所以 <span class="math inline">\(x=0\)</span> 处的次梯度可以取 <span class="math inline">\([-1, 1]\)</span> 范围之内任意一个数。</li>
+</ul>
+<h2 id="ftl">FTL</h2>
+<p>FTL(Follow The Leader) 算法：每次找到让之前所有损失函数之和最小的参数。</p>
+<p><span class="math display">\[W=argmin_W \sum^t_{i=1}F_i(W)\]</span></p>
+<p>FTRL 中的 R 是 Regularized，可以很容易猜出来在 FTL 的基础上加正则项。</p>
+<p><span class="math display">\[W=argmin_W \sum^t_{i=1}F_i(W) + R(W)\]</span></p>
+<h2 id="代理函数">代理函数</h2>
+<p>FTRL 的损失函数直接很难求解，一般需要引入一个代理损失函数 <span class="math inline">\(h(w)\)</span>。代理损失函数需要选择比较容易求解析解以及求出来的解和优化原函数得到的解差距不能太大。</p>
+<p>我们通过两个解之间的距离 Regret 来衡量效果：</p>
+<p><span class="math display">\[
+\begin{array}{c}{w_{t}=\operatorname{argmin}_{w} h_{t-1}(w)} \\ {\text {Regret}_{t}=\sum_{t=1}^{T} f_{t}\left(w_{t}\right)-\sum_{t=1}^{T} f_{t}\left(w^{*}\right)}\end{array}
+\]</span></p>
+<p>其中 <span class="math inline">\(w^{*}\)</span> 是直接优化 FTRL 算法得到的参数。当距离满足 <span class="math inline">\(\lim _{t \rightarrow \infty} \frac{\text {Regret}_{t}}{t}=0\)</span>，损失函数认为是有效的。简单描述一下，随着训练样本的增加，两个优化目标优化出来的参数效果越接近。</p>
+<p><span class="math inline">\({W_{t+1}=argmin_w\{ G^{(1:t)}W + \lambda_1 \lVert W \rVert_1 + \frac{1}{2} \lambda_2 \lVert W \rVert^2 \}}\)</span> <span class="math inline">\({w_{t+1}=argmin_w\{ g^{(1:t)}w + \frac{1}{2} \sum_{s=1}^t \sigma_s \lVert w - w_s \rVert ^2 + \lambda_1 \lVert W \rVert_1 + \frac{1}{2} \lambda_2 \lVert W \rVert^2 \}}\)</span></p>
+<p><span class="math inline">\({F(w)= g^{(1:t)}w + \frac{1}{2} \sum_{s=1}^t \sigma_s \lVert w - w_s \rVert ^2 + \lambda_1 \lVert W \rVert_1 + \frac{1}{2} \lambda_2 \lVert W \rVert^2 }\)</span> <span class="math inline">\({F(w)= g^{(1:t)}w + \frac{1}{2} \sum_{s=1}^t \sigma_s ( w^Tw - 2w^Tw_s + w_s^Tw_s) + \lambda_1 \lVert W \rVert_1 + \frac{1}{2} \lambda_2 \lVert W \rVert^2 }\)</span></p>
+<p><span class="math inline">\({F(w)= (g^{(1:t)} - \sum_{s=1}^t \sigma_s w_s)w + \frac{1}{2} (\sum_{s=1}^t \sigma_s + \lambda_2) w^Tw + \lambda_1 \lVert W \rVert_1 + const }\)</span></p>
+<p><span class="math inline">\({F(w)= z_t^Tw + \frac{1}{2} (\frac{1}{\eta _t} + \lambda_2) w^Tw + \lambda_1 \lVert W \rVert_1 + const }\)</span></p>
+<p><span class="math inline">\({z_{t-1}=g^{(1:t-1)} - \sum_{s=1}^{t-1} \sigma_s w_s}\)</span></p>
+<p><span class="math inline">\({z_t + (\frac{1}{\eta _t} + \lambda_2) w + \lambda_1 \partial \lvert W \rvert = 0}\)</span></p>
+<p>w 和 z 异号时，等式成立</p>
+<p><span class="math inline">\({\partial \lvert W \rvert = 0, -1 &lt; w &lt; 1}\)</span> <span class="math inline">\({\partial \lvert W \rvert = 1, w &gt; 1}\)</span> <span class="math inline">\({\partial \lvert W \rvert = -1, w &lt; -1}\)</span></p>
+<p>当 <span class="math inline">\({ z_t &gt; \lambda_1}\)</span> 时，<span class="math inline">\({w_i &lt; 0}\)</span> , <span class="math inline">\({w_i = \frac{- z_t + \lambda_1 }{\frac{1}{\eta _t} + \lambda_2 }}\)</span> 当 <span class="math inline">\({ z_t &lt; - \lambda_1}\)</span> 时，<span class="math inline">\({w_i &gt; 0}\)</span> , <span class="math inline">\({w_i = \frac{- z_t - \lambda_1 }{\frac{1}{\eta _t} + \lambda_2 }}\)</span> 当 <span class="math inline">\({ \lvert z_t \rvert &lt; \lambda_1}\)</span> 时，当且仅当 <span class="math inline">\({w_i=0}\)</span> 成立</p>
+<h2 id="ftrl-和-sgd-的关系">FTRL 和 SGD 的关系</h2>
+<p><span class="math inline">\({W^{t+1}=W^t - \eta _tg_t}\)</span> <span class="math inline">\({W^{t+1}=argmin_w\{ G^{(1:t)}W + \lambda_1 \lVert W \rVert_1 +\lambda_2 \frac{1}{2} \lVert W \rVert \}}\)</span> <span class="math inline">\({\sum^t_{s=1}\sigma _s= \frac{1}{\eta _t}}\)</span> <span class="math inline">\({W^{t+1}=argmin_w\{ \sum_t^{s=1}g_sW + \frac{1}{2} \sum^t_{s=1}\sigma _s\lVert W - W_s \rVert_2^2 \}}\)</span></p>
+<p><span class="math inline">\({\frac{\partial f(w)}{\partial w} = \sum^t_{s=1}g_s + \sum^t_{s=1}\sigma _s( W - W_s )}\)</span></p>
+<p><span class="math inline">\({\sum^t_{s=1}g_s + \sum^t_{s=1}\sigma _s( W^{t+1} - W_s ) = 0}\)</span></p>
+<p><span class="math inline">\({(\sum^t_{s=1}\sigma _s) W^{t+1} = \sum^t_{s=1}\sigma _s W^{s} - \sum^t_{s=1}g_s}\)</span></p>
+<p><span class="math inline">\({\frac{1}{\eta _t} W^{t+1} = \sum^t_{s=1}\sigma _s W^{s} - \sum^t_{s=1}g_s}\)</span></p>
+<p><span class="math inline">\({\frac{1}{\eta _{t-1}} W^{t} = \sum^{t-1}_{s=1}\sigma _s W^{s} - \sum^{t-1}_{s=1}g_s}\)</span></p>
+<p><span class="math inline">\({\frac{1}{\eta _t} W^{t+1} - \frac{1}{\eta _{t-1}} W^{t} = (\frac{1}{\eta _t} - \frac{1}{\eta _{t-1}}) W_t - g_t}\)</span></p>
+<p><span class="math inline">\({W_{t+1} = W_t - \eta_t g_t}\)</span></p>
+<h2 id="例fm-使用-ftrl-优化">例：FM 使用 FTRL 优化</h2>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://tech.meituan.com/2016/04/21/online-learning.html" target="_blank" rel="noopener">Online Learning算法理论与实践 - 美团技术团队</a></li>
+</ul>
