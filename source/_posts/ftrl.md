@@ -3,6 +3,8 @@ title: (FTRL)Follow The Regularized Leader
 date: 2019-12-16 20:48:06
 tags: 
 categories: 机器学习
+layout: false
+matjx: true
 ---
 
 > FTRL 经常和在线学习系统一起提起。常规的优化方法是基于 batch 数据进行训练
