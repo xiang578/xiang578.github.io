@@ -1,14 +1,19 @@
 ---
 title: 李宏毅强化学习课程笔记
-date: 2019-11-21 20:50:36
+date: 2019-12-26 21:14:47
 tags: [algorithm, reinforcementlearning]
 categories: 机器学习
 mathjax: true
 ---
 
+## Info 
+
 课件下载：[Hung-yi Lee - Deep Reinforcement Learning](http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html)
 
 课程视频：[DRL Lecture 1: Policy Gradient (Review) - YouTube](https://www.youtube.com/watch?v=z95ZYgPgXOY&list=PLJV_el3uVTsODxQFgzMzPLa16h6B8kWM_)
+
+- Change Log
+    - 20191226: 整理 PPO 相关资料
 
 ## RL 基础
 
@@ -16,6 +21,7 @@ mathjax: true
 
 - Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上进行学习优化。
 - Environment：指除 Actor 之外的所有事务，受 Actor 动作影响而改变其状态，并给 Actor 对应的奖励。
+- on-policy 和 off-policy 的区别在于 Actor 和 Environment 交互的策略和它自身在学习的策略是否是同一个。
 
 一些符号：
 
@@ -70,7 +76,7 @@ $$
 
 最下面公式分别是反向传播梯度计算和 PG 的反向梯度计算，PG 中要乘以整个轨迹的 R。
 
-![-w914](/file/15752505145081.jpg)
+![PG](/file/15752505145081.jpg)
 
 
 tip 1： add a baseline
@@ -84,9 +90,76 @@ tip 2: assign suitable credit
 1. 引入一个 discount rate，对 t 之后的动作 r 进行降权重。
 2. 利用 Advantage Function 评价状态 s 下动作 a 的好坏 critic。
 
- ![-w844](/file/15752505547153.jpg)
+ ![Assign Suitable Credit](/file/15752505547153.jpg)
 
-## PPO
+## PPO: Proximal Policy Optimization
+
+### importance sampling
+
+假设需要估计期望 $E_{x~p[f(x)]}$，x 符合 p 分布，将期望写成积分的形式。由于在 P 分布下面很难采样，把问题转化到已知 q 分布上，得到在 p 分布下计算期望公式。
+
+![](/file/15771920437580.jpg)
+
+上面方法得到 p 和 q 期望接近，但是方差可能相差很大，且和 $\frac{p(x)}{q(x)}$ 有关。
+
+原分布的方差：
+$$
+\operatorname{Var}_{x-p}[f(x)]=E_{x-p}\left[f(x)^{2}\right]-\left(E_{x-q}[f(x)]\right)^{2}
+$$
+
+新分布的方差：
+$$
+\begin{array}{l}{\operatorname{Var}_{x \sim p}[f(x)]=E_{x \sim p}\left[f(x)^{2}\right]-\left(E_{x \sim p}[f(x)]\right)^{2}} \\ {\operatorname{Var}_{x \sim q}\left[f(x) \frac{p(x)}{q(x)}\right]=E_{x \sim q}\left[\left(f(x) \frac{p(x)}{q(x)}\right)^{2}\right]-\left(E_{x \sim q}\left[f(x) \frac{p(x)}{q(x)}\right]\right)^{2}} \\ {=E_{x \sim p}\left[f(x)^{2} \frac{p(x)}{q(x)}\right]-\left(E_{x \sim p}[f(x)]\right)^{2}}\end{array}
+$$
+
+在 p 和 q 分布不一致时，且采样不充分时，可能会带来比较大的误差。
+
+![Issue of Importance Sampling](/file/15771931618906.jpg)
+
+
+### 从 On-policy 到 Off-policy
+
+on-policy 时，PG 每次参数更新完成后，actor 就改变了，不能使用之前的数据，必须和环境重新互动收集数据。引入 $p_{\theta \prime}$ 进行采样，就能将 PG 转为 off-ploicy。
+
+![](/file/15771932374489.jpg)
+
+和之前相比，相当于引入重要性采样，所以也有前一节中提到的重要性采样不足问题。
+
+$$
+J^{\theta^{\prime}}(\theta)=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\theta^{\prime}}}\left[\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{\prime}}\left(a_{t} | s_{t}\right)} A^{\theta^{\prime}}\left(s_{t}, a_{t}\right)\right]
+$$
+
+
+### PPO/TRPO
+
+为了克服采样的分布与原分布差距过大的不足，PPO 引入 KL 散度进行约束。KL 散度用来衡量两个分布的接近程度。
+
+$$
+J_{P P O}^{\theta^{\prime}}(\theta)=J^{\theta^{\prime}}(\theta)-\beta K L\left(\theta, \theta^{\prime}\right)
+$$
+
+TRPO(Trust Region Policy Optimization)，要求 $K L\left(\theta, \theta^{\prime}\right)<\delta$。
+
+$$
+J_{T R P O}^{\theta^{\prime}}(\theta)=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\theta^{\prime}}}\left[\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{\prime}}\left(a_{t} | s_{t}\right)} A^{\theta^{\prime}}\left(s_{t}, a_{t}\right)\right]
+$$
+
+KL 散度可能比较难计算，在实际中常使用 PPO2。 
+
+- A>0，代表当前策虑表现好。需要增大 $\pi( \theta )$，通过 clip 增加一个上限，防止 $\pi( \theta )$ 和旧分布变化太大。
+- A<0，代表当前策虑表现差，不限制新旧分布的差异程度，只需要大幅度改变 $\pi( \theta )$。
+
+参考 [【点滴】策略梯度之PPO - 知乎](https://zhuanlan.zhihu.com/p/43114711)
+
+![](/file/15772793086357.jpg)
+
+
+### PPO algorithm
+
+系数 $\beta$ 在迭代的过程中需要进行动态调整。引入 $KL_{max} KL_{min}$，KL > KLmax，说明 penalty 没有发挥作用，增大 $\beta$。
+
+![](/file/15772793200430.jpg)
+
 
 ## Q-Learning
 
