@@ -100,13 +100,13 @@
 
 
 
-  <meta name="description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上">
+  <meta name="description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料 20191227: 整理 Q-Learning 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知">
 <meta name="keywords" content="algorithm,reinforcementlearning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="李宏毅强化学习课程笔记">
 <meta property="og:url" content="https://xiang578.com/post/reinforce-learnning-basic.html">
 <meta property="og:site_name" content="算法花园">
-<meta property="og:description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上">
+<meta property="og:description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料 20191227: 整理 Q-Learning 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://xiang578.com/file/15726799935625.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15752505145081.jpg">
@@ -116,10 +116,28 @@
 <meta property="og:image" content="https://xiang578.com/file/15771932374489.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15772793086357.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15772793200430.jpg">
-<meta property="og:updated_time" content="2019-12-26T13:16:58.347Z">
+<meta property="og:image" content="https://xiang578.com/file/15773668251569.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773670631327.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773671301402.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773671400847.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773672909262.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773673947112.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773674189861.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773675111439.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773677168275.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773677986325.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773680103445.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773681449261.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773682226911.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773682895872.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773684681347.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773684767629.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773684832549.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15773684903236.jpg">
+<meta property="og:updated_time" content="2019-12-26T14:05:45.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="李宏毅强化学习课程笔记">
-<meta name="twitter:description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上">
+<meta name="twitter:description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料 20191227: 整理 Q-Learning 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知">
 <meta name="twitter:image" content="https://xiang578.com/file/15726799935625.jpg">
 
 
@@ -470,7 +488,7 @@
                 
               
 
-              <time title="创建时间：2019-12-26 21:14:47 / 修改时间：21:16:58" itemprop="dateCreated datePublished" datetime="2019-12-26T21:14:47+08:00">2019-12-26</time>
+              <time title="创建时间：2019-12-26 21:14:47 / 修改时间：22:05:45" itemprop="dateCreated datePublished" datetime="2019-12-26T21:14:47+08:00">2019-12-26</time>
             
 
             
@@ -545,7 +563,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.1k</span>
+                <span title="本文字数">6.2k</span>
               
 
               
@@ -559,7 +577,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">4 分钟</span>
+                <span title="阅读时长">6 分钟</span>
               
             </div>
           
@@ -586,6 +604,7 @@
 <li>Change Log
 <ul>
 <li>20191226: 整理 PPO 相关资料</li>
+<li>20191227: 整理 Q-Learning 相关资料</li>
 </ul></li>
 </ul>
 <h2 id="rl-基础">RL 基础</h2>
@@ -683,9 +702,103 @@ J_{T R P O}^{\theta^{\prime}}(\theta)=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\th
 <p>系数 <span class="math inline">\(\beta\)</span> 在迭代的过程中需要进行动态调整。引入 <span class="math inline">\(KL_{max} KL_{min}\)</span>，KL &gt; KLmax，说明 penalty 没有发挥作用，增大 <span class="math inline">\(\beta\)</span>。</p>
 <p><img src="/file/15772793200430.jpg"></p>
 <h2 id="q-learning">Q-Learning</h2>
+<p>value-base 方法，利用 critic 网络评价 actor 。通过状态价值函数 <span class="math inline">\(V^{\pi}(s)\)</span> 来衡量预期的期望。V 和 pi、s 相关。</p>
+<p><img src="/file/15773668251569.jpg"></p>
+<ol type="1">
+<li>Monte-Carlo MC: 训练网络使预测的 <span class="math inline">\(V^{\pi}(s_a)\)</span> 和实际完整游戏 reward <span class="math inline">\(G_a\)</span> 接近。</li>
+<li>Temporal-difference TD: 训练网络尽量满足 <span class="math inline">\(V^{\pi}(s_t)=V^{\pi}(s_{t+1}) + r_t\)</span> 等式，两个状态之间的收益差。</li>
+</ol>
+<p>MC: 根据策虑 <span class="math inline">\(\pi\)</span> 进行游戏得到最后的 <span class="math inline">\(G(a)\)</span>，最终存在方差大的问题。<span class="math inline">\(\operatorname{Var}[k X]=k^{2} \operatorname{Var}[X]\)</span></p>
+<p>TD: r 的方差比较小，<span class="math inline">\(V^{\pi}(s_{t+1})\)</span> 在采样不充分的情况下，可能不准确。</p>
+<p><img src="/file/15773670631327.jpg"></p>
+<h3 id="another-critic">Another Critic</h3>
+<p>State-action value function <span class="math inline">\(Q^{\pi}(s, a)\)</span>：预测在 pi 策略下，pair(s, a) 的值。相当于假设 state 情况下强制采取 action a。</p>
+<p><img src="/file/15773671301402.jpg"></p>
+<p>对于非分类的方法：</p>
+<p><img src="/file/15773671400847.jpg"></p>
+<p>Q-Learning</p>
+<ol type="1">
+<li>初始 actor <span class="math inline">\(\pi\)</span> 与环境互动</li>
+<li>学习该 actor 对应的 Q function</li>
+<li>找一个比 <span class="math inline">\(\pi\)</span> 好的策虑：<span class="math inline">\(\pi \prime\)</span>，满足 <span class="math inline">\(V^{\pi \prime}(s,a) \ge V^{\pi}(s,a)\)</span>, <span class="math inline">\(\pi^{\prime}(s)=\arg \max _{a} Q^{\pi}(s, a)\)</span></li>
+</ol>
+<p>在给定 state 下，分别代入 action，取函数值最大的 a，作为后面对该 state 时采取的 action。</p>
+<p>证明新的策虑存在： <img src="/file/15773672909262.jpg"></p>
+<h3 id="target-network">Target NetWork</h3>
+<p>左右两边的网络相同，如果同时训练比较困难。简单的想法是固定右边的网络进行训练，一定次数后再拷贝左边的网络。</p>
+<p><img src="/file/15773673947112.jpg"></p>
+<h3 id="exploration">Exploration</h3>
+<p>Q function 导致 actor 每次都会选择具有更大值的 action，无法准确估计某一些动作，对于收集数据而言是一个弊端。</p>
+<ul>
+<li>Epsilon Greedy
+<ul>
+<li>小概率进行损失采样</li>
+</ul></li>
+<li>Boltzmann Exploration
+<ul>
+<li>利用 softmax 计算选取动作的概率，然后进行采样</li>
+</ul></li>
+</ul>
+<p><img src="/file/15773674189861.jpg"></p>
+<h3 id="replay-buffer">Replay buffer</h3>
+<p>采样之后的 <span class="math inline">\((s_t, a_t, r_t, s_{t+1})\)</span> 保存在一个 buffer 里面（可能是不同策虑下采样得到的)，每次训练从 buffer 中 sample 一个 batch。</p>
+<p>结果：训练方法变成 off-policy。减少 RL 重复采样，充分利用数据。</p>
+<p><img src="/file/15773675111439.jpg"></p>
+<h3 id="typical-q-learning-algorithm">Typical Q-Learning Algorithm</h3>
+<p>Q-Learning 流程：</p>
+<p><img src="/file/15773677168275.jpg"></p>
+<h3 id="double-dqn-ddqn">Double DQN DDQN</h3>
+<ul>
+<li>Q value 容易高估：目标值 <span class="math inline">\(r_t + maxQ(s_{t+1}, a)\)</span> 倾向于选择被高估的 action，导致 target 很大。</li>
+<li>选动作的 Q' 和计算 value 的 Q(target network) 不同。Q 中高估 a，Q' 可能会准确估计 V 值。Q' 中高估 a ，可能不会被 Q 选中。</li>
+</ul>
+<p><img src="/file/15773677986325.jpg"></p>
+<h3 id="dueling-dqn">Dueling DQN</h3>
+<p>改 network 架构。V(s) 代表 s 所具有的价值，不同的 action 共享。 A(s,a) advantage function 代表在 s 下执行 a 的价值。最后 <span class="math inline">\(Q(s, a) = A(s, a) + V(s)\)</span>。</p>
+<p>为了让网络倾向于使用 V（能训练这个网络），得到 A 后，要对 A 做 normalize。</p>
+<p><img src="/file/15773680103445.jpg"></p>
+<h3 id="prioritized-reply">Prioritized Reply</h3>
+<p>在训练过程中，对于经验 buffer 里面的样本，TD error 比较大的样本有更大的概率被采样，即难训练的数据增大被采样的概率。</p>
+<p><img src="/file/15773681449261.jpg"></p>
+<h3 id="multi-step">Multi-step</h3>
+<p>综合 MC 和 TD 的优点，训练样本按一定步长 N 进行采样。MC 准确方差大，TD 方差小，估计不准。 <img src="/file/15773682226911.jpg"></p>
+<h3 id="noisy-net">Noisy Net</h3>
+<p><img src="/file/15773682895872.jpg"></p>
+<ul>
+<li>Noise on Action：在相同状态下，可能会采取不同的动作。</li>
+<li>Noise on Parameters：开始时加入噪声。同一个 episode 内，参数不会改变。相同状态下，动作相同。 更好探索环境。</li>
+</ul>
+<h3 id="distributional-q-function">Distributional Q-function</h3>
+<p>Q 是累积收益的期望，实际上在 s 采取 a 时，最终所有得到的 reward 为一个分布 reward distribution。部分时候分布不同，可能期望相同，所以用期望来代替 reward 会损失一些信息。</p>
+<p>Distributional Q-function 直接输出分布，均值相同时，采取方差小的方案。这种方法不会产生高估 q 值的情况。</p>
+<p><img src="/file/15773684681347.jpg"></p>
+<h3 id="rainbow">Rainbow</h3>
+<p>rainbow 是各种策略的混合体。</p>
+<p><img src="/file/15773684767629.jpg"></p>
+<p>DDQN 影响不大。</p>
+<p><img src="/file/15773684832549.jpg"></p>
+<h3 id="continuous-actions">Continuous Actions</h3>
+<p>action 是一个连续的向量，Q-learning 不是一个很好的方法。</p>
+<p><span class="math display">\[
+a=\arg \max _{a} Q(s, a)
+\]</span></p>
+<ol type="1">
+<li>从 a 中采样出一批动作，看哪个行动 Q 值最大。</li>
+<li>使用 gradient ascent 解决最优化问题。</li>
+<li>设计一个网络来化简过程。
+<ol type="1">
+<li><span class="math inline">\(\sum\)</span> 和 <span class="math inline">\(\mu\)</span> 是高斯分布的方差和均值，保证矩阵一定是正定。</li>
+<li>最小化下面的函数，需要最小化 <span class="math inline">\(a - \mu\)</span>。</li>
+</ol></li>
+</ol>
+<p><img src="/file/15773684903236.jpg"></p>
 <h2 id="actor-critic">Actor Critic</h2>
 <h2 id="sparse-reward">Sparse Reward</h2>
 <h2 id="imitation-learning">Imitation Learning</h2>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/41712025" target="_blank" rel="noopener">强化学习基础知识 - 知乎</a></li>
+</ul>
 
       
     </div>
@@ -1073,7 +1186,7 @@ J_{T R P O}^{\theta^{\prime}}(\theta)=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\th
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#info"><span class="nav-number">1.</span> <span class="nav-text">Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rl-基础"><span class="nav-number">2.</span> <span class="nav-text">RL 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-gradient"><span class="nav-number">3.</span> <span class="nav-text">Policy Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pg-的例子"><span class="nav-number">3.1.</span> <span class="nav-text">PG 的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ppo-proximal-policy-optimization"><span class="nav-number">4.</span> <span class="nav-text">PPO: Proximal Policy Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#importance-sampling"><span class="nav-number">4.1.</span> <span class="nav-text">importance sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从-on-policy-到-off-policy"><span class="nav-number">4.2.</span> <span class="nav-text">从 On-policy 到 Off-policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ppotrpo"><span class="nav-number">4.3.</span> <span class="nav-text">PPO/TRPO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ppo-algorithm"><span class="nav-number">4.4.</span> <span class="nav-text">PPO algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-learning"><span class="nav-number">5.</span> <span class="nav-text">Q-Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#actor-critic"><span class="nav-number">6.</span> <span class="nav-text">Actor Critic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sparse-reward"><span class="nav-number">7.</span> <span class="nav-text">Sparse Reward</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#imitation-learning"><span class="nav-number">8.</span> <span class="nav-text">Imitation Learning</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#info"><span class="nav-number">1.</span> <span class="nav-text">Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rl-基础"><span class="nav-number">2.</span> <span class="nav-text">RL 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-gradient"><span class="nav-number">3.</span> <span class="nav-text">Policy Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pg-的例子"><span class="nav-number">3.1.</span> <span class="nav-text">PG 的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ppo-proximal-policy-optimization"><span class="nav-number">4.</span> <span class="nav-text">PPO: Proximal Policy Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#importance-sampling"><span class="nav-number">4.1.</span> <span class="nav-text">importance sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从-on-policy-到-off-policy"><span class="nav-number">4.2.</span> <span class="nav-text">从 On-policy 到 Off-policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ppotrpo"><span class="nav-number">4.3.</span> <span class="nav-text">PPO/TRPO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ppo-algorithm"><span class="nav-number">4.4.</span> <span class="nav-text">PPO algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-learning"><span class="nav-number">5.</span> <span class="nav-text">Q-Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#another-critic"><span class="nav-number">5.1.</span> <span class="nav-text">Another Critic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#target-network"><span class="nav-number">5.2.</span> <span class="nav-text">Target NetWork</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exploration"><span class="nav-number">5.3.</span> <span class="nav-text">Exploration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replay-buffer"><span class="nav-number">5.4.</span> <span class="nav-text">Replay buffer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typical-q-learning-algorithm"><span class="nav-number">5.5.</span> <span class="nav-text">Typical Q-Learning Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#double-dqn-ddqn"><span class="nav-number">5.6.</span> <span class="nav-text">Double DQN DDQN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dueling-dqn"><span class="nav-number">5.7.</span> <span class="nav-text">Dueling DQN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prioritized-reply"><span class="nav-number">5.8.</span> <span class="nav-text">Prioritized Reply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multi-step"><span class="nav-number">5.9.</span> <span class="nav-text">Multi-step</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#noisy-net"><span class="nav-number">5.10.</span> <span class="nav-text">Noisy Net</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#distributional-q-function"><span class="nav-number">5.11.</span> <span class="nav-text">Distributional Q-function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rainbow"><span class="nav-number">5.12.</span> <span class="nav-text">Rainbow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continuous-actions"><span class="nav-number">5.13.</span> <span class="nav-text">Continuous Actions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#actor-critic"><span class="nav-number">6.</span> <span class="nav-text">Actor Critic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sparse-reward"><span class="nav-number">7.</span> <span class="nav-text">Sparse Reward</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#imitation-learning"><span class="nav-number">8.</span> <span class="nav-text">Imitation Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">9.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
@@ -1106,7 +1219,7 @@ J_{T R P O}^{\theta^{\prime}}(\theta)=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\th
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">159k</span>
+    <span title="站点总字数">161k</span>
   
 
   
@@ -1115,7 +1228,7 @@ J_{T R P O}^{\theta^{\prime}}(\theta)=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\th
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:24</span>
+    <span title="站点阅读时长">2:26</span>
   
 </div>
 
