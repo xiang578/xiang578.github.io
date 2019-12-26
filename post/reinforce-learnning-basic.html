@@ -100,21 +100,26 @@
 
 
 
-  <meta name="description" content="课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上进行学习优化。 Environment：指除 Actor 之外的所有事务，受 Act">
+  <meta name="description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上">
 <meta name="keywords" content="algorithm,reinforcementlearning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="李宏毅强化学习课程笔记">
 <meta property="og:url" content="https://xiang578.com/post/reinforce-learnning-basic.html">
 <meta property="og:site_name" content="算法花园">
-<meta property="og:description" content="课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上进行学习优化。 Environment：指除 Actor 之外的所有事务，受 Act">
+<meta property="og:description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://xiang578.com/file/15726799935625.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15752505145081.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15752505547153.jpg">
-<meta property="og:updated_time" content="2019-12-21T10:17:35.923Z">
+<meta property="og:image" content="https://xiang578.com/file/15771920437580.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15771931618906.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15771932374489.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15772793086357.jpg">
+<meta property="og:image" content="https://xiang578.com/file/15772793200430.jpg">
+<meta property="og:updated_time" content="2019-12-26T13:16:58.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="李宏毅强化学习课程笔记">
-<meta name="twitter:description" content="课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上进行学习优化。 Environment：指除 Actor 之外的所有事务，受 Act">
+<meta name="twitter:description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  20191226: 整理 PPO 相关资料   RL 基础 强化学习基本定义：  Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上">
 <meta name="twitter:image" content="https://xiang578.com/file/15726799935625.jpg">
 
 
@@ -465,24 +470,12 @@
                 
               
 
-              <time title="创建时间：2019-11-21 20:50:36" itemprop="dateCreated datePublished" datetime="2019-11-21T20:50:36+08:00">2019-11-21</time>
+              <time title="创建时间：2019-12-26 21:14:47 / 修改时间：21:16:58" itemprop="dateCreated datePublished" datetime="2019-12-26T21:14:47+08:00">2019-12-26</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-12-21 18:17:35" itemprop="dateModified" datetime="2019-12-21T18:17:35+08:00">2019-12-21</time>
               
             
           </span>
@@ -552,7 +545,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.1k</span>
+                <span title="本文字数">4.1k</span>
               
 
               
@@ -566,7 +559,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -586,13 +579,21 @@
       
 
       
-        <p>课件下载：<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html" target="_blank" rel="noopener">Hung-yi Lee - Deep Reinforcement Learning</a></p>
+        <h2 id="info">Info</h2>
+<p>课件下载：<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html" target="_blank" rel="noopener">Hung-yi Lee - Deep Reinforcement Learning</a></p>
 <p>课程视频：<a href="https://www.youtube.com/watch?v=z95ZYgPgXOY&amp;list=PLJV_el3uVTsODxQFgzMzPLa16h6B8kWM_" target="_blank" rel="noopener">DRL Lecture 1: Policy Gradient (Review) - YouTube</a></p>
+<ul>
+<li>Change Log
+<ul>
+<li>20191226: 整理 PPO 相关资料</li>
+</ul></li>
+</ul>
 <h2 id="rl-基础">RL 基础</h2>
 <p>强化学习基本定义：</p>
 <ul>
 <li>Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上进行学习优化。</li>
 <li>Environment：指除 Actor 之外的所有事务，受 Actor 动作影响而改变其状态，并给 Actor 对应的奖励。</li>
+<li>on-policy 和 off-policy 的区别在于 Actor 和 Environment 交互的策略和它自身在学习的策略是否是同一个。</li>
 </ul>
 <p>一些符号：</p>
 <ul>
@@ -627,7 +628,7 @@
 <p>训练 actor 的过程看成是分类任务：输入 state ，输出 action。</p>
 <p>最下面公式分别是反向传播梯度计算和 PG 的反向梯度计算，PG 中要乘以整个轨迹的 R。</p>
 <figure>
-<img src="/file/15752505145081.jpg" alt="-w914"><figcaption>-w914</figcaption>
+<img src="/file/15752505145081.jpg" alt="PG"><figcaption>PG</figcaption>
 </figure>
 <p>tip 1： add a baseline</p>
 <p>强化学习的优化和样本质量有关，避免采样不充分。Reawrd 函数变成 R-b，代表回报小于 b 的都被我们当成负样本，这样模型能去学习得分更高的动作。b 一般可以使用 R 的均值。</p>
@@ -638,9 +639,49 @@
 <li>利用 Advantage Function 评价状态 s 下动作 a 的好坏 critic。</li>
 </ol>
 <figure>
-<img src="/file/15752505547153.jpg" alt="-w844"><figcaption>-w844</figcaption>
+<img src="/file/15752505547153.jpg" alt="Assign Suitable Credit"><figcaption>Assign Suitable Credit</figcaption>
 </figure>
-<h2 id="ppo">PPO</h2>
+<h2 id="ppo-proximal-policy-optimization">PPO: Proximal Policy Optimization</h2>
+<h3 id="importance-sampling">importance sampling</h3>
+<p>假设需要估计期望 <span class="math inline">\(E_{x~p[f(x)]}\)</span>，x 符合 p 分布，将期望写成积分的形式。由于在 P 分布下面很难采样，把问题转化到已知 q 分布上，得到在 p 分布下计算期望公式。</p>
+<p><img src="/file/15771920437580.jpg"></p>
+<p>上面方法得到 p 和 q 期望接近，但是方差可能相差很大，且和 <span class="math inline">\(\frac{p(x)}{q(x)}\)</span> 有关。</p>
+<p>原分布的方差： <span class="math display">\[
+\operatorname{Var}_{x-p}[f(x)]=E_{x-p}\left[f(x)^{2}\right]-\left(E_{x-q}[f(x)]\right)^{2}
+\]</span></p>
+<p>新分布的方差： <span class="math display">\[
+\begin{array}{l}{\operatorname{Var}_{x \sim p}[f(x)]=E_{x \sim p}\left[f(x)^{2}\right]-\left(E_{x \sim p}[f(x)]\right)^{2}} \\ {\operatorname{Var}_{x \sim q}\left[f(x) \frac{p(x)}{q(x)}\right]=E_{x \sim q}\left[\left(f(x) \frac{p(x)}{q(x)}\right)^{2}\right]-\left(E_{x \sim q}\left[f(x) \frac{p(x)}{q(x)}\right]\right)^{2}} \\ {=E_{x \sim p}\left[f(x)^{2} \frac{p(x)}{q(x)}\right]-\left(E_{x \sim p}[f(x)]\right)^{2}}\end{array}
+\]</span></p>
+<p>在 p 和 q 分布不一致时，且采样不充分时，可能会带来比较大的误差。</p>
+<figure>
+<img src="/file/15771931618906.jpg" alt="Issue of Importance Sampling"><figcaption>Issue of Importance Sampling</figcaption>
+</figure>
+<h3 id="从-on-policy-到-off-policy">从 On-policy 到 Off-policy</h3>
+<p>on-policy 时，PG 每次参数更新完成后，actor 就改变了，不能使用之前的数据，必须和环境重新互动收集数据。引入 <span class="math inline">\(p_{\theta \prime}\)</span> 进行采样，就能将 PG 转为 off-ploicy。</p>
+<p><img src="/file/15771932374489.jpg"></p>
+<p>和之前相比，相当于引入重要性采样，所以也有前一节中提到的重要性采样不足问题。</p>
+<p><span class="math display">\[
+J^{\theta^{\prime}}(\theta)=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\theta^{\prime}}}\left[\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{\prime}}\left(a_{t} | s_{t}\right)} A^{\theta^{\prime}}\left(s_{t}, a_{t}\right)\right]
+\]</span></p>
+<h3 id="ppotrpo">PPO/TRPO</h3>
+<p>为了克服采样的分布与原分布差距过大的不足，PPO 引入 KL 散度进行约束。KL 散度用来衡量两个分布的接近程度。</p>
+<p><span class="math display">\[
+J_{P P O}^{\theta^{\prime}}(\theta)=J^{\theta^{\prime}}(\theta)-\beta K L\left(\theta, \theta^{\prime}\right)
+\]</span></p>
+<p>TRPO(Trust Region Policy Optimization)，要求 <span class="math inline">\(K L\left(\theta, \theta^{\prime}\right)&lt;\delta\)</span>。</p>
+<p><span class="math display">\[
+J_{T R P O}^{\theta^{\prime}}(\theta)=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\theta^{\prime}}}\left[\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{\prime}}\left(a_{t} | s_{t}\right)} A^{\theta^{\prime}}\left(s_{t}, a_{t}\right)\right]
+\]</span></p>
+<p>KL 散度可能比较难计算，在实际中常使用 PPO2。</p>
+<ul>
+<li>A&gt;0，代表当前策虑表现好。需要增大 <span class="math inline">\(\pi( \theta )\)</span>，通过 clip 增加一个上限，防止 <span class="math inline">\(\pi( \theta )\)</span> 和旧分布变化太大。</li>
+<li>A&lt;0，代表当前策虑表现差，不限制新旧分布的差异程度，只需要大幅度改变 <span class="math inline">\(\pi( \theta )\)</span>。</li>
+</ul>
+<p>参考 <a href="https://zhuanlan.zhihu.com/p/43114711" target="_blank" rel="noopener">【点滴】策略梯度之PPO - 知乎</a></p>
+<p><img src="/file/15772793086357.jpg"></p>
+<h3 id="ppo-algorithm">PPO algorithm</h3>
+<p>系数 <span class="math inline">\(\beta\)</span> 在迭代的过程中需要进行动态调整。引入 <span class="math inline">\(KL_{max} KL_{min}\)</span>，KL &gt; KLmax，说明 penalty 没有发挥作用，增大 <span class="math inline">\(\beta\)</span>。</p>
+<p><img src="/file/15772793200430.jpg"></p>
 <h2 id="q-learning">Q-Learning</h2>
 <h2 id="actor-critic">Actor Critic</h2>
 <h2 id="sparse-reward">Sparse Reward</h2>
@@ -683,8 +724,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/blog-writing-checklist.html" rel="next" title="算法花园风格清单">
-                <i class="fa fa-chevron-left"></i> 算法花园风格清单
+              <a href="/post/month-review-201902.html" rel="next" title="每月分享 201912">
+                <i class="fa fa-chevron-left"></i> 每月分享 201912
               </a>
             
           </div>
@@ -692,10 +733,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/cs231n-summary.html" rel="prev" title="Standford CS231n 2017 课程部分总结">
-                Standford CS231n 2017 课程部分总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1036,7 +1073,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rl-基础"><span class="nav-number">1.</span> <span class="nav-text">RL 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-gradient"><span class="nav-number">2.</span> <span class="nav-text">Policy Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pg-的例子"><span class="nav-number">2.1.</span> <span class="nav-text">PG 的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ppo"><span class="nav-number">3.</span> <span class="nav-text">PPO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-learning"><span class="nav-number">4.</span> <span class="nav-text">Q-Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#actor-critic"><span class="nav-number">5.</span> <span class="nav-text">Actor Critic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sparse-reward"><span class="nav-number">6.</span> <span class="nav-text">Sparse Reward</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#imitation-learning"><span class="nav-number">7.</span> <span class="nav-text">Imitation Learning</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#info"><span class="nav-number">1.</span> <span class="nav-text">Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rl-基础"><span class="nav-number">2.</span> <span class="nav-text">RL 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-gradient"><span class="nav-number">3.</span> <span class="nav-text">Policy Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pg-的例子"><span class="nav-number">3.1.</span> <span class="nav-text">PG 的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ppo-proximal-policy-optimization"><span class="nav-number">4.</span> <span class="nav-text">PPO: Proximal Policy Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#importance-sampling"><span class="nav-number">4.1.</span> <span class="nav-text">importance sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从-on-policy-到-off-policy"><span class="nav-number">4.2.</span> <span class="nav-text">从 On-policy 到 Off-policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ppotrpo"><span class="nav-number">4.3.</span> <span class="nav-text">PPO/TRPO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ppo-algorithm"><span class="nav-number">4.4.</span> <span class="nav-text">PPO algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q-learning"><span class="nav-number">5.</span> <span class="nav-text">Q-Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#actor-critic"><span class="nav-number">6.</span> <span class="nav-text">Actor Critic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sparse-reward"><span class="nav-number">7.</span> <span class="nav-text">Sparse Reward</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#imitation-learning"><span class="nav-number">8.</span> <span class="nav-text">Imitation Learning</span></a></li></ol></div>
             
 
           </div>
@@ -1069,7 +1106,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">157k</span>
+    <span title="站点总字数">159k</span>
   
 
   
@@ -1078,7 +1115,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">2:23</span>
+    <span title="站点阅读时长">2:24</span>
   
 </div>
 
