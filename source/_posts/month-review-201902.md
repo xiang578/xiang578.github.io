@@ -9,6 +9,10 @@ categories: 月旦评
 
 > 这里记录过去一个月，我看到、想到值得分享的东西，每周六滚动更新。
 
+## 0x02. [Org-mode Workflow](https://blog.jethro.dev/posts/org_mode_workflow_preview/)
+
+国外一名 CS 学生的 org mode workflow 教程，包括 GTD 和 Zettelkasten 两个主要的部分，分别对应时间管理和知识管理，是一份很好的参考资料。
+
 ## 0x01. HHKB 更新
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">改めてとなりますが今回新しく登場したHHKBは3機種になります。それぞれの特徴をまとめたものがこちらになります。<a href="https://twitter.com/hashtag/HHKB%E3%83%9F%E3%83%BC%E3%83%88%E3%82%A2%E3%83%83%E3%83%97?src=hash&amp;ref_src=twsrc%5Etfw">#HHKBミートアップ</a> <a href="https://t.co/GVVxNI6H72">pic.twitter.com/GVVxNI6H72</a></p>&mdash; HHKB OFFICIAL (@PFU_HHKB) <a href="https://twitter.com/PFU_HHKB/status/1204345452658741248?ref_src=twsrc%5Etfw">December 10, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

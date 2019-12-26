@@ -14,6 +14,7 @@ mathjax: true
 
 - Change Log
     - 20191226: 整理 PPO 相关资料
+    - 20191227: 整理 Q-Learning 相关资料
 
 ## RL 基础
 
@@ -163,10 +164,157 @@ KL 散度可能比较难计算，在实际中常使用 PPO2。
 
 ## Q-Learning
 
+
+value-base 方法，利用 critic 网络评价 actor 。通过状态价值函数 $V^{\pi}(s)$ 来衡量预期的期望。V 和 pi、s 相关。
+
+![](/file/15773668251569.jpg)
+
+
+
+1. Monte-Carlo MC: 训练网络使预测的 $V^{\pi}(s_a)$ 和实际完整游戏 reward $G_a$ 接近。
+2. Temporal-difference TD: 训练网络尽量满足 $V^{\pi}(s_t)=V^{\pi}(s_{t+1}) + r_t$ 等式，两个状态之间的收益差。
+
+
+MC: 根据策虑 $\pi$  进行游戏得到最后的 $G(a)$，最终存在方差大的问题。$\operatorname{Var}[k X]=k^{2} \operatorname{Var}[X]$
+
+TD: r 的方差比较小，$V^{\pi}(s_{t+1})$ 在采样不充分的情况下，可能不准确。
+
+![](/file/15773670631327.jpg)
+
+
+### Another Critic
+
+State-action value function $Q^{\pi}(s, a)$：预测在 pi 策略下，pair(s, a) 的值。相当于假设 state 情况下强制采取 action a。
+
+![](/file/15773671301402.jpg)
+
+对于非分类的方法：
+
+![](/file/15773671400847.jpg)
+
+Q-Learning
+
+1. 初始  actor $\pi$ 与环境互动
+2. 学习该 actor 对应的 Q function
+3. 找一个比 $\pi$ 好的策虑：$\pi \prime$，满足 $V^{\pi \prime}(s,a) \ge V^{\pi}(s,a)$, $\pi^{\prime}(s)=\arg \max _{a} Q^{\pi}(s, a)$
+
+在给定 state 下，分别代入 action，取函数值最大的 a，作为后面对该 state 时采取的 action。
+
+证明新的策虑存在：
+![](/file/15773672909262.jpg)
+
+### Target NetWork
+
+左右两边的网络相同，如果同时训练比较困难。简单的想法是固定右边的网络进行训练，一定次数后再拷贝左边的网络。
+
+![](/file/15773673947112.jpg)
+
+
+### Exploration
+
+Q function 导致 actor 每次都会选择具有更大值的 action，无法准确估计某一些动作，对于收集数据而言是一个弊端。
+
+- Epsilon Greedy
+    - 小概率进行损失采样
+- Boltzmann Exploration
+    - 利用 softmax 计算选取动作的概率，然后进行采样
+
+![](/file/15773674189861.jpg)
+
+
+
+### Replay buffer
+
+采样之后的 $(s_t, a_t, r_t, s_{t+1})$ 保存在一个 buffer 里面（可能是不同策虑下采样得到的)，每次训练从 buffer 中 sample 一个 batch。
+
+结果：训练方法变成 off-policy。减少 RL 重复采样，充分利用数据。
+
+![](/file/15773675111439.jpg)
+
+### Typical Q-Learning Algorithm
+
+Q-Learning 流程：
+
+![](/file/15773677168275.jpg)
+
+### Double DQN DDQN
+
+- Q value 容易高估：目标值 $r_t + maxQ(s_{t+1}, a)$ 倾向于选择被高估的 action，导致 target 很大。
+- 选动作的 Q' 和计算 value 的 Q(target network) 不同。Q 中高估 a，Q' 可能会准确估计 V 值。Q' 中高估 a ，可能不会被 Q 选中。
+
+![](/file/15773677986325.jpg)
+
+
+### Dueling DQN
+
+改 network 架构。V(s) 代表 s 所具有的价值，不同的 action 共享。 A(s,a) advantage function 代表在 s 下执行 a 的价值。最后 $Q(s, a) = A(s, a) + V(s)$。
+
+为了让网络倾向于使用 V（能训练这个网络），得到 A 后，要对 A 做 normalize。
+
+![](/file/15773680103445.jpg)
+
+### Prioritized Reply
+
+在训练过程中，对于经验 buffer 里面的样本，TD error 比较大的样本有更大的概率被采样，即难训练的数据增大被采样的概率。
+
+![](/file/15773681449261.jpg)
+
+
+### Multi-step
+
+综合 MC 和 TD 的优点，训练样本按一定步长 N 进行采样。MC 准确方差大，TD 方差小，估计不准。
+![](/file/15773682226911.jpg)
+
+
+### Noisy Net
+
+![](/file/15773682895872.jpg)
+
+
+- Noise on Action：在相同状态下，可能会采取不同的动作。
+- Noise on Parameters：开始时加入噪声。同一个 episode 内，参数不会改变。相同状态下，动作相同。
+更好探索环境。
+
+### Distributional Q-function
+
+Q 是累积收益的期望，实际上在 s 采取 a 时，最终所有得到的 reward 为一个分布 reward distribution。部分时候分布不同，可能期望相同，所以用期望来代替 reward 会损失一些信息。
+
+Distributional Q-function 直接输出分布，均值相同时，采取方差小的方案。这种方法不会产生高估 q 值的情况。
+
+![](/file/15773684681347.jpg)
+
+### Rainbow
+
+rainbow 是各种策略的混合体。
+
+![](/file/15773684767629.jpg)
+
+DDQN 影响不大。
+
+![](/file/15773684832549.jpg)
+
+### Continuous Actions
+
+action 是一个连续的向量，Q-learning 不是一个很好的方法。
+
+$$
+a=\arg \max _{a} Q(s, a)
+$$
+
+1. 从 a 中采样出一批动作，看哪个行动 Q 值最大。
+2. 使用 gradient ascent 解决最优化问题。
+3. 设计一个网络来化简过程。
+    1. $\sum$ 和 $\mu$ 是高斯分布的方差和均值，保证矩阵一定是正定。
+    2. 最小化下面的函数，需要最小化 $a - \mu$。
+
+![](/file/15773684903236.jpg)
+
 ## Actor Critic
 
 ## Sparse Reward
 
 ## Imitation Learning
 
+## Reference
 
+- [强化学习基础知识 - 知乎](https://zhuanlan.zhihu.com/p/41712025)
