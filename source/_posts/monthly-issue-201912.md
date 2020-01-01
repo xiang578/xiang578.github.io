@@ -1,7 +1,7 @@
 ---
 title: 每月分享 201912
 date: 2019-12-16 16:55:11
-tags: [monthly-review]
+tags: [monthly-issue]
 categories: 月旦评
 ---
 
