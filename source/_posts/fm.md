@@ -3,6 +3,7 @@ title: (FM) Factorization Machines
 date: 2019-07-28 18:18:52
 tags: fm
 categories: 机器学习
+matjx: true
 ---
 
 Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在 2010 年提出,是一种常用的因子机模型。
