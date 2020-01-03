@@ -3,7 +3,6 @@ title: (FTRL) Follow The Regularized Leader
 date: 2020-01-03 21:26:06
 tags: [google, ml, ftrl, fm]
 categories: 机器学习
-layout: false
 matjx: true
 ---
 
