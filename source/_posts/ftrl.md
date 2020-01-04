@@ -3,7 +3,7 @@ title: (FTRL) Follow The Regularized Leader
 date: 2020-01-03 21:26:06
 tags: [google, ml, ftrl, fm]
 categories: 机器学习
-matjx: true
+mathjax: true
 ---
 
 FTRL 是 Google 提出的一种优化算法。常规的优化方法例如梯度下降、牛顿法等属于批处理算法，每次更新需要对 batch 内的训练样本重新训练一遍。在线学习场景下，我们希望模型迭代速度越快越好。例如用户发生一次点击行为后，模型就能快速进行调整。FTRL 在这个场景中能求解出稀疏化的模型。
