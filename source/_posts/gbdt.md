@@ -3,7 +3,7 @@ title: All About GBDT (1)
 tags: [gdbt, ml]
 date: 2020-01-26 14:15:43
 categories: 机器学习
-matjx: true
+mathjax: true
 ---
 
 GBDT(Gradient Boosting Decision Tree) 从名字上理解包含三个部分：提升、梯度和树。它最早由 Freidman 在 `greedy function approximation ：a gradient boosting machine` 中提出。很多公司线上模型是基于 GBDT+FM 开发的，我们 Leader 甚至认为 GBDT 是传统的机器学习集大成者。断断续续使用 GBDT 一年多后，大胆写一篇有关的文章和大家分享。
