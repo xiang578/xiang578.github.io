@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="GBDT(Gradient Boosting Decision Tree) 从名字上理解包含三个部分：提升、梯度和树。它最早由 Freidman 在 greedy function approximation ：a gradient boosting machine 中提出。很多公司线上模型是基于 GBDT+FM 开发的，我们 Leader 甚至认为 GBDT 是传统的机器学习集大成者。断断续续使">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-26T08:10:50.059Z">
+<meta property="og:updated_time" content="2020-01-26T10:42:04.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="All About GBDT (1)">
 <meta name="twitter:description" content="GBDT(Gradient Boosting Decision Tree) 从名字上理解包含三个部分：提升、梯度和树。它最早由 Freidman 在 greedy function approximation ：a gradient boosting machine 中提出。很多公司线上模型是基于 GBDT+FM 开发的，我们 Leader 甚至认为 GBDT 是传统的机器学习集大成者。断断续续使">
@@ -472,7 +472,7 @@
                 
               
 
-              <time title="创建时间：2020-01-26 14:15:43 / 修改时间：16:10:50" itemprop="dateCreated datePublished" datetime="2020-01-26T14:15:43+08:00">2020-01-26</time>
+              <time title="创建时间：2020-01-26 14:15:43 / 修改时间：18:42:04" itemprop="dateCreated datePublished" datetime="2020-01-26T14:15:43+08:00">2020-01-26</time>
             
 
             
@@ -1344,6 +1344,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    
   
 
 
