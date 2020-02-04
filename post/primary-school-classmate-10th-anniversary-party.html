@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://xiang578.com/file/WechatIMG18.jpeg">
 <meta property="og:image" content="https://xiang578.com/file/WechatIMG27.jpeg">
 <meta property="og:image" content="https://xiang578.com/file/IMG_0233.JPG">
-<meta property="og:updated_time" content="2020-01-26T10:42:04.133Z">
+<meta property="og:updated_time" content="2020-02-04T05:29:56.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小学十周年同学聚会">
 <meta name="twitter:description" content="不知不觉中，小学毕业快要十年了（2008-2018）。前几个月，就有同学开始策划组织聚会。就这样把我的思绪拉回十年前的。  学校校门  看上面的图可以知道，学校的名字叫做——晓村小学。值得注意地是，晓村不是地名。根据一般的套路，这样取名都是有故事的。查阅百科可以看到下面的介绍：「晓村小学位于沿海的椒北平原，创办于1929年2月26日，当年，中共地下党员、著名教育家林迪生、地下党的外围组织—“乙丑读">
@@ -500,7 +500,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-01-26 18:42:04" itemprop="dateModified" datetime="2020-01-26T18:42:04+08:00">2020-01-26</time>
+                <time title="修改时间：2020-02-04 13:29:56" itemprop="dateModified" datetime="2020-02-04T13:29:56+08:00">2020-02-04</time>
               
             
           </span>
@@ -527,19 +527,6 @@
 
           
             
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/post/primary-school-classmate-10th-anniversary-party.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/primary-school-classmate-10th-anniversary-party.html" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -729,10 +716,7 @@
           
 
   
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
+    <div class="comments" id="gitalk-container">
     </div>
 
   
@@ -1222,30 +1206,36 @@
   
 
   
-  
-  <script id="dsq-count-scr" src="https://xiang578.disqus.com/count.js" async></script>
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
 
 <script>
-  var disqus_config = function() {
-    this.page.url = "https://xiang578.com/post/primary-school-classmate-10th-anniversary-party.html";
-    this.page.identifier = "post/primary-school-classmate-10th-anniversary-party.html";
-    this.page.title = '小学十周年同学聚会';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
+  var gitalk = new Gitalk({
+    clientID: 'd83511859fbdb256f4ce',
+    clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+    repo: 'xiang578.github.io',
+    owner: 'xiang578',
+    admin: ['xiang578'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
 </script>
-
-
-
-
 
   
 

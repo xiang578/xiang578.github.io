@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="Paper  CNN 系列  (AlexNet)ImageNet Classiﬁcation with Deep Convolutional Neural Networks  FM 系列  (gbdt + lr)Practical Lessons from Predicting Clicks on Ads at Facebook (Wide&amp;amp;Deep) Wide &amp;amp; Deep L">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-26T10:42:04.489Z">
+<meta property="og:updated_time" content="2020-02-04T05:29:56.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tech">
 <meta name="twitter:description" content="Paper  CNN 系列  (AlexNet)ImageNet Classiﬁcation with Deep Convolutional Neural Networks  FM 系列  (gbdt + lr)Practical Lessons from Predicting Clicks on Ads at Facebook (Wide&amp;amp;Deep) Wide &amp;amp; Deep L">
@@ -516,10 +516,7 @@
           
 
   
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
+    <div class="comments" id="gitalk-container">
     </div>
 
   
@@ -1035,30 +1032,36 @@
   
 
   
-  
-  <script id="dsq-count-scr" src="https://xiang578.disqus.com/count.js" async></script>
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
 
 <script>
-  var disqus_config = function() {
-    this.page.url = "https://xiang578.com/tech/index.html";
-    this.page.identifier = "tech/index.html";
-    this.page.title = 'Tech';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
+  var gitalk = new Gitalk({
+    clientID: 'd83511859fbdb256f4ce',
+    clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+    repo: 'xiang578.github.io',
+    owner: 'xiang578',
+    admin: ['xiang578'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
 </script>
-
-
-
-
 
   
 

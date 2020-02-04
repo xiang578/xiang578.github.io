@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://xiang578.com/file/15473675744474.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15473703471065.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15473712908061.jpg">
-<meta property="og:updated_time" content="2020-01-26T10:42:04.129Z">
+<meta property="og:updated_time" content="2020-02-04T05:29:56.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018 年消费指南">
 <meta name="twitter:description" content="去年在总结中提到了一些知识付费的内容，今年将内容扩展，和大家分享我在这一年购买的实物以及虚拟产品。 实体购物 工作之后，感觉自己每个月留不下多少钱，很大一部分用来购买一些号称提高工作效率有关的物件。现在毕竟钱都花出去了，至少要装模作样地总结它们给我带来的提升。 键鼠 入职之后，地主只给我提供了一把锄头（Macbook Pro 13 with touchbar），长时间在蝴蝶键盘上敲击不是很愉悦的感">
@@ -498,7 +498,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-01-26 18:42:04" itemprop="dateModified" datetime="2020-01-26T18:42:04+08:00">2020-01-26</time>
+                <time title="修改时间：2020-02-04 13:29:56" itemprop="dateModified" datetime="2020-02-04T13:29:56+08:00">2020-02-04</time>
               
             
           </span>
@@ -525,19 +525,6 @@
 
           
             
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/post/2018-consumer-report.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/2018-consumer-report.html" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -737,10 +724,7 @@
           
 
   
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
+    <div class="comments" id="gitalk-container">
     </div>
 
   
@@ -1256,30 +1240,36 @@
   
 
   
-  
-  <script id="dsq-count-scr" src="https://xiang578.disqus.com/count.js" async></script>
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
 
 <script>
-  var disqus_config = function() {
-    this.page.url = "https://xiang578.com/post/2018-consumer-report.html";
-    this.page.identifier = "post/2018-consumer-report.html";
-    this.page.title = '2018 年消费指南';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
-  }
-  
-    loadComments();
-  
+  var gitalk = new Gitalk({
+    clientID: 'd83511859fbdb256f4ce',
+    clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+    repo: 'xiang578.github.io',
+    owner: 'xiang578',
+    admin: ['xiang578'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
 </script>
-
-
-
-
 
   
 
