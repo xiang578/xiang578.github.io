@@ -281,9 +281,6 @@ github 项目中相关的地址修改
 
 大概这样就完成一个博客的安装和部署，接下来你就可以快乐的写博客。
 
-
-
-
 ### 参考文章：
 - [献给写作者的 Markdown 新手指南](http://www.jianshu.com/p/q81RER) 
 - [hexo系列教程：（二）搭建hexo博客](http://zipperary.com/2013/05/28/hexo-guide-2/)
