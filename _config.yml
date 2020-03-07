@@ -83,6 +83,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 #theme: even
 theme: next
+#theme: archer
 
 # 自动生成 sitemap
 sitemap:
@@ -120,17 +121,17 @@ leancloud_counter_security:
   username: xianghexoblognext
   password: testdqvvrd
 
-douban:
-  user: xiang578
-  builtin: false
-  book:
-    title: '书柜'
-    quote: '读万卷书'
-  movie:
-    title: '影院'
-    quote: '光与影的艺术'
-  game:
-    title: 'This is my game title'
-    quote: 'This is my game quote'
-  timeout: 10000 
+# douban:
+#  user: xiang578
+#  builtin: false
+#  book:
+#    title: '书柜'
+#    quote: '读万卷书'
+#  movie:
+#    title: '影院'
+#    quote: '光与影的艺术'
+#  game:
+#    title: 'This is my game title'
+#    quote: 'This is my game quote'
+#  timeout: 10000 
 
