@@ -7,11 +7,12 @@ date: 2020-03-07 15:45:15
 ---
 
 
+现在看来，又有多少人预测到这一次超级黑天鹅事件。
+
+<!-- more -->
 
 
-[TOC]
-
-> 这里记录过去一个月，我看到、想到值得分享的东西，每周六滚动更新。
+> 这里记录过去一个月，我看到、想到值得分享的东西。
 
 ## 0x03 [How Instapaper Changed My Kindle Life For the Better](https://www.guidingtech.com/29107/instapaper-kindle-merits/) 
 

@@ -115,7 +115,7 @@ deploy:
 - type: leancloud_counter_security_sync
 
 leancloud_counter_security:
-  enable_sync: true
+  enable_sync: false
   app_id: rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz
   app_key: SHpy5xi5vjhNA7cz7THf03vk
   username: xianghexoblognext
