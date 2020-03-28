@@ -108,7 +108,7 @@
 <meta property="og:description" content="About Me 互联网上常用名：RyenX、xiang578 2018年7月，从国内一所不知名的大学毕业。回望四年，自我评价计算专业业余学生。多次参加 ACM 比赛，实力属于打铁行列，侥幸抱上大腿获得过金银铜奖。有幸在国内一家出行公司地图部门工作，算是不会机器学习的算法工程师。 目前，自己在尝试打造一个有一定概率会发生意外好事情的生活系统。 下面是近期关注的领域，欢迎通过留言或页面下方的联系信息">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://media.xiang578.com/%E6%94%B6%E6%AC%BE%E7%A0%81.jpg">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.367Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
 <meta name="twitter:description" content="About Me 互联网上常用名：RyenX、xiang578 2018年7月，从国内一所不知名的大学毕业。回望四年，自我评价计算专业业余学生。多次参加 ACM 比赛，实力属于打铁行列，侥幸抱上大腿获得过金银铜奖。有幸在国内一家出行公司地图部门工作，算是不会机器学习的算法工程师。 目前，自己在尝试打造一个有一定概率会发生意外好事情的生活系统。 下面是近期关注的领域，欢迎通过留言或页面下方的联系信息">
@@ -1104,74 +1104,6 @@
 
 
   
-  
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $('.leancloud_visitors');
-
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
-        .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
-          
-        });
-    });
-  </script>
-
-
 
   
 

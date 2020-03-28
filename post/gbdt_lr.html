@@ -115,7 +115,7 @@
 <meta property="og:image" content="https://xiang578.com/file/15541931302704.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15542640937514.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15542641884458.jpg">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.363Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Practical Lessons from Predicting Clicks on Ads at Facebook(gbdt + lr)">
 <meta name="twitter:description" content="主题：Facebook 2014 年发表的广告点击预测文章。最主要是提出经典 GBDT+LR 模型，可以自动实现特征工程，效果好比于人肉搜索。另外，文章中还给出一个 online learning 的工程框架。 问题： - GBDT 如何处理大量 id 类特征 - 广告类对于 user id 的处理：利用出现的频率以及转化率来代替 - id 特征放在 lr 中处理。 - GBDT+LR 和 RF+">
@@ -497,7 +497,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-28 17:07:31" itemprop="dateModified" datetime="2020-03-28T17:07:31+08:00">2020-03-28</time>
+                <time title="修改时间：2020-03-28 17:56:10" itemprop="dateModified" datetime="2020-03-28T17:56:10+08:00">2020-03-28</time>
               
             
           </span>
@@ -528,17 +528,6 @@
           
 
           
-          
-            <span id="/post/gbdt_lr.html" class="leancloud_visitors" data-flag-title="Practical Lessons from Predicting Clicks on Ads at Facebook(gbdt + lr)">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1284,64 +1273,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

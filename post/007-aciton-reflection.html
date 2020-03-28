@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="写这篇文章之前，查看了一下 007 公众号里面的数据，加入 83 班已经 134 天。但是自我感觉出了一些问题，借这次作业反思一下。 问题  主题。刚开始践行的时候，为了解决每周量产一篇文章的问题，自己想过每月文章主题的安排，但是现在更多地是随心所欲。 拖延。最近几次作业，虽然很早就知道要写什么内容，但是总拖到最后一天才打开会电脑开始写。 评论。说点题外话，由于自己一直有独立博客，所以认为评论数量">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.363Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="007 践行反思">
 <meta name="twitter:description" content="写这篇文章之前，查看了一下 007 公众号里面的数据，加入 83 班已经 134 天。但是自我感觉出了一些问题，借这次作业反思一下。 问题  主题。刚开始践行的时候，为了解决每周量产一篇文章的问题，自己想过每月文章主题的安排，但是现在更多地是随心所欲。 拖延。最近几次作业，虽然很早就知道要写什么内容，但是总拖到最后一天才打开会电脑开始写。 评论。说点题外话，由于自己一直有独立博客，所以认为评论数量">
@@ -489,7 +489,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-28 17:07:31" itemprop="dateModified" datetime="2020-03-28T17:07:31+08:00">2020-03-28</time>
+                <time title="修改时间：2020-03-28 17:56:10" itemprop="dateModified" datetime="2020-03-28T17:56:10+08:00">2020-03-28</time>
               
             
           </span>
@@ -520,17 +520,6 @@
           
 
           
-          
-            <span id="/post/007-aciton-reflection.html" class="leancloud_visitors" data-flag-title="007 践行反思">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1251,64 +1240,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

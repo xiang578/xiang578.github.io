@@ -109,7 +109,7 @@
 <meta property="og:description" content="昨天晚上手贱点了升级服务器上的Ubuntu版本,然后发现wordpress不能用了...删了nginx装上Apache才解决,之后发现主题有问题,一激动就提交工单把服务器重装了... 接下来就是wordpress重装的过程,自己一直使用BackWPup每周备份wordpress,所以本以为重装会很轻松. 早上起来将wordpress以及BackWPup装好.然后就在BackWPup里面翻了好久都没">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://xiang578.com/file/15006908280096.jpg">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.367Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用BackWPup恢复wordpress">
 <meta name="twitter:description" content="昨天晚上手贱点了升级服务器上的Ubuntu版本,然后发现wordpress不能用了...删了nginx装上Apache才解决,之后发现主题有问题,一激动就提交工单把服务器重装了... 接下来就是wordpress重装的过程,自己一直使用BackWPup每周备份wordpress,所以本以为重装会很轻松. 早上起来将wordpress以及BackWPup装好.然后就在BackWPup里面翻了好久都没">
@@ -491,7 +491,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-28 17:07:31" itemprop="dateModified" datetime="2020-03-28T17:07:31+08:00">2020-03-28</time>
+                <time title="修改时间：2020-03-28 17:56:10" itemprop="dateModified" datetime="2020-03-28T17:56:10+08:00">2020-03-28</time>
               
             
           </span>
@@ -504,17 +504,6 @@
           
 
           
-          
-            <span id="/post/restore-wordpress-from-backWPup.html" class="leancloud_visitors" data-flag-title="使用BackWPup恢复wordpress">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1221,64 +1210,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

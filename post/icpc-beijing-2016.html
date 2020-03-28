@@ -113,7 +113,7 @@
 <meta property="og:image" content="https://xiang578.com/file/9c5_2016-11-13_08-15-51_compressed.jpg">
 <meta property="og:image" content="https://xiang578.com/file/9c5_2016-11-13_14-01-11_compressed.jpg">
 <meta property="og:image" content="https://xiang578.com/file/9c5_2016-11-13_16-19-49.jpeg">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.367Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016年北京区域赛">
 <meta name="twitter:description" content="今年，一队发挥出色，拿到全部赛区的名额，而且大三也没有多少队伍。所以我们这种弱队还有机会去参加第二场比赛。 作为第三次去北大，流程都是非常熟悉的。周四下午坐Z10出发，第二天上午到达北京。周五下午我一个人去了前两次来北京都没有机会参观的故宫。  故宫之旅并不是很好，主要是游客太多，紫禁城失去了往日的威严。不过，另外加收门票的钟表馆很棒，皇室的藏品居然如此花哨。有些钟表的滴答声一百多年之后依旧飘荡在">
@@ -495,7 +495,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-28 17:07:31" itemprop="dateModified" datetime="2020-03-28T17:07:31+08:00">2020-03-28</time>
+                <time title="修改时间：2020-03-28 17:56:10" itemprop="dateModified" datetime="2020-03-28T17:56:10+08:00">2020-03-28</time>
               
             
           </span>
@@ -526,17 +526,6 @@
           
 
           
-          
-            <span id="/post/icpc-beijing-2016.html" class="leancloud_visitors" data-flag-title="2016年北京区域赛">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1216,64 +1205,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

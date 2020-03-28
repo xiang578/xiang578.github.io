@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://xiang578.com/file/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg">
 <meta property="og:image" content="https://xiang578.com/file/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg">
 <meta property="og:image" content="https://xiang578.com/file/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.363Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#聊天软件实现">
 <meta name="twitter:description" content="前几天面试，被问如何实现一个类似微信的聊天软件。当时说了一个大概的想法，面试官没有怎么评价，只是最后建议我有空多做一些项目。正好最近不怎么忙，就实现一下。写了一个简易的模型，在这个过程中应用了很多原来学过的东西，当然还有很多问题没有解决。  这个软件选择C/S架构，所以写了一个服务器端程序和一个客户端程序，然后通信使用的是TCP协议。 利用socket完成通信，大致的过程如下图所示。   3. 服">
@@ -494,7 +494,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-28 17:07:31" itemprop="dateModified" datetime="2020-03-28T17:07:31+08:00">2020-03-28</time>
+                <time title="修改时间：2020-03-28 17:56:10" itemprop="dateModified" datetime="2020-03-28T17:56:10+08:00">2020-03-28</time>
               
             
           </span>
@@ -525,17 +525,6 @@
           
 
           
-          
-            <span id="/post/Csharp-chat-softwave.html" class="leancloud_visitors" data-flag-title="C#聊天软件实现">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1217,64 +1206,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

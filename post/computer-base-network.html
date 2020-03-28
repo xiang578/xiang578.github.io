@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="电路交换与分组交换的区别？ 优劣对比。 OSI有哪几层，知道主要几层的各自作用。  物理层：定义通信与传输借口硬件的机械、电气、功能和过程特性，实现比特流的透明传输。 数据链路层：无差别传送以帧为单位的数据。 网络层：选择合适的路由和交换结点，分组或者包。 运输层：端到端、或者进程到进程的无差别传送。 会话层：对数据传输的同步进行管理 表示层：信息加密和解密，正文压缩和还原 应用层：  TCP/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.363Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机基础：计算机网络">
 <meta name="twitter:description" content="电路交换与分组交换的区别？ 优劣对比。 OSI有哪几层，知道主要几层的各自作用。  物理层：定义通信与传输借口硬件的机械、电气、功能和过程特性，实现比特流的透明传输。 数据链路层：无差别传送以帧为单位的数据。 网络层：选择合适的路由和交换结点，分组或者包。 运输层：端到端、或者进程到进程的无差别传送。 会话层：对数据传输的同步进行管理 表示层：信息加密和解密，正文压缩和还原 应用层：  TCP/">
@@ -489,7 +489,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-28 17:07:31" itemprop="dateModified" datetime="2020-03-28T17:07:31+08:00">2020-03-28</time>
+                <time title="修改时间：2020-03-28 17:56:10" itemprop="dateModified" datetime="2020-03-28T17:56:10+08:00">2020-03-28</time>
               
             
           </span>
@@ -520,17 +520,6 @@
           
 
           
-          
-            <span id="/post/computer-base-network.html" class="leancloud_visitors" data-flag-title="计算机基础：计算机网络">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1282,64 +1271,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

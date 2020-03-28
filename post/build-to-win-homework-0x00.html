@@ -109,7 +109,7 @@
 <meta property="og:description" content="最近重新看邹欣写的构建之法，发现他的第一章课后作业很有意思，所以决定自己也来写一下。有关的作业说明在2017BUAA软工助教 第0次个人作业 - ChildishChange - 博客园中。 结缘计算机  你为什么选择计算机专业？你认为你的条件如何？和这些博主比呢？（必答） 计算机是你喜欢的领域吗？是你擅长的领域吗？ 你热爱这一专业吗？你对计算机的热爱是怎样的？仅仅是口头的吗？  与大部分人差不多">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://xiang578.com/file/15236805736051.jpg">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.363Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="构建之法 第 0 次个人作业">
 <meta name="twitter:description" content="最近重新看邹欣写的构建之法，发现他的第一章课后作业很有意思，所以决定自己也来写一下。有关的作业说明在2017BUAA软工助教 第0次个人作业 - ChildishChange - 博客园中。 结缘计算机  你为什么选择计算机专业？你认为你的条件如何？和这些博主比呢？（必答） 计算机是你喜欢的领域吗？是你擅长的领域吗？ 你热爱这一专业吗？你对计算机的热爱是怎样的？仅仅是口头的吗？  与大部分人差不多">
@@ -491,7 +491,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-28 17:07:31" itemprop="dateModified" datetime="2020-03-28T17:07:31+08:00">2020-03-28</time>
+                <time title="修改时间：2020-03-28 17:56:10" itemprop="dateModified" datetime="2020-03-28T17:56:10+08:00">2020-03-28</time>
               
             
           </span>
@@ -522,17 +522,6 @@
           
 
           
-          
-            <span id="/post/build-to-win-homework-0x00.html" class="leancloud_visitors" data-flag-title="构建之法 第 0 次个人作业">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1259,64 +1248,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 

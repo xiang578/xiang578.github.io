@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="一直想做一个推荐软件的系列文章，不过完成 2017 年的iPhone软件清单 后就没有动力……很多时候在思考，自己为什么一定要使用 iPhone？iOS 中的软件正是最好的答案，让每一个人享受科技带来的快乐。 这一篇文章和 2017 年的形式一样，删除常用的软件，推荐一些我认为有趣的软件。自从 iOS 12 中引入屏幕时间，今年的推荐顺序就按照屏幕时间中的排序。 目前使用设备：iPhone XR">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-28T09:07:31.363Z">
+<meta property="og:updated_time" content="2020-03-28T09:56:10.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Best of iPhone 2019 软件清单">
 <meta name="twitter:description" content="一直想做一个推荐软件的系列文章，不过完成 2017 年的iPhone软件清单 后就没有动力……很多时候在思考，自己为什么一定要使用 iPhone？iOS 中的软件正是最好的答案，让每一个人享受科技带来的快乐。 这一篇文章和 2017 年的形式一样，删除常用的软件，推荐一些我认为有趣的软件。自从 iOS 12 中引入屏幕时间，今年的推荐顺序就按照屏幕时间中的排序。 目前使用设备：iPhone XR">
@@ -489,7 +489,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-28 17:07:31" itemprop="dateModified" datetime="2020-03-28T17:07:31+08:00">2020-03-28</time>
+                <time title="修改时间：2020-03-28 17:56:10" itemprop="dateModified" datetime="2020-03-28T17:56:10+08:00">2020-03-28</time>
               
             
           </span>
@@ -520,17 +520,6 @@
           
 
           
-          
-            <span id="/post/best-of-iphone-2019.html" class="leancloud_visitors" data-flag-title="Best of iPhone 2019 软件清单">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读次数：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -1221,64 +1210,6 @@
 
 
   
-  
-  <script>
-    
-    function addCount(Counter) {
-      var $visitors = $('.leancloud_visitors');
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
-        .done(function({ results }) {
-          if (results.length > 0) {
-            var counter = results[0];
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            
-            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
-            
-              .fail(function ({ responseJSON }) {
-                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
-              })
-          } else {
-            
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'rrSjo9LK0keh9l15bYOQScDF-gzGzoHsz',
-                'X-LC-Key': 'SHpy5xi5vjhNA7cz7THf03vk',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            addCount(Counter);
-          
-        });
-    });
-  </script>
-
-
 
   
 
