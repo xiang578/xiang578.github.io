@@ -1,11 +1,23 @@
 ---
-title: 博客维护日志 beta 0.1 
+title: 博客维护日志 beta 0.2
 date: 2019-06-15 13:39:49
 tags: [blog, hexo, vps]
 categories: 
 ---
 
 > 记录博客修修补补的故事
+
+## beta 0.2
+
+长达 9 个月闲置之后，终于迎来一轮对博客的更新。
+- 本着闭环的原则，将评论系统从 Disqus 替换为基于 Github Issues 的 Gitalk。不过，依旧没有多少留言量。
+- 博客主题从 Next 切换到 [fi3ework/hexo-theme-archer: 🏹 A smart and modern theme for Hexo.](https://github.com/fi3ework/hexo-theme-archer)
+    - [ ] LaTex
+    - [ ] 评论系统
+    - [ ] 统计
+    - [ ] 细节设定
+- 添加一个新的固定栏目 「每月分享」，目前正在持续探索这个栏目的形式中。
+- 除继续使用百度统计之外，加上 Google Analytics 进行数据分析。
 
 ## beta 0.1
 
