@@ -22,7 +22,6 @@ script:
 - sed -i "s~XXX_ID~${COS_ID}~" _config.yml
 - sed -i "s~XXX_KEY~${COS_KEY}~" _config.yml
 - sed -i "s~your_token~${BD_TOKEN}~" _config.yml
-- hexo douban
 - hexo deploy
 
 after_script:
