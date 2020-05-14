@@ -3,6 +3,7 @@ title: (WDR) Learning to Estimate the Travel Time
 date: 2019-07-28 22:14:33
 tags: [lstm, widedeep, didi]
 categories: 机器学习
+mathjax: true
 ---
 
 > 严重申明：本篇文章所有信息从论文、网络等公开渠道中获得，不会透露滴滴地图 ETA 任何实现方法。
