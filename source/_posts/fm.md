@@ -15,7 +15,8 @@ Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在
 ![电影评分](/file/15643023365227.jpg)
 
 作者在线性回归模型的基础上，添加交叉项部分，用来自动组合二阶特征。
-$$\hat y(x):= w_0 + \sum_{i=1}^{n} w_ix_i + \sum_{i=1}^n \sum_{j=i+1}^n \left \langle v_i,v_j \right \rangle x_iy_i$$
+
+$$\hat y(x):= w_0 + \sum_{i=1}^{n} w_ix_i + \sum_{i=1}^n \sum_{j=i+1}^n \left \langle v_i,v_j \right \rangle x_ix_j$$
 
 其中交叉特征的权重由两个向量的点积得到，可以解决没有在模型中出现的特征组合权重问题，以及减少参数数量。
 

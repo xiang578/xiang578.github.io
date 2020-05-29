@@ -11,7 +11,7 @@ date: 2015-08-15 10:59:25
 目前，自己在尝试打造一个有一定概率会发生意外好事情的生活系统。
 
 下面是近期关注的领域，欢迎通过留言或页面下方的联系信息和我讨论相关的问题：
-https://github.com/xiang578/share/blob/master/
+
 - 机器学习、深度学习
 - Getting Things Done
 - Zettelkasten
