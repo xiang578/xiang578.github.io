@@ -8,7 +8,7 @@ date: 2020-06-7 23:55:11
 
 ## Newsletter
 
-从去年开始给我一种 RSS 复兴的感觉，这个月尝试使用 Newsletter。对于创作者来说，RSS 不仅无法统计数据，也很难开展会员模式。但是 Newsletter 通过邮箱订阅的方法，完美解决这两个问题，国外已经开始有一站式的解决方案。推介一些自己订阅一些邮件组给大家。
+从去年开始给我一种 RSS 复兴的感觉，这个月尝试使用 Newsletter。对于创作者来说，RSS 不仅无法统计数据，也很难开展会员模式。Newsletter 通过邮箱订阅的的手段，完美解决这两个问题，国外开始有一站式的解决方案，可能几个月之后也会在国内火起来。推介一些自己订阅一些邮件组给大家。
 
 - [PRODUCT THINKING · 产品沉思录精选](https://www.notion.so/PRODUCT-THINKING-a601a12335044f349a22caf57f274c27)：第一个付费订阅的邮件周刊，目前的价格是 199 元/年。根据少楠自己写的介绍，内容包括但不限于产品设计，服务设计，数据分析，互联网技术，经济学，心理学，社会学，决策学，自然科学，城市规划，零售，团队管理等内容。每周会推荐几篇网上比较好的文章，偶尔也翻译一些英语文章。挑选几篇我觉得不错的公开内容：
 	- [原子笔记法：Zettelkasten](https://www.notion.so/Zettelkasten-25627d7ce99344c487f4e42d861f9e0a)
@@ -33,20 +33,20 @@ date: 2020-06-7 23:55:11
 
 - [谈谈推荐系统中的用户行为序列建模 - 知乎](https://zhuanlan.zhihu.com/p/138136777) 一篇关于用户行为序列建模的文章，基本上常用的方法都介绍了。
 	- 和上一次  "[从谷歌到阿里，谈谈工业界推荐系统多目标预估的两种范式 - 知乎](https://zhuanlan.zhihu.com/p/125507748)[[机器学习实践]][[MTL]]" 属于同一个作者
-		- 目前主流推荐系统框架 [[Deep Neural Networks for YouTube Recommendations]] 中的 Matching 和 Ranking。另外可能还有规则模块。
-		- pooling-based architecture 范式，用户行为是无序集合，使用 sum/max pooling 或各种 attention
-		    - [[Deep Neural Networks for YouTube Recommendations]] 中将用户观看过的视频序列取到 embedding 后，做一个 mean pooling 作为用户历史兴趣的表达
-		    - Ranking 阶段：[[DIN]] target item 和行为序列的 item 做一个 attention，得到一个 weight，然后加权求和。
-		    - 结合 [[Transformer]] 做 self-attention 并行的建模长序列依赖，除去用户行为序列中的噪声：[[Behavior Sequence Transformer for E-commerce Recommendation in Alibaba]]
-		- sequential-modeling architecture 范式，用户行为当成一个具有时间属性的序列，使用 RNN、LSTM、GRU 等
-		    - [[Perceive Your Users in Depth: Learning Universal User Representations from Multiple E-commerce Tasks]] Property Gated LSTM
-		    - [推荐中的序列化建模：Session-based neural recommendation - 知乎](https://zhuanlan.zhihu.com/p/30720579)
-		- 上面两种方法都是将用户行为经过 pooling/attention/rnn 的处理，聚合成用户行为序列的 embedding，再和其他的特征 concat 在一起，经过 mlp 后接 sigmod/softmax
-		- 抽取聚类出用户多峰兴趣，Capsule
-		    - 阿里 [[MIND]] 胶囊网络
-		- 辅助损失函数
-		    - [[DIEN]] 兴趣提取和兴趣演化，以最后一个 hidden state 做为用户兴趣的表达。兴趣提取模块，使用隐状态和下一件商品预测做二分类。不加入辅助loss，GRU 的隐变量完全受限于最终点击的 label，加入后能约束 GRU 每个隐状态表示其本身的兴趣。
-		- 提升用户序列长度，可以带来可观的 auc 提升。[[MIMN]]
+	- 目前主流推荐系统框架 [[Deep Neural Networks for YouTube Recommendations]] 中的 Matching 和 Ranking。另外可能还有规则模块。
+	- pooling-based architecture 范式，用户行为是无序集合，使用 sum/max pooling 或各种 attention
+		- [[Deep Neural Networks for YouTube Recommendations]] 中将用户观看过的视频序列取到 embedding 后，做一个 mean pooling 作为用户历史兴趣的表达
+		- Ranking 阶段：[[DIN]] target item 和行为序列的 item 做一个 attention，得到一个 weight，然后加权求和。
+		- 结合 [[Transformer]] 做 self-attention 并行的建模长序列依赖，除去用户行为序列中的噪声：[[Behavior Sequence Transformer for E-commerce Recommendation in Alibaba]]
+	- sequential-modeling architecture 范式，用户行为当成一个具有时间属性的序列，使用 RNN、LSTM、GRU 等
+		- [[Perceive Your Users in Depth: Learning Universal User Representations from Multiple E-commerce Tasks]] Property Gated LSTM
+		- [推荐中的序列化建模：Session-based neural recommendation - 知乎](https://zhuanlan.zhihu.com/p/30720579)
+	- 上面两种方法都是将用户行为经过 pooling/attention/rnn 的处理，聚合成用户行为序列的 embedding，再和其他的特征 concat 在一起，经过 mlp 后接 sigmod/softmax
+	- 抽取聚类出用户多峰兴趣，Capsule
+		- 阿里 [[MIND]] 胶囊网络
+	- 辅助损失函数
+		- [[DIEN]] 兴趣提取和兴趣演化，以最后一个 hidden state 做为用户兴趣的表达。兴趣提取模块，使用隐状态和下一件商品预测做二分类。不加入辅助loss，GRU 的隐变量完全受限于最终点击的 label，加入后能约束 GRU 每个隐状态表示其本身的兴趣。
+	- 提升用户序列长度，可以带来可观的 auc 提升。[[MIMN]]
 - Applying Deep Learning To Airbnb Search：一篇关于从 GBDT 模型迁移到深度模型的工业实践记录 paper。对于我这种没有经历过这种技术迭代的人来说，工业级的深度模型上线比想象中的要困难。作者们针对自己遇到的比如 listing embedding 训练不充分、如何判断 feature 的重要性等问题设计实验去验证以及给出解释。严谨的精神值得吾辈学习。
 
 ## 其他
