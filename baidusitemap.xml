@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xiang578.com/post/week-issue-6.html</loc>
+    <loc>https://xiang578.com/post/week-issue-5.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/soft-skills.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/something-about-high-school.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/the-beauty-of-math.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/use-cos-to-store-blog.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/use-gtd-to-speach.html</loc>
@@ -31,13 +43,13 @@
     <loc>https://xiang578.com/post/week-issue-3.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/week-issue-4.html</loc>
+    <loc>https://xiang578.com/post/primary-school-classmate-10th-anniversary-party.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/something-about-high-school.html</loc>
+    <loc>https://xiang578.com/post/restore-wordpress-from-backWPup.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/use-cos-to-store-blog.html</loc>
+    <loc>https://xiang578.com/post/week-issue-6.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/week-issue-7.html</loc>
@@ -61,31 +73,19 @@
     <loc>https://xiang578.com/post/zjp-2017.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
+    <loc>https://xiang578.com/post/reinforce-learnning-basic.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/rime.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
     <loc>https://xiang578.com/post/universiy-booklist.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/week-issue-5.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/hdu400.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/hdu500.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/hello-world.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/how-to-use-taskpaper-to-do-3-thigns.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/icpc-beijing-2016.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/icpc-ecl-shanghai-2017.html</loc>
+    <loc>https://xiang578.com/post/week-issue-4.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/icpc-xian-2017.html</loc>
@@ -134,18 +134,6 @@
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/podcast-list.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/primary-school-classmate-10th-anniversary-party.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/rebuild-notebook-system.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/restore-wordpress-from-backWPup.html</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>https://xiang578.com/post/soft-skills.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/007-aciton-reflection.html</loc>
@@ -211,6 +199,18 @@
     <loc>https://xiang578.com/post/ftrl.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
+    <loc>https://xiang578.com/post/gbdt.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/gbdt_lr.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/gtd-one-month.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>https://xiang578.com/post/hdu200.html</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
     <loc>https://xiang578.com/post/2011.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
@@ -235,16 +235,16 @@
     <loc>https://xiang578.com/post/monthly-issue-202004.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/reinforce-learnning-basic.html</loc>
+    <loc>https://xiang578.com/post/hdu300.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/rime.html</loc>
+    <loc>https://xiang578.com/post/hdu400.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/gbdt.html</loc>
+    <loc>https://xiang578.com/post/hdu500.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/gbdt_lr.html</loc>
+    <loc>https://xiang578.com/post/hello-world.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/2017.html</loc>
@@ -256,13 +256,13 @@
     <loc>https://xiang578.com/post/if.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/gtd-one-month.html</loc>
+    <loc>https://xiang578.com/post/how-to-use-taskpaper-to-do-3-thigns.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/hdu200.html</loc>
+    <loc>https://xiang578.com/post/icpc-beijing-2016.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
-    <loc>https://xiang578.com/post/hdu300.html</loc>
+    <loc>https://xiang578.com/post/icpc-ecl-shanghai-2017.html</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>https://xiang578.com/post/monthly-issue-202005.html</loc>
