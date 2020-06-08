@@ -36,8 +36,7 @@ categories: 每周分享
  
 > 一个人不需要做什么惊天动地的大事，但是对自己做的事情必须有认同感，如果做学术的自己都觉得自己在灌水，理由是身边大多数人也是在灌水，那么我不明白我为什么要去做它。
     
-3、[哪些经济学论文让你发出「脑洞才是第一生产力」的感叹？ - 童话李的回答 - 知乎]
-(https://www.zhihu.com/question/276647705/answer/388456459)
+3、[哪些经济学论文让你发出「脑洞才是第一生产力」的感叹？ - 童话李的回答 - 知乎](https://www.zhihu.com/question/276647705/answer/388456459)
 生活处处皆皆学问，从篮球比赛中的「手感」出发，抽象「这个球命中概率是否与下一个球命中概率正相关」，然后去统计数据研究，最后给出下面的结论。
 
 > The belief in the hot hand and the “detection” of streaks in random sequences is attributed to a general misconception of chance according to which even short random sequences are thought to be highly representative of their generating process. （一小段完全随机的结果，却被认为对整体有很高的代表性。）

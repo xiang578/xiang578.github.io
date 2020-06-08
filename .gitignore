@@ -1,4 +1,5 @@
 .DS_Store
+*/*/.DS_Store
 */.DS_Store
 Thumbs.db
 db.json
@@ -7,3 +8,4 @@ node_modules/
 public/
 .deploy*/
 source/.MWebMetaData/
+source/new_post.sh
