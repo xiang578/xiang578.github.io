@@ -1,5 +1,5 @@
 ---
-title: 推荐系统 CTR Paper 阅读小结
+title: 推荐系统小结
 date: 2019-10-24 21:13:35
 tags: [ctr, fm, gbdt, dnn]
 categories: 机器学习

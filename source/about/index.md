@@ -13,8 +13,8 @@ date: 2015-08-15 10:59:25
 下面是近期关注的领域，欢迎通过留言或页面下方的联系信息和我讨论相关的问题：
 
 - 机器学习、深度学习
-- Getting Things Done
 - Zettelkasten
+- [看书图一乐](https://www.notion.so/ryanx/4666b7440155430880b9c9787adde5ab?v=39111f7ebd5e4be6a28d7ef712c4aebb)
 
 ### 分享
 
