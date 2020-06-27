@@ -113,7 +113,8 @@
 <meta property="og:image" content="https://xiang578.com/file/15643234140115.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15643234258049.jpg">
 <meta property="og:image" content="https://xiang578.com/file/15643234352132.jpg">
-<meta property="og:updated_time" content="2020-06-10T01:07:09.215Z">
+<meta property="og:image" content="http://image.xiang578.com//fma-eta.jpg">
+<meta property="og:updated_time" content="2020-06-27T14:56:09.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(WDR) Learning to Estimate the Travel Time">
 <meta name="twitter:description" content="严重申明：本篇文章所有信息从论文、网络等公开渠道中获得，不会透露滴滴地图 ETA 任何实现方法。  这篇论文是滴滴时空数据 2018 年在 KDD 上发表的关于在 ETA 领域应用深度学习的文章，里面提到的深度学习方法大家都耳熟能详，主要是属于工业界的创新。说点题外话，你为什么从滴滴出行离职？ - 知乎 中提到一点：  8.同年大跃进，在滴滴中高层的眼里，没有BAT。滴滴单量超淘宝指日可待，GA">
@@ -431,7 +432,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-06-10 09:07:09" itemprop="dateModified" datetime="2020-06-10T09:07:09+08:00">2020-06-10</time>
+                <time title="修改时间：2020-06-27 22:56:09" itemprop="dateModified" datetime="2020-06-27T22:56:09+08:00">2020-06-27</time>
               
             
           </span>
@@ -477,7 +478,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.6k</span>
+                <span title="本文字数">2.9k</span>
               
 
               
@@ -491,7 +492,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -555,7 +556,23 @@
 <figure>
 <img src="/file/15643234352132.jpg" alt="-w486"><figcaption>-w486</figcaption>
 </figure>
-<p>从上面的图中可以看出 ETA 服务工程架构主要包括三个部分： - Data Aggregation：包括利用 Map Matching 将司机上传到平台的 GPS 对应到滴滴的 Map Info 中得到司机真实行驶过的路线信息，Order Context 指的是订单相关的信息，augmented Data 额外数据比如上文说的交通情况相关信息。 - Offline Training：利用上一步得到的历史数据训练模型。这里可以值得一提的是，ETA 模型是和时间强相关的（节假日和工作日的数据分布明显不同），所以在文章中作者指出将拿出最新的一部分数据用来 fine-tune 训练出来的 WDR 模型。 - Online Service：这里需要一个完整的模型服务系统，其他公司也有很多分享，所以原文没有多提。</p>
+<p>从上面的图中可以看出 ETA 服务工程架构主要包括三个部分：</p>
+<ul>
+<li>Data Aggregation：包括利用 Map Matching 将司机上传到平台的 GPS 对应到滴滴的 Map Info 中得到司机真实行驶过的路线信息，Order Context 指的是订单相关的信息，augmented Data 额外数据比如上文说的交通情况相关信息。</li>
+<li>Offline Training：利用上一步得到的历史数据训练模型。这里可以值得一提的是，ETA 模型是和时间强相关的（节假日和工作日的数据分布明显不同），所以在文章中作者指出将拿出最新的一部分数据用来 fine-tune 训练出来的 WDR 模型。</li>
+<li>Online Service：这里需要一个完整的模型服务系统，其他公司也有很多</li>
+<li>分享，所以原文没有多提。</li>
+</ul>
+<h2 id="fma-eta-estimating-travel-time-entirely-based-on-ffn-with-attention">FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention</h2>
+<p><img src="http://image.xiang578.com//fma-eta.jpg"></p>
+<ul>
+<li><del>大学实验报告级别的论文</del> 简单记录一下，不详细评价</li>
+<li>WDR 模型中 RNN 耗时长，探索基于 Attention 机制的模型</li>
+<li>将特征分组（multi-factor）去做 Attention 效果比多头要好</li>
+<li>实验结果给出的理由有点牵强。 &gt; The deep modules with attention achieve better results than WDR on MAE and RMSE metrics, which means attention mechanism can help to extract features and sole the long-range dependencies in long sequence.</li>
+<li>说预测时延减少，也没有提供线上数据。</li>
+<li>最后，不公开代码、不公开数据、SOTA 是 WDR，图一乐。</li>
+</ul>
 <h2 id="总结">总结</h2>
 <p>从上面简单的介绍来看，ETA 可以使用 CTR 和 NLP 领域的很多技术，大有可为。最后，滴滴 ETA 团队持续招人中（社招、校招、日常实习等），感兴趣者快快和我联系。</p>
 <h2 id="参考">参考</h2>
@@ -965,7 +982,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标"><span class="nav-number">1.</span> <span class="nav-text">评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征"><span class="nav-number">2.</span> <span class="nav-text">特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">3.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评估"><span class="nav-number">4.</span> <span class="nav-text">评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eta-服务工程架构"><span class="nav-number">5.</span> <span class="nav-text">ETA 服务工程架构：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标"><span class="nav-number">1.</span> <span class="nav-text">评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征"><span class="nav-number">2.</span> <span class="nav-text">特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">3.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评估"><span class="nav-number">4.</span> <span class="nav-text">评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eta-服务工程架构"><span class="nav-number">5.</span> <span class="nav-text">ETA 服务工程架构：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fma-eta-estimating-travel-time-entirely-based-on-ffn-with-attention"><span class="nav-number">6.</span> <span class="nav-text">FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -998,7 +1015,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">181k</span>
+    <span title="站点总字数">182k</span>
   
 
   
