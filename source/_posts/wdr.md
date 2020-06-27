@@ -84,13 +84,28 @@ WDR 模型，包含 3 个部分：
 
 
 从上面的图中可以看出 ETA 服务工程架构主要包括三个部分：
+
 - Data Aggregation：包括利用 Map Matching 将司机上传到平台的 GPS 对应到滴滴的 Map Info 中得到司机真实行驶过的路线信息，Order Context 指的是订单相关的信息，augmented Data 额外数据比如上文说的交通情况相关信息。
 - Offline Training：利用上一步得到的历史数据训练模型。这里可以值得一提的是，ETA 模型是和时间强相关的（节假日和工作日的数据分布明显不同），所以在文章中作者指出将拿出最新的一部分数据用来 fine-tune 训练出来的 WDR 模型。
-- Online Service：这里需要一个完整的模型服务系统，其他公司也有很多分享，所以原文没有多提。
+- Online Service：这里需要一个完整的模型服务系统，其他公司也有很多
+- 分享，所以原文没有多提。
+
+## FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention
+
+![](http://image.xiang578.com//fma-eta.jpg)
+
+- ~~大学实验报告级别的论文~~ 简单记录一下，不详细评价
+- WDR 模型中 RNN 耗时长，探索基于 Attention 机制的模型
+- 将特征分组（multi-factor）去做 Attention 效果比多头要好
+- 实验结果给出的理由有点牵强。
+    > The deep modules with attention achieve better results than WDR on MAE and RMSE metrics, which means attention mechanism can help to extract features and sole the long-range dependencies in long sequence.
+- 说预测时延减少，也没有提供线上数据。
+- 最后，不公开代码、不公开数据、SOTA 是 WDR，图一乐。
 
 ## 总结
 
 从上面简单的介绍来看，ETA 可以使用 CTR 和 NLP 领域的很多技术，大有可为。最后，滴滴 ETA 团队持续招人中（社招、校招、日常实习等），感兴趣者快快和我联系。
+
 
 ## 参考
 

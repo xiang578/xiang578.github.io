@@ -44,7 +44,7 @@ categories:
 
 在 [下載及安裝 | RIME | 中州韻輸入法引擎](https://rime.im/download/) 主页，你可以找到对应不同平台的安装方法。
 
-对于 MacOS 来说，可以在终端中使用 `curl -fsSL https://git.io/rime-install | bash -s -- :preset double-pinyin` 安装软件本体。`preset double-pinyin` 指定下载的时候默认包括双拼输入方案。
+对于 MacOS 来说，最简单的方式莫过于在终端中输入 `brew cask install squirrel` 安装软件本体。如何你想使用 [rime/plum: 東風破](https://github.com/rime/plum)可以在终端中输入 `curl -fsSL https://git.io/rime-install | bash -s -- :preset double-pinyin` 。其中 `preset double-pinyin` 指定下载时默认包括小鹤双拼输入方案。
 
 ## 配置 
 
@@ -105,6 +105,8 @@ sync_dir: "/Users/didi/Documents/rime_sync"
 rime_version: 1.4.0
 update_time: "Mon Jun  3 07:18:30 2019"
 ```
+
+从 [自由输入法RIME简明配置指南 - 少数派](https://sspai.com/post/55699) 中了解到，rime 个人词典双向同步，用户配置单向同步。另外需要把配置文件上传到 git 中，方便不同设备使用。
 
 ### double_pinyin_flypy.custom.yaml
 
