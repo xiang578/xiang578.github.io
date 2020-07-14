@@ -73,6 +73,7 @@ $$
 3. 当 ${ \lvert z_t \rvert < \lambda_1}$ 时，当且仅当 ${w_i=0}$ 成立
 
 因此可得：
+
 $$
 w_{i}=\left\{\begin{array}{ll}{0,} & {\text { if }\left|z_{i}\right| \leq \lambda_{1}} \\ {\frac{-\left(z_{i}-\text sgn(z_i) \lambda_{1}\right)}{\eta_{t}+\lambda_{2}},} & {\text { if others }}\end{array}\right.
 $$

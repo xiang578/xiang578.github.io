@@ -87,8 +87,7 @@ WDR 模型，包含 3 个部分：
 
 - Data Aggregation：包括利用 Map Matching 将司机上传到平台的 GPS 对应到滴滴的 Map Info 中得到司机真实行驶过的路线信息，Order Context 指的是订单相关的信息，augmented Data 额外数据比如上文说的交通情况相关信息。
 - Offline Training：利用上一步得到的历史数据训练模型。这里可以值得一提的是，ETA 模型是和时间强相关的（节假日和工作日的数据分布明显不同），所以在文章中作者指出将拿出最新的一部分数据用来 fine-tune 训练出来的 WDR 模型。
-- Online Service：这里需要一个完整的模型服务系统，其他公司也有很多
-- 分享，所以原文没有多提。
+- Online Service：这里需要一个完整的模型服务系统，其他公司也有很多分享，所以原文没有多提。
 
 ## FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention
 
