@@ -16,7 +16,7 @@ categories: 每周分享
 ## 图片
 
 - 新奇的创意，通过缺失表达战争造成的伤害。
-![IMG_0664](/file/IMG_0664.jpg)
+![IMG_0664](https://media.xiang578.com/IMG_0664.jpg)
 
 ## 金句
 

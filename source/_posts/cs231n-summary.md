@@ -49,7 +49,7 @@ mathjax: true
 ## 02. Image classification
 
 - 图像由一大堆没有规律的数字组成，无法直观的进行分类，所以存在语义鸿沟。分类的挑战有：视角变化、大小变化、形变、遮挡、光照条件、背景干扰、类内差异。
-    - ![](/file/2019-10-08-15387098703701.jpg)
+    - ![](https://media.xiang578.com/2019-10-08-15387098703701.jpg)
 - Data-Driven Approach
     - Collect a dataset of images and labels
     - Use Machine Learning to train a classifier
@@ -68,7 +68,7 @@ mathjax: true
         - Very slow at test time
         - Distance metrics on pixels are not informative
     - 反例：下面四张图片的 L2 距离相同
-        - ![-w622](/file/2019-10-08-15387110626779.jpg)
+        - ![-w622](https://media.xiang578.com/2019-10-08-15387110626779.jpg)
 - Hyperparameters: choices about the algorithm that we set ranther than learn
 - 留一法 Setting Hyperparameters by Cross-validation:
     - 将数据划分为 f 个集合以及一个 test 集合，数据划分中药保证数据集的分布一致。
@@ -90,7 +90,7 @@ mathjax: true
     - SVM 的损失函数要求正确类别的分类分数要比其他类别的高出一个边界值。
     - L2-SVM 中使用平方折叶损失函数$$\max(0,-)^2$$能更强烈地惩罚过界的边界值。但是选择使用哪一个损失函数需要通过实验结果来判断。
     - 举例
-        - ![](/file/2019-10-08-15388343449162.jpg)
+        - ![](https://media.xiang578.com/2019-10-08-15388343449162.jpg)
         - 根据上面的公式计算：$$L = \max(0,437.9-(-96.8)) + \max(0,61.95-(-96.8))=695.45$$
         - 猫的分类得分在三个类别中不是最高得，所以我们需要继续优化。
 - Suppose that we found a W such that L = 0. Is this W unique?
@@ -125,7 +125,7 @@ mathjax: true
     3. Softmax 永远不会满意，SVM 超过边界值就满意了。
 - Optimization：最优化过程
     - Follow the slope
-        - ![](/file/2019-10-08-15388374738605.jpg)
+        - ![](https://media.xiang578.com/2019-10-08-15388374738605.jpg)
 - 梯度是函数的斜率的一般化表达，它不是一个值，而是一个向量，它是各个维度的斜率组成的向量。
     - Numerical gradient: Approximate, slow, easy to write. (But its useful in debugging.)
     - Analytic gradient: Exact, Fast, Error-prone. (Always used in practice)
@@ -146,11 +146,11 @@ mathjax: true
     - 由于计算神经网络中某些函数的梯度很困难，所以引入计算图的概念简化运算。
     - 在计算图中，对应函数所有的变量转换成为计算图的输入，运算符号变成图中的一个节点（门单元）。
 - 反向传播：从尾部开始，根据链式法则递归地向前计算梯度，一直到网络的输入端。
-    - ![-w1107](/file/2019-10-08-15390088806657.jpg)
+    - ![-w1107](https://media.xiang578.com/2019-10-08-15390088806657.jpg)
     - 绿色是正向传播，红色是反向传播。
 - 对于计算图中的每一个节点，我们需要计算这个节点上的局部梯度，之后根据链式法则反向传递梯度。
 - Sigmoid 函数：${f(w,x)=\frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}}}$
-    - ![](/file/2019-10-08-15390092983570.jpg)
+    - ![](https://media.xiang578.com/2019-10-08-15390092983570.jpg)
     - 对于门单元 ${\frac{1}{x}}$，求导的结果是 ${-\frac{1}{x^2}}$，输入为 1.37，梯度返回值为 1.00，所以这一步中的梯度是 ${(\frac{-1}{1.37^2})*1.00=-0.53}$。
     - 模块化思想：对 ${\sigma(x)=\frac{1}{1+e^{-x}}}$ 求导的结果是 ${(1-\sigma(x))\sigma(x)}$。如果 sigmoid 表达式输入值为 1.0 时，则前向传播中的结果是 0.73。根据求导结果计算可得局部梯度是 ${(1-0.73)*0.73=0.2}$。
 - Modularized implementation: forward/backwar API
@@ -227,7 +227,7 @@ class MultuplyGate(object):
 
 - Activation functions 激活函数
     - 不使用激活函数，最后的输出会是输入的线性组合。利用激活函数对数据进行修正。
-    - ![](/file/2019-10-08-15395012747510.jpg)
+    - ![](https://media.xiang578.com/2019-10-08-15395012747510.jpg)
     - Sigmoid
         - 限制输出在 [0,1]区间内
         - firing rate
@@ -324,7 +324,7 @@ class MultuplyGate(object):
         - 和 momentun 项更新方向相同的可以快速更新。
         - 在 dx 中改变梯度方向后， rho 可以减少更新。momentun 能在相关方向加速 SGD，抑制震荡，加快收敛。
     - Nestrov momentum
-        - ![](/file/2019-10-08-15499574039274.jpg)
+        - ![](https://media.xiang578.com/2019-10-08-15499574039274.jpg)
         - `v_prev = v; v = mu * v - learning_rate * dx; x += -mu * v_prev + (1 + mu) * v`
     - AdaGrad
         - $n_t=n_{t-1}+g^2_t$
@@ -394,7 +394,7 @@ class MultuplyGate(object):
     - 模型中只使用 3*3 conv：与 77 卷积有相同的感受野，而且可以将网络做得更深。比如每一层可以获取到原始图像的范围：第一层 33，第二层 55，第三层 77。
     - 前面的卷积层参数量很少，模型中大部分参数属于底部的全连接层。
 
-![](/file/2019-10-08-15705415499052.jpg)
+![](https://media.xiang578.com/2019-10-08-15705415499052.jpg)
 
 - GoogLeNet
     - 引入 `Inception module`
@@ -402,7 +402,7 @@ class MultuplyGate(object):
         - 该模块可以并行计算
         - conv 和 pool 层进行 padding，最后将结果 concat 在一起
 
-![Reset](/file/2019-10-08-15705420412305.jpg)
+![Reset](https://media.xiang578.com/2019-10-08-15705420412305.jpg)
 
 - ResNet
     - 目标：深层模型表现不应该差于浅层模型，解决随着网络加深，准确率下降的问题。

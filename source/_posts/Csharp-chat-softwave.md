@@ -10,7 +10,7 @@ categories: 程序园
  
 2. 利用socket完成通信，大致的过程如下图所示。
  
-![](/file/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG)
+![](https://media.xiang578.com/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG)
 3. 服务器上开两个线程`threadListenConnect`和`threadReceivePacket`。服务器上的`socket`利用`bind`绑定服务器的ip和端口号。第一个线程死循环监听端口，是否有新的`connect`请求，并将新的连接`socket`保存到list中。再利用第二个线程接受客户端发来的数据包，并拆包执行进行相关功能。服务器之后，按照包中的内容判断是否需要发送到其他特定的客户端还是广播消息。
  
 4. 客户端中开一个线程`threadReceivePacket`。先和服务器连接，然后利用这个线程接受服务器发过来的数据包。这里也实现了发送给某个特定的客户端和广播。发包和拆包过程和服务器上差不多。
@@ -23,9 +23,9 @@ categories: 程序园
  
 8. 最后相关代码放在github上面[](https://github.com/xiang578/NewChat)
  
-服务器端：![](/file/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg)
+服务器端：![](https://media.xiang578.com/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg)
  
-客户端1：![](/file/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg)
+客户端1：![](https://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg)
  
-客户端2：![](/file/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg)
+客户端2：![](https://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg)
 

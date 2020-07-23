@@ -70,7 +70,7 @@ $$
 3. 重复上面的流程。
 
 
-![](/file/15726799935625.jpg)
+![](https://media.xiang578.com/15726799935625.jpg)
 
 ### PG 的例子
 
@@ -78,7 +78,7 @@ $$
 
 最下面公式分别是反向传播梯度计算和 PG 的反向梯度计算，PG 中要乘以整个轨迹的 R。
 
-![PG](/file/15752505145081.jpg)
+![PG](https://media.xiang578.com/15752505145081.jpg)
 
 
 tip 1： add a baseline
@@ -92,7 +92,7 @@ tip 2: assign suitable credit
 1. 引入一个 discount rate，对 t 之后的动作 r 进行降权重。
 2. 利用 Advantage Function 评价状态 s 下动作 a 的好坏 critic。
 
- ![Assign Suitable Credit](/file/15752505547153.jpg)
+ ![Assign Suitable Credit](https://media.xiang578.com/15752505547153.jpg)
 
 ## PPO: Proximal Policy Optimization
 
@@ -100,7 +100,7 @@ tip 2: assign suitable credit
 
 假设需要估计期望 $E_{x~p[f(x)]}$，x 符合 p 分布，将期望写成积分的形式。由于在 P 分布下面很难采样，把问题转化到已知 q 分布上，得到在 p 分布下计算期望公式。
 
-![](/file/15771920437580.jpg)
+![](https://media.xiang578.com/15771920437580.jpg)
 
 上面方法得到 p 和 q 期望接近，但是方差可能相差很大，且和 $\frac{p(x)}{q(x)}$ 有关。
 
@@ -116,14 +116,14 @@ $$
 
 在 p 和 q 分布不一致时，且采样不充分时，可能会带来比较大的误差。
 
-![Issue of Importance Sampling](/file/15771931618906.jpg)
+![Issue of Importance Sampling](https://media.xiang578.com/15771931618906.jpg)
 
 
 ### 从 On-policy 到 Off-policy
 
 on-policy 时，PG 每次参数更新完成后，actor 就改变了，不能使用之前的数据，必须和环境重新互动收集数据。引入 $p_{\theta \prime}$ 进行采样，就能将 PG 转为 off-ploicy。
 
-![](/file/15771932374489.jpg)
+![](https://media.xiang578.com/15771932374489.jpg)
 
 和之前相比，相当于引入重要性采样，所以也有前一节中提到的重要性采样不足问题。
 
@@ -153,14 +153,14 @@ KL 散度可能比较难计算，在实际中常使用 PPO2。
 
 参考 [【点滴】策略梯度之PPO - 知乎](https://zhuanlan.zhihu.com/p/43114711)
 
-![](/file/15772793086357.jpg)
+![](https://media.xiang578.com/15772793086357.jpg)
 
 
 ### PPO algorithm
 
 系数 $\beta$ 在迭代的过程中需要进行动态调整。引入 $KL_{max} KL_{min}$，KL > KLmax，说明 penalty 没有发挥作用，增大 $\beta$。
 
-![](/file/15772793200430.jpg)
+![](https://media.xiang578.com/15772793200430.jpg)
 
 
 ## Q-Learning
@@ -168,7 +168,7 @@ KL 散度可能比较难计算，在实际中常使用 PPO2。
 
 value-base 方法，利用 critic 网络评价 actor 。通过状态价值函数 $V^{\pi}(s)$ 来衡量预期的期望。V 和 pi、s 相关。
 
-![](/file/15773668251569.jpg)
+![](https://media.xiang578.com/15773668251569.jpg)
 
 
 
@@ -180,18 +180,18 @@ MC: 根据策虑 $\pi$  进行游戏得到最后的 $G(a)$，最终存在方差�
 
 TD: r 的方差比较小，$V^{\pi}(s_{t+1})$ 在采样不充分的情况下，可能不准确。
 
-![](/file/15773670631327.jpg)
+![](https://media.xiang578.com/15773670631327.jpg)
 
 
 ### Another Critic
 
 State-action value function $Q^{\pi}(s, a)$：预测在 pi 策略下，pair(s, a) 的值。相当于假设 state 情况下强制采取 action a。
 
-![](/file/15773671301402.jpg)
+![](https://media.xiang578.com/15773671301402.jpg)
 
 对于非分类的方法：
 
-![](/file/15773671400847.jpg)
+![](https://media.xiang578.com/15773671400847.jpg)
 
 Q-Learning
 
@@ -202,13 +202,13 @@ Q-Learning
 在给定 state 下，分别代入 action，取函数值最大的 a，作为后面对该 state 时采取的 action。
 
 证明新的策虑存在：
-![](/file/15773672909262.jpg)
+![](https://media.xiang578.com/15773672909262.jpg)
 
 ### Target NetWork
 
 左右两边的网络相同，如果同时训练比较困难。简单的想法是固定右边的网络进行训练，一定次数后再拷贝左边的网络。
 
-![](/file/15773673947112.jpg)
+![](https://media.xiang578.com/15773673947112.jpg)
 
 
 ### Exploration
@@ -220,7 +220,7 @@ Q function 导致 actor 每次都会选择具有更大值的 action，无法准�
 - Boltzmann Exploration
     - 利用 softmax 计算选取动作的概率，然后进行采样
 
-![](/file/15773674189861.jpg)
+![](https://media.xiang578.com/15773674189861.jpg)
 
 
 
@@ -230,20 +230,20 @@ Q function 导致 actor 每次都会选择具有更大值的 action，无法准�
 
 结果：训练方法变成 off-policy。减少 RL 重复采样，充分利用数据。
 
-![](/file/15773675111439.jpg)
+![](https://media.xiang578.com/15773675111439.jpg)
 
 ### Typical Q-Learning Algorithm
 
 Q-Learning 流程：
 
-![](/file/15773677168275.jpg)
+![](https://media.xiang578.com/15773677168275.jpg)
 
 ### Double DQN DDQN
 
 - Q value 容易高估：目标值 $r_t + maxQ(s_{t+1}, a)$ 倾向于选择被高估的 action，导致 target 很大。
 - 选动作的 Q' 和计算 value 的 Q(target network) 不同。Q 中高估 a，Q' 可能会准确估计 V 值。Q' 中高估 a ，可能不会被 Q 选中。
 
-![](/file/15773677986325.jpg)
+![](https://media.xiang578.com/15773677986325.jpg)
 
 
 ### Dueling DQN
@@ -252,24 +252,24 @@ Q-Learning 流程：
 
 为了让网络倾向于使用 V（能训练这个网络），得到 A 后，要对 A 做 normalize。
 
-![](/file/15773680103445.jpg)
+![](https://media.xiang578.com/15773680103445.jpg)
 
 ### Prioritized Reply
 
 在训练过程中，对于经验 buffer 里面的样本，TD error 比较大的样本有更大的概率被采样，即难训练的数据增大被采样的概率。
 
-![](/file/15773681449261.jpg)
+![](https://media.xiang578.com/15773681449261.jpg)
 
 
 ### Multi-step
 
 综合 MC 和 TD 的优点，训练样本按一定步长 N 进行采样。MC 准确方差大，TD 方差小，估计不准。
-![](/file/15773682226911.jpg)
+![](https://media.xiang578.com/15773682226911.jpg)
 
 
 ### Noisy Net
 
-![](/file/15773682895872.jpg)
+![](https://media.xiang578.com/15773682895872.jpg)
 
 
 - Noise on Action：在相同状态下，可能会采取不同的动作。
@@ -282,17 +282,17 @@ Q 是累积收益的期望，实际上在 s 采取 a 时，最终所有得到的
 
 Distributional Q-function 直接输出分布，均值相同时，采取方差小的方案。这种方法不会产生高估 q 值的情况。
 
-![](/file/15773684681347.jpg)
+![](https://media.xiang578.com/15773684681347.jpg)
 
 ### Rainbow
 
 rainbow 是各种策略的混合体。
 
-![](/file/15773684767629.jpg)
+![](https://media.xiang578.com/15773684767629.jpg)
 
 DDQN 影响不大。
 
-![](/file/15773684832549.jpg)
+![](https://media.xiang578.com/15773684832549.jpg)
 
 ### Continuous Actions
 
@@ -308,7 +308,7 @@ $$
     1. $\sum$ 和 $\mu$ 是高斯分布的方差和均值，保证矩阵一定是正定。
     2. 最小化下面的函数，需要最小化 $a - \mu$。
 
-![](/file/15773684903236.jpg)
+![](https://media.xiang578.com/15773684903236.jpg)
 
 ## Actor Critic
 

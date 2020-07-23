@@ -19,11 +19,11 @@ date: 2020-01-01 16:55:11
 
 > 首先任选一个两位数，在心里默默记住，然后用这个两位数再依次减去它的十位和个位，最后用得数查表，找到对应的怪符号。 比如67,相应的计算就是67-6-7=54， 现在，在表中找到你心中数字经过计算后所对应的符号。
 
-![](/file/15792508672842.jpg)
+![](https://media.xiang578.com/15792508672842.jpg)
 
 最后的答案都会是 
 
-![](/file/15792508879083.jpg)
+![](https://media.xiang578.com/15792508879083.jpg)
 
 ## 0x03 Deep Neural Networks for YouTube Recommendations #paper #ml
 
@@ -47,7 +47,7 @@ Youtube 几年前的论文，最近拿过来看一下。工业界的论文最大
 
 Notion 这种一个数据库 + 可选的 View 很接近我心目中任务管理软件的极限。
 
-![reading board](/file/15782399749595.jpg)
+![reading board](https://media.xiang578.com/15782399749595.jpg)
 
 ## 0x00 大佬们的年度总结
 

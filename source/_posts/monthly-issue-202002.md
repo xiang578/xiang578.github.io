@@ -20,7 +20,7 @@ date: 2020-03-07 15:45:15
 
 ## 0x02 [这是我为武汉雷神山、火神山医院设计的品牌形象标志logo - 步行街主干道 - 虎扑社区](https://bbs.hupu.com/32137599.html)
 
-![](/file/15807855350677.jpg)
+![](https://media.xiang578.com/15807855350677.jpg)
 
 ## 0x01 [“山川异域，风月同天”](https://weibo.com/1218287234/Is1lGejd6?type=comment#_rnd1580519347991)
 
@@ -31,7 +31,7 @@ date: 2020-03-07 15:45:15
 
 >@文冤阁大学士：We are created to share Nature and love. 扫了下原博评转，翻得都差我好几座唐招提寺。嘻嘻。
 
-![](/file/15807341522123.jpg)
+![](https://media.xiang578.com/15807341522123.jpg)
 
 ## 0x00 [XGBoost](https://arxiv.org/abs/1603.02754)
 

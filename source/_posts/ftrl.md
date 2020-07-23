@@ -106,14 +106,14 @@ FTRL 迭代公式为：${W^{t+1}=argmin_w\{ G^{(1:t)}W + \lambda_1 \lVert W \rVe
 
 下面的伪代码中学习率和前面公式推导时使用的一些不一样： $\eta_{t_{i}}=\frac{\alpha}{\beta+\sqrt{\sum_{s=1}^{t} g_{s_{i}}^{2}}}$。Facebook 在 GBDT + LR 的论文中研究过不同的学习率影响，具体可以参看博文 [Practical Lessons from Predicting Clicks on Ads at Facebook(gbdt + lr) | 算法花园](https://xiang578.com//post/media/gbdt_lr.html#%E5%AD%A6%E4%B9%A0%E7%8E%87%E9%80%89%E6%8B%A9)。
 
-![FTRL](/file/15780559628822.jpg)
+![FTRL](https://media.xiang578.com/15780559628822.jpg)
 
 
 ## 例：FM 使用 FTRL 优化
 
 FM 是工业界常用的机器学习算法，在之前博文 [(FM)Factorization Machines](https://xiang578.com/post/fm.html) 中有简单的介绍。内部的 FTRL+FM 代码没有开源，所以也不好分析。从 [FM+FTRL算法原理以及工程化实现 - 知乎](https://zhuanlan.zhihu.com/p/58508137) 中找了一张 FTRL+FM 的伪代码图片。
 
-![](/file/15780576261639.jpg)
+![](https://media.xiang578.com/15780576261639.jpg)
 
 ## Reference
 

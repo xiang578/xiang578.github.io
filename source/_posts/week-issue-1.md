@@ -22,7 +22,7 @@ categories: 每周分享
 ## 工具
 - [Kanbanist | The Missing Kanban Board for Todoist](https://kanban.ist/)
 前几天还在考虑如何将 todoist 与看板结合，也看了一下 todoist 相关的 api 文档，之后在网上搜索时就发现了这个产品。功能还不是很强大，不知道作者什么时候可以完善。
-![](/file/15274182963792.jpg)
+![](https://media.xiang578.com/15274182963792.jpg)
 
 
 ## 文摘
@@ -47,7 +47,7 @@ categories: 每周分享
 
 ## 图片
 1、以 GDPR 为背景创建的图片
-![以 GDPR 为背景创建的图片](/file/15276714913984.png)
+![以 GDPR 为背景创建的图片](https://media.xiang578.com/15276714913984.png)
 
 ## 视频
 

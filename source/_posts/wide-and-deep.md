@@ -20,7 +20,7 @@ mathjax: true
 
 从文章题目中顾名思义，Wide & Deep 是融合 Wide Models 和 Deep Models 得到，下图形象地展示出来。
 
-![Wide & Deep Models](/file/15610337156969.jpg)
+![Wide & Deep Models](https://media.xiang578.com/15610337156969.jpg)
 
 
 **Wide Component** 是由一个常见的广义线性模型：${y=w^Tx+b}$。其中输入的特征向量 ${x}$ 包括两种类型：原始输入特征（raw input features）和组合特征（transformed features）。
@@ -41,7 +41,7 @@ ${c_{ki}}$ 代表对于第k个组合特征是否包含第i个特征。${x_i}$是
 本篇论文选择的实验场景是谷歌 app 商店的应用推荐，根据用户相关的历史信息，推荐最有可能会下载的 App。
 
 使用的模型如下：
-![Wide & Deep model structure for apps recommendation.](/file/15611212418726.jpg)
+![Wide & Deep model structure for apps recommendation.](https://media.xiang578.com/15611212418726.jpg)
 
 一些细节：
 - 对于出现超过一定次数的 categorical feature，ID 化后放入到模型中。
@@ -51,7 +51,7 @@ ${c_{ki}}$ 代表对于第k个组合特征是否包含第i个特征。${x_i}$是
 
 实验结果：
 
-![实验结果](/file/15610335523493.jpg)
+![实验结果](https://media.xiang578.com/15610335523493.jpg)
 
 Wide & Deep 模型相对于其他两个模型毫无疑问有提升。但结果中也一个反常的现象：单独使用 Deep 模型离线 AUC 指标比单独使用 Wide 模型差，但是线上对比实验时却有较大的提升。论文中作者用了一句：线下实验中的特征是固定的，线上实验会遇到很多没有出现过的特征组合，Deep 相对于 Wide 有更好的模型泛化能力，所以会有反常现象。由于笔者工作中不关注 AUC，也没有办法继续分析。
 

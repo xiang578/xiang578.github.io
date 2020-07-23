@@ -30,7 +30,7 @@ $ npm install -g hexo
 ```
 
 安装成功后大概会在shell中出现下面这样的信息
-![](/file/安装hexo.jpg)
+![](https://media.xiang578.com/安装hexo.jpg)
 
 ### 部署hexo
 比如我要安装在E盘hexo文件夹内，可以在gitbash中使用下面命令进行。如果你想明白这些命令是什么意思，可以百度cmd指令。（如无特殊说明，下面有的命令都在`/E/hexo`中使用gitbash完成）
@@ -41,7 +41,7 @@ $ npm install hexo init
 ```
 
 安装成功后大概会在shell中出现下面这样的信息
-![](/file/部署hexo.jpg)
+![](https://media.xiang578.com/部署hexo.jpg)
 
 ### 安装依赖包
 基础功能包，采用下面的命令安装
@@ -72,7 +72,7 @@ $ hexo s
 ```
 
 默认大概是下面的样子
-![](/file/第一次本地查看.jpg)
+![](https://media.xiang578.com/第一次本地查看.jpg)
 
 ### github相关部署和ssh设置
 我的这些功能还可以用，所以没有重新设置。故不能详细论述，你可从下面参考链接中获得方法。
@@ -128,12 +128,12 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 ```
     
 效果如下：
-![](/file/404.jpg)
+![](https://media.xiang578.com/404.jpg)
 
 ### 多说评论改造 
 参考[ 动动手指，给你的Hexo站点添加最近访客（多说篇）](http://www.arao.me/2015/hexo-next-theme-optimize-duoshuo/)
 
-效果如下：![](/file/多说.jpg)
+效果如下：![](https://media.xiang578.com/多说.jpg)
 
 ### 域名绑定
 域名可以在[万网](http://wanwang.aliyun.com/)上购买，大体上流程和淘宝购物差不多。现在大部分域名第一年价格比较便宜，续费也可以接受。当然如果你非要买`.集团`这种上万的域名，那么请联系我，土豪做个朋友吧！域名是有兴趣可以选择购买，采用默认的`github.io`也不错。
@@ -146,7 +146,7 @@ www.xiang578.top
 ```
 
 接着在万网的域名控制台增加如下图所示的两个解析
-![](/file/域名设置.jpg)
+![](https://media.xiang578.com/域名设置.jpg)
 
 ### 为 next 主题添加分类
 参考知乎[hexo下新建页面下如何放多个文章？](https://www.zhihu.com/question/33324071)
@@ -257,20 +257,20 @@ www.xiang578.top
 
 未修改之前的效果
 
-![](/file/15163684556026.jpg)
+![](https://media.xiang578.com/15163684556026.jpg)
 
 ### 双更新
 
 同时在 github 和 coding 上更新，然后根据访问时的 ip 地址跳转到不同的服务上。
 
 下图框中的 a 和 b 为两个库的地址。
-![](/file/15220743101609.jpg)
+![](https://media.xiang578.com/15220743101609.jpg)
 
 github 项目中相关的地址修改
-![](/file/15220746073007.jpg)
+![](https://media.xiang578.com/15220746073007.jpg)
 
 最后，域名解析服务中添加如下的解析方式。
-![](/file/15220746795739.jpg)
+![](https://media.xiang578.com/15220746795739.jpg)
 
 ### 自动备份博客相关的源文件
 
