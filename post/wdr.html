@@ -108,17 +108,17 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="严重申明：本篇文章所有信息从论文、网络等公开渠道中获得，不会透露滴滴地图 ETA 任何实现方法。  这篇论文是滴滴时空数据 2018 年在 KDD 上发表的关于在 ETA 领域应用深度学习的文章，里面提到的深度学习方法大家都耳熟能详，主要是属于工业界的创新。说点题外话，你为什么从滴滴出行离职？ - 知乎 中提到一点：  8.同年大跃进，在滴滴中高层的眼里，没有BAT。滴滴单量超淘宝指日可待，GA">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://xiang578.com/file/15643233780326.jpg">
-<meta property="og:image" content="https://xiang578.com/file/15643234056004.jpg">
-<meta property="og:image" content="https://xiang578.com/file/15643234140115.jpg">
-<meta property="og:image" content="https://xiang578.com/file/15643234258049.jpg">
-<meta property="og:image" content="https://xiang578.com/file/15643234352132.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643233780326.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643234056004.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643234140115.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643234258049.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643234352132.jpg">
 <meta property="og:image" content="http://image.xiang578.com//fma-eta.jpg">
-<meta property="og:updated_time" content="2020-07-14T15:13:03.563Z">
+<meta property="og:updated_time" content="2020-07-23T01:03:24.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(WDR) Learning to Estimate the Travel Time">
 <meta name="twitter:description" content="严重申明：本篇文章所有信息从论文、网络等公开渠道中获得，不会透露滴滴地图 ETA 任何实现方法。  这篇论文是滴滴时空数据 2018 年在 KDD 上发表的关于在 ETA 领域应用深度学习的文章，里面提到的深度学习方法大家都耳熟能详，主要是属于工业界的创新。说点题外话，你为什么从滴滴出行离职？ - 知乎 中提到一点：  8.同年大跃进，在滴滴中高层的眼里，没有BAT。滴滴单量超淘宝指日可待，GA">
-<meta name="twitter:image" content="https://xiang578.com/file/15643233780326.jpg">
+<meta name="twitter:image" content="https://media.xiang578.com/15643233780326.jpg">
 
 
 
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-07-14 23:13:03" itemprop="dateModified" datetime="2020-07-14T23:13:03+08:00">2020-07-14</time>
+                <time title="修改时间：2020-07-23 09:03:24" itemprop="dateModified" datetime="2020-07-23T09:03:24+08:00">2020-07-23</time>
               
             
           </span>
@@ -540,21 +540,21 @@
 <h2 id="模型">模型</h2>
 <p>WDR 模型，包含 3 个部分： - Wide Learning Models：利用交叉积学习信息，泛化能力。 - Deep Neural networks：对 sparse feature 做一次 Embedding，使用 3 层 MLP 和 ReLU 的网络。 - Long-Short Term Memory：解决 Wide &amp; Deep 没用使用路线的顺序特征，利用 LSTM 学习 link 信息以及序列信息，最后一个单元的隐藏状态作为输出。 - Regressor： 将 3 个模型的输出综合起来，作为最后的 ETA 预估。MAPE 作为损失函数，利用 BP 训练模型。</p>
 <figure>
-<img src="/file/15643233780326.jpg" alt="-w962"><figcaption>-w962</figcaption>
+<img src="https://media.xiang578.com/15643233780326.jpg" alt="-w962"><figcaption>-w962</figcaption>
 </figure>
 <p>上面模型中使用的特征分类： - Dense feature：行程级别的实数特征，比如起终点球面距离、起终点 GPS 坐标等。 - Sparse feature：行程级别的离散特征，比如时间片编号、星期几、天气类型等。 - Sequential feature：link 级别的特征，实数特征直接输入模型，而离散特征先做 embedding 再输入模型。注意，这里不再是每个行程一个特征向量，而是行程中每条 link 都有一个特征向量。比如，link 的长度、车道数、功能等级、实时通行速度等。</p>
 <h2 id="评估">评估</h2>
 <p>包括两部分：离线评估和在线评估。</p>
 <p>离线评估中取滴滴 2017 年北京前6个月的订单数据，分成两类 pickup （平台给司机分单后，司机开车去接乘客的过程）和 trip （司机接到乘客并前往目的地的过程）。具体数据集划分如下。</p>
-<p><img src="/file/15643234056004.jpg"></p>
+<p><img src="https://media.xiang578.com/15643234056004.jpg"></p>
 <p>离线使用 MAPE 来评价模型。在线评估时，为了更好的与用户体验挂钩，采用多个指标来衡量 ETA 的效果。包括： - APE20: absolute percentage error 小于 20% 的订单占比。（越大越好） - Badcase率：APE 大于 50% 或者 AE 大于 180s 的订单占比，定义为对用户造成巨大影响的情况。（越小越好） - 低估率：低估订单的比例。（越小越好）</p>
 <p>离线结果如下图所示，说来汗颜 PTTE 和 TEMP 是什么算法我都不知道…… WD-MLP 指的是将 WDR 中的 R 部分换成 MLP 。最终 WDR 较 route-ETA 有巨大提升，而且 LSTM 引入的序列信息也在 pikcup 上提升了 0.75%。文章的最后还提出来，LSTM 也可以换成是 Attention，这样替换有什么优点和缺点留给大家思考。</p>
-<p><img src="/file/15643234140115.jpg"></p>
+<p><img src="https://media.xiang578.com/15643234140115.jpg"></p>
 <p>在线实验结果如下图所示，滴滴 ETA MAPE 明显小于 com1、com2、com3 ，这三家地图公司具体是哪三家，大家也能猜到吧。</p>
-<p><img src="/file/15643234258049.jpg"></p>
+<p><img src="https://media.xiang578.com/15643234258049.jpg"></p>
 <h2 id="eta-服务工程架构">ETA 服务工程架构：</h2>
 <figure>
-<img src="/file/15643234352132.jpg" alt="-w486"><figcaption>-w486</figcaption>
+<img src="https://media.xiang578.com/15643234352132.jpg" alt="-w486"><figcaption>-w486</figcaption>
 </figure>
 <p>从上面的图中可以看出 ETA 服务工程架构主要包括三个部分：</p>
 <ul>
