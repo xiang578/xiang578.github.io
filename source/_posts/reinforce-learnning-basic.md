@@ -1,5 +1,5 @@
 ---
-title: 李宏毅强化学习课程笔记
+title: 李宏毅强化学习课程笔记 PG PPO Q-Learing 
 date: 2019-12-26 21:14:47
 tags: [algorithm, reinforcementlearning]
 categories: 机器学习

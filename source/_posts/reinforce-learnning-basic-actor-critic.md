@@ -1,5 +1,5 @@
  ---
-title: 李宏毅强化学习课程笔记：Actor Critic
+title: 李宏毅强化学习课程笔记 Actor Critic
 date: 2020-09-06 21:14:47
 tags: [algorithm, reinforcement-learning]
 categories: 机器学习
