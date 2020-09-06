@@ -15,6 +15,13 @@ mathjax: true
 - Change Log
     - 20191226: 整理 PPO 相关资料
     - 20191227: 整理 Q-Learning 相关资料
+    - 20200906: 拖延半年多没有整理笔记，将剩下的内容整理到单独的笔记中。
+
+我的笔记汇总：
+- Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning：[李宏毅强化学习课程笔记 | 算法花园](https://xiang578.com/post/reinforce-learnning-basic.html)
+- Actor Critic：
+- 
+    
 
 ## RL 基础
 
@@ -309,12 +316,6 @@ $$
     2. 最小化下面的函数，需要最小化 $a - \mu$。
 
 ![](https://media.xiang578.com/15773684903236.jpg)
-
-## Actor Critic
-
-## Sparse Reward
-
-## Imitation Learning
 
 ## Reference
 
