@@ -6,15 +6,11 @@ categories: 机器学习
 mathjax: true
 ---
 
-## Info 
-
-课件下载：[Hung-yi Lee - Deep Reinforcement Learning](http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html)
-
-课程视频：[DRL Lecture 1: Policy Gradient (Review) - YouTube](https://www.youtube.com/watch?v=z95ZYgPgXOY&list=PLJV_el3uVTsODxQFgzMzPLa16h6B8kWM_)
-
-- Change Log
-    - 上半部分笔记见：[李宏毅强化学习课程笔记 上| 算法花园](https://xiang578.com/post/reinforce-learnning-basic.html)
-    - 20200906： 整理 Actor Critic 相关内容
+我的笔记汇总：
+- [Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning](https://xiang578.com/post/reinforce-learnning-basic.html)
+- [Actor Critic](https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html)
+- [Sparse Reward](https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html)
+- [Imitation Learning](https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html)
     
 ## Actor Critic
 
