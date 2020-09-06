@@ -100,13 +100,13 @@
 
 
 
-  <meta name="description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  上半部分笔记见：李宏毅强化学习课程笔记 上| 算法花园 20200906： 整理 Actor Critic 相关内容   Actor Critic policy">
+  <meta name="description" content="我的笔记汇总： - Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning - Actor Critic - Sparse Reward - Imitation Learning Actor Critic policy gradient  给定在某个 state 采取某个 action 的概率。 baseline b 的作用是保证">
 <meta name="keywords" content="algorithm,reinforcement-learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="李宏毅强化学习课程笔记 Actor Critic">
 <meta property="og:url" content="https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html">
 <meta property="og:site_name" content="算法花园">
-<meta property="og:description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  上半部分笔记见：李宏毅强化学习课程笔记 上| 算法花园 20200906： 整理 Actor Critic 相关内容   Actor Critic policy">
+<meta property="og:description" content="我的笔记汇总： - Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning - Actor Critic - Sparse Reward - Imitation Learning Actor Critic policy gradient  给定在某个 state 采取某个 action 的概率。 baseline b 的作用是保证">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://media.xiang578.com/15731332476541.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15731335120798.jpg">
@@ -119,10 +119,10 @@
 <meta property="og:image" content="https://media.xiang578.com/15731350424130.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15731351315860.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15731353632450.jpg">
-<meta property="og:updated_time" content="2020-09-06T09:59:06.824Z">
+<meta property="og:updated_time" content="2020-09-06T10:05:35.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="李宏毅强化学习课程笔记 Actor Critic">
-<meta name="twitter:description" content="Info 课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log  上半部分笔记见：李宏毅强化学习课程笔记 上| 算法花园 20200906： 整理 Actor Critic 相关内容   Actor Critic policy">
+<meta name="twitter:description" content="我的笔记汇总： - Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning - Actor Critic - Sparse Reward - Imitation Learning Actor Critic policy gradient  给定在某个 state 采取某个 action 的概率。 baseline b 的作用是保证">
 <meta name="twitter:image" content="https://media.xiang578.com/15731332476541.jpg">
 
 
@@ -420,7 +420,7 @@
                 
               
 
-              <time title="创建时间：2020-09-06 21:14:47 / 修改时间：17:59:06" itemprop="dateCreated datePublished" datetime="2020-09-06T21:14:47+08:00">2020-09-06</time>
+              <time title="创建时间：2020-09-06 21:14:47 / 修改时间：18:05:35" itemprop="dateCreated datePublished" datetime="2020-09-06T21:14:47+08:00">2020-09-06</time>
             
 
             
@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">866</span>
+                <span title="本文字数">821</span>
               
 
               
@@ -505,16 +505,7 @@
       
 
       
-        <h2 id="info">Info</h2>
-<p>课件下载：<a href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html" target="_blank" rel="noopener">Hung-yi Lee - Deep Reinforcement Learning</a></p>
-<p>课程视频：<a href="https://www.youtube.com/watch?v=z95ZYgPgXOY&amp;list=PLJV_el3uVTsODxQFgzMzPLa16h6B8kWM_" target="_blank" rel="noopener">DRL Lecture 1: Policy Gradient (Review) - YouTube</a></p>
-<ul>
-<li>Change Log
-<ul>
-<li>上半部分笔记见：<a href="https://xiang578.com/post/reinforce-learnning-basic.html">李宏毅强化学习课程笔记 上| 算法花园</a></li>
-<li>20200906： 整理 Actor Critic 相关内容</li>
-</ul></li>
-</ul>
+        <p>我的笔记汇总： - <a href="https://xiang578.com/post/reinforce-learnning-basic.html">Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning</a> - <a href="https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html">Actor Critic</a> - <a href="https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html">Sparse Reward</a> - <a href="https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html">Imitation Learning</a></p>
 <h2 id="actor-critic">Actor Critic</h2>
 <h3 id="policy-gradient">policy gradient</h3>
 <ul>
@@ -970,7 +961,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#info"><span class="nav-number">1.</span> <span class="nav-text">Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#actor-critic"><span class="nav-number">2.</span> <span class="nav-text">Actor Critic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#policy-gradient"><span class="nav-number">2.1.</span> <span class="nav-text">policy gradient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-learning"><span class="nav-number">2.2.</span> <span class="nav-text">Q-learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#actor-critic-1"><span class="nav-number">2.3.</span> <span class="nav-text">Actor-Critic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#advantage-actor-critic"><span class="nav-number">2.4.</span> <span class="nav-text">Advantage Actor-Critic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asynchronous-advantage-acotr-critic-a3c"><span class="nav-number">2.5.</span> <span class="nav-text">Asynchronous Advantage Acotr-Critic A3C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pathwise-derivative-policy-gradient"><span class="nav-number">2.6.</span> <span class="nav-text">Pathwise derivative policy gradient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gan-和-ac-方法对比"><span class="nav-number">2.7.</span> <span class="nav-text">GAN 和 AC 方法对比</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#actor-critic"><span class="nav-number">1.</span> <span class="nav-text">Actor Critic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#policy-gradient"><span class="nav-number">1.1.</span> <span class="nav-text">policy gradient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-learning"><span class="nav-number">1.2.</span> <span class="nav-text">Q-learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#actor-critic-1"><span class="nav-number">1.3.</span> <span class="nav-text">Actor-Critic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#advantage-actor-critic"><span class="nav-number">1.4.</span> <span class="nav-text">Advantage Actor-Critic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asynchronous-advantage-acotr-critic-a3c"><span class="nav-number">1.5.</span> <span class="nav-text">Asynchronous Advantage Acotr-Critic A3C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pathwise-derivative-policy-gradient"><span class="nav-number">1.6.</span> <span class="nav-text">Pathwise derivative policy gradient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gan-和-ac-方法对比"><span class="nav-number">1.7.</span> <span class="nav-text">GAN 和 AC 方法对比</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1003,7 +994,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">192k</span>
+    <span title="站点总字数">193k</span>
   
 
   

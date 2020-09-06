@@ -100,23 +100,23 @@
 
 
 
-  <meta name="description" content="Reward Shaping 如果 reward 分布非常稀疏的时候，actor 会很难学习，所以刻意设计 reward 引导模型学习。 Curiosity Intrinsic Curiosity module (ICM) 在原来 Reward 函数的基础上，引入 ICM 函数。ICM 鼓励模型去探索新的动作。最后 ICM 和 Reward 和越大越好。  鼓励探索新动作之后，会导致系统风险变大。">
+  <meta name="description" content="我的笔记汇总： - Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning - Actor Critic - Sparse Reward - Imitation Learning Reward Shaping 如果 reward 分布非常稀疏的时候，actor 会很难学习，所以刻意设计 reward 引导模型学习。 Curiosit">
 <meta name="keywords" content="algorithm,reinforcement-learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="李宏毅强化学习课程笔记 Sparse Reward">
 <meta property="og:url" content="https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html">
 <meta property="og:site_name" content="算法花园">
-<meta property="og:description" content="Reward Shaping 如果 reward 分布非常稀疏的时候，actor 会很难学习，所以刻意设计 reward 引导模型学习。 Curiosity Intrinsic Curiosity module (ICM) 在原来 Reward 函数的基础上，引入 ICM 函数。ICM 鼓励模型去探索新的动作。最后 ICM 和 Reward 和越大越好。  鼓励探索新动作之后，会导致系统风险变大。">
+<meta property="og:description" content="我的笔记汇总： - Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning - Actor Critic - Sparse Reward - Imitation Learning Reward Shaping 如果 reward 分布非常稀疏的时候，actor 会很难学习，所以刻意设计 reward 引导模型学习。 Curiosit">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://media.xiang578.com/15732008339393.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15732012078318.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15732013249053.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15732019855111.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15732020592680.jpg">
-<meta property="og:updated_time" content="2020-09-06T09:59:06.824Z">
+<meta property="og:updated_time" content="2020-09-06T10:05:35.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="李宏毅强化学习课程笔记 Sparse Reward">
-<meta name="twitter:description" content="Reward Shaping 如果 reward 分布非常稀疏的时候，actor 会很难学习，所以刻意设计 reward 引导模型学习。 Curiosity Intrinsic Curiosity module (ICM) 在原来 Reward 函数的基础上，引入 ICM 函数。ICM 鼓励模型去探索新的动作。最后 ICM 和 Reward 和越大越好。  鼓励探索新动作之后，会导致系统风险变大。">
+<meta name="twitter:description" content="我的笔记汇总： - Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning - Actor Critic - Sparse Reward - Imitation Learning Reward Shaping 如果 reward 分布非常稀疏的时候，actor 会很难学习，所以刻意设计 reward 引导模型学习。 Curiosit">
 <meta name="twitter:image" content="https://media.xiang578.com/15732008339393.jpg">
 
 
@@ -414,7 +414,7 @@
                 
               
 
-              <time title="创建时间：2020-09-06 22:14:47 / 修改时间：17:59:06" itemprop="dateCreated datePublished" datetime="2020-09-06T22:14:47+08:00">2020-09-06</time>
+              <time title="创建时间：2020-09-06 22:14:47 / 修改时间：18:05:35" itemprop="dateCreated datePublished" datetime="2020-09-06T22:14:47+08:00">2020-09-06</time>
             
 
             
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">564</span>
+                <span title="本文字数">671</span>
               
 
               
@@ -499,7 +499,8 @@
       
 
       
-        <h2 id="reward-shaping">Reward Shaping</h2>
+        <p>我的笔记汇总： - <a href="https://xiang578.com/post/reinforce-learnning-basic.html">Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning</a> - <a href="https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html">Actor Critic</a> - <a href="https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html">Sparse Reward</a> - <a href="https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html">Imitation Learning</a></p>
+<h2 id="reward-shaping">Reward Shaping</h2>
 <p>如果 reward 分布非常稀疏的时候，actor 会很难学习，所以刻意设计 reward 引导模型学习。</p>
 <h3 id="curiosity-intrinsic-curiosity-module-icm">Curiosity Intrinsic Curiosity module (ICM)</h3>
 <p>在原来 Reward 函数的基础上，引入 ICM 函数。ICM 鼓励模型去探索新的动作。最后 ICM 和 Reward 和越大越好。</p>
@@ -957,7 +958,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">192k</span>
+    <span title="站点总字数">193k</span>
   
 
   
