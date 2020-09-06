@@ -4,7 +4,8 @@ tags: [writing,english]
 categories: 同文馆
 ---
 
-行百里者半九十
+行百里者半九十。
+200906：可惜这件事情也没有坚持下去。
 
 <!-- more -->
 
@@ -18,14 +19,10 @@ categories: 同文馆
 - 城市居民忍受着例如噪音和空气污染之类的公共问题，然而居住在乡村中，却又有远离大量有趣活动导致的孤独感和无聊感。
 - 参考译文：城市居民饱受噪音和空气污染等公共问题的困扰。而在乡村，人们无法参加众多精彩的活动，可能会感到孤独和无聊。
 
-
-
 **3 We often hear frustrating parents complain that their children are behaving unreasonably while many a child would so often say that his or her parents are just hopelessly old-fashioned.**
 
 - 我们经常听到沮丧的父母报怨他们子女的表现不可理解，与此同时，孩子们也经常说父母太过于守旧。
 - 参考译文：我们经常听到父母抱怨孩子们的行为难以理解，而很多孩子们总是说父母们不可救药地落伍了。
-
-
 
 **4 Covering all kinds of topics from daily life to political issues, from individual thoughts to world events, Microblogs offer readers anything they might be interested in.**
 
@@ -73,7 +70,7 @@ categories: 同文馆
 - 现在越来越多的人认为那些具有硕士学历的人比只有本科学历的更加有竞争优势。
 - 参考译文：越来越多的人认识到，和那些只有学士学位的人相比，拥有硕士学位的人将具有竞争优势。
 
-**15 On the one hand, there is no denying that the Internet is currently one of the most efficient media for interpersonal communication. **
+**15 On the one hand, there is no denying that the Internet is currently one of the most efficient media for interpersonal communication.  **
 - 在另一个方面，互联网毫无疑问的成为了当前个人之间交流最有效的方式。
 - 参考译文：一方面，不可否认因特网目前是人际交流使用的最高效媒介之一。
 
@@ -94,6 +91,7 @@ categories: 同文馆
 - 参考译文：虽然每周在快餐店工作10到15个小时似乎并不占太多时间，但这仍然减少了学生本应用在学习上的时间。
 
 **20 While self-reliance is a crucial quality that everyone should strive to develop, it is also vital that we learn how to accept other's help. **
+
 - 参考译文：虽然自立是每个人都应该努力培养的重要品质，学会如何接受他人的帮助也是非常重要的。
 
 **21 Unemployment causes young people to suffer from an unstable income as well as the psychological stress of not knowing when they will get their next paycheck.**
