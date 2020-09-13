@@ -1,3 +1,4 @@
+https://xiang578.com/post/Never-Reading-202008.html
 https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html
 https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html
 https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html
@@ -16,7 +17,7 @@ https://xiang578.com/post/monthly-issue-201912.html
 https://xiang578.com/post/2019-consumer-report.html
 https://xiang578.com/post/cs231n-summary.html
 https://xiang578.com/post/blog-writing-checklist.html
-https://xiang578.com/post/ctr.html
+https://xiang578.com/post/all-about-ctr.html
 https://xiang578.com/post/wdr.html
 https://xiang578.com/post/fm.html
 https://xiang578.com/post/wide-and-deep.html
