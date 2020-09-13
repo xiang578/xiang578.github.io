@@ -53,7 +53,7 @@ Zettlekasten 是一个德语单词，意思是卡片盒。现在主要指一种�
 ## 机器学习
 
 - 内部开始尝试 MCTS 相关的项目。正好接这个机会看一下 DeeepMind 前几年的论文 [Mastering the game of Go with deep neural networks and tree search]() 以及 [Mastering the game of Go without human knowledge]()。推荐去看一下田渊栋在知乎上 [AlphaGo的分析](https://zhuanlan.zhihu.com/p/20607684) ，当时他在 Facebook 参与类似围棋相关的项目。另外就是木遥的 [关于 AlphaGo 论文的阅读笔记](https://36kr.com/p/5042969) 有更多关于现实的思考。最后推荐 [阿尔法围棋](https://movie.douban.com/subject/27012433/)，记录从 DeepMind 开发 AlphaGo 到战胜李世石的全过程。有一个疑问第四局之后，他们有没有增加使用的 GPU 和 CPU？
-- [在你做推荐系统的过程中都遇到过什么坑？ - 知乎](https://www.zhihu.com/question/32218407) [[推荐系统]]
+- [在你做推荐系统的过程中都遇到过什么坑？ - 知乎](https://www.zhihu.com/question/32218407) [[CTR]]
     - 没有明确的指标：CTR，staytime，read/unread
     - 精准推荐以及兴趣探索
     - 线下auc涨，线上 ctr 跌

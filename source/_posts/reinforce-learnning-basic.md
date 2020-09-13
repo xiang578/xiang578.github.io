@@ -18,9 +18,10 @@ mathjax: true
     - 20200906: 拖延半年多没有整理笔记，将剩下的内容整理到单独的笔记中。
 
 我的笔记汇总：
-- Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning：[李宏毅强化学习课程笔记 | 算法花园](https://xiang578.com/post/reinforce-learnning-basic.html)
-- Actor Critic：
-- 
+- [Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning](https://xiang578.com/post/reinforce-learnning-basic.html)
+- [Actor Critic](https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html)
+- [Sparse Reward](https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html)
+- [Imitation Learning](https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html)
     
 
 ## RL 基础
