@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xiang578.com/post/lanqiaobei-2016.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/mac-software.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/machine-learning-ch-01.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/machine-learning-ch-03.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/meet-leancloud-counter-security-problem.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/monthly-issue-201912.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/monthly-issue-202001.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
     <loc>https://xiang578.com/post/monthly-issue-202002.html</loc>
     <lastmod>2020-09-26</lastmod>
   </url>
@@ -193,10 +165,6 @@
     <lastmod>2020-09-26</lastmod>
   </url>
   <url>
-    <loc>https://xiang578.com/post/007-aciton-reflection.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
     <loc>https://xiang578.com/post/007-and-me.html</loc>
     <lastmod>2020-09-26</lastmod>
   </url>
@@ -293,10 +261,6 @@
     <lastmod>2020-09-26</lastmod>
   </url>
   <url>
-    <loc>https://xiang578.com/post/computer-base-network.html</loc>
-    <lastmod>2020-09-26</lastmod>
-  </url>
-  <url>
     <loc>https://xiang578.com/post/cs231n-summary.html</loc>
     <lastmod>2020-09-26</lastmod>
   </url>
@@ -345,6 +309,10 @@
     <lastmod>2020-09-26</lastmod>
   </url>
   <url>
+    <loc>https://xiang578.com/post/computer-base-network.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
     <loc>https://xiang578.com/post/hdu500.html</loc>
     <lastmod>2020-09-26</lastmod>
   </url>
@@ -386,6 +354,38 @@
   </url>
   <url>
     <loc>https://xiang578.com/post/just-for-fun.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/lanqiaobei-2016.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/mac-software.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/machine-learning-ch-01.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/machine-learning-ch-03.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/meet-leancloud-counter-security-problem.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/monthly-issue-201912.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/monthly-issue-202001.html</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/007-aciton-reflection.html</loc>
     <lastmod>2020-09-26</lastmod>
   </url>
 </urlset> 
