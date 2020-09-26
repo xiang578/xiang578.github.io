@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8">
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="xf6fMthFjE">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="去年学习这门做的部分笔记，现在分享出来。 笔记格式有些问题，持续整理中。   大量内容参考 mbadry1/CS231n-2017-Summary  Table of contents  Standford CS231n 2017 Summary  Table of contents Course Info 01. Introduction to CNN for visual recogniti">
+<meta name="keywords" content="ml, course">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Standford CS231n 2017 课程部分总结">
+<meta property="og:url" content="https://xiang578.com/post/cs231n-summary.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="去年学习这门做的部分笔记，现在分享出来。 笔记格式有些问题，持续整理中。   大量内容参考 mbadry1/CS231n-2017-Summary  Table of contents  Standford CS231n 2017 Summary  Table of contents Course Info 01. Introduction to CNN for visual recogniti">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15387098703701.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15387110626779.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15388343449162.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15388374738605.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15390088806657.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15390092983570.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15395012747510.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15499574039274.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15705415499052.jpg">
+<meta property="og:image" content="https://media.xiang578.com/2019-10-08-15705420412305.jpg">
+<meta property="og:updated_time" content="2020-09-26T07:35:15.484Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Standford CS231n 2017 课程部分总结">
+<meta name="twitter:description" content="去年学习这门做的部分笔记，现在分享出来。 笔记格式有些问题，持续整理中。   大量内容参考 mbadry1/CS231n-2017-Summary  Table of contents  Standford CS231n 2017 Summary  Table of contents Course Info 01. Introduction to CNN for visual recogniti">
+<meta name="twitter:image" content="https://media.xiang578.com/2019-10-08-15387098703701.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://xiang578.com/post/cs231n-summary">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Standford CS231n 2017 课程部分总结 | 算法花园</title>
+  
+
+
+
+
+  <script async src="//www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-65866729-1');
+    }
+  </script>
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">算法花园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+
+    
+
+    <a href="/" rel="section">首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tech">
+
+    
+    
+    
+
+    
+
+    <a href="/tech/" rel="section">技术</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-wiki">
+
+    
+    
+    
+
+    
+
+    <a href="https://wiki.xiang578.com/" rel="noopener" target="_blank">wiki</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+
+    
+
+    <a href="/about/" rel="section">关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+
+    
+
+    <a href="/tags/" rel="section">标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+
+    
+
+    <a href="/archives/" rel="section">归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/xiang578" class="github-corner" title="Find me on GitHub" aria-label="Find me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/cs231n-summary.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RyenX">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Standford CS231n 2017 课程部分总结
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-04 17:58:39" itemprop="dateCreated datePublished" datetime="2019-12-04T17:58:39+00:00">2019-12-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-09-26 07:35:15" itemprop="dateModified" datetime="2020-09-26T07:35:15+00:00">2020-09-26</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">11k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>去年学习这门做的部分笔记，现在分享出来。 笔记格式有些问题，持续整理中。</p>
+</blockquote>
+<ul>
+<li>大量内容参考 <a href="https://github.com/mbadry1/CS231n-2017-Summary/blob/master/README.md" target="_blank" rel="noopener">mbadry1/CS231n-2017-Summary</a></li>
+</ul>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#standford-cs231n-2017-summary">Standford CS231n 2017 Summary</a>
+<ul>
+<li><a href="#table-of-contents">Table of contents</a></li>
+<li><a href="#course-info">Course Info</a></li>
+<li><a href="#01-introduction-to-cnn-for-visual-recognition">01. Introduction to CNN for visual recognition</a></li>
+<li><a href="#02-image-classification">02. Image classification</a></li>
+<li><a href="#03-loss-function-and-optimization">03. Loss function and optimization</a></li>
+<li><a href="#04-introduction-to-neural-network">04. Introduction to Neural network</a></li>
+<li><a href="#05-convolutional-neural-networks-cnns">05. Convolutional neural networks (CNNs)</a></li>
+<li><a href="#06-training-neural-networks-i">06. Training neural networks I</a></li>
+<li><a href="#07-training-neural-networks-ii">07. Training neural networks II</a></li>
+<li><a href="#08-deep-learning-software">08. Deep learning software</a></li>
+<li><a href="#09-cnn-architectures">09. CNN architectures</a></li>
+</ul></li>
+</ul>
+<h2 id="course-info">Course Info</h2>
+<ul>
+<li>主页: http://cs231n.stanford.edu/</li>
+<li>视频：<a href="https://www.bilibili.com/video/av17204303" target="_blank" rel="noopener">斯坦福深度学习课程CS231N 2017中文字幕版+全部作业参考_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a></li>
+<li>大纲：<a href="http://cs231n.stanford.edu/2017/syllabus" target="_blank" rel="noopener">Syllabus | CS 231N</a></li>
+<li>课件：<a href="http://cs231n.stanford.edu/slides/2017/" target="_blank" rel="noopener">Index of /slides/2017</a></li>
+<li>笔记：<a href="https://zhuanlan.zhihu.com/p/21930884" target="_blank" rel="noopener">贺完结！CS231n官方笔记授权翻译总集篇发布</a></li>
+<li>作业仓库：<a href="https://github.com/xiang578/MachineLearning/tree/master/CS231n" target="_blank" rel="noopener">MachineLearning/CS231n at master · xiang578/MachineLearning</a></li>
+<li>总课时: <strong>16</strong></li>
+</ul>
+<h2 id="introduction-to-cnn-for-visual-recognition">01. Introduction to CNN for visual recognition</h2>
+<ul>
+<li>视觉地出现促进了物种竞争。</li>
+<li>ImageNet 是由李飞飞维护的一个大型图像数据集。</li>
+<li>自从 2012 年 CNN 出现之后，图像分类的错误率大幅度下降。 神经网络的深度也从 7 层增加到 2015 年的 152 层。截止到目前，机器分类准确率已经超过人类，所以 ImageNet 也不再举办相关比赛。</li>
+<li>CNN 在 1998 年就被提出，但是这几年才流行开来。主要原因有：1) 硬件发展，并行计算速度提到 2）大规模带标签的数据集。</li>
+<li>Gola: Understand how to write from scratch, debug and train convolutional neural networks.</li>
+</ul>
+<h2 id="image-classification">02. Image classification</h2>
+<ul>
+<li>图像由一大堆没有规律的数字组成，无法直观的进行分类，所以存在语义鸿沟。分类的挑战有：视角变化、大小变化、形变、遮挡、光照条件、背景干扰、类内差异。
+<ul>
+<li><img src="https://media.xiang578.com/2019-10-08-15387098703701.jpg"></li>
+</ul></li>
+<li>Data-Driven Approach
+<ul>
+<li>Collect a dataset of images and labels</li>
+<li>Use Machine Learning to train a classifier</li>
+<li>Evaluate the classifier on new images</li>
+</ul></li>
+<li>图像分类流程：输入、学习、评估</li>
+<li>图像分类数据集：<a href="http://www.cs.toronto.edu/~kriz/cifar.html" target="_blank" rel="noopener">CIFAR-10</a>，这个数据集包含了60000张32X32的小图像。每张图像都有10种分类标签中的一种。这60000张图像被分为包含50000张图像的训练集和包含10000张图像的测试集。</li>
+<li>一种直观的图像分类算法：K-nearest neighbor(knn)
+<ul>
+<li>为每一张需要预测的图片找到距离最近的 k 张训练集中的图片，然后选着在这 k 张图片中出现次数最多的标签做为预测图片的标签（多数表决）。</li>
+<li>训练过程：记录所有的数据和标签 <span class="math inline">\({O(1)}\)</span></li>
+<li>预测过程：预测给定图片的标签 <span class="math inline">\({O(n)}\)</span></li>
+<li>Hyperparameters：k and the distance Metric</li>
+<li>Distance Metric
+<ul>
+<li>L1 distance(Manhattan Distance)</li>
+<li>L2 distance(Euclidean Distance)</li>
+</ul></li>
+<li>knn 缺点
+<ul>
+<li>Very slow at test time</li>
+<li>Distance metrics on pixels are not informative</li>
+</ul></li>
+<li>反例：下面四张图片的 L2 距离相同
+<ul>
+<li><img src="https://media.xiang578.com/2019-10-08-15387110626779.jpg" title="fig:" alt="-w622"></li>
+</ul></li>
+</ul></li>
+<li>Hyperparameters: choices about the algorithm that we set ranther than learn</li>
+<li>留一法 Setting Hyperparameters by Cross-validation:
+<ul>
+<li>将数据划分为 f 个集合以及一个 test 集合，数据划分中药保证数据集的分布一致。</li>
+<li>给定超参数，利用 f-1 个集合对算法进行训练，在剩下的一个集合中测试训练效果，重复这一个过程，直到所有的集合都当过测试集。</li>
+<li>选择在训练集中平均表现最好的超参数。</li>
+</ul></li>
+<li>Linear classification: <code>Y = wX + b</code>
+<ul>
+<li>b 为 bias，调节模型对结果的偏好</li>
+<li>通过最小化损失函数来，来确定 w 和 b 的值。</li>
+</ul></li>
+<li><strong>Linear SVM</strong>: classifier is an option for solving the image classification problem, but the curse of dimensions makes it stop improving at some point. <span class="citation" data-cites="todo">@todo</span></li>
+<li><strong>Logistics Regression</strong>: 无法解决非线性的图像数据</li>
+</ul>
+<h2 id="loss-function-and-optimization">03. Loss function and optimization</h2>
+<ul>
+<li>通过 Loss function 评估参数质量
+<ul>
+<li>比如 <span class="math display">\[L=\frac{1}{N}\sum_iL_i\left(f\left(x_i,W\right),y_i\right)\]</span></li>
+</ul></li>
+<li>Multiclass SVM loss 多分类支持向量机损失函数
+<ul>
+<li><span class="math display">\[L_i=\sum_{j \neq y_j}\max\left(0,s_j-s_{y_i}+1\right)\]</span></li>
+<li>这种损失函数被称为合页损失 Hinge loss</li>
+<li>SVM 的损失函数要求正确类别的分类分数要比其他类别的高出一个边界值。</li>
+<li>L2-SVM 中使用平方折叶损失函数<span class="math display">\[\max(0,-)^2\]</span>能更强烈地惩罚过界的边界值。但是选择使用哪一个损失函数需要通过实验结果来判断。</li>
+<li>举例
+<ul>
+<li><img src="https://media.xiang578.com/2019-10-08-15388343449162.jpg"></li>
+<li>根据上面的公式计算：<span class="math display">\[L = \max(0,437.9-(-96.8)) + \max(0,61.95-(-96.8))=695.45\]</span></li>
+<li>猫的分类得分在三个类别中不是最高得，所以我们需要继续优化。</li>
+</ul></li>
+</ul></li>
+<li>Suppose that we found a W such that L = 0. Is this W unique?
+<ul>
+<li>No! 2W is also has L = 0!</li>
+</ul></li>
+<li>Regularization: 正则化，向某一些特定的权值 W 添加惩罚，防止权值过大，减轻模型的复杂度，提高泛化能力，也避免在数据集中过拟合现象。
+<ul>
+<li><span class="math display">\[L=\frac{1}{N}\sum_iL_i\left(f\left(x_i,W\right),y_i\right) + \lambda R(W)\]</span></li>
+<li><code>R</code> 正则项 <span class="math display">\[\lambda\]</span> 正则化参数</li>
+</ul></li>
+<li>常用正则化方法
+<ul>
+<li>L2<span class="math display">\[\begin{matrix} R(W)=\sum_{k}\sum_l W^2_{k,l} \end{matrix}\]</span></li>
+<li>L1<span class="math display">\[\begin{matrix} R(W)=\sum_{k}\sum_l \left\vert W_{k,l} \right\vert \end{matrix}\]</span></li>
+<li>Elastic net(L1 + L2): <span class="math display">\[\begin{matrix} R(W)=\sum_{k}\sum_l \beta W^2_{k,l} + \left\vert W_{k,l} \right\vert \end{matrix}\]</span></li>
+<li>Dropout</li>
+<li>Batch normalization</li>
+<li>etc</li>
+</ul></li>
+<li>L2 惩罚倾向于更小更分散的权重向量，L1 倾向于稀疏项。</li>
+<li>Softmax function：
+<ul>
+<li><span class="math display">\[f_j(z)=\frac{e^{s_i}}{\sum e^{s_j}}\]</span></li>
+<li>该分类器将输出向量 f 中的评分值解释为没有归一化的对数概率，通过归一化之后，所有概率之和为1。</li>
+<li>Loss 也称交叉熵损失 cross-entropy loss <span class="math display">\[L_i = - \log\left(\frac{e^{s_i}}{\sum e^{s_j}}\right)\]</span></li>
+</ul></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = np.array([<span class="number">123</span>, <span class="number">456</span>, <span class="number">789</span>]) <span class="comment"># 例子中有3个分类，每个评分的数值都很大</span></span><br><span class="line">p = np.exp(f) / np.sum(np.exp(f)) <span class="comment"># 不妙：数值问题，可能导致数值爆炸</span></span><br><span class="line"><span class="comment"># 那么将f中的值平移到最大值为0：</span></span><br><span class="line">f -= np.max(f) <span class="comment"># f becomes [-666, -333, 0]</span></span><br><span class="line">p = np.exp(f) / np.sum(np.exp(f)) <span class="comment"># 现在OK了，将给出正确结果</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>SVM 和 Softmax 比较
+<ol type="1">
+<li>评分，SVM 的损失函数鼓励正确的分类的分值比其他分类的分值高出一个边界值。</li>
+<li>对数概率，Softmax 鼓励正确的分类归一化后的对数概率提高。</li>
+<li>Softmax 永远不会满意，SVM 超过边界值就满意了。</li>
+</ol></li>
+<li>Optimization：最优化过程
+<ul>
+<li>Follow the slope
+<ul>
+<li><img src="https://media.xiang578.com/2019-10-08-15388374738605.jpg"></li>
+</ul></li>
+</ul></li>
+<li>梯度是函数的斜率的一般化表达，它不是一个值，而是一个向量，它是各个维度的斜率组成的向量。
+<ul>
+<li>Numerical gradient: Approximate, slow, easy to write. (But its useful in debugging.)</li>
+<li>Analytic gradient: Exact, Fast, Error-prone. (Always used in practice)</li>
+<li>实际应用中使用分析梯度法，但可以用数值梯度法去检查分析梯度法的正确性。</li>
+</ul></li>
+<li>利用梯度优化参数的过程：<code>W = W - learning_rate * W_grad</code></li>
+<li>learning_rate 被称为是学习率，是一个比较重要的超参数</li>
+<li>Stochastic Gradient Descent SGD 随机梯度下降法
+<ul>
+<li>每次使用一小部分的数据进行梯度计算，这样可以加快计算的速度。</li>
+<li>每个批量中只有1个数据样本，则被称为随机梯度下降（在线梯度下降）</li>
+</ul></li>
+<li>图像分类任务中三大关键部分：
+<ol type="1">
+<li>评分函数</li>
+<li>损失函数：量化某个具体参数 <span class="math inline">\({W}\)</span> 的质量</li>
+<li>最优化：寻找能使得损失函数值最小化的参数 <span class="math inline">\({W}\)</span> 的过程</li>
+</ol></li>
+</ul>
+<h2 id="introduction-to-neural-network">04. Introduction to Neural network</h2>
+<ul>
+<li>反向传播：在已知损失函数 <span class="math inline">\({L}\)</span> 的基础上，如何计算导数<span class="math inline">\({\nabla _WL}\)</span>？</li>
+<li>计算图
+<ul>
+<li>由于计算神经网络中某些函数的梯度很困难，所以引入计算图的概念简化运算。</li>
+<li>在计算图中，对应函数所有的变量转换成为计算图的输入，运算符号变成图中的一个节点（门单元）。</li>
+</ul></li>
+<li>反向传播：从尾部开始，根据链式法则递归地向前计算梯度，一直到网络的输入端。
+<ul>
+<li><img src="https://media.xiang578.com/2019-10-08-15390088806657.jpg" title="fig:" alt="-w1107"></li>
+<li>绿色是正向传播，红色是反向传播。</li>
+</ul></li>
+<li>对于计算图中的每一个节点，我们需要计算这个节点上的局部梯度，之后根据链式法则反向传递梯度。</li>
+<li>Sigmoid 函数：<span class="math inline">\({f(w,x)=\frac{1}{1+e^{-(w_0x_0+w_1x_1+w_2)}}}\)</span>
+<ul>
+<li><img src="https://media.xiang578.com/2019-10-08-15390092983570.jpg"></li>
+<li>对于门单元 <span class="math inline">\({\frac{1}{x}}\)</span>，求导的结果是 <span class="math inline">\({-\frac{1}{x^2}}\)</span>，输入为 1.37，梯度返回值为 1.00，所以这一步中的梯度是 <span class="math inline">\({(\frac{-1}{1.37^2})*1.00=-0.53}\)</span>。</li>
+<li>模块化思想：对 <span class="math inline">\({\sigma(x)=\frac{1}{1+e^{-x}}}\)</span> 求导的结果是 <span class="math inline">\({(1-\sigma(x))\sigma(x)}\)</span>。如果 sigmoid 表达式输入值为 1.0 时，则前向传播中的结果是 0.73。根据求导结果计算可得局部梯度是 <span class="math inline">\({(1-0.73)*0.73=0.2}\)</span>。</li>
+</ul></li>
+<li>Modularized implementation: forward/backwar API</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MultuplyGate</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="string">"""</span></span><br><span class="line"><span class="string">  x,y are scalars</span></span><br><span class="line"><span class="string">  """</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(x,y)</span>:</span></span><br><span class="line">    z = x*y</span><br><span class="line">    self.x = x  <span class="comment"># Cache</span></span><br><span class="line">    self.y = y	<span class="comment"># Cache</span></span><br><span class="line">    <span class="comment"># We cache x and y because we know that the derivatives contains them.</span></span><br><span class="line">    <span class="keyword">return</span> z</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">backward</span><span class="params">(dz)</span>:</span></span><br><span class="line">    dx = self.y * dz         <span class="comment">#self.y is dx</span></span><br><span class="line">    dy = self.x * dz</span><br><span class="line">    <span class="keyword">return</span> [dx, dy]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>深度学习框架中会实现的门单元：Multiplication、Max、Plus、Minus、Sigmoid、Convolution</li>
+<li>常用计算单元
+<ul>
+<li><strong>加法门单元：</strong>把输出的梯度相等地分发给它所有的输入，这一行为与输入值在前向传播时的值无关。</li>
+<li><strong>取最大值门单元：</strong>将梯度转给前向传播中值最大的那个输入，其余输入的值为0。</li>
+<li><strong>乘法门单元：</strong>等值缩放。局部梯度就是输入值，但是需要相互交换，然后根据链式法则乘以输出值得梯度。</li>
+</ul></li>
+<li>Neural NetWorks
+<ul>
+<li>(Before) Linear score function <span class="math display">\[f = Wx\]</span></li>
+<li>(Now) 2-layer Neural NetWork <span class="math display">\[f=W_2\max(0,W_1x)\]</span></li>
+<li>ReLU <span class="math display">\[\max(0,x)\]</span> 是激活函数，如果不使用激活函数，神经网络只是线性模型的组合，无法拟合非线性情况。</li>
+<li>神经网络是更复杂的模型的基础组件</li>
+</ul></li>
+</ul>
+<h2 id="convolutional-neural-networks-cnns">05. Convolutional neural networks (CNNs)</h2>
+<ul>
+<li>这一轮浪潮的开端：<a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf" target="_blank" rel="noopener">AlxNet</a></li>
+<li>卷积神经网络
+<ul>
+<li>Fully Connected Layer 全连接层：这一层中所有的神经元链接在一起。</li>
+<li>Convolution Layer：
+<ul>
+<li>通过参数共享来控制参数的数量。Parameter sharing</li>
+<li>Sparsity of connections</li>
+</ul></li>
+<li>卷积神经网络能学习到不同层次的输入信息</li>
+<li>常见的神经网络结构：<code>INPUT -&gt; [[CONV -&gt; RELU]*N -&gt; POOL?]*M -&gt; [FC -&gt; RELU]*K -&gt; FC</code></li>
+<li>使用小的卷积核大小的优点：多个卷积层与非线性的激活层交替的结构，比单一卷积层的结构更能提取出深层的更好地特征。而且使用的参数也会更少</li>
+</ul></li>
+<li>计算卷积层输出
+<ul>
+<li>stride 是卷积核在移动时的步长</li>
+<li>通用公式 (N-F)/stride + 1
+<ul>
+<li>stride 1 =&gt; (7-3)/1 + 1 = 5</li>
+<li>stride 2 =&gt; (7-3)/2 + 1 = 3</li>
+<li>stride 3 =&gt; (7-3)/3 + 1 = 2.33</li>
+</ul></li>
+<li>Zero pad the border: 用零填充所有的边界，保证输入输出图像大小相同，保留图像边缘信息，提高算法性能
+<ul>
+<li>步长为 1 时，需要填充的边界计算公式：(F-1)/2
+<ul>
+<li>F = 3 =&gt; zero pad with 1</li>
+<li>F = 5 =&gt; zero pad with 2</li>
+<li>F = 7 =&gt; zero pad with 3</li>
+</ul></li>
+</ul></li>
+<li>计算例子
+<ul>
+<li>输入大小 <code>32*32*3</code> 卷积大小 10 5*5 stride 1 pad 2</li>
+<li>output <code>32*32*10</code></li>
+<li>每个 filter 的参数数量：<code>5*5*3+1 =76</code> bias</li>
+<li>全部参数数量 76*10=760</li>
+</ul></li>
+</ul></li>
+<li>卷积常用超参数设置
+<ul>
+<li>卷积使用小尺寸滤波器</li>
+<li>卷积核数量 K 一般为 2 的次方倍</li>
+<li>卷积核的空间尺寸 F</li>
+<li>步长 S</li>
+<li>零填充数量 P</li>
+</ul></li>
+<li>Pooling layer
+<ul>
+<li>降维，减少参数数量。在卷积层中不对数据做降采样</li>
+<li>卷积特征往往对应某个局部的特征，通过池化聚合这些局部特征为全局特征</li>
+</ul></li>
+<li>Max pooling
+<ul>
+<li>2*2 stride 2</li>
+<li>避免区域重叠</li>
+</ul></li>
+<li>Average pooling</li>
+</ul>
+<h2 id="training-neural-networks-i">06. Training neural networks I</h2>
+<ul>
+<li><p>Activation functions 激活函数</p>
+<ul>
+<li>不使用激活函数，最后的输出会是输入的线性组合。利用激活函数对数据进行修正。</li>
+<li><img src="https://media.xiang578.com/2019-10-08-15395012747510.jpg"></li>
+<li>Sigmoid
+<ul>
+<li>限制输出在 [0,1]区间内</li>
+<li>firing rate</li>
+<li>二分类输出层激活函数</li>
+<li>Problem
+<ul>
+<li>梯度消失：x很大或者很小时，梯度很小，接近于0（考虑图像中的斜率。无法得到梯度反馈。</li>
+<li>输出不是 0 均值的数据，梯度更新效率低</li>
+<li>exp is a bit compute expensive</li>
+</ul></li>
+</ul></li>
+<li>tanh
+<ul>
+<li>输出范围 [-1, 1]</li>
+<li>0 均值</li>
+<li>x 很大时，依然没有梯度</li>
+<li><span class="math inline">\({f(x)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}}\)</span></li>
+<li><span class="math inline">\({1-(tanh(x))^2}\)</span></li>
+</ul></li>
+<li>RELU rectified linear unit 线性修正单元
+<ul>
+<li>一半空间梯度不会饱和，计算速度快，对结果又有精确的计算</li>
+<li>不是 0 均值</li>
+</ul></li>
+<li>Leaky RELU
+<ul>
+<li><code>leaky_RELU(x) = max(0.01x, x)</code></li>
+<li>梯度不会消失</li>
+<li>需要学习参数</li>
+</ul></li>
+<li>ELU
+<ul>
+<li>比 ReLU 好用</li>
+<li>反激活机制</li>
+</ul></li>
+<li>Maxout
+<ul>
+<li>maxout(x) = max(w1.T<em>x + b1, w2.T</em>x + b2)</li>
+<li>梯度不会消失</li>
+<li>增大参数数量</li>
+</ul></li>
+<li>激活函数选取经验
+<ul>
+<li>使用 ReLU ，但要仔细选取学习率</li>
+<li>尝试使用 Leaky ReLU Maxout ELU</li>
+<li>使用 tanh 时，不要抱有太大的期望</li>
+<li>不要使用 sigmoid</li>
+</ul></li>
+</ul></li>
+<li><p>数据预处理 Data Preprocessing</p>
+<ul>
+<li>均值减法：对数据中每个独立特征减去平均值，从几何上来看是将数据云的中心都迁移到原点。</li>
+<li>归一化：将数据中的所有维度都归一化，使数值范围近似相等。但是在图像处理中，像素的数值范围几乎一致，所以不需要额外处理。</li>
+</ul>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X -= np.mean(X, axis = <span class="number">1</span>)</span><br><span class="line">X /= np.std(X, axis =<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>图像归一化
+<ul>
+<li>Subtract the mean image AlexNet
+<ul>
+<li>mean image 32,32,3</li>
+</ul></li>
+<li>Subtract per-channel mean VGGNet
+<ul>
+<li>mean along each channel = 3 numbers</li>
+</ul></li>
+<li>如果需要进行均值减法时，均值应该是从训练集中的图片平均值，然后训练集、验证集、测试集中的图像再减去这个平均值。</li>
+</ul></li>
+<li>Weight Initialization
+<ul>
+<li>全零初始化
+<ul>
+<li>网络中的每个神经元都计算出相同的输出，然后它们就会在反向传播中计算出相同的梯度。神经元之间会从源头上对称。</li>
+</ul></li>
+<li>Small random numbers
+<ul>
+<li>初始化权值要非常接近 0 又不能等于 0。将权重初始化为很小的数值，以此来打破对称性</li>
+<li>randn 函数是基于零均值和标准差的高斯分布的随机函数</li>
+<li>W = 0.01 * np.random.rand(D,H)</li>
+<li>问题：一个神经网络的层中的权重值很小，那么在反向传播的时候就会计算出非常小的梯度。会减小反向传播中的“梯度信号”，在深度网络中就会出现问题。</li>
+</ul></li>
+<li>Xavier initialization
+<ul>
+<li>W = np.random.rand(in, out) / np.sqrt(in)</li>
+<li>校准方差，解决输入数据量增长，随机初始化的神经元输出数据的分布中的方差也增大问题。</li>
+</ul></li>
+<li>He initialization
+<ul>
+<li>W = np.random.rand(in, out) / np.sqrt(in/2)</li>
+</ul></li>
+</ul></li>
+<li>Batch normalization
+<ul>
+<li>保证输入到神经网络中的数据服从标准的高斯分布</li>
+<li>通过批量归一化可以加快训练的速度</li>
+<li>步骤
+<ul>
+<li>首先计算每个特征的平均值和平方差</li>
+<li>通过减去平局值和除以方差对数据进行归一化</li>
+<li><code>Result = gamma * normalizedX + beta</code>
+<ul>
+<li>对数据进行线性变换，相当于对数据分布进行一次移动，可以恢复数据之前的分布特征</li>
+</ul></li>
+</ul></li>
+<li>BN 的好处
+<ul>
+<li>加快训练速度</li>
+<li>可以使用更快的而学习率</li>
+<li>减少数据对初始化权值的敏感程度</li>
+<li>相当于进行一次正则化</li>
+</ul></li>
+<li>BN 适用于卷积神经网络和常规的 DNN，在 RNN 和增强学习中表现不是很好</li>
+</ul></li>
+<li>Babysitting the Learning Provess</li>
+<li>Hyperparameter Optimization
+<ul>
+<li>Cross-validation 策略训练</li>
+<li>小范围内随机搜索</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="training-neural-networks-ii">07. Training neural networks II</h2>
+<ul>
+<li>Optimization Algorithms:
+<ul>
+<li>SGD 的问题
+<ul>
+<li><code>x += - learning_rate * dx</code></li>
+<li>梯度在某一个方向下降速度快，在其他方向下降缓慢</li>
+<li>遇到局部最小值点，鞍点</li>
+</ul></li>
+<li>mini-batches GD
+<ul>
+<li>Shuffling and Partitioning are the two steps required to build mini-batches</li>
+<li>Powers of two are often chosen to be the mini-batch size, e.g., 16, 32, 64, 128.</li>
+</ul></li>
+<li>SGD + Momentun
+<ul>
+<li>动量更新：从物理学角度启发最优化问题</li>
+<li><code>V[t+1] = rho * v[t] + dx; x[t+1] = x[t] - learningRate * V[t+1]</code></li>
+<li>rho 被看做是动量，其物理意义与摩擦系数想类似，常取 0.9 或0.99</li>
+<li>和 momentun 项更新方向相同的可以快速更新。</li>
+<li>在 dx 中改变梯度方向后， rho 可以减少更新。momentun 能在相关方向加速 SGD，抑制震荡，加快收敛。</li>
+</ul></li>
+<li>Nestrov momentum
+<ul>
+<li><img src="https://media.xiang578.com/2019-10-08-15499574039274.jpg"></li>
+<li><code>v_prev = v; v = mu * v - learning_rate * dx; x += -mu * v_prev + (1 + mu) * v</code></li>
+</ul></li>
+<li>AdaGrad
+<ul>
+<li><span class="math inline">\(n_t=n_{t-1}+g^2_t\)</span></li>
+<li><span class="math inline">\(\Delta \theta _t = -\frac{\eta}{\sqrt{n_t+\epsilon}}\)</span></li>
+<li>下面根号中会递推形成一个约束项。前期这一项比较大，能够放大梯度。后期这一项比较小，能约束梯度。</li>
+<li>gt 的平方累积会使梯度趋向于 0</li>
+</ul></li>
+<li>RMSProp
+<ul>
+<li>RMS 均方根</li>
+<li>自适应学习率方法</li>
+<li>求梯度的平方和平均数：<code>cache =  decay_rate * cache + (1 - decay_rate) * dx**2</code></li>
+<li><code>x += - learning_rate * dx / (sqrt(cache) + eps)</code></li>
+<li>依赖全局学习率</li>
+</ul></li>
+<li>Adam
+<ul>
+<li>RMSProp + Momentum</li>
+<li>It calculates an exponentially weighted average of past gradients, and stores it in variables <span class="math inline">\(v\)</span> (before bias correction) and <span class="math inline">\(v^{corrected}\)</span> (with bias correction).</li>
+<li>It calculates an exponentially weighted average of the squares of the past gradients, and stores it in variables <span class="math inline">\(s\)</span> (before bias correction) and <span class="math inline">\(s^{corrected}\)</span> (with bias correction).</li>
+<li>一阶到导数累积，二阶导数累积</li>
+<li>It updates parameters in a direction based on combining information from "1" and "2".</li>
+<li>The update rule is, for <span class="math inline">\(l = 1, ..., L\)</span>: <span class="math display">\[\begin{cases}
+  v_{dW^{[l]}} = \beta_1 v_{dW^{[l]}} + (1 - \beta_1) \frac{\partial \mathcal{J} }{ \partial W^{[l]} } \\
+  v^{corrected}_{dW^{[l]}} = \frac{v_{dW^{[l]}}}{1 - (\beta_1)^t} \\
+  s_{dW^{[l]}} = \beta_2 s_{dW^{[l]}} + (1 - \beta_2) (\frac{\partial \mathcal{J} }{\partial W^{[l]} })^2 \\
+  s^{corrected}_{dW^{[l]}} = \frac{s_{dW^{[l]}}}{1 - (\beta_1)^t} \\
+  W^{[l]} = W^{[l]} - \alpha \frac{v^{corrected}_{dW^{[l]}}}{\sqrt{s^{corrected}_{dW^{[l]}}} + \varepsilon}
+  \end{cases}\]</span></li>
+</ul>
+where:
+<ul>
+<li>t counts the number of steps taken of Adam</li>
+<li>L is the number of layers</li>
+<li><span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are hyperparameters that control the two exponentially weighted averages.</li>
+<li><span class="math inline">\(\alpha\)</span> is the learning rate</li>
+<li><span class="math inline">\(\varepsilon\)</span> is a very small number to avoid dividing by zero</li>
+</ul>
+特点：
+<ul>
+<li>适用于大数据集和高维空间。</li>
+<li>对不同的参数计算不同的自适应学习率。</li>
+</ul></li>
+<li>Learning decay
+<ul>
+<li>学习率随着训练变化，比如每一轮在前一轮的基础上减少一半。</li>
+<li>防止学习停止</li>
+</ul></li>
+<li>Second order optimization</li>
+</ul></li>
+<li>Regularization
+<ul>
+<li>Dropout
+<ul>
+<li>每一轮中随机使部分神经元失活，减少模型对神经元的依赖，增强模型的鲁棒性。</li>
+</ul></li>
+</ul></li>
+<li>Transfer learning
+<ul>
+<li>CNN 中的人脸识别，可以在大型的模型基础上利用少量的相关图像进行继续训练。</li>
+</ul></li>
+</ul>
+<h2 id="cnn-architectures">09. CNN architectures</h2>
+<ul>
+<li>研究模型的方法：搞清楚每一层的输入和输出的大小关系。</li>
+<li>LeNet - 5 [1998]
+<ul>
+<li>60k 参数</li>
+<li>深度加深，图片大小减少，通道数量增加</li>
+<li>ac: Sigmod/tanh</li>
+</ul></li>
+<li>AlexNet [2012]
+<ul>
+<li>(227,227,3) （原文错误）</li>
+<li>60M 参数</li>
+<li>LRN：局部响应归一化，之后很少使用</li>
+</ul></li>
+<li>VGG - 16 [2015]
+<ul>
+<li>138 M</li>
+<li>结构不复杂，相对一致，图像缩小比例和通道增加数量有规律</li>
+</ul></li>
+<li>ZFNet [2013]
+<ul>
+<li>在 AlexNet 的基础上修改
+<ul>
+<li><code>CONV1</code>: change from (11 x 11 stride 4) to (7 x 7 stride 2)</li>
+<li><code>CONV3,4,5</code>: instead of 384, 384, 256 filters use 512, 1024, 512</li>
+</ul></li>
+</ul></li>
+<li>VGG [2014]
+<ul>
+<li>模型中只使用 3*3 conv：与 77 卷积有相同的感受野，而且可以将网络做得更深。比如每一层可以获取到原始图像的范围：第一层 33，第二层 55，第三层 77。</li>
+<li>前面的卷积层参数量很少，模型中大部分参数属于底部的全连接层。</li>
+</ul></li>
+</ul>
+<p><img src="https://media.xiang578.com/2019-10-08-15705415499052.jpg"></p>
+<ul>
+<li>GoogLeNet
+<ul>
+<li>引入 <code>Inception module</code>
+<ul>
+<li>design a good local network topology (network within a network) and then stack these modules on top of each other</li>
+<li>该模块可以并行计算</li>
+<li>conv 和 pool 层进行 padding，最后将结果 concat 在一起</li>
+</ul></li>
+</ul></li>
+</ul>
+<figure>
+<img src="https://media.xiang578.com/2019-10-08-15705420412305.jpg" alt="Reset"><figcaption>Reset</figcaption>
+</figure>
+<ul>
+<li>ResNet
+<ul>
+<li>目标：深层模型表现不应该差于浅层模型，解决随着网络加深，准确率下降的问题。</li>
+<li><code>Y = (W2* RELU(W1x+b1) + b2) + X</code></li>
+<li>如果网络已经达到最优，继续加深网络，residual mapping会被设置为 0，一直保存网络最优的情况。</li>
+</ul></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/22252270" target="_blank" rel="noopener">深度学习最全优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam） - 知乎</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ml-course/" rel="tag"># ml, course</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/blog-writing-checklist.html" rel="next" title="算法花园风格清单">
+                <i class="fa fa-chevron-left"></i> 算法花园风格清单
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/2019-consumer-report.html" rel="prev" title="2019 年软硬件指北">
+                2019 年软硬件指北 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">RyenX</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">97</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">74</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/xiang578" title="GitHub &rarr; https://github.com/xiang578" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:i@xiang578.com" title="E-Mail &rarr; mailto:i@xiang578.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#table-of-contents"><span class="nav-number">1.</span> <span class="nav-text">Table of contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#course-info"><span class="nav-number">2.</span> <span class="nav-text">Course Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-cnn-for-visual-recognition"><span class="nav-number">3.</span> <span class="nav-text">01. Introduction to CNN for visual recognition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-classification"><span class="nav-number">4.</span> <span class="nav-text">02. Image classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loss-function-and-optimization"><span class="nav-number">5.</span> <span class="nav-text">03. Loss function and optimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-neural-network"><span class="nav-number">6.</span> <span class="nav-text">04. Introduction to Neural network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#convolutional-neural-networks-cnns"><span class="nav-number">7.</span> <span class="nav-text">05. Convolutional neural networks (CNNs)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#training-neural-networks-i"><span class="nav-number">8.</span> <span class="nav-text">06. Training neural networks I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#training-neural-networks-ii"><span class="nav-number">9.</span> <span class="nav-text">07. Training neural networks II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cnn-architectures"><span class="nav-number">10.</span> <span class="nav-text">09. CNN architectures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reference"><span class="nav-number">11.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">浙ICP备17004638号 </a>&copy; 2015 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-RyenX"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RyenX</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">201k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">3:03</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'd83511859fbdb256f4ce',
+    clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+    repo: 'xiang578.github.io',
+    owner: 'xiang578',
+    admin: ['xiang578'],
+    id: md5(location.pathname),
+    
+      language: window.navigator.language || window.navigator.userLanguage,
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('复制');
+      }, 300);
+    }).append(e);
+  })
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+</body>
+</html>
