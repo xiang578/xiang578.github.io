@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="这里记录过去一周，我看到的值得分享的东西，每周六不定时更新。  观点  美团和滴滴为什么要互相开展对方的业务：  我记得罗振宇在某一年时间的朋友中提到一个观点：O2O 领域会出现一个超级公司，业务横跨所有场景。 从技术角度分析，外卖中比较难的点在于分单、时间估计以及路径规划。这也是出行服务中的技术难点。不过各有侧重，外卖中路径规划相当于最多不超过 20 个点（10 个商家处取餐，10 个顾客中送">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-14T12:28:09.363Z">
+<meta property="og:updated_time" content="2021-04-02T00:11:50.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每周分享第 11 期">
 <meta name="twitter:description" content="这里记录过去一周，我看到的值得分享的东西，每周六不定时更新。  观点  美团和滴滴为什么要互相开展对方的业务：  我记得罗振宇在某一年时间的朋友中提到一个观点：O2O 领域会出现一个超级公司，业务横跨所有场景。 从技术角度分析，外卖中比较难的点在于分单、时间估计以及路径规划。这也是出行服务中的技术难点。不过各有侧重，外卖中路径规划相当于最多不超过 20 个点（10 个商家处取餐，10 个顾客中送">
@@ -237,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 20:28:09" itemprop="dateModified" datetime="2021-03-14T20:28:09+08:00">2021-03-14</time>
+                <time title="修改时间：2021-04-02 08:11:50" itemprop="dateModified" datetime="2021-04-02T08:11:50+08:00">2021-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,21 +258,7 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/post/week-issues-11.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/week-issues-11.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -356,13 +342,7 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -573,35 +553,24 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
 <script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: {page: {
-            url: "https://xiang578.com/post/week-issues-11.html",
-            identifier: "post/week-issues-11.html",
-            title: "每周分享第 11 期"
-          }
-        }
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://xiang578.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd83511859fbdb256f4ce',
+      clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+      repo: 'xiang578.github.io',
+      owner: 'xiang578',
+      admin: ['xiang578'],
+      id: '58e843c512a8ad7856cf6b3fd4fcff08',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>

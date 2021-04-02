@@ -57,7 +57,7 @@
 <meta property="og:description" content="最初看到 007 活动是在申斌龙的公众号中，当时没有什么在意，也没有深入了解。之后，我在知乎上的一个专栏文章中，看到了这个活动的详细介绍。吸引我“冲动”消费加入这个社群的是“每7天写一篇文章，连续写7年。”这种运作方式。简单的计算了一下7年是2555天（简化问题，不计算闰年情况），一共需要写365篇文章才能坚持到最后。而且只需要花369元，相当于你每写一篇就能赚一块多。 除了上面的计算，选择加入0">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://media.xiang578.com/IMG_0233.JPG">
-<meta property="og:updated_time" content="2021-03-14T12:28:09.355Z">
+<meta property="og:updated_time" content="2021-04-02T00:11:50.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="007 不出局活动与我">
 <meta name="twitter:description" content="最初看到 007 活动是在申斌龙的公众号中，当时没有什么在意，也没有深入了解。之后，我在知乎上的一个专栏文章中，看到了这个活动的详细介绍。吸引我“冲动”消费加入这个社群的是“每7天写一篇文章，连续写7年。”这种运作方式。简单的计算了一下7年是2555天（简化问题，不计算闰年情况），一共需要写365篇文章才能坚持到最后。而且只需要花369元，相当于你每写一篇就能赚一块多。 除了上面的计算，选择加入0">
@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 20:28:09" itemprop="dateModified" datetime="2021-03-14T20:28:09+08:00">2021-03-14</time>
+                <time title="修改时间：2021-04-02 08:11:50" itemprop="dateModified" datetime="2021-04-02T08:11:50+08:00">2021-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,21 +260,7 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/post/007-and-me.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/007-and-me.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -361,13 +347,7 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -577,35 +557,24 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
 <script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: {page: {
-            url: "https://xiang578.com/post/007-and-me.html",
-            identifier: "post/007-and-me.html",
-            title: "007 不出局活动与我"
-          }
-        }
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://xiang578.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd83511859fbdb256f4ce',
+      clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+      repo: 'xiang578.github.io',
+      owner: 'xiang578',
+      admin: ['xiang578'],
+      id: '4d9e1674e7ca01359712aef2a6b2d67c',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>

@@ -59,7 +59,7 @@
 <meta property="og:image" content="https://media.xiang578.com/15275002437247.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15275062870334.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15275066078950.jpg">
-<meta property="og:updated_time" content="2021-03-14T12:28:09.363Z">
+<meta property="og:updated_time" content="2021-04-02T00:11:50.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="月读|软技能——代码之外的生存指南">
 <meta name="twitter:description" content="本月推荐的书是 John Z. Sonmez 写的《软技能——代码之外的生存指南》。本书作者之前是一名程序员，目前更多的是充当程序员的人生导师角色，通过博客、播客、vlog等多种形式介绍自己的软技能，借此希望能推动其他人事业进步，过上更充实的生活。 本书总共分成七大篇：  职业篇，介绍了程序员从公司选择、面试、工作、辞职、创业等职业相关的方方面面内容 自我营销篇，从博客开始，打造自己的个人品牌 学">
@@ -241,7 +241,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 20:28:09" itemprop="dateModified" datetime="2021-03-14T20:28:09+08:00">2021-03-14</time>
+                <time title="修改时间：2021-04-02 08:11:50" itemprop="dateModified" datetime="2021-04-02T08:11:50+08:00">2021-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,21 +262,7 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/post/soft-skills.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/soft-skills.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -371,13 +357,7 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -588,35 +568,24 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
 <script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: {page: {
-            url: "https://xiang578.com/post/soft-skills.html",
-            identifier: "post/soft-skills.html",
-            title: "月读|软技能——代码之外的生存指南"
-          }
-        }
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://xiang578.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd83511859fbdb256f4ce',
+      clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+      repo: 'xiang578.github.io',
+      owner: 'xiang578',
+      admin: ['xiang578'],
+      id: 'e39e602d4b55a8088316f4eecd58b6ee',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>

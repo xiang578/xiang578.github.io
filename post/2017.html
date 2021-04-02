@@ -61,7 +61,7 @@
 <meta property="og:image" content="https://media.xiang578.com/15147040250293.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15147059504193.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15147053326968.jpg">
-<meta property="og:updated_time" content="2021-03-14T12:28:09.359Z">
+<meta property="og:updated_time" content="2021-04-02T00:11:50.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017 迷茫">
 <meta name="twitter:description" content="每年年底，都有很多人在各种地方发表这样的总结，看得我煞是羡慕。去年也想学习2016 无限大中这位大佬这样好好搞一番。最终的结果是，写了一些之后，就放弃了，然后现在草稿都找不到了。今天，终于鼓起勇气，准备在图书馆好好总结一下2017年经历过的事情。那么多年以来，感觉今年经历的事情最多也最复杂，很多事情到现在都没有讲明白。 上半年大三，现在大四，今年在学校上的课实际上是很少的。上半年自己选的只有pyt">
@@ -243,7 +243,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 20:28:09" itemprop="dateModified" datetime="2021-03-14T20:28:09+08:00">2021-03-14</time>
+                <time title="修改时间：2021-04-02 08:11:50" itemprop="dateModified" datetime="2021-04-02T08:11:50+08:00">2021-04-02</time>
               </span>
 
           
@@ -253,21 +253,7 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/post/2017.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/2017.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -394,13 +380,7 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -611,35 +591,24 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
 <script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: {page: {
-            url: "https://xiang578.com/post/2017.html",
-            identifier: "post/2017.html",
-            title: "2017 迷茫"
-          }
-        }
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://xiang578.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd83511859fbdb256f4ce',
+      clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+      repo: 'xiang578.github.io',
+      owner: 'xiang578',
+      admin: ['xiang578'],
+      id: '237a549da571bd03452d9b4d38afbf83',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>

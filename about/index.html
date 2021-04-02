@@ -57,7 +57,7 @@
 <meta property="og:description" content="About Me 网上冲浪常用 ID：Ryenxx、xiang578  2014-2018：国内某不知名大学，计算机专业业余学生  多次参加 ACM 比赛，实属打铁水平，侥幸抱上大腿获得过金、银、铜奖。  2018-Now：国内某出行公司地图部门，不会机器学习的算法工程师  加入我们一起建模现实世界，详见【滴滴出行-地图路线引擎】算法实习生   兴趣：  机器学习、深度学习 Zettelkaste">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://media.xiang578.com/pay-code.jpg">
-<meta property="og:updated_time" content="2021-03-14T12:28:09.363Z">
+<meta property="og:updated_time" content="2021-04-02T00:11:50.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
 <meta name="twitter:description" content="About Me 网上冲浪常用 ID：Ryenxx、xiang578  2014-2018：国内某不知名大学，计算机专业业余学生  多次参加 ACM 比赛，实属打铁水平，侥幸抱上大腿获得过金、银、铜奖。  2018-Now：国内某出行公司地图部门，不会机器学习的算法工程师  加入我们一起建模现实世界，详见【滴滴出行-地图路线引擎】算法实习生   兴趣：  机器学习、深度学习 Zettelkaste">
@@ -314,13 +314,7 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -531,35 +525,24 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
 <script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: {page: {
-            url: "https://xiang578.com/about/index.html",
-            identifier: "about/index.html",
-            title: "About"
-          }
-        }
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://xiang578.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd83511859fbdb256f4ce',
+      clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+      repo: 'xiang578.github.io',
+      owner: 'xiang578',
+      admin: ['xiang578'],
+      id: '3be7aa98d992907175cbd79c194399f2',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>

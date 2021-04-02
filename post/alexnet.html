@@ -60,7 +60,7 @@
 <meta property="og:image" content="https://media.xiang578.com/15581816832571.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15581833748303.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15581820979738.jpg">
-<meta property="og:updated_time" content="2021-03-14T12:28:09.359Z">
+<meta property="og:updated_time" content="2021-04-02T00:11:50.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)">
 <meta name="twitter:description" content="作者以及相关性  Alex Krizhevsky Ilya Sutskever Geoffrey E. Hinton 本文被认为是这一轮深度学习浪潮的开端  主题  将 CNN 技术最先应用到图像识别领域，利用 CNN 参数共享的特性，减少网络的规模 解决深度网络难训练（速度慢）以及容易过拟合问题（更多数据或者网络技巧）  数据集与指标  ImageNet LSVRC-2010 contest:">
@@ -242,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 20:28:09" itemprop="dateModified" datetime="2021-03-14T20:28:09+08:00">2021-03-14</time>
+                <time title="修改时间：2021-04-02 08:11:50" itemprop="dateModified" datetime="2021-04-02T08:11:50+08:00">2021-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,21 +263,7 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/post/alexnet.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/alexnet.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -405,13 +391,7 @@ b_{x, y}^{i}=a_{x, y}^{i} /\left(k+\alpha \sum_{j=\max (0, i-n / 2)}^{\min (N-1,
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -670,35 +650,24 @@ b_{x, y}^{i}=a_{x, y}^{i} /\left(k+\alpha \sum_{j=\max (0, i-n / 2)}^{\min (N-1,
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
 <script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: {page: {
-            url: "https://xiang578.com/post/alexnet.html",
-            identifier: "post/alexnet.html",
-            title: "ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)"
-          }
-        }
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://xiang578.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd83511859fbdb256f4ce',
+      clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+      repo: 'xiang578.github.io',
+      owner: 'xiang578',
+      admin: ['xiang578'],
+      id: '7466fafe564e20e510fb432fb7888257',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>

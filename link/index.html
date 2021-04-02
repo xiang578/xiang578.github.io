@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="同学  海虹不老阁：北京某知名高校研究生 浙江某985高校研究生 小仙女？ 币圈大佬 Ocrosoft：有点杂，看他最近对什么感兴趣 Fighting Heart: 「Microsoft - Software Engineer」 浙江财经大学本科生典范  推荐  张驰原 Free Mind：MIT 博士，Google Brain。主题包括但不限于：机器学习、数学、程序设计、阅读、绘画。 刘未鹏 M">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-14T12:28:09.363Z">
+<meta property="og:updated_time" content="2021-04-02T00:11:50.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="链接">
 <meta name="twitter:description" content="同学  海虹不老阁：北京某知名高校研究生 浙江某985高校研究生 小仙女？ 币圈大佬 Ocrosoft：有点杂，看他最近对什么感兴趣 Fighting Heart: 「Microsoft - Software Engineer」 浙江财经大学本科生典范  推荐  张驰原 Free Mind：MIT 博士，Google Brain。主题包括但不限于：机器学习、数学、程序设计、阅读、绘画。 刘未鹏 M">
@@ -275,13 +275,7 @@
 
           </div>
           
-    
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -492,35 +486,24 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
 <script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://xiang578.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: {page: {
-            url: "https://xiang578.com/link/index.html",
-            identifier: "link/index.html",
-            title: "链接"
-          }
-        }
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://xiang578.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
-    }
-  });
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd83511859fbdb256f4ce',
+      clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+      repo: 'xiang578.github.io',
+      owner: 'xiang578',
+      admin: ['xiang578'],
+      id: '223e9fa6c38c6b0fc1aaefe7ed37fdfd',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
