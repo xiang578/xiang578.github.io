@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://xiang578.com/post/how-to-use-taskpaper-to-do-3-thigns.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/icpc-beijing-2016.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/icpc-ecl-shanghai-2017.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/icpc-xian-2017.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
     <loc>https://xiang578.com/post/if.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
@@ -54,6 +38,10 @@
   </url>
   <url>
     <loc>https://xiang578.com/post/monthly-issue-201912.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/monthly-issue-202001.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
@@ -134,6 +122,10 @@
   </url>
   <url>
     <loc>https://xiang578.com/post/thinking-03.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/thinking-04.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
@@ -221,7 +213,35 @@
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
-    <loc>https://xiang578.com/post/monthly-issue-202001.html</loc>
+    <loc>https://xiang578.com/post/2017.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/2018-consumer-report.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/2018.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/2019-consumer-report.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/2019.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/2020.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/AppleScript-encode-error.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/Csharp-chat-softwave.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
@@ -237,11 +257,19 @@
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
+    <loc>https://xiang578.com/post/Sleep.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
     <loc>https://xiang578.com/post/Thinking-01.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
     <loc>https://xiang578.com/post/Thinking-02.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/a-survey-of-transformers.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
@@ -262,10 +290,6 @@
   </url>
   <url>
     <loc>https://xiang578.com/post/auto-workflow.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/Sleep.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
@@ -353,6 +377,22 @@
     <lastmod>2021-08-14</lastmod>
   </url>
   <url>
+    <loc>https://xiang578.com/post/how-to-use-taskpaper-to-do-3-thigns.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/icpc-beijing-2016.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/icpc-ecl-shanghai-2017.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
+    <loc>https://xiang578.com/post/icpc-xian-2017.html</loc>
+    <lastmod>2021-08-14</lastmod>
+  </url>
+  <url>
     <loc>https://xiang578.com/post/007-aciton-reflection.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
@@ -366,38 +406,6 @@
   </url>
   <url>
     <loc>https://xiang578.com/post/2015.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/2017.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/2018-consumer-report.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/2018.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/2019-consumer-report.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/2019.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/2020.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/AppleScript-encode-error.html</loc>
-    <lastmod>2021-08-14</lastmod>
-  </url>
-  <url>
-    <loc>https://xiang578.com/post/Csharp-chat-softwave.html</loc>
     <lastmod>2021-08-14</lastmod>
   </url>
 </urlset> 

@@ -48,16 +48,20 @@
   };
 </script>
 
-  <meta name="keywords" content="机器学习,深度学习,阅读">
-<meta property="og:type" content="website">
-<meta property="og:title" content="算法花园">
-<meta property="og:url" content="https://xiang578.com/tags/alexnet/index.html">
+  <meta name="description" content="2106.04554 A Survey of Transformers，这篇论文是复旦大学 NLP 组整理关于 Transformer 模型改进和应用的综述文章。由于不是主要搞这个方向的，大部分论文其实都没有看过，所以简单整理一些有启发的点。  Ref  A Survey of Transformer 一份Transformer综述 - 知乎">
+<meta name="keywords" content="nlp,paper,transformer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Survey of Transformers 笔记">
+<meta property="og:url" content="https://xiang578.com/post/a-survey-of-transformers.html">
 <meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="2106.04554 A Survey of Transformers，这篇论文是复旦大学 NLP 组整理关于 Transformer 模型改进和应用的综述文章。由于不是主要搞这个方向的，大部分论文其实都没有看过，所以简单整理一些有启发的点。  Ref  A Survey of Transformer 一份Transformer综述 - 知乎">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-08-14T15:39:41.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法花园">
+<meta name="twitter:title" content="A Survey of Transformers 笔记">
+<meta name="twitter:description" content="2106.04554 A Survey of Transformers，这篇论文是复旦大学 NLP 组整理关于 Transformer 模型改进和应用的综述文章。由于不是主要搞这个方向的，大部分论文其实都没有看过，所以简单整理一些有启发的点。  Ref  A Survey of Transformer 一份Transformer综述 - 知乎">
 
-<link rel="canonical" href="https://xiang578.com/tags/alexnet/">
+<link rel="canonical" href="https://xiang578.com/post/a-survey-of-transformers.html">
 
 
 <script id="page-configurations">
@@ -65,11 +69,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>标签: alexnet | 算法花园</title>
+  <title>A Survey of Transformers 笔记 | 算法花园</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
     <script>
@@ -198,54 +202,128 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">alexnet
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/a-survey-of-transformers.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          A Survey of Transformers 笔记
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-18 20:56:43" itemprop="dateCreated datePublished" datetime="2021-06-18T20:56:43+08:00">2021-06-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-14 23:39:41" itemprop="dateModified" datetime="2021-08-14T23:39:41+08:00">2021-08-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>154</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p><a href="https://arxiv.org/abs/2106.04554v2" target="_blank" rel="noopener">2106.04554 A Survey of Transformers</a>，这篇论文是复旦大学 NLP 组整理关于 Transformer 模型改进和应用的综述文章。由于不是主要搞这个方向的，大部分论文其实都没有看过，所以简单整理一些有启发的点。</p>
+<h2 id="section"></h2>
+<h2 id="ref">Ref</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/380510105" target="_blank" rel="noopener">A Survey of Transformer 一份Transformer综述 - 知乎</a></li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-05-18T20:56:43+08:00"
-              content="2019-05-18">
-          05-18
-        </time>
-      </div>
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/nlp/" rel="tag"><i class="fa fa-tag"></i> nlp</a>
+              <a href="/tags/paper/" rel="tag"><i class="fa fa-tag"></i> paper</a>
+              <a href="/tags/transformer/" rel="tag"><i class="fa fa-tag"></i> transformer</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/post/alexnet.html" itemprop="url">
-            <span itemprop="name">ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)</span>
-          </a>
-      </h2>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/thinking-03.html" rel="prev" title="【随想集】03 你当像鸟飞往你的山">
+      <i class="fa fa-chevron-left"></i> 【随想集】03 你当像鸟飞往你的山
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/thinking-04.html" rel="next" title="【随想集】04 曾经我也想过一了百了">
+      【随想集】04 曾经我也想过一了百了 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -292,6 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref"><span class="nav-number">2.</span> <span class="nav-text">Ref</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -433,7 +512,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </script>
 
 
 
@@ -452,9 +531,76 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd83511859fbdb256f4ce',
+      clientSecret: '36033527d693a1f55ca7769c53c6041371e3d7fa',
+      repo: 'xiang578.github.io',
+      owner: 'xiang578',
+      admin: ['xiang578'],
+      id: '21adf7f4a43d62b435b39ba9bdaef9b2',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
