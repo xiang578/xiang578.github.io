@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="算法花园">
 <meta property="og:description" content="新年快乐！不知不觉距离上次写博客过去 4 个多月，去年的年终总结还不知道如何动笔，先尝试写一篇简单的随想集热热身。 这两年新的笔记软件层出不穷，目前全部私人笔记使用 Roam Research 记录，但是 Roam 过去一年没有什么大更新，更别提移动端。另外为了搭建数字花园，使用 Obsidian 管理部分可以公开的笔记，再通过 MkDocs 生成 html 文件发布（谁让 Obsidian Pu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-01-09T12:51:28.753Z">
+<meta property="og:updated_time" content="2022-01-09T13:02:01.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【随想集】05 重新使用 Logseq">
 <meta name="twitter:description" content="新年快乐！不知不觉距离上次写博客过去 4 个多月，去年的年终总结还不知道如何动笔，先尝试写一篇简单的随想集热热身。 这两年新的笔记软件层出不穷，目前全部私人笔记使用 Roam Research 记录，但是 Roam 过去一年没有什么大更新，更别提移动端。另外为了搭建数字花园，使用 Obsidian 管理部分可以公开的笔记，再通过 MkDocs 生成 html 文件发布（谁让 Obsidian Pu">
@@ -231,7 +231,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-09 19:00:11 / 修改时间：20:51:28" itemprop="dateCreated datePublished" datetime="2022-01-09T19:00:11+08:00">2022-01-09</time>
+              <time title="创建时间：2022-01-09 19:00:11 / 修改时间：21:02:01" itemprop="dateCreated datePublished" datetime="2022-01-09T19:00:11+08:00">2022-01-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>1.3k</span>
             </span>
 
         </div>
@@ -272,10 +272,10 @@
       
         <p>新年快乐！不知不觉距离上次写博客过去 4 个多月，去年的年终总结还不知道如何动笔，先尝试写一篇简单的随想集热热身。</p>
 <p>这两年新的笔记软件层出不穷，目前全部私人笔记使用 Roam Research 记录，但是 Roam 过去一年没有什么大更新，更别提移动端。另外为了搭建数字花园，使用 Obsidian 管理部分可以公开的笔记，再通过 MkDocs 生成 html 文件发布（谁让 Obsidian Publish 每月费用高达 8 刀）。</p>
-<p>前几天听 <span class="citation" data-cites="tiensonqin">[Tienson Qin (@tiensonqin)]</span>(https://twitter.com/tiensonqin) 采访 <a href="https://www.xiaoyuzhoufm.com/episode/61c6cccac525309a443b5b36?s=eyJ1IjogIjYxNmFlZTVhZTBmNWU3MjNiYjhjNzE4MCJ9" target="_blank" rel="noopener">跟 Logseq 的创造者天生聊聊 Logseq 的故事 - ByteTalk | 小宇宙</a> 后，重新对 Logseq 产生兴趣（刚出的时候体验过，开源+弱化版Roam）。Logseq 支持直接导入 Roam json 文件，我大概有 2k+ 笔记，大小在 6 MB 左右。直接迁移过去有一些细节问题，以至于我发了 <a href="https://github.com/logseq/logseq/issues/3684" target="_blank" rel="noopener">Issue #3684：导入 roam json 数据后部分 blockref 无法正确显示</a>，在开发者（不知道是不是）帮助下完美解决。不过体验几个小时后，总是感觉 0.5.6 版本很卡，随便进行点击操作，需要 5s 以上才会有反馈……无奈只好放弃迁移。</p>
-<p>这次体验过程中 logseq 插件 <a href="https://github.com/debanjandhar12/logseq-anki-sync" target="_blank" rel="noopener">debanjandhar12/logseq-anki-sync: An Logseq to Anki Flashcards integration plugin.</a> 给我留下深刻的印象，只需点击插件 icon 就可以通过 Anki Connect 将笔记中的卡片同步到 Anki 中（单向更新）。使用 Roam 时，我都是将需要制卡的笔记统一整理到一个文档中，然后使用 <a href="https://github.com/shiqi-lu/roam2anki" target="_blank" rel="noopener">shiqi-lu/roam2anki</a> 转换成csv 文件，最后手动导入 Anki。本地客户端想想空间更加强大！</p>
-<p>Logseq 本身有 Publish 功能，可以配置将全部或有 <code>public:: true</code> 属性的笔记一起导出成单个 html 文件，然后借助静态网站托管工具发布。这样的流程也是挺复杂，幸好前几天看到有人发布 <a href="https://github.com/pengx17/logseq-publish" target="_blank" rel="noopener">pengx17/logseq-publish: Logseq Publish Action</a> ，从而实现笔记数据推送到 github 后，自动编译 html 文件并发布。由于笔记数据对应的 git 是 private 而我没有购买 <code>Github Pro</code> 服务（这回不是钱的问题，只是找不到理由说服我自己），所以无法直接使用这个 repo 的 Github Pages 功能。退而求其次，借助<a href="https://vercel.com/" target="_blank" rel="noopener">Vercel</a>发布 html 网页。如果你对我公开笔记感兴趣，可以访问：<a href="https://notes.xiang578.com/#/page/Contents" target="_blank" rel="noopener">算法花园・笔记</a>。</p>
-<p>这周看了一些 Supermemo 相关的文章和视频，等再了解一下和大家分享。</p>
+<p>前几天听 <a href="https://twitter.com/tiensonqin" target="_blank" rel="noopener">Tienson Qin</a> 采访 <a href="https://www.xiaoyuzhoufm.com/episode/61c6cccac525309a443b5b36?s=eyJ1IjogIjYxNmFlZTVhZTBmNWU3MjNiYjhjNzE4MCJ9" target="_blank" rel="noopener">跟 Logseq 的创造者天生聊聊 Logseq 的故事 - ByteTalk | 小宇宙</a> 后，重新对 Logseq 产生兴趣（刚出的时候体验过，开源+弱化版Roam）。Logseq 支持直接导入 Roam json 文件，我大概有 2k+ 笔记，大小在 6 MB 左右。直接迁移过去有一些细节问题，以至于我发了 <a href="https://github.com/logseq/logseq/issues/3684" target="_blank" rel="noopener">Issue #3684：导入 roam json 数据后部分 blockref 无法正确显示</a>，在开发者（不知道是不是）帮助下完美解决。不过体验几个小时后，总感觉 0.5.6 版本很卡，随便进行点击操作，需要 5s 以上才会有反馈……无奈只好放弃迁移。</p>
+<p>这次体验过程中 logseq 插件 <a href="https://github.com/debanjandhar12/logseq-anki-sync" target="_blank" rel="noopener">debanjandhar12/logseq-anki-sync: An Logseq to Anki Flashcards integration plugin.</a> 给我留下深刻的印象，只需点击插件 icon 就可以通过 Anki Connect 将笔记中的卡片同步到 Anki 中（单向更新）。使用 Roam 时，我都是将需要制卡的笔记统一整理到一个文档中，然后使用 <a href="https://github.com/shiqi-lu/roam2anki" target="_blank" rel="noopener">shiqi-lu/roam2anki</a> 转换成csv 文件，最后手动导入 Anki。可见本地客户端想象空间更加强大！</p>
+<p>Logseq 本身有 Publish 功能，可以配置将全部或有 <code>public:: true</code> 属性的笔记一起导出成单个 html 文件，然后借助静态网站托管工具发布。每次都进行这样的操作也挺麻烦的，幸好前几天看到有人发布 <a href="https://github.com/pengx17/logseq-publish" target="_blank" rel="noopener">pengx17/logseq-publish: Logseq Publish Action</a> ，从而实现笔记数据推送到 github 后，自动编译 html 文件并发布。不过笔记数据存在 private repo 中，而我没有购买 <code>Github Pro</code> 服务（这回不是钱的问题，只是找不到理由说服我自己），所以无法直接使用 Github Pages 功能。退而求其次，借助 <a href="https://vercel.com/" target="_blank" rel="noopener">Vercel</a> 发布导出的网页。如果你对我公开笔记感兴趣，可以访问：<a href="https://notes.xiang578.com/#/page/Contents" target="_blank" rel="noopener">算法花园・笔记</a>。</p>
+<p>这周也看了一些 Supermemo 相关的文章和视频，等再深入体验一下和大家分享。</p>
 <p>最后，推荐一些这两周我看过觉得不错的文章：</p>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/453340208" target="_blank" rel="noopener">【ML专栏】谈一种复用CART训练中丢弃信息的改进方案 - 知乎</a>：之前一位同事的文章，对 GBDT 分裂过程的小改进。</li>
