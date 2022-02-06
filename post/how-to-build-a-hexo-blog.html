@@ -48,13 +48,13 @@
   };
 </script>
 
-  <meta name="description" content="更新历史   2015年8月15日：完成初稿 2017年10月05日：添加新主题 Even 相关内容 2017年10月11日：文章阅读次数统计 2018年1月19日： 修改页脚 2018年3月26日：双更新   前几天自己在电脑上装Linux时，不小心把博客的数据文件夹给删了。无奈重新安装，同时写下这篇备忘录以防万一。当然，经历这个失误，看来也要利用网盘对博客的一些文件进行备份。">
+  <meta name="description" content="更新历史   2015年8月15日：完成初稿 2017年10月05日：添加新主题 Even 相关内容 2017年10月11日：文章阅读次数统计 2018年1月19日：修改页脚 2018年3月26日：双更新 20220226: 首页隐藏指定文章   前几天自己在电脑上装Linux时，不小心把博客的数据文件夹给删了。无奈重新安装，同时写下这篇备忘录以防万一。当然，经历这个失误，看来也要利用网盘对博客">
 <meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从零开始利用 hexo + Github&#x2F;Coding 搭建个人博客">
 <meta property="og:url" content="https://xiang578.com/post/how-to-build-a-hexo-blog.html">
 <meta property="og:site_name" content="算法花园">
-<meta property="og:description" content="更新历史   2015年8月15日：完成初稿 2017年10月05日：添加新主题 Even 相关内容 2017年10月11日：文章阅读次数统计 2018年1月19日： 修改页脚 2018年3月26日：双更新   前几天自己在电脑上装Linux时，不小心把博客的数据文件夹给删了。无奈重新安装，同时写下这篇备忘录以防万一。当然，经历这个失误，看来也要利用网盘对博客的一些文件进行备份。">
+<meta property="og:description" content="更新历史   2015年8月15日：完成初稿 2017年10月05日：添加新主题 Even 相关内容 2017年10月11日：文章阅读次数统计 2018年1月19日：修改页脚 2018年3月26日：双更新 20220226: 首页隐藏指定文章   前几天自己在电脑上装Linux时，不小心把博客的数据文件夹给删了。无奈重新安装，同时写下这篇备忘录以防万一。当然，经历这个失误，看来也要利用网盘对博客">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://media.xiang578.com/安装hexo.jpg">
 <meta property="og:image" content="https://media.xiang578.com/部署hexo.jpg">
@@ -66,10 +66,10 @@
 <meta property="og:image" content="https://media.xiang578.com/15220743101609.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15220746073007.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15220746795739.jpg">
-<meta property="og:updated_time" content="2022-01-17T14:17:38.707Z">
+<meta property="og:updated_time" content="2022-02-06T03:17:47.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始利用 hexo + Github&#x2F;Coding 搭建个人博客">
-<meta name="twitter:description" content="更新历史   2015年8月15日：完成初稿 2017年10月05日：添加新主题 Even 相关内容 2017年10月11日：文章阅读次数统计 2018年1月19日： 修改页脚 2018年3月26日：双更新   前几天自己在电脑上装Linux时，不小心把博客的数据文件夹给删了。无奈重新安装，同时写下这篇备忘录以防万一。当然，经历这个失误，看来也要利用网盘对博客的一些文件进行备份。">
+<meta name="twitter:description" content="更新历史   2015年8月15日：完成初稿 2017年10月05日：添加新主题 Even 相关内容 2017年10月11日：文章阅读次数统计 2018年1月19日：修改页脚 2018年3月26日：双更新 20220226: 首页隐藏指定文章   前几天自己在电脑上装Linux时，不小心把博客的数据文件夹给删了。无奈重新安装，同时写下这篇备忘录以防万一。当然，经历这个失误，看来也要利用网盘对博客">
 <meta name="twitter:image" content="https://media.xiang578.com/安装hexo.jpg">
 
 <link rel="canonical" href="https://xiang578.com/post/how-to-build-a-hexo-blog.html">
@@ -248,7 +248,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-17 22:17:38" itemprop="dateModified" datetime="2022-01-17T22:17:38+08:00">2022-01-17</time>
+                <time title="修改时间：2022-02-06 11:17:47" itemprop="dateModified" datetime="2022-02-06T11:17:47+08:00">2022-02-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,7 +275,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>2.2k</span>
             </span>
 
         </div>
@@ -294,15 +294,16 @@
 <li>2015年8月15日：完成初稿</li>
 <li>2017年10月05日：添加新主题 <code>Even</code> 相关内容</li>
 <li>2017年10月11日：文章阅读次数统计</li>
-<li>2018年1月19日： 修改页脚</li>
+<li>2018年1月19日：修改页脚</li>
 <li>2018年3月26日：双更新</li>
+<li>20220226: 首页隐藏指定文章</li>
 </ul>
 <hr>
 <p>前几天自己在电脑上装Linux时，不小心把博客的数据文件夹给删了。无奈重新安装，同时写下这篇备忘录以防万一。当然，经历这个失误，看来也要利用网盘对博客的一些文件进行备份。</p>
 <a id="more"></a>
-<h3 id="安装git和node.js">安装git和Node.js</h3>
+<h3 id="安装-git-和-node.js">安装 git 和 Node.js</h3>
 <p>就是正常的在他们官网上下载最新版本，然后再点几下鼠标安装到你的电脑。不过，也许后面安装hexo时要设置node.js的环境变量，具体过程也可以百度到。</p>
-<h3 id="安装hexo">安装hexo</h3>
+<h3 id="安装-hexo">安装 hexo</h3>
 <p>打开gitbash（可能需要以管理员身份运行），利用npm命令安装。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
 <p>安装成功后大概会在shell中出现下面这样的信息 <img src="https://media.xiang578.com/安装hexo.jpg"></p>
@@ -316,7 +317,7 @@
 <p>deploy git功能相关插件，网上发布时用的……</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>附加功能有sitemap和feed插件，如果你不懂这些也没有必要安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap</span><br><span class="line">$ npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap</span><br><span class="line">$ npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
 <h3 id="第一次本地查看博客">第一次本地查看博客</h3>
 <p>执行以下命令，然后到浏览器输入localhost:4000查看。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
@@ -374,14 +375,23 @@
 <p><img src="https://media.xiang578.com/15163684556026.jpg"></p>
 <h3 id="双更新">双更新</h3>
 <p>同时在 github 和 coding 上更新，然后根据访问时的 ip 地址跳转到不同的服务上。</p>
-<p>下图框中的 a 和 b 为两个库的地址。 <img src="https://media.xiang578.com/15220743101609.jpg"></p>
-<p>github 项目中相关的地址修改 <img src="https://media.xiang578.com/15220746073007.jpg"></p>
+<p>下图框中的 a 和 b 为两个库的地址。 <img src="https://media.xiang578.com/15220743101609.jpg" alt="库的地址"></p>
+<p>github 项目中相关的地址修改 <img src="https://media.xiang578.com/15220746073007.jpg" alt="项目地址"></p>
 <p>最后，域名解析服务中添加如下的解析方式。 <img src="https://media.xiang578.com/15220746795739.jpg"></p>
 <h3 id="自动备份博客相关的源文件">自动备份博客相关的源文件</h3>
 <p>参考博文<a href="http://zhujiegao.com/2015/12/06/automatic-backup/" target="_blank" rel="noopener">自动备份Hexo博客源文件 | Jolson's Blog</a></p>
+<h3 id="设置首页隐藏指定文章">设置首页隐藏指定文章</h3>
+<p>参考 <a href="https://www.jianshu.com/p/79fe9fb9dfa0" target="_blank" rel="noopener">Hexo 设置首页隐藏指定文章 - 简书</a></p>
+<ul>
+<li>文档 YAML 中增加一个参数 <code>notshow:</code> 控制是否展示</li>
+<li>修改主题 <code>index.swig</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">  &#123;&#123; post_template.render(post, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>改成</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">  &#123;% <span class="keyword">if</span> post.notshow != <span class="literal">true</span> %&#125;</span><br><span class="line">    &#123;&#123; post_template.render(post, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>大概这样就完成一个博客的安装和部署，接下来你就可以快乐的写博客。</p>
-<h3 id="参考文章">参考文章：</h3>
+<h3 id="参考文章">参考文章</h3>
 <ul>
 <li><a href="http://www.jianshu.com/p/q81RER" target="_blank" rel="noopener">献给写作者的 Markdown 新手指南</a></li>
 <li><a href="http://zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="noopener">hexo系列教程：（二）搭建hexo博客</a></li>
@@ -479,7 +489,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git和node.js"><span class="nav-number">1.</span> <span class="nav-text">安装git和Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署hexo"><span class="nav-number">3.</span> <span class="nav-text">部署hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖包"><span class="nav-number">4.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一次本地查看博客"><span class="nav-number">5.</span> <span class="nav-text">第一次本地查看博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github相关部署和ssh设置"><span class="nav-number">6.</span> <span class="nav-text">github相关部署和ssh设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布功能部署"><span class="nav-number">7.</span> <span class="nav-text">发布功能部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装主题以next为例"><span class="nav-number">8.</span> <span class="nav-text">安装主题（以NexT为例）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">9.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题优化"><span class="nav-number">10.</span> <span class="nav-text">主题优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next主题404页面改造"><span class="nav-number">11.</span> <span class="nav-text">next主题404页面改造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多说评论改造"><span class="nav-number">12.</span> <span class="nav-text">多说评论改造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名绑定"><span class="nav-number">13.</span> <span class="nav-text">域名绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为-next-主题添加分类"><span class="nav-number">14.</span> <span class="nav-text">为 next 主题添加分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除-coding-pages-等待跳转页面"><span class="nav-number">15.</span> <span class="nav-text">去除 Coding Pages 等待跳转页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改even主题的首页"><span class="nav-number">16.</span> <span class="nav-text">修改Even主题的首页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章统计"><span class="nav-number">17.</span> <span class="nav-text">添加文章统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改页脚"><span class="nav-number">18.</span> <span class="nav-text">修改页脚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双更新"><span class="nav-number">19.</span> <span class="nav-text">双更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动备份博客相关的源文件"><span class="nav-number">20.</span> <span class="nav-text">自动备份博客相关的源文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">21.</span> <span class="nav-text">参考文章：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-git-和-node.js"><span class="nav-number">1.</span> <span class="nav-text">安装 git 和 Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-hexo"><span class="nav-number">2.</span> <span class="nav-text">安装 hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署hexo"><span class="nav-number">3.</span> <span class="nav-text">部署hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖包"><span class="nav-number">4.</span> <span class="nav-text">安装依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一次本地查看博客"><span class="nav-number">5.</span> <span class="nav-text">第一次本地查看博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github相关部署和ssh设置"><span class="nav-number">6.</span> <span class="nav-text">github相关部署和ssh设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布功能部署"><span class="nav-number">7.</span> <span class="nav-text">发布功能部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装主题以next为例"><span class="nav-number">8.</span> <span class="nav-text">安装主题（以NexT为例）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-number">9.</span> <span class="nav-text">启用主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题优化"><span class="nav-number">10.</span> <span class="nav-text">主题优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next主题404页面改造"><span class="nav-number">11.</span> <span class="nav-text">next主题404页面改造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多说评论改造"><span class="nav-number">12.</span> <span class="nav-text">多说评论改造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名绑定"><span class="nav-number">13.</span> <span class="nav-text">域名绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为-next-主题添加分类"><span class="nav-number">14.</span> <span class="nav-text">为 next 主题添加分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除-coding-pages-等待跳转页面"><span class="nav-number">15.</span> <span class="nav-text">去除 Coding Pages 等待跳转页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改even主题的首页"><span class="nav-number">16.</span> <span class="nav-text">修改Even主题的首页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章统计"><span class="nav-number">17.</span> <span class="nav-text">添加文章统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改页脚"><span class="nav-number">18.</span> <span class="nav-text">修改页脚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双更新"><span class="nav-number">19.</span> <span class="nav-text">双更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动备份博客相关的源文件"><span class="nav-number">20.</span> <span class="nav-text">自动备份博客相关的源文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置首页隐藏指定文章"><span class="nav-number">21.</span> <span class="nav-text">设置首页隐藏指定文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">22.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -563,7 +573,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">199k</span>
+    <span title="站点总字数">200k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动
   </div>
