@@ -1,4 +1,5 @@
 https://xiang578.com/post/thinking-05.html
+https://xiang578.com/post/2021.html
 https://xiang578.com/post/thinking-04.html
 https://xiang578.com/post/a-survey-of-transformers.html
 https://xiang578.com/post/thinking-03.html
@@ -7,4 +8,3 @@ https://xiang578.com/post/Thinking-01.html
 https://xiang578.com/post/symposium.html
 https://xiang578.com/post/2020.html
 https://xiang578.com/post/all-about-bert-code.html
-https://xiang578.com/post/Never-Reading-202008.html
