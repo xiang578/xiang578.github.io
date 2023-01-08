@@ -1,563 +1,183 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang='zh-Hans'><!DOCTYPE html>
+<html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="TWXGagJ1F37oqHnV7_lLU_ZDeJ1zzwseILCwLz9Dii8">
-  <meta name="baidu-site-verification" content="xf6fMthFjE">
+    <script async defer data-domain="xuanwo.io" src="https://plausible.io/js/plausible.js"></script>
 
-<link rel="stylesheet" href="/css/main.css">
+    <title>随想集</title>
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="An infrastructure engineer, focused on distributed storage system">
+<meta name="keywords" content="Technology,Code,Program,Linux,">
+<meta name="author" content="Ryenx Xiang">
 
-
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://xiang578.com').hostname,
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.7.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":true,"show_result":true,"style":"mac"},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    comments: {"style":"buttons","active":null,"storage":true,"lazyload":true,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
-  };
-</script>
-
-  <meta name="keywords" content="机器学习,深度学习,阅读">
-<meta property="og:type" content="website">
-<meta property="og:title" content="算法花园">
-<meta property="og:url" content="https://xiang578.com/categories/随想集/index.html">
-<meta property="og:site_name" content="算法花园">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法花园">
-
-<link rel="canonical" href="https://xiang578.com/categories/随想集/">
+    <meta property="og:title" content="随想集"/>
+<meta property="og:description" content="An infrastructure engineer, focused on distributed storage system"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://blog.xiang578.com/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/"/>
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: false
-  };
-</script>
-
-  <title>分类: 随想集 | 算法花园</title>
-  
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
-    <script>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-65866729-1');
-      }
-    </script>
-
-
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?d0cbaae42702a7213f06cb394a34a120";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">算法花园</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-  </div>
-
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-</div>
-
-
-<nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-desktop"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user-circle-o"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-week">
-
-    <a href="/tags/weekly/" rel="section"><i class="fa fa-fw fa-book"></i>Week</a>
-
-  </li>
-        <li class="menu-item menu-item-link">
-
-    <a href="/link/" rel="section"><i class="fa fa-fw fa-link"></i>Link</a>
-
-  </li>
-        <li class="menu-item menu-item-search">
-
-    <a href="https://www.google.com/search?q=site:xiang578.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Search</a>
-
-  </li>
-        <li class="menu-item menu-item-note">
-
-    <a href="https://notes.xiang578.com/" rel="noopener" target="_blank"><i class="fa fa-fw fa-wikipedia-w"></i>Note</a>
-
-  </li>
-  </ul>
-
-</nav>
-</div>
-    </header>
+    <link rel="shortcut icon" href="/favicon.ico">
 
     
-  <div class="reading-progress-bar"></div>
+    
+        
+        <link rel="stylesheet" href="/css/main.min.6d5b830ed67e178d4f646dddf362cba134961b866fc7920743c1017d23be47f6.css" integrity="sha256-bVuDDtZ&#43;F41PZG3d82LLoTSWG4Zvx5IHQ8EBfSO&#43;R/Y=">
+    
 
+    
+    
+    
+    <link rel="stylesheet" href="/css/docsearch.min.css" integrity="">
+    
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+    
+    
+    <script defer src="/javascript/fontawesome.min.570c1a8c9962688e72dac75b8de1264a452b47f193ced91fd393a65b6ae612ad.js" integrity="sha256-VwwajJliaI5y2sdbjeEmSkUrR/GTztkf05OmW2rmEq0="></script>
+    
 
-          <div class="content">
+    
+    
+    <script defer src="/javascript/alpine.min.703b334f9e2aa1c3dff77b7c72f97038f9dcedb0db8019dbc445ddaba6b27761.js" integrity="sha256-cDszT54qocPf93t8cvlwOPnc7bDbgBnbxEXdq6ayd2E="></script>
+    
+
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+
+    <meta name="generator" content="Hugo 0.109.0">
+</head>
+<body class="min-h-full max-w-4xl font-sans mx-4 lg:mx-auto xl:mx-auto leading-normal my-8"><header class="mx-auto">
+    <h1 class="text-center lg:text-left text-4xl text-gray-900 font-medium m-0">
+        <a class="text-gray-900" href="/">算法花园</a>
+    </h1>
+    <div class="lg:flex text-center justify-between">
+        <p class="text-lg text-gray-600">自动化, 分布式系统, 存储</p>
+        <nav class="my-auto">
+            <ul class="justify-center flex flex-wrap list-disc list-inside">
+                <li class="list-none mx-2" x-data="{ open: false }">
+                    <button class="text-gray-600" id="modal-search" role="button" @click="open = true">
+                        <i class="text-2xl fas fa-search"></i>
+                    </button>
+                    <div x-show="open" style="display:none" class="fixed z-10 mx-auto my-auto inset-0 overflow-y-auto">
+                        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                            </div>
+                            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                            <input type="search" name="search" id="search" class="focus:ring-indigo-500 block w-full m-4 px-4 sm:text-lg border-gray-300 rounded-md" placeholder="Search..." @keydown.escape="open = false" @click.away="open = false">
+                        </div>
+                    </div>
+                </li>
+                <li class="list-none mx-2">
+                    <a class="text-gray-600" href="/en-us">
+                    <i class="text-2xl fas fa-globe"></i>
+                    </a>
+                </li>
+                
+                <li class="list-none mx-2">
+                    <a class="text-gray-600" href="/index.xml">
+                        <i class="text-2xl fas fa-rss"></i>
+                    </a>
+                </li>
+                
+                <li class="list-none mx-2">
+                    <a class="text-gray-600" href="https://github.com/xiang578">
+                        <i class="text-2xl fas fa-github"></i>
+                    </a>
+                </li>
+                
+                <li class="list-none mx-2">
+                    <a class="text-gray-600" href="https://t.me/xuanwo_read_later">
+                        <i class="text-2xl fas fa-telegram-plane"></i>
+                    </a>
+                </li>
+                
+                <li class="list-none mx-2">
+                    <a class="text-gray-600" href="https://twitter.com/xiang578">
+                        <i class="text-2xl fas fa-twitter"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+    <nav class="text-center border-t border-b px-1 mt-4">
+        <ul class="list-disc list-inside">
             
+            <li class="inline-block list-none mx-4">
+                <a href="/about">关于我</a>
+            </li>
+            
+            <li class="inline-block list-none mx-4">
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li class="inline-block list-none mx-4">
+                <a href="/categories/">分类</a>
+            </li>
+            
+            <li class="inline-block list-none mx-4">
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li class="inline-block list-none mx-4">
+                <a href="/series/">系列</a>
+            </li>
+            
+            <li class="inline-block list-none mx-4">
+                <a href="/thinking/"></a>
+            </li>
+            
+            <li class="inline-block list-none mx-4">
+                <a href="/blogroll/">友链</a>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+<main class="flex-1 text-gray-900">
+    <h1 class="text-center text-5xl">随想集</h1>
+    <p class="text-center mt-4"></p>
+    <ul>
+        
+            <li class="grid grid-cols-12 mt-8">
+                <div class="col-span-2 text-center">
+                    <span class="block text-5xl font-semibold">08</span>
+                    <span class="block text-sm">Jan 2023</span>
+                </div>
+                <div class="col-span-10">
+                    <h3 class="text-2xl leading-relaxed mb-0 mt-0">
+                        <a href="/posts/test/">
+                            Test
+                        </a>
+                    </h3>
+                    <span class="leading-relaxed">
+                            
+                                这里是正文
 
-  
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">随想集
-          <small>分类</small>
-        </h1>
-      </div>
-
-      
-    <div class="collection-year">
-      <h1 class="collection-header">2022</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-02-07T19:00:11+08:00"
-              content="2022-02-07">
-          02-07
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/post/thinking-06.html" itemprop="url">
-            <span itemprop="name">【随想集】06 春节</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-01-09T19:00:11+08:00"
-              content="2022-01-09">
-          01-09
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/post/thinking-05.html" itemprop="url">
-            <span itemprop="name">【随想集】05 重新使用 Logseq</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <h1 class="collection-header">2021</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-14T19:00:11+08:00"
-              content="2021-08-14">
-          08-14
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/post/thinking-04.html" itemprop="url">
-            <span itemprop="name">【随想集】04 曾经我也想过一了百了</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-06-05T19:00:11+08:00"
-              content="2021-06-05">
-          06-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/post/thinking-03.html" itemprop="url">
-            <span itemprop="name">【随想集】03 你当像鸟飞往你的山</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-31T19:00:11+08:00"
-              content="2021-05-31">
-          05-31
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/post/Thinking-02.html" itemprop="url">
-            <span itemprop="name">【随想集】02 我曾刻意远离人群</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-03-14T19:00:11+08:00"
-              content="2021-03-14">
-          03-14
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/post/Thinking-01.html" itemprop="url">
-            <span itemprop="name">【随想集】01 我讲不清楚事情怎么办？</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
-  
+                            
+				        </span>
+                </div>
+            </li>
+        
+    </ul>
+    
 
 
 
-          </div>
-          
+</main>
 
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js" integrity="sha256-qybEsgf0PGiQS22AmoozPs09oRnSC7Gu7eBu4fbS2Ac=" crossorigin="anonymous"></script>
 <script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
+    docsearch({
+        apiKey: '27c0e8392eb621350efc7697346e28d5',
+        indexName: 'xuanwo_blog',
+        appId: '6ETF8NL8HG',
+        inputSelector: '#search',
+        debug: false,
     });
-  }
 </script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
-      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
-  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">105</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">81</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/xiang578" title="GitHub → https://github.com/xiang578" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:i@xiang578.com" title="E-Mail → mailto:i@xiang578.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/xiang578" title="Twitter → https://twitter.com/xiang578" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://t.me/xiang578" title="Telegram → https://t.me/xiang578" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → /atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
-      </span>
-  </div>
-
-
-
-      </div>
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-  <div class="beian"><a href="https://beian.miit.gov.cn" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
-  </div>
-
-<div class="copyright">
-  
-  &copy; 2015 – 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-      <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">201k</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-<script src="/js/utils.js"></script>
-<script src="/js/schemes/pisces.js"></script>
-<script src="/js/next-boot.js"></script>
-
-
-
-  
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-
 </body>
 </html>

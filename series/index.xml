@@ -1,0 +1,22 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on Xuanwo&#39;s Blog</title>
+    <link>https://blog.xiang578.com/series/</link>
+    <description>Recent content in Series on Xuanwo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    
+        <atom:link href="https://blog.xiang578.com/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>论文阅读</title>
+      <link>https://blog.xiang578.com/series/paper-reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.xiang578.com/series/paper-reading/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

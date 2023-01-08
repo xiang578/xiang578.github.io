@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://www.xiang578.com/sitemap.xml
-Sitemap: https://www.xiang578.com/baidusitemap.xml
+Disallow: /search_result/
