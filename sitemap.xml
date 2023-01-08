@@ -2,7 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.xiang578.com/thinking/thinking-06/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
     <loc>https://blog.xiang578.com/categories/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/tags/covid-19/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/tags/logseq/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/tags/readwise/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/tags/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/tags/weekly/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/thinking/</loc>
+    <lastmod>2023-01-08T23:16:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.xiang578.com/tags/hugo/</loc>
     <lastmod>2023-01-08T22:06:58+08:00</lastmod>
   </url><url>
     <loc>https://blog.xiang578.com/posts/</loc>
@@ -11,22 +41,12 @@
     <loc>https://blog.xiang578.com/posts/test/</loc>
     <lastmod>2023-01-08T22:06:58+08:00</lastmod>
   </url><url>
-    <loc>https://blog.xiang578.com/</loc>
-    <lastmod>2023-01-08T22:06:58+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.xiang578.com/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/</loc>
-    <lastmod>2023-01-08T22:06:58+08:00</lastmod>
-  </url><url>
     <loc>https://blog.xiang578.com/series/</loc>
-  </url><url>
-    <loc>https://blog.xiang578.com/tags/</loc>
   </url><url>
     <loc>https://blog.xiang578.com/about/</loc>
   </url><url>
     <loc>https://blog.xiang578.com/archives/</loc>
   </url><url>
     <loc>https://blog.xiang578.com/series/paper-reading/</loc>
-  </url><url>
-    <loc>https://blog.xiang578.com/thinking/</loc>
   </url>
 </urlset>

@@ -5,9 +5,54 @@
     <description>Recent content in 随想集 on 算法花园</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
+    <lastBuildDate>Sun, 08 Jan 2023 23:16:58 +0800</lastBuildDate>
     
         <atom:link href="https://blog.xiang578.com/thinking/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【随想集】06 一元复始，重新出发</title>
+      <link>https://blog.xiang578.com/thinking/thinking-06/</link>
+      <pubDate>Sun, 08 Jan 2023 23:16:58 +0800</pubDate>
+      
+      <guid>https://blog.xiang578.com/thinking/thinking-06/</guid>
+      <description>&lt;p&gt;距离上一次写随想集已经过去一年……趁现在是的一年开始，重新捡起这个习惯来写点东西。&lt;/p&gt;
+&lt;h2 id=&#34;生活&#34;&gt;生活&lt;/h2&gt;
+&lt;p&gt;自从去年国内放开后，大家陆续感染了新冠。随着最近一段时间开始去公司上班，我也不可避免的中招：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;周四(0105)，喉咙开始痛。&lt;/li&gt;
+&lt;li&gt;周五(0106)，喉咙还是痛，体温也到 37.5 摄氏度，晃一下脑袋都能感觉到头晕，然后整天基本上都是躺在床上发呆或者睡觉，不过测抗原还没有事。&lt;/li&gt;
+&lt;li&gt;周六(0107)，喉咙痛好一些，开始咳嗽，吃了一些 999 强力琵琶露。&lt;/li&gt;
+&lt;li&gt;周日(0108)，测出抗原阳了，然后其他症状基本上消失。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;阅读&#34;&gt;阅读&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://notes.xiang578.com/#/page/%40%E7%BF%A6%E5%95%86%EF%BC%9A%E6%AE%B7%E5%91%A8%E4%B9%8B%E5%8F%98%E4%B8%8E%E5%8D%8E%E5%A4%8F%E6%96%B0%E7%94%9F&#34;&gt;翦商：殷周之变与华夏新生&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;前一段时间挺火的历史小说，讲得是夏商周的历史。上古史的参考文献很少，作者亮点在于结合这几十年的考古成果（二里头、殷墟、周原等等）进行创造。翦商出自诗经「后稷之孙，实维太王，居岐之阳，实始翦商。」，意思是周灭商。为什么周要消灭商？商代遗址挖掘发现和甲骨文破译，商人生活中使用大量的人牲进行祭祀（比如房屋用人奠基，墓葬用人陪葬……），而且随着时间推移，祭祀规模越来越大，手段越来越残酷。作者推测周族可能长时间从事给商人捕捉祭祀用的人牲工作，随着周文王被拘和伯邑考被杀，周商矛盾激化，周武王开始伐商。周公旦在武王驾崩后，辅佐成王，创建礼乐制度。后世流传的文献没有直接记录商朝活人祭祀，可能是周公毁掉相关的档案，改写历史。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;读库 2105：垄断的困境
+&lt;ul&gt;
+&lt;li&gt;评论尸去年写的长文，围绕互联网相关垄断进行讨论。首先，定义有效垄断（建立在可行的商业模式上）以及无效垄断（任何在短期和长期均无法赚钱的垄断，都应破视为商业上的无效垄断）。一言蔽之，企业垄断的目的是赚钱。
+&lt;ul&gt;
+&lt;li&gt;无效垄断的例子正是我现在的东家：滴滴，占有网约车市场绝大部分份额却还一直在亏损，产生这种情况更多是竞争对手不想竞争，而不是不能与其竞争。&lt;/li&gt;
+&lt;li&gt;有效垄断的例子则是当年的淘宝屏蔽百度对商品详情页面的抓取，淘宝的推荐位一直是阿里重要的收入来源，其他公司也开始学着屏蔽百度爬虫，互联网变得更加割裂。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;产生大量无效垄断的根因是资本的无序扩张。&lt;/li&gt;
+&lt;li&gt;通过计算垄断的成本收益来衡量互联网企业的垄断是否合理。&lt;/li&gt;
+&lt;li&gt;最后作者还是举例了 多抓鱼，元气森林，shenin 等例子来讨论如何在巨头垄断的局面下进行创新。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;利器&#34;&gt;利器&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://logseq.com/&#34;&gt;Logseq&lt;/a&gt; 去年 9 月份开始，觉得 Roam Research 更新速度太慢，又迁移到 Logseq。为了使用同步功能，也一直是  Backers 用户（ 5$ 每月）。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://readwise.io/i/ryen05&#34;&gt;Readwise&lt;/a&gt; 高亮管理服务，用来复习 kindle，微信读书，简悦等服务上的高亮。另外也开始用它家的 &lt;a href=&#34;https://readwise.io/read&#34;&gt;Readwise Reader&lt;/a&gt; 阅读 epub 和 newsletter。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
