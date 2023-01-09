@@ -2631,63 +2631,6 @@ body {
   background: unset;
   box-shadow: unset;
 }
-.headband {
-  height: 3px;
-  background: transparent;
-}
-.site-meta {
-  padding: 20px 0;
-  color: #2e405b;
-  background: transparent;
-}
-.brand {
-  background-color: rgba(0,0,0,0);
-  margin-top: 15px;
-  padding: 0px;
-}
-.site-title {
-  font-size: 32px;
-  color: #2e405b;
-  line-height: 80px;
-  letter-spacing: 3px;
-}
-.site-subtitle {
-  margin: 0px;
-  font-size: 26px;
-  letter-spacing: 1px;
-  padding-bottom: 3px;
-  color: #2e405b;
-}
-.menu {
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 5px;
-  box-shadow: 0px 10px 10px 0px #2e405b;
-}
-.menu .menu-item a {
-  font-size: 14px;
-}
-.menu .menu-item {
-  margin: 5px 15px;
-}
-.menu .menu-item a:hover {
-  border-bottom-color: rgba(161,102,171,0);
-}
-.menu a {
-  background-color: rgba(0,0,0,0);
-  color: #2e405b;
-}
-.btn {
-  color: #49b1f5;
-  background: #fff;
-  border: 2px solid #49b1f5;
-}
-.btn:hover {
-  border-color: #49b1f5;
-  color: #fff;
-  background: #49b1f5;
-}
 /* webkit, opera, IE9 */
 ::selection {
   background: #00c4b6;
@@ -2720,6 +2663,7 @@ del {
 }
 .header {
   line-height: 1.5;
+  box-shadow: none;
 }
 .container {
   background-color: rgba(0,0,0,0);
@@ -2748,19 +2692,6 @@ code {
   color: #ff7600;
   background: #fbf7f8;
   margin: 4px;
-}
-.highlight,
-pre {
-  margin: 6px 0;
-  padding: 0px;
-}
-.highlight {
-  border-radius: 5px;
-}
-.highlight,
-code,
-pre {
-  border: 1px solid #d6d6d6;
 }
 blockquote {
   margin: 6px 0;
