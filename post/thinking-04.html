@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="null//null" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="开始前先推荐一首日文歌曲 中岛美嘉 - 曾经我也想过一了百了 以及中文填词 【小宁子】曾经我也想过一了百了》中文版 feat. 绝之望的马沙 （僕が死のうと思ったのは）。第一个链接的视频里，中岛美嘉在接近于失聪的状态唱这一首歌。可以注意细节，有时候她的脚在跺地板找节奏。 差不多两个月时间没有写随想集，自己又折腾出一个网站 Hi - 算法花园・笔记，用来分享一些不成熟的想法。 图论 - 算法花园・笔">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="【随想集】04 曾经我也想过一了百了">
+<meta property="og:url" content="https://xiang578.com/post/thinking-04.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="开始前先推荐一首日文歌曲 中岛美嘉 - 曾经我也想过一了百了 以及中文填词 【小宁子】曾经我也想过一了百了》中文版 feat. 绝之望的马沙 （僕が死のうと思ったのは）。第一个链接的视频里，中岛美嘉在接近于失聪的状态唱这一首歌。可以注意细节，有时候她的脚在跺地板找节奏。 差不多两个月时间没有写随想集，自己又折腾出一个网站 Hi - 算法花园・笔记，用来分享一些不成熟的想法。 图论 - 算法花园・笔">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://media.xiang578.com/taowen-deep-of-tech.png">
+<meta property="article:published_time" content="2021-08-14T11:00:11.000Z">
+<meta property="article:modified_time" content="2023-01-09T10:17:00.012Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="weekly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://media.xiang578.com/taowen-deep-of-tech.png">
+
+
+<link rel="canonical" href="https://xiang578.com/post/thinking-04.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiang578.com/post/thinking-04.html","path":"post/thinking-04.html","title":"【随想集】04 曾经我也想过一了百了"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【随想集】04 曾经我也想过一了百了 | 算法花园</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user-circle-o fa-fw"></i>About</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%AE%BA-%E7%AE%97%E6%B3%95%E8%8A%B1%E5%9B%AD%E3%83%BB%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">图论 - 算法花园・笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84%E6%8A%80%E6%9C%AF%E6%B7%B1%E5%BA%A6"><span class="nav-number">2.</span> <span class="nav-text">我眼中的技术深度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ise-Grand-Shrine"><span class="nav-number">3.</span> <span class="nav-text">Ise Grand Shrine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E6%97%A7%E6%96%87%E9%87%8D%E5%8F%91%E3%80%8D%EF%BC%9A2017-WF%E6%84%9F%E6%83%B3%E7%9A%84%E6%A0%A1%E5%86%85%E7%89%88%E6%9C%AC-%E7%9F%A5%E4%B9%8E-zhihu-com"><span class="nav-number">4.</span> <span class="nav-text">「旧文重发」：2017 WF感想的校内版本 - 知乎 (zhihu.com)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%BD%B1%E3%80%8A%E5%BF%83%E7%81%B5%E6%8D%95%E6%89%8B%E3%80%8B-%E8%A5%BF%E6%81%A9%E5%85%B3%E4%BA%8E%E7%9C%9F%E5%AE%9E%E6%84%9F"><span class="nav-number">5.</span> <span class="nav-text">电影《心灵捕手》 西恩关于真实感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">如何阅读？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%BE%E5%B7%B4"><span class="nav-number">7.</span> <span class="nav-text">尾巴</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/thinking-04.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【随想集】04 曾经我也想过一了百了 | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【随想集】04 曾经我也想过一了百了
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-14 19:00:11" itemprop="dateCreated datePublished" datetime="2021-08-14T19:00:11+08:00">2021-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-01-09 18:17:00" itemprop="dateModified" datetime="2023-01-09T18:17:00+08:00">2023-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">随想集</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.2k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>开始前先推荐一首日文歌曲 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1oW411b7hx">中岛美嘉 - 曾经我也想过一了百了</a> 以及中文填词 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1uW41117yV">【小宁子】曾经我也想过一了百了》中文版 feat. 绝之望的马沙 （僕が死のうと思ったのは）</a>。第一个链接的视频里，中岛美嘉在接近于失聪的状态唱这一首歌。可以注意细节，有时候她的脚在跺地板找节奏。</p>
+<p>差不多两个月时间没有写随想集，自己又折腾出一个网站 <a target="_blank" rel="noopener" href="https://note.xiang578.com/">Hi - 算法花园・笔记</a>，用来分享一些不成熟的想法。</p>
+<h2 id="图论-算法花园・笔记"><a href="#图论-算法花园・笔记" class="headerlink" title="图论 - 算法花园・笔记"></a><a target="_blank" rel="noopener" href="https://note.xiang578.com/CP/%E5%9B%BE%E8%AE%BA/">图论 - 算法花园・笔记</a></h2><p>实习的时候做过将CH中的搜索模块从双向 Dijikstra 改成双向 A*，很大一部分精力是在尝试启发函数。后来去面试时，有人给了一个启发函数，问为什么不行？<br>最近听专门做图论同事分享时，他提到一句所有图论新算法结果需要和dijkstra一致，可能这就是答案。</p>
+<p>之前做题目时，喜欢的最短路算法是 SPFA 。前几天为了面试一个候选人，特地去 oi wiki 上回顾了一下其他最短路算法，spfa的优势在于使用队列模拟优先队列，一般出题人不特殊构造图，基本上会比 Dijikstra 快。可惜当时没有改一版试试。<br>说回来，工业界看起来只有几家公司有图论方面的需求，但也能让一些人做到极致。</p>
+<h2 id="我眼中的技术深度"><a href="#我眼中的技术深度" class="headerlink" title="我眼中的技术深度"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/fN1GcC1vwZqe-UtCGBO9gg">我眼中的技术深度</a></h2><p>前几天听陶文老师参与录制播客<a target="_blank" rel="noopener" href="https://pythonhunter.org/episodes/taowen-vol1">Ep 29. 架构设计与 12fallacy（上） - 捕蛇者说</a>，想起他之前在内网写的文章。作为一名中台部门的算法工程师，其实面临的问题和业务部门的软件工程师挺类似的。</p>
+<p><img data-src="https://media.xiang578.com/taowen-deep-of-tech.png"></p>
+<p>他将工程师的主要工作是定义成：构建一个可持续运行的 solution 去解决用户的一个 problem。深度来自：运营维护这个 solution 如何降低成本以及洞察到 problem 的 new solution。你的竞争力来自：</p>
+<ul>
+<li>为什么在这个点上，我做过的工作证明了比其他同事要更强。</li>
+<li>为什么这个能力是当前公司需要的，也就是所谓的收益。</li>
+</ul>
+<h2 id="Ise-Grand-Shrine"><a href="#Ise-Grand-Shrine" class="headerlink" title="Ise Grand Shrine"></a>Ise Grand Shrine</h2><p>很难想象核心模型的训练代码，是一个 10 多人修修补补，长达1 千行的 py 文件（驼峰命名、匈牙利命名、下划线命名混合，多行类似的代码以最后一行生效等）。忍受三年之后，感觉自己有能力去重构一把。特意将分支命名为 ise_gradn_shrine，致敬之前听到的伊势神社（每一代工人之间为传递知识，二十年原地重建一次神社）。并将下面这一段话放到 README 中。</p>
+<blockquote>
+<p>Japan’s Ise Grand Shrine is an extraordinary example in that genre. Every 20 years, caretakers completely tear down the shrine and build it anew. The wooden shrine has been rebuilt again and again for 1,200 years. Locals want to make sure that they don’t ever forget the production knowledge that goes into constructing the shrine. There’s a very clear sense that the older generation wants to teach the building techniques to the younger generation: “I will leave these duties to you next time.”</p>
+</blockquote>
+<h2 id="「旧文重发」：2017-WF感想的校内版本-知乎-zhihu-com"><a href="#「旧文重发」：2017-WF感想的校内版本-知乎-zhihu-com" class="headerlink" title="「旧文重发」：2017 WF感想的校内版本 - 知乎 (zhihu.com)"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/203222250">「旧文重发」：2017 WF感想的校内版本 - 知乎 (zhihu.com)</a></h2><p>这两个月一直在强迫自己参加 LeetCode 的双周赛、周赛，现在的水平大概勉强能写出 3 题。赛后会去看一下其他人的题解，很多方法自己是绝对想不到的。机缘巧合看到戴老师的文章，自己之前也没有好好参加 rating 比赛，缺少一份面对真实的勇气。有时候点开 LeetCode 比赛在想，如果这场我一题都不会怎么办？可能唯一的选择是在电脑前坐满两个小时。最后文章里面提到要培养思维，还在上学时被人家评价「只会暴力」，这也是我欠缺的，所以现在打完比赛都会进行简单复盘，自己我感觉挺有收获的，极端方法应该是录屏分析。程序设计竞赛对于我意味着什么？可能山就在那里。</p>
+<blockquote>
+<p> 个人实力保证队伍下限，队伍配合决定队伍的上限。<br>有趣的是，可能是受我之前的错误观念的影响，我们学校这么些年来真正高分 rating 选手确实是少之又少，很多 final 选手甚至不爱打线上比赛（例如 luyi 学长）。即使参加比赛，也总是喜欢开小号，开黑，而不是认认真真的一路做到底。开小号有个什么坏处呢？赢了是我吊，输了不丢人，这种心态就不是个正常打比赛的心态，等到了关键时候，不能开小号了，心理就可能承受不住压力崩溃。<br> 所以做一道题，如果做不出来，看题解不丢人，但要仔细想想：为什么自己想不出来？解题的切入点应该怎么分析出来？以后遇到类似思路、类似条件的题目应该出哪里下手？要及早建立自己的规范的思维方式和体系，这样无论是在竞赛中，还是在以后的学习、工作中，都能发挥重要的作用。</p>
+</blockquote>
+<h2 id="电影《心灵捕手》-西恩关于真实感"><a href="#电影《心灵捕手》-西恩关于真实感" class="headerlink" title="电影《心灵捕手》 西恩关于真实感"></a>电影《心灵捕手》 西恩关于真实感</h2><blockquote>
+<p>你只是个孩子，你根本不晓得你在说什麽。   问你艺术，你可能会提出艺术书籍中的粗浅论调，有关米开朗基罗，你知道很多，他的满腔政治热情，他与教皇相交莫逆，和他的耽于性爱，你对他很清楚吧？但你知道西斯汀教堂的气味吗？你没试过站在那儿，昂首眺望天花板上的名画吧？你肯定未见过吧？</p>
+</blockquote>
+<h2 id="如何阅读？"><a href="#如何阅读？" class="headerlink" title="如何阅读？"></a>如何阅读？</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://einverne.github.io/post/2021/05/is-reading-the-only-important-thing.html">读书是否是唯一重要的事？ | Verne in GitHub (einverne.github.io)</a>：读书与实践的关系。</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhuoxi.me/2020/12/%E5%88%B0%E5%BA%95%E8%A6%81%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E8%AF%BB%E4%B9%A6%E5%91%A2-2021%E5%B9%B4%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92-%E6%9C%80%E5%A4%9A%E5%8F%AA%E8%AF%BB50%E6%9C%AC/">到底要如何有效读书呢 - 2021年读书计划， 最多只读50本 (zhuoxi.me)</a></li>
+</ul>
+<h2 id="尾巴"><a href="#尾巴" class="headerlink" title="尾巴"></a>尾巴</h2><p>推特上冲浪时看到一个问题「数学是发明还是发现？」</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/weekly/" rel="tag"># weekly</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/a-survey-of-transformers.html" rel="prev" title="A Survey of Transformers 笔记">
+                  <i class="fa fa-chevron-left"></i> A Survey of Transformers 笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/thinking-05.html" rel="next" title="【随想集】05 重新使用 Logseq">
+                  【随想集】05 重新使用 Logseq <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">202k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="null//null" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="FTRL 是 Google 提出的一种优化算法。常规的优化方法例如梯度下降、牛顿法等属于批处理算法，每次更新需要对 batch 内的训练样本重新训练一遍。在线学习场景下，我们希望模型迭代速度越快越好。例如用户发生一次点击行为后，模型就能快速进行调整。FTRL 在这个场景中能求解出稀疏化的模型。 基础知识 L1 正则比 L2 正则可以产生更稀疏的解。 次梯度：对于 L1 正则在 $x&#x3D;0$">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="(FTRL) Follow The Regularized Leader">
+<meta property="og:url" content="https://xiang578.com/post/ftrl.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="FTRL 是 Google 提出的一种优化算法。常规的优化方法例如梯度下降、牛顿法等属于批处理算法，每次更新需要对 batch 内的训练样本重新训练一遍。在线学习场景下，我们希望模型迭代速度越快越好。例如用户发生一次点击行为后，模型就能快速进行调整。FTRL 在这个场景中能求解出稀疏化的模型。 基础知识 L1 正则比 L2 正则可以产生更稀疏的解。 次梯度：对于 L1 正则在 $x&#x3D;0$">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://media.xiang578.com/15780559628822.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15780576261639.jpg">
+<meta property="article:published_time" content="2020-01-03T13:26:06.000Z">
+<meta property="article:modified_time" content="2023-01-09T10:17:00.008Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="fm">
+<meta property="article:tag" content="google">
+<meta property="article:tag" content="ml">
+<meta property="article:tag" content="ftrl">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://media.xiang578.com/15780559628822.jpg">
+
+
+<link rel="canonical" href="https://xiang578.com/post/ftrl.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiang578.com/post/ftrl.html","path":"post/ftrl.html","title":"(FTRL) Follow The Regularized Leader"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>(FTRL) Follow The Regularized Leader | 算法花园</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user-circle-o fa-fw"></i>About</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTL"><span class="nav-number">2.</span> <span class="nav-text">FTL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%90%86%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">代理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E8%BF%87%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">推导过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTRL-%E5%92%8C-SGD-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">5.</span> <span class="nav-text">FTRL 和 SGD 的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTRL-%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">FTRL 工程化伪代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%EF%BC%9AFM-%E4%BD%BF%E7%94%A8-FTRL-%E4%BC%98%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">例：FM 使用 FTRL 优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/ftrl.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="(FTRL) Follow The Regularized Leader | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          (FTRL) Follow The Regularized Leader
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-01-03 21:26:06" itemprop="dateCreated datePublished" datetime="2020-01-03T21:26:06+08:00">2020-01-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-01-09 18:17:00" itemprop="dateModified" datetime="2023-01-09T18:17:00+08:00">2023-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.1k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>FTRL 是 Google 提出的一种优化算法。常规的优化方法例如梯度下降、牛顿法等属于批处理算法，每次更新需要对 batch 内的训练样本重新训练一遍。在线学习场景下，我们希望模型迭代速度越快越好。例如用户发生一次点击行为后，模型就能快速进行调整。FTRL 在这个场景中能求解出稀疏化的模型。</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
+<li>L1 正则比 L2 正则可以产生更稀疏的解。</li>
+<li>次梯度：对于 L1 正则在 $x&#x3D;0$ 处不可导的情况，使用次梯度下降来解决。次梯度对应一个集合 ${v: v(x-x_t) \le f(x)-f(x_t)}$，集合中的任意一个元素都能被当成次梯度。以 L1 正则为例，非零处梯度是 1 或 -1，所以 $x&#x3D;0$ 处的次梯度可以取 $[-1, 1]$ 之内任意一个值。</li>
+</ul>
+<h2 id="FTL"><a href="#FTL" class="headerlink" title="FTL"></a>FTL</h2><p>FTL(Follow The Leader) 算法：每次找到让之前所有损失函数之和最小的参数。</p>
+<p>$$W&#x3D;argmin_W \sum^t_{i&#x3D;1}F_i(W)$$</p>
+<p>FTRL 中的 R 是 Regularized，可以很容易猜出来在 FTL 的基础上加正则项。</p>
+<p>$$W&#x3D;argmin_W \sum^t_{i&#x3D;1}F_i(W) + R(W)$$</p>
+<h2 id="代理函数"><a href="#代理函数" class="headerlink" title="代理函数"></a>代理函数</h2><p>FTRL 的损失函数直接很难求解，一般需要引入一个代理损失函数 $h(w)$。代理损失函数常选择比较容易求解析解以及求出来的解和优化原函数得到的解差距不能太大。</p>
+<p>我们通过两个解之间的距离 Regret 来衡量效果：</p>
+<p>$$<br>\begin{array}{c}{w_{t}&#x3D;\operatorname{argmin}<em>{w} h</em>{t-1}(w)} \ {\text {Regret}<em>{t}&#x3D;\sum</em>{t&#x3D;1}^{T} f_{t}\left(w_{t}\right)-\sum_{t&#x3D;1}^{T} f_{t}\left(w^{*}\right)}\end{array}<br>$$</p>
+<p>其中 $w^{*}$ 是直接优化 FTRL 算法得到的参数。当距离满足 $\lim <em>{t \rightarrow \infty} \frac{\text {Regret}</em>{t}}{t}&#x3D;0$，损失函数认为是有效的。其物理意义是，随着训练样本的增加，两个优化目标优化出来的参数效果越接近。</p>
+<h2 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h2><p>参数 $w_{t+1}$ 的迭代公式：</p>
+<p>$${w_{t+1}&#x3D;argmin_w{ g_{(1:t)}w + \frac{1}{2} \sum_{s&#x3D;1}^t \sigma_s \lVert w - w_s \rVert ^2   + \lambda_1 \lVert W \rVert_1 + \frac{1}{2} \lambda_2 \lVert W \rVert^2 }}$$</p>
+<p>其中 $g_{(1:t)}&#x3D;\sum^{t}<em>{s&#x3D;1}g_s$，$g_s$ 为 $f(w_s)$ 的次梯度。参数 $\sum^t</em>{s&#x3D;1}\sigma_s&#x3D;\frac{1}{\eta _t}$，学习率 $\eta _t &#x3D; \frac{1}{\sqrt{t}}$，随着迭代轮数增加而减少。</p>
+<p>展开迭代公式</p>
+<p>$${F(w)&#x3D;  g_{(1:t)}w + \frac{1}{2} \sum_{s&#x3D;1}^t \sigma_s \lVert w - w_s \rVert ^2   + \lambda_1 \lVert W \rVert_1 + \frac{1}{2} \lambda_2 \lVert W \rVert^2 }$$</p>
+<p>$${F(w)&#x3D;  g_{(1:t)}w + \frac{1}{2} \sum_{s&#x3D;1}^t \sigma_s ( w^Tw - 2w^Tw_s + w_s^Tw_s)   + \lambda_1 \lVert W \rVert_1 + \frac{1}{2} \lambda_2 \lVert W \rVert^2 }$$</p>
+<p>$${F(w)&#x3D;  (g_{(1:t)} - \sum_{s&#x3D;1}^t \sigma_s w_s)w + \frac{1}{2} (\sum_{s&#x3D;1}^t \sigma_s + \lambda_2) w^Tw   + \lambda_1 \lVert W \rVert_1 + const }$$</p>
+<p>$${F(w)&#x3D;  z_t^Tw + \frac{1}{2} (\frac{1}{\eta _t} + \lambda_2) w^Tw   + \lambda_1 \lVert W \rVert_1 + const }$$</p>
+<p>其中 ${z_{t-1}&#x3D;g^{(1:t-1)} - \sum_{s&#x3D;1}^{t-1} \sigma_s w_s}$。</p>
+<p>对 $F(w)$ 求偏导得到：</p>
+<p>$${z_t + (\frac{1}{\eta _t} + \lambda_2) w + \lambda_1 \partial \lvert W \rvert &#x3D; 0}$$</p>
+<p>$w$ 和 $z$ 异号时，等式成立。</p>
+<p>根据基础知识里面提到的对于 L1 正则利用偏导数代替无法求解的情况，得到：</p>
+<p>$$<br>\partial|W|&#x3D;\left{\begin{array}{ll}{0,} &amp; {\text { if }-1&lt;w&lt;1} \ {1,} &amp; {\text { if } w&gt;1} \ {-1,} &amp; {\text { if } w&lt;-1}\end{array}\right.<br>$$</p>
+<ol>
+<li>当 ${  z_t  &gt; \lambda_1}$ 时，${w_i &lt; 0}$ , ${w_i &#x3D; \frac{- z_t + \lambda_1 }{\frac{1}{\eta _t} + \lambda_2 }}$</li>
+<li>当 ${  z_t &lt; - \lambda_1}$ 时，${w_i &gt; 0}$ , ${w_i &#x3D; \frac{- z_t - \lambda_1 }{\frac{1}{\eta _t} + \lambda_2 }}$</li>
+<li>当 ${ \lvert z_t \rvert &lt; \lambda_1}$ 时，当且仅当 ${w_i&#x3D;0}$ 成立</li>
+</ol>
+<p>因此可得：</p>
+<p>$$<br>w_{i}&#x3D;\left{\begin{array}{ll}{0,} &amp; {\text { if }\left|z_{i}\right| \leq \lambda_{1}} \ {\frac{-\left(z_{i}-\text sgn(z_i) \lambda_{1}\right)}{\eta_{t}+\lambda_{2}},} &amp; {\text { if others }}\end{array}\right.<br>$$</p>
+<h2 id="FTRL-和-SGD-的关系"><a href="#FTRL-和-SGD-的关系" class="headerlink" title="FTRL 和 SGD 的关系"></a>FTRL 和 SGD 的关系</h2><p>将 SGD 的迭代公式写成：${W^{t+1}&#x3D;W^t - \eta _tg_t}$</p>
+<p>FTRL 迭代公式为：${W^{t+1}&#x3D;argmin_w{ G^{(1:t)}W + \lambda_1 \lVert W \rVert_1 +\lambda_2 \frac{1}{2} \lVert W \rVert }}$</p>
+<p>代入 ${\sum^t_{s&#x3D;1}\sigma _s&#x3D; \frac{1}{\eta <em>t}}$ 到上面的公式中，得到 ${W^{t+1}&#x3D;argmin_w{ \sum_t^{s&#x3D;1}g_sW + \frac{1}{2} \sum^t</em>{s&#x3D;1}\sigma _s\lVert W - W_s \rVert_2^2 }}$</p>
+<p>求偏导得到 ${\frac{\partial f(w)}{\partial w} &#x3D; \sum^t_{s&#x3D;1}g_s +  \sum^t_{s&#x3D;1}\sigma _s( W - W_s )}$</p>
+<p>令偏导等于 0 ：${\sum^t_{s&#x3D;1}g_s +  \sum^t_{s&#x3D;1}\sigma _s( W^{t+1} - W_s ) &#x3D; 0}$</p>
+<p>化简得到：${(\sum^t_{s&#x3D;1}\sigma <em>s) W^{t+1} &#x3D; \sum^t</em>{s&#x3D;1}\sigma <em>s W^{s} -  \sum^t</em>{s&#x3D;1}g_s}$</p>
+<p>代入 $\sigma$：${\frac{1}{\eta <em>t} W^{t+1} &#x3D; \sum^t</em>{s&#x3D;1}\sigma <em>s W^{s} -  \sum^t</em>{s&#x3D;1}g_s}$</p>
+<p>根据上一个公式得出上一轮的迭代公式：${\frac{1}{\eta <em>{t-1}} W^{t} &#x3D; \sum^{t-1}</em>{s&#x3D;1}\sigma <em>s W^{s} -  \sum^{t-1}</em>{s&#x3D;1}g_s}$</p>
+<p>两式相减：${\frac{1}{\eta _t} W^{t+1} - \frac{1}{\eta _{t-1}} W^{t} &#x3D; (\frac{1}{\eta _t} - \frac{1}{\eta _{t-1}}) W_t - g_t}$</p>
+<p>最终化简得到和 SGD 迭代公式相同的公式：${W_{t+1} &#x3D; W_t - \eta_t g_t}$</p>
+<h2 id="FTRL-工程化伪代码"><a href="#FTRL-工程化伪代码" class="headerlink" title="FTRL 工程化伪代码"></a>FTRL 工程化伪代码</h2><p>引用自论文 <a target="_blank" rel="noopener" href="https://static.googleusercontent.com/media/research.google.com/zh-CN//pubs/archive/41159.pdf">Ad Click Prediction: a View from the Trenches</a></p>
+<p>下面的伪代码中学习率和前面公式推导时使用的一些不一样： $\eta_{t_{i}}&#x3D;\frac{\alpha}{\beta+\sqrt{\sum_{s&#x3D;1}^{t} g_{s_{i}}^{2}}}$。Facebook 在 GBDT + LR 的论文中研究过不同的学习率影响，具体可以参看博文 <a href="https://xiang578.com//post/media/gbdt_lr.html#%E5%AD%A6%E4%B9%A0%E7%8E%87%E9%80%89%E6%8B%A9">Practical Lessons from Predicting Clicks on Ads at Facebook(gbdt + lr) | 算法花园</a>。</p>
+<p><img data-src="https://media.xiang578.com/15780559628822.jpg" alt="FTRL"></p>
+<h2 id="例：FM-使用-FTRL-优化"><a href="#例：FM-使用-FTRL-优化" class="headerlink" title="例：FM 使用 FTRL 优化"></a>例：FM 使用 FTRL 优化</h2><p>FM 是工业界常用的机器学习算法，在之前博文 <a href="https://xiang578.com/post/fm.html">(FM)Factorization Machines</a> 中有简单的介绍。内部的 FTRL+FM 代码没有开源，所以也不好分析。从 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58508137">FM+FTRL算法原理以及工程化实现 - 知乎</a> 中找了一张 FTRL+FM 的伪代码图片。</p>
+<p><img data-src="https://media.xiang578.com/15780576261639.jpg"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://tech.meituan.com/2016/04/21/online-learning.html">Online Learning算法理论与实践 - 美团技术团队</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32694097">FTRL公式推导 - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/fangqingan_java/article/details/51020653">每周一文】Ad Click Prediction: a View from the Trenches(2013)_机器学习,CTR,online_fangqingan_java的专栏-CSDN博客</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/fm/" rel="tag"># fm</a>
+              <a href="/tags/google/" rel="tag"># google</a>
+              <a href="/tags/ml/" rel="tag"># ml</a>
+              <a href="/tags/ftrl/" rel="tag"># ftrl</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/monthly-issue-202001.html" rel="prev" title="每月分享 202001 Fine-Tune Your Days">
+                  <i class="fa fa-chevron-left"></i> 每月分享 202001 Fine-Tune Your Days
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/gbdt.html" rel="next" title="All About GBDT (1)">
+                  All About GBDT (1) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">202k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+</body>
+</html>

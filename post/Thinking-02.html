@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="null//null" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="开始之前推荐一首歌 3055 - Ólafur Arnalds。 1. 我曾刻意远离人群五一前，遭受打击，开始陷入自我怀疑中。想起吴岭南在「无闻西东」中的一段台词：  当我在你们这个年纪，有段时间，我远离人群，独自思索，我的人生到底应该怎样度过？某日，我偶然去图书馆，听到泰戈尔的演讲，而陪同在泰戈尔身边的人，是当时最卓越的一群人，这些人站在那里，自信而笃定，那种从容让我十分羡慕。而泰戈尔，正在讲“">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="【随想集】02 我曾刻意远离人群">
+<meta property="og:url" content="https://xiang578.com/post/Thinking-02.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="开始之前推荐一首歌 3055 - Ólafur Arnalds。 1. 我曾刻意远离人群五一前，遭受打击，开始陷入自我怀疑中。想起吴岭南在「无闻西东」中的一段台词：  当我在你们这个年纪，有段时间，我远离人群，独自思索，我的人生到底应该怎样度过？某日，我偶然去图书馆，听到泰戈尔的演讲，而陪同在泰戈尔身边的人，是当时最卓越的一群人，这些人站在那里，自信而笃定，那种从容让我十分羡慕。而泰戈尔，正在讲“">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-31T11:00:11.000Z">
+<meta property="article:modified_time" content="2023-01-09T10:17:00.008Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="weekly">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://xiang578.com/post/Thinking-02.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiang578.com/post/Thinking-02.html","path":"post/Thinking-02.html","title":"【随想集】02 我曾刻意远离人群"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【随想集】02 我曾刻意远离人群 | 算法花园</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user-circle-o fa-fw"></i>About</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%88%91%E6%9B%BE%E5%88%BB%E6%84%8F%E8%BF%9C%E7%A6%BB%E4%BA%BA%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">1. 我曾刻意远离人群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E7%BB%99%E6%88%91%E4%BA%94%E6%9C%88-%E4%BB%A5%E5%8F%8A-%E9%80%83%E7%A6%BB%E9%9F%A9%E6%96%99%E5%BA%97"><span class="nav-number">1.1.</span> <span class="nav-text">请给我五月 以及 逃离韩料店</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%88%91%E5%88%B0%E4%BA%86%E5%8F%82%E5%8A%A0%E8%91%AC%E7%A4%BC%E7%9A%84%E5%B9%B4%E7%BA%AA"><span class="nav-number">2.</span> <span class="nav-text">2. 我到了参加葬礼的年纪</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E6%A2%A6%E7%8E%AF%E6%B8%B8%E8%AE%B0"><span class="nav-number">2.1.</span> <span class="nav-text">寻梦环游记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%BA%E7%94%9F%E6%80%BB%E6%9C%89%E4%B8%80%E5%88%BB%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BC%9A%E5%BC%80%E5%A7%8B%E6%80%9D%E8%80%83%E6%AD%BB%E4%BA%A1-%E7%9F%A5%E4%B9%8E"><span class="nav-number">2.2.</span> <span class="nav-text">人生总有一刻，我们会开始思考死亡 - 知乎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambda-Reading-%E8%BF%99%E9%87%8C%E8%95%B4%E6%B6%B5%E7%9D%80%E4%B8%96%E7%95%8C%E5%92%8C%E7%81%B5%E9%AD%82%E7%9A%84%E6%95%91%E8%B5%8E%E4%BB%A5%E5%8F%8A%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1%E7%9A%84%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-number">2.3.</span> <span class="nav-text">Lambda-Reading 这里蕴涵着世界和灵魂的救赎以及关于死亡的读书笔记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#People-Die-but-Long-Live-GitHub-laike9m%E2%80%99s-blog"><span class="nav-number">2.4.</span> <span class="nav-text">People Die, but Long Live GitHub - laike9m’s blog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%8E%E5%A0%A1-17%EF%BC%9A%E5%BE%88%E9%AB%98%E5%85%B4%E9%81%87%E8%A7%81%E4%BD%A0%E2%80%A6%E2%80%A6-%C2%B7-%E8%AF%AD%E9%9B%80-yuque-com"><span class="nav-number">2.5.</span> <span class="nav-text">城堡 17：很高兴遇见你…… · 语雀 (yuque.com)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E8%BF%AA%E6%8B%9C%E5%AD%9D%E5%AD%90%E3%80%91-%E9%83%AD%E9%BA%92%E9%BA%9F-%E9%98%8E%E9%B9%A4%E7%A5%A5-%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9-bilibili"><span class="nav-number">2.6.</span> <span class="nav-text">【迪拜孝子】 郭麒麟 阎鹤祥_哔哩哔哩_bilibili</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/Thinking-02.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【随想集】02 我曾刻意远离人群 | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【随想集】02 我曾刻意远离人群
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-31 19:00:11" itemprop="dateCreated datePublished" datetime="2021-05-31T19:00:11+08:00">2021-05-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-01-09 18:17:00" itemprop="dateModified" datetime="2023-01-09T18:17:00+08:00">2023-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">随想集</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>开始之前推荐一首歌 <a target="_blank" rel="noopener" href="https://music.163.com/#/song?id=16139381">3055 - Ólafur Arnalds</a>。</p>
+<h2 id="1-我曾刻意远离人群"><a href="#1-我曾刻意远离人群" class="headerlink" title="1. 我曾刻意远离人群"></a>1. 我曾刻意远离人群</h2><p>五一前，遭受打击，开始陷入自我怀疑中。想起吴岭南在「无闻西东」中的一段台词：</p>
+<blockquote>
+<p>当我在你们这个年纪，有段时间，我远离人群，独自思索，我的人生到底应该怎样度过？某日，我偶然去图书馆，听到泰戈尔的演讲，而陪同在泰戈尔身边的人，是当时最卓越的一群人，这些人站在那里，自信而笃定，那种从容让我十分羡慕。而泰戈尔，正在讲“对自己的真实”有多么重要，那一刻，我从思索生命意义的羞耻感中，释放出来。原来这些卓越的人物，也认为花时间思考这些，谈论这些，是重要的。今天，我把泰戈尔的诗介绍给你们，希望你们在今后的岁月里，不要放弃对生命的思索，对自己的真实。</p>
+</blockquote>
+<h3 id="请给我五月-以及-逃离韩料店"><a href="#请给我五月-以及-逃离韩料店" class="headerlink" title="请给我五月 以及 逃离韩料店"></a><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/lB2whRNySiZrBLWHIEpkUA">请给我五月</a> 以及 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIyNzA5ODg5NA==&mid=2647828222&idx=1&sn=97a2bb46a3416ff2dadc13c3a4978f01&chksm=f0406e9fc737e7892dd99b511d4ace483703ad322b7baa46e2be8327de9b6b35a755ea37b969&scene=21#wechat_redirect">逃离韩料店</a></h3><p>Hayami，拼多多 PM（写出这个多少怀疑自己是时间太多从而导致什么都不想干），一直觉得她的文字很温暖。这两篇文章分别是她在 23 岁以及 24 岁生日所写，有时候读其他人的记录相当于给自己照镜子。5 月我也很长时间怀疑人生没有意义，甚至读到哲学史中的「所有形而上学的问题都没有答案」时还有一些激动。后来渐渐明白，自己更大的问题是不知道如何做到自己认为的人生意义。阅读不是解决孤独的方法，创造才是，所以才鼓起勇气重新写下这篇随想集。</p>
+<p>用创作来「抵抗」惯性、「抵抗」生活日复一日的琐屑：</p>
+<ul>
+<li>当你觉得什么事情都提不起兴趣的时候，不要让惯性吞没了自己，去做点什么吧，至少做点什么事情。</li>
+<li>洛克菲勒的信中说，克服绝望的方式只有一种，那就是持续（用自己的行动和努力）创造出各种可能性以跨越障碍。</li>
+<li>如果想去建立自己的社会关系，想去结识丰满有趣的人类，最有效的方法就是成为他们想要认识的人。而成为他们想要认识的人，就是要去创作。</li>
+<li>豆瓣上有个很热门的广播提问—「大家生活的支点究竟是什么呢？（换句话说，究竟是因为什么东西所以愿意承受和忍耐生活中无穷无尽的困难和苦难呢？）」<ul>
+<li>排名分先后：想象力，创作，爱。简言之，是自己信仰的价值体系，包括超越性的审美和智性的情感。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-我到了参加葬礼的年纪"><a href="#2-我到了参加葬礼的年纪" class="headerlink" title="2. 我到了参加葬礼的年纪"></a>2. 我到了参加葬礼的年纪</h2><p>外公在 4 月 30 日选择离开我们，对他的印象永远停留今年春节。5 月 10 日葬礼前，一直在家里休假，特地去看一些和死亡相关的内容。</p>
+<h3 id="寻梦环游记"><a href="#寻梦环游记" class="headerlink" title="寻梦环游记"></a>寻梦环游记</h3><p>人的一生，要死去三次：</p>
+<ul>
+<li>第一次，当你的心跳停止，呼吸消逝，你在生物学上被宣告了死亡；</li>
+<li>第二次，当你下葬，人们穿着黑衣出席你的葬礼，他们宣告，你在这个社会上不复存在，你悄然离去；</li>
+<li>第三次，是这个世界上最后一个记得你的人，把你忘记，于是，你就真正的死去，整个宇宙都不再和你有关。</li>
+</ul>
+<h3 id="人生总有一刻，我们会开始思考死亡-知乎"><a href="#人生总有一刻，我们会开始思考死亡-知乎" class="headerlink" title="人生总有一刻，我们会开始思考死亡 - 知乎"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24640592">人生总有一刻，我们会开始思考死亡 - 知乎</a></h3><p>于是我发现，面对死亡最终可能只有两种方法：</p>
+<ul>
+<li>一种是将自己与一些更宏大的东西联系起来：一个数学定理、一本文学著作、一件艺术作品或一种恒久的信仰。马尔克斯与康德靠《百年孤独》与《[[纯粹理性批判]]》遗世独立，米开朗基罗把《创世纪》和《最后的审判》印刻在西斯廷大教堂里，供千万后朝拜——他们肉身虽灭，但精神不朽——反正建筑是永远戳在那儿的。</li>
+<li>还有一种就是，生活在当下的每个瞬间里，不烦扰过去、不担忧将来。</li>
+</ul>
+<h3 id="Lambda-Reading-这里蕴涵着世界和灵魂的救赎以及关于死亡的读书笔记"><a href="#Lambda-Reading-这里蕴涵着世界和灵魂的救赎以及关于死亡的读书笔记" class="headerlink" title="Lambda-Reading 这里蕴涵着世界和灵魂的救赎以及关于死亡的读书笔记"></a><a target="_blank" rel="noopener" href="https://rizi.me/#2019%E5%B9%B410%E6%9C%8830%E6%97%A5%E5%91%A8%E4%B8%89%E4%B8%8B%E5%8D%8804%3A02%3A39:%E3%8B%A1%20%E7%AD%89%E5%BE%85%E4%BB%96%E7%9A%84%E6%AD%BB%E4%BA%A1%202019%E5%B9%B410%E6%9C%8830%E6%97%A5%E5%91%A8%E4%B8%89%E4%B8%8B%E5%8D%8804%3A02%3A39">Lambda-Reading 这里蕴涵着世界和灵魂的救赎以及关于死亡的读书笔记</a></h3><p>临终者的五大遗憾、《天堂的证据》、《陪伴生命》（我从临终病人眼中看到的幸福）、《与神对话》、《耶鲁大学公开课：死亡》、《死亡如此多情》（百位临床医生口述的临终事件）、《向死而生》</p>
+<h3 id="People-Die-but-Long-Live-GitHub-laike9m’s-blog"><a href="#People-Die-but-Long-Live-GitHub-laike9m’s-blog" class="headerlink" title="People Die, but Long Live GitHub - laike9m’s blog"></a><a target="_blank" rel="noopener" href="https://laike9m.com/blog/people-die-but-long-live-github,122/">People Die, but Long Live GitHub - laike9m’s blog</a></h3><blockquote>
+<p>目前来看，我认为 GitHub 是在百年尺度上存储信息并让其能被访问的<strong>唯一</strong>途径。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://joearms.github.io/#2013-11-21%20My%20favorite%20Erlang%20Program">Joe’s Blog — a non-linear personal web notebook</a> 临终前把博客文章用 TiddlyWiki 保存在 Github，并且写到「I hope the blog will be readable in 100+ years time.」也许 Github 是我们这个时代的数字公墓（不老阁）。</p>
+<h3 id="城堡-17：很高兴遇见你……-·-语雀-yuque-com"><a href="#城堡-17：很高兴遇见你……-·-语雀-yuque-com" class="headerlink" title="城堡 17：很高兴遇见你…… · 语雀 (yuque.com)"></a><a target="_blank" rel="noopener" href="https://www.yuque.com/gaohui-bdaa2/chengbao/lug9lw">城堡 17：很高兴遇见你…… · 语雀 (yuque.com)</a></h3><p>我和解的方式是，也曾经让外公在某些时刻高兴过。</p>
+<h3 id="【迪拜孝子】-郭麒麟-阎鹤祥-哔哩哔哩-bilibili"><a href="#【迪拜孝子】-郭麒麟-阎鹤祥-哔哩哔哩-bilibili" class="headerlink" title="【迪拜孝子】 郭麒麟 阎鹤祥_哔哩哔哩_bilibili"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1XX4y1V7bG">【迪拜孝子】 郭麒麟 阎鹤祥_哔哩哔哩_bilibili</a></h3><p>郭麒麟在《欢乐戏剧人》一个相声的链接，这个节目改编自传统相声《福寿全》。大概情节是，一个人用钱忽悠另外一个人穿麻带孝，给号称死去的老富翁当孝子。现在想起来，这是我第一次关于葬礼的练习。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/weekly/" rel="tag"># weekly</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/Thinking-01.html" rel="prev" title="【随想集】01 我讲不清楚事情怎么办？">
+                  <i class="fa fa-chevron-left"></i> 【随想集】01 我讲不清楚事情怎么办？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/thinking-03.html" rel="next" title="【随想集】03 你当像鸟飞往你的山">
+                  【随想集】03 你当像鸟飞往你的山 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">202k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+</body>
+</html>

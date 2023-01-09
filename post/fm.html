@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="null//null" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在 2010 年提出,是一种常用的因子机模型。 FM假设现在有一个电影评分的任务，给定如下如所示的特征向量 x（包括用户名、当前在看的电影、已经打分的电影、时间特征、之前看的电影），预测用户对当前观看电影的评分。  作者在线性回归模型的基础上，添加交叉项部分，用">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="(FM) Factorization Machines">
+<meta property="og:url" content="https://xiang578.com/post/fm.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在 2010 年提出,是一种常用的因子机模型。 FM假设现在有一个电影评分的任务，给定如下如所示的特征向量 x（包括用户名、当前在看的电影、已经打分的电影、时间特征、之前看的电影），预测用户对当前观看电影的评分。  作者在线性回归模型的基础上，添加交叉项部分，用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://media.xiang578.com/15643023365227.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643037118475.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643059963915.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643076111641.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15643086043204.jpg">
+<meta property="article:published_time" content="2019-07-28T10:18:52.000Z">
+<meta property="article:modified_time" content="2023-01-09T10:17:00.008Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="fm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://media.xiang578.com/15643023365227.jpg">
+
+
+<link rel="canonical" href="https://xiang578.com/post/fm.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiang578.com/post/fm.html","path":"post/fm.html","title":"(FM) Factorization Machines"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>(FM) Factorization Machines | 算法花园</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user-circle-o fa-fw"></i>About</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FM"><span class="nav-number">1.</span> <span class="nav-text">FM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FM-vs-SVM"><span class="nav-number">1.1.</span> <span class="nav-text">FM vs SVM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rank"><span class="nav-number">1.2.</span> <span class="nav-text">Rank</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NFM"><span class="nav-number">2.</span> <span class="nav-text">NFM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AFM"><span class="nav-number">3.</span> <span class="nav-text">AFM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/fm.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="(FM) Factorization Machines | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          (FM) Factorization Machines
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-07-28 18:18:52" itemprop="dateCreated datePublished" datetime="2019-07-28T18:18:52+08:00">2019-07-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-01-09 18:17:00" itemprop="dateModified" datetime="2023-01-09T18:17:00+08:00">2023-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.4k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Factorization Machines(FM) 由日本 Osaka University 的 Steffen Rendle [1] 在 2010 年提出,是一种常用的因子机模型。</p>
+<h2 id="FM"><a href="#FM" class="headerlink" title="FM"></a>FM</h2><p>假设现在有一个电影评分的任务，给定如下如所示的特征向量 x（包括用户名、当前在看的电影、已经打分的电影、时间特征、之前看的电影），预测用户对当前观看电影的评分。</p>
+<p><img data-src="https://media.xiang578.com/15643023365227.jpg" alt="电影评分"></p>
+<p>作者在线性回归模型的基础上，添加交叉项部分，用来自动组合二阶特征。</p>
+<p>$$\hat y(x):&#x3D; w_0 + \sum_{i&#x3D;1}^{n} w_ix_i + \sum_{i&#x3D;1}^n \sum_{j&#x3D;i+1}^n \left \langle v_i,v_j \right \rangle x_ix_j$$</p>
+<p>其中交叉特征的权重由两个向量的点积得到，可以解决没有在模型中出现的特征组合权重问题，以及减少参数数量。</p>
+<p>$$W_{i,j}&#x3D;\left \langle v_i,v_j \right \rangle &#x3D; \sum_{f&#x3D;1}^kv_{i,f} \cdot v_{j,f}$$</p>
+<p>通过下面的方法来化简交叉项权重计算，算法复杂度降到线性。</p>
+<p>$$\sum_{i&#x3D;1}^n \sum_{j&#x3D;i+1}^n \left \langle v_i,v_j \right \rangle x_iy_i &#x3D; \frac{1}{2}\sum^k_{f&#x3D;1} \left( \left(\sum_{i&#x3D;1}^nv_{i,f}x_i \right)^2 - \sum^n_{i&#x3D;1} v^2_{i,f} x_i^2 \right)$$</p>
+<p>对交叉项部分的求导：</p>
+<p>$$\frac{\partial}{\partial \theta} \hat y \left( x \right) &#x3D;<br>\begin{cases}<br>1, &amp; \text{ if $\theta$ is $w_0$} \<br>x_i, &amp; \text{ if $\theta$ is ${w_i}$} \<br>x_i\sum^n_{j&#x3D;1} v_{j,f}x_j - v_{i,f}x_i^2, &amp;\text{if $\theta$ is ${v_{i,f}}$}<br>\end{cases}$$</p>
+<p>其中 ${\sum^n_{j&#x3D;1} v_{j,f}x_j}$ 与 ${x_i}$ 无关，可以在计算导数前预处理出来。</p>
+<h3 id="FM-vs-SVM"><a href="#FM-vs-SVM" class="headerlink" title="FM vs SVM"></a>FM vs SVM</h3><p>对于经典的特征组合问题，不难想到使用 SVM 求解。Steffen 在论文中也多次将 FM 和 SVM 做对比。</p>
+<p>在考虑 SVM 的 Polynomial kernel 为 ${K(\mathbf{x}, \mathbf{z}) :&#x3D;(\langle\mathbf{x}, \mathbf{z}\rangle+ 1)^{2}}$，映射<br>$$<br>\begin{array}{l}{\phi(\mathbf{x}) :&#x3D;\left(1, \sqrt{2} x_{1}, \ldots, \sqrt{2} x_{n}, x_{1}^{2}, \ldots, x_{n}^{2}\right.} {\sqrt{2} x_{1} x_{2}, \ldots, \sqrt{2} x_{1} x_{n}, \sqrt{2} x_{2} x_{3}, \ldots, \sqrt{2} x_{n-1} x_{n} )}\end{array}<br>$$</p>
+<p>SVM 的公式可以转化为：</p>
+<p>$$<br>\begin{aligned} \hat{y}(\mathbf{x})&#x3D;w_{0}+\sqrt{2} \sum_{i&#x3D;1}^{n} w_{i} x_{i}+\sum_{i&#x3D;1}^{n} w_{i, i}^{(2)} x_{i}^{2} &amp;+\sqrt{2} \sum_{i&#x3D;1}^{n} \sum_{j&#x3D;i+1}^{n} w_{i, j}^{(2)} x_{i} x_{j} \end{aligned}<br>$$</p>
+<p>论文中提到一句上面的公式中 ${w_{i}}$ 和 ${w_{i,i}}$ 表达能力类似，我猜这也是为什么 FM 中没有自身交叉项的原因吧。</p>
+<p>FM 相比于 SVM 有下面三个特点：</p>
+<ol>
+<li>SVM 中虽然也有特征交叉项，但是只能在样本中含有相对应的特征交叉数据时才能学习。但是 FM 能在数据稀疏的时候学习到交叉项的参数。</li>
+<li>SVM 问题无法直接求解，常用的方法是根据拉格朗日对偶性将原始问题转化为对偶问题。</li>
+<li>在使用模型预测时，SVM 依赖部分训练数据（支持向量），FM 模型则没有这种依赖。</li>
+</ol>
+<h3 id="Rank"><a href="#Rank" class="headerlink" title="Rank"></a>Rank</h3><p>FM 用来做回归和分类都很好理解，简单写一下如何应用到排序任务中。以 pairwise 为例。假设排序结果有两个文档 ${x_i}$ 和 ${x_j}$，显然用户点击文档有先后顺序，如果先点击 ${x_i}$，记 label ${y_{ij}&#x3D;1}$，反之点击 ${x_j}$，label ${y_{ij}&#x3D;0}$。模型需要去预测 ${\hat y_{ij} &#x3D; sigmoid(\hat y_i - \hat y_j)}$。</p>
+<p>参考逻辑回归，用最大似然对参数进行估计，得到损失函数为 ${L&#x3D;\log(1+\exp(-(\hat y(x_i)-\hat y(x_j))}$。优化过程和前面提到类似。</p>
+<h2 id="NFM"><a href="#NFM" class="headerlink" title="NFM"></a>NFM</h2><p>NFM 和 AFM 两篇论文是同一个作者写的，所以文章的结构很相近。</p>
+<p>FM 模型由于复杂度问题，一般只使用特征二阶交叉的形式，缺少对 higher-order 以及 non-liner 特征的交叉能力。NFM 尝试通过引入 NN 来解决这个问题。</p>
+<p>NFM 的结构如下：第一项和第二项是线性回归，第三项是神经网络。神经网络中利用 FM 模型的二阶特征交叉结果做为输入，学习数据之间的高阶特征。与直接使用高阶 FM 模型相比，可以降低模型的训练复杂度，加快训练速度。</p>
+<p>$$<br>\hat{y}<em>{N F M}(\mathbf{x})&#x3D;w</em>{0}+\sum_{i&#x3D;1}^{n} w_{i} x_{i}+f(\mathbf{x})<br>$$</p>
+<p>NFM 的神经网络部分包含 4 层，分别是 Embedding Layer、Bi-Interaction Layer、Hidden Layers、Prediction Score。</p>
+<p><img data-src="https://media.xiang578.com/15643037118475.jpg" alt="NFM"></p>
+<ul>
+<li>Embedding Layer 层对输入的稀疏数据进行 Embedding 操作。最常见的 Embedding 操作是在一张权值表中进行 lookup ，论文中作者强调他们这一步会将 Input Feture Vector 中的值与 Embedding 向量相乘。</li>
+<li>Bi-Interaction Layer 层是这篇论文的创新，对 embedding 之后的特征两两之间做 element-wise product，并将结果相加得到一个 k 维（Embeding 大小）向量。这一步相当于对特征的二阶交叉，与 FM 类似，这个公式也能进行化简：</li>
+</ul>
+<p>$$<br>f_{B I}\left(\mathcal{V}<em>{x}\right)&#x3D;\sum</em>{i&#x3D;1}^{n} \sum_{j&#x3D;i+1}^{n} x_{i} \mathbf{v}<em>{i} \odot x</em>{j} \mathbf{v}<em>{j} &#x3D;\frac{1}{2}\left[\left(\sum</em>{i&#x3D;1}^{n} x_{i} \mathbf{v}<em>{i}\right)^{2}-\sum</em>{i&#x3D;1}^{n}\left(x_{i} \mathbf{v}_{i}\right)^{2}\right]<br>$$</p>
+<ul>
+<li>Hidden Layers 层利用常规的 DNN 学习高阶特征交叉</li>
+<li>Prdiction Layer 层输出最终的结果：<br>$$<br>\begin{aligned} \hat{y}<em>{N F M}(\mathbf{x}) &amp;&#x3D;w</em>{0}+\sum_{i&#x3D;1}^{n} w_{i} x_{i} +\mathbf{h}^{T} \sigma_{L}\left(\mathbf{W}<em>{L}\left(\ldots \sigma</em>{1}\left(\mathbf{W}<em>{1} f</em>{B I}\left(\mathcal{V}<em>{x}\right)+\mathbf{b}</em>{1}\right) \ldots\right)+\mathbf{b}_{L}\right) \end{aligned}<br>$$</li>
+</ul>
+<p>实验结果：</p>
+<p><img data-src="https://media.xiang578.com/15643059963915.jpg"></p>
+<h2 id="AFM"><a href="#AFM" class="headerlink" title="AFM"></a>AFM</h2><p>AFM(Attentional Factorization Machine), 在 FM 的基础上将 Attention 机制引入到交叉项部分，用来区分不同特征组合的权重。</p>
+<p>$$<br>\hat{y}<em>{A F M}(\mathbf{x})&#x3D;w</em>{0}+\sum_{i&#x3D;1}^{n} w_{i} x_{i}+\mathbf{p}^{T} \sum_{i&#x3D;1}^{n} \sum_{j&#x3D;i+1}^{n} a_{i j}\left(\mathbf{v}<em>{i} \odot \mathbf{v}</em>{j}\right) x_{i} x_{j}<br>$$</p>
+<p>单独看上面公式中的第三项结构：</p>
+<p><img data-src="https://media.xiang578.com/15643076111641.jpg"></p>
+<ul>
+<li>Embedding Layer 与 NFM 里面的作用一样，转化特征。</li>
+<li>Pair-wise Interaction Layer 是将特征两两交叉，如果对这一步的结果求和就是 FM 中的交叉项。</li>
+<li>Attention 机制在 Attention-based Pooling 层引入。将 Pair-wise Interaction Layer 中的结果输入到 Attention Net 中，得到特征组合的 score ${a_{i j}^{\prime} }$，然后利用 softmax 得到权重矩阵 ${a_{ij}}$。<br>$$<br>\begin{aligned} a_{i j}^{\prime} &amp;&#x3D;\mathbf{h}^{T} \operatorname{Re} L U\left(\mathbf{W}\left(\mathbf{v}<em>{i} \odot \mathbf{v}</em>{j}\right) x_{i} x_{j}+\mathbf{b}\right) \ a_{i j} &amp;&#x3D;\frac{\exp \left(a_{i j}^{\prime}\right)}{\sum_{(i, j) \in \mathcal{R}<em>{x}} \exp \left(a</em>{i j}^{\prime}\right)} \end{aligned}<br>$$</li>
+<li>最后将 Pair-wise Interaction Layer 中的二阶交叉结果和权重矩阵对应相乘求和得到 AFM 的交叉项。</li>
+</ul>
+<p><img data-src="https://media.xiang578.com/15643086043204.jpg"></p>
+<p>和前一节的实验结果对比，AFM 效果比 NFM 要差一些。这大概就能说明为什么论文中提到 NFM，但是最后没有把 NFM 的结果贴出来，实在是机智。又回到，发论文是需要方法有创新，还是一味追求 state-of-the-art。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://kubicode.me/2018/02/23/Deep%20Learning/Deep-in-out-Factorization-Machines-Series/#NFM">深入浅出Factorization Machines系列 | Kubi Code’Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34666996">FM模型在LTR类问题中的应用 - 知乎</a></li>
+</ul>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/fm/" rel="tag"># fm</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/wide-and-deep.html" rel="prev" title="(Wide&Deep) Wide & Deep Learning for Recommender Systems">
+                  <i class="fa fa-chevron-left"></i> (Wide&Deep) Wide & Deep Learning for Recommender Systems
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/wdr.html" rel="next" title="(WDR) Learning to Estimate the Travel Time">
+                  (WDR) Learning to Estimate the Travel Time <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">202k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+</body>
+</html>

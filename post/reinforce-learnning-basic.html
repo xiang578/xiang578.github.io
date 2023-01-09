@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="null//null" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Info课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log 20191226: 整理 PPO 相关资料 20191227: 整理 Q-Learning 相关资料 20200906: 拖延半年多没有整理笔记，将剩下的内容整理到">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="李宏毅强化学习课程笔记 PG PPO Q-Learing">
+<meta property="og:url" content="https://xiang578.com/post/reinforce-learnning-basic.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="Info课件下载：Hung-yi Lee - Deep Reinforcement Learning 课程视频：DRL Lecture 1: Policy Gradient (Review) - YouTube  Change Log 20191226: 整理 PPO 相关资料 20191227: 整理 Q-Learning 相关资料 20200906: 拖延半年多没有整理笔记，将剩下的内容整理到">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://media.xiang578.com/15726799935625.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15752505145081.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15752505547153.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15771920437580.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15771931618906.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15771932374489.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15772793086357.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15772793200430.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773668251569.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773670631327.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773671301402.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773671400847.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773672909262.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773673947112.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773674189861.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773675111439.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773677168275.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773677986325.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773680103445.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773681449261.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773682226911.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773682895872.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773684681347.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773684767629.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773684832549.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15773684903236.jpg">
+<meta property="article:published_time" content="2019-12-26T13:14:47.000Z">
+<meta property="article:modified_time" content="2023-01-09T10:17:00.012Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="reinforcementlearning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://media.xiang578.com/15726799935625.jpg">
+
+
+<link rel="canonical" href="https://xiang578.com/post/reinforce-learnning-basic.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiang578.com/post/reinforce-learnning-basic.html","path":"post/reinforce-learnning-basic.html","title":"李宏毅强化学习课程笔记 PG PPO Q-Learing"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>李宏毅强化学习课程笔记 PG PPO Q-Learing | 算法花园</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user-circle-o fa-fw"></i>About</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Info"><span class="nav-number">1.</span> <span class="nav-text">Info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RL-%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">RL 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Policy-Gradient"><span class="nav-number">3.</span> <span class="nav-text">Policy Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PG-%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">3.1.</span> <span class="nav-text">PG 的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPO-Proximal-Policy-Optimization"><span class="nav-number">4.</span> <span class="nav-text">PPO: Proximal Policy Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#importance-sampling"><span class="nav-number">4.1.</span> <span class="nav-text">importance sampling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E-On-policy-%E5%88%B0-Off-policy"><span class="nav-number">4.2.</span> <span class="nav-text">从 On-policy 到 Off-policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPO-x2F-TRPO"><span class="nav-number">4.3.</span> <span class="nav-text">PPO&#x2F;TRPO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPO-algorithm"><span class="nav-number">4.4.</span> <span class="nav-text">PPO algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-Learning"><span class="nav-number">5.</span> <span class="nav-text">Q-Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Another-Critic"><span class="nav-number">5.1.</span> <span class="nav-text">Another Critic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Target-NetWork"><span class="nav-number">5.2.</span> <span class="nav-text">Target NetWork</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exploration"><span class="nav-number">5.3.</span> <span class="nav-text">Exploration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Replay-buffer"><span class="nav-number">5.4.</span> <span class="nav-text">Replay buffer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Typical-Q-Learning-Algorithm"><span class="nav-number">5.5.</span> <span class="nav-text">Typical Q-Learning Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Double-DQN-DDQN"><span class="nav-number">5.6.</span> <span class="nav-text">Double DQN DDQN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dueling-DQN"><span class="nav-number">5.7.</span> <span class="nav-text">Dueling DQN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prioritized-Reply"><span class="nav-number">5.8.</span> <span class="nav-text">Prioritized Reply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-step"><span class="nav-number">5.9.</span> <span class="nav-text">Multi-step</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Noisy-Net"><span class="nav-number">5.10.</span> <span class="nav-text">Noisy Net</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distributional-Q-function"><span class="nav-number">5.11.</span> <span class="nav-text">Distributional Q-function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rainbow"><span class="nav-number">5.12.</span> <span class="nav-text">Rainbow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Continuous-Actions"><span class="nav-number">5.13.</span> <span class="nav-text">Continuous Actions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/reinforce-learnning-basic.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="李宏毅强化学习课程笔记 PG PPO Q-Learing | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          李宏毅强化学习课程笔记 PG PPO Q-Learing
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-12-26 21:14:47" itemprop="dateCreated datePublished" datetime="2019-12-26T21:14:47+08:00">2019-12-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-01-09 18:17:00" itemprop="dateModified" datetime="2023-01-09T18:17:00+08:00">2023-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.3k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Info"><a href="#Info" class="headerlink" title="Info"></a>Info</h2><p>课件下载：<a target="_blank" rel="noopener" href="http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html">Hung-yi Lee - Deep Reinforcement Learning</a></p>
+<p>课程视频：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=z95ZYgPgXOY&list=PLJV_el3uVTsODxQFgzMzPLa16h6B8kWM_">DRL Lecture 1: Policy Gradient (Review) - YouTube</a></p>
+<ul>
+<li>Change Log<ul>
+<li>20191226: 整理 PPO 相关资料</li>
+<li>20191227: 整理 Q-Learning 相关资料</li>
+<li>20200906: 拖延半年多没有整理笔记，将剩下的内容整理到单独的笔记中。</li>
+</ul>
+</li>
+</ul>
+<p>我的笔记汇总：</p>
+<ul>
+<li><a href="https://xiang578.com/post/reinforce-learnning-basic.html">Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning</a></li>
+<li><a href="https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html">Actor Critic</a></li>
+<li><a href="https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html">Sparse Reward</a></li>
+<li><a href="https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html">Imitation Learning</a></li>
+</ul>
+<h2 id="RL-基础"><a href="#RL-基础" class="headerlink" title="RL 基础"></a>RL 基础</h2><p>强化学习基本定义：</p>
+<ul>
+<li>Actor：可以感知环境中的状态，通过执行不同的动作得到反馈的奖励，在此基础上进行学习优化。</li>
+<li>Environment：指除 Actor 之外的所有事务，受 Actor 动作影响而改变其状态，并给 Actor 对应的奖励。</li>
+<li>on-policy 和 off-policy 的区别在于 Actor 和 Environment 交互的策略和它自身在学习的策略是否是同一个。</li>
+</ul>
+<p>一些符号：</p>
+<ul>
+<li>State s 是对环境的描述，其状态空间是 S。</li>
+<li>Action a 是 Actore 的行为描述，其动作空间是 A。</li>
+<li>Policy $\pi(a|s)&#x3D;P[A_t&#x3D;a|S_t&#x3D;s]$ 代表在给定环境状态 s 下 动作 a 的分布。</li>
+<li>Reward ${r(s,a,s^{\prime})}$ 在状态 s 下执行动作 a 后，Env 给出的打分。</li>
+</ul>
+<h2 id="Policy-Gradient"><a href="#Policy-Gradient" class="headerlink" title="Policy Gradient"></a>Policy Gradient</h2><p>Policy Network 最后输出的是概率。</p>
+<p>目标：调整 actor 中神经网络 policy $\pi(\theta)$，得到 $a&#x3D;\pi(s, \theta)$，最大化 reward。</p>
+<p>trajectory $\tau$ 由一系列的状态和动作组成，出现这种组合的概率是 $p_{\theta}(\tau)$ 。</p>
+<p>$$<br>\begin{array}{l}{p_{\theta}(\tau)} \ {\quad&#x3D;p\left(s_{1}\right) p_{\theta}\left(a_{1} | s_{1}\right) p\left(s_{2} | s_{1}, a_{1}\right) p_{\theta}\left(a_{2} | s_{2}\right) p\left(s_{3} | s_{2}, a_{2}\right) \cdots} \ {\quad&#x3D;p\left(s_{1}\right) \prod_{l&#x3D;1}^{T} p_{\theta}\left(a_{t} | s_{t}\right) p\left(s_{t+1} | s_{t}, a_{t}\right)}\end{array}<br>$$</p>
+<p>reward ：根据 s 和 a 计算得分 r，求和得到 R。在围棋等部分任务中，无法获得中间的 r（下完完整的一盘棋后能得到输赢的结果）。</p>
+<p>需要计算 R 的期望 $\bar{R}_{\theta}$，形式和 GAN 类似。如果一个动作得到 reward 多，那么就增大这个动作出现的概率。最终达到 agent 所做 policy 的 reward 一直都比较高。</p>
+<p>$$<br>\bar{R}<em>{\theta}&#x3D;\sum</em>{\tau} R(\tau) p_{\theta}(\tau)<br>$$</p>
+<p>强化学习中，没有 label。需要从环境中采样得到 $\tau$ 和 R，根据下面的公式去优化 agent。相当于去求一个 likelihood。 </p>
+<p>$\nabla f(x) &#x3D; f(x) \frac{\nabla f(x)}{f(x)}&#x3D; f(x) \nabla \log f(x)$ ，这一步中用到对 log 函数进行链式求导。</p>
+<p>$$<br>\nabla \bar{R}<em>{\theta}&#x3D;\sum</em>{\tau} R(\tau) \nabla p_{\theta}(\tau)<br>$$</p>
+<p>$$<br>\begin{array}{l}{&#x3D;E_{\left.\tau \sim p_{\theta}(\tau)[R(\tau)] \log p_{\theta}(\tau)\right]} \approx \frac{1}{N} \sum_{n&#x3D;1}^{N} R\left(\tau^{n}\right) \nabla \log p_{\theta}\left(\tau^{n}\right)} \ {&#x3D;\frac{1}{N} \sum_{n&#x3D;1}^{N} \sum_{t&#x3D;1}^{T_{n}} R\left(\tau^{n}\right) \nabla \log p_{\theta}\left(a_{t}^{n} | s_{t}^{n}\right)}\end{array}<br>$$</p>
+<p>参数更新方法：</p>
+<ol>
+<li>在环境中进行采样，得到一系列的轨迹和回报。</li>
+<li>利用状态求梯度，更新模型。如果 R 为正，增大概率 $p_{\theta}(a_t|s_t)$, 否则减少概率。</li>
+<li>重复上面的流程。</li>
+</ol>
+<p><img data-src="https://media.xiang578.com/15726799935625.jpg"></p>
+<h3 id="PG-的例子"><a href="#PG-的例子" class="headerlink" title="PG 的例子"></a>PG 的例子</h3><p>训练 actor 的过程看成是分类任务：输入 state ，输出 action。</p>
+<p>最下面公式分别是反向传播梯度计算和 PG 的反向梯度计算，PG 中要乘以整个轨迹的 R。</p>
+<p><img data-src="https://media.xiang578.com/15752505145081.jpg" alt="PG"></p>
+<p>tip 1： add a baseline</p>
+<p>强化学习的优化和样本质量有关，避免采样不充分。Reawrd 函数变成 R-b，代表回报小于 b 的都被我们当成负样本，这样模型能去学习得分更高的动作。b 一般可以使用 R 的均值。</p>
+<p>tip 2: assign suitable credit</p>
+<p>一场游戏中，不论动作好坏，总会乘上相同的权重 R，这种方法是不合理的，希望每个 action 的权重不同。</p>
+<ol>
+<li>引入一个 discount rate，对 t 之后的动作 r 进行降权重。</li>
+<li>利用 Advantage Function 评价状态 s 下动作 a 的好坏 critic。</li>
+</ol>
+<p> <img data-src="https://media.xiang578.com/15752505547153.jpg" alt="Assign Suitable Credit"></p>
+<h2 id="PPO-Proximal-Policy-Optimization"><a href="#PPO-Proximal-Policy-Optimization" class="headerlink" title="PPO: Proximal Policy Optimization"></a>PPO: Proximal Policy Optimization</h2><h3 id="importance-sampling"><a href="#importance-sampling" class="headerlink" title="importance sampling"></a>importance sampling</h3><p>假设需要估计期望 $E_{x~p[f(x)]}$，x 符合 p 分布，将期望写成积分的形式。由于在 P 分布下面很难采样，把问题转化到已知 q 分布上，得到在 p 分布下计算期望公式。</p>
+<p><img data-src="https://media.xiang578.com/15771920437580.jpg"></p>
+<p>上面方法得到 p 和 q 期望接近，但是方差可能相差很大，且和 $\frac{p(x)}{q(x)}$ 有关。</p>
+<p>原分布的方差：<br>$$<br>\operatorname{Var}<em>{x-p}[f(x)]&#x3D;E</em>{x-p}\left[f(x)^{2}\right]-\left(E_{x-q}[f(x)]\right)^{2}<br>$$</p>
+<p>新分布的方差：<br>$$<br>\begin{array}{l}{\operatorname{Var}<em>{x \sim p}[f(x)]&#x3D;E</em>{x \sim p}\left[f(x)^{2}\right]-\left(E_{x \sim p}[f(x)]\right)^{2}} \ {\operatorname{Var}<em>{x \sim q}\left[f(x) \frac{p(x)}{q(x)}\right]&#x3D;E</em>{x \sim q}\left[\left(f(x) \frac{p(x)}{q(x)}\right)^{2}\right]-\left(E_{x \sim q}\left[f(x) \frac{p(x)}{q(x)}\right]\right)^{2}} \ {&#x3D;E_{x \sim p}\left[f(x)^{2} \frac{p(x)}{q(x)}\right]-\left(E_{x \sim p}[f(x)]\right)^{2}}\end{array}<br>$$</p>
+<p>在 p 和 q 分布不一致时，且采样不充分时，可能会带来比较大的误差。</p>
+<p><img data-src="https://media.xiang578.com/15771931618906.jpg" alt="Issue of Importance Sampling"></p>
+<h3 id="从-On-policy-到-Off-policy"><a href="#从-On-policy-到-Off-policy" class="headerlink" title="从 On-policy 到 Off-policy"></a>从 On-policy 到 Off-policy</h3><p>on-policy 时，PG 每次参数更新完成后，actor 就改变了，不能使用之前的数据，必须和环境重新互动收集数据。引入 $p_{\theta \prime}$ 进行采样，就能将 PG 转为 off-ploicy。</p>
+<p><img data-src="https://media.xiang578.com/15771932374489.jpg"></p>
+<p>和之前相比，相当于引入重要性采样，所以也有前一节中提到的重要性采样不足问题。</p>
+<p>$$<br>J^{\theta^{\prime}}(\theta)&#x3D;E_{\left(s_{t}, a_{t}\right) \sim \pi_{\theta^{\prime}}}\left[\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{\prime}}\left(a_{t} | s_{t}\right)} A^{\theta^{\prime}}\left(s_{t}, a_{t}\right)\right]<br>$$</p>
+<h3 id="PPO-x2F-TRPO"><a href="#PPO-x2F-TRPO" class="headerlink" title="PPO&#x2F;TRPO"></a>PPO&#x2F;TRPO</h3><p>为了克服采样的分布与原分布差距过大的不足，PPO 引入 KL 散度进行约束。KL 散度用来衡量两个分布的接近程度。</p>
+<p>$$<br>J_{P P O}^{\theta^{\prime}}(\theta)&#x3D;J^{\theta^{\prime}}(\theta)-\beta K L\left(\theta, \theta^{\prime}\right)<br>$$</p>
+<p>TRPO(Trust Region Policy Optimization)，要求 $K L\left(\theta, \theta^{\prime}\right)&lt;\delta$。</p>
+<p>$$<br>J_{T R P O}^{\theta^{\prime}}(\theta)&#x3D;E_{\left(s_{t}, a_{t}\right) \sim \pi_{\theta^{\prime}}}\left[\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{\prime}}\left(a_{t} | s_{t}\right)} A^{\theta^{\prime}}\left(s_{t}, a_{t}\right)\right]<br>$$</p>
+<p>KL 散度可能比较难计算，在实际中常使用 PPO2。 </p>
+<ul>
+<li>A&gt;0，代表当前策虑表现好。需要增大 $\pi( \theta )$，通过 clip 增加一个上限，防止 $\pi( \theta )$ 和旧分布变化太大。</li>
+<li>A&lt;0，代表当前策虑表现差，不限制新旧分布的差异程度，只需要大幅度改变 $\pi( \theta )$。</li>
+</ul>
+<p>参考 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/43114711">【点滴】策略梯度之PPO - 知乎</a></p>
+<p><img data-src="https://media.xiang578.com/15772793086357.jpg"></p>
+<h3 id="PPO-algorithm"><a href="#PPO-algorithm" class="headerlink" title="PPO algorithm"></a>PPO algorithm</h3><p>系数 $\beta$ 在迭代的过程中需要进行动态调整。引入 $KL_{max} KL_{min}$，KL &gt; KLmax，说明 penalty 没有发挥作用，增大 $\beta$。</p>
+<p><img data-src="https://media.xiang578.com/15772793200430.jpg"></p>
+<h2 id="Q-Learning"><a href="#Q-Learning" class="headerlink" title="Q-Learning"></a>Q-Learning</h2><p>value-base 方法，利用 critic 网络评价 actor 。通过状态价值函数 $V^{\pi}(s)$ 来衡量预期的期望。V 和 pi、s 相关。</p>
+<p><img data-src="https://media.xiang578.com/15773668251569.jpg"></p>
+<ol>
+<li>Monte-Carlo MC: 训练网络使预测的 $V^{\pi}(s_a)$ 和实际完整游戏 reward $G_a$ 接近。</li>
+<li>Temporal-difference TD: 训练网络尽量满足 $V^{\pi}(s_t)&#x3D;V^{\pi}(s_{t+1}) + r_t$ 等式，两个状态之间的收益差。</li>
+</ol>
+<p>MC: 根据策虑 $\pi$  进行游戏得到最后的 $G(a)$，最终存在方差大的问题。$\operatorname{Var}[k X]&#x3D;k^{2} \operatorname{Var}[X]$</p>
+<p>TD: r 的方差比较小，$V^{\pi}(s_{t+1})$ 在采样不充分的情况下，可能不准确。</p>
+<p><img data-src="https://media.xiang578.com/15773670631327.jpg"></p>
+<h3 id="Another-Critic"><a href="#Another-Critic" class="headerlink" title="Another Critic"></a>Another Critic</h3><p>State-action value function $Q^{\pi}(s, a)$：预测在 pi 策略下，pair(s, a) 的值。相当于假设 state 情况下强制采取 action a。</p>
+<p><img data-src="https://media.xiang578.com/15773671301402.jpg"></p>
+<p>对于非分类的方法：</p>
+<p><img data-src="https://media.xiang578.com/15773671400847.jpg"></p>
+<p>Q-Learning</p>
+<ol>
+<li>初始  actor $\pi$ 与环境互动</li>
+<li>学习该 actor 对应的 Q function</li>
+<li>找一个比 $\pi$ 好的策虑：$\pi \prime$，满足 $V^{\pi \prime}(s,a) \ge V^{\pi}(s,a)$, $\pi^{\prime}(s)&#x3D;\arg \max _{a} Q^{\pi}(s, a)$</li>
+</ol>
+<p>在给定 state 下，分别代入 action，取函数值最大的 a，作为后面对该 state 时采取的 action。</p>
+<p>证明新的策虑存在：<br><img data-src="https://media.xiang578.com/15773672909262.jpg"></p>
+<h3 id="Target-NetWork"><a href="#Target-NetWork" class="headerlink" title="Target NetWork"></a>Target NetWork</h3><p>左右两边的网络相同，如果同时训练比较困难。简单的想法是固定右边的网络进行训练，一定次数后再拷贝左边的网络。</p>
+<p><img data-src="https://media.xiang578.com/15773673947112.jpg"></p>
+<h3 id="Exploration"><a href="#Exploration" class="headerlink" title="Exploration"></a>Exploration</h3><p>Q function 导致 actor 每次都会选择具有更大值的 action，无法准确估计某一些动作，对于收集数据而言是一个弊端。</p>
+<ul>
+<li>Epsilon Greedy<ul>
+<li>小概率进行损失采样</li>
+</ul>
+</li>
+<li>Boltzmann Exploration<ul>
+<li>利用 softmax 计算选取动作的概率，然后进行采样</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://media.xiang578.com/15773674189861.jpg"></p>
+<h3 id="Replay-buffer"><a href="#Replay-buffer" class="headerlink" title="Replay buffer"></a>Replay buffer</h3><p>采样之后的 $(s_t, a_t, r_t, s_{t+1})$ 保存在一个 buffer 里面（可能是不同策虑下采样得到的)，每次训练从 buffer 中 sample 一个 batch。</p>
+<p>结果：训练方法变成 off-policy。减少 RL 重复采样，充分利用数据。</p>
+<p><img data-src="https://media.xiang578.com/15773675111439.jpg"></p>
+<h3 id="Typical-Q-Learning-Algorithm"><a href="#Typical-Q-Learning-Algorithm" class="headerlink" title="Typical Q-Learning Algorithm"></a>Typical Q-Learning Algorithm</h3><p>Q-Learning 流程：</p>
+<p><img data-src="https://media.xiang578.com/15773677168275.jpg"></p>
+<h3 id="Double-DQN-DDQN"><a href="#Double-DQN-DDQN" class="headerlink" title="Double DQN DDQN"></a>Double DQN DDQN</h3><ul>
+<li>Q value 容易高估：目标值 $r_t + maxQ(s_{t+1}, a)$ 倾向于选择被高估的 action，导致 target 很大。</li>
+<li>选动作的 Q’ 和计算 value 的 Q(target network) 不同。Q 中高估 a，Q’ 可能会准确估计 V 值。Q’ 中高估 a ，可能不会被 Q 选中。</li>
+</ul>
+<p><img data-src="https://media.xiang578.com/15773677986325.jpg"></p>
+<h3 id="Dueling-DQN"><a href="#Dueling-DQN" class="headerlink" title="Dueling DQN"></a>Dueling DQN</h3><p>改 network 架构。V(s) 代表 s 所具有的价值，不同的 action 共享。 A(s,a) advantage function 代表在 s 下执行 a 的价值。最后 $Q(s, a) &#x3D; A(s, a) + V(s)$。</p>
+<p>为了让网络倾向于使用 V（能训练这个网络），得到 A 后，要对 A 做 normalize。</p>
+<p><img data-src="https://media.xiang578.com/15773680103445.jpg"></p>
+<h3 id="Prioritized-Reply"><a href="#Prioritized-Reply" class="headerlink" title="Prioritized Reply"></a>Prioritized Reply</h3><p>在训练过程中，对于经验 buffer 里面的样本，TD error 比较大的样本有更大的概率被采样，即难训练的数据增大被采样的概率。</p>
+<p><img data-src="https://media.xiang578.com/15773681449261.jpg"></p>
+<h3 id="Multi-step"><a href="#Multi-step" class="headerlink" title="Multi-step"></a>Multi-step</h3><p>综合 MC 和 TD 的优点，训练样本按一定步长 N 进行采样。MC 准确方差大，TD 方差小，估计不准。<br><img data-src="https://media.xiang578.com/15773682226911.jpg"></p>
+<h3 id="Noisy-Net"><a href="#Noisy-Net" class="headerlink" title="Noisy Net"></a>Noisy Net</h3><p><img data-src="https://media.xiang578.com/15773682895872.jpg"></p>
+<ul>
+<li>Noise on Action：在相同状态下，可能会采取不同的动作。</li>
+<li>Noise on Parameters：开始时加入噪声。同一个 episode 内，参数不会改变。相同状态下，动作相同。<br>更好探索环境。</li>
+</ul>
+<h3 id="Distributional-Q-function"><a href="#Distributional-Q-function" class="headerlink" title="Distributional Q-function"></a>Distributional Q-function</h3><p>Q 是累积收益的期望，实际上在 s 采取 a 时，最终所有得到的 reward 为一个分布 reward distribution。部分时候分布不同，可能期望相同，所以用期望来代替 reward 会损失一些信息。</p>
+<p>Distributional Q-function 直接输出分布，均值相同时，采取方差小的方案。这种方法不会产生高估 q 值的情况。</p>
+<p><img data-src="https://media.xiang578.com/15773684681347.jpg"></p>
+<h3 id="Rainbow"><a href="#Rainbow" class="headerlink" title="Rainbow"></a>Rainbow</h3><p>rainbow 是各种策略的混合体。</p>
+<p><img data-src="https://media.xiang578.com/15773684767629.jpg"></p>
+<p>DDQN 影响不大。</p>
+<p><img data-src="https://media.xiang578.com/15773684832549.jpg"></p>
+<h3 id="Continuous-Actions"><a href="#Continuous-Actions" class="headerlink" title="Continuous Actions"></a>Continuous Actions</h3><p>action 是一个连续的向量，Q-learning 不是一个很好的方法。</p>
+<p>$$<br>a&#x3D;\arg \max _{a} Q(s, a)<br>$$</p>
+<ol>
+<li>从 a 中采样出一批动作，看哪个行动 Q 值最大。</li>
+<li>使用 gradient ascent 解决最优化问题。</li>
+<li>设计一个网络来化简过程。<ol>
+<li>$\sum$ 和 $\mu$ 是高斯分布的方差和均值，保证矩阵一定是正定。</li>
+<li>最小化下面的函数，需要最小化 $a - \mu$。</li>
+</ol>
+</li>
+</ol>
+<p><img data-src="https://media.xiang578.com/15773684903236.jpg"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/41712025">强化学习基础知识 - 知乎</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+              <a href="/tags/reinforcementlearning/" rel="tag"># reinforcementlearning</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/monthly-issue-201912.html" rel="prev" title="每月分享 201912">
+                  <i class="fa fa-chevron-left"></i> 每月分享 201912
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/monthly-issue-202001.html" rel="next" title="每月分享 202001 Fine-Tune Your Days">
+                  每月分享 202001 Fine-Tune Your Days <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">202k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+</body>
+</html>

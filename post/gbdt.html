@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="null//null" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="GBDT(Gradient Boosting Decision Tree) 从名字上理解包含三个部分：提升、梯度和树。它最早由 Freidman 在 greedy function approximation ：a gradient boosting machine 中提出。很多公司线上模型是基于 GBDT+FM 开发的，我们 Leader 甚至认为 GBDT 是传统的机器学习集大成者。断断续续使">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="All About GBDT (1)">
+<meta property="og:url" content="https://xiang578.com/post/gbdt.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="GBDT(Gradient Boosting Decision Tree) 从名字上理解包含三个部分：提升、梯度和树。它最早由 Freidman 在 greedy function approximation ：a gradient boosting machine 中提出。很多公司线上模型是基于 GBDT+FM 开发的，我们 Leader 甚至认为 GBDT 是传统的机器学习集大成者。断断续续使">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-26T06:15:43.000Z">
+<meta property="article:modified_time" content="2023-01-09T10:17:00.008Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="ml">
+<meta property="article:tag" content="gbdt">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://xiang578.com/post/gbdt.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiang578.com/post/gbdt.html","path":"post/gbdt.html","title":"All About GBDT (1)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>All About GBDT (1) | 算法花园</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user-circle-o fa-fw"></i>About</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%B4%E7%B4%A0%E7%9A%84%E6%83%B3%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">朴素的想法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3-Gradient-Boosting-Decision-Tree"><span class="nav-number">2.</span> <span class="nav-text">如何理解 Gradient Boosting Decision Tree ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88-GBDT-%E5%8F%AF%E8%A1%8C%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">为什么 GBDT 可行？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">GBDT 算法流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">80</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/gbdt.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="All About GBDT (1) | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          All About GBDT (1)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-01-26 14:15:43" itemprop="dateCreated datePublished" datetime="2020-01-26T14:15:43+08:00">2020-01-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-01-09 18:17:00" itemprop="dateModified" datetime="2023-01-09T18:17:00+08:00">2023-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.7k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>GBDT(Gradient Boosting Decision Tree) 从名字上理解包含三个部分：提升、梯度和树。它最早由 Freidman 在 <code>greedy function approximation ：a gradient boosting machine</code> 中提出。很多公司线上模型是基于 GBDT+FM 开发的，我们 Leader 甚至认为 GBDT 是传统的机器学习集大成者。断断续续使用 GBDT 一年多后，大胆写一篇有关的文章和大家分享。</p>
+<h2 id="朴素的想法"><a href="#朴素的想法" class="headerlink" title="朴素的想法"></a>朴素的想法</h2><p>假设有一个游戏：给定数据集 ${(x_1,y_1),(x_2,y_2),…,(x_n,y_n)}$，寻找一个模型${\hat y&#x3D;F(x_i)}$，使得平方损失函数 ${\sum \frac{1}{2}(\hat y_i - y_i)^2}$ 最小。</p>
+<p>如果你的朋友提供一个可以使用但是不完美的模型，比如<br>$$F(x_1)&#x3D;0.8,y_1&#x3D;0.9$$<br>$$F(x_2)&#x3D;1.4,y_2&#x3D;1.3$$<br>在如何不修改这个模型的参数情况下，提高模型效果？</p>
+<p>一个简单的思路是：重新训练一个模型实现<br>$$F(x_1)+h(x_1)&#x3D;y_1$$<br>$$F(x_2)+h(x_2)&#x3D;y_2$$<br>$$…$$<br>$$F(x_n)+h(x_n)&#x3D;y_n$$</p>
+<p>换一个角度是用模型学习数据 ${(x_1,y_1-F(x_1)),(x_2,y_2-F(x_2)),…,(x_n,y_n-F(x_n))}$。得到新的模型 ${\hat y&#x3D;F(x_i)+h(x_i)}$。</p>
+<p>其中 ${y_i-F(x_i)}$ 的部分被我们称之为残差，即之前的模型没有学习到的部分。重新训练模型 ${h(x)}$正是学习残差。如果多次执行上面的步骤，可以将流程描述成：</p>
+<p>$${F_0(x)}$$<br>$${F_1(x)&#x3D;F_0(x)+h_1(x)}$$<br>$${F_2(x)&#x3D;F_1(x)+h_2(x)}$$<br>$${…}$$<br>$${F_t(x)&#x3D;F_t-1(x)+h_t(x)}$$</p>
+<p>即 ${F(x;w)&#x3D;\sum^T_{t&#x3D;1}h_t(x;w)}$，这也就是 GBDT 。</p>
+<h2 id="如何理解-Gradient-Boosting-Decision-Tree"><a href="#如何理解-Gradient-Boosting-Decision-Tree" class="headerlink" title="如何理解 Gradient Boosting Decision Tree ?"></a>如何理解 Gradient Boosting Decision Tree ?</h2><p>Gradient Boosting Decision Tree 简称 GBDT，最早由 Friedman 在论文《Greedy function approximation: a gradient boosting machine》中提出。简单从题目中理解包含三个部分内容：Gradient Descent、Boosting、Decision Tree。</p>
+<p>Decision Tree 即决策树，利用超平面对特征空间划分来预测和分类，根据处理的任务不同分成两种：分类树和回归树。在 GBDT 算法中，用到的是 CART 即分类回归树。用数学语言来描述为 ${F&#x3D;{f(x)&#x3D;w_{q(x)}}}$，完成样本 ${x}$ 到决策树叶子节点 ${q(x)}$ 的映射，并将该叶子节点的权重 ${w_{q(x)}}$ 赋给样本。CART 中每次通过计算 gain 值贪心来进行二分裂。</p>
+<p>Boosting 是一种常用的集成学习方法（另外一种是 Bagging）。利用弱学习算法，反复学习，得到一系列弱分类器（留一个问题，为什么不用线性回归做为弱分类器）。然后组合这些弱分类器，构成一个强分类器。上面提到的模型 ${F(x;w)&#x3D;\sum^T_{t&#x3D;1}h_t(x)}$ 即是一种 boosting 思路，依次训练多个 CART 树 ${h_i}$，并通过累加这些树得到一个强分类器 ${F(x;w)}$。</p>
+<h2 id="为什么-GBDT-可行？"><a href="#为什么-GBDT-可行？" class="headerlink" title="为什么 GBDT 可行？"></a>为什么 GBDT 可行？</h2><p>在 2 中我提到 GBDT 包括三个部分并且讲述了 Boosting 和 Decison Tree。唯独没有提到 Gradient Descent，GBDT 的理论依据却恰恰和它相关。</p>
+<p>回忆一下，Gradient Descent 是一种常用的最小化损失函数 ${L(\theta)}$ 的迭代方法。</p>
+<ul>
+<li>给定初始值 ${\theta_0}$</li>
+<li>迭代公式：${\theta ^t &#x3D; \theta ^{t-1} + \Delta \theta}$</li>
+<li>将 ${L(\theta ^t)}$ 在 ${\theta ^{t-1}}$ 处进行一阶泰勒展开：${L(\theta ^t)&#x3D;L(\theta ^{t-1} + \Delta \theta) \approx L(\theta ^{t-1}) + L^\prime(\theta ^{t-1})\Delta \theta}$</li>
+<li>要使 ${L(\theta ^t) &lt; L(\theta ^{t-1}) }$，取 ${\Delta \theta &#x3D; -\alpha L^\prime(\theta ^{t-1})}$</li>
+<li>其中  ${\alpha}$ 是步长，可以通过 line search 确定，但一般直接赋一个很小的数。</li>
+</ul>
+<p>在 1 中提到的问题中，损失函数是 MSE ${L(y, F(x))&#x3D;\frac{1}{2}(y_i - f(x_i))^2}$。</p>
+<p>我们的任务是通过调整 ${F(x_1), F(x_2), …, F(x_n)}$ 最小化 ${J&#x3D;\sum_i L(y_i, F(x_i))}$。</p>
+<p>如果将 ${F(x_i)}$ 当成是参数，并对损失函数求导得到 ${ \frac{\partial J}{\partial F(x_i)} &#x3D; \frac{\partial \sum_i L(y_i, F(x_i))}{\partial F(x_i)} &#x3D; \frac{\partial L(y_i, F(x_i))}{\partial F(x_i)} &#x3D; F(x_i)-y_i}$。</p>
+<p>可以发现，在 1 中提到的模型 ${h(x)}$ 学习的残差 ${y_i-F(x_i)}$正好等于负梯度，即 ${y_i-F(x_i)&#x3D;-\frac{\partial J}{\partial F(x_i)}}$。</p>
+<p>所以，参数的梯度下降和函数的梯度下降原理上是一致的：</p>
+<ul>
+<li>${F_{t+1}(x_i)&#x3D;F_t(x_i)+h(x_i)&#x3D;F(x_i)+y_i-F(x_i)&#x3D;F_t(x_i)-1\frac{\partial J}{\partial F(x_i)}}$</li>
+<li>${\theta ^t &#x3D; \theta ^{t-1} + \alpha L^\prime(\theta ^{t-1})}$</li>
+</ul>
+<h2 id="GBDT-算法流程"><a href="#GBDT-算法流程" class="headerlink" title="GBDT 算法流程"></a>GBDT 算法流程</h2><p>模型 F 定义为加法模型：</p>
+<p>$${F(x;w)&#x3D;\sum^{M}<em>{m&#x3D;1} \alpha_m h_m(x;w_m) &#x3D; \sum^{M}</em>{m&#x3D;1}f_t(x;w_t)}$$<br>其中，x 为输入样本，h 为分类回归树，w 是分类回归树的参数，${\alpha}$ 是每棵树的权重。</p>
+<p>通过最小化损失函数求解最优模型：${F^* &#x3D; argmin_F \sum^N_{i&#x3D;1}L(y_i, F(x_i))}$</p>
+<p>输入: ${(x_i,y_i),T,L}$</p>
+<ol>
+<li>初始化：${f_0(x)}$</li>
+<li>对于 ${t &#x3D; 1 to T}$ ：<ol>
+<li>计算负梯度（伪残差）： ${ \tilde{y_i} &#x3D; -[\frac{\partial L(y_i, F(x_i))}{\partial F(x)}]<em>{F(x)&#x3D;F</em>{m-1}(x)} ,i&#x3D;1,2,…,N}$</li>
+<li>根据 ${\tilde{y_i}}$ 学习第 m 棵树： ${w^*&#x3D;argmin_{w} \sum_{i&#x3D;1}^N(\tilde{y_i} - h_t(x_i;w))^2}$</li>
+<li>line searcher 找步长：${\rho^* &#x3D; argmin_\rho \sum_{i&#x3D;1}^{N}L(y_i, F_{t-1}(x_i)+\rho h_t(x_i;w^*))}$</li>
+<li>令 ${f_t&#x3D;\rho^<em>h_t(x;w</em>)}$，更新模型：${F_t&#x3D;F_{t-1}+f_t}$</li>
+</ol>
+</li>
+<li>输出 ${F_T}$</li>
+</ol>
+<p>说明：</p>
+<ol>
+<li>初始化 ${f_0}$ 方法<ol>
+<li>求解损失函数最小</li>
+<li>随机初始化</li>
+<li>训练样本的充分统计量</li>
+</ol>
+</li>
+<li>每一轮拟合负梯度，而不是拟合残差，是为方便之后扩展到其他损失函数。</li>
+<li>最小化问题中，如果有解析解，直接带入。否则，利用泰勒二阶展开，Newton Step 得到近似解。</li>
+</ol>
+<p>这一篇就先到这里，之后还会分享 GBDT 常用损失函数推导以及 XGboost 相关内容。如果有任何想法，都可以在留言区和我交流。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li>李航, 《统计学习方法》8.4 提升树</li>
+<li>Freidman，greedy function approximation ：a gradient boosting machine</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/73381835">【19年ML思考笔记】GBDT碎碎念（1）谈回归树的分裂准则 - 知乎</a> </li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29765582">机器学习-一文理解GBDT的原理-20171001 - 知乎</a></li>
+<li><a target="_blank" rel="noopener" href="https://louisscorpio.github.io/2017/12/13/GBDT%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/#">GBDT入门详解 - Scorpio.Lu|Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/45409110/why-gradient-boosting-not-working-in-linear-regression">python - Why Gradient Boosting not working in Linear Regression? - Stack Overflow</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24519677/article/details/82020863">GBDT基本原理及算法描述 - Y学习使我快乐V的博客 - CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30711812">GBDT的那些事儿 - 知乎</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ml/" rel="tag"># ml</a>
+              <a href="/tags/gbdt/" rel="tag"># gbdt</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/ftrl.html" rel="prev" title="(FTRL) Follow The Regularized Leader">
+                  <i class="fa fa-chevron-left"></i> (FTRL) Follow The Regularized Leader
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/2019.html" rel="next" title="2019 起步">
+                  2019 起步 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">202k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:04</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+</body>
+</html>
