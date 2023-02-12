@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="baidu-site-verification" content="code-Kii9Nt0ZGh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-center-atom.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本篇文章充满工业界风格，介绍 Uber 如何构建基于深度学习的 ETA 系统。在 Uber App 中，ETA 主要服务网约车和外卖两大业务，基于业务发展产生出一些细分场景的 ETA 需求（pick-up、drop-off）。所以他们主要目标是构建高效以及泛用的 ETA 系统。 背景介绍ETA (Estimated Time of Arrival，预估到达时间)：给定时刻下，预估从一个起点到终点所">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="DeeprETA An ETA Post-processing System at Scale">
+<meta property="og:url" content="https://xiang578.com/post/deepreta.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="本篇文章充满工业界风格，介绍 Uber 如何构建基于深度学习的 ETA 系统。在 Uber App 中，ETA 主要服务网约车和外卖两大业务，基于业务发展产生出一些细分场景的 ETA 需求（pick-up、drop-off）。所以他们主要目标是构建高效以及泛用的 ETA 系统。 背景介绍ETA (Estimated Time of Arrival，预估到达时间)：给定时刻下，预估从一个起点到终点所">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://media.xiang578.com/202302121823437-uber-eta-processing.png">
+<meta property="og:image" content="https://media.xiang578.com/202302122107777-deepreta-architecture.png">
+<meta property="og:image" content="https://media.xiang578.com/202302121908948-deepreta-feature.png">
+<meta property="og:image" content="https://media.xiang578.com/202302122052993-multi-resolution-geohashes.png">
+<meta property="og:image" content="https://media.xiang578.com/202302122114998-one-interaction-layer.png">
+<meta property="og:image" content="https://media.xiang578.com/202302122129047-uber-model-strucure.png">
+<meta property="og:image" content="https://media.xiang578.com/202302122153936-deepretaresult.png">
+<meta property="og:image" content="https://media.xiang578.com/202302122201409-t-sne-time-embedding.png">
+<meta property="og:image" content="https://media.xiang578.com/202302122207120-geospatial-embeddings.png">
+<meta property="article:published_time" content="2023-02-12T14:14:33.000Z">
+<meta property="article:modified_time" content="2023-02-12T14:14:48.647Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="uber">
+<meta property="article:tag" content="eta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://media.xiang578.com/202302121823437-uber-eta-processing.png">
+
+
+<link rel="canonical" href="https://xiang578.com/post/deepreta.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xiang578.com/post/deepreta.html","path":"post/deepreta.html","title":"DeeprETA An ETA Post-processing System at Scale"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>DeeprETA An ETA Post-processing System at Scale | 算法花园</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-65866729-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38"></script>
+
+
+
+
+
+  <script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script>
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="fa fa-book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">背景介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DeeprETA"><span class="nav-number">2.</span> <span class="nav-text">DeeprETA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Embedding-module"><span class="nav-number">2.1.</span> <span class="nav-text">Embedding module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-layer-Module"><span class="nav-number">2.2.</span> <span class="nav-text">2-layer Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Asymmetric-Huber-loss-function"><span class="nav-number">2.3.</span> <span class="nav-text">Asymmetric Huber loss function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Train"><span class="nav-number">2.4.</span> <span class="nav-text">Train</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%95%88%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">实验效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="nav-number">3.1.</span> <span class="nav-text">评估指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">3.2.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Embedding-Analysis"><span class="nav-number">3.3.</span> <span class="nav-text">Embedding Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#geospatial-embeddings"><span class="nav-number">3.4.</span> <span class="nav-text">geospatial embeddings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">82</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiang578" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/ryenxx" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;ryenxx" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xiang578.com/post/deepreta.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="DeeprETA An ETA Post-processing System at Scale | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DeeprETA An ETA Post-processing System at Scale
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-02-12 22:14:33 / 修改时间：22:14:48" itemprop="dateCreated datePublished" datetime="2023-02-12T22:14:33+08:00">2023-02-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/post/deepreta.html#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/deepreta.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本篇文章充满工业界风格，介绍 Uber 如何构建基于深度学习的 ETA 系统。在 Uber App 中，ETA 主要服务网约车和外卖两大业务，基于业务发展产生出一些细分场景的 ETA 需求（pick-up、drop-off）。所以他们主要目标是构建高效以及泛用的 ETA 系统。</p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>ETA (Estimated Time of Arrival，预估到达时间)：给定时刻下，预估从一个起点到终点所需要的时间。ATA (Actual Time Of Arrival，真实到达时间)：给定时刻下，真实从一个起点到终点花费的时间。ETA 任务的目标是最小化 ETA 和 ATA 的差距，一般用 MAPE 或 MAE 来衡量。  </p>
+<p><img data-src="https://media.xiang578.com/202302121823437-uber-eta-processing.png" alt="Uber ETA Posting-processing System">  </p>
+<p>上图是 Uber ETA Posting-processing System，主要包括四部分：</p>
+<ul>
+<li><code>Maps &amp; Traffic</code>： Map 指将整个真实世界用图数据（点和边）来建模。在给定起点和终点的情况下，路径规划系统规划的路线可以用一系列边来表示。Traffic 指交通状态，路况团队会根据前一段时间收集到的 gps 信号，预计后面一段时间内真实世界中道路的拥堵程度和通行速度。  </li>
+<li><code>Routing Engine</code>：根据路径规划系统规划的路线以及路况发布的道路通行速度计算出一个规则 ETA（Routing Engine ETA, RE-ETA）  </li>
+<li><code>ML Model</code>：本文介绍的深度学习 DeeprETA 模型，该模型预估 RE-ETA 和 ATA 的残差。  </li>
+<li><code>Routing APIs</code>：通过 api 接口给其他业务提供 ETA 服务</li>
+</ul>
+<h2 id="DeeprETA"><a href="#DeeprETA" class="headerlink" title="DeeprETA"></a>DeeprETA</h2><p>遵循 <code>More Embeddings, Fewer Layers</code> 原则，设计预测效率更高的模型，主要包括 embdding module  和 2-Layer Module 两个模块。</p>
+<p><img data-src="https://media.xiang578.com/202302122107777-deepreta-architecture.png" alt="deepreta-architecture"></p>
+<h3 id="Embedding-module"><a href="#Embedding-module" class="headerlink" title="Embedding module"></a>Embedding module</h3><p>模型特征主要分成三类：Continuous Features、Categorical Features 以及 Geospatial Features，具体特征如下：</p>
+<p><img data-src="https://media.xiang578.com/202302121908948-deepreta-feature.png" alt="Feature Tabble"></p>
+<h4 id="Categorical-Features"><a href="#Categorical-Features" class="headerlink" title="Categorical Features"></a>Categorical Features</h4><p>所有类别特征都 embedding 化</p>
+<h4 id="Continuous-Features"><a href="#Continuous-Features" class="headerlink" title="Continuous Features"></a>Continuous Features</h4><p>数值特征先分桶离散化，然后转成 embeddine。作者他们尝试发现 quantile buckets（等频分桶，比如每 20% 样本分一个同） 比 equal-width buckets（等距分桶）效果更好，猜测其可能原因是等频分桶更有效保留信息（We suspect that quantile buckets perform well because they maximize entropy: for any fixed number of buckets, quantile buckets convey the most information (in bits) about the original feature value compared to any other bucketing scheme.）。</p>
+<h4 id="Geospatial-Features"><a href="#Geospatial-Features" class="headerlink" title="Geospatial Features"></a>Geospatial Features</h4><p>Geospatial Features 主要指终点和起点的经纬度坐标，通过 geo hashing + multiple feature hashing 转换成 embdding。</p>
+<p><img data-src="https://media.xiang578.com/202302122052993-multi-resolution-geohashes.png" alt="multi-resolution-geohashes"></p>
+<ul>
+<li>通过 Geohash 将经纬度转换成固定长度的字符串<ul>
+<li>将 <code>lat, lng</code> 转换成 <code>[0,1]</code> 范围内浮点数</li>
+<li>放大上一步得到的浮点数到 <code>[0, 2e32]</code> 转换成 32 位整数</li>
+<li>将 lat 和 lng 对应的两个 32 整数合并成一个 64 位整数</li>
+<li>利用 base32 对 64 位整数进行编码得到一个长度为 <code>5u</code> bits 的字符串</li>
+</ul>
+</li>
+<li>通过 Feature hasing 将字符串转换成 index<ul>
+<li><code>Exact indexing</code> 每个字符串转成单独 embdding。geohash 精度越高，该方法内存消耗越大。</li>
+<li><code>Multiple feature hashing</code> feature hashing 将多个字符串转换成一个 index。考虑到hash冲突以及格子内订单的热度，同一个字符串使用多个 hash 函数处理得到多个 index。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-layer-Module"><a href="#2-layer-Module" class="headerlink" title="2-layer Module"></a>2-layer Module</h3><p>2-layer Module 分别是 Interaction layer 和 Calibration layer。模型 ETA 可以表示成：</p>
+<p>$$\hat{r}<em>{\mathrm{ij}}&#x3D;\hat{f}<em>2\left(\hat{f}\left(X</em>{i</em>{\mathrm{emb}}}\right)\right)+\hat{b}<em>j\left(X</em>{i_{\mathrm{type}}}\right)$$</p>
+<p>其中 f 代表 Interaction layer，f2 代表全连层，$b_j$ 代表 Calibration layer （第 j 种类型 ETA 的偏置）。</p>
+<h4 id="Interaction-layer"><a href="#Interaction-layer" class="headerlink" title="Interaction layer"></a>Interaction layer</h4><p>所有特征在经过 Embedding module 后。都被转换成相同长度的 embdding，然后经过 Interaction layer 进行特征交叉。尝试过主流的网络结构后，作者选择的是 self-attention 结构，更进一步引入 Linear self-attention 解决 attention 矩阵计算速度慢的问题。</p>
+<p><img data-src="https://media.xiang578.com/202302122114998-one-interaction-layer.png" alt="one-interaction-layer"></p>
+<h4 id="Calibration-layer"><a href="#Calibration-layer" class="headerlink" title="Calibration layer"></a>Calibration layer</h4><p>针对不同业务数据分布特点，Calibration layer 根据ETA请求类型（网约车&#x2F;配送、pickup&#x2F;dropoff、长短单）使用全连接层对上一步模型结果进行校准（对预测结果进行整体偏移）。另外，作者也提到这一层也可以设计成 MMoE 结构。</p>
+<p><img data-src="https://media.xiang578.com/202302122129047-uber-model-strucure.png" alt="uber-model-strucure"></p>
+<h3 id="Asymmetric-Huber-loss-function"><a href="#Asymmetric-Huber-loss-function" class="headerlink" title="Asymmetric Huber loss function"></a>Asymmetric Huber loss function</h3><p>不同类型 ETA 任务需要用不同的指标来评估，比如预估价格需要 ETA mean erros，配送 ETA 利用类似于 95th 更加合理。所以作者设计出一种非对称的 Huber Loss Fucntion：</p>
+<p>$$\mathcal{L}\left(\omega, \delta, \Theta ;\left(\boldsymbol{q}, y_0\right), y\right)&#x3D; \begin{cases}\omega \mathcal{L}\left(\delta, \Theta ;\left(\boldsymbol{q}, y_0\right), y\right), &amp; y&lt;\hat{y} \ (1-\omega) \mathcal{L}\left(\delta, \Theta ;\left(\boldsymbol{q}, y_0\right), y\right), &amp; y \geq \hat{y}\end{cases}$$</p>
+<p>$$\mathcal{L}\left(\delta, \Theta ;\left(\boldsymbol{q}, y_0\right), y\right)&#x3D; \begin{cases}\frac{1}{2}(y-\hat{y})^2, &amp; |y-\hat{y}|&lt;\delta \ \delta|y-\hat{y}|-\frac{1}{2} \delta^2, &amp; |y-\hat{y}| \geq \delta\end{cases}$$</p>
+<p>$\Theta$ 代表模型参数，$\omega \in[0,1]$ 控制模型对高低估倾向（比如准时赔场景，如果模型低估严重会带来大量投诉）, $\delta&gt;0$ 控制异常值的容忍程度，值越大对异常值越不敏感。</p>
+<h3 id="Train"><a href="#Train" class="headerlink" title="Train"></a>Train</h3><ul>
+<li>每周训练模型</li>
+<li>Adam</li>
+<li>Relative cosine annealing learning rate scheduler</li>
+</ul>
+<h2 id="实验效果"><a href="#实验效果" class="headerlink" title="实验效果"></a>实验效果</h2><h3 id="评估指标"><a href="#评估指标" class="headerlink" title="评估指标"></a>评估指标</h3><p>主要有 mean absolute error (MAE), 50th percentile absolute error (p50 error) and 95th percentile absolute error (p95 error)。实验结果都是计算三个指标相对于 RE-ETA 的提升。比如 MAE 的计算方式改成：</p>
+<p>$$<br>\frac{\frac{1}{n} \sum_{i&#x3D;1}^n\left|y_i-\hat{y}<em>{0 i}\right|-\frac{1}{n} \sum</em>{i&#x3D;1}^n\left|y_i-\hat{y}\right|}{\frac{1}{n} \sum_{i&#x3D;1}^n\left|y_i-\hat{y}_{0 i}\right|} .<br>$$</p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><ul>
+<li>DeeprETANet 比 XGBoost ResNet HammockNet 等方法都有明显的效果提升。</li>
+<li>在 p95 指标上 DeeprETANet 和无 feature hashing DeeprETANet 提升相类似，可能说明 geospatial embeddings 能在 type case 上有提升，但是不能改善极端错误的情况。</li>
+</ul>
+<p><img data-src="https://media.xiang578.com/202302122153936-deepretaresult.png" alt="deepretaresult"></p>
+<h3 id="Embedding-Analysis"><a href="#Embedding-Analysis" class="headerlink" title="Embedding Analysis"></a>Embedding Analysis</h3><p>这一部分作者用 t-SNE (将 embedding 降维到 2维）对 geospatial embeddings 和 temporal embedding 进行分析。</p>
+<h4 id="temporal-embedding"><a href="#temporal-embedding" class="headerlink" title="temporal embedding"></a>temporal embedding</h4><p>两幅图分别是配送和网约车的 embedding 分布，深色代表 weekend，浅色代表 weekday，从图上看有局部连续性，但是没有明确的周末或工作日效应（深色和浅色没有明显聚集）</p>
+<p><img data-src="https://media.xiang578.com/202302122201409-t-sne-time-embedding.png" alt="time-embedding"></p>
+<h3 id="geospatial-embeddings"><a href="#geospatial-embeddings" class="headerlink" title="geospatial embeddings"></a>geospatial embeddings</h3><p>geospatial embeddings 有局部聚集性，猜测是相邻的位置有相似的表示。配送和网约车学习到的 embedding 不同。</p>
+<p><img data-src="https://media.xiang578.com/202302122207120-geospatial-embeddings.png" alt="geospatial embeddings"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=CJTitzj0qBo">How Uber Predicts Arrival Times - Xinyu Hu and Olcay Cirit | Stanford MLSys #64 - YouTube</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.uber.com/en-JP/blog/deepeta-how-uber-predicts-arrival-times/">DeepETA: How Uber Predicts Arrival Times Using Deep Learning | Uber Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10302600">Day 17 Uber 要如何估計司機和外送的抵達時間？（上）- Self attention 介紹</a>：简单讲了 self-attention 的计算过程</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10303293">Day 18 Uber 要如何估計司機和外送的抵達時間？（下）- DeeprETANet</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/uber/" rel="tag"># uber</a>
+              <a href="/tags/eta/" rel="tag"># eta</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/thinking-06.html" rel="prev" title="【随想集】06 一元复始，重新出发">
+                  <i class="fa fa-chevron-left"></i> 【随想集】06 一元复始，重新出发
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">206k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:08</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js" integrity="sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.2/dist/instantsearch.production.min.js" integrity="sha256-Nu8yqoXoRZEVYyZf4/eY1V4FsenbiCw85RY3gWjN3zQ=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiang578","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
