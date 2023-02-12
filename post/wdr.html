@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://media.xiang578.com/15643234352132.jpg">
 <meta property="og:image" content="https://media.xiang578.com//fma-eta.jpg">
 <meta property="article:published_time" content="2019-07-28T14:14:33.000Z">
-<meta property="article:modified_time" content="2023-02-12T14:14:48.655Z">
+<meta property="article:modified_time" content="2023-02-12T14:33:36.287Z">
 <meta property="article:author" content="Ryen Xiang">
 <meta property="article:tag" content="lstm">
 <meta property="article:tag" content="widedeep">
@@ -155,7 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text">评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81"><span class="nav-number">2.</span> <span class="nav-text">特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0"><span class="nav-number">4.</span> <span class="nav-text">评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ETA-%E6%9C%8D%E5%8A%A1%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text">ETA 服务工程架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FMA-ETA-Estimating-Travel-Time-Entirely-Based-on-FFN-With-Attention"><span class="nav-number">6.</span> <span class="nav-text">FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text"> 评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81"><span class="nav-number">2.</span> <span class="nav-text"> 特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text"> 模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0"><span class="nav-number">4.</span> <span class="nav-text"> 评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eta-%E6%9C%8D%E5%8A%A1%E5%B7%A5%E7%A8%8B%E6%9E%B6%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text"> ETA 服务工程架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fma-eta-estimating-travel-time-entirely-based-on-ffn-with-attention"><span class="nav-number">6.</span> <span class="nav-text"> FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text"> 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">8.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -170,7 +170,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -256,7 +256,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-12 22:14:48" itemprop="dateModified" datetime="2023-02-12T22:14:48+08:00">2023-02-12</time>
+      <time title="修改时间：2023-02-12 22:33:36" itemprop="dateModified" datetime="2023-02-12T22:33:36+08:00">2023-02-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -312,12 +312,16 @@
 <p>这篇论文是滴滴时空数据组 2018 年在 KDD 上发表的关于在 ETA 领域应用深度学习的文章，里面提到模型和技巧大家都应该耳熟能详，最大亮点是工业界的创新。</p>
 <p>简单介绍一下背景：ETA 是 Estimate Travel Time 的缩写，中文大概能翻译成到达时间估计。这个问题描述是：在某一个时刻，估计从 A 点到 B 点需要的时间。对于滴滴，关注的是司机开车把乘客从起点送到终点需要的时间。抽象出来 ETA 就是一个时间空间信息相关的回归问题。CTR 中常用的方法都可以在这里面尝试。</p>
 <p>对于这个问题：文章首先提到一个最通用的方法 Route ETA：即在获得 A 点到 B 点路线的情况下，计算路线中每一段路的行驶时间，并且预估路口的等待时间。最终 ETA 由全部时间相加得到。这种方法实现起来很简单，也能拿到一些收益。但是仔细思考一下，没有考虑未来道路的通行状态变化情况以及路线的拓扑关系。针对这些问题，文章中提到滴滴内部也有利用 GBDT 或 FM 的方法解决 ETA 问题，不过没有仔细写实现的方法，我也不好继续分析下去。</p>
-<h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><p>对于 ETA 问题来说，工业界和学术界常用的指标是 MAPE(mean absolute percentage error)，${y_i}$ 是司机实际从 A 点到 B 点花费的时间，${f(x_i)}$ 是 ETA 模型估计出来的时间。得到计算公式如下：</p>
-<p>$${min_f \sum_{i&#x3D;1}^{N}\frac{|y_i - f(x_i)|}{y_i}}$$</p>
+<h2 id="评价指标"><a class="markdownIt-Anchor" href="#评价指标"></a> 评价指标</h2>
+<p>对于 ETA 问题来说，工业界和学术界常用的指标是 MAPE(mean absolute percentage error)，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">{y_i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span> 是司机实际从 A 点到 B 点花费的时间，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">{f(x_i)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> 是 ETA 模型估计出来的时间。得到计算公式如下：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>m</mi><mi>i</mi><msub><mi>n</mi><mi>f</mi></msub><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><mfrac><mrow><mi mathvariant="normal">∣</mi><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mi mathvariant="normal">∣</mi></mrow><msub><mi>y</mi><mi>i</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">{min_f \sum_{i=1}^{N}\frac{|y_i - f(x_i)|}{y_i}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.106005em;vertical-align:-1.277669em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="mord mathnormal">i</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283360000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">∣</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord">∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></p>
 <p>多说一句，如果使用 GBDT 模型实现 ETA 时，这个损失函数的推导有点困难，全网也没有看见几个人推导过。</p>
 <p>这个公式主要考虑预估时间偏差大小对用户感知体验的影响，目前我们更加关心极端 badcase 对用户的影响。</p>
-<h2 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h2><ul>
-<li>特征：<ul>
+<h2 id="特征"><a class="markdownIt-Anchor" href="#特征"></a> 特征</h2>
+<ul>
+<li>特征：
+<ul>
 <li>空间特征：路线序列、道路等级、POI等</li>
 <li>时间特征：月份、星期、时间片等</li>
 <li>路况特征：道路的通行速度、拥堵程度</li>
@@ -326,23 +330,25 @@
 </ul>
 </li>
 </ul>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>模型包含 3 个部分：</p>
+<h2 id="模型"><a class="markdownIt-Anchor" href="#模型"></a> 模型</h2>
+<p>模型包含 3 个部分：</p>
 <ul>
 <li>Wide Learning Models：Wide &amp; Deep 这一部分使用的是 LR + 特征工程，希望模型能记忆一部分的模型。这篇论文中直接利用交叉积学习，减少手动特征工程。</li>
 <li>Deep Neural Networks：对 sparse feature 做一次 Embedding，使用 3 层 MLP 和 ReLU 的网络。</li>
 <li>Long-Short Term Memory：前两部分模块没用使用路线序列特征，所以这部分采用 LSTM 抽取路线特征。由于路线序列是不定长的，论文中的模型是使用最后一个隐藏状态，我们也可以把全部的隐藏状态 reduce_sum 输入到最后的模块。</li>
 <li>Regressor： 将 3 个模型的输出综合起来，作为最后的 ETA 预估。MAPE 作为损失函数，利用 BP 训练模型。</li>
 </ul>
-<p><img data-src="https://media.xiang578.com/15643233780326.jpg" alt="WDR"></p>
+<p><img data-src="https://media.xiang578.com/15643233780326.jpg" alt="WDR" /></p>
 <p>上面模型中使用的特征分类：</p>
 <ul>
 <li>Dense feature：行程级别的实数特征，比如起终点球面距离、起终点 GPS 坐标等。</li>
 <li>Sparse feature：行程级别的离散特征，比如时间片编号、星期几、天气类型等。</li>
 <li>Sequential feature：link 级别的特征，实数特征直接输入模型，而离散特征先做 embedding 再输入模型。注意，这里不再是每个行程一个特征向量，而是行程中每条 link 都有一个特征向量。比如，link 的长度、车道数、功能等级、实时通行速度等。</li>
 </ul>
-<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p>包括两部分：离线评估和在线评估。</p>
+<h2 id="评估"><a class="markdownIt-Anchor" href="#评估"></a> 评估</h2>
+<p>包括两部分：离线评估和在线评估。</p>
 <p>离线评估中取滴滴 2017 年北京前6个月的订单数据，分成两类 pickup （平台给司机分单后，司机开车去接乘客的过程）和 trip （司机接到乘客并前往目的地的过程）。具体数据集划分如下。</p>
-<p><img data-src="https://media.xiang578.com/15643234056004.jpg" alt="离线效果"></p>
+<p><img data-src="https://media.xiang578.com/15643234056004.jpg" alt="离线效果" /></p>
 <p>离线使用 MAPE 来评价模型。在线评估时，为了更好的与用户体验挂钩，采用多个指标来衡量 ETA 的效果。包括：</p>
 <ul>
 <li>APE20: absolute percentage error 小于 20% 的订单占比。（越大越好）</li>
@@ -350,36 +356,42 @@
 <li>低估率：低估订单的比例。（越小越好）</li>
 </ul>
 <p>离线结果如下图所示，说来汗颜 PTTE 和 TEMP 是什么算法我都不知道…… WD-MLP 指的是将 WDR 中的 R 部分换成 MLP 。最终 WDR 较 route-ETA 有巨大提升，而且 LSTM 引入的序列信息也在 pikcup 上提升了 0.75%。文章的最后还提出来，LSTM 也可以换成是 Attention，这样替换有什么优点和缺点留给大家思考。</p>
-<p><img data-src="https://media.xiang578.com/15643234140115.jpg" alt="pickup 和 trip 效果"></p>
+<p><img data-src="https://media.xiang578.com/15643234140115.jpg" alt="pickup 和 trip 效果" /></p>
 <p>在线实验结果如下图所示，滴滴 ETA MAPE 明显小于 com1、com2、com3 ，这三家地图公司具体是哪三家，大家也能猜到吧。</p>
-<p><img data-src="https://media.xiang578.com/15643234258049.jpg" alt="线上实验效果"></p>
-<h2 id="ETA-服务工程架构"><a href="#ETA-服务工程架构" class="headerlink" title="ETA 服务工程架构"></a>ETA 服务工程架构</h2><p><img data-src="https://media.xiang578.com/15643234352132.jpg" alt="工程架构"></p>
+<p><img data-src="https://media.xiang578.com/15643234258049.jpg" alt="线上实验效果" /></p>
+<h2 id="eta-服务工程架构"><a class="markdownIt-Anchor" href="#eta-服务工程架构"></a> ETA 服务工程架构</h2>
+<p><img data-src="https://media.xiang578.com/15643234352132.jpg" alt="工程架构" /></p>
 <p>从上面的图中可以看出 ETA 服务工程架构主要包括三个部分：</p>
 <ul>
 <li>Data Aggregation：包括利用 Map Matching 将司机上传到平台的 GPS 对应到滴滴的 Map Info 中得到司机真实行驶过的路线信息，Order Context 指的是订单相关的信息，augmented Data 额外数据比如上文说的交通情况相关信息。</li>
 <li>Offline Training：利用上一步得到的历史数据训练模型。这里可以值得一提的是，ETA 模型是和时间强相关的（节假日和工作日的数据分布明显不同），所以在文章中作者指出将拿出最新的一部分数据用来 fine-tune 训练出来的 WDR 模型。</li>
 <li>Online Service：这里需要一个完整的模型服务系统，其他公司也有很多分享，所以原文没有多提。</li>
 </ul>
-<h2 id="FMA-ETA-Estimating-Travel-Time-Entirely-Based-on-FFN-With-Attention"><a href="#FMA-ETA-Estimating-Travel-Time-Entirely-Based-on-FFN-With-Attention" class="headerlink" title="FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention"></a>FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention</h2><p><img data-src="https://media.xiang578.com//fma-eta.jpg" alt="模型架构"></p>
+<h2 id="fma-eta-estimating-travel-time-entirely-based-on-ffn-with-attention"><a class="markdownIt-Anchor" href="#fma-eta-estimating-travel-time-entirely-based-on-ffn-with-attention"></a> FMA-ETA: Estimating Travel Time Entirely Based on FFN With Attention</h2>
+<p><img data-src="https://media.xiang578.com//fma-eta.jpg" alt="模型架构" /></p>
 <ul>
 <li>WDR 模型中 RNN 耗时长，探索基于 Attention 机制的模型</li>
 <li>对特征分组（multi-factor）去做 Attention 效果比多头要好</li>
-<li>实验结果分析这部分没有看懂<blockquote>
+<li>实验结果分析这部分没有看懂
+<blockquote>
 <p>The deep modules with attention achieve better results than WDR on MAE and RMSE metrics, which means attention mechanism can help to extract features and sole the long-range dependencies in long sequence.</p>
 </blockquote>
 </li>
-<li>遗憾之处<ul>
+<li>遗憾之处
+<ul>
 <li>新模型预测时延减少，但是没有线上实验结果。</li>
 <li>暂时没有公开代码和数据集。</li>
 </ul>
 </li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从上面简单的介绍来看，ETA 可以使用 CTR 和 NLP 领域的很多技术，大有可为。最后，滴滴 ETA 团队持续招人中（社招、校招、日常实习等），感兴趣者快快和我联系。</p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>从上面简单的介绍来看，ETA 可以使用 CTR 和 NLP 领域的很多技术，大有可为。最后，滴滴 ETA 团队持续招人中（社招、校招、日常实习等），感兴趣者快快和我联系。</p>
 <p>说点题外话 <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22385673/answer/522580778">你为什么从滴滴出行离职？ - 知乎</a> 中提到一点：</p>
 <blockquote>
 <p>8.同年大跃进，在滴滴中高层的眼里，没有BAT。滴滴单量超淘宝指日可待，GAFA才是滴滴要赶超的对象。百度系，LinkedIn系，学院派，uber帮，联想系，MBB就算了，据说连藤校都混成了一个小圈子。。一个项目A team ，B team。一个ETA，投入了多少人力自相残杀？MAPE做到0%又如何？用户体验就爆表了吗？长期留存就高枕无忧了吗？风流总被雨打风吹去，滴滴是二龙山，三虫聚首？是不是正确的事情不知道，反正跟着公司大势所趋，升D10保平安。</p>
 </blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<blockquote>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.leiphone.com/news/201808/EmRne91YDwwNCl4A.html">KDD 2018：滴滴提出WDR模型显著提升ETA预测精度 | 雷锋网</a></li>
 <li><a target="_blank" rel="noopener" href="http://www.semocean.com/lbs%e5%b7%a5%e4%b8%9a%e7%95%8ceta%e5%ba%94%e7%94%a8%e5%8f%8a%e6%bb%b4%e6%bb%b4wdr%e6%8a%80%e6%9c%af/">LBS工业界ETA应用及滴滴WDR技术 – Semocean</a></li>
@@ -450,14 +462,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">206k</span>
+    <span title="站点总字数">214k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:08</span>
+    <span title="站点阅读时长">3:14</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -509,6 +521,11 @@
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
 
 
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiang578","count":true,"i18n":{"disqus":"disqus"}}</script>
