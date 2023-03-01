@@ -2939,3 +2939,12 @@ span#inline-toc {
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
+.webmention-body h2 {
+  padding-left: 1.7%;
+  color: #2e405b;
+  position: relative;
+  border-left: 4px solid #f27c8d;
+  margin-left: -40px;
+  border-bottom: none;
+  font-size: 1.375em;
+}

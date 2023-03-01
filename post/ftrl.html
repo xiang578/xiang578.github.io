@@ -19,7 +19,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"disqus","storage":true,"lazyload":false,"nav":null,"activeClass":"disqus"},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="FTRL 是 Google 提出的一种优化算法。常规的优化方法例如梯度下降、牛顿法等属于批处理算法，每次更新需要对 batch 内的训练样本重新训练一遍。在线学习场景下，我们希望模型迭代速度越快越好。例如用户发生一次点击行为后，模型就能快速进行调整。FTRL 在这个场景中能求解出稀疏化的模型。  基础知识  L1 正则比 L2 正则可以产生更稀疏的解。 次梯度：对于 L1 正则在 x&#x3D;0x&#x3D;0x&#x3D;">
 <meta property="og:type" content="blog">
@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://media.xiang578.com/15780559628822.jpg">
 <meta property="og:image" content="https://media.xiang578.com/15780576261639.jpg">
 <meta property="article:published_time" content="2020-01-03T13:26:06.000Z">
-<meta property="article:modified_time" content="2023-03-01T15:16:39.103Z">
+<meta property="article:modified_time" content="2023-03-01T18:23:09.765Z">
 <meta property="article:author" content="Ryen Xiang">
 <meta property="article:tag" content="google">
 <meta property="article:tag" content="ml">
@@ -252,7 +252,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-01 23:16:39" itemprop="dateModified" datetime="2023-03-01T23:16:39+08:00">2023-03-01</time>
+      <time title="修改时间：2023-03-02 02:23:09" itemprop="dateModified" datetime="2023-03-02T02:23:09+08:00">2023-03-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -272,20 +272,6 @@
       <span class="post-meta-item-text">阅读次数：</span>
       <span id="busuanzi_value_page_pv"></span>
     </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/post/ftrl.html#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/ftrl.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
@@ -403,23 +389,24 @@ M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
     
     
 
-    <footer class="post-footer">       <link rel="stylesheet" type="text/css" href="/css/webmention.css?v=1.1.5" />
-       <script type="text/javascript" src="/js/webmention.min.js" data-id="webmentions"></script>
-       <div id="webmentions"></div>
-       <form style="margin-left: 70%" method="get" action="https://quill.p3k.io/" target="_blank">
-        <input type="hidden" name="dontask" value="1" />
-        <input type="hidden" name="me" value="https://commentpara.de/" />
-        <input class="my-url" type="hidden" name="reply" value="" />
-        <input style="min-width: 50%; font-size: 1.2em" type="submit" value="写个评论吧" />
-       </form>
-       <p>或者您可以把评论发在别处，添加指向本页的连接，然后把网址告诉我：</p>
-       <form action="https://webmention.io/blog.xiang578.com/webmention" method="post">
-        <input style="min-width: 68.5%; font-size: 1.2em" name="source" placeholder="" type="url" />
-        <input class="my-url" type="hidden" name="target" value="" />
-        <input style="min-width: 20%; font-size: 1.2em" type="submit" value="发送Webmention" />
-       </form>
-       <script type="text/javascript">for (const u of document.querySelectorAll("input.my-url"))
-  u.value = window.location.href;</script>
+    <footer class="post-footer"><hr>
+<div class="webmention-body">
+<link rel="stylesheet" type="text/css" href="/css/webmention.css?v=1.1.5" />
+<script type="text/javascript" src="/js/webmention.min.js" data-id="webmentions"></script>
+
+<p>
+你有对这篇文章写<a target="_blank" rel="noopener" href="https://indieweb.org/responses">回应</a>吗? 你可以在这里提交你的文章网址或者推特链接（文章或推特内容需要包含这篇文章的地址，点击<a target="_blank" rel="noopener" href="https://indieweb.org/Webmention">这里</a>了解 Webmention）：
+</p>
+
+<form action="https://webmention.io/blog.xiang578.com/webmention" method="post">
+<input style="min-width: 68.5%; font-size: 1.2em" name="source" placeholder="" type="url" />
+<input class="my-url" type="hidden" name="target" value="" />
+<input style="min-width: 20%; font-size: 1.2em" type="submit" value="发送Webmention" />
+</form>
+
+<script type="text/javascript">for (const u of document.querySelectorAll("input.my-url")) u.value = window.location.href;</script>
+
+</div>
           <div class="post-tags">
               <a href="/tags/google/" rel="tag"># google</a>
               <a href="/tags/ml/" rel="tag"># ml</a>
@@ -450,11 +437,6 @@ M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 
 
 
-    
-  <div class="comments" id="disqus_thread">
-    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-  </div>
-  
 </div>
   </main>
 
@@ -543,8 +525,6 @@ M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
   <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
 
 
-<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"xiang578","count":true,"i18n":{"disqus":"disqus"}}</script>
-<script src="/js/third-party/comments/disqus.js"></script>
 
 </body>
 </html>
