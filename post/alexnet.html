@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="baidu-site-verification" content="code-Kii9Nt0ZGh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="作者以及相关性  Alex Krizhevsky Ilya Sutskever Geoffrey E. Hinton 本文被认为是这一轮深度学习浪潮的开端   主题  将 CNN 技术最先应用到图像识别领域，利用 CNN 参数共享的特性，减少网络的规模 解决深度网络难训练（速度慢）以及容易过拟合问题（更多数据或者网络技巧）   数据集与指标  ImageNet LSVRC-2010 contes">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)">
+<meta property="og:url" content="https://blog.xiang578.com/post/alexnet.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="作者以及相关性  Alex Krizhevsky Ilya Sutskever Geoffrey E. Hinton 本文被认为是这一轮深度学习浪潮的开端   主题  将 CNN 技术最先应用到图像识别领域，利用 CNN 参数共享的特性，减少网络的规模 解决深度网络难训练（速度慢）以及容易过拟合问题（更多数据或者网络技巧）   数据集与指标  ImageNet LSVRC-2010 contes">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://media.xiang578.com/15580111160071.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15581816832571.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15581833748303.jpg">
+<meta property="og:image" content="https://media.xiang578.com/15581820979738.jpg">
+<meta property="article:published_time" content="2019-05-18T12:56:43.000Z">
+<meta property="article:modified_time" content="2023-03-02T13:49:16.620Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="cnn">
+<meta property="article:tag" content="alexnet">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://media.xiang578.com/15580111160071.jpg">
+
+
+<link rel="canonical" href="https://blog.xiang578.com/post/alexnet.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.xiang578.com/post/alexnet.html","path":"post/alexnet.html","title":"ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet) | 算法花园</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-65866729-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38"></script>
+
+
+
+
+
+  <script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script>
+
+<link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" />
+<link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="fa fa-book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E8%80%85%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text"> 作者以及相关性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text"> 主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8E%E6%8C%87%E6%A0%87"><span class="nav-number">3.</span> <span class="nav-text"> 数据集与指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9E%E9%AA%8C%E7%BB%93%E8%AE%BA"><span class="nav-number">4.</span> <span class="nav-text"> 模型&#x2F;实验&#x2F;结论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text"> 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C"><span class="nav-number">4.2.</span> <span class="nav-text"> 实验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">4.3.</span> <span class="nav-text"> 结论</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">82</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiang578" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/xiang578" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.xiang578.com/post/alexnet.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet) | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ImageNet Classiﬁcation with Deep Convolutional Neural Networks(AlexNet)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-05-18 20:56:43" itemprop="dateCreated datePublished" datetime="2019-05-18T20:56:43+08:00">2019-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-02 21:49:16" itemprop="dateModified" datetime="2023-03-02T21:49:16+08:00">2023-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="作者以及相关性"><a class="markdownIt-Anchor" href="#作者以及相关性"></a> 作者以及相关性</h2>
+<ul>
+<li>Alex Krizhevsky</li>
+<li>Ilya Sutskever</li>
+<li>Geoffrey E. Hinton</li>
+<li>本文被认为是这一轮深度学习浪潮的开端</li>
+</ul>
+<h2 id="主题"><a class="markdownIt-Anchor" href="#主题"></a> 主题</h2>
+<ul>
+<li>将 CNN 技术最先应用到图像识别领域，利用 CNN 参数共享的特性，减少网络的规模</li>
+<li>解决深度网络难训练（速度慢）以及容易过拟合问题（更多数据或者网络技巧）</li>
+</ul>
+<h2 id="数据集与指标"><a class="markdownIt-Anchor" href="#数据集与指标"></a> 数据集与指标</h2>
+<ul>
+<li>ImageNet LSVRC-2010 contest: 图片 1000 分类</li>
+<li>top-1 和 top-5 错误率为指标</li>
+</ul>
+<h2 id="模型实验结论"><a class="markdownIt-Anchor" href="#模型实验结论"></a> 模型/实验/结论</h2>
+<h3 id="模型"><a class="markdownIt-Anchor" href="#模型"></a> 模型</h3>
+<ul>
+<li>
+<p>由于当时的 GPU 显存限制，无法将所有的数据加载到单独 GPU 中，作者使用两个 GPU 并行训练。</p>
+</li>
+<li>
+<p>整个模型如下图所示，由 5 个卷积层以及 3 个全连接层组成。其中在 CONV3、FC1、FC2、FC3 层进行两个 GPU 的数据交互。</p>
+<ul>
+<li>[227, 227, 3] INPUT: 原始论文中 224 为笔误。</li>
+<li>[55, 55, 96] CONV1: (11*11*3,96) filters, Stride 4, pad 0</li>
+<li>[27, 27, 96] MAX POOL1: (3*3) filters, Stride 2</li>
+<li>[27, 27, 96] NORM1: Normalization layer</li>
+<li>[27, 27, 256] CONV2: (5*5,256) filters, Stride 1, pad 2</li>
+<li>[13, 13, 256] MAX POOL2: (3*3) filters, Stride 2</li>
+<li>[13, 13, 256] NORM2: Normalization layer</li>
+<li>[13, 13, 384] CONV3: (3*3,384) filters, Stride 1, pad 1</li>
+<li>[13, 13, 384] CONV4: (3*3,384) filters, Stride 1, pad 1</li>
+<li>[13, 13, 384] CONV5: (3*3,256) filters, Stride 1, pad 1</li>
+<li>[6, 6, 256] MAX POOL3: (3*3) filters, Stride 2</li>
+<li>[4096] FC1: 两个 GPU 中的 CONV 层结果进行全连接</li>
+<li>[4096] FC2: FC1 进行全连接</li>
+<li>[1000] FC3: FC2 进行全连接，最后输出分类结果</li>
+</ul>
+</li>
+<li>
+<p>参数数量 60 million</p>
+</li>
+</ul>
+<p><img data-src="https://media.xiang578.com/15580111160071.jpg" alt="" /></p>
+<ul>
+<li>使用 ReLU 作为激活函数：比 tanh 计算开销小，以及收敛速度快。根据问题的特点选择激活函数（大模型、大数据集）</li>
+<li>Local Response Normalization(Norm Layers)：局部响应归一化层，后来很少使用。<br />
+在经过 ReLU 作用之后，对相同空间位置上（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>b</mi><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">{b_{x,y}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span>）的相邻深度（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>b</mi><mi>j</mi></msup></mrow><annotation encoding="application/x-tex">{b^j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span></span></span></span></span></span></span></span> ）的卷积结果做归一化。n 指定相邻卷积核数目，N 为该层所有卷积的数目。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo separator="true">,</mo><mi>n</mi><mo separator="true">,</mo><mi>α</mi><mo separator="true">,</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">{k, n, \alpha, \beta}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span></span> 都是超参数。本文使用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mi>n</mi><mo>=</mo><mn>5</mn><mo separator="true">,</mo><mi>α</mi><mo>=</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup><mo separator="true">,</mo><mi>β</mi><mo>=</mo><mn>0.75</mn></mrow><annotation encoding="application/x-tex">{k=2, n=5, \alpha=10^{-4}, \beta = 0.75}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">5</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">7</span><span class="mord">5</span></span></span></span></span>, 分别降低 top-1 和 top-5 错误 1.4% 和 1.2%</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mi>b</mi><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><mi>i</mi></msubsup><mo>=</mo><msubsup><mi>a</mi><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><mi>i</mi></msubsup><mi mathvariant="normal">/</mi><msup><mrow><mo fence="true">(</mo><mi>k</mi><mo>+</mo><mi>α</mi><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi>i</mi><mo>−</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo></mrow><mrow><mi>min</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>i</mi><mo>+</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo stretchy="false">)</mo></mrow></munderover><msup><mrow><mo fence="true">(</mo><msubsup><mi>a</mi><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><mi>j</mi></msubsup><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo fence="true">)</mo></mrow><mi>β</mi></msup></mrow><annotation encoding="application/x-tex">b_{x, y}^{i}=a_{x, y}^{i} /\left(k+\alpha \sum_{j=\max (0, i-n / 2)}^{\min (N-1, i+n / 2)}\left(a_{x, y}^{j}\right)^{2}\right)^{\beta}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2577720000000001em;vertical-align:-0.383108em;"></span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.874664em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.839048em;vertical-align:-1.55002em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.874664em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎝</span></span></span><span style="top:-3.2550000000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="overlay" style="height:0.3em;width:0.875em;"><svg width='0.875em' height='0.3em' style='width:0.875em' viewBox='0 0 875 300' preserveAspectRatio='xMinYMin'><path d='M291 0 H417 V300 H291 z'/></svg></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎛</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.9610050000000006em;"><span style="top:-1.8089950000000001em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mop mtight"><span class="mtight">m</span><span class="mtight">a</span><span class="mtight">x</span></span><span class="mopen mtight">(</span><span class="mord mtight">0</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">i</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">n</span><span class="mord mtight">/</span><span class="mord mtight">2</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.386005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight"><span class="mtight">m</span><span class="mtight">i</span><span class="mtight">n</span></span><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">i</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">n</span><span class="mord mtight">/</span><span class="mord mtight">2</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5160049999999998em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.874664em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">y</span></span></span></span><span style="top:-3.1130000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.078672em;"><span style="top:-3.327564em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎠</span></span></span><span style="top:-3.2550000000000003em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="overlay" style="height:0.3em;width:0.875em;"><svg width='0.875em' height='0.3em' style='width:0.875em' viewBox='0 0 875 300' preserveAspectRatio='xMinYMin'><path d='M457 0 H583 V300 H457 z'/></svg></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:2.289028em;"><span style="top:-4.5029200000000005em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05278em;">β</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li>Pooling：s=2 &lt; z=3，有部分重叠，作者通过实验发现这种方法可以更好地避免过拟合。</li>
+<li>data augmentation：
+<ul>
+<li>对图像进行裁剪以及翻转，扩大数据。这种策略对测试带来影响，测试时裁剪出图片四个角落以及中间部分，得到 5 张图片，另外翻转得到 5 张图片，最后分类结果又这 10 图片的平均得分确定。</li>
+<li>利用 PCA 改变 RGB 通道的强度。</li>
+</ul>
+</li>
+<li>Dropout：每次训练的时候，从模型中 sample 出一个小的模型，减少过拟合。</li>
+</ul>
+<h3 id="实验"><a class="markdownIt-Anchor" href="#实验"></a> 实验</h3>
+<ul>
+<li>
+<p>参数：dropout 0.5，batch size 128， SGD Momentum 0.9， Learning rate 1e-2 reduce by 10，L2 weight decay 5e-4</p>
+</li>
+<li>
+<p>测试集上结果<br />
+<img data-src="https://media.xiang578.com/15581816832571.jpg" alt="" /></p>
+</li>
+<li>
+<p>取出 CONV1 相关的 filters卷积侧重点不同，GPU1 颜色无关，GPU2 颜色相关。多次实验发现都存在这种现象，说明使用多个 GPU 训练是必要的，模型可以捕捉更多信息。<br />
+<img data-src="https://media.xiang578.com/15581833748303.jpg" alt="" /></p>
+</li>
+<li>
+<p>取所有最后一个隐层向量，找到与测试图片欧拉距离最小的训练图片（下图中第一列为测试图片，之后几列是欧拉距离最小的训练集中图片）。肉眼可以发现，同一分类的图片有很大关联性。证明模型能学习图片之间的关系。<br />
+<img data-src="https://media.xiang578.com/15581820979738.jpg" alt="" /></p>
+</li>
+</ul>
+<h3 id="结论"><a class="markdownIt-Anchor" href="#结论"></a> 结论</h3>
+<ul>
+<li>通过移除 AlexNet 网络中的某几层发现错误率均有提高，这个网络时必要以及有效的。</li>
+<li>文章中作者通过大量的实验确定模型的细节问题，值得我们学习。</li>
+<li>当时的 GPU 限制作者的想象力……</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><hr>
+<div class="webmention-body">
+<link rel="stylesheet" type="text/css" href="/css/webmention.css?v=1.1.5" />
+<script type="text/javascript" src="/js/webmention.min.js" data-id="webmentions"></script>
+
+<p>
+你有对这篇文章写<a target="_blank" rel="noopener" href="https://indieweb.org/responses">回应</a>吗? 你可以在这里提交你的文章网址或者推特链接（文章或推特内容需要包含这篇文章的地址，点击<a target="_blank" rel="noopener" href="https://indieweb.org/Webmention">这里</a>了解 Webmention）：
+</p>
+
+<form action="https://webmention.io/blog.xiang578.com/webmention" method="post">
+<input style="min-width: 68.5%; font-size: 1.2em" name="source" placeholder="" type="url" />
+<input class="my-url" type="hidden" name="target" value="" />
+<input style="min-width: 20%; font-size: 1.2em" type="submit" value="发送Webmention" />
+</form>
+
+<div id="webmentions"></div>
+<script type="text/javascript">for (const u of document.querySelectorAll("input.my-url")) u.value = window.location.href;</script>
+
+</div>
+          <div class="post-tags">
+              <a href="/tags/cnn/" rel="tag"># cnn</a>
+              <a href="/tags/alexnet/" rel="tag"># alexnet</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/2018.html" rel="prev" title="2018 探索">
+                  <i class="fa fa-chevron-left"></i> 2018 探索
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/use-cos-to-store-blog.html" rel="next" title="博客折腾记：主题更新、迁移博客到腾讯云COS以及解决百度收录">
+                  博客折腾记：主题更新、迁移博客到腾讯云COS以及解决百度收录 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">215k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:15</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js" integrity="sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.2/dist/instantsearch.production.min.js" integrity="sha256-Nu8yqoXoRZEVYyZf4/eY1V4FsenbiCw85RY3gWjN3zQ=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

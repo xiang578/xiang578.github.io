@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="baidu-site-verification" content="code-Kii9Nt0ZGh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最近重新看邹欣写的构建之法，发现他的第一章课后作业很有意思，所以决定自己也来写一下。有关的作业说明在2017BUAA软工助教 第0次个人作业 - ChildishChange - 博客园中。  结缘计算机  你为什么选择计算机专业？你认为你的条件如何？和这些博主比呢？（必答） 计算机是你喜欢的领域吗？是你擅长的领域吗？ 你热爱这一专业吗？你对计算机的热爱是怎样的？仅仅是口头的吗？  与大部分人差不">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="构建之法 第 0 次个人作业">
+<meta property="og:url" content="https://blog.xiang578.com/post/build-to-win-homework-0x00.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="最近重新看邹欣写的构建之法，发现他的第一章课后作业很有意思，所以决定自己也来写一下。有关的作业说明在2017BUAA软工助教 第0次个人作业 - ChildishChange - 博客园中。  结缘计算机  你为什么选择计算机专业？你认为你的条件如何？和这些博主比呢？（必答） 计算机是你喜欢的领域吗？是你擅长的领域吗？ 你热爱这一专业吗？你对计算机的热爱是怎样的？仅仅是口头的吗？  与大部分人差不">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://media.xiang578.com/15236805736051.jpg">
+<meta property="article:published_time" content="2018-04-16T04:01:41.000Z">
+<meta property="article:modified_time" content="2023-03-02T13:49:16.620Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://media.xiang578.com/15236805736051.jpg">
+
+
+<link rel="canonical" href="https://blog.xiang578.com/post/build-to-win-homework-0x00.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.xiang578.com/post/build-to-win-homework-0x00.html","path":"post/build-to-win-homework-0x00.html","title":"构建之法 第 0 次个人作业"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>构建之法 第 0 次个人作业 | 算法花园</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-65866729-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38"></script>
+
+
+
+
+
+  <script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script>
+
+<link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" />
+<link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="fa fa-book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E7%BC%98%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-number">1.</span> <span class="nav-text"> 结缘计算机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E5%AD%A6%E4%B9%A0"><span class="nav-number">2.</span> <span class="nav-text"> 在计算机系学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E6%9D%A5%E8%A7%84%E5%88%92"><span class="nav-number">3.</span> <span class="nav-text"> 未来规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.</span> <span class="nav-text"> 参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">82</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiang578" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/xiang578" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.xiang578.com/post/build-to-win-homework-0x00.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="构建之法 第 0 次个人作业 | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          构建之法 第 0 次个人作业
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-04-16 12:01:41" itemprop="dateCreated datePublished" datetime="2018-04-16T12:01:41+08:00">2018-04-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-02 21:49:16" itemprop="dateModified" datetime="2023-03-02T21:49:16+08:00">2023-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/" itemprop="url" rel="index"><span itemprop="name">文渊阁</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.4k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>最近重新看邹欣写的<a target="_blank" rel="noopener" href="https://book.douban.com/subject/25965995/">构建之法</a>，发现他的第一章课后作业很有意思，所以决定自己也来写一下。有关的作业说明在<a target="_blank" rel="noopener" href="http://www.cnblogs.com/ChildishChange/p/7363123.html">2017BUAA软工助教 第0次个人作业 - ChildishChange - 博客园</a>中。</p>
+<h2 id="结缘计算机"><a class="markdownIt-Anchor" href="#结缘计算机"></a> 结缘计算机</h2>
+<blockquote>
+<p>你为什么选择计算机专业？你认为你的条件如何？和这些博主比呢？（必答）<br />
+计算机是你喜欢的领域吗？是你擅长的领域吗？<br />
+你热爱这一专业吗？你对计算机的热爱是怎样的？仅仅是口头的吗？</p>
+</blockquote>
+<p>与大部分人差不多，在高考前我也没有对规划未来。考的也不是很好，没有太多的选择。所幸自认为还是有学习的劲头，想着大学找机会去转专业一波。当时也没有太在意专业的填报，最后机缘巧合来到了财经读计算机。大一下时，确实得到了转专业的机会。在面试时，突然感觉自己对转过去的专业也没有太多的好感，就和面试我的老师说放弃转专业，他们只能口头上鼓励我，男生学计算机也不错。大概就是这样子，就在计算机专业混到了大四。</p>
+<p>比起这些博主来说，我没有他们那么强的主观能动性吧，能自觉地了解学习计算机各个领域的知识。而我从除了学校内的课程安排之外，自己了解其他知识都是浅尝而止。从大一开始差不多就点弯了天赋树，基本上课余时间都在写算法题目，参加各种各样的算法竞赛。幸运地拿了一些大大小小的奖，但是这也导致在知识面上和企业认为的计算机专业学生有很大的区别。目前来说，正在通过自己的努力，加强学习基础知识，希望能补齐自己的短板。</p>
+<p>记得之前有一句话说，「数学是神造学科，计算机是人造学科」。在三年多的学习中，无时无刻不感受到前人思维的巧妙与严谨。比如 CPU 中的加法器，能通过简单的元器件和门电路搭配实现二进制加法以及进位。另外，计算机专业也能及激发最深处的好奇心。当你查阅相关的文档，实现软件的某些功能时，是否能想起童年某个午后拼成的模型？</p>
+<h2 id="在计算机系学习"><a class="markdownIt-Anchor" href="#在计算机系学习"></a> 在计算机系学习</h2>
+<blockquote>
+<p>你对你的大学生活有什么想要吐槽的地方吗？你理想的大学教育应该是什么样子的？跟学校给你的有什么区别？比较你在中国大学的经历，你的老师和学校能做到和国外那样吗？如果不能，请分析一下为什么。（必答）  （8.26修改）<br />
+迄今为止，你写了多少代码，描述你做的最复杂的软件项目/作业。（必答）（8.24修改）<br />
+科班出身和北大青鸟有什么区别？<br />
+速成的培训班和打基础的大学教育还有mooc之间有区别吗？<br />
+学线性代数和概率论的时候，你是否有过这样的疑问「我们为什么要学这么多数学，这和我们的计算机有关系吗」，你现在是否还有这样的疑问？对这个问题，你有自己的解答了吗？那么其他学科呢？</p>
+</blockquote>
+<p>对于专业来说，我记得辅导员曾经在年级会议上讲过这样一段话：「有些人和我说，为什么高等数学这么难？这些书都是在大学没有扩招前编的，以你们的成绩当时都可能上不了大学。而且，我们学校搞计算机系，只是发现有很多教计算机基础的老师才开设的。」所以，也可以知道这个专业在学校的尴尬地位。</p>
+<p>托尔斯泰说「幸福的家庭总是相似的,不幸的家庭却各有各的不幸」。反而对于计算机专业来说，感觉「普通学校的问题总是相似的，强势学校的优点却各有不同」。蒋宇东在<a target="_blank" rel="noopener" href="https://book.douban.com/subject/4006425/discussion/22791674/">梦断计院 为梦前行</a>中写道他自己的学校计院有三大问题：1.学生基础薄弱 2.学风不正，溃散成性 3. 实践环节薄弱，人才位置错放。之前，我也一直在想一件事情：是老师水平太差学生懒得学还是学生水平太差还是老师懒得教？看到上面的三个问题才明白，冰冻三尺非一日之寒，事物发展都是相辅相成的。学生大部分都是过来享受大学美好生活的，对于有挑战的专业基础课比如编译原理、离散数学等都会用脚投票让他离开课程表。有幸能勉强开下去的课程，也会被改成能突击几天通过的样子。</p>
+<p>记得大二导师前往台湾进修前找我谈过一次话。他希望我能自己养成一些良好的学习习惯，多去钻研计算机专业知识。并且还说，学院每年毕业的学生中，没有超过十个学生明白计算机是怎么一回事？三年多的时间里，我也接触过网上的一些 Mooc，不过差不多完全听完的只有浙江大学陈越教授的<a target="_blank" rel="noopener" href="http://www.icourse163.org/course/zju0901-93001">数据结构</a>和吴恩达教授的机器学习。能坚持学习完这两门课，背后都是兴趣使然。数据结构是 ACM 比赛中很重要的一个知识点，当时自己学校还没有开设这门课，而且看书自学也不是很懂，所以就花大半学期的时间在网上去学习。机器学习则是希望未来能从事机器学习相关方面的工作才了解的。</p>
+<p>陈越教授放在网上的数据结构课程相对于浙大内部来说，最大的变化是将教学语言从英文变成了中文，而且也适当的删除了部分内容（不是很确定？）。之前也在知乎上看到浙大计算机专业的课程安排，主干课程选用外国原版教材，以及使用英文授课。另外陈老师在讲解相关算法时，只介绍原理和思想。相关的实践需要你课后花时间进行，并且要求提交程序设计平台上进行黑箱测试。对比后来在自己学校开设的数据结构课程中，直接给你展示代码，也不强求你写的代码能正确运行，只要粘贴在实验报告中提交即可。《机器学习》的课程展示了美国教育的特点，每一周的课程都会包含一个小 quiz ，以及在课程中插入适量的编程大作业，学习的困难程度也就可想而知。</p>
+<p>这些授课方式的不同，我认为是不同大学对于教育的理解不同。对于浙大之类的重点大学来说，所给予学生的是精英教育，侧重于培养学生的计算机科学基础。而下面的学校更多是大学教育成为通识教育的产物，本应该培养专业型人才，传授计算机技术，却由于种种原因没有这样开展。Mooc 的出现，打破了原有的时间、空间的限制，让我这样的普通学习接触到了国内外顶尖大学的教育资源，有利于教育公平。但失败之处也在于它的灵活性，不得不承认需要很强的自我约束能力才能完整地学习完网上的课程，不知你还记不记得那个当时看得热血沸腾的课程时，被你遗忘在哪个角落了？</p>
+<p>最后，我觉得 Mooc 还缺少的同辈压力。吴军博士在《大学之路》中写道「当许多聪明、求知欲强、具有同情心而又目光敏锐的年轻人聚到一起时，即使没有人教，他们也能互相学习。他们互相交流，了解到新的思想和看法、看到新鲜事物并且掌握独到的行为判断力。」这大概就是学什么不重要，重要的是和谁一起学吧。一些 Mooc 虽然提供在线社区交流，但还是没有线下那种碰出火花的感觉。</p>
+<p>对比完这些，计算机专业学生的另外一个主题不可能忽视——“自学”。最开始的作业说明给出的很多参考博文也说明了这一点。我印象最深的一个方法是徐宥在<a target="_blank" rel="noopener" href="https://book.douban.com/subject/4006425/discussion/22802960/">掉进读书的兔子洞</a>中写道的「一字不漏敲入一本书的程序成了我推荐别人学习语言的最好办法」。古语读书百遍其义自见，计算机是一门实践的学科，只有在实践中才会学习到技术的本义。目前，自己在看《机器学习实战》时（相关代码和读书笔记见<a target="_blank" rel="noopener" href="https://github.com/xiang578/MachineLearningAction">参考链接5</a><br />
+），也差不多用的是这个方法，将书中提到的机器学习算法一个字符一个字符地敲进编辑器，一次又一次地调试运行直到出现满意的结果。</p>
+<p>在这样的学习中，我也可以回答这一部分的最后一个问题，我们为什么要学这么多数学，这和我们的计算机有关系吗？对于机器学习来说，本身是建立在概率论和线性代数的基础上，毕竟解释机器为什么能学习都需要用到霍夫丁不等式等相关知识。数学是一种工具，通过数学能将很多的计算机实践经验理论化，以此得到更好的发展。对比功力性很强的培训机构来说，接受科班教育的结果是有机会受到严格的数理化训练，这也能间接决定你在这个行业从事工作的层次和上限。</p>
+<h2 id="未来规划"><a class="markdownIt-Anchor" href="#未来规划"></a> 未来规划</h2>
+<blockquote>
+<p>对于你未来在IT行业的发展，你有什么样的梦想或者未来想从事什么样的工作？你准备怎样来规划你技术道路，职业道路和社会道路？（必答）<br />
+你对于实现自己的梦想已经做了或者计划做什么样的准备？<br />
+你们马上就要面临实习了，你打算在企业内实习还是在实验室实习？<br />
+实习经验究竟有多重要？是否需要马上开始积累实习经验？</p>
+</blockquote>
+<p>前文也提到了，以我的目前的情况来看，大学中接受的教育和自己所学的技能都是和市场脱节的。所以，前一段时间也很迷茫，自己能做什么。所幸看到之前公司的同事所写的知乎专栏文章「谈“圈外”在校生如何更靠谱的拿到大厂算法/ML实习机会」（不知道为什么被删除了，所以无法提供链接），大意就是可以曲线救国，先就业再择业。</p>
+<p><img data-src="https://media.xiang578.com/15236805736051.jpg" alt="" /></p>
+<p>所以，我还是推荐出去实习的。不仅是走出象牙塔，感受一下工业界的需求。更重要的是大一点的企业都会安排专人对实习生进行相应的指导，使其能更快地朝工程师方向发展。</p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/xinz/p/3803035.html">现代软件工程 第一章 【概论】练习与讨论 - SoftwareTeacher - 博客园</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/ChildishChange/p/7363123.html">2017BUAA软工助教 第0次个人作业 - ChildishChange - 博客园</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/4006425/discussion/22791674/">蒋宇东：梦断计院 为梦前行</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/4006425/discussion/22802960/">徐宥：掉进读书的兔子洞</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/xiang578/MachineLearningAction">xiang578/MachineLearningAction: 《机器学习实战》</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><hr>
+<div class="webmention-body">
+<link rel="stylesheet" type="text/css" href="/css/webmention.css?v=1.1.5" />
+<script type="text/javascript" src="/js/webmention.min.js" data-id="webmentions"></script>
+
+<p>
+你有对这篇文章写<a target="_blank" rel="noopener" href="https://indieweb.org/responses">回应</a>吗? 你可以在这里提交你的文章网址或者推特链接（文章或推特内容需要包含这篇文章的地址，点击<a target="_blank" rel="noopener" href="https://indieweb.org/Webmention">这里</a>了解 Webmention）：
+</p>
+
+<form action="https://webmention.io/blog.xiang578.com/webmention" method="post">
+<input style="min-width: 68.5%; font-size: 1.2em" name="source" placeholder="" type="url" />
+<input class="my-url" type="hidden" name="target" value="" />
+<input style="min-width: 20%; font-size: 1.2em" type="submit" value="发送Webmention" />
+</form>
+
+<div id="webmentions"></div>
+<script type="text/javascript">for (const u of document.querySelectorAll("input.my-url")) u.value = window.location.href;</script>
+
+</div>
+          <div class="post-tags">
+              <a href="/tags/book/" rel="tag"># book</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/how-to-use-taskpaper-to-do-3-thigns.html" rel="prev" title="使用 TaskPaper 实现 3 Things">
+                  <i class="fa fa-chevron-left"></i> 使用 TaskPaper 实现 3 Things
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/interview.html" rel="next" title="采访一则">
+                  采访一则 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">215k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:15</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js" integrity="sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.2/dist/instantsearch.production.min.js" integrity="sha256-Nu8yqoXoRZEVYyZf4/eY1V4FsenbiCw85RY3gWjN3zQ=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

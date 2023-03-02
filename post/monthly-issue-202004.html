@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="//fonts.loli.net" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="baidu-site-verification" content="code-Kii9Nt0ZGh">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="不知不觉又到更新每月分享的时间。 想写一下我为什么做这件事情？分享自己平时看到有意思的内容，现实世界认识的人，很少对我关注的内容感兴趣，所幸能借助博客超越时间和空间限制的分享。 另外一点，我希望自己能将这个系列当成一个产品去迭代，每一期都有形式和内容上的进步。这件事看起来很简单，但却需要耗费很大的精力。其实在网上看到很多人通过这种形式分享，到头来还在坚持的大概也没有多少人（比如阮一峰的科技爱好者周">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="每月分享 202004 新的尝试">
+<meta property="og:url" content="https://blog.xiang578.com/post/monthly-issue-202004.html">
+<meta property="og:site_name" content="算法花园">
+<meta property="og:description" content="不知不觉又到更新每月分享的时间。 想写一下我为什么做这件事情？分享自己平时看到有意思的内容，现实世界认识的人，很少对我关注的内容感兴趣，所幸能借助博客超越时间和空间限制的分享。 另外一点，我希望自己能将这个系列当成一个产品去迭代，每一期都有形式和内容上的进步。这件事看起来很简单，但却需要耗费很大的精力。其实在网上看到很多人通过这种形式分享，到头来还在坚持的大概也没有多少人（比如阮一峰的科技爱好者周">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-01T08:55:11.000Z">
+<meta property="article:modified_time" content="2023-03-02T13:49:16.620Z">
+<meta property="article:author" content="Ryen Xiang">
+<meta property="article:tag" content="weekly">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://blog.xiang578.com/post/monthly-issue-202004.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.xiang578.com/post/monthly-issue-202004.html","path":"post/monthly-issue-202004.html","title":"每月分享 202004 新的尝试"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>每月分享 202004 新的尝试 | 算法花园</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-65866729-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38"></script>
+
+
+
+
+
+  <script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script>
+
+<link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" />
+<link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" />
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">算法花园</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="fa fa-book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Link</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="algolia-stats"><hr></div>
+  <div class="algolia-hits"></div>
+  <div class="algolia-pagination"></div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#zettelkasten-%E4%BB%A5%E5%8F%8A-roam-research"><span class="nav-number">1.</span> <span class="nav-text"> Zettelkasten 以及 Roam Research</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%85%E8%AF%BB"><span class="nav-number">2.</span> <span class="nav-text"> 阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="nav-number">3.</span> <span class="nav-text"> 机器学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%BE%E5%BC%83%E7%9A%84%E4%BA%8B%E6%83%85emacs"><span class="nav-number">4.</span> <span class="nav-text"> 放弃的事情：Emacs</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
+      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
+  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">82</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiang578" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/xiang578" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.xiang578.com/post/monthly-issue-202004.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://media.xiang578.com/avatar-ryenxx.jpeg">
+      <meta itemprop="name" content="Ryen Xiang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="算法花园">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="每月分享 202004 新的尝试 | 算法花园">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          每月分享 202004 新的尝试
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-01 16:55:11" itemprop="dateCreated datePublished" datetime="2020-05-01T16:55:11+08:00">2020-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-02 21:49:16" itemprop="dateModified" datetime="2023-03-02T21:49:16+08:00">2023-03-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Never-Reading/" itemprop="url" rel="index"><span itemprop="name">Never-Reading</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.2k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>不知不觉又到更新每月分享的时间。</p>
+<p>想写一下我为什么做这件事情？分享自己平时看到有意思的内容，现实世界认识的人，很少对我关注的内容感兴趣，所幸能借助博客超越时间和空间限制的分享。</p>
+<p>另外一点，我希望自己能将这个系列当成一个产品去迭代，每一期都有形式和内容上的进步。这件事看起来很简单，但却需要耗费很大的精力。其实在网上看到很多人通过这种形式分享，到头来还在坚持的大概也没有多少人（比如阮一峰的科技爱好者周刊）。</p>
+<h2 id="zettelkasten-以及-roam-research"><a class="markdownIt-Anchor" href="#zettelkasten-以及-roam-research"></a> Zettelkasten 以及 Roam Research</h2>
+<p>Zettlekasten 是一个德语单词，意思是卡片盒。现在主要指一种记笔记的思路。Roam Research 是目前国外很火的一个笔记软件，最大的特点是实现不同笔记之间的双向链接。好几个月前就开始尝试 Zettlekasten 的方法，4 月开始才使用 Roam Research。这里先分享一些我看过的文章。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/Tisoga/status/1244856639439515649">Roam Research 入门指南（thread）</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@dongyangvic/%E7%94%A8-roam-research-%E6%9D%A5%E6%89%93%E8%8D%89%E7%A8%BF-a3b1d3873aa4">用 Roam Research 来打草稿 - Dongyang Vic - Medium</a></li>
+<li>Roam Fu
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1247260599760736256">Part I: My plan for using @RoamResearch for a thesis</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1252669427125895169">Part II: Using Twitter as an inter-brain zettelkasten</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1255296825566920705">Part III: Beyond the Empire</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="阅读"><a class="markdownIt-Anchor" href="#阅读"></a> 阅读</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.gcores.com/articles/121924">中文互联网中“讨论”的消亡 | 机核 GCORES</a>：从产品设计角度分析国内主流网站如何限制用户讨论，互联网缩短人与人之间的距离，但我们用来互喷。</li>
+<li><a target="_blank" rel="noopener" href="https://www.huxiu.com/article/350854.html">互联网是人类历史的一段弯路吗？-虎嗅网</a>：又一篇深度长文，很多观点可以背下来出去装B。</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/135281778">ByteDance程序员生存指南 - 知乎</a>
+<ul>
+<li>有些年轻人，在结束一整天的工作后，拖着疲惫不堪的肉体回到出租屋，这时候只想躺着啥都不想干，躺在好几周没有换过的床单上点开了抖音，不一会儿就刷到了凌晨，第二天再拖着疲惫不堪的肉体上班。到了周末也没有任何心力出去玩，只能睡到中午然后随便吃点东西看看剧。没有生活，没有朋友，一晃就单身了四五年，长此以往不仅仅是肉体在亚健康和崩溃的边缘，心理健康更是会出现问题。 孤独、焦虑、易怒等等情绪时刻伴随着一个人。</li>
+<li>每个月仅仅只有收到工资短信时可以高兴几分钟。但这笔钱并不敢轻易花出去，因为都是血汗积攒而来，付出的多自然不敢随意花出去。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA3MzM0MjUyMQ==&amp;mid=2652149604&amp;idx=1&amp;sn=3c96ebfe992694e5c57affe9ef5ba33f&amp;scene=21#wechat_redirect">构建优雅的知识创造系统</a> [[阳志平]] [[卡片写作法]]
+<ul>
+<li>利用电子卡片后，如何量化每天的产出？是不是可以换算成 github 更新多少字？</li>
+<li>卡片是自己看的，不需要分享：<strong>在卡片层级最大的误区是：分享</strong>。<strong>不少人误将卡片、文件和项目三个层级混为一谈，喜欢在卡片层级搞分享</strong>。这样每次撰写卡片时就增加了一个选择项：<strong>这张卡片我是该分享还是该存着自己看？增加的认知操作加大了认知负荷，从简单反应时变为选择反应时</strong>。所以尽可能在卡片层级少做分享。</li>
+<li>一周、一月、一年、十年与数十年，进行自己的实践。</li>
+</ul>
+</li>
+<li>所有人问俞军
+<ul>
+<li>[[金字塔原理]] 和 [[学会提问]]</li>
+<li>优秀的思维方式以及对人性和世界的底层理解</li>
+<li>我不是说人工智能不好，而是我自己只关心我能想明白一两年内能给创造什么用户价值的产品(或技术等)，如果我想不明白这东西马上能给用户创造什么价值，我就毫无兴趣。</li>
+<li>看《搜索研究院》页首页尾的那句话，“我们若能更妥善地搜寻资料，实在已经改变世界。”</li>
+</ul>
+</li>
+<li>前百度首席科学家吴恩达谈学习
+<ul>
+<li>如果你学习，两天后的周一，你不会很快的就在工作中出彩，你的老板也不会知道你花了整天的时间学习，更不会夸奖你什么。你几乎找不到任何东西可以证明你在努力学习。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://blog.jimmylv.info/2016-07-12-pkm-again-to-innovate-my-note-system/">再谈个人知识管理：革新我的笔记系统 | 吕立青的博客</a> 好久没有看到立青写文章
+<ul>
+<li>不同软件之间，单条笔记的迁移相当于一次对知识进行提炼的过程。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://tundrazone.com/guanyudongwuzhisendesanze/">关于动物之森的三则 – 苔原带</a>
+<ul>
+<li>以前玩家渴望在游戏里杀死巨龙，飞向人马座，击败外星侵入者。而现在我们只需要在游戏里“正常”的生活就乐呵呵了。和朋友一起野餐，请朋友到家里来玩，一个人傻乎乎做开心的事情在现实世界中已经有这么高的门槛了么？又或者只是因为在游戏里做这些事情的成本足够低，多巴胺回报足够快？</li>
+</ul>
+</li>
+</ul>
+<h2 id="机器学习"><a class="markdownIt-Anchor" href="#机器学习"></a> 机器学习</h2>
+<ul>
+<li>内部开始尝试 MCTS 相关的项目。正好接这个机会看一下 DeeepMind 前几年的论文 <a href="">Mastering the game of Go with deep neural networks and tree search</a> 以及 <a href="">Mastering the game of Go without human knowledge</a>。推荐去看一下田渊栋在知乎上 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20607684">AlphaGo的分析</a> ，当时他在 Facebook 参与类似围棋相关的项目。另外就是木遥的 <a target="_blank" rel="noopener" href="https://36kr.com/p/5042969">关于 AlphaGo 论文的阅读笔记</a> 有更多关于现实的思考。最后推荐 <a target="_blank" rel="noopener" href="https://movie.douban.com/subject/27012433/">阿尔法围棋</a>，记录从 DeepMind 开发 AlphaGo 到战胜李世石的全过程。有一个疑问第四局之后，他们有没有增加使用的 GPU 和 CPU？</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/32218407">在你做推荐系统的过程中都遇到过什么坑？ - 知乎</a> [[CTR]]
+<ul>
+<li>没有明确的指标：CTR，staytime，read/unread</li>
+<li>精准推荐以及兴趣探索</li>
+<li>线下auc涨，线上 ctr 跌</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/125507748">从谷歌到阿里，谈谈工业界推荐系统多目标预估的两种范式 - 知乎</a>[[机器学习实践]][[多任务学习]]
+<ul>
+<li>范式一：[[MMOE]] 替换 hard parameter sharing
+<ul>
+<li>[[Recommending what video to watch next: a multitask ranking system]]</li>
+</ul>
+</li>
+<li>范式二：任务序列依赖关系建模
+<ul>
+<li>[[ESMM]]</li>
+</ul>
+</li>
+<li>模型负采样，存在 CTR 漂移问题 U5Jvma3de</li>
+</ul>
+</li>
+</ul>
+<h2 id="放弃的事情emacs"><a class="markdownIt-Anchor" href="#放弃的事情emacs"></a> 放弃的事情：Emacs</h2>
+<p>写作软件中积累一些文章的草稿，不过由于我的兴趣变化太快，很多文章还没有完成就已经被我放弃。借这个机会，展示一些有意思的东西。</p>
+<p>程序员圈子中编辑器战争一直是一个绕不过去的话题。自己日常的工作中会使用多种编辑器：</p>
+<ul>
+<li>Sublime Text 简单处理文本</li>
+<li>IDEA 处理 Scala Spark 相关的代码</li>
+<li>PyCharm  连接 GPU 服务器处理 python 相关的代码</li>
+<li>VS Code 本机上写 python、shell、cpp、sql 等脚本</li>
+<li>Vim 服务器上修改文件</li>
+</ul>
+<p>不论选择什么编辑器，都推荐大家去看陈斌的<a target="_blank" rel="noopener" href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org"> 一年成为Emacs高手 (像神一样使用编辑器) </a>。</p>
+<p>去年底的时候，由于想尝试 <code>org-mode</code> 做任务管理（下个月再分享相关的内容），开始尝试使用 Emacs。Emacs 最大的有点是基于 Elisp 开发，软件中的每一个功能都对应一个函数，一个快捷键对应一个按键和函数的 map。修改功能和配置非常的方法。比如有人完全将 Vim 在文本操作上的功能迁移过来做成 evil 这个插件（号称所有和 Vim 中表现不同的情况都是 bug）。</p>
+<p>Emacs 需要大量时间调教才能用起来舒心，对于初学者推荐去网上找一些成熟的配置直接使用。目前比较流行的有 Spacemacs 和 Doom emacs，这些配置维护以及使用的人很多，方便解决你遇到的各种问题。另外那些某些大佬个人分享的配置，如果你和大佬的技术栈不同，没有必要强行 clone。把它当成是一个学习素材，更好的理解 Emacs 背后的哲学。再这些基础上，成为高效的程序员的第一步，就是打造属于你自己的专门的配置文件。</p>
+<p>使用好的编辑器是为了更快的工作。那如何更快的工作？</p>
+<ol>
+<li>在加快敲击键盘的速度</li>
+<li>减少敲击键盘的次数</li>
+<li>减少鼠标和键盘之间的切换</li>
+</ol>
+<p>关于 2，我在之前的文章中提到过一点，改变中文的输入方式（从全拼切换到小鹤双拼）。另外一点就是多使用快捷功能，比如 vim 里面的行号跳转。大部分软件的快捷键都是开发商配置好的，不过每一人主要使用的功能其实是完全不一样的。Emacs 中所有的快捷键可以查到定义的文件，从而进行修改。想象一种情况，为了减少我们按快捷键的次数以及难度。我们统计一段时间内使用 Emacs 各个功能的次数（插件 keyfreq），然后重新定义对应的快捷键。</p>
+<p>由于我自己之前主要使用的是 vim，所以也给 vim 用户一个相对于合理的替换过程：</p>
+<ol>
+<li>当成普通的 vim 使用</li>
+<li>逐步接触 org-mode 相关的功能</li>
+<li>使用 emacs 其他的特性</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><hr>
+<div class="webmention-body">
+<link rel="stylesheet" type="text/css" href="/css/webmention.css?v=1.1.5" />
+<script type="text/javascript" src="/js/webmention.min.js" data-id="webmentions"></script>
+
+<p>
+你有对这篇文章写<a target="_blank" rel="noopener" href="https://indieweb.org/responses">回应</a>吗? 你可以在这里提交你的文章网址或者推特链接（文章或推特内容需要包含这篇文章的地址，点击<a target="_blank" rel="noopener" href="https://indieweb.org/Webmention">这里</a>了解 Webmention）：
+</p>
+
+<form action="https://webmention.io/blog.xiang578.com/webmention" method="post">
+<input style="min-width: 68.5%; font-size: 1.2em" name="source" placeholder="" type="url" />
+<input class="my-url" type="hidden" name="target" value="" />
+<input style="min-width: 20%; font-size: 1.2em" type="submit" value="发送Webmention" />
+</form>
+
+<div id="webmentions"></div>
+<script type="text/javascript">for (const u of document.querySelectorAll("input.my-url")) u.value = window.location.href;</script>
+
+</div>
+          <div class="post-tags">
+              <a href="/tags/weekly/" rel="tag"># weekly</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/monthly-issue-202003.html" rel="prev" title="每月分享 202003">
+                  <i class="fa fa-chevron-left"></i> 每月分享 202003
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/monthly-issue-202005.html" rel="next" title="每月分享 202005 Newsletter">
+                  每月分享 202005 Newsletter <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">215k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:15</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js" integrity="sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.2/dist/instantsearch.production.min.js" integrity="sha256-Nu8yqoXoRZEVYyZf4/eY1V4FsenbiCw85RY3gWjN3zQ=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
+
+
+
+</body>
+</html>
