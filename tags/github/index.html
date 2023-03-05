@@ -1,334 +1,161 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
-<link rel="preconnect" href="//fonts.loli.net" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="baidu-site-verification" content="code-Kii9Nt0ZGh">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="算法花园">
-<meta property="og:url" content="https://blog.xiang578.com/tags/github/index.html">
-<meta property="og:site_name" content="算法花园">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Ryen Xiang">
-<meta property="article:tag" content="机器学习">
-<meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="阅读">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://blog.xiang578.com/tags/github/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/github/index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: github | 算法花园</title>
-  
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-65866729-1","only_pageview":false}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
-
-  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
-  <script async src="https://hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38"></script>
-
-
-
-
-
-  <script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script>
-
-<link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" />
-<link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" />
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">算法花园</p>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="fa fa-book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Link</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container"></div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container">
-  <div class="algolia-stats"><hr></div>
-  <div class="algolia-hits"></div>
-  <div class="algolia-pagination"></div>
-</div>
-
-    </div>
-  </div>
-
-</header>
-        
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
-      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
-  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">107</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">82</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/xiang578" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/xiang578" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
-      </span>
-  </div>
-
-        </div>
-      </div>
-        <div class="back-to-top animated" role="button" aria-label="返回顶部">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-    </div>
-
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: github - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="算法花园"><meta property="og:url" content="https://blog.xiang578.com/"><meta property="og:site_name" content="算法花园"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/img/og_image.png"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="机器学习"><meta property="article:tag" content="深度学习"><meta property="article:tag" content="阅读"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com"},"headline":"算法花园","image":["https://blog.xiang578.com/img/og_image.png"],"author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":null}</script><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
     
-  </aside>
+        gtag('config', 'UA-65866729-1');</script><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
 
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
 
-    </div>
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
 
-    <div class="main-inner tag posts-collapse">
-
-
-  
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">github
-          <small>标签</small>
-        </h1>
-      </div>
-
-      
-    <div class="collection-year">
-      <span class="collection-header">2018</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2018-09-04T07:05:50+08:00"
-              content="2018-09-04">
-          09-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/use-travis-ci-to-auto-build-blog.html" itemprop="url">
-            <span itemprop="name">博客折腾记：使用 Travis CI 自动部署博客</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
-  </div>
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-      <span>站点总字数：</span>
-    <span title="站点总字数">215k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:15</span>
-  </span>
-</div>
-<div class="busuanzi-count">
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="reading-progress-bar"></div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js" integrity="sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.2/dist/instantsearch.production.min.js" integrity="sha256-Nu8yqoXoRZEVYyZf4/eY1V4FsenbiCw85RY3gWjN3zQ=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
-
-
-
-
-
-  
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
-
-
-
-</body>
-</html>
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">github</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2018-09-03T23:05:50.000Z" title="9/3/2018, 11:05:50 PM">2018-09-04</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.879Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AB%99%E5%8A%A1/">站务</a></span><span class="level-item">11 分钟读完 (大约1668个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/use-travis-ci-to-auto-build-blog.html">博客折腾记：使用 Travis CI 自动部署博客</a></p><div class="content"><blockquote>
+<p>已切换到 Github Action</p>
+</blockquote>
+<p>之前一周在封闭接受公司培训，最重要的任务是熟悉「项目开发全流程」。其中有一点：服务的稳定性。不知道为什么，前几天自己的博客崩溃了，输入域名只能看到 404 页面。当时以为是 Travis CI 的原因，所以进行了全面的一次排查：</p>
+<ul>
+<li>问题出现在 Github Pages 的 Custom domain 设置中。</li>
+<li>具体表现：通过 Travis CI 推送博客静态文件到仓库中的 master 后，下图框中的域名就会变成空的，导致无法访问。</li>
+<li>解决方法：在源文件的 source 目录下创建一个 CNAME 文件，写上你自己的域名。</li>
+</ul>
+<p><img src="https://media.xiang578.com/15358143289885.jpg" alt="" /></p>
+<h2 id="travis-ci"><a class="markdownIt-Anchor" href="#travis-ci"></a> Travis CI</h2>
+<p>其实看一眼就应该知道，我的博客是基于 hexo 搭建的，文件托管在 github 仓库中。不过，按照之前的设想博客应该在 Coding 中也有一份备份。后来由于一些原因，在利用 hexo 生成静态文件之后，自动推送到 Coding 上的命令不起作用。自己也没有时间去排查问题，所以最近访问速度有点慢。</p>
+<p>传统的 hexo 博客更新过程是：在完成写作之后，利用命令行调用 <code>hexo g &amp;&amp; hexo d</code> 来生成静态博客文件以及并推送到远端的仓库中。这种方法会产生三个痛点：</p>
+<ol>
+<li>每一次修改源文件后都需要重新生成一边静态文件，当大量修改时，步骤就变得繁琐且无趣。</li>
+<li>生成静态文件依赖电脑中的 hexo 和 node.js 环境，不方便在外出时临时写或修改博客。</li>
+<li>博客源文件没有自动的备份功能，不符合安全原则。</li>
+</ol>
+<p>Travis CI 是一种持续集成开发所使用的工具，在写作过程中引入他可以解决上面我提到的痛点。Travis CI 具体的含义也不是很清楚，直接介绍我是怎么使用的。</p>
+<p>博客依赖 3 个 git 仓库：</p>
+<ul>
+<li>原始文件 <a target="_blank" rel="noopener" href="https://github.com/xiang578/blog">xiang578/blog</a></li>
+<li>主题文件 <a target="_blank" rel="noopener" href="https://github.com/xiang578/hexo-theme-even">xiang578/hexo-theme-even: A super concise theme for Hexo</a>（我对这个主题有一些修改，所以自己 fork 了一份</li>
+<li>发布文件 <a target="_blank" rel="noopener" href="https://github.com/xiang578/xiang578.github.io">xiang578/xiang578.github.io: Welcome to My blog!</a>。</li>
+</ul>
+<p>和大部分人一样，这个博客的静态文件保存在 github 的 <a target="_blank" rel="noopener" href="http://xiang578.github.io">xiang578.github.io</a> 仓库 master 分支中。但是，我还创建了一个新的分支 hexo，用来保存博客源文件。每一次修改博客源文件之后，我不在本地生成静态文件，而是利用 git 命令，将所有的修改内容推送到仓库中的 hexo 分支。Travis CI 服务监听到新的 push 时，会根据你的配置将 git 仓库拉倒他的服务器上，编译源文件成为静态文件，并推送生成的文件到指定仓库的指定分支中。而且，如果编译静态文件失败，他也会通过邮件通知你结果。</p>
+<p><img src="https://media.xiang578.com/15359362837525.jpg" alt="编译成功截图" /></p>
+<h2 id="流程"><a class="markdownIt-Anchor" href="#流程"></a> 流程</h2>
+<ol>
+<li>将 github 上存放静态博客源文件的仓库拉下来，利用 <code>git checkout -b hexo</code> 创建并进入新的分支，删除分支内所有的文件。</li>
+<li>将博客源文件复制到第一步中的文件夹中。</li>
+<li>添加一个 <code>.travis.yml</code> 文件，文件内容可以参考下一节 Travis-ci 配置文件。</li>
+<li><a target="_blank" rel="noopener" href="https://travis-ci.org/">https://travis-ci.org/</a> 提供免费的持续集成服务，可以通过 github 登入，直接选择需要管理相关的项目。</li>
+<li>第一次将源文件上传到 github 时，可能会遇到问题。主题 <code>themes/xxx</code> 是通过 git clone 下载的，无法直接 push 包含嵌套关系的 git 库。<s>删除 themes/xxx/.git</s> 正确的姿势是，最开始就使用 <code>git modules</code> 引用依赖库。所幸还能编辑 <code>.git/config</code>，添加下面几行代码解决：<br />
+<img src="https://media.xiang578.com/15274942502764.jpg" alt="" /></li>
+<li>打开 <code>themes</code> 对应的 github 网页，你会看到主题链接到其他仓库（其中 @commitid 控制对应的版本）<br />
+<img src="https://media.xiang578.com/15274943487052.jpg" alt="" /></li>
+<li>完成这样的设置，修改主题文件后，需要先将修改 push 到主题的仓库，然后在博客文件夹下 push 修改到远端仓库（修改依赖的 commitid）。最终，才能再网页上看到修改效果。</li>
+</ol>
+<h2 id="travis-ci-配置文件"><a class="markdownIt-Anchor" href="#travis-ci-配置文件"></a> Travis-ci 配置文件</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">- 9.11.1</span><br><span class="line">cache:</span><br><span class="line">  directories:</span><br><span class="line">  - node_modules</span><br><span class="line">before_install:</span><br><span class="line">- export TZ=&#x27;Asia/Shanghai&#x27;</span><br><span class="line">- npm install hexo-cli -g</span><br><span class="line">install:</span><br><span class="line">- npm install</span><br><span class="line">script:</span><br><span class="line">- hexo clean</span><br><span class="line">- hexo generate</span><br><span class="line">after_script:</span><br><span class="line">  -  git clone https://$&#123;GH_REF&#125; .deploy_git  # GH_REF是最下面配置的仓库地址</span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ../</span><br><span class="line">  - mv .deploy_git/.git/ ./public/ </span><br><span class="line">  - cd ./public</span><br><span class="line">  - git config user.name &quot;xiang578&quot;</span><br><span class="line">  - git config user.email &quot;xiang578@foxmail.com&quot;</span><br><span class="line">  - git add .</span><br><span class="line">  # - git commit -m &quot;Deploy at $(date +&quot;%Y-%m-%d %T&quot;)&quot;</span><br><span class="line">  - git commit -m &quot;Travis CI Auto Builder at `date +&quot;%Y-%m-%d %H:%M&quot;`&quot;</span><br><span class="line">  # Github Pages</span><br><span class="line">  - git push --force --quiet &quot;https://$&#123;CI_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:master </span><br><span class="line">  # Coding Pages</span><br><span class="line">  # - git push --force --quiet &quot;https://xiang578:$&#123;Coding_TOKEN&#125;@$&#123;CO_REF&#125;&quot; master:master</span><br><span class="line"></span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">  - hexo</span><br><span class="line"></span><br><span class="line">env:</span><br><span class="line"> global:</span><br><span class="line">   # Github Pages</span><br><span class="line">   - GH_REF: github.com/xiang578/xiang578.github.io</span><br><span class="line">   # Coding Pages</span><br><span class="line">   # - CO_REF: git.coding.net/xiang578/xiang578.git</span><br></pre></td></tr></table></figure>
+<h2 id="hexo-两个错误"><a class="markdownIt-Anchor" href="#hexo-两个错误"></a> hexo 两个错误</h2>
+<p>在这一次的过程中，又遇到两个本地编译 hexo 的错误，一同记录一下。错误表现如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-sass</span><br><span class="line">Error: Cannot find module &#x27;node-sass&#x27;</span><br><span class="line">    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)</span><br><span class="line">   ...</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-scss</span><br><span class="line">Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)</span><br><span class="line">For more information on which environments are supported please see:</span><br><span class="line">https://github.com/sass/node-sass/releases/tag/v4.8.3</span><br><span class="line">   ...</span><br></pre></td></tr></table></figure>
+<p>网上的建议是修改 npm 的源地址为淘宝的镜像，并且重新下载这两个包。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm install hexo-renderer-sass --save</span><br><span class="line">npm install hexo-renderer-scss --save</span><br></pre></td></tr></table></figure>
+<h2 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23079443/article/details/79015225">用TravisCI持续集成自动部署Hexo博客的个人实践 - CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009928515">关于 git-submodule 的一些基本操作 - 个人文章 - SegmentFault 思否</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/260832">安装 npm install hexo-renderer-sass --save 出错，有什么办法没 - V2EX</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xs20691718/article/details/81873921">hexo 发布之后 gitpage 自定义域名失效 - CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.zthxxx.me/posts/Build-Hexo-Blog-by-Travis-CI/">使用 Travis 自动构建 Hexo 到 GitHub | Zthxxx’s Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5afe61f5f265da0b8d422a3e">使用travis-ci自动部署Hexo到github和coding - 掘金</a></li>
+</ul>
+<h2 id="changelog"><a class="markdownIt-Anchor" href="#changelog"></a> ChangeLog</h2>
+<ul>
+<li>180904：完成初稿</li>
+</ul>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar-ryenxx.jpeg" alt="Ryen"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ryen</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Bei Jing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">107</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">82</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://haihongblog.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">海虹不老阁</span></span><span class="level-right"><span class="level-item tag">haihongblog.com</span></span></a></li><li><a class="level is-mobile" href="https://www.cnblogs.com/zufezzt" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Fighting Heart</span></span><span class="level-right"><span class="level-item tag">www.cnblogs.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Never-Reading/"><span class="level-start"><span class="level-item">Never-Reading</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li><li><a class="level is-mobile" href="/categories/%E4%B8%83%E5%B9%B4%E4%B9%8B%E6%97%85/"><span class="level-start"><span class="level-item">七年之旅</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"><span class="level-start"><span class="level-item">军机处</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/"><span class="level-start"><span class="level-item">文渊阁</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">机器学习</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"><span class="level-start"><span class="level-item">生活志</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"><span class="level-start"><span class="level-item">程序园</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AB%99%E5%8A%A1/"><span class="level-start"><span class="level-item">站务</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/"><span class="level-start"><span class="level-item">随想集</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-13T14:30:00.000Z">2023-02-13</time></p><p class="title"><a href="/post/thinking-07.html">【随想集】07 新年快乐</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-12T14:14:33.000Z">2023-02-12</time></p><p class="title"><a href="/post/deepreta.html">DeeprETA An ETA Post-processing System at Scale</a></p><p class="categories"><a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-01-08T08:48:00.000Z">2023-01-08</time></p><p class="title"><a href="/post/thinking-06.html">【随想集】06 一元复始，重新出发</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-09T11:00:11.000Z">2022-01-09</time></p><p class="title"><a href="/post/thinking-05.html">【随想集】05 重新使用 Logseq</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-14T11:00:11.000Z">2021-08-14</time></p><p class="title"><a href="/post/thinking-04.html">【随想集】04 曾经我也想过一了百了</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/"><span class="level-start"><span class="level-item">2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/"><span class="level-start"><span class="level-item">2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/"><span class="level-start"><span class="level-item">2020</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/"><span class="level-start"><span class="level-item">2019</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/"><span class="level-start"><span class="level-item">2018</span></span><span class="level-end"><span class="level-item tag">33</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/"><span class="level-start"><span class="level-item">2017</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2016/"><span class="level-start"><span class="level-item">2016</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/"><span class="level-start"><span class="level-item">2015</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2014/"><span class="level-start"><span class="level-item">2014</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2012/"><span class="level-start"><span class="level-item">2012</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/weekly/"><span class="tag">weekly</span><span class="tag">27</span></a></div><div class="control"><a class="tags has-addons" href="/tags/life/"><span class="tag">life</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/acm/"><span class="tag">acm</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/movie/"><span class="tag">movie</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zufe/"><span class="tag">zufe</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gtd/"><span class="tag">gtd</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wordpress/"><span class="tag">wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ml/"><span class="tag">ml</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/reinforcement-learning/"><span class="tag">reinforcement-learning</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/game/"><span class="tag">game</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/7/"><span class="tag">7</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/omnifocus/"><span class="tag">omnifocus</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nlp/"><span class="tag">nlp</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/transformer/"><span class="tag">transformer</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2023 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">© 2015</p></div><script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

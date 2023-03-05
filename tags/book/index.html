@@ -1,512 +1,571 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
-<link rel="preconnect" href="//fonts.loli.net" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="baidu-site-verification" content="code-Kii9Nt0ZGh">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="算法花园">
-<meta property="og:url" content="https://blog.xiang578.com/tags/book/index.html">
-<meta property="og:site_name" content="算法花园">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Ryen Xiang">
-<meta property="article:tag" content="机器学习">
-<meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="阅读">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://blog.xiang578.com/tags/book/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/book/index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: book | 算法花园</title>
-  
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-65866729-1","only_pageview":false}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
-
-  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
-  <script async src="https://hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38"></script>
-
-
-
-
-
-  <script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script>
-
-<link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" />
-<link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" />
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">算法花园</p>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="fa fa-book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Link</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container"></div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container">
-  <div class="algolia-stats"><hr></div>
-  <div class="algolia-hits"></div>
-  <div class="algolia-pagination"></div>
-</div>
-
-    </div>
-  </div>
-
-</header>
-        
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
-      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
-  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">107</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">82</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/xiang578" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/xiang578" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
-      </span>
-  </div>
-
-        </div>
-      </div>
-        <div class="back-to-top animated" role="button" aria-label="返回顶部">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-    </div>
-
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: book - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="算法花园"><meta property="og:url" content="https://blog.xiang578.com/"><meta property="og:site_name" content="算法花园"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/img/og_image.png"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="机器学习"><meta property="article:tag" content="深度学习"><meta property="article:tag" content="阅读"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com"},"headline":"算法花园","image":["https://blog.xiang578.com/img/og_image.png"],"author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":null}</script><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
     
-  </aside>
+        gtag('config', 'UA-65866729-1');</script><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
 
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
 
-    </div>
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
 
-    <div class="main-inner tag posts-collapse">
-
-
-  
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">book
-          <small>标签</small>
-        </h1>
-      </div>
-
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-10T20:35:29+08:00"
-              content="2021-01-10">
-          01-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/symposium.html" itemprop="url">
-            <span itemprop="name">《会饮篇》读书笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-01T16:19:43+08:00"
-              content="2021-01-01">
-          01-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/2020.html" itemprop="url">
-            <span itemprop="name">2020 挑战</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-02-04T21:44:09+08:00"
-              content="2020-02-04">
-          02-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/2019.html" itemprop="url">
-            <span itemprop="name">2019 起步</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-04-10T12:40:45+08:00"
-              content="2019-04-10">
-          04-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/2018.html" itemprop="url">
-            <span itemprop="name">2018 探索</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2018</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2018-05-28T22:21:29+08:00"
-              content="2018-05-28">
-          05-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/soft-skills.html" itemprop="url">
-            <span itemprop="name">月读|软技能——代码之外的生存指南</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2018-04-16T12:01:41+08:00"
-              content="2018-04-16">
-          04-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/build-to-win-homework-0x00.html" itemprop="url">
-            <span itemprop="name">构建之法 第 0 次个人作业</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2017</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2017-12-31T12:40:45+08:00"
-              content="2017-12-31">
-          12-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/2017.html" itemprop="url">
-            <span itemprop="name">2017 迷茫</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2016</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2016-05-03T14:28:48+08:00"
-              content="2016-05-03">
-          05-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/just-for-fun.html" itemprop="url">
-            <span itemprop="name">只是为了好玩——Linux之父林纳斯自传</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2015</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2015-05-23T15:03:41+08:00"
-              content="2015-05-23">
-          05-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/build-to-win.html" itemprop="url">
-            <span itemprop="name">构建之法读书笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
-  </div>
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-      <span>站点总字数：</span>
-    <span title="站点总字数">215k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:15</span>
-  </span>
-</div>
-<div class="busuanzi-count">
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="reading-progress-bar"></div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js" integrity="sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.2/dist/instantsearch.production.min.js" integrity="sha256-Nu8yqoXoRZEVYyZf4/eY1V4FsenbiCw85RY3gWjN3zQ=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
-
-
-
-
-
-  
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
-
-
-
-</body>
-</html>
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">book</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-10T12:35:29.000Z" title="1/10/2021, 12:35:29 PM">2021-01-10</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.879Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/">文渊阁</a></span><span class="level-item">36 分钟读完 (大约5452个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/symposium.html">《会饮篇》读书笔记</a></p><div class="content"><p>《会饮篇》记录阿伽通获得酒神节悲剧比赛第一名后，苏格拉底等人在庆祝宴会中「赞美爱神」的比赛过程。实际上记录与会人七种不同的爱情观。最后，酒神狄奥尼索斯决定出当晚的获胜者。</p>
+<h2 id="裴卓勇气之爱"><a class="markdownIt-Anchor" href="#裴卓勇气之爱"></a> 裴卓：勇气之爱</h2>
+<p>讲述者被人们视为弱小的被爱之人，美少年裴卓 Phaedrus，爱可以给我们勇气！</p>
+<ul>
+<li>为人们要想过美好正当的生活，必须终生遵循一个指导原则，这并不能完全依靠血统，也不能靠威望、财富，只有靠爱才能办到。这原则是什么呢？就是：厌恶丑恶的，爱慕美好的。</li>
+<li>如果一个情人在准备做一件丢人的坏事，或者在受人凌辱而怯懦不敢抵抗，这时他被人看见了就会觉得羞耻，但是被父亲、朋友或其他人看见还远远不如被爱人看见那样羞到无地自容。爱人被情人发现他做坏事，情形也是如此。</li>
+<li>阿喀琉斯为情人复仇。母亲叮嘱他，杀死仇人赫格多尔之后自己也会死。最后还是奋不顾身杀死仇人，自己被射中脚踵而死。</li>
+<li>“最爱的人心中对我们的期望。「目标的意义」”</li>
+</ul>
+<h2 id="包萨尼亚精神之爱"><a class="markdownIt-Anchor" href="#包萨尼亚精神之爱"></a> 包萨尼亚：精神之爱</h2>
+<p>讲述者是一个成年的同性恋，阿伽通的情人包萨尼亚 Pausanias，被人们视为追求肉欲的人。爱神爱有天地之分，天之爱是精神之爱，是崇高的爱，只有男男之间才有，是美好的追求；地之爱是肉体之爱，是普遍的低级的爱，也就是大多数人的爱，只有肉欲的爱。</p>
+<ul>
+<li>凡间阿莆若狄德引起的爱神确实也是凡俗的，它不分皂白地奔赴它的目的。这种爱情只限于下等人。它的对象可以是娈童，也可以是女子；它所眷恋的是肉体而不是灵魂；最后，它只选择愚蠢的对象，因为它只贪图达到目的，不管达到目的的方式美丑。</li>
+<li>至于天上的那位的出身却与女的无关，只是由男子生的，所以其爱情对象只是少年男子。其次，她的年纪较大，所以不至于荒淫放荡。她只鼓舞人们把爱情专注在男性对象上，因为这种对象生来就比较坚强，比较聪明。</li>
+<li>他们说，与其暗爱，不如明爱，所爱的人应当在门第和品德上都很高尚，美还在其次。人们对情人都给予极大的鼓励，不认为他在做不体面的事；人们把追求爱情的胜利看成光荣，把这方面的失败看成羞耻。为了争取胜利，他可以做出种种离奇的事。</li>
+<li>这种少年男子一定要显现理性，也就是腮帮上长胡须的时候，才能成为爱的对象。我想情人之所以要等爱人达到这种年龄之后才钟爱他，是由于存心要和他终生相守，不是要利用他的年幼无知来哄骗他，碰到另外一个可以宠爱的对象时就把他扔掉。
+<ul>
+<li>当时社会能接受：年长男性(智慧，情人)和少年男孩(12-17，肉体，爱人)之间的恋爱关系。包萨尼亚和阿伽通年纪都大了。</li>
+</ul>
+</li>
+<li>我认为道理是这样：这件事并不是十分单纯的，像我开头说的那样。单就它本身来看，它无所谓美，也无所谓丑；做的方式美它就美，做的方式丑它就丑。丑的方式就是拿卑鄙的方式来对付卑鄙的对象，美的方式就是拿高尚的方式来对付高尚的对象。所谓卑鄙的对象就是上面说的凡俗的情人，爱肉体过于爱灵魂的。他所爱的东西不是始终不变的，所以他的爱情也不能始终不变。一旦肉体的颜色衰败了，他就远走高飞，毁弃从前的一切信誓。然而钟爱优美品德的情人却不然，他的爱情是始终不变的，因为他所爱的东西也是始终不变的。</li>
+<li>我们的习俗定了两条规矩，头一条是：迅速接受情人是可耻的，应该经过一段时间，因为时间对于许多事物常常是最好的考验；第二条是：受金钱引诱或政治威胁而委身于人是可耻的，无论是不敢抵抗威胁而投降，还是贪图财产和地位，全都一样。因为这些势力、名位和金钱都不是持久不变的，高尚的友谊当然不能由此产生。</li>
+<li>按照我们这里的规矩，如果一个人肯侍候另外一个人，目的在于得到那个人的帮助在爱智或其他品德上更进一步，这种卑躬屈节并不卑鄙，也不能指为谄媚。
+<ul>
+<li>这里有两条规矩，一条是关于少年男子的爱情，一条是关于学问道德的追求，应该合而为一；如果合而为一，爱人眷恋情人就是一件美事。所以，情人和爱人来往，就各有各的指导原则。情人的原则是爱人对自己既然表现殷勤，自己就应该在一切方面为他效劳；爱人的原则是情人既然使自己在学问道德方面有长进，自己就应该尽量拿恩情来报答。一方面乐于拿学问道德来施教，一方面乐于在这些方面受益，只有在这两条原则合而为一时，爱人眷恋情人才是一件美事，如若不然，它就不美。如果是为了增进学问道德，纵然完全失败也没有什么可耻；如果是为了其他的目的，不管失败与否都是可耻的。假如一个少年男子以为他的情人很富，为了贪财就去眷恋他，后来发现自己看错了，其实他很穷，无利可图。其眷恋还是很可耻的，因为这种行为揭穿了他的性格，证明他这个人为了金钱可以侍候任何人、做出任何事来，这当然是很不光彩的。</li>
+</ul>
+</li>
+<li>我们谈爱情的时候，事实上，我们讨论的正是真实的自己。</li>
+</ul>
+<h2 id="鄂吕克锡马柯功利之爱"><a class="markdownIt-Anchor" href="#鄂吕克锡马柯功利之爱"></a> 鄂吕克锡马柯：功利之爱</h2>
+<p>讲述者是医生鄂吕克锡马柯，理性大于感性，是技术主义的代表。爱情是和谐的，是有规律的，是有用的，我们可以通过其中的规律得到爱情，也可以通过爱情得到别的有用的东西。</p>
+<ul>
+<li>爱情克制论</li>
+</ul>
+<h2 id="阿里斯多芬缺憾之爱"><a class="markdownIt-Anchor" href="#阿里斯多芬缺憾之爱"></a> 阿里斯多芬：缺憾之爱</h2>
+<p>讲述者是喜剧家阿里斯多芬，而喜剧总是悲剧的内核。最初有三种人，男男人、女女人和男女人，像球一样。因为得罪宙斯，人被劈成两半，天生就该追求自己的另一半。不论肉体还是精神，我们都应该追求自己的另一半，以此互补，否则我们孤独，有缺点，不完美。</p>
+<ul>
+<li>所以我们每人都是人的一半，是一种合起来才成为全体的东西。所以每个人都经常在寻求自己的另一半。全人类只有一条幸福之路，就是实现自己的爱，找到恰好和自己配合的爱人，总之，还原到自己的本来面目。</li>
+<li>对爱情最浪漫的解释。</li>
+</ul>
+<h2 id="阿伽通完美之爱"><a class="markdownIt-Anchor" href="#阿伽通完美之爱"></a> 阿伽通：完美之爱</h2>
+<p>讲述者是悲剧诗人阿伽通，是十分优秀的人。我们要追求完美，爱神就是完美的，爱情也是完美的，所以我们要追求爱，而且爱是有益于他人的，是可以从满溢之处流向匮乏之处的(对应开头评价苏格拉底的智慧)，可以让大家一起变的完美。</p>
+<ul>
+<li>前面的人赞美爱神，其实都是在赞美其索给予的幸福，而不是真正地赞美爱神本身。</li>
+</ul>
+<h2 id="苏格拉底朝圣之爱"><a class="markdownIt-Anchor" href="#苏格拉底朝圣之爱"></a> 苏格拉底：朝圣之爱</h2>
+<p>讲述者是苏格拉底，从狄欧蒂玛口中听到的爱。爱神不是完美的，介于不死的神和会死的人之间的精灵，介于美和丑之间，介于无知和有知之间。追求爱不是为了爱本身，是为了爱延伸的东西，是在追求爱情过程中得到的美好、是追求到以后收获的智慧和快乐，美好和永恒。</p>
+<ul>
+<li>和阿伽通的对话
+<ul>
+<li>爱神不仅公正，而且审慎。大家公认审慎是节制快感和情欲的力量。世界上没有一种快感比爱情本身还要强烈。一切快感都比不上爱情，就是因为它们都受爱神节制，而爱神是它们的统治者。爱神既然统治着快感和情欲，岂不是最审慎的吗？</li>
+<li>爱不也是这样：一个人既然爱一件东西，就是还没有那样东西；他盼望它，就是盼望他现在有它，或者将来有它。是不是？”</li>
+<li>所以总起来说，在这种和其他情况下，一个盼望的人所盼望的是他缺少的、还没有到手的，总之是他所没有的，是本身不存在的，不在他那里的；只有这样的东西才是他所盼望的、他所爱的。</li>
+<li>爱神首先是对某某东西的爱，其次是对他所欠缺的东西的爱。是不是？</li>
+<li>正确的意见而说不出所以然来，就不是有知识（因为没有根据的不能算知识），却也不是无知（因为有正确内容的不能叫无知）。所以很明显，正确的意见就是介于智慧和无知之间的东西。</li>
+</ul>
+</li>
+<li>她说：「说来话长，我还是给你说说吧。当初阿莆若狄德诞生的时候，诸神举行宴会，出席的有智谋女神梅蒂的儿子丰饶神波若。他们宴饮结束时，匮乏神贝尼娅来向他们作节日例行的行乞，站在门口。波若多喝了几杯琼浆（因为那时还没有酒），就走进宙斯的花园，昏昏沉沉地睡着了。贝尼娅由于贫乏，很想和波若生个孩子，于是和他睡在一起，怀下了爱若。爱若也成了阿莆若狄德的随从和仆人，因为他是在阿莆若狄德的生日投的胎，生性爱美的东西，而阿莆若狄德是很美的。」</li>
+<li>她说：‘这正是我要启发你的第二点，苏格拉底。爱神就是这个样子，就是这样产生的。他是奔赴美的东西的，像你说的那样。假如有人问我们：爱者从美的东西得到什么呢，苏格拉底和狄欧蒂玛？或者问得更明确一点：那盼望美的东西的是盼望什么呢？你怎么回答？’</li>
+<li>那我给你说清楚点。苏格拉底啊，所有的人都会生育，凭借身体或灵魂生育，到了一定的年龄，就为本性所推动，迫不及待地要求生育。可是他们不能在丑的东西里、只能在美的东西里生育。男人和女人结合就是生育。怀胎、生育是一件神圣的事，是会死的凡夫身上的不朽的因素。但是这件事不可能在不协调的情况下实现，丑的东西与神圣的事情不协调，只有美的东西才与它协调。所以美是引导和帮助生育的女神和决定命运的女神。因为这个缘故，那生育能力旺盛的一遇到美的对象就立刻欢欣鼓舞，精神焕发，同它交配生子；如果遇到丑的，就垂头丧气，毫无兴趣，避开它不去生育，宁愿把沉重的包袱背下去。因此那充满生育的种子和欲望的一遇到美的对象就欣喜若狂，是由于它可以结束他的巨大痛苦。</li>
+<li>你就不会觉得奇怪了。因为和上面说的完全一样，那会死的东西也是力求能够永远存在和不朽。要达到不朽，全凭生殖，以新的代替旧的。每一个个体的生物，虽然我们说它一生之中始终是同一个东西。</li>
+<li>美者，这时，就只有大愚不解的人才会不明白一切形体中的美是同一个美了。明白了这一点，他就成了爱一切美好形体的人，把他的热情从专注于某一形体推广到一切，因为他把那种专注一点看成渺小的、微不足道的。再则，他必须把灵魂的美看得大大优于形体的美，如果有一个人灵魂值得称赞，即便形貌较次，那也足够了，他也应该对这个人表示爱慕之情，加以照顾，他心里想出来发表的那些美好的话语可以使青年奋发向上，他这样做也使他自己遍览人们各种行动中以及各种风俗习惯中的美，从而见到美是到处贯通的，就把形体的美看成甚为微末的了。可是他必须从各种行动向前更进一步，达到知识，这样就见到知识的美。</li>
+<li>至于爱的方面，情形也是这样。一般说来，凡属对于好东西、对于幸福的企盼，都是每个人心中最大的、强烈的爱。然而其余的那些在某一个方面有所追求的，无论是谋求获利的，喜爱体育的，还是爱智慧的，我们都不说他们在爱，不说他们是钟爱者；只有那些以某种方式发挥作用的喜好者，才占有全体的名称，我们说他们在爱，称他们为情人或钟爱者。</li>
+<li>一个人如果一直接受爱的教育，按照这样的次序一一观察各种美的东西，直到这门爱的学问的结尾，就会突然发现一种无比奇妙的美者，即美本身。</li>
+<li>爱其实就是寻找真正的美的过程。</li>
+<li>苏格拉底的颂辞是全篇三大段的中段，也是全篇精义所在。它本身分两部分：和阿伽通的对话以及和狄欧蒂玛的对话。
+<ul>
+<li>在和阿伽通的对话里，他说明了：
+<ul>
+<li>（一）爱情必有对象；</li>
+<li>（二）钟爱者还没有得到所爱的对象；</li>
+<li>（三）爱情就是想占有所爱对象那一个欲望；</li>
+<li>（四）爱情的对象既然是美，如阿伽通所说的，它就还缺乏美，“爱神是美的”一说不能成立；</li>
+<li>（五）美善同一，所以爱神也不是善的。</li>
+</ul>
+</li>
+<li>这样苏格拉底就把阿伽通的一篇大文章完全推翻了。接着他说他的爱情学问是从女巫狄欧蒂玛那里领教来的。他原来和阿伽通一般见解，她纠正了他。她使他明白：
+<ul>
+<li>（一）爱神是介乎美丑、善恶、有知与无知、神与人之间的一种精灵，是丰富和贫乏的统一，总之，就是一个哲学家；</li>
+<li>（二）爱情就是想凡是美的善的永远归自己所有那一个欲望；</li>
+<li>（三）爱情的目的是在美的对象中传播种子，凭它孕育生殖，达到凡人所能享有的不朽：生殖就是以新代旧，种族与个体都时时刻刻在生灭流转中。这种生殖可以是身体的，也可以是心灵的。诗人、立法者、教育者以及一切创造者都是心灵方面的生殖者；</li>
+<li>（四）爱情的深密教，也就是达到哲学极境的四大步骤。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="阿尔基比亚德畸形之爱"><a class="markdownIt-Anchor" href="#阿尔基比亚德畸形之爱"></a> 阿尔基比亚德：畸形之爱</h2>
+<p>醉酒阿尔基比亚德（对应开头提到的酒神）的胡言，他爱着苏格拉底却又自惭形秽。爱情的美好没有让他变美好，反而让他与美好背道而驰，离爱越来越远，他矛盾而纠结，爱在折磨着他。</p>
+<h2 id="尾声"><a class="markdownIt-Anchor" href="#尾声"></a> 尾声</h2>
+<p>柏拉图的爱情观：爱是阶梯式的，肉体之爱会让精神之爱更崇高，二者不能单一存在，否则偏向肉体则堕落，偏向精神则虚渺。(寻找本源的行为。)</p>
+<h2 id="ref"><a class="markdownIt-Anchor" href="#ref"></a> Ref</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9C%83%E9%A3%B2%E7%AF%87">会饮篇 - 维基百科，自由的百科全书</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22519668">如何理解柏拉图的《会饮篇》？ - 知乎</a>
+<ul>
+<li>我希望你的目的地是星辰大海</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1zT4y1K7sm">【罗翔老师直播课堂】共读柏拉图的《会饮篇》_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>
+<ul>
+<li>我们所有的学习都是在回忆</li>
+<li>阿尔基比亚德在看到苏格拉底身上看到他原初的美好，现在的匮乏，将来的美好。
+<ul>
+<li>“人最大的痛苦是无法跨越知道和做到的鸿沟”</li>
+<li>最终在战争中背叛了雅典</li>
+</ul>
+</li>
+<li>有追求者介于有知和无知之间，神有知，所以不需要追求，愚人无知，所以不知道要去追求，只有介于二者之间的人才会去追求知识追求美好，这就是追求者，每一个为梦想努力的人就是这样的人。</li>
+<li>爱他人就是爱自己。因为爱他人时，你爱上的那些优点和美好，其实都印证了自身。也许过去自己拥有这些美好如今失去了，所以我们爱；也许现在我们正拥有这些美好，我们惺惺相惜所以爱；也许我们看到了将来的自己，自己想要成为的样子，想要拥有的特质，所以我们爱。自恋所恋，其实是恋着自身过去、现在、将来的美好。</li>
+<li>所以上次在读书会的时候我给学生说了这样一段话：
+<ul>
+<li>我说很少有那个词会像爱一样被庸俗对待，但是爱是可以承载真正的严肃和祟高，我们爱因为我们匮乏，我们爱因为我们希望超越每日的锱铢必较，在爱中我们放弃了自我，我们发现了自我，我们希望重塑我们的自我。</li>
+<li>所以整个会饮篇，他提醒我们肉体的爱当然是有意义的，但人不要沉迷于肉体的爱，人要扶级而上，去追求灵魂的爱，去追求更好的爱。因为我们要回忆起我们失落的美好，我们就可以告别，我们当下的平庸苟且，我们要攀登美善的阶梯，一步一步往上爬。</li>
+<li>这样，我们才能够达到一种爱的升华，我们才能在一个具体的人中，去发现我们，对于所有人美好的期待，就是这种抽象的爱。因为具体的人，我们在他身上看到了，我们想看到的样子，我们希望变得美好，当我们变得美好的时候，我们又会和具体的人，在具体的人身上，我们又会经营我们的美好。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-01T08:19:43.000Z" title="1/1/2021, 8:19:43 AM">2021-01-01</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.871Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item">21 分钟读完 (大约3217个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/2020.html">2020 挑战</a></p><div class="content"><p>2020 年最后一天下午，坐在工位上想着「今年有什么遗憾？」想到最大遗憾：这个世界变不回原来的样子。超级黑天鹅「Covid 2019」或多或少改变我们生活，新时代就这样拉开大幕。在这个背景下，承受来自各个方面的压力，各种「挑战」也随之而来。在这一篇总结中，我会通过关键字回顾自己过去一年。</p>
+<h2 id="一-工作"><a class="markdownIt-Anchor" href="#一-工作"></a> 一 工作</h2>
+<p>没有太多变化，还是选择留在滴滴。年初获得机会参与「晋升」答辩，在老板和同事的帮助下，异常艰难地升到下一个级别。两点感悟：需要做有价值的事情以及有把做过的事情说清楚的能力。之后参与内部一个比较大的探索项目，费了很大力气上线后，12 月底开始和同事一起写相关的论文，希望能中 KDD 2021。</p>
+<p>晋升之后，日常工作中会接触到更多的人，如何与其他人进行有效的沟通成为自己新的挑战。后来也有机会指导实习生，不过没有多久就离开了。简单总结自己变化：做人家分配的事情，到自己思考如何做事情，再到分配事情给其他人做。这些变化中，我经历长时间不适应的感受。大学参与编程比赛培养的是靠外部刺激和目标驱动，工作中需要的是你不断拓展边界，打破旧的认知和规则。</p>
+<h2 id="二-技术能力"><a class="markdownIt-Anchor" href="#二-技术能力"></a> 二 技术能力</h2>
+<p>分成两个部分：尝试一些工程的开发，改线上代码差不多和呼吸一样自然。但是觉得自己总体上来说写的东西还是偏向简单，没有太多的设计和思考在里面。下半年很多时候是在修自己上半年的 bug……算法学习差不多是跟随业务需求进行，看得大部分还是 CTR 相关内容。另外也在 b站看了一半统计机器学习的内容。做的业务不像 CTR、NLP 这样有明确的界限，所以也没有机会去深入一个方向去实践，大部分时候浅尝辄止。</p>
+<h2 id="三-程序设计"><a class="markdownIt-Anchor" href="#三-程序设计"></a> 三 程序设计</h2>
+<p>不知道告别多久之后，下半年尝试想把这个东西捡起来。说回来，我之间问一个进过 world final 的候选人，工作中有没有用过相关的算法，他也是摇头。按自己目前的水平，每周日上午写 LeetCode 周赛是很奇妙的体验。每次都是一场孤独的挑战，只有调整好自己的思维方式，才能把自己从苦海中解脱出来。做这件事情的意义大概是山就在那里。多少年之后，我也体会到当年没有拼尽全力的遗憾。</p>
+<p>9 月份，在周神的组织下，我们组成一个队伍参加 Leetcode 举办的秋季编程大赛。刚开始我们都是信心满满地，比赛开始之后就是无尽的折磨，最后就是以三题结束比赛。原来他们这么久不训练也不会写题目……希望等自己学校举办区域赛的时候还能打星参与一次。</p>
+<h2 id="四-生活"><a class="markdownIt-Anchor" href="#四-生活"></a> 四 生活</h2>
+<p>11 月份遇到房东卖房，从原来住的房子里面搬出来，跑到回龙观和同事一起合租。最大变化是通勤时间的变长，挤过几天地铁后，立马决定打拼车上班，另外忍受几次下班后打车的痛苦，也开始 20:30 自费打车。所以多了很多坐车的时光，一般早上都会带一个阅读器去看书。有一次堵在后厂村路上，看着《禅与摩托车维修艺术》，恨自己没有摩托车。晚上回来的时候，大概率是听播客。似乎比之前把节省下来的时间拿去冲浪好很一些。</p>
+<h2 id="五-知识管理"><a class="markdownIt-Anchor" href="#五-知识管理"></a> 五 知识管理</h2>
+<blockquote>
+<p>投入在 Input 上的时间越多，知识管理越差。</p>
+</blockquote>
+<p>这个差不多是这几年一直在思考的话题（时间管理方法，我看清 GTD 本质之后，就不太纠结）。去年年末开始关注 Zettelkasten，当时还是在借助 <code>sublime_zk</code> 进行折腾。2 月份的时候，了解到一个工具 Roam Research，开始慢慢把自己的笔记迁移过去。几个月之后，Zettelkasten 和双向链接笔记在国内火了起来。给我最大的两点改变是：</p>
+<ol>
+<li>区分自己写的笔记和收藏的文章（印象笔记就是因为剪藏太多变成垃圾堆）。</li>
+<li>思考不同内容之间的关系。</li>
+</ol>
+<p>很遗憾，这一年很大一部分精力停留在把之前散落在不同软件中的笔记汇聚到 Roam 中。新的一年尝试把更多的内容分享出来。</p>
+<p>另外一方面，真正记住内容还需要不断回忆（给你选择记忆的机会），比较知名的软件就是 anki。有一段时间经常制作卡片，但是没能融入自己的系统，也没有把这个习惯坚持下来。</p>
+<h2 id="六-分享"><a class="markdownIt-Anchor" href="#六-分享"></a> 六 分享</h2>
+<p><img src="https://media.xiang578.com/blog-analytics-2019.jpg" alt="2020 博客访问量统计" /></p>
+<p>从访问数据上来看，比起去年博客的流量快增加超过 5 倍。统计数据中，流量大概是 8 月中旬开始的，最大的原因是完成百度和 Google 对博客的收录。大部分流量来自于一篇文章（已被自己手动删除）。不过得到启示，某一些小众的关键字，如果能做到百度的前几名，获得的流量还是很可观的。</p>
+<p>今年没有写多少正经的东西，最大的亮点是差不多用8个月的时间尝试摸索分享每个月阅读相关的总结「Never Reading」。这些文章内容来自 Roam Reasearch 阅读笔记。最终被自己停掉的原因是，形式上并不优美，可能阅读时，都只是一些没有上下文的关键词或短句。最好的形式还是自己将阅读的内容按主题写成文章进行分享。</p>
+<p>放弃写每月的阅读总结后，自己觉得笔记-博客文章中应该还有一个中介介质。用现在时髦的话来说，是数字花园。苦于目前还没有发现如何快速将部分 Roam 笔记公开展示出来，9 月份的时候模仿 <a target="_blank" rel="noopener" href="https://onetwo.ren/wiki/#:Index">Meme of LinOnetwo — 林一二的模因和想法</a>也搭建一个 <a target="_blank" rel="noopener" href="https://wiki.xiang578.com/">算法花园・Xanadu — 吾辈心中亦有惑，坐！</a>，想着分享一些读书和读论文的笔记。大概过一个多月，差不多就放弃这个网站……目前还是等待更高效导出 Roam 笔记制作站点的方案出现。</p>
+<p>最后，也开始在 Twitter <a target="_blank" rel="noopener" href="https://twitter.com/xiang578">Ryen Xiang(@xiang578)</a>进行分享。很遗憾，之前和人交流太少，写的东西除了错别字多以外，没有太强的逻辑性，可能很难理解………这一些都是在新的一年中需要克服的。</p>
+<h2 id="七-阅读"><a class="markdownIt-Anchor" href="#七-阅读"></a> 七 阅读</h2>
+<p>阅读的挑战是：为了什么而读？思考如何去做阅读笔记？主力阅读软件是微信读书，不仅仅是无限会员全场畅读，更重要的是导出的笔记格式都比 kindle 方便整理。全年读过 <a target="_blank" rel="noopener" href="https://book.douban.com/people/xiang578/collect?sort=time&amp;tags_sort=count&amp;filter=all&amp;tag=2020&amp;mode=grid">36</a> 本书，平均下来一个月 3 本书，和年初计划每周一本书，还是有很大的差距。推荐几本 5 星的图书：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35092383/">把自己作为方法</a>：项飙的三场访谈录，一次感受知识分子可爱以及真诚的机会。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/27167270/">像哲学家一样生活</a>：介绍哲学流派斯多葛的书，一种人间哲学。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/21570668/">会饮篇</a>：苏格拉底等人关于爱的讨论。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26831789/">穷查理宝典</a>：查理芒格 11 篇演讲的合集。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/33438811/">为什么</a>：因果推理入门科普书，不过没有机会应用到业务中。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35013197/">深度学习推荐系统</a>：介绍深度学习在推荐系统的的应用，大而全。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/25757313/">红楼梦脂评汇校本</a>：市面上口碑比较好的红楼梦版本。</li>
+</ul>
+<p>2021 年的阅读目标还是每周一本书，然后每月挑一本书写出读书笔记在博客中发表。</p>
+<h2 id="八-观影"><a class="markdownIt-Anchor" href="#八-观影"></a> 八 观影</h2>
+<p>今年在豆瓣上标记看过电影只有 <a target="_blank" rel="noopener" href="https://movie.douban.com/people/xiang578/collect?start=0&amp;sort=rating&amp;rating=all&amp;tag=2020&amp;mode=list&amp;filter=all">40</a> 个条目，仅是去年的 2/3。可能现在把更多空闲时间花费在看 B 站各种 UP 主的视频中，仔细想想还是需要去欣赏艺术。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/33447642/">沉默的真相</a>/<a target="_blank" rel="noopener" href="https://movie.douban.com/subject/33404425/">隐秘的角落</a>：不错的故事和拍摄，但是紫金陈的原著一言难尽。</li>
+<li><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/1900841/">窃听风暴 (豆瓣)</a>：从一个简单的故事告诉你为什么某些制度不行。有一种听不懂德语的遗憾。</li>
+<li><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/10533913/">头脑特工队 (豆瓣)</a>：今日简史中推荐反传统科幻片。 完全是五星，迪斯尼实在是太有创意了。</li>
+<li><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/27012433/">阿尔法围棋 (豆瓣)</a>：尝试调研 MCTS 时补充看的纪录片，当年的旁观者，再回头已经成为参与者。</li>
+<li><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/27010768/">寄生虫 (豆瓣)</a>：小孩子早已经看穿一切。剧情安排真实精彩。</li>
+</ul>
+<h2 id="九-游戏"><a class="markdownIt-Anchor" href="#九-游戏"></a> 九 游戏</h2>
+<p>动物森友会：上半年最火的游戏。曾经的QQ农场爱好者，不可避免在同事的带领下，成为一名光荣的岛主。100 多个小时候之后，就没有重新上过岛……<br />
+Ingress：一款手机端的 LBS 游戏，你扮演一名特工，完成游戏中的任务探索现实世界。自己最初希望通过这款游戏多出去走走。11 月和 12 月，为了做任务，多次出去暴走 20+ 公里！不过，已经变成匆匆寻找关键打卡地点，很多时候错过旁边的风景。<br />
+Celeste：IGN 满分作品，号称是治疗抑郁的。横版平台跳跃游戏，和马里奥相比多了一个冲刺键。最大优点是死亡之后复活特别快，第一关还没有通过，我差不多就死了 1k 次。</p>
+<h2 id="十-消费指北"><a class="markdownIt-Anchor" href="#十-消费指北"></a> 十 消费指北</h2>
+<p>克制自己的消费，不单独写一篇文章。</p>
+<p><code>ErgoDox EZ</code>：红轴，分体人体工程学键盘，反正看到的同事都觉得很酷。<br />
+<code>Inkpad X</code>：为了用微信读书，买的10寸安卓平板。分辨率只有 200 ppi，字体调大一些没有太大影响。不过没有实体翻页键还是挺难受的。微信阅读也没有怎么对这个设备优化。最近小米又出一个 pro 阅读器，也可以考虑。<br />
+<code>DEVONthink pro</code>：增强型文件管理器，主要用来替代印象笔记。虽然贵，但是好用。<br />
+<code>Offscreen</code>： 记录手机屏幕时间、打开次数等，不断提醒你今天沉迷手机多久。<br />
+<code>产品沉思录</code>：邮件组，有关互联网、科技和人文，提供不错的信息来源。可以先从精选集判断是否值得入手。</p>
+<h2 id="尾声"><a class="markdownIt-Anchor" href="#尾声"></a> 尾声</h2>
+<p>在迈入 2021 之际，给自己留下一些 New Year Challenge:</p>
+<ol>
+<li>认识你自己</li>
+<li>变得勇敢</li>
+<li>成为生产者</li>
+</ol>
+<p>于北京回龙观</p>
+<p><a target="_blank" rel="noopener" href="https://xiang578.com/post/2017.html">2017 迷茫</a> &gt;&gt; <a target="_blank" rel="noopener" href="https://xiang578.com/post/2018.html">2018 探索</a> &gt;&gt; <a target="_blank" rel="noopener" href="https://xiang578.com/post/2019.html">2019 起步</a></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-02-04T13:44:09.000Z" title="2/4/2020, 1:44:09 PM">2020-02-04</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.871Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item">21 分钟读完 (大约3156个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/2019.html">2019 起步</a></p><div class="content"><blockquote>
+<p>受 <a target="_blank" rel="noopener" href="http://freemind.pluskid.org/">Free Mind</a> 的影响按这种形式写年度总结</p>
+</blockquote>
+<p>年初的时候看到一句话：「 2019 是过去十年中最差的一年，也是未来十年中最好的一年」。和其他人一样，我害怕不确定性，不过生活除了鼓起勇气前进，还有什么其他选择。</p>
+<h2 id="工作"><a class="markdownIt-Anchor" href="#工作"></a> 工作</h2>
+<p>完整在滴滴工作一年，自己没有太多变化，可是环境却变了很多。从年初内部会议上 Will 优化员工开始，很多同事陆续离开，从而我都快要成为团队元老……</p>
+<p>做为食物链低端的算法工程师，工作中杂七杂八的事情干了很多。洗数据、跑模型、改工程代码、测试、上线、实验各个方面都干过。</p>
+<p>说回来，算法还是自己的主要工具。今年用的最多的是 FM 和 GBDT，这些都是几年前的技术，但是架不住效果好，性能要求小。自己也写了一些相关的文章，可以供大家参考。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://xiang578.com/post/fm.html">(FM) Factorization Machines | 算法花园</a></p>
+<p><a target="_blank" rel="noopener" href="https://xiang578.com/post/ftrl.html">(FTRL) Follow The Regularized Leader | 算法花园</a></p>
+<p><a target="_blank" rel="noopener" href="https://xiang578.com/post/gbdt.html">All About GBDT (1) | 算法花园</a></p>
+<p><a target="_blank" rel="noopener" href="https://xiang578.com/post/gbdt_lr.html">Practical Lessons from Predicting Clicks on Ads at Facebook(gbdt + lr) | 算法花园</a></p>
+</blockquote>
+<p>关于深度学习，在我入职前模型就基本迭代完成，今年主要探索个性化场景的解决以及模型性能优化。很遗憾，这两方面的工作目前还没有什么可以写成博客分享的。最后，自己没有参与到组内强化学习的项目中，不过还是通过李宏毅老师的相关课程了解初步的概念，争取 20 年内做一些相关的事情。</p>
+<p>9月份开始，leader突然让我准备一些编程题目，开始去面试实习生。通过牛客网以及北邮人论坛大概收到简历60多份，我面试10多个候选人，最终通过的大概五六人，不过过来实习的也就 2 个。印证自己之前的想法，一家已经不是快速发展的公司，很难招到即懂机器学习又会做编程题的实习生。</p>
+<p>另外想写的一点是是匿名交流。内部论坛之前有一个匿名区，后来由于一件比较有名的事情，匿名喷得太厉害，被某位海归高管以提高交流效率减少戾气所关闭（目前这位已经离职，有人开玩笑期待干掉他新公司的匿名论坛）。所幸脉脉还有职言（匿名）以及公司圈。在上面混了一年之后，越来越理解匿名交流的必要，说事。比如今年发生的延迟发年终奖，快手可以直接在内部匿名区引起宿华回复。我们的公司圈一堆人才自嗨。本质是国内环境下很难公开交流一些话题。</p>
+<p>之前看过[一篇文章]中介绍 Google 的 TGIF：</p>
+<blockquote>
+<p>TGIF是Larry和Sergey在公司早期就创立的，一个全公司范围的周会。在这个周会上高管们会透露公司新项目的进展，也安排有答疑环节，员工可以询问两位创始人任何问题。TGIF毫无疑问是为了提高公司内部的透明度，但它在增强员工凝聚力的同时也对公司文化提出了挑战，最直接的就是保密问题。比如Chrome项目在公司内部的公开就是在一次TGIF上发生的，那时离Chrome的正式对外宣布早了一年多的时间。</p>
+</blockquote>
+<h2 id="阅读"><a class="markdownIt-Anchor" href="#阅读"></a> 阅读</h2>
+<p>今年读过 <a target="_blank" rel="noopener" href="https://book.douban.com/people/xiang578/collect?sort=time&amp;tags_sort=count&amp;filter=all&amp;tag=2019&amp;mode=grid">33</a> 本书，阅读量和前几年基本持平。年底发现自己的一个坏习惯：很多书读了一半就放在那里，导致开的坑很多。应对方法也很简单：一段时间内只读一本书。而且为了提高阅读的质量，将自己读完一本书的定义从读到最后一页改成完成对这本书内容的整理。</p>
+<p>阅读的主要工具是 kindle 和微信阅读（iPhone）。kindle 是这么多年一直使用的阅读介质，从前几年的找破解图书到现在的完全中亚购买（以目前看书的频率还不至于承受不住），长时间看电子水墨屏能减轻一些疲劳。微信阅读的特点是白领无限卡后就能全场免费读，实在是太香了。理想状态下用这两个工具读不类型的材料，微信阅读读小说以及人物传记，kindle 看需要大量抄记的书。对于需要反复阅读的内容，实体书则是最佳的选择。</p>
+<p>分享读完觉得不错的几本书：</p>
+<ol>
+<li>经济学通识/薛兆丰经济学讲义：薛兆丰目前看起来风评不是很好，这两本也不是什么严肃的经济学读物。前一本书是作者专栏文章的合集，后一本是得到专栏的文字版，两本书大量的内容是重复的。书中通过现实中的例子来讲解背后的经济学原理，很适合看完之后做为饭后谈资。反正我运用书中的一些原理，给同事分析好久公司的停车场应该怎么分配车位。</li>
+<li>银河帝国：这一套书有很多本，只看完前三本。概括起来，这本小说是以太空为背景讲政治故事，以谢顿的预言为主线，讲述基地对抗各种危机的挑战。另外书中提到看起来有多少分像统计学的心理史学，谢顿一直用这种方法预测未来，而且信徒们一直强调，预测结果不会因为个人而改变。第三本书，围绕寻找第二基地展开，把所有读者能猜的地方都写了出来，选择了一种情理之中，意料之外的结局。</li>
+<li>人类简史/未来简史：尤瓦尔·赫拉利是前几年很火的一个历史学家。人类简史主要是按他的框架回顾从原始人类到现代人类的文明发展历程。对于我这种没有系统接受过历史学教育的人，完全是一种震撼。未来简史讨论的是人类未来的发展方向，成神。</li>
+<li>房思琪的初戀樂園：讲述一个小女孩被文明所不齿的方式杀死的故事，最让人痛心的这女孩就是作者本人……引用最近很流行的一句话：地狱空荡荡，魔鬼在人间。</li>
+<li>基督山伯爵：看完《了不起的盖茨比》后，老板强力推荐的爽文小说。快意恩仇，永远不要丧失对生活的期望。</li>
+<li>临高启明：工科党神书，死于历史空无主义，最后放上来缅怀一下。</li>
+</ol>
+<p>2020 年开始使用 Notion 记录读书过程，点击 <a target="_blank" rel="noopener" href="https://www.notion.so/ryanx/4666b7440155430880b9c9787adde5ab?v=39111f7ebd5e4be6a28d7ef712c4aebb">看书也就图一乐</a> 查看。</p>
+<h2 id="观影"><a class="markdownIt-Anchor" href="#观影"></a> 观影</h2>
+<p>和去年一样，看电影比起看书来更加容易，豆瓣上轻松标记 <a target="_blank" rel="noopener" href="https://movie.douban.com/people/xiang578/collect?sort=time&amp;tags_sort=count&amp;filter=all&amp;tag=2018&amp;mode=grid">60</a> 部。想想原因，打开一个视频放在那里，不用怎么理它就能结束。按类别推荐一下自己觉得不错的影视：</p>
+<ol>
+<li>小丑/蝙蝠侠三部曲：去年在观影中大力推荐漫威宇宙，今年看完 DC 这 4 部电影，刷新对超级英雄片的认知。蝙蝠侠：黑暗骑士在是在超级英雄的框架下对人性进行探讨。小丑展示出社会如何逼一个人成为恶魔。</li>
+<li>黑客帝国三部曲：经典的电影，赛博朋克风格。之前的神话描述神创造了世界，在这部片子里面，这个神就变成了机器人。多少算是人工智能行业的从业者，强人工智能离我们看起来还是很远。</li>
+<li>人生七年9：这应该是拍摄时间最慢长的纪录片，也给我们机会在几十个小时时间里面见证这些主人公 60 多年岁月。很大一个感受，除了 Nick 之外，其他人不过是重复父辈的道路，阶级跃迁又是谈何容易。</li>
+<li>哪吒之魔童降世：即大鱼海棠之后，第二部在电影院看的动画电影。之前想过一个问题：为什么一些小说要隔一段时间就翻拍一次？简单的认为要赋予时代主题。这部片子中最喜欢的一个设定：龙族也是妖怪，镇守龙宫，其实也是镇住自己。</li>
+<li>邪不压正：电影看到一半的时候，我就觉得自己看不懂。说回来，看这部电影有一种酣畅淋漓的感觉，节奏很快，比《一步之遥》和《让子弹飞》更快。半夜在知乎上看了很多回答之后渐渐地懂得其中的情节，蓝先生的爱国情怀，李的复仇梦想。在历史的框架下演绎，始终无法逃离历史的结果，日本人还会按照发展进入北京城。一句“异父异母的亲兄弟”就值得一看。</li>
+</ol>
+<h2 id="游戏"><a class="markdownIt-Anchor" href="#游戏"></a> 游戏</h2>
+<p>今年新增的一个板块，自从购入 Switch 之后，开始重新接触一些游戏。</p>
+<ol>
+<li>隐形守护者：抗战背景下面，一个特工面对选择的游戏。所有的场景都是真实拍摄出来的，比绝大部分国内的抗战剧精美。游戏有很多个结局，当然只有符合社会主义核心价值观的才算善终。最印象深刻是第二号突然的一句：什么都是马尔可夫链。</li>
+<li>有氧拳击/健身环大冒险：NS 上的铁人三项之二，充分发挥体感的优势，晚上下班之后健身用。不过从目前的使用频率来看，大概率和买健身卡一个性质。</li>
+<li>塞尔达传说：旷野之息：决定买 Switch 很大程度上源于少数派中一篇关于这个游戏的介绍，大意是没有传统的等级增长，只有你真正掌握一个技巧，林克才能使用出来。这款游戏的给我带来看似无限大的空间，但也有一点遗憾，有时候遇到下雨不好攀岩时，我想让林克坐下等雨停，然后发现没有坐下的选项……</li>
+<li>超级马力欧创作家2：大学的时候，经常看超级小桀玩这个游戏。对于我这种连普通的马里奥都要靠无敌才能通关的来说，大部分自制的地图还是有点难的。说回来，买这个游戏就是买一个青春。只可惜物是人非。</li>
+<li>暗黑破坏神3：永恒之战版 ：Switch 上的冷饭，自己瞎玩了很久，看完所有的剧情。最终在咸鱼上买了很多强力的装备后，速通 150 层大秘境后索然无味。所以玩游戏还是不要作弊。</li>
+</ol>
+<h2 id="未来"><a class="markdownIt-Anchor" href="#未来"></a> 未来</h2>
+<p>世界变化太快，未来可期。</p>
+<p>于浙江临海</p>
+<p><a target="_blank" rel="noopener" href="https://xiang578.com/post/2017.html">2017 迷茫</a> &gt;&gt; <a target="_blank" rel="noopener" href="https://xiang578.com/post/2018.html">2018 探索</a></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-04-10T04:40:45.000Z" title="4/10/2019, 4:40:45 AM">2019-04-10</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.871Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item">15 分钟读完 (大约2307个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/2018.html">2018 探索</a></p><div class="content"><blockquote>
+<p>全文混乱。拖了 4 个月之后，强行完结。</p>
+</blockquote>
+<h2 id="毕业"><a class="markdownIt-Anchor" href="#毕业"></a> 毕业</h2>
+<p>2018 最大的一件是自己终于艰难地从学校毕业。本来在学校属于 easy 模式，原本以为毕业很轻松。不过出于一些原因，比其他人多待一个月才拿到毕业证书，给我不太美好的大学生涯又多添几份痛苦。本来还准备写篇文章来总结一下大学生涯，拖到现在毕业都快一周年，也只能当成是毕业一周年的回忆文章。</p>
+<h2 id="工作"><a class="markdownIt-Anchor" href="#工作"></a> 工作</h2>
+<p>毕业之后，用我外婆说的一句话“一个人拉着两个行李箱就去工作了”。误打误撞和机器学习挂上一些关系。每天属于虽然工作很开心，但是好像没有干什么事情的状态。更多地吐槽也准备写在工作一周年的文章中。</p>
+<h2 id="自我管理"><a class="markdownIt-Anchor" href="#自我管理"></a> 自我管理</h2>
+<p>这个概念是年初感觉自己太混乱时提出来的，如果成为更好的自己。一年来有过很多想法和实践，但是现在还探索出来完整的系统。有机会再写。</p>
+<h2 id="年度阅读"><a class="markdownIt-Anchor" href="#年度阅读"></a> 年度阅读</h2>
+<p>说来惭愧，今年没有读多少本书，而且绝大部分都是在没有毕业时候读的。工作之后，完整看完地也只有一本《九败一胜》。这本书讲的是王兴的创业故事，总的感受是创业维艰。感觉王兴是为了创业而生的人，有知识基础，又有经济基础。在多次创业之后，培养了商业上的灵敏，管理上的艺术。最终能在千团大战中走出来，成就今天的美团帝国。可惜这个冬天，美团有些艰难，脉脉上给予他裁团（裁员，特别是应届生）、C团（绩效打 C，逼你走）的名声。比起王兴的故事，我更感兴趣的是程维创立滴滴的故事，不知道什么时候可以读到。</p>
+<p>说回来在读过的书中，最推荐 <a target="_blank" rel="noopener" href="https://book.douban.com/subject/26835090/">软技能</a>，之前也写过简单的<a target="_blank" rel="noopener" href="https://xiang578.com/2018/05/28/soft-skills/">介绍</a>。用时髦的话来说，这本书教你成为一个斜杠青年。在基础的工资外，还有通过其他渠道有第二职业的收入，最后是睡后收入（表名上说的是睡觉时候获得的收入，第二层含义是一次生产，可以多次贩卖）。后来想想，自己可以二次出售什么？无法是什么时间管理、知识管理、理财、读书、写作之类的烂大街的东西。所以，自己还是需要加强抗击职业风险的能力，尽快找到自己的第二职业收入。</p>
+<p>另外，自己也进行了一些主题阅读。年初的时候，对时间管理和知识管理感兴趣。读过<a target="_blank" rel="noopener" href="https://book.douban.com/subject/25872118/">Evernote 100个做笔记的好方法</a>、<a target="_blank" rel="noopener" href="https://book.douban.com/subject/24524405/">Evernote超效率数字笔记术</a>、<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26809387/">印象笔记留给你的空间</a>、<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26801390/">有道云笔记：记录，成为更好的自己</a>、<a target="_blank" rel="noopener" href="https://book.douban.com/subject/4630664/">你的知识需要管理</a>，看完这些书多少有些收获，但也没有完全解答我的疑问，说回来，也不太推荐你们去看。不过，时间管理方面的两本书，<a target="_blank" rel="noopener" href="https://book.douban.com/subject/3558629/">小强升职记</a>和<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26612471/">搞定Ⅰ</a>，却是五星推荐，看一看，多少能提高一些工作效率。</p>
+<h2 id="年度观影"><a class="markdownIt-Anchor" href="#年度观影"></a> 年度观影</h2>
+<p>今年看过的电影倒是比书多一些。不过，其中好多都是漫威的超级英雄片。自己感觉漫威伟大的地方在于创造了一个包括神话、物理、外星文明的电影宇宙，这个宇宙也许会成为我们这一代人的回忆。</p>
+<p>说回来，今年看过的片子中，最推荐的是<a target="_blank" rel="noopener" href="https://movie.douban.com/subject/6874741/">无问西东</a>。这部片子讲述了不同时期 4 个不同年代清华学子关于选择的故事，也许是因为没有他们这样的大学经历才会嫉妒。看完片子后，还抄录一些台词，大概能更加清晰的表达电影对我的影响。</p>
+<p>吴岭澜（文科很好，理科很差）面对梅校长时候询问为什么不去读文科时的回答。</p>
+<blockquote>
+<p>因为最好的学生都读实科<br />
+我只知道，不管我将来做什么<br />
+在这个年纪，读书，学习都是对的<br />
+我何用管我学什么？<br />
+每天把自己交给书本，就有种踏实</p>
+</blockquote>
+<p>吴岭澜重新找到自己的目标之后，成为了清华大学的一名教授。在西南联大给学生上课时回忆自己的大学时光：</p>
+<blockquote>
+<p>当我在你们这个年纪，有段时间，我远离人群，独自思索，我的人生到底应该怎样度过？某日，我偶然去图书馆，听到泰戈尔的演讲，而陪同在泰戈尔身边的人，是当时最卓越的一群人，这些人站在那里，自信而笃定，那种从容让我十分羡慕。而泰戈尔，正在讲“对自己的真实”有多么重要，那一刻，我从思索生命意义的羞耻感中，释放出来。原来这些卓越的人物，也认为花时间思考这些，谈论这些，是重要的。今天，我把泰戈尔的诗介绍给你们，希望你们在今后的岁月里，不要放弃对生命的思索，对自己的真实。</p>
+</blockquote>
+<p>对吴岭澜的总结：</p>
+<blockquote>
+<p>梅校长说：“人把自己置身于忙碌当中，有一种麻木的踏实，但丧失了真实，你的青春也不过只有这些日子。”<br />
+什么是真实？<br />
+你看到什么，听到什么，做什么，和谁在一起<br />
+有一种，从心灵深处，满溢出来的不懊悔，也不羞耻的平和与喜悦</p>
+</blockquote>
+<p>后来吴岭澜领悟到了：<br />
+看到和听到的，经常令你们沮丧，世俗是这样强大，强大到生不出改变它们的念头。可是如果有机会提前了解了你们的人生，知道青春也不过只有这些日子，不知你们是否还会在意的，那些世俗让你们在意的事情，比如占有多少，才更荣耀，拥有什么，才能被爱。 等你们长大，你们因绿芽冒出土地而喜悦，会对出生的朝阳欢呼雀跃，也会给别人善意和温暖，但是却会在赞美别的生命的同时，常常，甚至永远忘了自己的珍贵。愿你在被打击的时，记起你的珍贵，抵抗恶意；愿你在迷茫时，坚信你的珍贵，爱你所爱，行你所行，听从你心，无问西东。</p>
+<p>富家子弟沈光耀放弃学业，决定参加飞行队时，母亲不远万里来联大劝他。</p>
+<blockquote>
+<p>“当初你离家千里，来到这个地方读书，你父亲和我都没有反对过，因为，是我们想你，能享受到人生的乐趣，比如读万卷书行万里路，比如同你喜欢的女孩子结婚生子。注意不是给我增添子孙，而是你自己，能够享受为人父母的乐趣，你一生所要追求的功名利禄，没有什么是你的祖上没经历过的，那些只不过是人生的幻光。我怕，你还没想好怎么过这一生，你的命就没了啊！”</p>
+</blockquote>
+<p>同学在他牺牲后，去看望沈母时，屏幕上展现出一幅对联：三代五将护国定疆青史留正气，六韬三略擅用筹边御旨赞英豪。</p>
+<p>这部电影的彩蛋标题是致敬时代的风骨，快速回顾在电影中出现过的时代名人。可惜自己没有认出多少个，真是悲哀。</p>
+<h2 id="后记"><a class="markdownIt-Anchor" href="#后记"></a> 后记</h2>
+<p>这篇文章写的有点杂，我只是看着 MWeb 中的存稿有点多，趁着这次机会消灭一些，来年有机会写些新的东西。</p>
+<p>于北京回龙观</p>
+<p>其他文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/2017.html">2017 迷茫</a></li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2018-05-28T14:21:29.000Z" title="5/28/2018, 2:21:29 PM">2018-05-28</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.879Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/">文渊阁</a></span><span class="level-item">8 分钟读完 (大约1199个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/soft-skills.html">月读|软技能——代码之外的生存指南</a></p><div class="content"><p>本月推荐的书是 John Z. Sonmez 写的<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26835090/">《软技能——代码之外的生存指南》</a>。本书作者之前是一名程序员，目前更多的是充当程序员的人生导师角色，通过博客、播客、vlog等多种形式介绍自己的软技能，借此希望能推动其他人事业进步，过上更充实的生活。</p>
+<p>本书总共分成七大篇：</p>
+<ul>
+<li>职业篇，介绍了程序员从公司选择、面试、工作、辞职、创业等职业相关的方方面面内容</li>
+<li>自我营销篇，从博客开始，打造自己的个人品牌</li>
+<li>学习篇，作者自己领悟的「十步学习法」学习新的知识</li>
+<li>生产力篇，自由职业者的自我管理方法</li>
+<li>理财篇，探讨收入、投资、债务以及退休等问题</li>
+<li>健身篇，下面的图片就是作者本人，和一般的程序员形象有很大的区别</li>
+<li>精神篇，心灵、情感等问题探讨</li>
+</ul>
+<p><img src="https://media.xiang578.com/15275002437247.jpg" alt="作者博客" /></p>
+<p>从上面的介绍可以看出，这本书基本上把一个程序员可以面对的所有问题，都给囊括了。从形式上来看，这本书像是各种主题的博文合集，有些散乱。总的来说都是关注于「更好地经营生活」。</p>
+<h2 id="自我营销"><a class="markdownIt-Anchor" href="#自我营销"></a> 自我营销</h2>
+<p>这一个主题是书中我最感兴趣的内容。知识付费的兴起，朋友圈中经常能看到有人分享付费课程的图片，图片中的老师各种头衔酷炫狂霸叼咋天，自我营销的成本真的是已经低到一种程度。万物互联，每一个人都有一次成名的机会。</p>
+<p>本书中的自我营销，介绍了一系列的过程，作者推荐个人品牌的建立从博客开始。对于程序员来说，维护一个自建博客是很轻松的事情，而且可以分享的内容也很广泛，工作中的技能学习、遇到的问题分析。将博客当成自己的名片，从而实现让更多的人认识你，认可你。</p>
+<p>书中介绍维护一个博客，要从两个方面入手，一是内容质量，二是更新计划。之前，自己的博客都是随心所欲的更新。重新思考一下，给博客增加了几个栏目：</p>
+<ul>
+<li>【每周分享】：每周六不定时更新，记录过去一周，我看到值得分享的内容</li>
+<li>【月读】：每月不定时更新，推荐本月我阅读的一本书</li>
+<li>【数字生活】：我的数字生活实践</li>
+<li>【博客公告】：分享与这个博客维护相关的内容</li>
+</ul>
+<p>另外一方面，对于我这样的博客来说，最主要的流量来源是搜索引擎，所以花时间进行了一些 SEO 优化。通过在百度搜索和谷歌搜索相关页面提交网站，实现文章更快的收入。除此之外，需要在社交账号中更多的绑定博客，寻求其他的主动点击。</p>
+<h2 id="生产力"><a class="markdownIt-Anchor" href="#生产力"></a> 生产力</h2>
+<p>这个主题，是我大半年以来一直感兴趣的。之前没有注意到，像作者这样的自由职业者更应该是效率大师。其实各种效率方法流程大致相同，更多的是细节的实现。作者在做周计划时，倾向于利用看板来展示任务，这个给我一个新的启示。我考虑过利用 Github + Zenhub 来管理一些大的项目，不过平时没有什么动力打开 Github 网站。</p>
+<p><img src="https://media.xiang578.com/15275062870334.jpg" alt="Github Issues" /></p>
+<p>所以，需要一种更加简单地方法。网上查找了一下，发现一个网站 <a target="_blank" rel="noopener" href="https://kanban.ist">Kanbanist | The Missing Kanban Board for Todoist</a>。Kanbanist 最大的优势是能直接读取 Todoist 的数据，用起来会更加方便吧。不过，如何融合进入日常工作流中，又值得我自己仔细思考一下。</p>
+<p><img src="https://media.xiang578.com/15275066078950.jpg" alt="Kanbanist" /></p>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>读这本书，最大的感受是读到很多点的时候，我都打开了电脑进行实践。功利地说，这是一本实用的书，推荐大家有空都来挑选自己感兴趣的内容阅读。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2018-04-16T04:01:41.000Z" title="4/16/2018, 4:01:41 AM">2018-04-16</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/">文渊阁</a></span><span class="level-item">22 分钟读完 (大约3363个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/build-to-win-homework-0x00.html">构建之法 第 0 次个人作业</a></p><div class="content"><p>最近重新看邹欣写的<a target="_blank" rel="noopener" href="https://book.douban.com/subject/25965995/">构建之法</a>，发现他的第一章课后作业很有意思，所以决定自己也来写一下。有关的作业说明在<a target="_blank" rel="noopener" href="http://www.cnblogs.com/ChildishChange/p/7363123.html">2017BUAA软工助教 第0次个人作业 - ChildishChange - 博客园</a>中。</p>
+<h2 id="结缘计算机"><a class="markdownIt-Anchor" href="#结缘计算机"></a> 结缘计算机</h2>
+<blockquote>
+<p>你为什么选择计算机专业？你认为你的条件如何？和这些博主比呢？（必答）<br />
+计算机是你喜欢的领域吗？是你擅长的领域吗？<br />
+你热爱这一专业吗？你对计算机的热爱是怎样的？仅仅是口头的吗？</p>
+</blockquote>
+<p>与大部分人差不多，在高考前我也没有对规划未来。考的也不是很好，没有太多的选择。所幸自认为还是有学习的劲头，想着大学找机会去转专业一波。当时也没有太在意专业的填报，最后机缘巧合来到了财经读计算机。大一下时，确实得到了转专业的机会。在面试时，突然感觉自己对转过去的专业也没有太多的好感，就和面试我的老师说放弃转专业，他们只能口头上鼓励我，男生学计算机也不错。大概就是这样子，就在计算机专业混到了大四。</p>
+<p>比起这些博主来说，我没有他们那么强的主观能动性吧，能自觉地了解学习计算机各个领域的知识。而我从除了学校内的课程安排之外，自己了解其他知识都是浅尝而止。从大一开始差不多就点弯了天赋树，基本上课余时间都在写算法题目，参加各种各样的算法竞赛。幸运地拿了一些大大小小的奖，但是这也导致在知识面上和企业认为的计算机专业学生有很大的区别。目前来说，正在通过自己的努力，加强学习基础知识，希望能补齐自己的短板。</p>
+<p>记得之前有一句话说，「数学是神造学科，计算机是人造学科」。在三年多的学习中，无时无刻不感受到前人思维的巧妙与严谨。比如 CPU 中的加法器，能通过简单的元器件和门电路搭配实现二进制加法以及进位。另外，计算机专业也能及激发最深处的好奇心。当你查阅相关的文档，实现软件的某些功能时，是否能想起童年某个午后拼成的模型？</p>
+<h2 id="在计算机系学习"><a class="markdownIt-Anchor" href="#在计算机系学习"></a> 在计算机系学习</h2>
+<blockquote>
+<p>你对你的大学生活有什么想要吐槽的地方吗？你理想的大学教育应该是什么样子的？跟学校给你的有什么区别？比较你在中国大学的经历，你的老师和学校能做到和国外那样吗？如果不能，请分析一下为什么。（必答）  （8.26修改）<br />
+迄今为止，你写了多少代码，描述你做的最复杂的软件项目/作业。（必答）（8.24修改）<br />
+科班出身和北大青鸟有什么区别？<br />
+速成的培训班和打基础的大学教育还有mooc之间有区别吗？<br />
+学线性代数和概率论的时候，你是否有过这样的疑问「我们为什么要学这么多数学，这和我们的计算机有关系吗」，你现在是否还有这样的疑问？对这个问题，你有自己的解答了吗？那么其他学科呢？</p>
+</blockquote>
+<p>对于专业来说，我记得辅导员曾经在年级会议上讲过这样一段话：「有些人和我说，为什么高等数学这么难？这些书都是在大学没有扩招前编的，以你们的成绩当时都可能上不了大学。而且，我们学校搞计算机系，只是发现有很多教计算机基础的老师才开设的。」所以，也可以知道这个专业在学校的尴尬地位。</p>
+<p>托尔斯泰说「幸福的家庭总是相似的,不幸的家庭却各有各的不幸」。反而对于计算机专业来说，感觉「普通学校的问题总是相似的，强势学校的优点却各有不同」。蒋宇东在<a target="_blank" rel="noopener" href="https://book.douban.com/subject/4006425/discussion/22791674/">梦断计院 为梦前行</a>中写道他自己的学校计院有三大问题：1.学生基础薄弱 2.学风不正，溃散成性 3. 实践环节薄弱，人才位置错放。之前，我也一直在想一件事情：是老师水平太差学生懒得学还是学生水平太差还是老师懒得教？看到上面的三个问题才明白，冰冻三尺非一日之寒，事物发展都是相辅相成的。学生大部分都是过来享受大学美好生活的，对于有挑战的专业基础课比如编译原理、离散数学等都会用脚投票让他离开课程表。有幸能勉强开下去的课程，也会被改成能突击几天通过的样子。</p>
+<p>记得大二导师前往台湾进修前找我谈过一次话。他希望我能自己养成一些良好的学习习惯，多去钻研计算机专业知识。并且还说，学院每年毕业的学生中，没有超过十个学生明白计算机是怎么一回事？三年多的时间里，我也接触过网上的一些 Mooc，不过差不多完全听完的只有浙江大学陈越教授的<a target="_blank" rel="noopener" href="http://www.icourse163.org/course/zju0901-93001">数据结构</a>和吴恩达教授的机器学习。能坚持学习完这两门课，背后都是兴趣使然。数据结构是 ACM 比赛中很重要的一个知识点，当时自己学校还没有开设这门课，而且看书自学也不是很懂，所以就花大半学期的时间在网上去学习。机器学习则是希望未来能从事机器学习相关方面的工作才了解的。</p>
+<p>陈越教授放在网上的数据结构课程相对于浙大内部来说，最大的变化是将教学语言从英文变成了中文，而且也适当的删除了部分内容（不是很确定？）。之前也在知乎上看到浙大计算机专业的课程安排，主干课程选用外国原版教材，以及使用英文授课。另外陈老师在讲解相关算法时，只介绍原理和思想。相关的实践需要你课后花时间进行，并且要求提交程序设计平台上进行黑箱测试。对比后来在自己学校开设的数据结构课程中，直接给你展示代码，也不强求你写的代码能正确运行，只要粘贴在实验报告中提交即可。《机器学习》的课程展示了美国教育的特点，每一周的课程都会包含一个小 quiz ，以及在课程中插入适量的编程大作业，学习的困难程度也就可想而知。</p>
+<p>这些授课方式的不同，我认为是不同大学对于教育的理解不同。对于浙大之类的重点大学来说，所给予学生的是精英教育，侧重于培养学生的计算机科学基础。而下面的学校更多是大学教育成为通识教育的产物，本应该培养专业型人才，传授计算机技术，却由于种种原因没有这样开展。Mooc 的出现，打破了原有的时间、空间的限制，让我这样的普通学习接触到了国内外顶尖大学的教育资源，有利于教育公平。但失败之处也在于它的灵活性，不得不承认需要很强的自我约束能力才能完整地学习完网上的课程，不知你还记不记得那个当时看得热血沸腾的课程时，被你遗忘在哪个角落了？</p>
+<p>最后，我觉得 Mooc 还缺少的同辈压力。吴军博士在《大学之路》中写道「当许多聪明、求知欲强、具有同情心而又目光敏锐的年轻人聚到一起时，即使没有人教，他们也能互相学习。他们互相交流，了解到新的思想和看法、看到新鲜事物并且掌握独到的行为判断力。」这大概就是学什么不重要，重要的是和谁一起学吧。一些 Mooc 虽然提供在线社区交流，但还是没有线下那种碰出火花的感觉。</p>
+<p>对比完这些，计算机专业学生的另外一个主题不可能忽视——“自学”。最开始的作业说明给出的很多参考博文也说明了这一点。我印象最深的一个方法是徐宥在<a target="_blank" rel="noopener" href="https://book.douban.com/subject/4006425/discussion/22802960/">掉进读书的兔子洞</a>中写道的「一字不漏敲入一本书的程序成了我推荐别人学习语言的最好办法」。古语读书百遍其义自见，计算机是一门实践的学科，只有在实践中才会学习到技术的本义。目前，自己在看《机器学习实战》时（相关代码和读书笔记见<a target="_blank" rel="noopener" href="https://github.com/xiang578/MachineLearningAction">参考链接5</a><br />
+），也差不多用的是这个方法，将书中提到的机器学习算法一个字符一个字符地敲进编辑器，一次又一次地调试运行直到出现满意的结果。</p>
+<p>在这样的学习中，我也可以回答这一部分的最后一个问题，我们为什么要学这么多数学，这和我们的计算机有关系吗？对于机器学习来说，本身是建立在概率论和线性代数的基础上，毕竟解释机器为什么能学习都需要用到霍夫丁不等式等相关知识。数学是一种工具，通过数学能将很多的计算机实践经验理论化，以此得到更好的发展。对比功力性很强的培训机构来说，接受科班教育的结果是有机会受到严格的数理化训练，这也能间接决定你在这个行业从事工作的层次和上限。</p>
+<h2 id="未来规划"><a class="markdownIt-Anchor" href="#未来规划"></a> 未来规划</h2>
+<blockquote>
+<p>对于你未来在IT行业的发展，你有什么样的梦想或者未来想从事什么样的工作？你准备怎样来规划你技术道路，职业道路和社会道路？（必答）<br />
+你对于实现自己的梦想已经做了或者计划做什么样的准备？<br />
+你们马上就要面临实习了，你打算在企业内实习还是在实验室实习？<br />
+实习经验究竟有多重要？是否需要马上开始积累实习经验？</p>
+</blockquote>
+<p>前文也提到了，以我的目前的情况来看，大学中接受的教育和自己所学的技能都是和市场脱节的。所以，前一段时间也很迷茫，自己能做什么。所幸看到之前公司的同事所写的知乎专栏文章「谈“圈外”在校生如何更靠谱的拿到大厂算法/ML实习机会」（不知道为什么被删除了，所以无法提供链接），大意就是可以曲线救国，先就业再择业。</p>
+<p><img src="https://media.xiang578.com/15236805736051.jpg" alt="" /></p>
+<p>所以，我还是推荐出去实习的。不仅是走出象牙塔，感受一下工业界的需求。更重要的是大一点的企业都会安排专人对实习生进行相应的指导，使其能更快地朝工程师方向发展。</p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/xinz/p/3803035.html">现代软件工程 第一章 【概论】练习与讨论 - SoftwareTeacher - 博客园</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/ChildishChange/p/7363123.html">2017BUAA软工助教 第0次个人作业 - ChildishChange - 博客园</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/4006425/discussion/22791674/">蒋宇东：梦断计院 为梦前行</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/4006425/discussion/22802960/">徐宥：掉进读书的兔子洞</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/xiang578/MachineLearningAction">xiang578/MachineLearningAction: 《机器学习实战》</a></li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-12-31T04:40:45.000Z" title="12/31/2017, 4:40:45 AM">2017-12-31</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.871Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item">34 分钟读完 (大约5065个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/2017.html">2017 迷茫</a></p><div class="content"><p>每年年底，都有很多人在各种地方发表这样的总结，看得我煞是羡慕。去年也想学习<a target="_blank" rel="noopener" href="http://freemind.pluskid.org/misc/2016-summary/">2016 无限大</a>中这位大佬这样好好搞一番。最终的结果是，写了一些之后，就放弃了，然后现在草稿都找不到了。今天，终于鼓起勇气，准备在图书馆好好总结一下2017年经历过的事情。那么多年以来，感觉今年经历的事情最多也最复杂，很多事情到现在都没有讲明白。</p>
+<p>上半年大三，现在大四，今年在学校上的课实际上是很少的。上半年自己选的只有python入门和软件工程，不知道为什么，对学校的教育是彻底的失望了。MOOC方面，不知道托了多少个月，换了几个班，终于把吴恩达的机器学习给看完了。这样匆忙下来，所学的东西到今天基本也忘得差不多了。前几周，又决定去听一下《机器学习基石》和《机器学习技法》，希望可以坚持下去。另外，还看了一下候老的《深入浅出STL》，收获很大。</p>
+<p>应该是寒假的时候，没有多少思考，在陈老师的鼓动之下，又给自己的ACM生涯续了一年左右。队友实在是太给力了，以致于前几天陈老师还说出，我们几个人好好训练，还有机会打进总决赛。抱大腿之下，成绩倒是不错，省赛金、邀请赛金、区域赛金、ecl银，但这和我没有多的的关系。印证了陈老师的一句话，带着功利的目的参加ACM比赛没有好的结果。人家的没有好的结果指的是获不了奖，我的没有好结果是人生的迷茫。</p>
+<p>由于没有去考研的原因，也把自己推向了就业，但我都没有准备好。打击在找实习的时候就来了，上一届的学长推荐，很早就面阿里，发挥的很不好，毫无疑问的挂了。自己后知后觉，春招快结束了，都没有找到好一点的公司。幸运地是，在差不多接受去一家杭州本地的游戏公司实习时，突然接到滴滴北京的offer，终于拯救了一下自己。</p>
+<p><img src="https://media.xiang578.com/944_2017-08-29_11-17-42.jpeg" alt="944_2017-08-29_11-17-42" /></p>
+<p>6月到8月这3个月的时间，自己都在北京实习。这一段小结准备了好久都没有写完，这里简单的介绍一下。那边的部门是路径规划小组，所以我的主要工作就是写最短路……这三个月时间对我来说，最主要的是体验，感受了互联网公司的氛围，认识了很多优秀友善的同事，他们也教了我很多工作上的技能。最重要的是，我也发现自己的不足，工程能力太弱，学历太低等等。三个月的时间很快，还没有在那边做太多的项目就结束了。另外一方面，在北京也去过很多地方体验，文化之都名不虚传，这个也等有机会再写。</p>
+<p>回来之后，又是一番秋招。抱着在杭州找一份工作的信念，我面试了很多，贴出9月和10月的日历来留念一下。</p>
+<p><img src="https://media.xiang578.com/15147039584801.jpg" alt="" /></p>
+<p><img src="https://media.xiang578.com/15147040250293.jpg" alt="" /><br />
+最终由于自己的实力问题，结果不是很乐观。这么多面试，唯一想记一下的就是微软面试，有一刻我彻彻底底地感受到了自己的不足，英语水平太差，思维定势。接下来的两个月，就只好老老实实地待在学校，每天不是在寝室就是在图书馆度过。</p>
+<p>另外，寒假的时候，突然有兴致想学围棋，又是报live，又是买书、又是买围棋。坚持了几个月之后，发现真的不是时候，没有了太多空闲时间来培养兴趣，也许早个一两年，可以培养出这个兴趣。现在感觉，可惜这些冲动而买下的东西。说回来，这一年空闲的时间大多花在网上，看视屏、看直播、刷论坛，明知很多事情没有意义，却又控制不住自己。</p>
+<p>所以，又开始关注个人管理。最大的投入是换了一台Mac，终于不用再忍受原来低配thinkpad的卡顿。这几个月里面，倒是每天都抱着在用，感觉生命都得到加速。不过，现在感觉自己的电子设备有点多，选择什么设备干什么成了新的问题。2017年也是知识付费地兴起的元年（这个是我一直追求的，如果觉得我的哪篇文章把你逗笑了，打开about页面，扫一下二维码支持一下）。在这方面的投入主要是知乎live，由于冲动，也交过一些智商税。比如下面图中知乎最有名的&quot;智商税&quot;之一：</p>
+<p><img src="https://media.xiang578.com/15147059504193.jpg" alt="" /></p>
+<p>其他的还有<a target="_blank" rel="noopener" href="https://www.zhihu.com/lives/837669764146003968">如何自学计算机专业课程？</a>，道理都懂，不知道自己当时为什么要买这个东西……当然也有不错的比如围棋相关的<a target="_blank" rel="noopener" href="https://www.zhihu.com/lives/specials/804814796859011072">从入门到入段</a>，这个live最大的优点是配套服务完善。上面也讲了，自己没坚持，才没有学会围棋。前几天买少数派的效率大礼包，还送了一个什么live私家课，又是一个坑……其实我一直很反感知乎live的形式，语音不能检索，聊天信息流的形式不适合深度讨论，最重要的一点，网页端功能太弱，完全想直接喷。有过这些教训之后，应该把知识获取的重心放在课堂以及书本中。在网络上的另一笔花销就是购买软件服务。目前自己周期购买的包括为知笔记会员、滴答清单会员、蓝灯会员、腾讯云服务器以及域名。对于这些还是比较满意。换到Mac之后，自己也购买了一些软件。遗憾的是由种种原因，偶尔还用通过不正常手段获得的软件。</p>
+<p>由于这一年感触比较多，也捡起了原来写日记的习惯，毕竟自己忘的实在是太快。之前尝试过很多写日记的方法，比如晨间日记、九宫格日记，或者是纸笔记录，都没有满意的方案。目前搞的一种笔记式的方法再探索。</p>
+<p><img src="https://media.xiang578.com/15147053326968.jpg" alt="" /></p>
+<p>大致思路是为知笔记上面按每一个月创建一个文件夹，每天创建一篇笔记。在笔记里面可以写东西，贴照片，传附件，保证自由很多样性。然后第二年同一天打开这篇笔记，可以去年今日，再写下新的感悟。更重要的是，通过这种方法可以将之前写的日记整合进去。家中的初中和高中日记本也有机会处理了。</p>
+<p>最后，就是关于博客的折腾。年初的时候自己把博客改成了wordpress，但是一年都没有坚持下来，又回到了hexo怀抱，真是呼吸不止，折腾不息。但不应该忘记，博客的本质是分享，现在自己差不多是舍本逐末吧。所以，定一个小目标，新的一年里面更新博客频率不低于每周一篇。</p>
+<p>于浙财图书馆。</p>
+<h2 id="阅读"><a class="markdownIt-Anchor" href="#阅读"></a> 阅读</h2>
+<p>上半年基本上没有看完什么书，大部分都是下半年从北京回来之后看的，所幸都有一些简短的记录，特地复制过来记录一下。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/4822685/">编码</a>：顾名思义，这本书讲解的是计算机内部编码的原理。书中主要包括两部分<br />
+，一是编码的理论基础，用多种方式表示字符或者操作指令，二是编码的硬件基础，如何设计硬件处理各种编码以实现相应的功能。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26998040/">尽在双11：阿里巴巴技术演进与超越</a>：听名字就知道这本书很厉害，结果可想而知。本书讲解的是阿里一些架构演变的历史，里面有太多技术相关的名词，水平太差根本看不懂这些东西，希望有一天能恍然大悟。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/1152111/">程序员修炼之道</a>：看不懂，有缘再读。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26929955/">腾讯传</a>：之前在知乎查评价时，很多人不是很推荐。这本书主要记录一些腾讯发展过程中重要的里程碑，比如OICQ、QQ秀、QQ空间、微信等等。没有读出这些事件背后深刻的意义。书中另外一个重点是对马化腾的大夸特夸……有种天不生化腾，万古如长夜的感觉。作者号称写这书花了五年时间，实在没有找出什么重磅的料啊。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26584286/">大学之路</a>：大学生活马上就要结束了，才想起来看这本书。最近深刻体会到高等教育额的价值，对比吴军博士在书中所写的各式各样的美国大学，我们国内的大部分学校除了校名不同，就没有什么其他差别了。最后，吴军博士本人也很励志，从进入清华开始到博士毕业花了18年，真是终生学习的典范。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/25985021/">人类简史 : 从动物到上帝</a>：这本书大概读了五分之一，很多观点比较深刻，但是提不起我的兴趣，所以就选着了放下。另外一方面反映我的人文社科阅读能力实在是太差了。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26873680/">出梁庄记</a>：这本书和上一本，都是我在三联奋韬书店里看的。有点区别的是，这一本我看完了……作者通过采访生活在各地的梁庄人，反映了生活的不易。当时正是北漂，引起了共鸣</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26361652/">高频交易员</a>：没有仔细看，现在回想起来，自己记住的就是，通过信息传输的时间差来获利，以此来抨击美国金融市场的不公平。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/10799765/">盖洛普优势识别器2.0</a>：这本是最重要的就是配套的测试吧，图书馆借的书没有测试码，所以也很无聊了。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/1070134/">毛泽东选集（第1卷）</a>：这本书里面，其实我只挑了《湖南农民运动考察报告》来看。这篇报告的特点是逻辑清晰，和现在的报告对比，缺少数据分析。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/3004255/">编程之美</a>：为了准备微软面试而读，最后发现没有用到</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/6966465/">剑指offer</a>和<a target="_blank" rel="noopener" href="https://book.douban.com/subject/27008702/">剑指Offer：名企面试官精讲典型编程题（第2版）</a>：第一版是在软件工程课上读完的，由于之前参加过算法竞赛，所以很多题目都是秒杀的。第二版是在去苏州的火车上看完的，比第一版多了一些题目，质量也不错。确实很多面试都是从这本书里面找的题目。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26638586/">程序员代码面试指南：IT名企算法与数据结构题目最优解</a>：之前一直黑左神，但他这本书还不错。有一次笔试，我有一道题目没有写出来，听人家一说是这里面的，龙与地下城。去微软面试之前，准备看一下这本书里面的大数据相关题目，但是时间匆忙没有机会了。后来发现面试的时候就问了一道里面的大数据题目，最后gg了。在百度和拼多多面试时，也被问道里面相关的题目。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26902177/">技术之瞳——阿里巴巴技术笔试心得</a>：为了准备阿里笔试而借的书，说句实话不推荐。书很薄，但是很贵。知识总结也很少，所谓的笔试真题，也只有答案。借用一句话，对于没有解析的书，自己答案印错了都不知道。纯属阿里巴巴骗钱之作。最后吐槽一下，阿里笔试是要招全栈工程师吗？什么问题都有。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/24335672/">淘宝技术这十年</a>：听学长讲座后借的书，由于不是很懂里面的故事，所以我就当成故事书来看了。印象最深的一个多隆的大神，技术伴随着淘宝发展的成长，前几周看到，好像他成了阿里的合伙人。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/25819566/">王道程序员求职宝典</a>：又是一本为了面试而看的书，对于我这种基础不是很扎实的，感觉看起来很不错。王道论坛在计算机考研的口碑应该也是挺好的。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/26912767/">深入理解计算机系统（原书第3版）</a>：五星推荐，串联起了我学过的知识。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/25708312/">C++ Primer 中文版（第 5 版）</a>：这也不错。</li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/3076818/">围棋入门</a>：围棋入门挺不错的书，上半年想学围棋时而读的。不过目前已经绝版了，我也是买的淘宝复印版。</li>
+</ul>
+<h2 id="观影"><a class="markdownIt-Anchor" href="#观影"></a> 观影</h2>
+<p>这一年来看了不少的电影和记录片。不过我用的形式是优酷ViP区的电源以及B站上面的记录片。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.ted.com/talks/jia_jiang_what_i_learned_from_100_days_of_rejection#t-919858">Jia Jiang: What I learned from 100 days of rejection</a>：蛮有意思的一个TED演讲，但是我没有勇气去实践。</li>
+<li><a target="_blank" rel="noopener" href="http://www.bilibili.com/video/av5021994/">Professional-职业人的作风 围棋棋士 井山裕太</a>: 这部记录片主要介绍日本围棋史上首位获得国内全部头衔的棋士井山裕太的生活以及一些比赛。</li>
+<li><a target="_blank" rel="noopener" href="http://www.bilibili.com/video/av6262225/">纪实72小时 沉浸在围棋的魔力中</a>: 记录日本的一个围棋茶馆72小时，看完之后感觉也只有在日本才会有这样的茶馆，很多人会在店中待上一个周末。在围棋当中，忘记自己的一切，只有黑与白之间的交锋。对其中的两句话印象深刻，第一句是提问武宫正树儿子有关职业围棋的问题，他回答到，下这盘棋的时候我们的出场费是一样的，如果我输了，我就没有了机会。第二句是提问一位下棋的人为什么这么长时间都待在这里，回答我没有家。原来只是听说日本老年化社会，看完这个视频才对这个问题有感触。接下来，我又看了很多这个系列的记录片，感受到了日本的温度，这是我们所缺失的。</li>
+<li><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/2133323/">白日梦想家</a>: 有过很多想法,最终却成了空想,每次半夜的激情,醒来之后还有多少?</li>
+<li><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/26616155/">现代生活的秘密规则：算法 The Secret Rules of Modern Living: Algorithms</a>: 里面的很多算法自己都接触过,但看这部纪录片又有了很多新的感悟.</li>
+<li>人民的名义：这是我这几年第一部看完的国产剧吧，喜欢他的原因是讲了很多我原来都没有关注过的反腐问题。</li>
+<li>战狼2：今年最火的电源，主题也很深刻，不过现实还是很残酷的。</li>
+<li>硅谷四季：一部讲述美国geek创业的故事，很励志，但我却没有一颗创业的心。</li>
+<li>华尔街之狼：我觉得看的很爽。</li>
+<li>雷神1、2：去年把漫威宇宙中的电源都找出来看了一遍，唯独没有雷神系列，最终补上了。我最喜欢的一个设定是，雷神在远古中出现，但由于时间太久，人类选择认为是神话。这里，我想起了易中天在《中华史》里面提到过的一个观点，也是神话是真的存在过，只是我们后来的记录夸张了那些，比如那时候人很少，而且有足够的水果当成是食物，所以人们不用劳动就能生活。</li>
+<li>盗火者：中国教育改革调查：大一的时候听高数老师讲起过，一群不合主流的中国教育者故事。</li>
+<li>奇异博士：漫威宇宙中的新作，反正是无脑看的。</li>
+<li>西部世界：很烧脑的美剧，反正我是靠知乎剧透才看懂的，还有很多谜题都没有解决，不知道什么时候有新的一季。</li>
+<li>权力的游戏：从大一开始就听过这部美剧和书，然后到大四才开始看。到目前为止，看了4季，资源太难获取，就不看了。看他的原因是，讲述了低魔世界的传奇。</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av14251008/index_2.html?t=1615#page=1">如何实现你的儿时梦想</a>：蛮有名的演讲，少年可期。</li>
+<li>超级工程：这也属于很早就听过名字，但是没有机会看的。很多东西确实震撼，但是自己没有机会参与其中。</li>
+<li>人生七年：已经快60年的社会学实验，看下来很多结论是很残酷的。</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av8937215/?t=644">我更关心的是怎么样不做事 老树画画：做一个梦</a>：这也有感动。</li>
+<li>B站的历史记录有限，很多看过的记录片很遗憾没有记录下来。</li>
+<li>暴走大世界：之前很喜欢的一个综艺节目，但是最近却脱粉了。理由很简单，王尼玛居然是一个符号。我确实没有仔细的思考这个问题，当人家爆出来的时候，我也很震惊！</li>
+<li>旗门镖局：阿瓦隆的汉化版，很有意思的逻辑综艺节目。</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2016-05-03T06:28:48.000Z" title="5/3/2016, 6:28:48 AM">2016-05-03</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/">文渊阁</a></span><span class="level-item">1 分钟读完 (大约214个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/just-for-fun.html">只是为了好玩——Linux之父林纳斯自传</a></p><div class="content"><ol>
+<li>这个是我为了学习Linux操作系统，而从图书馆精心挑选的书。</li>
+<li>林纳斯眼中的人生意义：生存、社会秩序和娱乐。</li>
+<li>Linux起源于林纳斯对于Minx的不满足，壮大于开源运动。</li>
+<li>Linux也是世界上最大的开源协作项目。</li>
+<li>内容和题目一样，不过也没有太多有趣的故事。</li>
+<li>林纳斯的思想朴实情切，不高深。</li>
+<li>至少读完之后，你会了解到没有他那样的基础和机遇去创造新的操作系统。</li>
+<li>书中出现了例如微内核、分页管理等计算机组成原理中的名词。</li>
+<li>现在已经不能说出这些具体含义了。</li>
+<li>希望有一天可以去看Linux源代码。</li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2015-05-23T07:03:41.000Z" title="5/23/2015, 7:03:41 AM">2015-05-23</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/">文渊阁</a></span><span class="level-item">7 分钟读完 (大约1039个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/build-to-win.html">构建之法读书笔记</a></p><div class="content"><blockquote>
+<p>偶然发现之前在博客园写过这篇读书笔记，顺手贴过来。</p>
+</blockquote>
+<p>应该是从上周六开始看这本书，起因是其他人发布一张书中内容截图。作者讲到技能的反面中的总结部分——如何考察一个人是否精通魔方：</p>
+<ol>
+<li>给面试者一个各面打乱颜色的魔方;</li>
+<li>要求他把六面还原;</li>
+<li>如果还原了，要求他把魔方恢复成我最初给他的那个混乱的局面，必须一模一样。</li>
+</ol>
+<p>看到这些，最近自己也在思考这个问题，自己学习一样东西如何才是真正的掌握了？本书作者是微软员工，也是一名经验丰富的程序员，这种检测是否精通魔方的方法给我耳目一新，接下来的学习中可以这样去思考问题。</p>
+<p>本书名叫《构建之法》，其实是讲述软件工程课程的教材。自己应该在大三也会有这一门课，不知道会上成什么样……前面几个章节看的比较仔细，团队运作模式之类的只是翻过一遍而已。现在对于这些不是很感兴趣。</p>
+<p>总体来说，收获还是比较大的，也更新了自己的某些观念。比如作者在书中提出1/N的打分体系，第一档满分，第二档的一半，第三档得三分之一。</p>
+<p>可以让想学习的学生知道如何努力，想混的也知道怎样才能混过去，不想上的也会知难而退。现在学校的打分体系确实差劲，很需要往这方面靠近。更重要的是给学生Natural critical learning environment，当然对自己学校来讲，要求有点过了。还有评价人的三种层次：行为和后果、习惯和动机、本质和固有性。</p>
+<p>接下来是对编程的一些帮助，最重要的是“代码写出来是给人看的，而不是机器”。所以有了代码风格规范和代码设计规范。对于我自己来讲，体现在编程时的格式和变量名，格式可以靠自动对齐，和将复杂的功能用函数来实现，变量名可以采用英文缩写之类的，最重要不要出现什么拼音缩写。代码设计规范怎是考验编程能力了，这需要多写。最后是注释的原则，解释程序做什么和为什么这样做以及特别注意的地方。当然错误的注释比没有注释更麻烦。</p>
+<p>最后是团队模式，现在自己学校里要求团队合作时，真心觉得还是自己一个人做方便，很难找到已经合适的人，自己又不喜欢协调沟通。不过书中讲的那么多规则，映象最深的是团队合作项目转组活动，这点目前没有经历过。其次是修改或维护前几届项目的原则，现在自己的作业，很多连样例都没有给你展示，更别说修改了，每次都要自己重新开始做。这也无可厚非吧。书中还讲到，结对编程，自己目前的体会是，几个人交流可以相互学习和传递经验，分享知识，不过某种程度也减少了探索的乐趣。书中补充了，带来更多满足感，更好的设计质量和代码质量之类的优势。</p>
+<p>彩蛋：It’s not a bug .it’s a feature.</p>
+<p>本书适合高年级之后，再来仔细研读。</p>
+<p>2018 年重新阅读写的 <a target="_blank" rel="noopener" href="https://xiang578.com/post/build-to-win-homework-0x00.html">构建之法 第 0 次个人作业</a></p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar-ryenxx.jpeg" alt="Ryen"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ryen</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Bei Jing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">107</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">82</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://haihongblog.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">海虹不老阁</span></span><span class="level-right"><span class="level-item tag">haihongblog.com</span></span></a></li><li><a class="level is-mobile" href="https://www.cnblogs.com/zufezzt" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Fighting Heart</span></span><span class="level-right"><span class="level-item tag">www.cnblogs.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Never-Reading/"><span class="level-start"><span class="level-item">Never-Reading</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li><li><a class="level is-mobile" href="/categories/%E4%B8%83%E5%B9%B4%E4%B9%8B%E6%97%85/"><span class="level-start"><span class="level-item">七年之旅</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"><span class="level-start"><span class="level-item">军机处</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/"><span class="level-start"><span class="level-item">文渊阁</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">机器学习</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"><span class="level-start"><span class="level-item">生活志</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"><span class="level-start"><span class="level-item">程序园</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AB%99%E5%8A%A1/"><span class="level-start"><span class="level-item">站务</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/"><span class="level-start"><span class="level-item">随想集</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-13T14:30:00.000Z">2023-02-13</time></p><p class="title"><a href="/post/thinking-07.html">【随想集】07 新年快乐</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-12T14:14:33.000Z">2023-02-12</time></p><p class="title"><a href="/post/deepreta.html">DeeprETA An ETA Post-processing System at Scale</a></p><p class="categories"><a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-01-08T08:48:00.000Z">2023-01-08</time></p><p class="title"><a href="/post/thinking-06.html">【随想集】06 一元复始，重新出发</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-09T11:00:11.000Z">2022-01-09</time></p><p class="title"><a href="/post/thinking-05.html">【随想集】05 重新使用 Logseq</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-14T11:00:11.000Z">2021-08-14</time></p><p class="title"><a href="/post/thinking-04.html">【随想集】04 曾经我也想过一了百了</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/"><span class="level-start"><span class="level-item">2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/"><span class="level-start"><span class="level-item">2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/"><span class="level-start"><span class="level-item">2020</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/"><span class="level-start"><span class="level-item">2019</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/"><span class="level-start"><span class="level-item">2018</span></span><span class="level-end"><span class="level-item tag">33</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/"><span class="level-start"><span class="level-item">2017</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2016/"><span class="level-start"><span class="level-item">2016</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/"><span class="level-start"><span class="level-item">2015</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2014/"><span class="level-start"><span class="level-item">2014</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2012/"><span class="level-start"><span class="level-item">2012</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/weekly/"><span class="tag">weekly</span><span class="tag">27</span></a></div><div class="control"><a class="tags has-addons" href="/tags/life/"><span class="tag">life</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/acm/"><span class="tag">acm</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/movie/"><span class="tag">movie</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zufe/"><span class="tag">zufe</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gtd/"><span class="tag">gtd</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wordpress/"><span class="tag">wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ml/"><span class="tag">ml</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/reinforcement-learning/"><span class="tag">reinforcement-learning</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/game/"><span class="tag">game</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/7/"><span class="tag">7</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/omnifocus/"><span class="tag">omnifocus</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nlp/"><span class="tag">nlp</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/transformer/"><span class="tag">transformer</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2023 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">© 2015</p></div><script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

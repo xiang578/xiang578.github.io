@@ -1,334 +1,170 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="rgba(0,0,0,0)"><meta name="generator" content="Hexo 6.3.0">
-<link rel="preconnect" href="//fonts.loli.net" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="rgba(0,0,0,0)">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="baidu-site-verification" content="code-Kii9Nt0ZGh">
-
-<link rel="stylesheet" href="/css/main.css">
-
-<link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiang578.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="算法花园">
-<meta property="og:url" content="https://blog.xiang578.com/tags/rime/index.html">
-<meta property="og:site_name" content="算法花园">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Ryen Xiang">
-<meta property="article:tag" content="机器学习">
-<meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="阅读">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="https://blog.xiang578.com/tags/rime/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/rime/index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: rime | 算法花园</title>
-  
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-65866729-1","only_pageview":false}</script>
-  <script src="/js/third-party/analytics/google-analytics.js"></script>
-
-  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
-  <script async src="https://hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38"></script>
-
-
-
-
-
-  <script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script>
-
-<link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" />
-<link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" />
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-<link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml">
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">算法花园</p>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-desktop fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-week"><a href="/tags/weekly/" rel="section"><i class="fa fa-book fa-fw"></i>Week</a></li><li class="menu-item menu-item-link"><a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>Link</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container"></div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container">
-  <div class="algolia-stats"><hr></div>
-  <div class="algolia-hits"></div>
-  <div class="algolia-pagination"></div>
-</div>
-
-    </div>
-  </div>
-
-</header>
-        
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Ryen Xiang"
-      src="https://media.xiang578.com/avatar-ryenxx.jpeg">
-  <p class="site-author-name" itemprop="name">Ryen Xiang</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">107</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-          <a href="/tags/">
-        <span class="site-state-item-count">82</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/xiang578" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/xiang578" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;xiang578" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
-      </span>
-  </div>
-
-        </div>
-      </div>
-        <div class="back-to-top animated" role="button" aria-label="返回顶部">
-          <i class="fa fa-arrow-up"></i>
-          <span>0%</span>
-        </div>
-    </div>
-
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: rime - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="算法花园"><meta property="og:url" content="https://blog.xiang578.com/"><meta property="og:site_name" content="算法花园"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/img/og_image.png"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="机器学习"><meta property="article:tag" content="深度学习"><meta property="article:tag" content="阅读"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com"},"headline":"算法花园","image":["https://blog.xiang578.com/img/og_image.png"],"author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":null}</script><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
     
-  </aside>
+        gtag('config', 'UA-65866729-1');</script><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
 
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
 
-    </div>
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
 
-    <div class="main-inner tag posts-collapse">
-
-
-  
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">rime
-          <small>标签</small>
-        </h1>
-      </div>
-
-      
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2019-06-15T21:21:14+08:00"
-              content="2019-06-15">
-          06-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/rime.html" itemprop="url">
-            <span itemprop="name">「Rime 鼠须管」小鹤双拼配置指南</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备17004638号-1 </a>
-  </div>
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Ryen Xiang</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-      <span>站点总字数：</span>
-    <span title="站点总字数">215k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:15</span>
-  </span>
-</div>
-<div class="busuanzi-count">
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="reading-progress-bar"></div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.3/dist/algoliasearch-lite.umd.js" integrity="sha256-dyJcbGuYfdzNfifkHxYVd/rzeR6SLLcDFYEidcybldM=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.49.2/dist/instantsearch.production.min.js" integrity="sha256-Nu8yqoXoRZEVYyZf4/eY1V4FsenbiCw85RY3gWjN3zQ=" crossorigin="anonymous"></script><script src="/js/third-party/search/algolia-search.js"></script>
-
-
-
-
-
-  
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
-
-
-
-</body>
-</html>
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">rime</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-06-15T13:21:14.000Z" title="6/15/2019, 1:21:14 PM">2019-06-15</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.879Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item">26 分钟读完 (大约3849个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/rime.html">「Rime 鼠须管」小鹤双拼配置指南</a></p><div class="content"><p><img src="https://media.xiang578.com/15599183665365.jpg" alt="" /></p>
+<h2 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言</h2>
+<p>如何将汉字输入到计算机中是一个编码有关的问题，目前市面上主流的方案包括音码、形码、音形码。和大多数人一样，之前我一直使用全拼，而且得益于 NLP 技术发展，使用搜狗输入法搭配云词库，输入效率可以媲美五笔输入法。</p>
+<p>但是今天要和大家分享，是从年初开始使用的全新音码输入方案——小鹤双拼。最初关于双拼的概念来自李笑来《把时间当作朋友》：</p>
+<blockquote>
+<p>在很长的一段时间里，我常言之凿凿地对同学们说“练习打字完全是浪费时间。”我当时的逻辑是这样的。首先，我认为王码五笔字型输入法是给打字员用的。为什么要学它？难道你将来想要当个打字员？我总觉得五笔字型知识一种抄写输入法，因为用他输入时只能边看边打。而对真正创造内容的人来说，先用纸和笔写出来再录入电脑，还有比这更荒诞的事情吗？学习拆字学法已经很累人了，还要练什么指法，见鬼。更不用说这种所谓的输入法对思考的干扰——不仅要把字拆开再输入，还要按照莫名其妙的方法拆字。其次，盲打。我现在不是盲打，只是两根手指输入速度就已经很快了（至少比手写快）。</p>
+<p>这样看来，我还有必要学习什么五笔字型和盲打吗？</p>
+<p>在我有了这些定见很久之后，发生了一件事情。</p>
+<p>那是在1997年，我25岁。当时互联网除了聊天室和论坛，几乎没有什么实际的应用。适逢windows捆绑了哈尔滨工业大学开发的“微软拼音输入法1.0”，某天下午，当我在网上和一位永远都不会知道是谁的女生放肆地聊了两个小时之后，突然发现自己竟已无师自通地学会了所谓的“盲打”了！在这之后的一段时间里，我身边甚至很多人羡慕我打字的速度。为了让自己的打字速度再快一点，我索性花了差不多20分钟，把原本默认的“全拼输入”改成了“”双拼输入“。而这还远远不够。后来，我增设了”慢放模糊音“（不区分z/zh、c/ch、s⇧），又把打字速度提高了一些。这时我第一次意识到‘有些认识，哪怕是简单的常识，也需要亲身经历后才能真正体会”。只有拥有无与伦比的打字速度，才会体会打字速度快的好处。</p>
+<p>打字速度提升后，我发现自己不再讨厌在读书的时候做笔记了，因为在键盘上敲字相对于笔写字来说轻松太多。我开始大段地纪录感悟，有时甚至干脆整篇摘抄原文！</p>
+</blockquote>
+<p>李笑来思考的问题正是如何利用最小的代价快速的输入文字。这里代价包括两个方面，输入方案的学习成本以及输入文字的速度。简单分析一下，主流输入法需要用户在键盘上敲击一些字符，然后映射到汉字。就是说输入文字的速度和两个因数有关：敲击键盘的次数（对应计算机中的码长）以及重码的字符数量（对于拼音输入法来说，这里指的是每个拼音对应多少的字）。</p>
+<p>从这两个指标来说，五笔应该是接近输入法的极限，五次敲击键盘肯定能选定你需要的汉字。但是学习五笔需要记忆大量的说是有序其实没有太多规律的字根，学习曲线不是一般的陡峭。几年前，自己尝试跟着网上的视频教程学习，最后还是太复杂而放弃。</p>
+<p>这时候要介绍一下双拼输入法，它是一种基于全拼的激进改良版拼音输入法。简单来说，它将一个汉字的拼音分成声母和韵母两个部分，输入一个拼音只需要按两个键（减少键盘的敲击次数但是没有减少重码率）。比如对于“拼音”两个字来说，全拼需要输入 <code>pinyin</code> 六个字符，换成是双拼，只需要输入 4 个字符 <code>pbyb</code>。具体介绍可以看 <a target="_blank" rel="noopener" href="https://sspai.com/post/32809">做少数派中的少数派：双拼输入快速入门</a>。</p>
+<p>由于双拼有声母和韵母，需要先从键盘上进行一次映射，所以有很多的输入方案。我自己入门使用的是小鹤双拼，也推荐大家使用这个方案。主要原因有两点：声母和韵母全部放在字母键上（微软双拼中要用到 <code>;</code> 键，以及 iOS12 和 MacOS 中自带的输入法都支持这个方案（国内那几个流氓输入法更不用提）。</p>
+<p>下图是一张小鹤双拼的输入法键位图，其中黑色的字符代表是键盘上的什么键，棕色的代表这个键表示声母时是什么，蓝色的代表这个键表示韵母时是什么。学习双拼的过程也很简单，拼音本身就会，无非是熟悉键位。从我自己的角度来说，每天抽出几分看一下键位图，再在 <a target="_blank" rel="noopener" href="https://api.ihint.me/shuang/">双拼练习 @ BlueSky</a> （相关的介绍可以看：<a target="_blank" rel="noopener" href="https://sspai.com/post/40185">快速上手双拼，可以尝试这个练习平台 - 少数派</a>）网站上练习 5 分钟，一周后可以完全脱离键位图来打字，之后就是孰能生巧的过程。</p>
+<p><img src="https://media.xiang578.com/15600908556759.jpg" alt="" /></p>
+<p>说回来当你学习了这么强大的内功之后，自然需要神兵来辅助你输入。在饱受国内的流氓输入法侵害之后（比如输入到一半给你跳一个什么斗图功能提示），我遇到今天的主角 <a target="_blank" rel="noopener" href="https://rime.im/">RIME | 中州韻輸入法引擎</a>，它是由佛振开发的一种开源输入框架，业内人士称之为「神级输入法」。上一个有类似拉风的称号的软件还是「神级编辑器」—— Vim。Rime 有趣的一点是在不同的平台上有不同的名字，包括 Linux 上的「中州韵」，Win 上的「小狼毫」以及 Mac 上的「鼠须管」。稍微有文化的人可以反应过来，后面两个正是两种不同的毛笔名字。</p>
+<p>简单总结一下为什么要使用鼠须管：一是安全，不会出现什么输入法读取你个人信息更甚者是密码发送到服务器，也不知道他们用来机器学习什么；二是配置全平台同步，解决多台设备的输入法配置问题；三是快，不会出现输入法跟不上我的打字速度而导致思路中断的情况。</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>在 <a target="_blank" rel="noopener" href="https://rime.im/download/">下載及安裝 | RIME | 中州韻輸入法引擎</a> 主页，你可以找到对应不同平台的安装方法。</p>
+<p>对于 MacOS 来说，最简单的方式莫过于在终端中输入 <code>brew cask install squirrel</code> 安装软件本体。如何你想使用 <a target="_blank" rel="noopener" href="https://github.com/rime/plum">rime/plum: 東風破</a>可以在终端中输入 <code>curl -fsSL https://git.io/rime-install | bash -s -- :preset double-pinyin</code> 。其中 <code>preset double-pinyin</code> 指定下载时默认包括小鹤双拼输入方案。</p>
+<h2 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h2>
+<p>防止配置时候出现各种意想不到的情况，首先推荐阅读官方文档 <a target="_blank" rel="noopener" href="https://github.com/rime/home/wiki/CustomizationGuide">CustomizationGuide · rime/home Wiki</a>。</p>
+<p>Rime 的配置文件默认放在 <code>~/Library/Rime</code>，而且是一种扩展 yaml 文件。默认的文件名为 <code>.schema.yaml</code>，比如小鹤双拼相关的默认配置在 <code>double_pinyin_flpy.schema.yaml</code> 中。如果我们自己想添加一些设置，推荐写在以<code>.custom.yaml</code> 结尾的新文件中，比如 <code>double_pinyin_flypy.custom.yaml</code></p>
+<h3 id="defaultcustomyaml"><a class="markdownIt-Anchor" href="#defaultcustomyaml"></a> default.custom.yaml</h3>
+<p>这个文件写一些全局的配置。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">  <span class="attr">switcher:</span></span><br><span class="line">    <span class="attr">caption:</span> <span class="string">〔方案选单〕</span></span><br><span class="line">    <span class="attr">hotkeys:</span> <span class="string">Control+grave</span></span><br><span class="line">  <span class="comment"># 候选词数量</span></span><br><span class="line">  <span class="attr">menu:</span></span><br><span class="line">    <span class="attr">page_size:</span> <span class="number">9</span></span><br><span class="line">  <span class="comment"># 使用的输入方案</span></span><br><span class="line">  <span class="attr">schema_list:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">schema:</span> <span class="string">luna_pinyin_simp</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">schema:</span> <span class="string">luna_pinyin</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">schema:</span> <span class="string">double_pinyin_flypy</span></span><br><span class="line">  <span class="comment"># 输入法中英文状态快捷键</span></span><br><span class="line">  <span class="attr">ascii_composer/switch_key:</span></span><br><span class="line">    <span class="attr">Caps_Lock:</span> <span class="string">commit_code</span></span><br><span class="line">    <span class="attr">Control_L:</span> <span class="string">noop</span></span><br><span class="line">    <span class="attr">Control_R:</span> <span class="string">noop</span></span><br><span class="line">    <span class="comment"># 按下左 shift 英文字符直接上屏，不需要再次回车，输入法保持英文状态</span></span><br><span class="line">    <span class="attr">Shift_L:</span> <span class="string">noop</span></span><br><span class="line">    <span class="attr">Shift_R:</span> <span class="string">noop</span></span><br><span class="line">  <span class="comment"># 在一些软件中默认使用英文输入状态</span></span><br><span class="line">  <span class="attr">app_options:</span></span><br><span class="line">    <span class="attr">com.apple.finder:</span> <span class="meta">&amp;a</span></span><br><span class="line">      <span class="attr">ascii_mode:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">no_inline:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">com.googlecode.iterm2:</span> <span class="meta">*a</span></span><br><span class="line">    <span class="attr">com.alfredapp.Alfred:</span> <span class="meta">*a</span></span><br><span class="line">    <span class="attr">com.runningwithcrayons.Alfred-2:</span> <span class="meta">*a</span></span><br><span class="line">    <span class="attr">org.vim.MacVim:</span> <span class="meta">*a</span></span><br><span class="line">    <span class="attr">com.apple.Terminal:</span> <span class="meta">*a</span></span><br></pre></td></tr></table></figure>
+<p>最后在修改配置时，可以查阅 <a target="_blank" rel="noopener" href="https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md">Rime_collections/Rime_description.md at master · LEOYoon-Tsaw/Rime_collections</a> 寻找相关信息。</p>
+<h3 id="installationyaml"><a class="markdownIt-Anchor" href="#installationyaml"></a> installation.yaml</h3>
+<p>配置文件多平台同步相关文件，<code>sync_dir</code> 指定同步文件夹的位置，配合例如坚果云之类的软件实现备份同步。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">distribution_code_name:</span> <span class="string">Squirrel</span></span><br><span class="line"><span class="attr">distribution_name:</span> <span class="string">&quot;鼠鬚管&quot;</span></span><br><span class="line"><span class="attr">distribution_version:</span> <span class="number">0.11</span><span class="number">.0</span></span><br><span class="line"><span class="attr">install_time:</span> <span class="string">&quot;Sun Dec 23 23:42:01 2018&quot;</span></span><br><span class="line"><span class="attr">installation_id:</span> <span class="string">&quot;mac_didi&quot;</span></span><br><span class="line"><span class="attr">sync_dir:</span> <span class="string">&quot;/Users/didi/Documents/rime_sync&quot;</span></span><br><span class="line"><span class="attr">rime_version:</span> <span class="number">1.4</span><span class="number">.0</span></span><br><span class="line"><span class="attr">update_time:</span> <span class="string">&quot;Mon Jun  3 07:18:30 2019&quot;</span></span><br></pre></td></tr></table></figure>
+<p>从 <a target="_blank" rel="noopener" href="https://sspai.com/post/55699">自由输入法RIME简明配置指南 - 少数派</a> 中了解到，rime 个人词典双向同步，用户配置单向同步。另外需要把配置文件上传到 git 中，方便不同设备使用。</p>
+<h3 id="double_pinyin_flypycustomyaml"><a class="markdownIt-Anchor" href="#double_pinyin_flypycustomyaml"></a> double_pinyin_flypy.custom.yaml</h3>
+<p>小鹤双拼相关的自用配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">  <span class="comment"># 引用 `symbols.custom` 文件里面的符号</span></span><br><span class="line">  <span class="comment"># &#x27;punctuator/import_preset&#x27;: symbols.custom</span></span><br><span class="line">  <span class="attr">&#x27;recognizer/patterns/punct&#x27;:</span> <span class="string">&quot;^/([a-z]+|[0-9])$&quot;</span></span><br><span class="line">  <span class="comment"># 載入朙月拼音擴充詞庫</span></span><br><span class="line">  <span class="attr">&quot;translator/dictionary&quot;:</span> <span class="string">ryen</span></span><br><span class="line">  <span class="comment"># 更改‘西文’为‘英文’，‘增广’为‘扩展集’</span></span><br><span class="line">  <span class="attr">punctuator:</span></span><br><span class="line">    <span class="attr">import_preset:</span> <span class="string">symbols.custom</span></span><br><span class="line">    <span class="attr">half_shape:</span></span><br><span class="line">      <span class="string">&quot;#&quot;</span><span class="string">:</span> <span class="string">&quot;#&quot;</span></span><br><span class="line">      <span class="string">&quot;`&quot;</span><span class="string">:</span> <span class="string">&quot;`&quot;</span></span><br><span class="line">      <span class="string">&quot;~&quot;</span><span class="string">:</span> <span class="string">&quot;~&quot;</span></span><br><span class="line">      <span class="string">&quot;@&quot;</span><span class="string">:</span> <span class="string">&quot;@&quot;</span></span><br><span class="line">      <span class="string">&quot;=&quot;</span><span class="string">:</span> <span class="string">&quot;=&quot;</span></span><br><span class="line">      <span class="string">&quot;/&quot;</span><span class="string">:</span> [<span class="string">&quot;/&quot;</span>, <span class="string">&quot;÷&quot;</span>]</span><br><span class="line">      <span class="string">&#x27;\&#x27;: [&quot;、&quot;, &#x27;</span><span class="string">\&#x27;]</span></span><br><span class="line">      <span class="string">&quot;&#x27;&quot;</span><span class="string">:</span> &#123;<span class="attr">pair:</span> [<span class="string">&quot;「&quot;</span>, <span class="string">&quot;」&quot;</span>]&#125;</span><br><span class="line">      <span class="string">&quot;[&quot;</span><span class="string">:</span> [<span class="string">&quot;【&quot;</span>, <span class="string">&quot;[&quot;</span>]</span><br><span class="line">      <span class="string">&quot;]&quot;</span><span class="string">:</span> [<span class="string">&quot;】&quot;</span>, <span class="string">&quot;]&quot;</span>]</span><br><span class="line">      <span class="string">&quot;$&quot;</span><span class="string">:</span> [<span class="string">&quot;¥&quot;</span>, <span class="string">&quot;$&quot;</span>, <span class="string">&quot;€&quot;</span>, <span class="string">&quot;£&quot;</span>, <span class="string">&quot;¢&quot;</span>, <span class="string">&quot;¤&quot;</span>]</span><br><span class="line">      <span class="string">&quot;&lt;&quot;</span><span class="string">:</span> [<span class="string">&quot;《&quot;</span>, <span class="string">&quot;〈&quot;</span>, <span class="string">&quot;«&quot;</span>, <span class="string">&quot;&lt;&quot;</span>]</span><br><span class="line">      <span class="string">&quot;&gt;&quot;</span><span class="string">:</span> [<span class="string">&quot;》&quot;</span>, <span class="string">&quot;〉&quot;</span>, <span class="string">&quot;»&quot;</span>, <span class="string">&quot;&gt;&quot;</span>]</span><br><span class="line">  <span class="attr">switches:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">ascii_mode</span></span><br><span class="line">      <span class="attr">reset:</span> <span class="number">0</span></span><br><span class="line">      <span class="attr">states:</span> [<span class="string">&quot;中文&quot;</span>, <span class="string">&quot;英文&quot;</span>]</span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">full_shape</span></span><br><span class="line">      <span class="attr">states:</span> [<span class="string">&quot;半角&quot;</span>, <span class="string">&quot;全角&quot;</span>]</span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">zh_simp</span></span><br><span class="line">      <span class="attr">reset:</span> <span class="number">1</span></span><br><span class="line">      <span class="attr">states:</span> [<span class="string">&quot;漢字&quot;</span>,<span class="string">&quot;汉字&quot;</span>]</span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">ascii_punct</span></span><br><span class="line">      <span class="attr">states:</span> [<span class="string">&quot;，。&quot;</span>, <span class="string">&quot;，．&quot;</span>]</span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">extended_charset</span> <span class="comment">#生僻字开关</span></span><br><span class="line">      <span class="attr">states:</span> [<span class="string">&quot;通用&quot;</span>, <span class="string">&quot;扩展集&quot;</span>]</span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">show_emoji</span> <span class="comment"># 该项为表情输入，具体内容可见下文中 [关于表情输入] 部分</span></span><br><span class="line">      <span class="attr">reset:</span> <span class="number">1</span></span><br><span class="line">      <span class="attr">states:</span> [ <span class="string">&quot;🈚️️\uFE0E&quot;</span>, <span class="string">&quot;🈶️️\uFE0F&quot;</span> ]</span><br><span class="line">  <span class="comment"># 输入双拼码的时候不转化为全拼码</span></span><br><span class="line">  <span class="attr">translator/preedit_format:</span> &#123;&#125;</span><br><span class="line">  <span class="attr">simplifier:</span></span><br><span class="line">    <span class="attr">option_name:</span> <span class="string">zh_simp</span></span><br><span class="line">  <span class="comment"># 分号上屏二候选词；引号上屏三候选词</span></span><br><span class="line">  <span class="attr">&quot;key_binder/bindings&quot;:</span></span><br><span class="line">    <span class="bullet">-</span> &#123; <span class="attr">when:</span> <span class="string">has_menu</span>, <span class="attr">accept:</span> <span class="string">semicolon</span>, <span class="attr">send:</span> <span class="number">2</span> &#125;</span><br><span class="line">    <span class="bullet">-</span> &#123; <span class="attr">when:</span> <span class="string">has_menu</span>, <span class="attr">accept:</span> <span class="string">apostrophe</span>, <span class="attr">send:</span> <span class="number">3</span> &#125;</span><br><span class="line">    <span class="bullet">-</span> &#123; <span class="attr">when:</span> <span class="string">paging</span>, <span class="attr">accept:</span> <span class="string">bracketleft</span>, <span class="attr">send:</span> <span class="string">Page_Up</span> &#125;</span><br><span class="line">    <span class="bullet">-</span> &#123; <span class="attr">when:</span> <span class="string">has_menu</span>, <span class="attr">accept:</span> <span class="string">bracketright</span>, <span class="attr">send:</span> <span class="string">Page_Down</span> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="squirrelcustomyaml"><a class="markdownIt-Anchor" href="#squirrelcustomyaml"></a> squirrel.custom.yaml</h3>
+<p>自定义皮肤相关文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">  <span class="attr">style:</span></span><br><span class="line">    <span class="attr">color_scheme:</span> <span class="string">psionics</span></span><br><span class="line">    <span class="attr">horizontal:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">inline_preedit:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">candidate_format:</span> <span class="string">&quot;%c\u2005%@ \u2005&quot;</span>   <span class="comment"># 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。</span></span><br><span class="line">    <span class="attr">font_point:</span> <span class="number">16</span>                          <span class="comment"># 候选文字大小</span></span><br><span class="line">    <span class="attr">label_font_point:</span> <span class="number">14</span>                    <span class="comment"># 候选编号大小</span></span><br><span class="line">    <span class="attr">corner_radius:</span> <span class="number">5</span>                        <span class="comment"># 候选条圆角</span></span><br><span class="line">    <span class="attr">border_height:</span> <span class="number">0</span>                        <span class="comment"># 窗口边界高度，大于圆角半径才生效</span></span><br><span class="line">    <span class="attr">border_width:</span> <span class="number">0</span>                         <span class="comment"># 窗口边界宽度，大于圆角半径才生效</span></span><br></pre></td></tr></table></figure>
+<p>最后，我的配置在 <a target="_blank" rel="noopener" href="https://github.com/xiang578/rime">xiang578/rime</a> 同步。</p>
+<h2 id="调试"><a class="markdownIt-Anchor" href="#调试"></a> 调试</h2>
+<p>Debug 是折腾 rime 不得不面对的一步，主要方式是查看 rime 部署的时产生的 log 文件。对于鼠鬚管而言， log 文件保存在 <code>$TMPDIR/rime.squirrel.*</code> 中。</p>
+<ul>
+<li>在命令行中输入 <code>echo $TMPDIR</code> 获得路径</li>
+<li>将地址输入到 「访达-前往-前往文件夹…」中跳转</li>
+<li>右键点击 <code>rime.squirrel.WARNING</code> 文件，选择显示原身，并使用文本编辑器打开</li>
+</ul>
+<p>文件格式类似于下面：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Log file created at:</span> <span class="number">2019</span><span class="string">/06/07</span> <span class="number">23</span><span class="string">:31:54</span></span><br><span class="line"><span class="attr">Running on machine:</span> <span class="string">didideMiBook-Pro.local</span></span><br><span class="line"><span class="attr">Log line format:</span> [<span class="string">IWEF</span>]<span class="string">mmdd</span> <span class="string">hh:mm:ss.uuuuuu</span> <span class="string">threadid</span> <span class="string">file:line]</span> <span class="string">msg</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:31:54.549346</span> <span class="number">162086912</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:31:54.554167</span> <span class="number">162086912</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:31:54.560144</span> <span class="number">162086912</span> <span class="string">deployment_tasks.cc:179]</span> <span class="string">schema</span> <span class="string">list</span> <span class="string">not</span> <span class="string">defined.</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.133517</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.135843</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.149406</span> <span class="number">161013760</span> <span class="string">config_data.cc:62]</span> <span class="string">nonexistent</span> <span class="string">config</span> <span class="string">file</span> <span class="string">&#x27;/Users/didi/Library/Rime/luna_pinyin_simp.custom.yaml&#x27;</span><span class="string">.</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.154920</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.156643</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.331344</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.333066</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.668072</span> <span class="number">161013760</span> <span class="string">config_data.cc:62]</span> <span class="string">nonexistent</span> <span class="string">config</span> <span class="string">file</span> <span class="string">&#x27;/Users/didi/Library/Rime/stroke.custom.yaml&#x27;</span><span class="string">.</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.670761</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">key_bindings.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:13.672724</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:14.281919</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">punctuation.custom:/patch</span></span><br><span class="line"><span class="string">W0607</span> <span class="number">23</span><span class="string">:36:14.283246</span> <span class="number">161013760</span> <span class="string">config_compiler.cc:391]</span> <span class="attr">inaccessible node:</span> <span class="string">key_bindings.custom:/patch</span></span><br></pre></td></tr></table></figure>
+<h2 id="按右-shift-切换输入法"><a class="markdownIt-Anchor" href="#按右-shift-切换输入法"></a> 按右 shift 切换输入法</h2>
+<p>之前使用搜狗输入法时，特别喜欢的一个功能：按右 shift 切换输入法的输入状态，实现暂时切换到英文状态。Rime 作者在 <a target="_blank" rel="noopener" href="https://gist.github.com/lotem/2981316">使用 Control 鍵切換中西文，上屏已輸入的編碼；令 Caps Lock 改變字母的大小寫</a> 中提到一种方案。例如下面：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">patch:</span></span><br><span class="line">  <span class="attr">ascii_composer/good_old_caps_lock:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">ascii_composer/switch_key:</span></span><br><span class="line">    <span class="attr">Caps_Lock:</span> <span class="string">commit_code</span></span><br><span class="line">    <span class="attr">Shift_L:</span> <span class="string">noop</span></span><br><span class="line">    <span class="attr">Shift_R:</span> <span class="string">commit_code</span></span><br><span class="line">    <span class="attr">Control_L:</span> <span class="string">commit_code</span></span><br><span class="line">    <span class="attr">Control_R:</span> <span class="string">commit_code</span></span><br></pre></td></tr></table></figure>
+<p>然而这样修改完成之后，不论按哪个 Shift 键，都会切换到英文输入状态。看前面那个网页下面作者与其他人的讨论中发现，鼠须管无法区分 Shift 键。</p>
+<p>网上查了一下，简单实现的方法是通过 karabiner 软件来改键。详细步骤可以参考 <a target="_blank" rel="noopener" href="https://github.com/rime/squirrel/wiki/%E7%A6%81%E7%94%A8-Squirrel-%E8%8B%B1%E6%96%87%E6%A8%A1%E5%BC%8F%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%B7%A6%E4%BE%A7-Shift-%E5%88%87%E6%8D%A2%E4%B8%AD%E8%8B%B1">禁用 Squirrel 英文模式，使用左侧 Shift 切换中英 · rime/squirrel Wiki</a>。</p>
+<h2 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/xiang578/xiang578.github.io/issues/37">双拼 · Issue #37 · xiang578/xiang578.github.io</a></li>
+<li><a target="_blank" rel="noopener" href="http://zhizhi.betahouse.us/2018/10/17/rime-setup/">基于Rime的鼠须管输入法配置记录</a></li>
+<li><a target="_blank" rel="noopener" href="https://withdewhua.space/2019/01/30/rime-configuration">Rime 输入法配置记录</a></li>
+<li><a target="_blank" rel="noopener" href="https://mritd.me/2019/03/23/oh-my-rime/">Mac 下调校 Rime - 漠然的博客 | mritd Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://jdhao.github.io/2019/02/18/rime_configuration_intro/">最新版 Rime 输入法使用 - jdhao’s blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://scomper.me/gtd/-shu-xu-guan-de-diao-jiao-bi-ji">「鼠须管」的调教笔记</a></li>
+<li><a target="_blank" rel="noopener" href="https://scomper.me/gtd/-shu-xu-guan-de-an-zhuang-he-bu-shu">「鼠须管」输入方案的添加</a></li>
+<li><a target="_blank" rel="noopener" href="https://whyhow.tk/2016/04/29/rime0429.html">RIME输入法在Finder中自动切换成英文 @ Why &amp; How</a></li>
+<li><a target="_blank" rel="noopener" href="https://placeless.net/blog/rime-squirrel-customization-2019#article">鼠须管配置 2019</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/rime/squirrel/wiki/%E7%A6%81%E7%94%A8-Squirrel-%E8%8B%B1%E6%96%87%E6%A8%A1%E5%BC%8F%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%B7%A6%E4%BE%A7-Shift-%E5%88%87%E6%8D%A2%E4%B8%AD%E8%8B%B1">禁用 Squirrel 英文模式，使用左侧 Shift 切换中英 · rime/squirrel Wiki</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/rime-aca/dictionaries">rime-aca/dictionaries: Rime詞庫</a></li>
+</ul>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar-ryenxx.jpeg" alt="Ryen"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ryen</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Bei Jing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">107</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">82</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://haihongblog.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">海虹不老阁</span></span><span class="level-right"><span class="level-item tag">haihongblog.com</span></span></a></li><li><a class="level is-mobile" href="https://www.cnblogs.com/zufezzt" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Fighting Heart</span></span><span class="level-right"><span class="level-item tag">www.cnblogs.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Never-Reading/"><span class="level-start"><span class="level-item">Never-Reading</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li><li><a class="level is-mobile" href="/categories/%E4%B8%83%E5%B9%B4%E4%B9%8B%E6%97%85/"><span class="level-start"><span class="level-item">七年之旅</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"><span class="level-start"><span class="level-item">军机处</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/"><span class="level-start"><span class="level-item">文渊阁</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">机器学习</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"><span class="level-start"><span class="level-item">生活志</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"><span class="level-start"><span class="level-item">程序园</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AB%99%E5%8A%A1/"><span class="level-start"><span class="level-item">站务</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/"><span class="level-start"><span class="level-item">随想集</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-13T14:30:00.000Z">2023-02-13</time></p><p class="title"><a href="/post/thinking-07.html">【随想集】07 新年快乐</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-12T14:14:33.000Z">2023-02-12</time></p><p class="title"><a href="/post/deepreta.html">DeeprETA An ETA Post-processing System at Scale</a></p><p class="categories"><a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-01-08T08:48:00.000Z">2023-01-08</time></p><p class="title"><a href="/post/thinking-06.html">【随想集】06 一元复始，重新出发</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-09T11:00:11.000Z">2022-01-09</time></p><p class="title"><a href="/post/thinking-05.html">【随想集】05 重新使用 Logseq</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-14T11:00:11.000Z">2021-08-14</time></p><p class="title"><a href="/post/thinking-04.html">【随想集】04 曾经我也想过一了百了</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/"><span class="level-start"><span class="level-item">2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/"><span class="level-start"><span class="level-item">2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/"><span class="level-start"><span class="level-item">2020</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/"><span class="level-start"><span class="level-item">2019</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/"><span class="level-start"><span class="level-item">2018</span></span><span class="level-end"><span class="level-item tag">33</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/"><span class="level-start"><span class="level-item">2017</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2016/"><span class="level-start"><span class="level-item">2016</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/"><span class="level-start"><span class="level-item">2015</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2014/"><span class="level-start"><span class="level-item">2014</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2012/"><span class="level-start"><span class="level-item">2012</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/weekly/"><span class="tag">weekly</span><span class="tag">27</span></a></div><div class="control"><a class="tags has-addons" href="/tags/life/"><span class="tag">life</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/acm/"><span class="tag">acm</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/movie/"><span class="tag">movie</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zufe/"><span class="tag">zufe</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gtd/"><span class="tag">gtd</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wordpress/"><span class="tag">wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ml/"><span class="tag">ml</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/reinforcement-learning/"><span class="tag">reinforcement-learning</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/game/"><span class="tag">game</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/7/"><span class="tag">7</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/omnifocus/"><span class="tag">omnifocus</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nlp/"><span class="tag">nlp</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/transformer/"><span class="tag">transformer</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2023 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">© 2015</p></div><script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

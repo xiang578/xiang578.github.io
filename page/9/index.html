@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="算法花园"><meta property="og:url" content="https://blog.xiang578.com/"><meta property="og:site_name" content="算法花园"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/img/og_image.png"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="机器学习"><meta property="article:tag" content="深度学习"><meta property="article:tag" content="阅读"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com"},"headline":"算法花园","image":["https://blog.xiang578.com/img/og_image.png"],"author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":null}</script><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-65866729-1');</script><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-11-05T11:20:49.000Z" title="11/5/2017, 11:20:49 AM">2017-11-05</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/">军机处</a></span><span class="level-item">16 分钟读完 (大约2430个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/icpc-xian-2017.html">2017年西安区域赛</a></p><div class="content"><p>怎么开头呢？<br />
+10月20多号的时候，教练通知我们，一定要在赛前训练一场。仔细一想，上次训练在5个月前……整容倒是没有太大变化，周神（通过微软、腾讯、今日头条、京东和拼多多面试）和God王（曾经在阿里实习过），三个人暑假都在外面实习，回到学校之后也没有心情训练。10月25日（周三），我们拉了一场貌似是印度那边的区域赛，打了一下，感觉手感还行。周四就带着学弟学妹们坐火车前往西安，这也是我校继2015年EC-final之后，再一次派出多支队伍去打区域赛。</p>
+<p>周五上午抵达西安站，由于一些情况，果断卖掉学弟学妹，我和队友3个人提前打车去了酒店。到达之后，发现他们离酒店还远，就在旁边找了一家饭店吃法。点了几个菜，到现在都觉得手撕羊肉不错，毕竟60多一斤。然后，就是常规的办理入住手续。上半年过来的时候和其他学校一起住在别墅，还能泡温泉，美滋滋。这次人来太多，经费紧张，就只能让我们住在标间。虽然环境还是可以吐槽的，但至少有wifi可以用了……</p>
+<p>晚上，一群人又出去吃了一顿火锅，西安的物价真便宜，最后剩下好多蔬菜没有吃……</p>
+<h2 id="day1-热身赛"><a class="markdownIt-Anchor" href="#day1-热身赛"></a> day1 热身赛</h2>
+<p>早上起来之后，发现喉咙有点痛，和队友表达了明天可能会失声的担忧，并且表示不想去医院看，看好了多尴尬。10点左右集结队伍徒步前往西北工业大学。</p>
+<p>这次比赛的地点和上一次不一样，终于搬到了体育馆。不过确实大，都能放下350+队伍，多年之后会不会有学校租个鸟巢打比赛？领完衣服，拍了照片。我们就高兴的去了食堂吃饭。吃完之后，我和周神一起去校园逛了一下，果真是强校，实在是太大了。</p>
+<p>下午3点左右，抵达比赛场地，准备热身赛。老王让我上去打一些头文件，我感觉，如果今天一道题目都不会写，不是就白打了吗？队友想了一下，只能无奈地看着我……</p>
+<p>比赛开始之后</p>
+<p>我快速地看完A题，说了一下题意，队友就开始写了。在决定猜什么数字的时候，周神强烈要猜2017，我说了一句傻子才会猜2017，然后他们就Yes了，我无法可说……<br />
+B题，简单模拟题，周神搞了一下就通过了。</p>
+<p>最后就是C题，三个人一起看了好久，没有什么想法。我开始自告奋勇地说要写一个暴力，他们奇迹般的同意了我的方案。于是就获得了上机的机会，写到一半时，后面的队伍就欢呼通过了C题。综合他们一系列的反应来看，绝对是暴力过的，我的心也就放下了。由于好久没有写题目，所以用几分钟调试。通过这题之后发现，排名居然是第三，而且和第一名才差1分钟。毫无疑问，队友对我展开批判，痛失热身赛冠军……</p>
+<p><img src="https://media.xiang578.com/v2-28df8e8bd4ceebc2cc3ac8b461201f54_b.jpg" alt="v2-28df8e8bd4ceebc2cc3ac8b461201f54_b" /></p>
+<p>之后的时间就是学习其他人大佬，一顿乱试。时间还有多，队友上机打了一个表，验证一个猜想，就想出了C题的标算。最后，实在没有什么可以干了，决定提前半小时离场吃饭……路上队友怕今天把明天的人品败光，我告诉他，正真的共产主义者是无所畏惧的。这样我们高高兴兴地吃完了晚饭，然后搭车回到了秦龙。</p>
+<p>晚上，一个队友在网上认识的河南农业大学大佬请他吃烧烤，我又跟过去混了一顿。和他们聊了一下子，我说了一句，你们一定会成功的。果不其然，青岛赛区他们获得了银奖……</p>
+<h2 id="day2-正赛"><a class="markdownIt-Anchor" href="#day2-正赛"></a> day2 正赛</h2>
+<p>参加过这么多场比赛，第一次遇到口号是“安全第一”的赛区，周神的祖传行李箱不让带，所以他去寄存。我抱着一大堆书籍和打印的资料走进了体育场，路上还听到有人议论。从赛后来看，这些东西都没有用到……</p>
+<p>比赛开始后，一切都比较顺利。老王单人ACB题，周神一秒钟猜出了F的公式，然后我就鼓励他们不用想其他样例就把猜想给交了。85分钟地时候，老王不动声色的AC了G。看完H题意之后，我和周神说这个贪心地取就好了。他想了一下，决定用线段树。然后在他快要写完的时候，我看有那么多人都过了，感觉不是很像，后来出来一问，暴力也能通过……</p>
+<p>之后做的是L题，有关lol的题目。前一天翔哥还和我吹周神是财经faker，但我发现他居然不知道banpick，于是乎解释了好久。看完第一个样例的后，我决定自己算一下。这时候，突然弹出一个公告，告诉我们怎么计算样例，就这样完全明白了题意。然后队友就给了一个任务，让我去把第二组样例打出来……500个01组成的字符串，我机智的想到去讨论版提问，能不能发送一份样例过来，毫无疑问的no response……所幸老王想出了4个for循环的暴力，复杂度高达10*1e8，出于对西安赛区判题机的信任，他就开始写了。然后，懒得输入样例，膨胀到在写完之后就交。果不其然wa了，多组输入忘记数组清空，改。又是一发wa，看了一下有操作逻辑写反了，再改，AC。接下来就是自我安慰把这40分钟当成输入样例的时间……</p>
+<p>之后我们就陷入长达1个小时的僵局，三个人看着A题感叹世界真是神奇……后来老王不得不放弃这一题，从而转战K题，想了半个多小时，就开始上机码。写完的东西神奇的re了，然后派出换上周神上去改。不知道后来发生了什么，折腾到269分钟AC。之后就是估计排名时间，根据封榜前的排名估计了一下我们大概在32名左右，感觉有点悬……又开始对A题进行一顿乱搞，在最后几分钟里面提交了好多次，但是都没有返回结果……</p>
+<p>离场前气球合影，可惜最后一小时过的题目不发气球。<br />
+<img src="https://media.xiang578.com/IMG_6227.JPG" alt="IMG_6227" /></p>
+<p>所以带着最后的悬念来到了颁奖典礼，在等待的过程中，发现学弟遗憾的只是铜首……滚动46名时，发现我们飘到32名。再加上看到下图是，我在学校的群里说了一句最差34名，就这样获得了自己的第一块区域赛金牌，学校acm史上的第二金。</p>
+<p><img src="https://media.xiang578.com/15098883232922.jpg" alt="" /></p>
+<p>最终排名也是32名，这个世界真是神奇。</p>
+<p><img src="https://media.xiang578.com/15098883805024.jpg" alt="IMG_6227" /></p>
+<p>然后又是我上台高高兴兴地领奖。</p>
+<p><img src="https://media.xiang578.com/15098884634419.jpg" alt="" /></p>
+<p>三人合影留念</p>
+<p><img src="https://media.xiang578.com/15098885107468.jpg" alt="" /></p>
+<p>搞完这些之后，坐着校车来到了韦曲南站。我带头冲向上半年吃过的烧烤店，后来发现，老王没有一个能吃的，真是尴尬，其他人也没有什么兴致，最后就当我请客了……然后在旁边找了一家宾馆就睡下了……</p>
+<h2 id="day3-归来"><a class="markdownIt-Anchor" href="#day3-归来"></a> day3 归来</h2>
+<p>12点左右，在火车站附近开了一间房，把我们的行李都放下了。然后，在周神的带领下，前往回民街。逛了好久，没有太多意思。19点火车返程杭州。西安区域赛就这样结束了……</p>
+<p>最后还要感叹一下，周神和老王还真厉害，带着我都能获金奖，不过说回来还是喜欢去年自己在北京拿的铜。自己的贡献是一场比一场小……如果没有ec-fianl的话，acm生涯到这里就结束了吧，也留下一些遗憾，如果有来生，我也愿意信来生，再见……</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-09-18T14:11:31.000Z" title="9/18/2017, 2:11:31 PM">2017-09-18</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/">程序园</a></span><span class="level-item">7 分钟读完 (大约1078个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/mac-software.html">Mac软件清单</a></p><div class="content"><p>最近痛下血本买了一台Mac，这里记录一下我装的软件。</p>
+<blockquote>
+<p>君子生非异也，善假于物也。</p>
+</blockquote>
+<h3 id="更新"><a class="markdownIt-Anchor" href="#更新"></a> 更新</h3>
+<ol>
+<li>2017年9月20日：Anaconda</li>
+<li>2017年9月21日：lantern、Dash、Xcode</li>
+<li>2017年12月10日：虚拟机相关</li>
+</ol>
+<h3 id="clion"><a class="markdownIt-Anchor" href="#clion"></a> Clion</h3>
+<ul>
+<li>C++ IDE</li>
+</ul>
+<h3 id="pycharm"><a class="markdownIt-Anchor" href="#pycharm"></a> Pycharm</h3>
+<ul>
+<li>Python IDE</li>
+</ul>
+<h3 id="alfred-3"><a class="markdownIt-Anchor" href="#alfred-3"></a> Alfred 3</h3>
+<ul>
+<li>替换默认的搜索工具</li>
+<li>搭配workflow使用效果更佳</li>
+</ul>
+<h3 id="mweb"><a class="markdownIt-Anchor" href="#mweb"></a> MWeb</h3>
+<ul>
+<li>MacOS 下面最喜欢的Markdown编辑器</li>
+<li>常用的高级功能有发布WordPress博客和自动将图片上传到图床</li>
+</ul>
+<h3 id="wiznote"><a class="markdownIt-Anchor" href="#wiznote"></a> Wiznote</h3>
+<ul>
+<li>用官方的话来讲Mac功能少是小而美</li>
+<li>如果不是会员到2020年结束，我一定会转到Evernote上去</li>
+</ul>
+<h3 id="iina"><a class="markdownIt-Anchor" href="#iina"></a> iina</h3>
+<ul>
+<li>视频播放软件</li>
+</ul>
+<h3 id="shadowsocksx-ng"><a class="markdownIt-Anchor" href="#shadowsocksx-ng"></a> <s>ShadowsocksX-NG</s></h3>
+<ul>
+<li>看名字就知道干什么的</li>
+<li>突然发现自己买不起服务器，转向蓝灯</li>
+</ul>
+<h3 id="parallels-desktop"><a class="markdownIt-Anchor" href="#parallels-desktop"></a> Parallels Desktop</h3>
+<ul>
+<li>虚拟机软件</li>
+</ul>
+<h3 id="sublime-text-3"><a class="markdownIt-Anchor" href="#sublime-text-3"></a> Sublime Text 3</h3>
+<ul>
+<li>性感的编辑器？</li>
+<li>处理小文本时使用，写题目还是喜欢vim</li>
+</ul>
+<h3 id="iterm2"><a class="markdownIt-Anchor" href="#iterm2"></a> iTerm2</h3>
+<ul>
+<li>用来替换默认的Terminal</li>
+<li>推荐主题：<code>solarized-dark</code></li>
+<li>推荐字体：<code>Hack</code></li>
+</ul>
+<h3 id="homebrew"><a class="markdownIt-Anchor" href="#homebrew"></a> Homebrew</h3>
+<ul>
+<li>Terminal内下载软件</li>
+<li>使用：<code>brew update;brew install vim</code></li>
+<li>查看软件信息：<code>brew info vim</code></li>
+<li>临时替换：<code>export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles</code></li>
+<li><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">清华大学镜像地址</a></li>
+<li><a target="_blank" rel="noopener" href="https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git">中国科学技术大学源地址</a></li>
+</ul>
+<h3 id="tmux"><a class="markdownIt-Anchor" href="#tmux"></a> tmux</h3>
+<ul>
+<li>增强终端功能</li>
+<li>配置文件：<a target="_blank" rel="noopener" href="https://github.com/gpakosz/.tmux">.tmux</a></li>
+<li>更新配置文件：<code>tmux source ~/.tmux.conf</code></li>
+<li>常用快捷键
+<ul>
+<li><code>prefix s</code> 查看/切换sessoin</li>
+<li><code>prefix d</code> 离开session</li>
+<li><code>prefix $</code> 重命名当前session</li>
+<li><code>prefix c</code> 新建窗口</li>
+<li><code>prefix space</code> 切换到上一个活动的窗口</li>
+<li><code>prefix &amp;</code> 关闭一个窗口</li>
+<li><code>prefix 窗口号</code> 使用窗口号切换</li>
+<li><code>prefix o</code> 切换到下一个窗格</li>
+<li><code>prefix q</code> 查看所有窗格的编号</li>
+<li><code>prefix “</code> 垂直拆分出一个新窗格</li>
+<li><code>prefix %</code> 水平拆分出一个新窗格</li>
+<li><code>prefix z</code> 暂时把一个窗体放到最大</li>
+</ul>
+</li>
+</ul>
+<h3 id="oh-my-zsh"><a class="markdownIt-Anchor" href="#oh-my-zsh"></a> Oh My ZSH!</h3>
+<ul>
+<li>用<code>zsh</code>来替换默认的shell</li>
+<li>推荐主题：<code>agnoster</code></li>
+<li>最喜欢的是对git的增加以及git相关快捷键的缩写</li>
+<li>常用快捷键
+<ul>
+<li><code>gaa</code>: git add .</li>
+<li><code>gb</code>: git branch</li>
+<li><code>gcm</code>: git checkout master</li>
+<li><code>gcmsg</code>: git commit -m</li>
+<li><code>gst</code>: git status</li>
+</ul>
+</li>
+</ul>
+<h3 id="vim"><a class="markdownIt-Anchor" href="#vim"></a> vim</h3>
+<ul>
+<li>配置文件：spf3，已经不想折腾这些东西</li>
+<li>常用快捷键
+<ul>
+<li><code>dd</code>: 删除当前行,并把删除的行存在剪贴板里面</li>
+<li><code>*#</code>: 匹配当前光标所在的单词移动到下一个或者上一个匹配的单词</li>
+<li><code>%</code>: 匹配括号移动</li>
+<li><code>:set number</code>: 显示绝对行号</li>
+<li><code>:set relativenumber</code>: 显示相对行号</li>
+<li><code>r</code>: 将光标所在的字符替换掉</li>
+<li><code>&lt;&lt;</code>: 将当前行向左移动一个偏移宽度</li>
+<li><code>&gt;&gt;</code>: 将当前行向右移动一个偏移宽度</li>
+</ul>
+</li>
+</ul>
+<h3 id="powerline-fonts"><a class="markdownIt-Anchor" href="#powerline-fonts"></a> Powerline fonts</h3>
+<ul>
+<li>vim中的状态栏以及zsh某些主题正确显示的核心</li>
+</ul>
+<h3 id="istat-menus"><a class="markdownIt-Anchor" href="#istat-menus"></a> iStat Menus</h3>
+<ul>
+<li>系统增强工具</li>
+<li>在状态栏显示当前网速、CPU占用以及温度等信息</li>
+</ul>
+<h3 id="jietu"><a class="markdownIt-Anchor" href="#jietu"></a> Jietu</h3>
+<ul>
+<li>腾讯为数不多的良心之作，截图软件</li>
+</ul>
+<h3 id="坚果云"><a class="markdownIt-Anchor" href="#坚果云"></a> 坚果云</h3>
+<ul>
+<li>良心同步软件，每个月上传流量不多，但是够用</li>
+<li>iCloud默认空间实在是太少</li>
+</ul>
+<h3 id="anaconda"><a class="markdownIt-Anchor" href="#anaconda"></a> Anaconda</h3>
+<ul>
+<li>python 科学计算包？</li>
+<li>最主要使用是jupyter notebook</li>
+<li>根据之前在公司安装时得到的经验，完成安装之后还需要更新zsh相关的配置，否者在iTerm中依旧无法使用</li>
+<li>在 <code>.zshrc</code> 中添加一条记录：<code>export PATH=&quot;/Users/xiangrunye/anaconda3/bin:$PATH&quot;</code> 注意这里需要写绝对地址</li>
+<li>更新配置文件：<code>source ~/.zshrc</code></li>
+</ul>
+<h3 id="lantern"><a class="markdownIt-Anchor" href="#lantern"></a> Lantern</h3>
+<ul>
+<li>捍卫互联网自由？</li>
+</ul>
+<h3 id="dash"><a class="markdownIt-Anchor" href="#dash"></a> Dash</h3>
+<ul>
+<li>快速查阅各种语法的文档</li>
+<li>配合Alfred食用更佳，建议将 keyword 改为 <code>ds</code></li>
+</ul>
+<h3 id="xcode"><a class="markdownIt-Anchor" href="#xcode"></a> Xcode</h3>
+<ul>
+<li>感觉自己可以转ios开发</li>
+<li>下这东西才知道，国内连AppStore网络有多差</li>
+</ul>
+<h3 id="parallels-desktop-2"><a class="markdownIt-Anchor" href="#parallels-desktop-2"></a> Parallels Desktop</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://bitmingw.com/2017/04/24/windows-thin-pc-download-install-activate/">win镜像获取</a></li>
+</ul>
+<h3 id="chrome"><a class="markdownIt-Anchor" href="#chrome"></a> Chrome</h3>
+<ul>
+<li>看中的是插件多的特点</li>
+<li>MacOS设置为英文的环境下，Chrome里面下载时经常出现文件名乱码，找到了这个网页<a target="_blank" rel="noopener" href="http://blog.csdn.net/maxsky/article/details/52411977"> Mac OS X 下修改 Google Chrome 显示语言的方法</a></li>
+</ul>
+<h3 id="参考链接"><a class="markdownIt-Anchor" href="#参考链接"></a> 参考链接</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://macshuo.com/?p=625">MacTalk:Alfred</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.jobbole.com/87584/">Tmux 速成教程：技巧和调整</a></li>
+<li><a target="_blank" rel="noopener" href="http://macshuo.com/?p=1045">vim 学习卡</a></li>
+<li><a target="_blank" rel="noopener" href="http://macshuo.com/?p=769">vim 帮助和配置 </a></li>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/32979">从零开始学习Alfred</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tiann/markdown-img-upload">markdown.wordflow</a></li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-07-22T14:13:33.000Z" title="7/22/2017, 2:13:33 PM">2017-07-22</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.879Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item">2 分钟读完 (大约341个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/restore-wordpress-from-backWPup.html">使用 BackWPup 恢复 WordPress</a></p><div class="content"><p>昨天晚上手贱点了升级服务器上的 Ubuntu 版本,然后发现 WordPress 不能用了…删了nginx装上 Apache 才解决,之后发现主题有问题,一激动就提交工单把服务器重装了…</p>
+<p>接下来就是 WordPress 重装的过程,自己一直使用BackWPup 每周备份 WordPress ,所以本以为重装会很轻松.</p>
+<p>早上起来将 WordPress 以及 BackWPup 装好.然后就在 BackWPup 里面翻了好久都没有发现怎么还原的按钮…又用百度谷歌搜了一下,也没有教程…</p>
+<p>没有办法,只好硬着头皮去看插件的官网,找到 <a target="_blank" rel="noopener" href="https://backwpup.com/docs/how-to-restore-a-wordpress-backup">How to restore a WordPress backup? – BackWPup Docs</a>,按照这篇文章的提示成功恢复 WordPress.</p>
+<h2 id="恢复数据库"><a class="markdownIt-Anchor" href="#恢复数据库"></a> 恢复数据库</h2>
+<p>由于我用的是<code>phpmyadmin</code>,所以登录到服务器的<code>phpmyadmin</code>管理页面.选择数据库<code> WordPress</code>,点击导入,上传BackWPup备份压缩文件中的<code>.sql</code>文件,点击执行,这样数据库中的内容就还原了.</p>
+<p><img src="https://media.xiang578.com/15006908280096.jpg" alt="-w1277" /></p>
+<h2 id="恢复-wordpress文件"><a class="markdownIt-Anchor" href="#恢复-wordpress文件"></a> 恢复 WordPress文件</h2>
+<p>这一步只需要将备份文件里面的文件上传到服务器新的网站目录下覆盖就可以了.由于我用的是iTerm2,所以可以在本地使用<code>scp</code>命令</p>
+<h2 id="尾声"><a class="markdownIt-Anchor" href="#尾声"></a> 尾声</h2>
+<p>zz插件,连个一键还原都没有…</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-07-02T12:34:39.000Z" title="7/2/2017, 12:34:39 PM">2017-07-02</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/">程序园</a></span><span class="level-item">4 分钟读完 (大约617个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/alfred-lists.html">Alfred 使用记录</a></p><div class="content"><p>昨天晚上在看MacTalk时,发现一篇文章<a target="_blank" rel="noopener" href="http://macshuo.com/?p=625">神兵利器——Alfred</a>,随后将里面提到的软件下载下来.接触不到一天的时间,就感觉到这个软件的强大.下面就记录一些我用到的功能以及插件.</p>
+<h3 id="原生功能"><a class="markdownIt-Anchor" href="#原生功能"></a> 原生功能</h3>
+<h4 id="terminal"><a class="markdownIt-Anchor" href="#terminal"></a> terminal</h4>
+<p>最近在公司工作,都要求连接到服务器上去写代码,所以对terminal的需求很大.目前自己用的是iTerm2+zsh的组合,还有类似于powerline的状态栏,工作效率杠杠的.Alfred可以使用一个字符触发terminal,默认的是<code>&gt;</code>以及打开Mac自带的终端.<br />
+<img src="https://media.xiang578.com/macbook/1498980452413.png" alt="" /><br />
+由于<code>&gt;</code>这个字符比较难打,我将Prefix修改为<code>;</code>,而且也将修改terminal为iTerm2(参考<a target="_blank" rel="noopener" href="https://www.iterm2.com/version3.html">这个链接最下面提到的Alfred Support</a>).</p>
+<h4 id="网页搜索"><a class="markdownIt-Anchor" href="#网页搜索"></a> 网页搜索</h4>
+<p>给定关键字打开浏览器在特定的网页搜索,例如下图<br />
+<img src="https://media.xiang578.com/1498980953061.png" alt="" /><br />
+实现起来也比较简单,在<code>Feature-&gt;Web Search</code>中添加类似于下面的即可.<br />
+<img src="https://media.xiang578.com/1498981126331.png" alt="" /></p>
+<h4 id="计算器"><a class="markdownIt-Anchor" href="#计算器"></a> 计算器</h4>
+<p>输入表达式通过Alfred计算<br />
+<img src="https://media.xiang578.com/1498981253943.png" alt="" /></p>
+<h3 id="workflows"><a class="markdownIt-Anchor" href="#workflows"></a> WorkFlows</h3>
+<p>这个是我觉得Alfred最强大功能,毕竟编程改变一切,下面推荐几个插件.</p>
+<h4 id="markdown-img"><a class="markdownIt-Anchor" href="#markdown-img"></a> Markdown img</h4>
+<p>这个插件的功能是直接将系统的剪贴板里面的图片上传到七牛图床,并把图片链接复制到当前的编辑器和剪贴板.这篇文章的截图就是通过这个插件完成的,终于不用像之前一样苦逼的一张张上传图片.<a target="_blank" rel="noopener" href="https://github.com/tiann/markdown-img-upload">下载地址</a></p>
+<h4 id="workflow-searcher"><a class="markdownIt-Anchor" href="#workflow-searcher"></a> Workflow Searcher</h4>
+<p>通过Alfred来搜索workflow并且跳转到下载页面<br />
+<img src="https://media.xiang578.com/1498981706560.png" alt="" /></p>
+<h4 id="v2ex"><a class="markdownIt-Anchor" href="#v2ex"></a> v2ex</h4>
+<p>快速浏览v2ex的帖子.<br />
+<img src="https://media.xiang578.com/1498981846450.png" alt="" /></p>
+<h4 id="douban"><a class="markdownIt-Anchor" href="#douban"></a> Douban</h4>
+<p>查看豆瓣的电影,音乐,图书等信息</p>
+<h4 id="wunderlist"><a class="markdownIt-Anchor" href="#wunderlist"></a> Wunderlist</h4>
+<p>可以连接奇妙清单,正好符合我这种轻量级用户.<br />
+<img src="https://media.xiang578.com/1498982157857.png" alt="" /></p>
+<h4 id="有道翻译加强版"><a class="markdownIt-Anchor" href="#有道翻译加强版"></a> 有道翻译加强版</h4>
+<p>满足查字典的需求,虽然mac原生的也很强大,但这个能翻译啊<br />
+<img src="https://media.xiang578.com/1498982371845.png" alt="" /></p>
+<h4 id="百度搜索"><a class="markdownIt-Anchor" href="#百度搜索"></a> 百度搜索</h4>
+<p>虽然国内口碑不好,但我还是觉得百度更懂中国人…<br />
+<img src="https://media.xiang578.com/1498982451913.png" alt="" /></p>
+<p>最后吐槽几句,垃圾为知笔记,mac版就没有多少功能,发个博客都没有,可惜我剩下三年的vip,这篇文章还是靠 Mweb 发布的.</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-04-29T13:57:37.000Z" title="4/29/2017, 1:57:37 PM">2017-04-29</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/">程序园</a></span><span class="level-item">7 分钟读完 (大约1035个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/computer-base-network.html">计算机基础：计算机网络</a></p><div class="content"><ol>
+<li>
+<p>电路交换与分组交换的区别？ 优劣对比。</p>
+</li>
+<li>
+<p>OSI有哪几层，知道主要几层的各自作用。</p>
+<ol>
+<li>物理层：定义通信与传输借口硬件的机械、电气、功能和过程特性，实现比特流的透明传输。</li>
+<li>数据链路层：无差别传送以帧为单位的数据。</li>
+<li>网络层：选择合适的路由和交换结点，分组或者包。</li>
+<li>运输层：端到端、或者进程到进程的无差别传送。</li>
+<li>会话层：对数据传输的同步进行管理</li>
+<li>表示层：信息加密和解密，正文压缩和还原</li>
+<li>应用层：</li>
+</ol>
+</li>
+<li>
+<p>TCP/IP有哪几层，会画出来，知道所有层数的作用，会列举各层主要的协议名称。</p>
+<ol>
+<li>网络接口层：x.25</li>
+<li>网际层：IP</li>
+<li>运输层：TCP和UDP</li>
+<li>应用层：HTTP、FTP等</li>
+</ol>
+</li>
+<li>
+<p>硬件(MAC)地址的概念及作用。</p>
+<ol>
+<li>媒体访问控制子层：前6位16进制IETF分配。</li>
+<li>区分不同的硬件</li>
+</ol>
+</li>
+<li>
+<p>ARP协议的用途 及算法、在哪一层上会使用 ARP ？</p>
+<ol>
+<li>地址解析协议：IP地址到MAC地址的映射</li>
+<li>网络层</li>
+<li></li>
+</ol>
+</li>
+<li>
+<p>知道各个层使用的是哪个数据交换设备。（交换机、路由器、网关）</p>
+<ol>
+<li>物理层：中继器、集线器</li>
+<li>数据链路层：网桥或者交换机</li>
+<li>网络层中继系统：路由器</li>
+<li>网络层以上：网关</li>
+</ol>
+</li>
+<li>
+<p>IP报文的格式，格式的各个字段的含义要理解。</p>
+</li>
+<li>
+<p>MTU的概念，啥叫路径MTU？ MTU发现机制，TraceRoute(了解)。</p>
+</li>
+<li>
+<p>RIP协议的概念 及算法。</p>
+</li>
+<li>
+<p>ICMP协议的主要功能。</p>
+<ol>
+<li>网际控制报文协议，提高IP数据报成功交付的机会，报告差错和异常情况。</li>
+</ol>
+</li>
+<li>
+<p>组播和多播的概念，IGMP的用途。</p>
+</li>
+<li>
+<p>Ping协议的实现原理，ping 命令格式。</p>
+<ol>
+<li>应用层，使用网络层的ICMP协议</li>
+</ol>
+</li>
+<li>
+<p>子网划分的概念，子网掩码。</p>
+<ol>
+<li>A类子网掩码：255.0.0.0，划分：8位+子网X位+主机24-X位</li>
+</ol>
+</li>
+<li>
+<p>IP地址的分类，如何划分的，及会计算各类地址支持的主机数。</p>
+</li>
+<li>
+<p>DNS的概念，用途，DNS查询的实现算法。</p>
+</li>
+<li>
+<p>TCP与UDP的概念，相互的区别及优劣。</p>
+<ul>
+<li>TCP和UDP是OSI模型中的运输层中的协议。TCP提供可靠的通信传输，而UDP则常被用于让广播和细节控制交给应用的通信传输。</li>
+<li>TCP面向连接，UDP面向非连接即发送数据前不需要建立链接</li>
+<li>TCP提供可靠的服务（数据传输），UDP无法保证</li>
+<li>TCP面向字节流，UDP面向报文</li>
+<li>TCP数据传输慢，UDP数据传输快</li>
+</ul>
+</li>
+<li>
+<p>UDP报文的格式，字段的意义。</p>
+</li>
+<li>
+<p>TCP 报文的格式，字段的意义。</p>
+</li>
+<li>
+<p>TCP通过哪些措施，保证传输可靠？</p>
+</li>
+<li>
+<p>三次握手，四次断开过程。</p>
+<ol>
+<li>客户端向服务器发送一个SYN j</li>
+<li>服务器向客户端响应一个SYN k，并对SYN j进行确认 ACK j+1</li>
+<li>客户端向服务器发送一个ACK k+1</li>
+<li>一端发送一个FIN</li>
+<li>另一端接收到这个FIN分节后，执行被动关闭，对这个FIN进行确认，继续传输数据。</li>
+<li>发送数据之后，发送一个FIN</li>
+<li>接受到FIN，结束传输。</li>
+</ol>
+</li>
+<li>
+<p>TIME_WAIT状态的概念及意义。</p>
+</li>
+<li>
+<p>滑动窗口协议 与 停止等待协议的区别。</p>
+</li>
+<li>
+<p>TCP的流量控制和拥塞控制实现原理(会画拥塞控制的典型图)。</p>
+</li>
+<li>
+<p>TCP的快速重传与快速恢复算法。</p>
+</li>
+<li>
+<p>TFTP 与 FTP的区别。</p>
+</li>
+<li>
+<p>阻塞方式和非阻塞方式，阻塞connect与非阻塞connect。(比较难，有兴趣可以了解)</p>
+</li>
+<li>
+<p>HTTP基本格式。（java程序员必须掌握）</p>
+</li>
+</ol>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-04-23T14:11:10.000Z" title="4/23/2017, 2:11:10 PM">2017-04-23</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.879Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/">军机处</a></span><span class="level-item">9 分钟读完 (大约1394个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/zjp-2017.html">浙江省第十四届程序设计竞赛总结</a></p><div class="content"><p>昨天是我第三次参加浙江省赛，比赛地点依旧设置在浙大。上午和其他人一起坐车过去，然后就是都差不多的流程。</p>
+<p>由于一些原因，这一次我的两个队友异乎寻常的厉害（高质量就业：阿里研发工程师+京东算法工程师的组合）。赛前内心毫无波澜，不过周神教导我，作为浙财的五队，我们只要保个铜就可以了。</p>
+<p>上午9点25左右，热身赛开始。打开试题册看了一下，我们发现热身赛题目跟去年一样，快速通过A和C题。周神机智的想起去年最后一题（输入一个数对一个非常的大梅森数取模，并判断结果的奇偶性）大数据只有四组，通过一番测试之后，今年也是一样。他写了一个程序直接判小的数据，开始枚举最后四组答案的排列组合。我们大概交了10次左右，就发现枚举的地方出现错误，然后改了一下又重新交，最后枚举到13(1101)的时候过了。本着写完热身赛去吃饭的原则，God王让我们开始写B题。不过仔细想了一下发现，万一写完发现是错的，是去吃饭还是不去吃饭，这是个很大的问题。所以，我们直接前往食堂。</p>
+<p>12点15分左右，比赛正式开始。我自告奋勇的从A题开始看，本着看样例猜题意的指导思想，我大胆猜想出写法，趁他们两个不注意直接拿起键盘开始写。由于年纪大了，速度更比不上那些年轻人，所以也写了一会儿，交完之后大概有70只队伍通过。之后God王上来平推了B和D。我看一下C题，发现这是个简单题，把题意告诉老王之后，他也很快做了出来。至此，比赛大概过去45分钟。我们写完全部的签到题，完成保的铜的目标。</p>
+<p>三个人继续分头看题目，没过多久他们两个人又开始讨论F题的写，很快也想出一个非常巧妙的方法，不过后来发现这个是超时的，所幸God王又想出了线段树的写法。我和周神开始研究E题的写法，很快也验证了用数位DP的正确性，不过也想到这其中有很多细节要考虑。说到这里，不得不讲一下，我昨天晚上就打印了两页模版，其中一个就是数位DP的模版。God王改完F之后，勇敢提交，直接返回了WA。然后我们三个看了好久代码，都没有找出错误来。God王直接出去逛了一下，我和周神开始写E题。God王发现周神读题目没有讲要输出子树的数量，改之就过了。之后，三个人共同推了E。接下来的时间差不多就是在挣扎了，H题God王写来写去都是超时的，G题周神说要找规律，打印了14页数据开始找没多久，就告诉我想的全部是错的。17点14分59秒，God王最后交了一份H题代码，没有什么奇迹，我们结束了这一次省赛。</p>
+<p>晚上，在小剧场举行颁奖，这一个环节最主要的就是听听队名。当本科组银奖没有报到我们的时候，我的内心十分的开心。听到第一批金牌也没有报到我们的时候，周神对我讲了一句，是不是下面没有我们，今天就是冠军。事实证明这是幻想，然后他就高高兴兴的上台领奖了，毕竟昨天晚上特意做了一个发型……</p>
+<p>总的来说，这次省赛比浙大校赛难了很多，所以写完签到题不要错太多的都可以拿铜。中间过度居然拿了一道数位DP和一道线段树，命题人直接高估了浙江省程序设计的教育水平。最后面的几题，我们三个人共享完题意之后，完全没有思路，其他参赛选手也差不多，完全沦为观赏题。后来想一想，这一份题目只是在错误的时间出现，毕竟比赛的覆盖面是final到专科。但是，我感觉这样的比赛，一个人五小时也能做5题，生不逢时，为什么去年没有这么好的命啊。不过还是要感谢两位大佬带我体验了一下省赛获金的感觉。这一次，同场的还有学军和杭二的高中生，颁奖时，有以为领导还感叹大学生不如高中生。殊不知对于这些高中生来说考上浙江大学都是失败。</p>
+<p>不知道明年还有没有机会参加。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-04-19T12:42:55.000Z" title="4/19/2017, 12:42:55 PM">2017-04-19</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.871Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/">程序园</a></span><span class="level-item">5 分钟读完 (大约693个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/Csharp-chat-softwave.html">C#聊天软件实现</a></p><div class="content"><p>前几天面试，被问如何实现一个类似微信的聊天软件。当时说了一个大概的想法，面试官没有怎么评价，只是最后建议我有空多做一些项目。正好最近不怎么忙，就实现一下。写了一个简易的模型，在这个过程中应用了很多原来学过的东西，当然还有很多问题没有解决。</p>
+<ol>
+<li>
+<p>这个软件选择C/S架构，所以写了一个服务器端程序和一个客户端程序，然后通信使用的是TCP协议。</p>
+</li>
+<li>
+<p>利用socket完成通信，大致的过程如下图所示。</p>
+</li>
+</ol>
+<p><img src="https://media.xiang578.com/%E5%A5%97%E6%8E%A5%E5%AD%97.JPG" alt="" /><br />
+3. 服务器上开两个线程<code>threadListenConnect</code>和<code>threadReceivePacket</code>。服务器上的<code>socket</code>利用<code>bind</code>绑定服务器的ip和端口号。第一个线程死循环监听端口，是否有新的<code>connect</code>请求，并将新的连接<code>socket</code>保存到list中。再利用第二个线程接受客户端发来的数据包，并拆包执行进行相关功能。服务器之后，按照包中的内容判断是否需要发送到其他特定的客户端还是广播消息。</p>
+<ol start="4">
+<li>
+<p>客户端中开一个线程<code>threadReceivePacket</code>。先和服务器连接，然后利用这个线程接受服务器发过来的数据包。这里也实现了发送给某个特定的客户端和广播。发包和拆包过程和服务器上差不多。</p>
+</li>
+<li>
+<p>数据包主要包括发送方ip、端口和接收方ip、端口，以及操作代码。不同的数据段用‘|’分割，接收方也按这样拆包就可以了。</p>
+</li>
+<li>
+<p>TCP是面向连接的协议，拥有缓存窗口，所以可能会有粘包现象，可能将程序一次产生的命令，分成多次发送。所以数据包里面还要标记一下，我用了’\a’做新的包开始标记，用’\t’做结束标记，如果聊天内容里面有相同的标记的，可以强行转化一下。</p>
+</li>
+<li>
+<p>这个程序还可以加上数据库搞出注册以及保存聊天消息，然后自己也没有去写消息的排序以及私聊功能，待做。</p>
+</li>
+<li>
+<p>最后相关代码放在github上面<a target="_blank" rel="noopener" href="https://github.com/xiang578/NewChat"></a></p>
+</li>
+</ol>
+<p>服务器端：<img src="https://media.xiang578.com/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF.jpg" alt="" /></p>
+<p>客户端1：<img src="https://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF1.jpg" alt="" /></p>
+<p>客户端2：<img src="https://media.xiang578.com/%E5%AE%A2%E6%88%B7%E7%AB%AF2.jpg" alt="" /></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-02-11T14:16:49.000Z" title="2/11/2017, 2:16:49 PM">2017-02-11</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/">程序园</a></span><span class="level-item">4 分钟读完 (大约583个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/add-return-button-to-blog.html">为博客添加返回顶部按钮</a></p><div class="content"><blockquote>
+<p>适用于WordPress</p>
+</blockquote>
+<p>由于主题没有自带的返回顶部按钮，所以我一直在寻找一种解决方案。之前使用的是wordpress插件提供的返回顶部按钮，后来在网上乱逛，发现有Xnces – 衔铁部落的返回顶部按钮非常的酷炫，正是我要寻找的。于是，我在那个博客下留言询问制作方法。<br />
+前几天，看到那个博客上出现了一篇文章<a target="_blank" rel="noopener" href="https://www.xnces.com/back-to-top.html">-本博客的返回顶部效果</a>。<br />
+按照上面的方法，折腾一会儿，我也制作出来了，特地记录一下。</p>
+<ol>
+<li>
+<p>首先，先加载一下环境。在后台<code>functions.php</code>中找到<code>ms_scripts()</code>函数，添加<code>wp_enqueue_script( 'jquery' );</code>调用wordpress默认的JQuery文件。</p>
+</li>
+<li>
+<p>我将这个效果有关的js代码放在了主题目录下新建的<code>themes.js</code>文件中。所以在上面的函数中添加下面两句话导入这个文件<code>wp_register_script( 'themes_js', THEMEPATH  . '/themes.js',array());</code>和<code>wp_enqueue_script( 'themes_js' );</code></p>
+</li>
+<li>
+<p>CSS代码我直接加在了主题<code>style.css</code>中。</p>
+</li>
+<li>
+<p>重新打开网站就能看到效果了。</p>
+</li>
+</ol>
+<p><code>themes.js</code>文件中代码如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bigfa_scroll = &#123;</span><br><span class="line">    <span class="attr">drawCircle</span>: <span class="keyword">function</span>(<span class="params">id, percentage, color</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> width = <span class="title function_">jQuery</span>(id).<span class="title function_">width</span>();</span><br><span class="line">        <span class="keyword">var</span> height = <span class="title function_">jQuery</span>(id).<span class="title function_">height</span>();</span><br><span class="line">        <span class="keyword">var</span> radius = <span class="built_in">parseInt</span>(width / <span class="number">2.20</span>);</span><br><span class="line">        <span class="keyword">var</span> position = width;</span><br><span class="line">        <span class="keyword">var</span> positionBy2 = position / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> bg = <span class="title function_">jQuery</span>(id)[<span class="number">0</span>];</span><br><span class="line">        id = id.<span class="title function_">split</span>(<span class="string">&quot;#&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> ctx = bg.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">        <span class="keyword">var</span> imd = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">var</span> circ = <span class="title class_">Math</span>.<span class="property">PI</span> * <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> quart = <span class="title class_">Math</span>.<span class="property">PI</span> / <span class="number">2</span>;</span><br><span class="line">        ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">        ctx.<span class="title function_">beginPath</span>();</span><br><span class="line">        ctx.<span class="property">strokeStyle</span> = color;</span><br><span class="line">        ctx.<span class="property">lineCap</span> = <span class="string">&quot;square&quot;</span>;</span><br><span class="line">        ctx.<span class="title function_">closePath</span>();</span><br><span class="line">        ctx.<span class="title function_">fill</span>();</span><br><span class="line">        ctx.<span class="property">lineWidth</span> = <span class="number">3</span>;</span><br><span class="line">        imd = ctx.<span class="title function_">getImageData</span>(<span class="number">0</span>, <span class="number">0</span>, position, position);</span><br><span class="line">        <span class="keyword">var</span> draw = <span class="keyword">function</span>(<span class="params">current, ctxPass</span>) &#123;</span><br><span class="line">            ctxPass.<span class="title function_">putImageData</span>(imd, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">            ctxPass.<span class="title function_">beginPath</span>();</span><br><span class="line">            ctxPass.<span class="title function_">arc</span>(positionBy2, positionBy2, radius, -(quart), ((circ) * current) - quart, <span class="literal">false</span>);</span><br><span class="line">            ctxPass.<span class="title function_">stroke</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">draw</span>(percentage / <span class="number">100</span>, ctx);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">backToTop</span>: <span class="keyword">function</span>(<span class="params">$this</span>) &#123;</span><br><span class="line">        $this.<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="title function_">jQuery</span>(<span class="string">&quot;body,html&quot;</span>).<span class="title function_">animate</span>(&#123;</span><br><span class="line">                <span class="attr">scrollTop</span>: <span class="number">0</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="number">800</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">scrollHook</span>: <span class="keyword">function</span>(<span class="params">$this, color</span>) &#123;</span><br><span class="line">        color = color ? <span class="attr">color</span>: <span class="string">&quot;#000000&quot;</span>;</span><br><span class="line">        $this.<span class="title function_">scroll</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> docHeight = (<span class="title function_">jQuery</span>(<span class="variable language_">document</span>).<span class="title function_">height</span>() - <span class="title function_">jQuery</span>(<span class="variable language_">window</span>).<span class="title function_">height</span>()),</span><br><span class="line">            $windowObj = $this,</span><br><span class="line">            $per = <span class="title function_">jQuery</span>(<span class="string">&quot;.per&quot;</span>),</span><br><span class="line">            percentage = <span class="number">0</span>;</span><br><span class="line">            defaultScroll = $windowObj.<span class="title function_">scrollTop</span>();</span><br><span class="line">            percentage = <span class="built_in">parseInt</span>((defaultScroll / docHeight) * <span class="number">100</span>);</span><br><span class="line">            <span class="keyword">var</span> backToTop = <span class="title function_">jQuery</span>(<span class="string">&quot;#backtoTop&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (backToTop.<span class="property">length</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> ($windowObj.<span class="title function_">scrollTop</span>() &gt; <span class="number">200</span>) &#123;</span><br><span class="line">                    backToTop.<span class="title function_">addClass</span>(<span class="string">&quot;button--show&quot;</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    backToTop.<span class="title function_">removeClass</span>(<span class="string">&quot;button--show&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                $per.<span class="title function_">attr</span>(<span class="string">&quot;data-percent&quot;</span>, percentage);</span><br><span class="line">                bigfa_scroll.<span class="title function_">drawCircle</span>(<span class="string">&quot;#backtoTopCanvas&quot;</span>, percentage, color);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">jQuery</span>(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">jQuery</span>(<span class="string">&quot;body&quot;</span>).<span class="title function_">append</span>(<span class="string">&#x27;&lt;div id=&quot;backtoTop&quot; data-action=&quot;gototop&quot;&gt;&lt;canvas id=&quot;backtoTopCanvas&quot; width=&quot;48&quot; height=&quot;48&quot;&gt;&lt;/canvas&gt;&lt;div class=&quot;per&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> T = bigfa_scroll;</span><br><span class="line">    T.<span class="title function_">backToTop</span>(<span class="title function_">jQuery</span>(<span class="string">&quot;#backtoTop&quot;</span>));</span><br><span class="line">    T.<span class="title function_">scrollHook</span>(<span class="title function_">jQuery</span>(<span class="variable language_">window</span>), <span class="string">&quot;#555555&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>CSS文件要添加的代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#backtoTop</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#eee</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">bottom</span>:<span class="number">10%</span>;<span class="attribute">height</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">position</span>:fixed;</span><br><span class="line">    <span class="attribute">right</span>:-<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">transition</span>:<span class="number">0.5s</span>;</span><br><span class="line">    -webkit-<span class="attribute">transition</span>:<span class="number">0.5s</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#backtoTop</span><span class="selector-class">.button--show</span>&#123;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">10px</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.per</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">48px</span>;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#555</span>;</span><br><span class="line">    <span class="attribute">cursor</span>:pointer</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.per</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="built_in">attr</span>(data-percent)</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.per</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">&quot;↑&quot;</span>;<span class="attribute">font-size</span>:<span class="number">20px</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-01-29T14:13:28.000Z" title="1/29/2017, 2:13:28 PM">2017-01-29</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.875Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/">军机处</a></span><span class="level-item">14 分钟读完 (大约2109个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/icpc-beijing-2016.html">2016年北京区域赛</a></p><div class="content"><p>今年，一队发挥出色，拿到全部赛区的名额，而且大三也没有多少队伍。所以我们这种弱队还有机会去参加第二场比赛。</p>
+<p>作为第三次去北大，流程都是非常熟悉的。周四下午坐Z10出发，第二天上午到达北京。周五下午我一个人去了前两次来北京都没有机会参观的故宫。</p>
+<p><img src="https://media.xiang578.com/9c7_2016-11-11_13-57-43_compressed.jpg" alt="" /></p>
+<p>故宫之旅并不是很好，主要是游客太多，紫禁城失去了往日的威严。不过，另外加收门票的钟表馆很棒，皇室的藏品居然如此花哨。有些钟表的滴答声一百多年之后依旧飘荡在场馆之内。出了故宫之后，走了半个小时才找到一个地铁站，这个设计非常的愚蠢吧，之后就动身前往北大。</p>
+<p><img src="https://media.xiang578.com/9c7_2016-11-11_14-38-43_compressed.jpg" alt="" /></p>
+<p>周六下午热身赛，我们出来的比较早，在体育馆的看台上做了一会儿，看着下面排列整齐的两百多台电脑，心中生出一丝感动。之后就是进入场馆搞事情，电脑是五位数的戴尔移动工作站，外接了鼠标、键盘、和显示器。和我自己在寝室里面干的差不多。海巨表示显示器大看着爽，不过也发现键盘上有日文符号，这就比较影响我的发挥了。然后是例行看一下 周围的队伍，前面是北师、后面是北航、右上方有杭电一队，感觉压力又好大，虽然他们根本不会在乎我们。</p>
+<p>比赛开始之前，队友想起在大连时，我讲了一句热身赛只要看一下AC是什么颜色就好了，最后被我成功奶死，全部是WA，所以告诫我不要乱说话。拿到题目之后，我们看了一下，发现题目是前几年北大出的区域赛和网络赛的。其中B题还是我们前几周训练过的题目，我拿起键盘表示这次终于有机会拿个一血了，马上写了起来，队友还是表示不相信。当我写完提交后，邪恶战胜了正义，果真发挥了一个WA，此时其他有一个队伍拿到这题的一血，彻底骨折。所幸改了一下还是过了，之后C题也是原来写过的，上去写了一下就过了。之后就讨论了一会儿A题，不过没有得出什么答案，感觉暴力上去肯定会超时，D题也不会写，最后上去让海巨测了一下机器和各种返回就去吃饭了。晚上回去才发现A题比我们想的还要暴力，没有勇气啊。</p>
+<p>由于我们知道不会来北大吃太多餐，所以晚饭比较丰盛。一遍吃一遍感叹北大的伙食真好，早知道原来好好读书了。回到宾馆后，海巨在找题目写，翔哥想着阴阳师靠他的符偷渡欧洲，我看着炉石直播学习技术。又是一天。</p>
+<p>周日，因为经费紧张，住的宾馆离北大比较远，我们三个7点就出发了，8点半左右到达北大赛场，然后等待比赛的开始。<br />
+<img src="https://media.xiang578.com/9c5_2016-11-13_08-15-51_compressed.jpg" alt="" /></p>
+<p>9点比赛正式开始，开场顺利的写完了两道签到题，然后我们看了一下一道搜索题，我感觉可以写了，另外两个人去看了一下I题。我写差不多后，海巨上来写了I，也很快的写完并提交了，不过返回了WA。换我上去继续写搜索题，很快我写的超时了，只好改的优雅一点，翔哥也指出海巨理解错了题目，他们两想了一下决定帮我一起改搜索题，小改了一些东西之后，又提交了两次，返回两个WA。当时我们很紧张了，不过没有办法，海巨在看代码，我在写最暴力的准备对拍，翔哥在那里构造数据。最后，翔哥构造出了一组强力的数据，成功把我的代码hack了，我发现改掉一点就会对，不过没有想明白怎么回事，就改了一下记录答案的方式，最后自信的提交返回AC。然后我们将目光聚集到了K题，这个破题，题目就看了好久才明白，不过数据范围居然有10的100次方，我们搞了好久才都没有想出来，我感叹了已经上次在大连也是死在这种恶心的题目上，还是要想，我们写了一个10的9次以内的暴力程序打表，神奇的发现最大符合要求的个数只有样例给的83个，然后他们开始推规律，我在那里划水。想着写不出来，只要让海巨上去写一个只要83个答案表的程序，赌一发梦想。虽然感觉北大不会蠢到把最后一个答案告诉你，海巨还是写了，不过交上去还是WA。之后就陷入了江局，封榜后一会儿，我算了一下发现15位数随便填的情况下1就有10的16次左右个了，果断抢来电脑，不知道是什么力量让我点开海巨WA的代码，我看了一下差点吐血，找一个最大不超过n的值被写成立找一个最小超过n的值，我问了一下海巨，他还不知道，我直接改了一下就交上去，再赌一个梦想，然后就AC。我们马上点开排名，不过只能现实封板前的排名103，这题交了应该会前进一些，但是北大只有93个奖牌。海巨表示把I题写了才能稳，我看了一下I题，果断表明我不会数学题，只能靠你们了。然后实力分析一波之后，感觉要ntt操作，找了一下发现没有带这个模版，只好告诉海巨要么你想个其他的方法，要么自己创造一个ntt算法。我也没有找到其他组说的图论题是哪一个，只好提前选择死亡，吃起了发的午餐，果真像赛前说的一样吃东西就等于放弃了，最后还有10分钟结束的时候，我们三个人都愉快的吃起了午餐，把自己的命运交给其他小笨蛋来掌握。边吃边感叹这是第一次在正赛封榜后过题以及终于不是什么题数靠前的队伍了。</p>
+<p><img src="https://media.xiang578.com/9c5_2016-11-13_14-01-11_compressed.jpg" alt="" /></p>
+<p>比赛结束之后，不知道结果怎么样，我们只好在那里等待，这要是在之前可以直接会师火车站了。北大搞了一堆事情，才开始滚榜，判完我们题目的时候好像跳到了81名去了，他们两个开始统计超过我们的人，又过了一会儿，发现最后名次固定在了85名，然后三个人都好高兴。滚完铜牌区之后，开始颁奖，我也有幸登上北大的领奖台。之后，那些也和我们没有什么关系了，反正两年多的努力有了回报就可以。</p>
+<p><img src="https://media.xiang578.com/9c5_2016-11-13_16-19-49.jpeg" alt="" /></p>
+<p>从北大出来，直奔麦当劳买了一下晚餐就去火车站了。我特地点了一杯拿铁，稳如拿铁。还是要相信科学。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2017-01-19T14:19:06.000Z" title="1/19/2017, 2:19:06 PM">2017-01-19</time>发表</span><span class="level-item"><time dateTime="2023-03-05T13:33:10.879Z" title="3/5/2023, 1:33:10 PM">2023-03-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/">程序园</a></span><span class="level-item">1 分钟读完 (大约127个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/use-wiznote-to-write-blog.html">为知笔记写博客测试</a></p><div class="content"><blockquote>
+<p>适用于WordPress</p>
+</blockquote>
+<p>如果你可以看到这一篇文件，就表示我测试成功了！</p>
+<h4 id="tips"><a class="markdownIt-Anchor" href="#tips"></a> tips:</h4>
+<ul>
+<li>为知笔记中的标签自动变成博客文章的标签</li>
+<li>选择发布时，会自动检测是新发布文章还是修改文章</li>
+<li>自带markdown优化，轻松解决wordpress没有什么好用markdown编辑器的问题</li>
+</ul>
+<p>参考连接：<a target="_blank" rel="noopener" href="http://www.wiz.cn/wiz-plugin-blog-writter.html">发布笔记到博客，更好的博客离线撰写工具</a></p>
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/8/">上一页</a></div><div class="pagination-next"><a href="/page/10/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/8/">8</a></li><li><a class="pagination-link is-current" href="/page/9/">9</a></li><li><a class="pagination-link" href="/page/10/">10</a></li><li><a class="pagination-link" href="/page/11/">11</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar-ryenxx.jpeg" alt="Ryen"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ryen</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Bei Jing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">107</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">82</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://haihongblog.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">海虹不老阁</span></span><span class="level-right"><span class="level-item tag">haihongblog.com</span></span></a></li><li><a class="level is-mobile" href="https://www.cnblogs.com/zufezzt" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Fighting Heart</span></span><span class="level-right"><span class="level-item tag">www.cnblogs.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Never-Reading/"><span class="level-start"><span class="level-item">Never-Reading</span></span><span class="level-end"><span class="level-item tag">21</span></span></a></li><li><a class="level is-mobile" href="/categories/%E4%B8%83%E5%B9%B4%E4%B9%8B%E6%97%85/"><span class="level-start"><span class="level-item">七年之旅</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"><span class="level-start"><span class="level-item">军机处</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/"><span class="level-start"><span class="level-item">文渊阁</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="level-start"><span class="level-item">机器学习</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"><span class="level-start"><span class="level-item">生活志</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"><span class="level-start"><span class="level-item">程序园</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%AB%99%E5%8A%A1/"><span class="level-start"><span class="level-item">站务</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/"><span class="level-start"><span class="level-item">随想集</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-13T14:30:00.000Z">2023-02-13</time></p><p class="title"><a href="/post/thinking-07.html">【随想集】07 新年快乐</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-12T14:14:33.000Z">2023-02-12</time></p><p class="title"><a href="/post/deepreta.html">DeeprETA An ETA Post-processing System at Scale</a></p><p class="categories"><a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-01-08T08:48:00.000Z">2023-01-08</time></p><p class="title"><a href="/post/thinking-06.html">【随想集】06 一元复始，重新出发</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-01-09T11:00:11.000Z">2022-01-09</time></p><p class="title"><a href="/post/thinking-05.html">【随想集】05 重新使用 Logseq</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-14T11:00:11.000Z">2021-08-14</time></p><p class="title"><a href="/post/thinking-04.html">【随想集】04 曾经我也想过一了百了</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/"><span class="level-start"><span class="level-item">2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/"><span class="level-start"><span class="level-item">2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/"><span class="level-start"><span class="level-item">2020</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/"><span class="level-start"><span class="level-item">2019</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/"><span class="level-start"><span class="level-item">2018</span></span><span class="level-end"><span class="level-item tag">33</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/"><span class="level-start"><span class="level-item">2017</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2016/"><span class="level-start"><span class="level-item">2016</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/"><span class="level-start"><span class="level-item">2015</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2014/"><span class="level-start"><span class="level-item">2014</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2012/"><span class="level-start"><span class="level-item">2012</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/weekly/"><span class="tag">weekly</span><span class="tag">27</span></a></div><div class="control"><a class="tags has-addons" href="/tags/life/"><span class="tag">life</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/acm/"><span class="tag">acm</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/movie/"><span class="tag">movie</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zufe/"><span class="tag">zufe</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gtd/"><span class="tag">gtd</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wordpress/"><span class="tag">wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ml/"><span class="tag">ml</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/reinforcement-learning/"><span class="tag">reinforcement-learning</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/game/"><span class="tag">game</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/7/"><span class="tag">7</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/omnifocus/"><span class="tag">omnifocus</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nlp/"><span class="tag">nlp</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/transformer/"><span class="tag">transformer</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2023 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">© 2015</p></div><script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
