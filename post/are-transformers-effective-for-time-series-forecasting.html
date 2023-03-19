@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>【时间序列预测】Are Transformers Effective for Time Series Forecasting? - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="香港中文大学曾爱玲文章，在长时间序列预测问题上使用线性模型打败基于 Transformer 的模型，并对已有模型的能力进行实验分析（灵魂7问，强烈推荐好好读一下！）。"><meta property="og:type" content="blog"><meta property="og:title" content="【时间序列预测】Are Transformers Effective for Time Series Forecasting?"><meta property="og:url" content="https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html"><meta property="og:site_name" content="算法花园"><meta property="og:description" content="香港中文大学曾爱玲文章，在长时间序列预测问题上使用线性模型打败基于 Transformer 的模型，并对已有模型的能力进行实验分析（灵魂7问，强烈推荐好好读一下！）。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://media.xiang578.com/202303182247135.png"><meta property="og:image" content="https://media.xiang578.com/202303182310362-LTSF-Linear.png"><meta property="og:image" content="https://media.xiang578.com/202303182316694-lsft-dis-shift.png"><meta property="og:image" content="https://media.xiang578.com/202303182322387-ltsf-linear-result.png"><meta property="og:image" content="https://media.xiang578.com/202303182331993-ltsf-f3-fix.png"><meta property="og:image" content="https://media.xiang578.com/202303192214654-ltsf-linear-f4.png"><meta property="og:image" content="https://media.xiang578.com/202303192209473-ltsf-t3.png"><meta property="og:image" content="https://media.xiang578.com/202303192202216-ltsf-t4.png"><meta property="og:image" content="https://media.xiang578.com/202303190007289-ltsf-t5.png"><meta property="og:image" content="https://media.xiang578.com/202303182353101-ltsf-t6.png"><meta property="og:image" content="https://media.xiang578.com/202303182349885-ltsf-t7.png"><meta property="og:image" content="https://media.xiang578.com/202303182345491-ltsf-t8.png"><meta property="article:published_time" content="2023-03-18T13:53:32.000Z"><meta property="article:modified_time" content="2023-03-19T14:53:06.181Z"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="Paper"><meta property="article:tag" content="Transformer"><meta property="article:tag" content="Time Series Forecasting"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://media.xiang578.com/202303182247135.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html"},"headline":"【时间序列预测】Are Transformers Effective for Time Series Forecasting?","image":["https://media.xiang578.com/202303182247135.png","https://media.xiang578.com/202303182310362-LTSF-Linear.png","https://media.xiang578.com/202303182316694-lsft-dis-shift.png","https://media.xiang578.com/202303182322387-ltsf-linear-result.png","https://media.xiang578.com/202303182331993-ltsf-f3-fix.png","https://media.xiang578.com/202303192214654-ltsf-linear-f4.png","https://media.xiang578.com/202303192209473-ltsf-t3.png","https://media.xiang578.com/202303192202216-ltsf-t4.png","https://media.xiang578.com/202303190007289-ltsf-t5.png","https://media.xiang578.com/202303182353101-ltsf-t6.png","https://media.xiang578.com/202303182349885-ltsf-t7.png","https://media.xiang578.com/202303182345491-ltsf-t8.png"],"datePublished":"2023-03-18T13:53:32.000Z","dateModified":"2023-03-19T14:53:06.181Z","author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":"香港中文大学曾爱玲文章，在长时间序列预测问题上使用线性模型打败基于 Transformer 的模型，并对已有模型的能力进行实验分析（灵魂7问，强烈推荐好好读一下！）。"}</script><link rel="canonical" href="https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html"><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-65866729-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-65866729-1');</script><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/link">Link</a><a class="navbar-item" href="/tech">Tech</a><a class="navbar-item" target="_blank" rel="noopener" href="https://analytics.umami.is/share/6fJ2QrDdHeYWEHvd/Blog">Analytics</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-18T13:53:32.000Z" title="3/18/2023, 1:53:32 PM">2023-03-18</time>发表</span><span class="level-item"><time dateTime="2023-03-19T14:53:06.181Z" title="3/19/2023, 2:53:06 PM">2023-03-19</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></span><span class="level-item">18 分钟读完 (大约2691个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">【时间序列预测】Are Transformers Effective for Time Series Forecasting?</h1><div class="content"><p>香港中文大学曾爱玲文章，在长时间序列预测问题上使用线性模型打败基于 Transformer 的模型，并对已有模型的能力进行实验分析（灵魂7问，强烈推荐好好读一下！）。</p>
+<span id="more"></span>
+<h2 id="核心贡献"><a class="markdownIt-Anchor" href="#核心贡献"></a> 核心贡献</h2>
+<ul>
+<li>质疑基于 Transformer 的序列预测模型在长时间序列预测任务（LTSF，long-term time series forecasting） 的有效性
+<ul>
+<li>大部分模型无法从长序列中抽取时序信息（实验中预测误差并没有随着历史窗口增大而减少）</li>
+<li>大部分模型相对于 baseline（rnn类）的提升是将预测方法从 IMS 替换成 DMS 得到的。</li>
+</ul>
+</li>
+<li>提出只有 one-layer linear model： <code>LTSF-Linear</code>，通过 DMS 方式预测效果超过之前模型。</li>
+<li>对已有模型的能力进行实验分析（建模长输入的能力、对时间顺序的敏感性、位置编码、子序列 embdding 影响、模型性能）</li>
+</ul>
+<h2 id="核心问题"><a class="markdownIt-Anchor" href="#核心问题"></a> 核心问题</h2>
+<ul>
+<li>时间序列预测问题主要形式是：已知前 t 时间的特征，然后预测未来一段时间的结果。如果需要预测的时间很长，被称之为长时间序列预测。
+<ul>
+<li><code>IMS</code> iterated multi-step (IMS) forecasting，每次预测一个结果，迭代多次得到对未来一段时间的预测结果（自回归）。结果方差比较小，但是预测过程中误差会累积。</li>
+<li><code>DMS</code> direct multistep (DMS) forecasting，一步得到对于未来一段时间的预测结果。常在需要预测未来时间很长或者很难训练无偏单步预测模型时使用。</li>
+</ul>
+</li>
+<li>Transformer 前提假设是成对元素之间有语义相关性，self-attention 机制本质是元素置换不变，建模时序关系能力很大程度上取决于与输入标记相关联的位置编码。
+<ul>
+<li>时序数据基本上没有点对点的语义相关性，需要模型能提取连续点之间的时序关系。Time Series Transformer 通过位置编码以及序列编码提供部分顺序信息，但是由于置换不变自注意力机制的存在必然存在时序信息丢失问题。</li>
+</ul>
+</li>
+</ul>
+<h2 id="相关工作"><a class="markdownIt-Anchor" href="#相关工作"></a> 相关工作</h2>
+<h3 id="time-series-transformer-框架"><a class="markdownIt-Anchor" href="#time-series-transformer-框架"></a> Time Series Transformer 框架</h3>
+<p><img src="https://media.xiang578.com/202303182247135.png" alt="" /></p>
+<ul>
+<li><code>Time series decomposition</code> 对输入序列进行分解，后续更好预测。
+<ul>
+<li><a href="/post/autoformer.html">Autoformer</a> 在 seasonal-trend decomposition 中通过 moving average 建模 trend 趋势项。</li>
+<li><a href="/post/FEDformer.html">FEDformer</a> 通过 MoE 策略将移动平均提取的趋势和各种大小核进行混合。</li>
+</ul>
+</li>
+<li>对输入特征的 emebdding 策略：
+<ul>
+<li>原始时间序列的顺序 local positional information</li>
+<li>全局时间信息，比如hierarchical timestamps (week, month, year) 和 agnostic timestamps(holidays and events)</li>
+<li>injecting several embeddings, like a fixed positional encoding, a channel projection embedding, and learnable temporal embeddings into the input sequence.</li>
+<li>temporal embeddings with a temporal convolution layer or learnable timestamps  are introduced</li>
+</ul>
+</li>
+<li>self-attention schemes 让 attention 矩阵计算尽可能稀疏</li>
+<li>Decoders 改进原始 Transformer 的自回归模式。</li>
+</ul>
+<h2 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h2>
+<h3 id="ltsf-linear"><a class="markdownIt-Anchor" href="#ltsf-linear"></a> LTSF-Linear</h3>
+<ul>
+<li>通过一层神经网对过去信息加权得到未来预测结果。</li>
+<li>不同变量间共享参数并且不对 spatial correlations 建模</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303182310362-LTSF-Linear.png" alt="" /></p>
+<h3 id="dlinear"><a class="markdownIt-Anchor" href="#dlinear"></a> DLinear</h3>
+<ul>
+<li>D 对应 Decomposition scheme，将输入数据分解成 trend 和 remaninder 两部分
+<ul>
+<li>trend 通过移动平均核得到</li>
+<li>remaninder 是输入数据减去 trend 结果得到</li>
+</ul>
+</li>
+<li>在数据集有明显趋势性的时候该方法能提升预测效果</li>
+</ul>
+<h3 id="nlinear"><a class="markdownIt-Anchor" href="#nlinear"></a> NLinear</h3>
+<p>部分数据集的训练数据和测试数据存在分布偏移（下图中 b），无法使用训练集的均值和方差进行归一化。NLinear 将输入序列每一个值减去该序列最后一个值，然后输入序列过完线性层后加回被减去的值得到最后预测结果。</p>
+<p><img src="https://media.xiang578.com/202303182316694-lsft-dis-shift.png" alt="" /></p>
+<h2 id="实验结论"><a class="markdownIt-Anchor" href="#实验结论"></a> 实验结论</h2>
+<ul>
+<li><code>Repeat*</code> 指用输入序列最后一个特征做为未来一段时间的预测，模型如果效果比这个查，说明模型错误预测了趋势……</li>
+<li>NLiner 和 DLinear 的结果比 Linear 好，说明处理分布偏移和分解趋势-周期特征的重要性。</li>
+<li>FEDformer 相比其他 Transformer 方法好，是因为它采用经典的时间序列分析技术，不太依赖自注意力机制。</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303182322387-ltsf-linear-result.png" alt="" /></p>
+<h3 id="定性分析"><a class="markdownIt-Anchor" href="#定性分析"></a> 定性分析</h3>
+<ul>
+<li>过去 96 预测未来 336 时，下图 a 和 c，部分 Tranformer 模型根本无法预测未来数据的取值范围和偏差。</li>
+<li>在非周期数据（图b，汇率）Tranformer 模型几乎无法预测适当的趋势。</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303182331993-ltsf-f3-fix.png" alt="" /></p>
+<h3 id="transformer-类模型进一步分析灵魂七问"><a class="markdownIt-Anchor" href="#transformer-类模型进一步分析灵魂七问"></a> Transformer 类模型进一步分析（灵魂七问）</h3>
+<h4 id="能否从长序列中提取时序信息"><a class="markdownIt-Anchor" href="#能否从长序列中提取时序信息"></a> 能否从长序列中提取时序信息？</h4>
+<ul>
+<li>历史窗口（look-back window） 越长（输入信息越多），预测效果应该越好。</li>
+<li>下图 x 轴对应不同历史窗口长度，可以看到随着输入信息变多，LTSF-Linear 方法预测结果越来越准，但是大部分 Transformer 模型 mse 并没有太多变化，作者猜测可能模型过拟合噪音而不能获得时序信息。</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303192214654-ltsf-linear-f4.png" alt="" /></p>
+<h4 id="能从长序列预测可以学到什么"><a class="markdownIt-Anchor" href="#能从长序列预测可以学到什么"></a> 能从长序列预测可以学到什么？</h4>
+<ul>
+<li>历史窗口中的动态时间会显著影响短期预测的精度，而长期预测仅依赖模型是否很好捕捉趋势和周期性。即预测时间跨度越长，历史窗口本身影响越小。</li>
+<li>预测未来 720 步，下面两种取历史窗口方法:
+<ul>
+<li><code>Close</code> 前 96 步输入</li>
+<li><code>Far</code> 前 192 步到 前 97 步输入</li>
+</ul>
+</li>
+<li>fedformer 和 autoformer 在两种方法下预测效果几乎相同，说明模型只能从相邻时间序列中捕获到类似的时序信息。</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303192209473-ltsf-t3.png" alt="" /></p>
+<h4 id="self-attention-scheme-是否有效"><a class="markdownIt-Anchor" href="#self-attention-scheme-是否有效"></a> self-attention scheme 是否有效？</h4>
+<ul>
+<li>对 Informer 结构进行消融实验，下表从左到右网络结构越来越简单，然后效果基本上逐步提升。看起来注意力机制和其他复杂模块在 LTSF 上没有正向效果。
+<ul>
+<li><code>Att.-Linear</code> 用 linear layer 替换  self-attention layer</li>
+<li><code>Embed+Linear</code> 再去除其他模块</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303192202216-ltsf-t4.png" alt="" /></p>
+<h4 id="模型可以保留时序信息吗"><a class="markdownIt-Anchor" href="#模型可以保留时序信息吗"></a> 模型可以保留时序信息吗？</h4>
+<ul>
+<li>self-attention 本质上不考虑空间关系（无视元素的位置信息） permutation-invariant，通过 positional and temporal embedding 模型还是丢失时间信息。</li>
+<li>三种数据处理方式
+<ul>
+<li><code>Shuf</code> 输入数据顺序全部打乱</li>
+<li><code>Half-ex</code> 输入数据分成前后两部分，交换这两部分的顺序。</li>
+</ul>
+</li>
+<li>两个实验表明 Transformers  不能很好保留时序信息
+<ul>
+<li>在 Exchange 汇率数据集，三个 Tranformer 模型在这三种数据处理方式下，预测结果的 mse 基本上都都接近，可能仅保留有限的时间关系，但是最终过拟合了。Linear 模型自然建模顺序并且使用更少的参数避免过度拟合。</li>
+<li>在 ETH1 数据集，FEDformer 建模时考虑时间序列偏差，提出了数据中明显的时间信息，所以在 shuf 组 mse 下降非常快。Informer 根本没有建模这方面信息。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303190007289-ltsf-t5.png" alt="" /></p>
+<h4 id="不同-embedding-策略的作用"><a class="markdownIt-Anchor" href="#不同-embedding-策略的作用"></a> 不同 embedding 策略的作用？</h4>
+<ul>
+<li>依次删除模型中的 Position embedding、global time stamp embedding 和同时删除这两个 temebdding。</li>
+<li>Informer的预测误差在没有位置嵌入（wo/Pos.）的情况下大幅增加。在没有时间戳嵌入（wo/Temp.）的情况下，随着预测长度的增加，Informer的性能将逐渐受损。
+<ul>
+<li>论文中给的原因没有看懂：Informer uses a single time step for each token, it is necessary to introduce temporal information in tokens.</li>
+</ul>
+</li>
+<li>Autoformer 和 FEDformer 通过一系列时间戳去编码时间信息，所以删除 pos 后效果可能变得更好。</li>
+<li>Autoformer 去除时间 embedding 后效果明显变差。</li>
+<li>FEDformer 通过 frequency-enhanced module 使模型有 temporal inductive bias，删除 pos 和 temp 影响不是很大。</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303182353101-ltsf-t6.png" alt="" /></p>
+<h4 id="训练数据大小是现在模型的限制因素"><a class="markdownIt-Anchor" href="#训练数据大小是现在模型的限制因素"></a> 训练数据大小是现在模型的限制因素？</h4>
+<ul>
+<li>问题：是不是训练数据量太少导致 Transformer 类模型表现差？</li>
+<li>在交通数据上用 Ori <code>17544*0.7 hour</code> 数据和  Short <code>365＊24=8760 hour</code> 数据对比：
+<ul>
+<li>基本上是训练数据小的时候，预测误差小。证明训练数据不是限制 Transformer 类模型表现的原因。</li>
+<li>导致这种现象的原因可能是 short 对应全年数据，有更清晰的时间特征趋势。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303182349885-ltsf-t7.png" alt="" /></p>
+<h4 id="性能真的是长时间预测任务中优先级最高的事情吗"><a class="markdownIt-Anchor" href="#性能真的是长时间预测任务中优先级最高的事情吗"></a> 性能真的是长时间预测任务中优先级最高的事情吗？</h4>
+<ul>
+<li>两个问题：Transformer 模型的推理时间和内存消耗是否增加？现在的 GPU 显存能否满足任务和模型需求。</li>
+<li>下图可以看到大部分 Transformer 模型参数量和原始 Tranformer 没有太大区别，但是推理时间可能超过原来……
+<ul>
+<li>另外在通过 96 步预测 720 步任务上，原始 Tranformer 的参数 GPU 也放得下……</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://media.xiang578.com/202303182345491-ltsf-t8.png" alt="" /></p>
+<h2 id="可解释性"><a class="markdownIt-Anchor" href="#可解释性"></a> 可解释性</h2>
+<p>附录中简单写了一些，由于模型是线性模型，不同输入位置的权重可以直接用来解释模型如何生效以及反应特点。</p>
+<ul>
+<li>金融数据可以观察到越靠近未来时刻的特征权重越大，代表它们对预测值的贡献更大。</li>
+<li>交通数据能观察到明显的周期性。</li>
+</ul>
+<h2 id="读后总结"><a class="markdownIt-Anchor" href="#读后总结"></a> 读后总结</h2>
+<ul>
+<li>灵魂七问提供了很好设计对比实验的思路</li>
+<li>读论文需要更加仔细思考，之前根本没有想过 informer 这种点注意力其实在时间序列预测上的有效性。</li>
+<li>transformer 在时序预测的应用还是值得进一步思考！</li>
+</ul>
+<h2 id="ref"><a class="markdownIt-Anchor" href="#ref"></a> Ref</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/569194246">Are Transformers Effective for Time Series Forecasting? - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14j411A72V/">Transformer对时序预测真的有效吗? | AAAI’23 Oral_哔哩哔哩_bilibili</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/521329803">Transformer用于时间序列预测任务真的有效吗？ - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://readpaper.com/paper/4628140664303927297">Are Transformers Effective for Time Series Forecasting?-论文阅读讨论-ReadPaper</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/612092817">CTR率预测One Epoch现象 / LTSF场景质疑Transformer - 知乎 (zhihu.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/544622984">DLinear：Are Transformers Effective for Time Series Forecasting? - 知乎 (zhihu.com)</a></li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>【时间序列预测】Are Transformers Effective for Time Series Forecasting?</p><p><a href="https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html">https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ryen Xiang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-03-18</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-03-19</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Paper/">Paper</a><a class="link-muted mr-2" rel="tag" href="/tags/Transformer/">Transformer</a><a class="link-muted mr-2" rel="tag" href="/tags/Time-Series-Forecasting/">Time Series Forecasting</a></div><!--!--></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/alipay_code.jpg" alt="支付宝"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/hiereta.html"><span class="level-item">【滴滴 HierETA】Interpreting Trajectories from Multiple Views A Hierarchical Self-Attention Network for Estimating the Time of Arrival</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="waline-thread"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.css"><script src="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.js"></script><script>Waline.init({
+            el: '#waline-thread',
+            serverURL: "https://comment.xiang578.com/",
+            path: window.location.pathname,
+            lang: "zh-CN",
+            locale: {"placeholder":"Comment here..."},
+            emoji: ["//unpkg.com/@waline/emojis@1.0.1/weibo"],
+            dark: "auto",
+            meta: ["nick","mail","link"],
+            requiredMeta: [],
+            login: "enable",
+            
+            pageSize: 10,
+            imageUploader: false,
+            
+            texRenderer: false,
+            search: false,
+            pageview: true,
+            comment: false,
+            copyright: true,
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar-ryenxx.jpeg" alt="Ryen"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ryen</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Bei Jing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">109</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">87</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E4%B8%8D%E8%80%81%E9%98%81/"><span class="level-start"><span class="level-item">不老阁</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"><span class="level-start"><span class="level-item">军机处</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/"><span class="level-start"><span class="level-item">文渊阁</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/"><span class="level-start"><span class="level-item">智能路</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"><span class="level-start"><span class="level-item">生活志</span></span><span class="level-end"><span class="level-item tag">17</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"><span class="level-start"><span class="level-item">程序园</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/"><span class="level-start"><span class="level-item">随想集</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://haihongblog.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">海虹不老阁</span></span><span class="level-right"><span class="level-item tag">haihongblog.com</span></span></a></li><li><a class="level is-mobile" href="https://www.cnblogs.com/zufezzt" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Fighting Heart</span></span><span class="level-right"><span class="level-item tag">www.cnblogs.com</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#核心贡献"><span class="level-left"><span class="level-item">1</span><span class="level-item"> 核心贡献</span></span></a></li><li><a class="level is-mobile" href="#核心问题"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 核心问题</span></span></a></li><li><a class="level is-mobile" href="#相关工作"><span class="level-left"><span class="level-item">3</span><span class="level-item"> 相关工作</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#time-series-transformer-框架"><span class="level-left"><span class="level-item">3.1</span><span class="level-item"> Time Series Transformer 框架</span></span></a></li></ul></li><li><a class="level is-mobile" href="#解决方案"><span class="level-left"><span class="level-item">4</span><span class="level-item"> 解决方案</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#ltsf-linear"><span class="level-left"><span class="level-item">4.1</span><span class="level-item"> LTSF-Linear</span></span></a></li><li><a class="level is-mobile" href="#dlinear"><span class="level-left"><span class="level-item">4.2</span><span class="level-item"> DLinear</span></span></a></li><li><a class="level is-mobile" href="#nlinear"><span class="level-left"><span class="level-item">4.3</span><span class="level-item"> NLinear</span></span></a></li></ul></li><li><a class="level is-mobile" href="#实验结论"><span class="level-left"><span class="level-item">5</span><span class="level-item"> 实验结论</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#定性分析"><span class="level-left"><span class="level-item">5.1</span><span class="level-item"> 定性分析</span></span></a></li><li><a class="level is-mobile" href="#transformer-类模型进一步分析灵魂七问"><span class="level-left"><span class="level-item">5.2</span><span class="level-item"> Transformer 类模型进一步分析（灵魂七问）</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#能否从长序列中提取时序信息"><span class="level-left"><span class="level-item">5.2.1</span><span class="level-item"> 能否从长序列中提取时序信息？</span></span></a></li><li><a class="level is-mobile" href="#能从长序列预测可以学到什么"><span class="level-left"><span class="level-item">5.2.2</span><span class="level-item"> 能从长序列预测可以学到什么？</span></span></a></li><li><a class="level is-mobile" href="#self-attention-scheme-是否有效"><span class="level-left"><span class="level-item">5.2.3</span><span class="level-item"> self-attention scheme 是否有效？</span></span></a></li><li><a class="level is-mobile" href="#模型可以保留时序信息吗"><span class="level-left"><span class="level-item">5.2.4</span><span class="level-item"> 模型可以保留时序信息吗？</span></span></a></li><li><a class="level is-mobile" href="#不同-embedding-策略的作用"><span class="level-left"><span class="level-item">5.2.5</span><span class="level-item"> 不同 embedding 策略的作用？</span></span></a></li><li><a class="level is-mobile" href="#训练数据大小是现在模型的限制因素"><span class="level-left"><span class="level-item">5.2.6</span><span class="level-item"> 训练数据大小是现在模型的限制因素？</span></span></a></li><li><a class="level is-mobile" href="#性能真的是长时间预测任务中优先级最高的事情吗"><span class="level-left"><span class="level-item">5.2.7</span><span class="level-item"> 性能真的是长时间预测任务中优先级最高的事情吗？</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#可解释性"><span class="level-left"><span class="level-item">6</span><span class="level-item"> 可解释性</span></span></a></li><li><a class="level is-mobile" href="#读后总结"><span class="level-left"><span class="level-item">7</span><span class="level-item"> 读后总结</span></span></a></li><li><a class="level is-mobile" href="#ref"><span class="level-left"><span class="level-item">8</span><span class="level-item"> Ref</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-18T13:53:32.000Z">2023-03-18</time></p><p class="title"><a href="/post/are-transformers-effective-for-time-series-forecasting.html">【时间序列预测】Are Transformers Effective for Time Series Forecasting?</a></p><p class="categories"><a href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-12T14:14:33.000Z">2023-03-12</time></p><p class="title"><a href="/post/hiereta.html">【滴滴 HierETA】Interpreting Trajectories from Multiple Views A Hierarchical Self-Attention Network for Estimating the Time of Arrival</a></p><p class="categories"><a href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-13T14:30:00.000Z">2023-02-13</time></p><p class="title"><a href="/post/thinking-07.html">【随想集】07 新年快乐</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-12T14:14:33.000Z">2023-02-12</time></p><p class="title"><a href="/post/deepreta.html">DeeprETA An ETA Post-processing System at Scale</a></p><p class="categories"><a href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-01-08T08:48:00.000Z">2023-01-08</time></p><p class="title"><a href="/post/thinking-06.html">【随想集】06 一元复始，重新出发</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/"><span class="level-start"><span class="level-item">2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/"><span class="level-start"><span class="level-item">2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/"><span class="level-start"><span class="level-item">2020</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/"><span class="level-start"><span class="level-item">2019</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/"><span class="level-start"><span class="level-item">2018</span></span><span class="level-end"><span class="level-item tag">33</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/"><span class="level-start"><span class="level-item">2017</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2016/"><span class="level-start"><span class="level-item">2016</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2015/"><span class="level-start"><span class="level-item">2015</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2014/"><span class="level-start"><span class="level-item">2014</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2012/"><span class="level-start"><span class="level-item">2012</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/weekly/"><span class="tag">weekly</span><span class="tag">27</span></a></div><div class="control"><a class="tags has-addons" href="/tags/life/"><span class="tag">life</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/acm/"><span class="tag">acm</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/movie/"><span class="tag">movie</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zufe/"><span class="tag">zufe</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gtd/"><span class="tag">gtd</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wordpress/"><span class="tag">wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ml/"><span class="tag">ml</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/reinforcement-learning/"><span class="tag">reinforcement-learning</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/game/"><span class="tag">game</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/eta/"><span class="tag">eta</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Paper/"><span class="tag">Paper</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/7/"><span class="tag">7</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/omnifocus/"><span class="tag">omnifocus</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2023 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p><p class="is-size-7">© 2015</p></div><script async defer data-website-id="7e782528-455f-4f0a-acc5-01ec7ed759ff" src="https://analytics.umami.is/script.js"></script><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
