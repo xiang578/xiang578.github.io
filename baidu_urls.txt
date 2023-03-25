@@ -1,4 +1,4 @@
-https://blog.xiang578.com/Note/641d2573-eaf1-4b15-a7e5-70dd7fc50ab2.html
+https://blog.xiang578.com/note/641ea60f-a31e-4979-9327-c50509c146e3.html
 https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html
 https://blog.xiang578.com/post/hiereta.html
 https://blog.xiang578.com/post/thinking-07.html
