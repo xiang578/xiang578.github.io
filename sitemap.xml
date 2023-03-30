@@ -2,126 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.xiang578.com/post/podcast-list.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/primary-school-classmate-10th-anniversary-party.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/rebuild-notebook-system.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-actor-critic.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-imitation-learning.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-sparse-reward.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/restore-wordpress-from-backWPup.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/rime.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/soft-skills.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/something-about-high-school.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/symposium.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/the-beauty-of-math.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/post/thinking-03.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -130,7 +13,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/thinking-04.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -139,7 +22,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/thinking-05.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -148,7 +31,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/thinking-06.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -157,7 +40,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/thinking-07.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -166,7 +49,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/universiy-booklist.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -175,7 +58,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/use-cos-to-store-blog.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -184,7 +67,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/use-gtd-to-speach.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -193,7 +76,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -202,7 +85,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-update.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -211,7 +94,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/use-wiznote-to-write-blog.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -220,7 +103,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/wdr.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -229,7 +112,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-1.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -238,7 +121,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-10.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -247,7 +130,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-2.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -256,7 +139,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-3.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -265,7 +148,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-4.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -274,7 +157,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-5.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -283,7 +166,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-6.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -292,7 +175,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-7.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -301,7 +184,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-8.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -310,7 +193,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issue-9.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -319,7 +202,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/week-issues-11.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -328,7 +211,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/wide-and-deep.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -337,7 +220,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/zjp-2016.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -346,7 +229,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/zjp-2017.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -355,7 +238,7 @@
   <url>
     <loc>https://blog.xiang578.com/about/index.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -364,7 +247,7 @@
   <url>
     <loc>https://blog.xiang578.com/categories/index.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -373,7 +256,7 @@
   <url>
     <loc>https://blog.xiang578.com/link/index.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -382,7 +265,7 @@
   <url>
     <loc>https://blog.xiang578.com/log/index.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -391,7 +274,7 @@
   <url>
     <loc>https://blog.xiang578.com/tags/index.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -400,223 +283,7 @@
   <url>
     <loc>https://blog.xiang578.com/tech/index.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/2020.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/AppleScript-encode-error.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/ImportanceOffont.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/Never-Reading-202007.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/Never-Reading-202008.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/Csharp-chat-softwave.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/Sleep.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/Thinking-01.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/Thinking-02.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/add-return-button-to-blog.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/alexnet.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/alfred-lists.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/all-about-bert-code.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/auto-workflow.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/best-of-iphone-2019.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/blog-log.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/blog-writing-checklist.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/build-to-win-homework-0x00.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/build-to-win.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/computer-base-network.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/cs231n-summary.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/deepreta.html</loc>
-    
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -625,7 +292,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/english-writing-01.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -634,7 +301,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/excerpt-2018-03-07.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -643,7 +310,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/fix-qiniu-test-url-error.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -652,7 +319,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/fm.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -661,7 +328,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/ftrl.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -670,7 +337,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/gbdt.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -679,7 +346,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/gbdt_lr.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -688,7 +355,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/gtd-one-month.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -697,7 +364,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/hdu200.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -706,7 +373,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/hdu300.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -715,7 +382,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/hdu400.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -724,7 +391,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/hdu500.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -733,7 +400,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/hello-world.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -742,7 +409,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/hiereta.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -751,7 +418,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/how-to-build-a-hexo-blog.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -760,7 +427,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/how-to-use-taskpaper-to-do-3-thigns.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -769,7 +436,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/icpc-beijing-2016.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -778,7 +445,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/icpc-ecl-shanghai-2017.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -787,7 +454,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/icpc-xian-2017.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -796,7 +463,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/if.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -805,7 +472,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/interview.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -814,7 +481,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/iphone5s.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -823,7 +490,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/just-for-fun.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -832,7 +499,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/lanqiaobei-2016.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -841,7 +508,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/mac-software.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -850,7 +517,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/machine-learning-ch-01.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -859,7 +526,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/machine-learning-ch-03.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -868,7 +535,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/meet-leancloud-counter-security-problem.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -877,7 +544,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/monthly-issue-201912.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -886,7 +553,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/monthly-issue-202001.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -895,7 +562,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/monthly-issue-202002.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -904,7 +571,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/monthly-issue-202003.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -913,7 +580,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/monthly-issue-202004.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -922,7 +589,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/monthly-issue-202005.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -931,7 +598,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/monthly-issue-202006.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -940,7 +607,124 @@
   <url>
     <loc>https://blog.xiang578.com/post/newipad.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/podcast-list.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/primary-school-classmate-10th-anniversary-party.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/rebuild-notebook-system.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-actor-critic.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-imitation-learning.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-sparse-reward.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/restore-wordpress-from-backWPup.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/rime.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/soft-skills.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/something-about-high-school.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/symposium.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/the-beauty-of-math.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -949,7 +733,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/007-aciton-reflection.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -958,7 +742,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/007-and-me.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -967,7 +751,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/2011.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -976,7 +760,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/2015.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -985,7 +769,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/2017.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -994,7 +778,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/2018-consumer-report.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1003,7 +787,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/2018.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1012,7 +796,7 @@
   <url>
     <loc>https://blog.xiang578.com/post/2019-consumer-report.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1021,7 +805,223 @@
   <url>
     <loc>https://blog.xiang578.com/post/2019.html</loc>
     
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/2020.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/AppleScript-encode-error.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Csharp-chat-softwave.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/ImportanceOffont.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Never-Reading-202007.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Never-Reading-202008.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Sleep.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Thinking-01.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Thinking-02.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/add-return-button-to-blog.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/alexnet.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/alfred-lists.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/all-about-bert-code.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/auto-workflow.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/best-of-iphone-2019.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/blog-log.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/blog-writing-checklist.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/build-to-win-homework-0x00.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/build-to-win.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/computer-base-network.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/cs231n-summary.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/deepreta.html</loc>
+    
+    <lastmod>2023-03-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1039,7 +1039,7 @@
 
   <url>
     <loc>https://blog.xiang578.com/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1047,595 +1047,595 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/life/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/book/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/game/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/movie/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/didiglobal/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/nlp/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/transformer/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/eta/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/self-attention/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/KDD/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/Paper/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/7/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/wrtiting/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/applescript/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/omnifocus/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/dash/</loc>
-    <lastmod>2023-03-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/font/</loc>
-    <lastmod>2023-03-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/weekly/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/network/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/font/</loc>
+    <lastmod>2023-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/weekly/</loc>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/Sleep/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/wordpress/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/blog/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/cnn/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/alexnet/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/Mac/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/Alfred/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/google/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/bert/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/code/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/Transformer/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/Time-Series-Forecasting/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/workflow/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/alfred/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/ifttt/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/zufe/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/iOS/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/app/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/best-of/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/hexo/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/vps/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/writing/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/engineering/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/computer/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/ml/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/course/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/uber/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/english/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/timetrack/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/hack/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/fm/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/ftrl/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/gbdt/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/machine-learing/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/lr/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/gtd/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/evernote/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/mubu/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/acm/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/hdu/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/didi/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/taskpaper/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/mac/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/software/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/MachineLearning/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/ipad/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/podcast/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/school/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/wiznote/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/system/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/algorithm/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/Reinforcement-Learning/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/backwpup/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/rime/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/logseq/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/covid-19/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/readwise/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/reading/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/travis/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/cos/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/github/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/travisci/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/lstm/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/widedeep/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/dnn/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/tags/ctr/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1644,56 +1644,56 @@
   
   <url>
     <loc>https://blog.xiang578.com/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/categories/%E6%96%87%E6%B8%8A%E9%98%81/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/categories/%E4%B8%8D%E8%80%81%E9%98%81/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xiang578.com/categories/note/</loc>
-    <lastmod>2023-03-28</lastmod>
+    <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
