@@ -11990,7 +11990,6 @@ span#inline-toc {
 .wm-avatar {
   border-radius: 50%;
   margin: 0;
-  border: 3px solid rgba(0,116,222,0.5);
 }
 .webmention-avatars .avatar-wrapper {
   margin-right: -8px;
