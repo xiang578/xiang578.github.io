@@ -1,3 +1,7 @@
+https://blog.xiang578.com/weekly/thinking-8.html
+https://blog.xiang578.com/post/eta-ref-list.html
+https://blog.xiang578.com/note/umami-docker.html
+https://blog.xiang578.com/travel/san-feng-huan-chuan.html
 https://blog.xiang578.com/movie/age-of-dynamic.html
 https://blog.xiang578.com/note/641ea60f-a31e-4979-9327-c50509c146e3.html
 https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html
@@ -94,7 +98,3 @@ https://blog.xiang578.com/post/use-wiznote-to-write-blog.html
 https://blog.xiang578.com/post/newipad.html
 https://blog.xiang578.com/post/hdu500.html
 https://blog.xiang578.com/post/lanqiaobei-2016.html
-https://blog.xiang578.com/post/just-for-fun.html
-https://blog.xiang578.com/post/zjp-2016.html
-https://blog.xiang578.com/post/hdu400.html
-https://blog.xiang578.com/post/english-writing-01.html
