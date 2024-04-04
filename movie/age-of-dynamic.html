@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh"><head><!-- hexo injector head_begin start --><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><script async src="https://umami.xiang578.com/script.js" data-website-id="0bf958fd-ca98-4a54-b1c0-bf3384802fcc"></script><script data-goatcounter="https://xiang578.goatcounter.com/count" async src="/count.js"></script><link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" /> <link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" /><link title="Follow me on Twitter" rel="me" href="https://twitter.com/xiang578"/><!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>@激流时代 - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="从 纪录片：激流时代 - 拾月 (skyue.com) 了解到这部纪录片。腾讯出品，《十三邀》团队制作，李翔主持，共 5 集每集一个主题，从商业角度来观察这个时代。"><meta property="og:type" content="blog"><meta property="og:title" content="@激流时代"><meta property="og:url" content="https://blog.xiang578.com/movie/age-of-dynamic.html"><meta property="og:site_name" content="算法花园"><meta property="og:description" content="从 纪录片：激流时代 - 拾月 (skyue.com) 了解到这部纪录片。腾讯出品，《十三邀》团队制作，李翔主持，共 5 集每集一个主题，从商业角度来观察这个时代。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/img/og_image.png"><meta property="article:published_time" content="2023-04-06T16:00:00.000Z"><meta property="article:modified_time" content="2023-05-07T09:11:40.000Z"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="机器学习"><meta property="article:tag" content="深度学习"><meta property="article:tag" content="阅读"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com/movie/age-of-dynamic.html"},"headline":"@激流时代","image":["https://blog.xiang578.com/img/og_image.png"],"datePublished":"2023-04-06T16:00:00.000Z","dateModified":"2023-05-07T09:11:40.000Z","author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":"从 纪录片：激流时代 - 拾月 (skyue.com) 了解到这部纪录片。腾讯出品，《十三邀》团队制作，李翔主持，共 5 集每集一个主题，从商业角度来观察这个时代。"}</script><link rel="canonical" href="https://blog.xiang578.com/movie/age-of-dynamic.html"><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2023-04-06T16:00:00.000Z" title="2023-04-06T16:00:00.000Z">2023-04-07</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2023-05-07T09:11:40.000Z" title="2023-05-07T09:11:40.000Z">2023-05-07</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E6%97%B6%E5%85%89%E6%9C%BA/">时光机</a></span><span class="level-item"><i class="far fa-clock"></i> 14 分钟读完 (大约2044个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="p-name title is-3 is-size-4-mobile">@激流时代</h1><div class="content  e-content"><p>从 <a target="_blank" rel="noopener" href="https://www.skyue.com/23031200.html">纪录片：激流时代 - 拾月 (skyue.com)</a> 了解到这部纪录片。腾讯出品，《十三邀》团队制作，李翔主持，共 5 集每集一个主题，从商业角度来观察这个时代。</p>
+<span id="more"></span>
+<h2 id="第1集直播浪潮"><a class="markdownIt-Anchor" href="#第1集直播浪潮"></a> 第1集：直播浪潮</h2>
+<p>直播带货无疑是这几年最火的话题。第一集记录去年双十一期间，杭州大中小三类主播的故事。节目中也贴心给出本集探讨的问题：</p>
+<ul>
+<li>(个体命运)底层主播有没有明天？
+<ul>
+<li>杭州万象城，大量主播当街直播带货，几部手机一部露营手拉车就是全部家当。</li>
+</ul>
+</li>
+<li>(行业状况)中部主播崛起能带来什么改变？
+<ul>
+<li>抖音女主播，小熊出没，靠拼时长和拼熬夜杀出来，还直言「不想输不能挺」。</li>
+</ul>
+</li>
+<li>(深度规则)头部主播能否被复制？
+<ul>
+<li>大部分主播都存在算法焦虑，抖音这样的平台注重内容而不人，似乎有可能快速推出一个新人。</li>
+<li>遥望科技 CEO 谢如栋在双十一这一天不停在公司旗下主播直播场地来回奔波，每次去到一个新的场地都会看一下对应直播间的数据，然后给直播组长一些建议。感觉他们也是数据驱动？</li>
+<li>选品会上谢如栋批评下属选的白牌直播福利品，「你应该让好的品牌去灵活，而不是让那些灵活的垃圾货进来」</li>
+</ul>
+</li>
+<li>(行业状态)电商伴生的信任重建能为中国人带来什么？
+<ul>
+<li>价格是护城河，现在看起来直播电商中，商家让利太多给主播个人，不知道什么时候会开始反击？</li>
+<li>谢如栋讲到希望能搭建一个直播中台，给不同的主播提供场地和货源。</li>
+<li>直播这么火是不是之前的推荐系统算法还不够智能？</li>
+</ul>
+</li>
+</ul>
+<p>创新者的窘境</p>
+<ul>
+<li>新行业的赢家不会是旧行业的赢家，所以能找到第二曲线的公司真的好少。</li>
+</ul>
+<p>直播不仅是争夺观众的注意力，更是争夺观众的钱包。其实更希望能看一下原来占据注意力和钱包的模式变得怎么样了。</p>
+<h2 id="第2集咖啡之围"><a class="markdownIt-Anchor" href="#第2集咖啡之围"></a> 第2集：咖啡之围</h2>
+<p>这一集是云南咖啡，讲产业升级的困境。最初的云南咖啡是走期货模式，现在希望能做成精品咖啡，获得更高的溢价空间。</p>
+<p>期货模式，看起来能更好的标准化，但是做不过其他国家的原因居然是国内的人工成本太高，埃塞尔比亚人工 7 元一天，云南的人工要 100 一天，导致咖啡豆的成本比其他产地要高。而且看起来种植咖啡的工业化程度也不太高，没有那种大片农场的感觉，也没有收割机这样的大型设备。</p>
+<p>精品咖啡，供给测标准，有协会有咖啡师给你认定。不过，我总是感觉这些接近于玄学……农作物有一个特点，产地即品牌，云南之前给人的印象是期货咖啡，如果不能形成新的品牌出来，还是很难和其他产地竞争。另外，商业社会残酷的地方在于市场需求就这么大，没有那么多人为这些买单，你就只能当成普通咖啡豆去卖。这么一想，还是当螺丝钉好一些，只要内卷就可以……</p>
+<p>说回咖啡，工作之后偶尔会喝一喝咖啡，不过还是停留在公司内部咖啡厅水平（价格和瑞幸差不多），喝的就是通过咖啡因让自己更加精神。</p>
+<h2 id="第3集消费不息"><a class="markdownIt-Anchor" href="#第3集消费不息"></a> 第3集：消费不息</h2>
+<p>聚集在长沙，讨论新消费、新体验以及新设计美学。</p>
+<ul>
+<li>新的风口自然少不了投资人，这集也采访了峰瑞资本的李丰</li>
+</ul>
+<p>超级文和友，注重体验的品牌。最早在[[疯投圈]]上听过，也见过社交平台上发的动不动上万的等位照片。</p>
+<ul>
+<li>创始人文宾非常有个性，印象最深的是给李翔介绍狭小的卧室，讲自己不喜欢住大的房子，还特意拉李翔坐下来感受一下房间窗外的风景。</li>
+<li>在创始人的心中，超级文和友不是湖南地方精神，而是对应城市的地方精神。可惜深圳和广州的店都没怎么成功。</li>
+<li>和其他人一样，你就没有机会存活下来。</li>
+<li>商业的本质是利他</li>
+<li>提到印度消费品品牌，帕坦加利</li>
+</ul>
+<p>茶颜悦色</p>
+<ul>
+<li>刚开始还有一点小作坊的感觉，慢慢变得正规。</li>
+</ul>
+<p>柠茶</p>
+<ul>
+<li>主打标准化，按流程李翔都能制作一杯标准的茶。在这种方式中，人只是一个工具，不知道什么时候会被完全替代？</li>
+</ul>
+<p>顶上头</p>
+<ul>
+<li>螺蛳粉火锅，创始人自我定位客单价只能做到 50 左右。挺想尝试的。</li>
+</ul>
+<p>李翔</p>
+<ul>
+<li>商业有意思的地方就在于，它一点都不在乎你是否认同，有人认同愿意付钱就行。</li>
+</ul>
+<h2 id="第4集宇宙中心"><a class="markdownIt-Anchor" href="#第4集宇宙中心"></a> 第4集：“宇宙中心”</h2>
+<p>这集选择地点是上海安福路。和三里屯、太古里这样的网红地点相比较，安福路的社区文化不是商业化公司整体运营形成的。</p>
+<p>最初这地方有一个话剧院，负责人喻荣军讲希望做成百老汇模式，观众看完话剧后，可以挑选一些餐厅，然后边吃饭边讨论剧情，然后用话剧院的物业，挑选了一些入住的商业实体。</p>
+<p>国内大部分旅游中心是小商品市场，做的是去特色，安福路的文化核心是时间的积累，外面的人很难融入进去。附近的居民也说到，游客走完才是真正的安福路。</p>
+<p>这条路上居然还有多抓鱼。前几周有同事问我有什么处理旧书的渠道，给他推荐了多抓鱼，技术书籍回收基本上才几块钱……</p>
+<h2 id="第5集穿越周期"><a class="markdownIt-Anchor" href="#第5集穿越周期"></a> 第5集：穿越周期</h2>
+<p>沙漠里不长虚弱的草，大海里没有无名之辈。</p>
+<p>话剧中心</p>
+<ul>
+<li>底线是什么</li>
+</ul>
+<p>奥迪的广告</p>
+<ul>
+<li>车和大众消费品是两个概念，人生安全相关，工业时代产品巅峰之作</li>
+<li>大众产品穿越周期之间，边界是什么？质量</li>
+</ul>
+<p>冯仑</p>
+<ul>
+<li>穿越周期是少数人的事情</li>
+<li>变化过程中什么是不变的，这才是你的核心。</li>
+<li>认识到能力圈，芒格的不为清单。</li>
+</ul>
+<p>李翔</p>
+<ul>
+<li>[[塔勒布]] 作家被人记住的是他最好的作品。政治家被人记住的是他最糟糕的决定。而商人几乎不会被记住。
+<ul>
+<li>企业家更大影响力，把技术更加大众化，更能带来改变。</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>在 youtube 上看的，每集都会有一段时间突然没有声音。网上查了一下，可能是因为 bgm 版本问题，所以主动做了消音……</p>
+<p>前 4 集每集一个城市，奇怪的是没有出现北京，这个时代不需要北京吗？</p>
+<p>如果我给这个系列选主题，可能会选：直播、咖啡、远程工作、自由职业</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>@激流时代</p><p><a href="https://blog.xiang578.com/movie/age-of-dynamic.html">https://blog.xiang578.com/movie/age-of-dynamic.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ryen Xiang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-04-07</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-05-07</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/travel/san-feng-huan-chuan.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">三峰环穿</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/note/641ea60f-a31e-4979-9327-c50509c146e3.html"><span class="level-item">webmention 实现参考</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><script>var webmentionContext = { baseUrl:'https://webmention.io'}; </script><script src="/js/webmention.js"></script><div class="card"><div class="card-content"><h2 class="title is-5">网络回响</h2><div class="webmention-timeline"></div><script src="/js/webmention-timeline.js"></script></div></div><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="waline-thread"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.css"><script src="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.js"></script><script>Waline.init({
+            el: '#waline-thread',
+            serverURL: "https://comment.xiang578.com/",
+            path: window.location.pathname,
+            lang: "zh-CN",
+            locale: {"placeholder":"Comment here..."},
+            emoji: ["//unpkg.com/@waline/emojis@1.0.1/weibo"],
+            dark: "auto",
+            meta: ["nick","mail","link"],
+            requiredMeta: [],
+            login: "enable",
+            
+            pageSize: 10,
+            imageUploader: false,
+            
+            texRenderer: false,
+            search: false,
+            pageview: true,
+            comment: false,
+            copyright: true,
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#第1集直播浪潮"><span class="level-left"><span class="level-item">1</span><span class="level-item"> 第1集：直播浪潮</span></span></a></li><li><a class="level is-mobile" href="#第2集咖啡之围"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 第2集：咖啡之围</span></span></a></li><li><a class="level is-mobile" href="#第3集消费不息"><span class="level-left"><span class="level-item">3</span><span class="level-item"> 第3集：消费不息</span></span></a></li><li><a class="level is-mobile" href="#第4集宇宙中心"><span class="level-left"><span class="level-item">4</span><span class="level-item"> 第4集：“宇宙中心”</span></span></a></li><li><a class="level is-mobile" href="#第5集穿越周期"><span class="level-left"><span class="level-item">5</span><span class="level-item"> 第5集：穿越周期</span></span></a></li><li><a class="level is-mobile" href="#总结"><span class="level-left"><span class="level-item">6</span><span class="level-item"> 总结</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">116</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">86</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-03T16:00:00.000Z">2024-04-04</time></p><p class="title"><a href="/note/github-publisher.html">Github Publisher</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-02-05T12:53:11.000Z">2024-02-05</time></p><p class="title"><a href="/weekly/thinking-8.html">【随想集】 8 新的键盘</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-06T14:31:02.000Z">2023-07-06</time></p><p class="title"><a href="/post/eta-ref-list.html">eta 技术参考</a></p><p class="categories"><a href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-05-07T09:01:18.000Z">2023-05-07</time></p><p class="title"><a href="/note/umami-docker.html">从 umami cloud 迁移到自建 umami</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-25T15:21:36.000Z">2023-04-25</time></p><p class="title"><a href="/travel/san-feng-huan-chuan.html">三峰环穿</a></p><p class="categories"><a href="/categories/%E8%A1%8C%E6%97%85%E8%AE%B0/">行旅记</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2015-2024 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

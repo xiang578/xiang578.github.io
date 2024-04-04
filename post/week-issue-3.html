@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh"><head><!-- hexo injector head_begin start --><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><script async src="https://umami.xiang578.com/script.js" data-website-id="0bf958fd-ca98-4a54-b1c0-bf3384802fcc"></script><script data-goatcounter="https://xiang578.goatcounter.com/count" async src="/count.js"></script><link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" /> <link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" /><link title="Follow me on Twitter" rel="me" href="https://twitter.com/xiang578"/><!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>每周分享第 3 期 - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。   文章 1、 GitHub 和开源是对穷人的恩赐 - 来自知乎专栏，作者: 园长 想起之前PAT老师过来宣传PAT时（我不是很看好这个考试），将到企业通过学校来筛选候选人是因为应聘者太多，企业只需要找到合适的人，不需要考虑社会公平。这篇文章中谈到的观点，通过 Github 给开源世界贡献代码，能记录你学习成长的过程（git commit"><meta property="og:type" content="blog"><meta property="og:title" content="每周分享第 3 期"><meta property="og:url" content="https://blog.xiang578.com/post/week-issue-3.html"><meta property="og:site_name" content="算法花园"><meta property="og:description" content="这里记录过去一周，我看到的值得分享的东西，每周六更新。   文章 1、 GitHub 和开源是对穷人的恩赐 - 来自知乎专栏，作者: 园长 想起之前PAT老师过来宣传PAT时（我不是很看好这个考试），将到企业通过学校来筛选候选人是因为应聘者太多，企业只需要找到合适的人，不需要考虑社会公平。这篇文章中谈到的观点，通过 Github 给开源世界贡献代码，能记录你学习成长的过程（git commit"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://media.xiang578.com/IMG_0520.jpg"><meta property="article:published_time" content="2018-06-16T09:39:04.000Z"><meta property="article:modified_time" content="2024-04-04T12:37:25.486Z"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="weekly"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://media.xiang578.com/IMG_0520.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com/post/week-issue-3.html"},"headline":"每周分享第 3 期","image":["https://media.xiang578.com/IMG_0520.jpg"],"datePublished":"2018-06-16T09:39:04.000Z","dateModified":"2024-04-04T12:37:25.486Z","author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":"这里记录过去一周，我看到的值得分享的东西，每周六更新。   文章 1、 GitHub 和开源是对穷人的恩赐 - 来自知乎专栏，作者: 园长 想起之前PAT老师过来宣传PAT时（我不是很看好这个考试），将到企业通过学校来筛选候选人是因为应聘者太多，企业只需要找到合适的人，不需要考虑社会公平。这篇文章中谈到的观点，通过 Github 给开源世界贡献代码，能记录你学习成长的过程（git commit"}</script><link rel="canonical" href="https://blog.xiang578.com/post/week-issue-3.html"><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-06-16T09:39:04.000Z" title="2018-06-16T09:39:04.000Z">2018-06-16</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-04-04T12:37:25.486Z" title="2024-04-04T12:37:25.486Z">2024-04-04</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 9 分钟读完 (大约1349个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="p-name title is-3 is-size-4-mobile">每周分享第 3 期</h1><div class="content  e-content"><blockquote>
+<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。</p>
+</blockquote>
+<h2 id="文章"><a class="markdownIt-Anchor" href="#文章"></a> 文章</h2>
+<p>1、 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37954828">GitHub 和开源是对穷人的恩赐 - 来自知乎专栏，作者: 园长</a><br />
+想起之前PAT老师过来宣传PAT时（我不是很看好这个考试），将到企业通过学校来筛选候选人是因为应聘者太多，企业只需要找到合适的人，不需要考虑社会公平。这篇文章中谈到的观点，通过 Github 给开源世界贡献代码，能记录你学习成长的过程（git commit 还可以修改，是不是区块链技术适合这个场景），让更多的人认识你，逃过企业的一些过滤器。校招时，也在简历上写过 github 地址，在网易游戏面试，面试官还夸了一下。某一刻突然认识到，你需要找到属于自己的产品。</p>
+<p>2、<a target="_blank" rel="noopener" href="https://sspai.com/post/44946">重新捡起GTD —— 读《软技能》有感 - 少数派</a><br />
+少数派上关于工作效率探讨的文章之一，我在月读中也推荐过《软技能》，这篇文章的作者结合里面的原理，打造了属于自己的工作流，有一定的参考意义，也可以当成是开始实现 GTD 的范本。</p>
+<p>3、<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24709748">矩阵求导术（上）</a><br />
+学习机器学习时遇到的困难之一，这篇文章介绍的很详细，最后也分析了几个机器学习中的例题。</p>
+<h2 id="图片"><a class="markdownIt-Anchor" href="#图片"></a> 图片</h2>
+<p>1、中国看待世界的方法。小时候总以为世界上只有两个国家，中国和外国。<br />
+<img src="https://media.xiang578.com/IMG_0520.jpg" alt="IMG_0520" /></p>
+<h2 id="视频"><a class="markdownIt-Anchor" href="#视频"></a> 视频</h2>
+<p>1、<a target="_blank" rel="noopener" href="https://weibo.com/6525927484/GkT3eDSJV?type=comment">一条穿过河北农村的海底隧道｜大史记 Vol.6… 来自史里芬Schlieffen - 微博</a>：魔幻现实主义，拥有中国特色的海洋馆，之前没有想过还可以建造龙宫。大史记还有好几个更这种类似的视频，介绍国内一些疯狂的建筑。</p>
+<p>2、<a target="_blank" rel="noopener" href="https://v.qq.com/x/cover/814qe0slfkkskwk/x002699zoip.html">第1集 长沙：解放西路旁的小餐厅_纪实72小时(中国版)_腾讯视频</a>：纪实72小时是日本 NHK 电视台的节目，每期选择一个地点连续拍摄 72 小时。之前在 B 站上看过这个系列很多的，现在腾讯搞了一个中文版的。看完第一集之后，没有日版的味道，感觉日版选择餐厅主题时，会平衡食物与故事之间的分配，长沙这个餐厅中，注重煽情。还是期待未来能去更多的地方拍摄。</p>
+<h2 id="金句"><a class="markdownIt-Anchor" href="#金句"></a> 金句</h2>
+<p>1、币圈生存法则不是已经告诉你了么 倾家荡产四大捷径：1，追涨杀跌；2，期货杠杆；3，融资融币；4，短线神操作。 人生巅峰四条大道：1，踏实工作；2，闲钱投资；3、长线持有；4，按时吃饭睡觉。 还有再加一条: 远离空气币。——勃学日常反投机语录之一</p>
+<p>2、我对于主播粉丝感到非常费解的一个地方，就是能够把极高的信任授予某一本质上并非双向认识的一个人。 ——目睹之前绝地求生主播圈内的开挂风波的感叹</p>
+<p>3、当别人知识体系已经汇编成执行节点，不仅达到成熟运转，还设计了升级调整的节奏，你的知识体系却还远远没有完善。</p>
+<p>4、无非三本的学生不仅仅在初筛的时候会失去很多机会，并且在推销证明自己的时候，需要拿出比985学生更多的东西出来。 ——又快要到了高考填志愿的时候，不同选择的差距所在。前面也提到过这个观点。</p>
+<h2 id="微博写作训练"><a class="markdownIt-Anchor" href="#微博写作训练"></a> 微博写作训练</h2>
+<p>1、从少数派 Power+ 中看到的文章——颜色与身份统一。很多软件设置项目的颜色（比如日历软件中事件的颜色，todoist 中项目的颜色等等），思考将这些颜色对应一个现实中的身份进行统一（比如个人-绿色、家庭-紫色、工作/学校-棕色、其他-黄色），在不同的软件中进行统一（todoist、toggl、日历、文件夹）。在无法设置颜色的软件中利用 Emoji 解决。#效率思维#<br />
+少数派中文章是专属的，所以不放链接。放上知乎上一篇类似的文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37343086">彩虹分类法：用七种颜色管理时间</a><br />
+。</p>
+<h2 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h2>
+<p>1、<a target="_blank" rel="noopener" href="https://sspai.com/post/44908">苹果设计奖的赢家，集日历、任务管理、笔记于一身的应用：Agenda - 少数派</a>：看起来不错的一款多功能应用，由于之前的系统迁移成本有些太高，这一次都没有尝试的兴趣。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>每周分享第 3 期</p><p><a href="https://blog.xiang578.com/post/week-issue-3.html">https://blog.xiang578.com/post/week-issue-3.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ryen Xiang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2018-06-16</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-04-04</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div><!--!--></article></div><div class="card"><div class="card-content"><h2>相关文章</h2><span><ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/Never-Reading-202007.html" title="【Never Reading】 202007 互联网商业模式" rel="bookmark">【Never Reading】 202007 互联网商业模式</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/Never-Reading-202008.html" title="【Never Reading】 202008 选择记忆" rel="bookmark">【Never Reading】 202008 选择记忆</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/Thinking-01.html" title="【随想集】01 我讲不清楚事情怎么办？" rel="bookmark">【随想集】01 我讲不清楚事情怎么办？</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/Thinking-02.html" title="【随想集】02 我曾刻意远离人群" rel="bookmark">【随想集】02 我曾刻意远离人群</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/monthly-issue-201912.html" title="【每月分享】 201912" rel="bookmark">【每月分享】 201912</a></h3></div></li></ul></span></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/007-aciton-reflection.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">007 践行反思</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/universiy-booklist.html"><span class="level-item">大学书单</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><script>var webmentionContext = { baseUrl:'https://webmention.io'}; </script><script src="/js/webmention.js"></script><div class="card"><div class="card-content"><h2 class="title is-5">网络回响</h2><div class="webmention-timeline"></div><script src="/js/webmention-timeline.js"></script></div></div><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="waline-thread"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.css"><script src="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.js"></script><script>Waline.init({
+            el: '#waline-thread',
+            serverURL: "https://comment.xiang578.com/",
+            path: window.location.pathname,
+            lang: "zh-CN",
+            locale: {"placeholder":"Comment here..."},
+            emoji: ["//unpkg.com/@waline/emojis@1.0.1/weibo"],
+            dark: "auto",
+            meta: ["nick","mail","link"],
+            requiredMeta: [],
+            login: "enable",
+            
+            pageSize: 10,
+            imageUploader: false,
+            
+            texRenderer: false,
+            search: false,
+            pageview: true,
+            comment: false,
+            copyright: true,
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#文章"><span class="level-left"><span class="level-item">1</span><span class="level-item"> 文章</span></span></a></li><li><a class="level is-mobile" href="#图片"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 图片</span></span></a></li><li><a class="level is-mobile" href="#视频"><span class="level-left"><span class="level-item">3</span><span class="level-item"> 视频</span></span></a></li><li><a class="level is-mobile" href="#金句"><span class="level-left"><span class="level-item">4</span><span class="level-item"> 金句</span></span></a></li><li><a class="level is-mobile" href="#微博写作训练"><span class="level-left"><span class="level-item">5</span><span class="level-item"> 微博写作训练</span></span></a></li><li><a class="level is-mobile" href="#工具"><span class="level-left"><span class="level-item">6</span><span class="level-item"> 工具</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">116</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">86</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-03T16:00:00.000Z">2024-04-04</time></p><p class="title"><a href="/note/github-publisher.html">Github Publisher</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-02-05T12:53:11.000Z">2024-02-05</time></p><p class="title"><a href="/weekly/thinking-8.html">【随想集】 8 新的键盘</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-06T14:31:02.000Z">2023-07-06</time></p><p class="title"><a href="/post/eta-ref-list.html">eta 技术参考</a></p><p class="categories"><a href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-05-07T09:01:18.000Z">2023-05-07</time></p><p class="title"><a href="/note/umami-docker.html">从 umami cloud 迁移到自建 umami</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-25T15:21:36.000Z">2023-04-25</time></p><p class="title"><a href="/travel/san-feng-huan-chuan.html">三峰环穿</a></p><p class="categories"><a href="/categories/%E8%A1%8C%E6%97%85%E8%AE%B0/">行旅记</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2015-2024 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

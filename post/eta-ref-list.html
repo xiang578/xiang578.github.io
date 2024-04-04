@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh"><head><!-- hexo injector head_begin start --><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><script async src="https://umami.xiang578.com/script.js" data-website-id="0bf958fd-ca98-4a54-b1c0-bf3384802fcc"></script><script data-goatcounter="https://xiang578.goatcounter.com/count" async src="/count.js"></script><link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" /> <link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" /><link title="Follow me on Twitter" rel="me" href="https://twitter.com/xiang578"/><!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>eta 技术参考 - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="持续整理中"><meta property="og:type" content="blog"><meta property="og:title" content="eta 技术参考"><meta property="og:url" content="https://blog.xiang578.com/post/eta-ref-list.html"><meta property="og:site_name" content="算法花园"><meta property="og:description" content="持续整理中"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://media.xiang578.com/202307062006132-gaode-eta.png"><meta property="article:published_time" content="2023-07-06T14:31:02.000Z"><meta property="article:modified_time" content="2023-07-06T14:31:02.000Z"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="机器学习"><meta property="article:tag" content="深度学习"><meta property="article:tag" content="阅读"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://media.xiang578.com/202307062006132-gaode-eta.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com/post/eta-ref-list.html"},"headline":"eta 技术参考","image":["https://media.xiang578.com/202307062006132-gaode-eta.png"],"datePublished":"2023-07-06T14:31:02.000Z","dateModified":"2023-07-06T14:31:02.000Z","author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":"持续整理中"}</script><link rel="canonical" href="https://blog.xiang578.com/post/eta-ref-list.html"><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2023-07-06T14:31:02.000Z" title="2023-07-06T14:31:02.000Z">2023-07-06</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2023-07-06T14:31:02.000Z" title="2023-07-06T14:31:02.000Z">2023-07-06</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></span><span class="level-item"><i class="far fa-clock"></i> 9 分钟读完 (大约1306个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="p-name title is-3 is-size-4-mobile">eta 技术参考</h1><div class="content  e-content"><p>持续整理中</p>
+<span id="more"></span>
+<h2 id="滴滴"><a class="markdownIt-Anchor" href="#滴滴"></a> 滴滴</h2>
+<p>[[@Multi-task Representation Learning for Travel Time Estimation]] 多任务框架，预估行程时间和行程距离</p>
+<p>[[@HetETA: Heterogeneous Information Network Embedding for Estimating Time of Arrival]] 图卷积应用在 ETA 和路况预测任务</p>
+<p>[[@Learning to Estimate the Travel Time]] 2018 年KDD，Wide &amp; Deep &amp; RNN</p>
+<p>[[CompactETA]] link 表达 + mlp</p>
+<p>[[@Interpreting Trajectories from Multiple Views: A Hierarchical Self-Attention Network for Estimating the Time of Arrival]]</p>
+<p>Dynamic Heterogeneous Graph Neural Network for Real-time Event Prediction</p>
+<ul>
+<li>使用异质图神经网络进行实时事件预测</li>
+</ul>
+<h2 id="百度"><a class="markdownIt-Anchor" href="#百度"></a> 百度</h2>
+<p>[[@ConSTGAT: Contextual Spatial-Temporal Graph Attention Network for Travel Time Estimation at Baidu Maps]] 时空图注意力网络</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ZqQN7Qep-6sNbNCAx0UE6A">工业解密：百度地图背后的路线时长预估模型！</a></li>
+</ul>
+<p>[[@SSML: Self-Supervised Meta-Learner for En Route Travel Time Estimation at Baidu Maps]]</p>
+<p>[[@DuETA: Traffic Congestion Propagation Pattern Modeling via Efficient Graph Learning for ETA Prediction at Baidu Maps]]</p>
+<p>[[@DuTraffic: Live Traffic Condition Prediction with Trajectory Data and Street Views at Baidu Maps]]</p>
+<h2 id="高德"><a class="markdownIt-Anchor" href="#高德"></a> 高德</h2>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/laoI9y8cRRZpbferCM7cBg">走近高德驾车ETA（预估到达时间） (qq.com)</a></p>
+<ul>
+<li>概念
+<ul>
+<li>SP(Speed Profile)：同一特征日相同时间区间的历史平均速度，按 10min 聚合。例如每周一早上 9:00-9:10，某个 link 上所有轨迹，可以将过去几周聚合求一个平均速度，这个平均速度可以代表对这个 link 在未来周一早上 9:00-9:10 这个时间区间内通行速度的静态预测。</li>
+<li>AutoLR(Autonavi Location Reference)：实时路况</li>
+<li>link 通行耗时真值：在一个 5min 的时间窗口内进入某一 link 的所有轨迹，在完成去噪后求取平均值，即得到该 link 在该 5min 窗口内的通行耗时真值。</li>
+</ul>
+</li>
+<li>框架
+<ul>
+<li><img src="https://media.xiang578.com/202307062006132-gaode-eta.png" alt="" /></li>
+</ul>
+</li>
+<li>真值生产
+<ul>
+<li>将各个 link 上 5min 窗口的实走轨迹聚合求平均通行时间，得到 link 通行耗时真值。</li>
+<li>给定 trace 推算通行耗时真值</li>
+</ul>
+</li>
+<li>link 场景化预测：根据历史真值将 link 归为不同类别
+<ul>
+<li>不堵 link 直接用静态 sp</li>
+</ul>
+</li>
+<li>link 级别预测
+<ul>
+<li>静态 sp，预测时间跨度可达未来一周</li>
+<li>线性模型，通过实时信息 autolr 和历史信息 sp 来拟合 link 级真值</li>
+<li>精准预测，模型预测</li>
+</ul>
+</li>
+<li>trace 级别预测
+<ul>
+<li>准点率预测，给出 trace 级别预测结果的可信度</li>
+<li>路线 link 每 5 分钟推演，使用对应时间片的预测结果。超过 1 小时用历史。最后累加得到整条路线 eta。</li>
+</ul>
+</li>
+<li>效果评测层面
+<ul>
+<li>对问题 link 的 eta 进行自动干预，人工干预</li>
+</ul>
+</li>
+<li>精准预测
+<ul>
+<li>每分钟将 link 级多时间跨度预测值写入缓存，预测是有精准预测值的情况下将有限使用精准预测结果</li>
+<li>1小时内有实时路况，使用线性模型预测</li>
+</ul>
+</li>
+<li>eta 预测难点
+<ul>
+<li>未来流量，让深度模型提前感知拥堵的到来</li>
+<li>对导航路线进行时间推演，得到未来时间的位置。</li>
+<li>[[H-STGCN]] 用域转换器整合异质模态的交通流量特征，设计了复合邻接矩阵使得图卷积层能够更好地捕捉路段间的接近性。</li>
+</ul>
+</li>
+<li>效果评估
+<ul>
+<li>link 评估</li>
+<li>bad link 定义 link eta 和 link ata 的 ape 大于 0.3</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><mfrac><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></msubsup><mo stretchy="false">(</mo><mi>l</mi><mi>i</mi><mi>n</mi><msubsup><mi>k</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>e</mi><mi>t</mi><mi>a</mi></mrow><mi>j</mi></msubsup><mo>−</mo><mi>l</mi><mi>i</mi><mi>n</mi><msubsup><mi>k</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>a</mi><mi>t</mi><mi>a</mi></mrow><mi>j</mi></msubsup><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><mrow><mi>n</mi><mo>∗</mo><mi>k</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">MSE= \frac{\sum_{i=1}^n \sum_{j=1}^k (link_{i,eta}^j - link_{i, ata}^j)^2}{n * k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.6461599999999998em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3011599999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">∗</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.63282em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight"><span class="mop op-symbol small-op mtight" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7385428571428572em;"><span style="top:-2.1785614285714283em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.32143857142857146em;"><span></span></span></span></span></span></span><span class="mspace mtight" style="margin-right:0.19516666666666668em;"></span><span class="mop mtight"><span class="mop op-symbol small-op mtight" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9270285714285714em;"><span style="top:-2.1785614285714283em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.46032428571428574em;"><span></span></span></span></span></span></span><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">n</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9547714285714286em;"><span style="top:-2.177714285714286em;margin-left:-0.03148em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">a</span></span></span></span><span style="top:-2.9836857142857145em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.46117142857142857em;"><span></span></span></span></span></span></span><span class="mbin mtight">−</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">n</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9547714285714286em;"><span style="top:-2.177714285714286em;margin-left:-0.03148em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">a</span></span></span></span><span style="top:-2.9836857142857145em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.46117142857142857em;"><span></span></span></span></span></span></span><span class="mclose mtight"><span class="mclose mtight">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913142857142857em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li>trace 评估</li>
+<li>trace 的 ata 和 eta 对比</li>
+</ul>
+</li>
+</ul>
+<p>[[@Hybrid Spatio-Temporal Graph Convolutional Network: Improving Traffic Prediction with Navigation Data]]<br />
+id:: 63f271b5-aa49-4212-a7c8-507109aefab5</p>
+<ul>
+<li>预测流量</li>
+<li>DARTS</li>
+<li>[[STGCN]]</li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4MzIwMDM5Ng==&amp;mid=2247485057&amp;idx=1&amp;sn=f5f5dccaf41a00c76d62118bf8a42aa7&amp;chksm=cf4a5e62f83dd774ec9a4ef4fc442c8266b587579ed01171a57b6b3bedcbcc3047edc4134a8f&amp;scene=21#wechat_redirect">高德KDD2020论文解读|混合时空图卷积网络：更精准的时空预测模型 (qq.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/0fV21yi9Og0dxsKIJ0o0Xw">混合时空图卷积网络：能“推导”未来路况的智能算法 (qq.com)</a></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/DXMyXfuUtUGcgB33Jvn8YQ">深度学习在高德驾车导航历史速度预测中的探索与实践 (qq.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/782454">AI在出行场景的应用实践：路线规划、ETA、动态事件挖掘…-阿里云开发者社区 (aliyun.com)</a></p>
+<h2 id="饿了么"><a class="markdownIt-Anchor" href="#饿了么"></a> 饿了么</h2>
+<p>[[@Order Fulfillment Cycle Time Estimation for On-Demand Food Delivery]]</p>
+<h2 id="美团"><a class="markdownIt-Anchor" href="#美团"></a> 美团</h2>
+<p>[[深度学习在美团配送ETA预估中的探索与实践]]</p>
+<p>[[@A Deep Learning Method for Route and Time Prediction in Food Delivery Service]]</p>
+<h2 id="google"><a class="markdownIt-Anchor" href="#google"></a> Google</h2>
+<p>[[@ETA Prediction with Graph Neural Networks in Google Maps]]</p>
+<p>[[@BusTr: Predicting Bus Travel Times from Real-Time Traffic]]</p>
+<h2 id="uber"><a class="markdownIt-Anchor" href="#uber"></a> Uber</h2>
+<p>[[@DeeprETA: An ETA Post-processing System at Scale]]<br />
+collapsed:: true</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=CJTitzj0qBo">How Uber Predicts Arrival Times - Xinyu Hu and Olcay Cirit | Stanford MLSys #64 - YouTube</a>：从两个方面介绍他们的 ETA 系统：how we make it faster 以及 how we make it general(loss 和 calibration)</li>
+<li><a target="_blank" rel="noopener" href="https://www.uber.com/en-JP/blog/deepeta-how-uber-predicts-arrival-times/">DeepETA: How Uber Predicts Arrival Times Using Deep Learning | Uber Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10302600">Day 17 Uber 要如何估計司機和外送的抵達時間？（上）- Self attention 介紹</a>：简单讲了 self-attention 的计算过程</li>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10303293">Day 18 Uber 要如何估計司機和外送的抵達時間？（下）- DeeprETANet</a>
+<ul>
+<li>geospatial features</li>
+<li>geohashing 转成 string</li>
+<li>用 multiple feature hashing 转成 index</li>
+</ul>
+</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>eta 技术参考</p><p><a href="https://blog.xiang578.com/post/eta-ref-list.html">https://blog.xiang578.com/post/eta-ref-list.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ryen Xiang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2023-07-06</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-07-06</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/weekly/thinking-8.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">【随想集】 8 新的键盘</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/note/umami-docker.html"><span class="level-item">从 umami cloud 迁移到自建 umami</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><script>var webmentionContext = { baseUrl:'https://webmention.io'}; </script><script src="/js/webmention.js"></script><div class="card"><div class="card-content"><h2 class="title is-5">网络回响</h2><div class="webmention-timeline"></div><script src="/js/webmention-timeline.js"></script></div></div><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="waline-thread"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.css"><script src="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.js"></script><script>Waline.init({
+            el: '#waline-thread',
+            serverURL: "https://comment.xiang578.com/",
+            path: window.location.pathname,
+            lang: "zh-CN",
+            locale: {"placeholder":"Comment here..."},
+            emoji: ["//unpkg.com/@waline/emojis@1.0.1/weibo"],
+            dark: "auto",
+            meta: ["nick","mail","link"],
+            requiredMeta: [],
+            login: "enable",
+            
+            pageSize: 10,
+            imageUploader: false,
+            
+            texRenderer: false,
+            search: false,
+            pageview: true,
+            comment: false,
+            copyright: true,
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#滴滴"><span class="level-left"><span class="level-item">1</span><span class="level-item"> 滴滴</span></span></a></li><li><a class="level is-mobile" href="#百度"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 百度</span></span></a></li><li><a class="level is-mobile" href="#高德"><span class="level-left"><span class="level-item">3</span><span class="level-item"> 高德</span></span></a></li><li><a class="level is-mobile" href="#饿了么"><span class="level-left"><span class="level-item">4</span><span class="level-item"> 饿了么</span></span></a></li><li><a class="level is-mobile" href="#美团"><span class="level-left"><span class="level-item">5</span><span class="level-item"> 美团</span></span></a></li><li><a class="level is-mobile" href="#google"><span class="level-left"><span class="level-item">6</span><span class="level-item"> Google</span></span></a></li><li><a class="level is-mobile" href="#uber"><span class="level-left"><span class="level-item">7</span><span class="level-item"> Uber</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">116</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">86</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-03T16:00:00.000Z">2024-04-04</time></p><p class="title"><a href="/note/github-publisher.html">Github Publisher</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-02-05T12:53:11.000Z">2024-02-05</time></p><p class="title"><a href="/weekly/thinking-8.html">【随想集】 8 新的键盘</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-06T14:31:02.000Z">2023-07-06</time></p><p class="title"><a href="/post/eta-ref-list.html">eta 技术参考</a></p><p class="categories"><a href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-05-07T09:01:18.000Z">2023-05-07</time></p><p class="title"><a href="/note/umami-docker.html">从 umami cloud 迁移到自建 umami</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-25T15:21:36.000Z">2023-04-25</time></p><p class="title"><a href="/travel/san-feng-huan-chuan.html">三峰环穿</a></p><p class="categories"><a href="/categories/%E8%A1%8C%E6%97%85%E8%AE%B0/">行旅记</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2015-2024 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

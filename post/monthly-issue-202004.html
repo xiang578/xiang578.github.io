@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh"><head><!-- hexo injector head_begin start --><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><script async src="https://umami.xiang578.com/script.js" data-website-id="0bf958fd-ca98-4a54-b1c0-bf3384802fcc"></script><script data-goatcounter="https://xiang578.goatcounter.com/count" async src="/count.js"></script><link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" /> <link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" /><link title="Follow me on Twitter" rel="me" href="https://twitter.com/xiang578"/><!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>【每月分享】 202004 新的尝试 - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="不知不觉又到更新每月分享的时间。 想写一下我为什么做这件事情？分享自己平时看到有意思的内容，现实世界认识的人，很少对我关注的内容感兴趣，所幸能借助博客超越时间和空间限制的分享。 另外一点，我希望自己能将这个系列当成一个产品去迭代，每一期都有形式和内容上的进步。这件事看起来很简单，但却需要耗费很大的精力。其实在网上看到很多人通过这种形式分享，到头来还在坚持的大概也没有多少人（比如阮一峰的科技爱好者周"><meta property="og:type" content="blog"><meta property="og:title" content="【每月分享】 202004 新的尝试"><meta property="og:url" content="https://blog.xiang578.com/post/monthly-issue-202004.html"><meta property="og:site_name" content="算法花园"><meta property="og:description" content="不知不觉又到更新每月分享的时间。 想写一下我为什么做这件事情？分享自己平时看到有意思的内容，现实世界认识的人，很少对我关注的内容感兴趣，所幸能借助博客超越时间和空间限制的分享。 另外一点，我希望自己能将这个系列当成一个产品去迭代，每一期都有形式和内容上的进步。这件事看起来很简单，但却需要耗费很大的精力。其实在网上看到很多人通过这种形式分享，到头来还在坚持的大概也没有多少人（比如阮一峰的科技爱好者周"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/img/og_image.png"><meta property="article:published_time" content="2020-05-01T08:55:11.000Z"><meta property="article:modified_time" content="2024-04-04T12:37:25.482Z"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="weekly"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com/post/monthly-issue-202004.html"},"headline":"【每月分享】 202004 新的尝试","image":["https://blog.xiang578.com/img/og_image.png"],"datePublished":"2020-05-01T08:55:11.000Z","dateModified":"2024-04-04T12:37:25.482Z","author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":"不知不觉又到更新每月分享的时间。 想写一下我为什么做这件事情？分享自己平时看到有意思的内容，现实世界认识的人，很少对我关注的内容感兴趣，所幸能借助博客超越时间和空间限制的分享。 另外一点，我希望自己能将这个系列当成一个产品去迭代，每一期都有形式和内容上的进步。这件事看起来很简单，但却需要耗费很大的精力。其实在网上看到很多人通过这种形式分享，到头来还在坚持的大概也没有多少人（比如阮一峰的科技爱好者周"}</script><link rel="canonical" href="https://blog.xiang578.com/post/monthly-issue-202004.html"><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-05-01T08:55:11.000Z" title="2020-05-01T08:55:11.000Z">2020-05-01</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-04-04T12:37:25.482Z" title="2024-04-04T12:37:25.482Z">2024-04-04</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 18 分钟读完 (大约2701个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="p-name title is-3 is-size-4-mobile">【每月分享】 202004 新的尝试</h1><div class="content  e-content"><p>不知不觉又到更新每月分享的时间。</p>
+<p>想写一下我为什么做这件事情？分享自己平时看到有意思的内容，现实世界认识的人，很少对我关注的内容感兴趣，所幸能借助博客超越时间和空间限制的分享。</p>
+<p>另外一点，我希望自己能将这个系列当成一个产品去迭代，每一期都有形式和内容上的进步。这件事看起来很简单，但却需要耗费很大的精力。其实在网上看到很多人通过这种形式分享，到头来还在坚持的大概也没有多少人（比如阮一峰的科技爱好者周刊）。</p>
+<h2 id="zettelkasten-以及-roam-research"><a class="markdownIt-Anchor" href="#zettelkasten-以及-roam-research"></a> Zettelkasten 以及 Roam Research</h2>
+<p>Zettlekasten 是一个德语单词，意思是卡片盒。现在主要指一种记笔记的思路。Roam Research 是目前国外很火的一个笔记软件，最大的特点是实现不同笔记之间的双向链接。好几个月前就开始尝试 Zettlekasten 的方法，4 月开始才使用 Roam Research。这里先分享一些我看过的文章。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/Tisoga/status/1244856639439515649">Roam Research 入门指南（thread）</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@dongyangvic/%E7%94%A8-roam-research-%E6%9D%A5%E6%89%93%E8%8D%89%E7%A8%BF-a3b1d3873aa4">用 Roam Research 来打草稿 - Dongyang Vic - Medium</a></li>
+<li>Roam Fu
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1247260599760736256">Part I: My plan for using @RoamResearch for a thesis</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1252669427125895169">Part II: Using Twitter as an inter-brain zettelkasten</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1255296825566920705">Part III: Beyond the Empire</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="阅读"><a class="markdownIt-Anchor" href="#阅读"></a> 阅读</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.gcores.com/articles/121924">中文互联网中“讨论”的消亡 | 机核 GCORES</a>：从产品设计角度分析国内主流网站如何限制用户讨论，互联网缩短人与人之间的距离，但我们用来互喷。</li>
+<li><a target="_blank" rel="noopener" href="https://www.huxiu.com/article/350854.html">互联网是人类历史的一段弯路吗？-虎嗅网</a>：又一篇深度长文，很多观点可以背下来出去装B。</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/135281778">ByteDance程序员生存指南 - 知乎</a>
+<ul>
+<li>有些年轻人，在结束一整天的工作后，拖着疲惫不堪的肉体回到出租屋，这时候只想躺着啥都不想干，躺在好几周没有换过的床单上点开了抖音，不一会儿就刷到了凌晨，第二天再拖着疲惫不堪的肉体上班。到了周末也没有任何心力出去玩，只能睡到中午然后随便吃点东西看看剧。没有生活，没有朋友，一晃就单身了四五年，长此以往不仅仅是肉体在亚健康和崩溃的边缘，心理健康更是会出现问题。 孤独、焦虑、易怒等等情绪时刻伴随着一个人。</li>
+<li>每个月仅仅只有收到工资短信时可以高兴几分钟。但这笔钱并不敢轻易花出去，因为都是血汗积攒而来，付出的多自然不敢随意花出去。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA3MzM0MjUyMQ==&amp;mid=2652149604&amp;idx=1&amp;sn=3c96ebfe992694e5c57affe9ef5ba33f&amp;scene=21#wechat_redirect">构建优雅的知识创造系统</a> [[阳志平]] [[卡片写作法]]
+<ul>
+<li>利用电子卡片后，如何量化每天的产出？是不是可以换算成 github 更新多少字？</li>
+<li>卡片是自己看的，不需要分享：<strong>在卡片层级最大的误区是：分享</strong>。<strong>不少人误将卡片、文件和项目三个层级混为一谈，喜欢在卡片层级搞分享</strong>。这样每次撰写卡片时就增加了一个选择项：<strong>这张卡片我是该分享还是该存着自己看？增加的认知操作加大了认知负荷，从简单反应时变为选择反应时</strong>。所以尽可能在卡片层级少做分享。</li>
+<li>一周、一月、一年、十年与数十年，进行自己的实践。</li>
+</ul>
+</li>
+<li>所有人问俞军
+<ul>
+<li>[[金字塔原理]] 和 [[学会提问]]</li>
+<li>优秀的思维方式以及对人性和世界的底层理解</li>
+<li>我不是说人工智能不好，而是我自己只关心我能想明白一两年内能给创造什么用户价值的产品(或技术等)，如果我想不明白这东西马上能给用户创造什么价值，我就毫无兴趣。</li>
+<li>看《搜索研究院》页首页尾的那句话，“我们若能更妥善地搜寻资料，实在已经改变世界。”</li>
+</ul>
+</li>
+<li>前百度首席科学家吴恩达谈学习
+<ul>
+<li>如果你学习，两天后的周一，你不会很快的就在工作中出彩，你的老板也不会知道你花了整天的时间学习，更不会夸奖你什么。你几乎找不到任何东西可以证明你在努力学习。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://blog.jimmylv.info/2016-07-12-pkm-again-to-innovate-my-note-system/">再谈个人知识管理：革新我的笔记系统 | 吕立青的博客</a> 好久没有看到立青写文章
+<ul>
+<li>不同软件之间，单条笔记的迁移相当于一次对知识进行提炼的过程。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://tundrazone.com/guanyudongwuzhisendesanze/">关于动物之森的三则 – 苔原带</a>
+<ul>
+<li>以前玩家渴望在游戏里杀死巨龙，飞向人马座，击败外星侵入者。而现在我们只需要在游戏里“正常”的生活就乐呵呵了。和朋友一起野餐，请朋友到家里来玩，一个人傻乎乎做开心的事情在现实世界中已经有这么高的门槛了么？又或者只是因为在游戏里做这些事情的成本足够低，多巴胺回报足够快？</li>
+</ul>
+</li>
+</ul>
+<h2 id="机器学习"><a class="markdownIt-Anchor" href="#机器学习"></a> 机器学习</h2>
+<ul>
+<li>内部开始尝试 MCTS 相关的项目。正好接这个机会看一下 DeeepMind 前几年的论文 <a href="">Mastering the game of Go with deep neural networks and tree search</a> 以及 <a href="">Mastering the game of Go without human knowledge</a>。推荐去看一下田渊栋在知乎上 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20607684">AlphaGo的分析</a> ，当时他在 Facebook 参与类似围棋相关的项目。另外就是木遥的 <a target="_blank" rel="noopener" href="https://36kr.com/p/5042969">关于 AlphaGo 论文的阅读笔记</a> 有更多关于现实的思考。最后推荐 <a target="_blank" rel="noopener" href="https://movie.douban.com/subject/27012433/">阿尔法围棋</a>，记录从 DeepMind 开发 AlphaGo 到战胜李世石的全过程。有一个疑问第四局之后，他们有没有增加使用的 GPU 和 CPU？</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/32218407">在你做推荐系统的过程中都遇到过什么坑？ - 知乎</a> [[CTR]]
+<ul>
+<li>没有明确的指标：CTR，staytime，read/unread</li>
+<li>精准推荐以及兴趣探索</li>
+<li>线下auc涨，线上 ctr 跌</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/125507748">从谷歌到阿里，谈谈工业界推荐系统多目标预估的两种范式 - 知乎</a>[[机器学习实践]][[多任务学习]]
+<ul>
+<li>范式一：[[MMOE]] 替换 hard parameter sharing
+<ul>
+<li>[[Recommending what video to watch next: a multitask ranking system]]</li>
+</ul>
+</li>
+<li>范式二：任务序列依赖关系建模
+<ul>
+<li>[[ESMM]]</li>
+</ul>
+</li>
+<li>模型负采样，存在 CTR 漂移问题 U5Jvma3de</li>
+</ul>
+</li>
+</ul>
+<h2 id="放弃的事情emacs"><a class="markdownIt-Anchor" href="#放弃的事情emacs"></a> 放弃的事情：Emacs</h2>
+<p>写作软件中积累一些文章的草稿，不过由于我的兴趣变化太快，很多文章还没有完成就已经被我放弃。借这个机会，展示一些有意思的东西。</p>
+<p>程序员圈子中编辑器战争一直是一个绕不过去的话题。自己日常的工作中会使用多种编辑器：</p>
+<ul>
+<li>Sublime Text 简单处理文本</li>
+<li>IDEA 处理 Scala Spark 相关的代码</li>
+<li>PyCharm  连接 GPU 服务器处理 python 相关的代码</li>
+<li>VS Code 本机上写 python、shell、cpp、sql 等脚本</li>
+<li>Vim 服务器上修改文件</li>
+</ul>
+<p>不论选择什么编辑器，都推荐大家去看陈斌的<a target="_blank" rel="noopener" href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org"> 一年成为Emacs高手 (像神一样使用编辑器) </a>。</p>
+<p>去年底的时候，由于想尝试 <code>org-mode</code> 做任务管理（下个月再分享相关的内容），开始尝试使用 Emacs。Emacs 最大的有点是基于 Elisp 开发，软件中的每一个功能都对应一个函数，一个快捷键对应一个按键和函数的 map。修改功能和配置非常的方法。比如有人完全将 Vim 在文本操作上的功能迁移过来做成 evil 这个插件（号称所有和 Vim 中表现不同的情况都是 bug）。</p>
+<p>Emacs 需要大量时间调教才能用起来舒心，对于初学者推荐去网上找一些成熟的配置直接使用。目前比较流行的有 Spacemacs 和 Doom emacs，这些配置维护以及使用的人很多，方便解决你遇到的各种问题。另外那些某些大佬个人分享的配置，如果你和大佬的技术栈不同，没有必要强行 clone。把它当成是一个学习素材，更好的理解 Emacs 背后的哲学。再这些基础上，成为高效的程序员的第一步，就是打造属于你自己的专门的配置文件。</p>
+<p>使用好的编辑器是为了更快的工作。那如何更快的工作？</p>
+<ol>
+<li>在加快敲击键盘的速度</li>
+<li>减少敲击键盘的次数</li>
+<li>减少鼠标和键盘之间的切换</li>
+</ol>
+<p>关于 2，我在之前的文章中提到过一点，改变中文的输入方式（从全拼切换到小鹤双拼）。另外一点就是多使用快捷功能，比如 vim 里面的行号跳转。大部分软件的快捷键都是开发商配置好的，不过每一人主要使用的功能其实是完全不一样的。Emacs 中所有的快捷键可以查到定义的文件，从而进行修改。想象一种情况，为了减少我们按快捷键的次数以及难度。我们统计一段时间内使用 Emacs 各个功能的次数（插件 keyfreq），然后重新定义对应的快捷键。</p>
+<p>由于我自己之前主要使用的是 vim，所以也给 vim 用户一个相对于合理的替换过程：</p>
+<ol>
+<li>当成普通的 vim 使用</li>
+<li>逐步接触 org-mode 相关的功能</li>
+<li>使用 emacs 其他的特性</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>【每月分享】 202004 新的尝试</p><p><a href="https://blog.xiang578.com/post/monthly-issue-202004.html">https://blog.xiang578.com/post/monthly-issue-202004.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ryen Xiang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-05-01</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-04-04</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div><!--!--></article></div><div class="card"><div class="card-content"><h2>相关文章</h2><span><ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/Never-Reading-202007.html" title="【Never Reading】 202007 互联网商业模式" rel="bookmark">【Never Reading】 202007 互联网商业模式</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/Never-Reading-202008.html" title="【Never Reading】 202008 选择记忆" rel="bookmark">【Never Reading】 202008 选择记忆</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/Thinking-01.html" title="【随想集】01 我讲不清楚事情怎么办？" rel="bookmark">【随想集】01 我讲不清楚事情怎么办？</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/Thinking-02.html" title="【随想集】02 我曾刻意远离人群" rel="bookmark">【随想集】02 我曾刻意远离人群</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/post/monthly-issue-201912.html" title="【每月分享】 201912" rel="bookmark">【每月分享】 201912</a></h3></div></li></ul></span></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/monthly-issue-202005.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">【每月分享】 202005 Newsletter</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/post/monthly-issue-202003.html"><span class="level-item">【每月分享】 202003</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><script>var webmentionContext = { baseUrl:'https://webmention.io'}; </script><script src="/js/webmention.js"></script><div class="card"><div class="card-content"><h2 class="title is-5">网络回响</h2><div class="webmention-timeline"></div><script src="/js/webmention-timeline.js"></script></div></div><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="waline-thread"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.css"><script src="https://cdn.jsdelivr.net/npm/@waline/client@2.6.3/dist/waline.js"></script><script>Waline.init({
+            el: '#waline-thread',
+            serverURL: "https://comment.xiang578.com/",
+            path: window.location.pathname,
+            lang: "zh-CN",
+            locale: {"placeholder":"Comment here..."},
+            emoji: ["//unpkg.com/@waline/emojis@1.0.1/weibo"],
+            dark: "auto",
+            meta: ["nick","mail","link"],
+            requiredMeta: [],
+            login: "enable",
+            
+            pageSize: 10,
+            imageUploader: false,
+            
+            texRenderer: false,
+            search: false,
+            pageview: true,
+            comment: false,
+            copyright: true,
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#zettelkasten-以及-roam-research"><span class="level-left"><span class="level-item">1</span><span class="level-item"> Zettelkasten 以及 Roam Research</span></span></a></li><li><a class="level is-mobile" href="#阅读"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 阅读</span></span></a></li><li><a class="level is-mobile" href="#机器学习"><span class="level-left"><span class="level-item">3</span><span class="level-item"> 机器学习</span></span></a></li><li><a class="level is-mobile" href="#放弃的事情emacs"><span class="level-left"><span class="level-item">4</span><span class="level-item"> 放弃的事情：Emacs</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Beijing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">116</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">86</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-03T16:00:00.000Z">2024-04-04</time></p><p class="title"><a href="/note/github-publisher.html">Github Publisher</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-02-05T12:53:11.000Z">2024-02-05</time></p><p class="title"><a href="/weekly/thinking-8.html">【随想集】 8 新的键盘</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-07-06T14:31:02.000Z">2023-07-06</time></p><p class="title"><a href="/post/eta-ref-list.html">eta 技术参考</a></p><p class="categories"><a href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-05-07T09:01:18.000Z">2023-05-07</time></p><p class="title"><a href="/note/umami-docker.html">从 umami cloud 迁移到自建 umami</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-25T15:21:36.000Z">2023-04-25</time></p><p class="title"><a href="/travel/san-feng-huan-chuan.html">三峰环穿</a></p><p class="categories"><a href="/categories/%E8%A1%8C%E6%97%85%E8%AE%B0/">行旅记</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2015-2024 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
