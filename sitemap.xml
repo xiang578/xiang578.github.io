@@ -2,232 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.xiang578.com/link/index.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/posts/Github%20Publisher.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/index.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tech/index.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/podcast-list.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/primary-school-classmate-10th-anniversary-party.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/rebuild-notebook-system.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-actor-critic.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-imitation-learning.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-sparse-reward.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/restore-wordpress-from-backWPup.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/rime.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/soft-skills.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/something-about-high-school.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/symposium.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/the-beauty-of-math.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/thinking-03.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/thinking-04.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/thinking-05.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/thinking-06.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/thinking-07.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/universiy-booklist.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/use-cos-to-store-blog.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/use-gtd-to-speach.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-update.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/use-wiznote-to-write-blog.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/wdr.html</loc>
     
     <lastmod>2024-04-04</lastmod>
     
@@ -362,25 +164,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-update.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/use-wiznote-to-write-blog.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/wdr.html</loc>
+    <loc>https://blog.xiang578.com/note/fix-github-action-build-error.html</loc>
     
     <lastmod>2024-04-04</lastmod>
     
@@ -407,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/Never-Reading-202008.html</loc>
+    <loc>https://blog.xiang578.com/link/index.html</loc>
     
     <lastmod>2024-04-04</lastmod>
     
@@ -416,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/Sleep.html</loc>
+    <loc>https://blog.xiang578.com/posts/Github%20Publisher.html</loc>
     
     <lastmod>2024-04-04</lastmod>
     
@@ -425,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/Thinking-01.html</loc>
+    <loc>https://blog.xiang578.com/tags/index.html</loc>
     
     <lastmod>2024-04-04</lastmod>
     
@@ -434,142 +218,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/Thinking-02.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/add-return-button-to-blog.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/alexnet.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/alfred-lists.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/all-about-bert-code.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/auto-workflow.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/best-of-iphone-2019.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/blog-log.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/blog-writing-checklist.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/build-to-win-homework-0x00.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/build-to-win.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/computer-base-network.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/cs231n-summary.html</loc>
-    
-    <lastmod>2024-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/deepreta.html</loc>
+    <loc>https://blog.xiang578.com/tech/index.html</loc>
     
     <lastmod>2024-04-04</lastmod>
     
@@ -902,6 +551,195 @@
   </url>
   
   <url>
+    <loc>https://blog.xiang578.com/post/podcast-list.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/primary-school-classmate-10th-anniversary-party.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/rebuild-notebook-system.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-actor-critic.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-imitation-learning.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic-sparse-reward.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/reinforce-learnning-basic.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/restore-wordpress-from-backWPup.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/rime.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/soft-skills.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/something-about-high-school.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/symposium.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/the-beauty-of-math.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/thinking-03.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/thinking-04.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/thinking-05.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/thinking-06.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/thinking-07.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/universiy-booklist.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/use-cos-to-store-blog.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/use-gtd-to-speach.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiang578.com/post/007-aciton-reflection.html</loc>
     
     <lastmod>2024-04-04</lastmod>
@@ -1038,6 +876,177 @@
   
   <url>
     <loc>https://blog.xiang578.com/post/Never-Reading-202007.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Never-Reading-202008.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Sleep.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Thinking-01.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Thinking-02.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/add-return-button-to-blog.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/alexnet.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/alfred-lists.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/all-about-bert-code.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/auto-workflow.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/best-of-iphone-2019.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/blog-log.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/blog-writing-checklist.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/build-to-win-homework-0x00.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/build-to-win.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/computer-base-network.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/cs231n-summary.html</loc>
+    
+    <lastmod>2024-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/deepreta.html</loc>
     
     <lastmod>2024-04-04</lastmod>
     
@@ -1683,6 +1692,20 @@
   </url>
   
   <url>
+    <loc>https://blog.xiang578.com/tags/lstm/</loc>
+    <lastmod>2024-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/widedeep/</loc>
+    <lastmod>2024-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiang578.com/tags/dnn/</loc>
     <lastmod>2024-04-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -1697,14 +1720,21 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/lstm/</loc>
+    <loc>https://blog.xiang578.com/tags/Hexo/</loc>
     <lastmod>2024-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/widedeep/</loc>
+    <loc>https://blog.xiang578.com/tags/Github/</loc>
+    <lastmod>2024-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/Action/</loc>
     <lastmod>2024-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
