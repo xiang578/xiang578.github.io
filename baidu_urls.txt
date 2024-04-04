@@ -1,3 +1,4 @@
+https://blog.xiang578.com/note/github-publisher.html
 https://blog.xiang578.com/weekly/thinking-8.html
 https://blog.xiang578.com/post/eta-ref-list.html
 https://blog.xiang578.com/note/umami-docker.html
@@ -10,6 +11,7 @@ https://blog.xiang578.com/post/thinking-07.html
 https://blog.xiang578.com/post/deepreta.html
 https://blog.xiang578.com/post/thinking-06.html
 https://blog.xiang578.com/post/thinking-05.html
+https://blog.xiang578.com/post/2021.html
 https://blog.xiang578.com/post/thinking-04.html
 https://blog.xiang578.com/post/thinking-03.html
 https://blog.xiang578.com/post/Thinking-02.html
@@ -96,5 +98,3 @@ https://blog.xiang578.com/post/add-return-button-to-blog.html
 https://blog.xiang578.com/post/icpc-beijing-2016.html
 https://blog.xiang578.com/post/use-wiznote-to-write-blog.html
 https://blog.xiang578.com/post/newipad.html
-https://blog.xiang578.com/post/hdu500.html
-https://blog.xiang578.com/post/lanqiaobei-2016.html
