@@ -1,3 +1,4 @@
+https://blog.xiang578.com/note/today-i-learned.html
 https://blog.xiang578.com/note/github-publisher.html
 https://blog.xiang578.com/note/fix-github-action-build-error.html
 https://blog.xiang578.com/weekly/thinking-8.html
@@ -97,4 +98,3 @@ https://blog.xiang578.com/post/zjp-2017.html
 https://blog.xiang578.com/post/Csharp-chat-softwave.html
 https://blog.xiang578.com/post/add-return-button-to-blog.html
 https://blog.xiang578.com/post/icpc-beijing-2016.html
-https://blog.xiang578.com/post/use-wiznote-to-write-blog.html
