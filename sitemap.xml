@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xiang578.com/link/index.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiang578.com/posts/Github%20Publisher.html</loc>
     
     <lastmod>2024-04-11</lastmod>
@@ -21,6 +30,24 @@
   
   <url>
     <loc>https://blog.xiang578.com/tech/index.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/symposium.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/the-beauty-of-math.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -74,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/universiy-booklist.html</loc>
+    <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -84,6 +111,15 @@
   
   <url>
     <loc>https://blog.xiang578.com/post/use-cos-to-store-blog.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-update.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -245,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-build-blog.html</loc>
+    <loc>https://blog.xiang578.com/post/universiy-booklist.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -255,15 +291,6 @@
   
   <url>
     <loc>https://blog.xiang578.com/post/use-gtd-to-speach.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/use-travis-ci-to-auto-update.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -282,132 +309,6 @@
   
   <url>
     <loc>https://blog.xiang578.com/categories/index.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/link/index.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/english-writing-01.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/excerpt-2018-03-07.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/fix-qiniu-test-url-error.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/fm.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/ftrl.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/gbdt.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/gbdt_lr.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/gtd-one-month.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/hdu200.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/hdu300.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/hdu400.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/hdu500.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/hello-world.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -533,7 +434,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/machine-learning-ch-03.html</loc>
+    <loc>https://blog.xiang578.com/post/meet-leancloud-counter-security-problem.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -542,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/meet-leancloud-counter-security-problem.html</loc>
+    <loc>https://blog.xiang578.com/post/machine-learning-ch-03.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -587,7 +488,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/monthly-issue-202004.html</loc>
+    <loc>https://blog.xiang578.com/post/monthly-issue-202005.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -596,7 +497,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/monthly-issue-202005.html</loc>
+    <loc>https://blog.xiang578.com/post/monthly-issue-202004.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -722,33 +623,6 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/symposium.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/the-beauty-of-math.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/007-aciton-reflection.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/post/007-and-me.html</loc>
     
     <lastmod>2024-04-11</lastmod>
@@ -776,7 +650,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/2017.html</loc>
+    <loc>https://blog.xiang578.com/post/2018-consumer-report.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -785,7 +659,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/2018-consumer-report.html</loc>
+    <loc>https://blog.xiang578.com/post/2017.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -812,7 +686,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/2019.html</loc>
+    <loc>https://blog.xiang578.com/post/2020.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -821,7 +695,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/2020.html</loc>
+    <loc>https://blog.xiang578.com/post/2019.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -956,7 +830,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/alfred-lists.html</loc>
+    <loc>https://blog.xiang578.com/post/all-about-bert-code.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -965,7 +839,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/all-about-bert-code.html</loc>
+    <loc>https://blog.xiang578.com/post/alfred-lists.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -992,15 +866,6 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
-    
-    <lastmod>2024-04-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/post/best-of-iphone-2019.html</loc>
     
     <lastmod>2024-04-11</lastmod>
@@ -1010,7 +875,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/blog-log.html</loc>
+    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -1028,7 +893,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/build-to-win-homework-0x00.html</loc>
+    <loc>https://blog.xiang578.com/post/blog-log.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -1038,6 +903,15 @@
   
   <url>
     <loc>https://blog.xiang578.com/post/build-to-win.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/build-to-win-homework-0x00.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -1065,6 +939,141 @@
   
   <url>
     <loc>https://blog.xiang578.com/post/deepreta.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/english-writing-01.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/excerpt-2018-03-07.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/fix-qiniu-test-url-error.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/fm.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/ftrl.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/gbdt.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/gbdt_lr.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/note/202404111048.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/gtd-one-month.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/hdu200.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/hdu300.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/hdu400.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/hdu500.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/hello-world.html</loc>
+    
+    <lastmod>2024-04-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/007-aciton-reflection.html</loc>
     
     <lastmod>2024-04-11</lastmod>
     
@@ -1290,20 +1299,6 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/Mac/</loc>
-    <lastmod>2024-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/Alfred/</loc>
-    <lastmod>2024-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/tags/nlp/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -1333,6 +1328,20 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/transformer/</loc>
+    <lastmod>2024-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/Mac/</loc>
+    <lastmod>2024-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/Alfred/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1381,13 +1390,6 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/zufe/</loc>
-    <lastmod>2024-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/tags/iOS/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -1409,6 +1411,20 @@
   </url>
   
   <url>
+    <loc>https://blog.xiang578.com/tags/zufe/</loc>
+    <lastmod>2024-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/writing/</loc>
+    <lastmod>2024-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiang578.com/tags/hexo/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -1417,13 +1433,6 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/vps/</loc>
-    <lastmod>2024-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/writing/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1522,6 +1531,13 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/lr/</loc>
+    <lastmod>2024-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/git/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1696,7 +1712,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/reading/</loc>
+    <loc>https://blog.xiang578.com/tags/github/</loc>
+    <lastmod>2024-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/travisci/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1766,14 +1789,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/github/</loc>
-    <lastmod>2024-04-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/travisci/</loc>
+    <loc>https://blog.xiang578.com/tags/reading/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
