@@ -14,6 +14,7 @@ https://blog.xiang578.com/post/deepreta.html
 https://blog.xiang578.com/post/thinking-06.html
 https://blog.xiang578.com/post/thinking-05.html
 https://blog.xiang578.com/post/2021.html
+https://blog.xiang578.com/problem/lc552.html
 https://blog.xiang578.com/post/thinking-04.html
 https://blog.xiang578.com/post/thinking-03.html
 https://blog.xiang578.com/post/Thinking-02.html
@@ -97,4 +98,3 @@ https://blog.xiang578.com/post/computer-base-network.html
 https://blog.xiang578.com/post/zjp-2017.html
 https://blog.xiang578.com/post/Csharp-chat-softwave.html
 https://blog.xiang578.com/post/add-return-button-to-blog.html
-https://blog.xiang578.com/post/icpc-beijing-2016.html
