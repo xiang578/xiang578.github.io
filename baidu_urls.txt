@@ -1,3 +1,4 @@
+https://blog.xiang578.com/problem/202404121039.html
 https://blog.xiang578.com/note/202404111048.html
 https://blog.xiang578.com/note/today-i-learned.html
 https://blog.xiang578.com/note/github-publisher.html
@@ -97,4 +98,3 @@ https://blog.xiang578.com/post/restore-wordpress-from-backWPup.html
 https://blog.xiang578.com/post/alfred-lists.html
 https://blog.xiang578.com/post/computer-base-network.html
 https://blog.xiang578.com/post/zjp-2017.html
-https://blog.xiang578.com/post/Csharp-chat-softwave.html
