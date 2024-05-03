@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/rebuild-notebook-system.html</loc>
+    <loc>https://blog.xiang578.com/post/primary-school-classmate-10th-anniversary-party.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/primary-school-classmate-10th-anniversary-party.html</loc>
+    <loc>https://blog.xiang578.com/post/rebuild-notebook-system.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/rime.html</loc>
+    <loc>https://blog.xiang578.com/post/restore-wordpress-from-backWPup.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/restore-wordpress-from-backWPup.html</loc>
+    <loc>https://blog.xiang578.com/post/rime.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/universiy-booklist.html</loc>
+    <loc>https://blog.xiang578.com/post/use-cos-to-store-blog.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -407,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/use-cos-to-store-blog.html</loc>
+    <loc>https://blog.xiang578.com/post/universiy-booklist.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -434,7 +434,52 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/Sleep.html</loc>
+    <loc>https://blog.xiang578.com/note/github-publisher.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/ImportanceOffont.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/problem/202404121039.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/problem/lc552.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/problem/202404131035.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Never-Reading-202007.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -444,6 +489,15 @@
   
   <url>
     <loc>https://blog.xiang578.com/post/Never-Reading-202008.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/Sleep.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -488,15 +542,6 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/alfred-lists.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/post/alexnet.html</loc>
     
     <lastmod>2024-05-03</lastmod>
@@ -506,7 +551,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</loc>
+    <loc>https://blog.xiang578.com/post/alfred-lists.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -524,7 +569,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
+    <loc>https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -534,6 +579,15 @@
   
   <url>
     <loc>https://blog.xiang578.com/post/auto-workflow.html</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -596,7 +650,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/cs231n-summary.html</loc>
+    <loc>https://blog.xiang578.com/post/deepreta.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -605,7 +659,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/deepreta.html</loc>
+    <loc>https://blog.xiang578.com/post/cs231n-summary.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -794,7 +848,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/if.html</loc>
+    <loc>https://blog.xiang578.com/post/interview.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -803,7 +857,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/interview.html</loc>
+    <loc>https://blog.xiang578.com/post/if.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -848,7 +902,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/machine-learning-ch-03.html</loc>
+    <loc>https://blog.xiang578.com/post/machine-learning-ch-01.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -857,7 +911,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/machine-learning-ch-01.html</loc>
+    <loc>https://blog.xiang578.com/post/machine-learning-ch-03.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -884,7 +938,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/monthly-issue-202002.html</loc>
+    <loc>https://blog.xiang578.com/post/monthly-issue-202001.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -893,7 +947,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/monthly-issue-202001.html</loc>
+    <loc>https://blog.xiang578.com/post/monthly-issue-202002.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -965,7 +1019,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/2017.html</loc>
+    <loc>https://blog.xiang578.com/post/2018-consumer-report.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -974,7 +1028,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/2018-consumer-report.html</loc>
+    <loc>https://blog.xiang578.com/post/2017.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -1010,7 +1064,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/2021.html</loc>
+    <loc>https://blog.xiang578.com/post/2020.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -1019,7 +1073,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/2020.html</loc>
+    <loc>https://blog.xiang578.com/post/2021.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -1038,60 +1092,6 @@
   
   <url>
     <loc>https://blog.xiang578.com/post/Csharp-chat-softwave.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/note/github-publisher.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/ImportanceOffont.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/problem/202404121039.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/problem/lc552.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/Never-Reading-202007.html</loc>
-    
-    <lastmod>2024-05-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/problem/202404131035.html</loc>
     
     <lastmod>2024-05-03</lastmod>
     
@@ -1298,14 +1298,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/weekly/</loc>
+    <loc>https://blog.xiang578.com/tags/LeetCode/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/LeetCode/</loc>
+    <loc>https://blog.xiang578.com/tags/weekly/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1340,20 +1340,6 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/Mac/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/Alfred/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/tags/cnn/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -1368,21 +1354,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/Paper/</loc>
+    <loc>https://blog.xiang578.com/tags/Mac/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/Transformer/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/Time-Series-Forecasting/</loc>
+    <loc>https://blog.xiang578.com/tags/Alfred/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1424,7 +1403,21 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/zufe/</loc>
+    <loc>https://blog.xiang578.com/tags/Paper/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/Transformer/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/Time-Series-Forecasting/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1446,6 +1439,13 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/ifttt/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/zufe/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1508,20 +1508,6 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/ml/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/course/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/tags/uber/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -1530,6 +1516,20 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/eta/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/ml/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/course/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1697,6 +1697,13 @@
   </url>
   
   <url>
+    <loc>https://blog.xiang578.com/tags/school/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiang578.com/tags/wiznote/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -1705,13 +1712,6 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/system/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/school/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1732,14 +1732,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/rime/</loc>
+    <loc>https://blog.xiang578.com/tags/backwpup/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/backwpup/</loc>
+    <loc>https://blog.xiang578.com/tags/rime/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1767,7 +1767,14 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/reading/</loc>
+    <loc>https://blog.xiang578.com/tags/travis/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/cos/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1782,13 +1789,6 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/travisci/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/tags/travis/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1844,7 +1844,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tags/cos/</loc>
+    <loc>https://blog.xiang578.com/tags/reading/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
