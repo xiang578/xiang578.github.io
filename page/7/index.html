@@ -35,338 +35,575 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/books/index.html">阅读</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-12-20T19:39:14.000Z" title="2018-12-20T19:39:14.000Z">2018-12-21</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.581Z" title="2024-05-05T14:05:13.581Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E4%B8%8D%E8%80%81%E9%98%81/">不老阁</a></span><span class="level-item"><i class="far fa-clock"></i> 7 分钟读完 (大约1041个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/fix-qiniu-test-url-error.html">博客折腾记：修复七牛云测试域名失效问题</a></p><div class="content  e-content"><p>毕业之后开始工作快要 5 个月了，然后也快有 3 个月没有更新博客。其实文本编辑器中还有很多的草稿，但是一直没有力量驱动自己完结他们，并且分享出来。另外，这一段时间也不是完全没有分享。在这个页面的上方有一个 <code>Tech</code> 的标签，可以连接到我新搭的博客。受限于当前使用的 hexo 主题无法配置 latex 数学公式，所幸新开博客分享算法学习的笔记。大家感兴趣的可以访问一下，不过也没有太多的内容。</p>
-<p>这次在博客公告中要告诉大家的确是另外一件事情。屋漏偏风连夜雨，不知道从什么时候开始，七牛云开始图片使用测试域名，毫无疑问这个博客的图片都挂了。自己也一直没有动力修复，让这一段时间访问我博客的小伙伴受累了。</p>
-<p>今天研究了一下如何修复这个图床问题。官方有一个帮助页面<a target="_blank" rel="noopener" href="https://developer.qiniu.com/fusion/kb/1322/how-to-configure-cname-domain-name">如何配置域名的 CNAME - 七牛开发者中心</a>，大概就是你的存储空间之前有一个测试域名（比如我的是 <a target="_blank" rel="noopener" href="http://7xkpe5.com1.z0.glb.clouddn.com">7xkpe5.com1.z0.glb.clouddn.com</a>），现在不允许通过测试域名访问图片，需要绑定一个备案过的域名才可以。所以我们需要两个步骤完成改造：首先，给空间绑定一个域名（比如现在使用的是 <a target="_blank" rel="noopener" href="http://media.xiang578.com">media.xiang578.com</a> ）；最后，在域名解析平台添加一个 CNAME，将你指定的域名转发到七牛的记录上。</p>
-<p>完成上一步后，图片还是不能正常显示。因为之前的文章中，图片的链接都是以测试域名开头的，比如<code>7xkpe5.com1.z0.glb.clouddn.com/15283589946007.jpg</code> ，现在我们要将它改成 下面的形式 <code>media.xiang578.com/15283589946007.jpg</code>。简单的方法是打开文本编辑软件，然后使用查找替换功能，一个一个文件处理。显然这很无聊，而且进入 <code>source/_posts</code> 目录下利用 <code>grep 7xkpe5 *.md | wc</code> 统计了一个，我大概需要修改的有 142 处。</p>
-<p><img src="https://media.xiang578.com/15453335377518.jpg" alt="需要替换的字符串" /></p>
-<p>幸运地是 linux 系统下有两大文本处理利器 <code>sed</code> 和 <code>awk</code>。我们使用 <code>sed</code> 可以将一个字符串转换为另外一个字符串。网上搜索了一下用法，很快写了出来</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i -r &quot;s/7xkpe5\.com1\.z0\.glb\.clouddn\.com/media\.xiang578\.com/g&quot; *.md</span><br></pre></td></tr></table></figure>
-<p>这条命令中原始形态可以表示为 <code>sed 's/原字符串/替换字符串/g'</code>。其中参数 <code>-i</code> 代表替换文件中的所有匹配项，<code>-r</code> 代表批量替换支持扩展表达式。在原字符串和替换字符串中都出现了 <code>\.</code>，应为 <code>.</code> 在 <code>sed</code> 命令中代表匹配任意单个字符，加上转移字符后可以代表它本身。最后 <code>*md</code> 代表对目录下的 <code>md</code> 文件进行处理。</p>
-<p>运行完成之后，我们在统计一下测试域名和正式域名的数量，可以发现完美的解决了这个问题，图片又能正常显示。</p>
-<p><img src="https://media.xiang578.com/15453344578555.jpg" alt="修改后" /></p>
-<p>所以，写下今天这一篇博客一切都是因为贫穷。如果有钱直接在主机上放置图片，有带宽提供出来访问，也就不会依赖七牛云了……</p>
-<hr />
-<p>2019.11.09</p>
-<p>为了减少博客依赖服务，参考 <a target="_blank" rel="noopener" href="https://zealot.top/%E5%9B%BE%E5%BA%8A%E4%BB%8E%E4%B8%83%E7%89%9B%E4%BA%91%E8%BF%81%E7%A7%BB%E5%88%B0%E8%85%BE%E8%AE%AFCOS.html">图床从七牛云迁移到腾讯COS折腾笔记 | 思想就是武器</a> 将所有的图片全部从七牛上下载，利用 COS 存储。</p>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/blog/">blog, </a><a class="link-muted p-category" rel="tag" href="/tags/hack/">hack </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-09-03T23:41:14.000Z" title="2018-09-03T23:41:14.000Z">2018-09-04</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.581Z" title="2024-05-05T14:05:13.581Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/">程序园</a></span><span class="level-item"><i class="far fa-clock"></i> 3 分钟读完 (大约508个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/ImportanceOffont.html">字体的重要性</a></p><div class="content  e-content"><h1 id="字体的重要性"><a class="markdownIt-Anchor" href="#字体的重要性"></a> 字体的重要性</h1>
-<p>最近开始工作，基本上都和终端打交道，碰到几个误认字符的尴尬场面，记录一下。</p>
-<p>第一个遇到的问题发生在输入账户密码时，公司发的小册子上写的密码大概形式如<code>xxxxxi|6xxx</code>。由于打印密码的字体是黑体，难免产生疑问 <code>|</code> 到底是 <code>I</code> 还是 <code>l</code>？观察到的细节是 <code>|</code> 这个字符下面比其他的字符长，不过由于之前很少在密码中使用过这个字符，所以以为这个细节是区分<code>I</code> 和 <code>l</code> 的。在密码错误 n 次后，眼光扫到键盘才发现回车键上面的 <code>|</code> 键。</p>
-<p>第二个遇到的问题是在终端中，公司的堡垒机登陆比较复杂，一般都会写脚本来快速登陆。写完之后，运行指令的格式为</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/books/index.html">阅读</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-10-03T12:56:43.000Z" title="2020-10-03T12:56:43.000Z">2020-10-03</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.465Z" title="2024-05-12T11:15:03.465Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></span><span class="level-item"><i class="far fa-clock"></i> 38 分钟读完 (大约5705个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/all-about-bert-code.html">深入浅出 BERT 源代码之 BertModel 类</a></p><div class="content  e-content"><p>国庆节前突然对如何计算 BERT 的参数量感兴趣，不过一直看不明白网上的计算过程，索性下载 BERT 源代码阅读一番。这篇文章记录阅读 BertModel 类（核心代码实现）时写的一些笔记，反正我也是纸上谈兵，所以不需要太关注数据处理和 Finetune 相关部分，最后附上计算 BERT 参数量的过程仅供参考。</p></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/nlp/">nlp, </a><a class="link-muted p-category" rel="tag" href="/tags/google/">google, </a><a class="link-muted p-category" rel="tag" href="/tags/bert/">bert, </a><a class="link-muted p-category" rel="tag" href="/tags/code/">code, </a><a class="link-muted p-category" rel="tag" href="/tags/transformer/">transformer </a></div><a class="article-more button is-small is-size-7" href="/post/all-about-bert-code.html#more"><i class="fas fa-book-reader has-text-grey"></i>  阅读更多</a></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-09-13T15:55:11.000Z" title="2020-09-13T15:55:11.000Z">2020-09-13</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.465Z" title="2024-05-12T11:15:03.465Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 38 分钟读完 (大约5722个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/Never-Reading-202008.html">【Never Reading】 202008 选择记忆</a></p><div class="content  e-content"><p>某一刻突然意识到可以选择自己的记忆，我顿悟了。</p></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div><a class="article-more button is-small is-size-7" href="/post/Never-Reading-202008.html#more"><i class="fas fa-book-reader has-text-grey"></i>  阅读更多</a></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-09-06T15:14:47.000Z" title="2020-09-06T15:14:47.000Z">2020-09-06</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.469Z" title="2024-05-12T11:15:03.469Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></span><span class="level-item"><i class="far fa-clock"></i> 3 分钟读完 (大约375个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/reinforce-learnning-basic-imitation-learning.html">李宏毅强化学习课程笔记 Imitation Learning</a></p><div class="content  e-content"><p>我的笔记汇总：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic.html">Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html">Actor Critic</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html">Sparse Reward</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html">Imitation Learning</a></li>
+</ul>
+<p>apprenticeship learning</p>
+<ol>
+<li>无法从环境中获得 reward。</li>
+<li>某些任务中很难定义 reward。</li>
+<li>人为设计的奖励可能导致意外的行为。</li>
+</ol>
+<p>学习专家的行为。</p>
+<h2 id="behavior-cloning"><a class="markdownIt-Anchor" href="#behavior-cloning"></a> Behavior Cloning</h2>
+<p>监督学习，但是样本有限。</p>
+<p>Dataset Aggregation</p>
+<ol>
+<li>通过行为克隆得到 actor <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\pi_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>利用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\pi_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和环境交互得到一些新的样本</li>
+<li>由专家对上一步采样得到的样本进行标注</li>
+<li>利用新得到的样本训练 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>π</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\pi_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ol>
+<p>如果机器的学习能力有限，可能复制专家多余无用的动作。监督学习无法区分哪些是需要学习、哪些是需要忽视的行为。</p>
+<h3 id="miss-match"><a class="markdownIt-Anchor" href="#miss-match"></a> Miss match</h3>
+<p>监督学习中，我们假设训练数据和测试数据有相同的分布。Behavior Cloning 中可能分布不同。</p>
+<p><img src="https://media.xiang578.com/15733541795048.jpg" alt="" /></p>
+<h2 id="inverse-reinfofcement-learning"><a class="markdownIt-Anchor" href="#inverse-reinfofcement-learning"></a> Inverse Reinfofcement Learning</h2>
+<p>反向强化学习<br />
+没有 reward 函数，通过专家和环境互动学到一个 reward function，然后再训练 actor。<br />
+<img src="https://media.xiang578.com/15733545279563.jpg" alt="" /></p>
+<p>类似于 GAN 的训练方法（actor 换成 generator，reward function 换成 discriminator）。<br />
+学到 actor 的 pi 后，调整 reward function，保证专家的行为得分大于学到的行为。</p>
+<p><img src="https://media.xiang578.com/15733546273431.jpg" alt="" /></p>
+</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/algorithm/">algorithm, </a><a class="link-muted p-category" rel="tag" href="/tags/Reinforcement-Learning/">Reinforcement Learning </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-09-06T14:14:47.000Z" title="2020-09-06T14:14:47.000Z">2020-09-06</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.469Z" title="2024-05-12T11:15:03.469Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></span><span class="level-item"><i class="far fa-clock"></i> 3 分钟读完 (大约438个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/reinforce-learnning-basic-sparse-reward.html">李宏毅强化学习课程笔记 Sparse Reward</a></p><div class="content  e-content"><p>我的笔记汇总：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic.html">Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html">Actor Critic</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html">Sparse Reward</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html">Imitation Learning</a></li>
+</ul>
+<h2 id="reward-shaping"><a class="markdownIt-Anchor" href="#reward-shaping"></a> Reward Shaping</h2>
+<p>如果 reward 分布非常稀疏的时候，actor 会很难学习，所以刻意设计 reward 引导模型学习。</p>
+<h3 id="curiosity-intrinsic-curiosity-module-icm"><a class="markdownIt-Anchor" href="#curiosity-intrinsic-curiosity-module-icm"></a> Curiosity Intrinsic Curiosity module (ICM)</h3>
+<p>在原来 Reward 函数的基础上，引入 ICM 函数。ICM 鼓励模型去探索新的动作。最后 ICM 和 Reward 和越大越好。</p>
+<p><img src="https://media.xiang578.com/15732008339393.jpg" alt="" /></p>
+<p>鼓励探索新动作之后，会导致系统风险变大。对比预测的下一个状态和真正的状态的差异程度进行抑制。</p>
+<p><img src="https://media.xiang578.com/15732012078318.jpg" alt="" /></p>
+<p>Feature Ext 对状态进行抽取，过滤没有意义的内容。<br />
+Network 1 预测下一个状态，然后再和真实状态计算 diff 程度。<br />
+Network 2 预测 action，和真实的 action 进行对比。如果两个 action 接近，说明 f 可以进行特征提取。重要程度计算。</p>
+<p><img src="https://media.xiang578.com/15732013249053.jpg" alt="" /></p>
+<h3 id="curriculum-learning"><a class="markdownIt-Anchor" href="#curriculum-learning"></a> Curriculum Learning</h3>
+<p>规划学习路线，从简单任务学习。</p>
+<p>Reverse Curriculum Generation</p>
+<p><img src="https://media.xiang578.com/15732019855111.jpg" alt="" /></p>
+<p><img src="https://media.xiang578.com/15732020592680.jpg" alt="" /></p>
+<h3 id="hierarchical-reinforcement-learning"><a class="markdownIt-Anchor" href="#hierarchical-reinforcement-learning"></a> Hierarchical Reinforcement Learning</h3>
+<p>对 agent 分层，高层负责定目标，分配给底层 agent 执行。如果低一层的agent没法达到目标，那么高一层的agent会受到惩罚（高层agent将自己的愿景传达给底层agent）。</p>
+<p>如果一个agent到了一个错误的目标，那就假设最初的目标本来就是一个错误的目标（保证已经实现的成果不被浪费）</p>
+</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/algorithm/">algorithm, </a><a class="link-muted p-category" rel="tag" href="/tags/Reinforcement-Learning/">Reinforcement Learning </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-09-06T13:14:47.000Z" title="2020-09-06T13:14:47.000Z">2020-09-06</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.469Z" title="2024-05-12T11:15:03.469Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/">智能路</a></span><span class="level-item"><i class="far fa-clock"></i> 3 分钟读完 (大约516个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/reinforce-learnning-basic-actor-critic.html">李宏毅强化学习课程笔记 Actor Critic</a></p><div class="content  e-content"><p>我的笔记汇总：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic.html">Policy Gradient、PPO: Proximal Policy Optimization、Q-Learning</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-actor-critic.html">Actor Critic</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-sparse-reward.html">Sparse Reward</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiang578.com/post/reinforce-learnning-basic-imitation-learning.html">Imitation Learning</a></li>
+</ul>
+<h2 id="actor-critic"><a class="markdownIt-Anchor" href="#actor-critic"></a> Actor Critic</h2>
+<h3 id="policy-gradient"><a class="markdownIt-Anchor" href="#policy-gradient"></a> policy gradient</h3>
+<ul>
+<li>给定在某个 state 采取某个 action 的概率。</li>
+<li>baseline b 的作用是保证 reward 大的样本有更大的概率被采样到。</li>
+<li>从当前时间点累加 reward，并且当前 action 对后面的 reward 影响很小，添加折扣系数。</li>
+<li>PG 效果受到采样数量和质量影响。</li>
+</ul>
+<p><img src="https://media.xiang578.com/15731332476541.jpg" alt="" /></p>
+<h3 id="q-learning"><a class="markdownIt-Anchor" href="#q-learning"></a> Q-learning</h3>
+<p>状态价值函数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>V</mi><mi>π</mi></msup><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">V^{\pi}(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span><br />
+状态行动价值函数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>Q</mi><mi>π</mi></msup><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Q^{\pi}(s,a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></p>
+<p><img src="https://media.xiang578.com/15731335120798.jpg" alt="" /></p>
+<h3 id="actor-critic-2"><a class="markdownIt-Anchor" href="#actor-critic-2"></a> Actor-Critic</h3>
+<p>用 V 和 Q 替换 PG 中的累积 reward 和 baseline。新的模型需要训练两个网络，比较困难。</p>
+<p><img src="https://media.xiang578.com/15731338724158.jpg" alt="" /></p>
+<h3 id="advantage-actor-critic"><a class="markdownIt-Anchor" href="#advantage-actor-critic"></a> Advantage Actor-Critic</h3>
+<p>用 V 去替代 Q，能降低模型整体方差（MC 到 TD)。最下面两个公式转化是由实验得到。</p>
+<p><img src="https://media.xiang578.com/15731340046945.jpg" alt="" /></p>
+<p>训练过程：</p>
+<p><img src="https://media.xiang578.com/15731341766172.jpg" alt="" /></p>
+<p>tip:</p>
+<ol>
+<li>actor 和 critic 具有相同的输入 s，可以共享部分网络结构。</li>
+<li>output entropy 作为 pi 的正则项，entropy 越大采样效果越好。</li>
+</ol>
+<p><img src="https://media.xiang578.com/15731342994690.jpg" alt="" /></p>
+<h3 id="asynchronous-advantage-acotr-critic-a3c"><a class="markdownIt-Anchor" href="#asynchronous-advantage-acotr-critic-a3c"></a> Asynchronous Advantage Acotr-Critic A3C</h3>
+<ol>
+<li>利用多个 worker 去训练。</li>
+<li>每个 worker 复制主模型的参数。</li>
+<li>每个模型单独采样，并且计算梯度。</li>
+<li>更新全局参数。</li>
+</ol>
+<h3 id="pathwise-derivative-policy-gradient"><a class="markdownIt-Anchor" href="#pathwise-derivative-policy-gradient"></a> Pathwise derivative policy gradient</h3>
+<p>该网络不仅仅告诉 actor 某一个 action 的好坏，还告诉 actor 应该返回哪一个 action。</p>
+<p><img src="https://media.xiang578.com/15731346701840.jpg" alt="" /></p>
+<p>将这个 actor 返回的 action 和 state 一起输入到一个固定的 Q，利用梯度上升更新 actor。</p>
+<p><img src="https://media.xiang578.com/15731348191409.jpg" alt="" /></p>
+<p>完整的训练过程和 conditional GAN 类似， actor 是 generator，Q 是 discriminator。</p>
+<p><img src="https://media.xiang578.com/15731350424130.jpg" alt="" /></p>
+<p>算法：</p>
+<ol>
+<li>action 由训练的 actor 决定</li>
+<li>利用 s 和 a 更新 Q<br />
+<img src="https://media.xiang578.com/15731351315860.jpg" alt="" /></li>
+</ol>
+<h3 id="gan-和-ac-方法对比"><a class="markdownIt-Anchor" href="#gan-和-ac-方法对比"></a> GAN 和 AC 方法对比</h3>
+<p><img src="https://media.xiang578.com/15731353632450.jpg" alt="" /></p>
+</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/algorithm/">algorithm, </a><a class="link-muted p-category" rel="tag" href="/tags/Reinforcement-Learning/">Reinforcement Learning </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-08-08T15:55:11.000Z" title="2020-08-08T15:55:11.000Z">2020-08-08</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.465Z" title="2024-05-12T11:15:03.465Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 20 分钟读完 (大约3048个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/Never-Reading-202007.html">【Never Reading】 202007 互联网商业模式</a></p><div class="content  e-content"><p>不知不觉中每月分享已经进行半年，不过前 6 期都没有想到取什么名字。上期的标题「Never Reading」来自稍后读列表名称，仔细一想不正好成为每月分享的名字吗？而且还有致敬「Λ-Reading」的成分。</p>
+<h2 id="互联网商业模式"><a class="markdownIt-Anchor" href="#互联网商业模式"></a> 互联网商业模式</h2>
+<p>在 <a target="_blank" rel="noopener" href="http://xiang578.com/post/monthly-issue-202006.html">202006 Never Reading</a> 中摘录过「即刻半月刊」的一段内容：</p>
+<ul>
+<li>所谓“商业模式”其实指的是这家公司的“价值创造模式”，即用什么样的模型创造了更多价值。
+<ul>
+<li>世界上现存所有的商业模式无非三种，一是[[边际效应]]（规模效应/协同效应），二是[[双边效应]]，三是梅特卡夫[[网络效应]]。不同的价值创造模型，带来不同的增长动力，继而带来不同的货币化方法。</li>
+<li>滴滴是什么模型？</li>
+</ul>
+</li>
+</ul>
+<p>当时没有找到上面这一段内容的解释，只是觉得有点神奇就记录下来。这个月收听「三五环」中刘飞和少楠关于交易平台两期内容（14、17），其中提到许小年教授的一本书「商业的本质和互联网」。在书中详细的介绍商业平台的效应，感兴趣的可以找来详细的阅读。</p>
+<ul>
+<li>[[规模效应]]：[[边际成本]]越低和边际收益越高</li>
+<li>[[协同效应]]：依赖于品种增加带来的 1+1 &gt; 2
+<ul>
+<li>百货公司拥有协同效应</li>
+<li>#problem 协同效应失败的例子？</li>
+</ul>
+</li>
+<li>[[双边市场效应]]
+<ul>
+<li>双边供需的进入，都会有正外部性。公式：V=k<em>m</em>n</li>
+<li>电商平台的效应弱：需要平台来管控质量，即变成了单边的；滴滴的效应强：司机和乘客的增加，都会带来正向效应（但边际收益未必持续提升）。</li>
+</ul>
+</li>
+<li>[[梅特卡夫效应]]
+<ul>
+<li>一个网络的价值与用户量的平方成正比。与常见网络效应的概念基本相同。任何用户的进入，都会有正外部性。</li>
+<li>社交网络</li>
+<li>曾李青定律：V=k*n²/r²（r 受 T、S、I、C 影响）。</li>
+</ul>
+</li>
+</ul>
+<p>读完之后，滴滴是什么模型这个问题就迎刃而解。这个月 有一个比较火视频  <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UT4y1j7Ht">复盘出行大战：被BAT选中的滴滴，如何完成垄断霸业_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</a>，介绍滴滴创业的故事。做为一名内部人士，也被里面的内容给震撼到。之前沈南鹏在吴海波的采访中说过一句话「未来十年看滴滴」。记录自己看到的三个细节：</p>
+<ul>
+<li>滴滴接受腾讯投资后，程维和王刚彻底关上和阿里的联系。</li>
+<li>和快的补贴大战中：马化腾建议每次补贴金额在 12-20 中间的一个随机数</li>
+<li>和 uber 大战中：腾讯封禁 uber 在微信上的微信号</li>
+</ul>
+<p>有一个梦想是能看到程维的传记，之前特意查过他的花名 —— 常遇春。知乎热榜这个月出现过一个奇怪的问题，里面有一段引用：</p>
 <blockquote>
-<p>jump ip 	'auth'</p>
+<p>王保保这个“奇男子”的称号，是朱元璋给的，评价较帝国双壁之一常遇春更高，含金量十足：朱元璋曾大会诸将，问道：“天下奇男子谁也？”诸将都说：“[[常遇春]]将不过万人，横行无敌，真奇男子。”明太祖笑曰：“遇春虽人杰，吾得而臣之。吾不能臣王保保，其人奇男子也。”（《明史》-《扩廓帖木儿传》）</p>
 </blockquote>
-<p>其中的 'auth' 部分为调用另外一个脚本生成一个二次验证的并作为 jump 命令的参数。其中这个 ' 符号被我认为是引号，后来查阅相关的 shell 命令（相关文章参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/a515983690/article/details/51554297/">linux下命令执行结果作为其他命令输入参数 - CSDN博客</a>），才明白为反引号（一般位于ESC 的下方）。</p>
-<p>说完这两个问题，回到主题，每天和字母打交到，选着一款合适的字体是非常重要的。推荐一款我在几年前就使用的编程字体——<a target="_blank" rel="noopener" href="https://github.com/source-foundry/Hack">Hack: A typeface designed for source code</a>。</p>
-<p><img src="https://media.xiang578.com/15348602272400.png" alt="Hack 字体示意" /></p>
-<p>上图就是这款字体的示意，最喜欢的点是 <code>0</code> 中间有一个小竖点，非常的传神。 以至于现在 IDE 中的 0 不是想上面这样处理，我都感觉不会编程了。</p>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/font/">font </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-09-03T23:05:50.000Z" title="2018-09-03T23:05:50.000Z">2018-09-04</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.585Z" title="2024-05-05T14:05:13.585Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E4%B8%8D%E8%80%81%E9%98%81/">不老阁</a></span><span class="level-item"><i class="far fa-clock"></i> 11 分钟读完 (大约1668个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/use-travis-ci-to-auto-build-blog.html">博客折腾记：使用 Travis CI 自动部署博客</a></p><div class="content  e-content"><blockquote>
-<p>已切换到 Github Action</p>
-</blockquote>
-<p>之前一周在封闭接受公司培训，最重要的任务是熟悉「项目开发全流程」。其中有一点：服务的稳定性。不知道为什么，前几天自己的博客崩溃了，输入域名只能看到 404 页面。当时以为是 Travis CI 的原因，所以进行了全面的一次排查：</p>
+<h2 id="商业"><a class="markdownIt-Anchor" href="#商业"></a> 商业</h2>
 <ul>
-<li>问题出现在 Github Pages 的 Custom domain 设置中。</li>
-<li>具体表现：通过 Travis CI 推送博客静态文件到仓库中的 master 后，下图框中的域名就会变成空的，导致无法访问。</li>
-<li>解决方法：在源文件的 source 目录下创建一个 CNAME 文件，写上你自己的域名。</li>
+<li>阿里很强调价值观，但[[阿里巴巴]]首先是一家商业组织。</li>
+<li>上学时，[[黄峥]]就意识到了机会可贵：“我在上学时就意识到几个事：一是寒门出贵子是小概率事件，大部分富二代，尤其是官二代非常优秀。二是田忌赛马，在整体资源劣势的情况下可以创造出局部优势，进而有机会获得整个战役的胜利。基于此，平凡人可以成就不凡事。第三是钱是工具，不是目的。”</li>
+<li>趣头条本质上是一款游戏产品，只不过披着内容信息流的外衣。
+<ul>
+<li>不过这一些信息流产品只有学习用户兴趣，真正的影响用户行为还是要靠基于强化学习开发的游戏。</li>
 </ul>
-<p><img src="https://media.xiang578.com/15358143289885.jpg" alt="" /></p>
-<h2 id="travis-ci"><a class="markdownIt-Anchor" href="#travis-ci"></a> Travis CI</h2>
-<p>其实看一眼就应该知道，我的博客是基于 hexo 搭建的，文件托管在 github 仓库中。不过，按照之前的设想博客应该在 Coding 中也有一份备份。后来由于一些原因，在利用 hexo 生成静态文件之后，自动推送到 Coding 上的命令不起作用。自己也没有时间去排查问题，所以最近访问速度有点慢。</p>
-<p>传统的 hexo 博客更新过程是：在完成写作之后，利用命令行调用 <code>hexo g &amp;&amp; hexo d</code> 来生成静态博客文件以及并推送到远端的仓库中。这种方法会产生三个痛点：</p>
+</li>
+<li>字节系广告变现涉及4个角色：内容消费者，内容生产者，平台，广告主；阿里系广告变现涉及3个角色：消费者，商家，平台；所以阿里的广告变现链条更短，一定程度上也是效率更高的原因。多一个角色，多一份成本，最终效果要多乘一个参数。</li>
+<li><a target="_blank" rel="noopener" href="https://medium.learningbyshipping.com/apples-relentless-strategy-and-execution-7544a76aa26">Apple’s Relentless Strategy, Execution, and Point of View | by Steven Sinofsky | Jun, 2020 | Learning By Shipping</a>  Steven Sinofsky 是前微软 Windows 业务部门的总裁评价苹果架构迁移。
+<ul>
+<li>其实没有仔细看这一篇文章。震惊到我的是，这位兄弟管理过 20000 人的工程团队？不知道现在国内有哪一些公司的 CTO 能管理这么多的人。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/61174">从苹果的系统更新，理解设计中的「控制」与「自由」 - 少数派</a>
+<ul>
+<li>雪城大学建筑学教授理查德·洛萨（Rhichard Rosa）认为**“设计的本质即是在于控制与自由。”**这句话非常简洁但直接地介入了设计的核心——设计行为为混乱与无序赋予秩序，使之得以承载可控的人类行为；但设计也一定不是绝对的控制，它一定要为使用者预留一些自由。</li>
+<li>设计师对美学的自信会落脚在对细节的强制：贝聿铭设计京都东郊的美秀美术馆，下雨天需要领取相应颜色的雨伞才能进入。</li>
+<li><strong>有些人说：“消费者想要什么就给他们什么。”</strong> <strong>人们不知道想要什么，直到你把它摆在他们面前</strong></li>
+<li><strong>设计一定需要控制，但一定不是绝对的控制。平台的搭建者需要预留一些自由给开发者以及用户，对秩序的全盘接手最终会导致自下而上民意的反弹。</strong></li>
+<li>[[设计的哲学]]，设计的背后是不是需要有哲学？一味满足用户需求的软件是不是会变得十分的复杂？比如 Emacs 之类自由度高的软件？</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/03080891e4ba">顶级PM的产品观：王慧文看行业-合集 - 简书</a>
+<ul>
+<li>互联网 AB 面：A类是供给和履约在线上，B类是供给和履约在线下。</li>
+<li>B类又可以分为：以SKU为中心的供给B1和以Location为中心的服务B2。</li>
+<li>A 类能力体现在产品设计领域，体现在用户理解上，体现在对于通讯、社交以及内容把握上。</li>
+<li>B1里面，主要体现在对于品类的理解，对于供应链的理解，对于定价的理解。</li>
+<li>B2里面，如果你们去盘点一下B2的公司，他们总体来说有一个比较共有的特征，大规模的线下团队。</li>
+<li>是否有大规模的线下团队是B1和B2一个很大的差别。</li>
+<li>在LBS的方向上，中国和美国的企业这样的差距是怎么样发生的？大概有四个因素决定：人力成本、人口密度、人口规模、代际竞争。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://media.xiang578.com/a-b1-b2.png" alt="互联网 AB 面" /></p>
+<h2 id="阅读"><a class="markdownIt-Anchor" href="#阅读"></a> 阅读</h2>
+<ul>
+<li>理解世界的一个有效方法是，在人生的某个阶段，把任何之前视为理所当然的事情全都重新研究与思考一遍，并弄清楚它们运行的真正起源与机理。在这个过程中，自问的问题越基础、越显得不需要去质疑，收获往往就会越多——人为什么要每天吃三顿饭、买东西为什么要花钱、书籍和文章为什么会存在——真理通常就藏在这些大多数人想都不会想的事情里。[[张潇雨]]
+<ul>
+<li>「银河系漫游指」里面有一句：任何在我出生时已经有的科技都是稀松平常的世界本来秩序的一部分。</li>
+</ul>
+</li>
+<li>什么是第一原理？
+<ul>
+<li>[[亚里士多德]] 在[[形而上学]]中提出这个哲学概念，指「公理：无法再分、无法证明且不证自明的命题。」</li>
+<li>“第一原理”本身并不是什么原理，它只是个简称。准确地说，应该叫做“从第一原理推理”（reasoning by first principle），是<strong>分析问题，找出其不可继续拆分的根本原因，即第一原理，再从第一原理反推出解决方案的思考方式。</strong></li>
+<li>第一原理是先验</li>
+</ul>
+</li>
+</ul>
+<h2 id="算法"><a class="markdownIt-Anchor" href="#算法"></a> 算法</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.tanglei.name/blog/shuffle-algorithm.html">面试官：会玩牌吧？给我讲讲洗牌算法和应用场景吧！ | 唐磊的个人博客</a> [[洗牌算法]]
+<ul>
+<li>之前的分享中写房租分配 <a target="_blank" rel="noopener" href="https://xiang578.com/post/week-issue-9.html">每周分享第 9 期：拼多多 | 算法花园</a></li>
+<li>保证每次的概率是相同</li>
+<li>#[[problem]]实现以下算法：一组数，每次不放回抽样，得到一个随机序列。白板编程。分析时间空间复杂度。
+<ul>
+<li>follow up：能否时间O(n)完成，能否空间O(1)完成。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=733m6qBH-jI">Stanford CS230: Deep Learning | Autumn 2018 | Lecture 8 - Career Advice / Reading Research Papers - YouTube</a>：Ag 在课程中介绍如何阅读论文，又一次感受到大佬的真诚。
+<ul>
+<li>主题阅读
+<ul>
+<li>收集资料</li>
+<li>列出一个 list ，标注阅读进度。挑选有价值的论文阅读。</li>
+<li>5-20 初步了解</li>
+<li>50-100 很好理解前沿工作</li>
+</ul>
+</li>
+<li>如何阅读论文
+<ul>
+<li>多遍阅读</li>
+<li>第一遍：标题，摘要，图片</li>
+<li>第二遍：简介、结论、图片相关材料</li>
+<li>第三遍：进入论文主体部分，但是可以跳过数学，明白每个参数的含义。</li>
+<li>第四遍：阅读整篇文章，跳过没意义的部分(内容过时，没有火起来过)。</li>
+</ul>
+</li>
+<li>阅读时思考的问题
+<ul>
+<li>作者试图解决什么问题？</li>
+<li>研究方法的关键是什么？（最具有开创性）</li>
+<li>哪些东西可以为你所用？</li>
+<li>有哪些参考文献可以继续跟进？</li>
+</ul>
+</li>
+<li>最后发现一篇相关实践文章： <a target="_blank" rel="noopener" href="https://towardsdatascience.com/how-you-should-read-research-papers-according-to-andrew-ng-stanford-deep-learning-lectures-98ecbd3ccfb3">How You Should Read Research Papers According To Andrew Ng (Stanford Deep Learning Lectures) | by Richmond Alake | Jul, 2020 | Towards Data Science</a></li>
+</ul>
+</li>
+<li>另外一篇和论文阅读有关的文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/163227375">沈向洋、华刚：读科研论文的三个层次、四个阶段与十个问题 - 知乎</a>
+<ul>
+<li>三个层次：速度、精读与研读</li>
+<li>四个阶段：Passive Reading、Active Reading、Critical Reading、Creative Reading</li>
+</ul>
+</li>
+</ul>
+<p>这就是本期的 「Never-Reading」，我们下个月再见。</p>
+</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-07-14T15:55:11.000Z" title="2020-07-14T15:55:11.000Z">2020-07-14</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.469Z" title="2024-05-12T11:15:03.469Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 17 分钟读完 (大约2486个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/monthly-issue-202006.html">【每月分享】 202006 Never Reading</a></p><div class="content  e-content"><p>这一份 6 月的阅读总结来的有一点晚。前几年一直断断续续在实践 GTD，人的拖延症超乎想象，学到的一个经验是 「Now or Never」。所以，这个月将自己的阅读列表取名为「Never Reading」。</p>
+<h2 id="笔记方法精进"><a class="markdownIt-Anchor" href="#笔记方法精进"></a> 笔记方法精进</h2>
+<p>Roam Research 引起现在这一波 Backlink 笔记软件浪潮，本月依然阅读一些和笔记方法相关的文章。</p>
+<h3 id="我的-zettelkasten-卡片盒笔记法实践-吕立青的博客"><a class="markdownIt-Anchor" href="#我的-zettelkasten-卡片盒笔记法实践-吕立青的博客"></a> 我的 Zettelkasten 卡片盒笔记法实践 | 吕立青的博客</h3>
+<p><a target="_blank" rel="noopener" href="https://blog.jimmylv.info/2020-06-03-zettelkasten-in-action/">文章链接</a></p>
+<p>上个月介绍过，自己已经从 Roam Research 迁移到 Obsidian，然后就看到吕立青这一篇基于 Obsidian 的 Zettelkasten 实践。文章中将卡片盒笔记分拆分成四步：</p>
+<blockquote>
+<p>1️⃣ 第一步：必须用自己的话写笔记卡片，以确保你将来能够理解。</p>
+<p>2️⃣ 第二步：无论何时添加新笔记，主动查找可链接到的已有笔记。</p>
+<p>3️⃣ 第三步：通过添加新记录并联系起来，延续这一系列的连续思考。</p>
+<p>4️⃣ 第四步：使用 Anki 间隔重复加深记忆，主动由大脑触发远程联想。</p>
+</blockquote>
+<p>搞笑地是，在他写出这篇文章没有多久之后，已经开始尝试往 Roam Research 上迁移……另外，为了更好在国内推广，他参与发起 <a href="roam-cn.github.io">roam/cn</a> 组织，从英文世界翻译一些推特、视频以及分享一些个人的案例。</p>
+<h3 id="zettelkasten-note-taking-in-10-minutes"><a class="markdownIt-Anchor" href="#zettelkasten-note-taking-in-10-minutes"></a> Zettelkasten note-taking in 10 minutes</h3>
+<p>两条原则：</p>
+<ul>
+<li>Don’t try to get this method perfect from the get go.</li>
+<li>The advanced practices are useful only when you’ve got close to 1000 notes</li>
+</ul>
+<h3 id="my-productivity-app-for-the-past-12-years-has-been-a-single-txt-file"><a class="markdownIt-Anchor" href="#my-productivity-app-for-the-past-12-years-has-been-a-single-txt-file"></a> My productivity app for the past 12 years has been a single .txt file</h3>
+<p>12 年间使用一个 txt 进行任务管理方法分享。作者提到 to do list 变成 what done list 的过程，每天晚上将日历中第二天的代办事项整理到 txt 中，第二天顺手记录任务相关的信息（比如讨论出的结论，或者得到的信息）。结合自己使用经历，OmniFocus 是一个 to do list，基于纯文本的任务管理方式（org-mode 或 taskpaper）更容易成为 what done list。</p>
+<h2 id="商业"><a class="markdownIt-Anchor" href="#商业"></a> 商业</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://36kr.com/p/736767189897093">滴滴重踩油门_详细解读_最新资讯_热点事件_36氪</a> 不开玩笑地说，看完这里面的分析，我才理解公司很多的战略。</li>
+<li><a target="_blank" rel="noopener" href="https://www.notion.so/c074ab234e2b4dbb9143a48faceec031">淘宝宣战拼多多的前夜：吕晋杰、陈琪、徐易容和葛永昌的至暗时刻</a> 和很多同学聊天，17 年找工作的时候低估了拼多多的潜力。
+<ul>
+<li>淘宝 PC 转移动互联网时，流量入口从网页短 300 个减少到手淘 app 48 个。是不是能解释淘宝这几年涌现出那么多的推荐系统相关的问题。</li>
+<li>电视广告投放策略以及如何理解流量暴涨，拼多多上一直很火爆的「百亿补贴」</li>
+<li>任何人都可以成为英雄，哪怕是做了一件不起眼的事情。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/146363597">快手的普通，抖音的美好，算法的价值观 - 知乎</a>
+<ul>
+<li>算法没有价值观，算法只会实现设计者的意图。</li>
+<li>主动降低算法效率，是为了实现某些短期无法衡量的业务目标。</li>
+<li>抖音将流量集中在头部。</li>
+<li>快手整体的点击率被牺牲，普通人的流量被保证。</li>
+<li>抖音说记录美好生活，快手说记录世界记录你。</li>
+</ul>
+</li>
+</ul>
+<h2 id="阅读"><a class="markdownIt-Anchor" href="#阅读"></a> 阅读</h2>
+<h3 id="人生总有一刻我们会开始思考死亡"><a class="markdownIt-Anchor" href="#人生总有一刻我们会开始思考死亡"></a> 人生总有一刻，我们会开始思考死亡</h3>
+<p>茨威格在《人类的群星闪耀时》所说的那种幸运是什么 —— 「最大的幸运，莫过于在年富力强的时候，发现了自己的使命」</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24640592">人生总有一刻，我们会开始思考死亡 - 知乎</a> [[张潇雨]]<br />
+于是我发现，面对死亡最终可能只有两种方法。</p>
+<ul>
+<li>一种是将自己与一些更宏大的东西联系起来：一个数学定理、一本文学著作、一件艺术作品或一种恒久的信仰。马尔克斯与康德靠《百年孤独》与《纯粹理性批判》遗世独立，米开朗基罗把《创世纪》和《最后的审判》印刻在西斯廷大教堂里，供千万后朝拜——他们肉身虽灭，但精神不朽——反正建筑是永远戳在那儿的。</li>
+<li>还有一种就是，生活在当下的每个瞬间里，不烦扰过去、不担忧将来。</li>
+</ul>
+</blockquote>
+<h3 id="即刻半月刊"><a class="markdownIt-Anchor" href="#即刻半月刊"></a> 即刻半月刊</h3>
+<p>6.18？即刻重新开放，之前对这个社区没有太多印象，尝试关注一些人之后，信息流的质量也不错。「即刻半月刊」是某些爱好者挑选的一些即友发言集合。摘录一些我觉得有意思的内容。</p>
+<ul>
+<li>老罗带货首卖小米的中性笔：数量太少。之前看到过一个分析，抖音自己做电商最大的困难点在于没有用户的物流地址。简单想一下，用户可能在填写地址这一步流失。</li>
+<li>@Rey_L 我在判断哪家公司的产品会换灰色皮肤的时候，基本都猜对了hhh，滴滴头条一定会做，京东会做，淘宝也许会做，拼多多肯定不做。</li>
+<li>微信小程序减少 App Store 在国内的下载量。不过大部分巨头的小程序还是想要从微信中引流的。</li>
+<li>底下有回复cite了一个working paper，大意说的是名校（elite education，这里用的是211高校与非211高校的断点回归）能够给学生带来的起薪上 30-45% 的提升，其原因在于名校当中的social network，elite的peer普遍家庭条件更好，成绩也更好。上网课带来不了这种social connection…所以说不单只是知识改变命运，环境也很重要</li>
+<li>所谓“商业模式”其实指的是这家公司的“价值创造模式”，即用什么样的模型创造了更多价值。
+<ul>
+<li>世界上现存所有的商业模式无非三种，一是[[边际效应]]（规模效应/协同效应），二是[[双边效应]]，三是梅特卡夫[[网络效应]]。不同的价值创造模型，带来不同的增长动力，继而带来不同的货币化方法。</li>
+<li>滴滴是什么模型？</li>
+</ul>
+</li>
+<li>A/B test只能做模型的小优化，但找不到大的绝对的增长点，所以除了推荐系统里的参数，即刻的很多产品决策希望尽量远离A/B test</li>
+<li>张小龙的饭否，张一鸣的微博，黄峥的微信公众号，很可惜这几个都成了过去形态。现在只剩下王兴的饭否了。</li>
+<li>一个反向小思考：兴趣社交刚需归刚需，社交app的本质还是信息分发。RSS订阅20周年，分发的有效性也不是什么相似推荐，^<sup>而是真正提供专注力的阅读</sup>^。因为个性推荐的本质就是专注力。信息廉价甩卖的今天，打开微博广场/抖音主页/朋友圈（广告），用户最需要的不是新鲜事而是减少噪音的阅读器，人永远看到自己想看到的，产品顺水推舟不也是更讨巧，所以需要设计者克制。沟通永远是双向的，当用户感到一个舒适被接纳的舆论场所，也会更加有表达欲。</li>
+<li>芒果系这么多年都在做一件事，就是把握这个时代的情绪。[[乘风破浪的姐姐们]]</li>
+</ul>
+<h2 id="机器学习"><a class="markdownIt-Anchor" href="#机器学习"></a> 机器学习</h2>
+<p>本月 KDD 2020 的文章应该已经放出，推荐阅读 Airbnb 深度模型实践相关的文章 Managing Diversity in Airbnb Search 以及 Improving Deep Learning For Airbnb Search。 7 月份希望能写一篇博客分享自己的阅读笔记。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/389912594">神经网络中对需要concat的特征进行线性变换然后相加是否好于直接concat? - 知乎</a> [[机器学习]]
+<ul>
+<li>concat 没有信息融合，也没有信息缺失</li>
+<li>add 不同向量之间的权重相同，会导致信息缺失。待融合的特征具有相同分布，或特征属于同一类，直接相加才有可能提升模型性能。</li>
+<li>concat + MLP 能够自动学习不同 channel 的权重，MLP 能引入非线性。利于通道间的信息融合，计算量大。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24851814">【机器学习】Bootstrap详解 - 知乎</a>：随机森林里面用到的数据重采样方法，老板要求训练两个有差异模型时给我推荐的方法。</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/148729018">BERT 可解释性-从&quot;头&quot;说起 - 知乎</a>：蛮有意思的对 BERT 组件效果分析，这位作者举的例子有些蹭热点。</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63982470">都9102年了，别再用Adam + L2 regularization了 - 知乎</a>：说明为什么要用 AdamW。另外推荐一下，之前一位同事写的 AdamW 实现：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/40814046">L2正则=Weight Decay？并不是这样 - 知乎</a></li>
+</ul>
+</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-06-07T15:55:11.000Z" title="2020-06-07T15:55:11.000Z">2020-06-07</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.469Z" title="2024-05-12T11:15:03.469Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 14 分钟读完 (大约2051个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/monthly-issue-202005.html">【每月分享】 202005 Newsletter</a></p><div class="content  e-content"><h2 id="newsletter"><a class="markdownIt-Anchor" href="#newsletter"></a> Newsletter</h2>
+<p>从去年开始给我一种 RSS 复兴的感觉，这个月尝试使用 Newsletter。对于创作者来说，RSS 不仅无法统计数据，也很难开展会员模式。Newsletter 通过邮箱订阅的的手段，完美解决这两个问题，国外开始有一站式的解决方案，可能几个月之后也会在国内火起来。推荐自己订阅的一些邮件组给大家。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.notion.so/PRODUCT-THINKING-a601a12335044f349a22caf57f274c27">PRODUCT THINKING · 产品沉思录精选</a>：第一个付费订阅的邮件周刊，目前的价格是 199 元/年。根据少楠自己写的介绍，内容包括但不限于产品设计，服务设计，数据分析，互联网技术，经济学，心理学，社会学，决策学，自然科学，城市规划，零售，团队管理等内容。每周会推荐几篇网上比较好的文章，偶尔也翻译一些英语文章。挑选几篇我觉得不错的公开内容：
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.notion.so/Zettelkasten-25627d7ce99344c487f4e42d861f9e0a">原子笔记法：Zettelkasten</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.notion.so/P-A-R-A-Notion-19909e5aac3049d887197dcfb1e97fd5">如何管理信息：P.A.R.A. 是什么及在 Notion中的应用</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://rizime.substack.com/">Λ-Reading</a> 阅读相关分享，作者的读书笔记网站也值得一看 <a target="_blank" rel="noopener" href="https://rizi.me/">— Read the Word,Read the World.</a>。推荐内容：
+<ul>
+<li><a target="_blank" rel="noopener" href="https://rizime.substack.com/p/f08">路径依赖和困扰计算机的简单问题 - Λ-Reading</a></li>
+<li><a target="_blank" rel="noopener" href="https://rizime.substack.com/p/d28">号外：知识管理工具 - Λ-Reading</a> 中文为数不多关于 TiddlyWiki 的介绍。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://clearbox.substack.com/">透明盒子计划</a> 深度阅读分享，盒子对应 Zettelkasten。
+<ul>
+<li><a target="_blank" rel="noopener" href="https://clearbox.substack.com/p/coming-soon">透明盒子计划 - 透明盒子计划</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://superorganizers.substack.com/">Superorganizers</a> 对国外人士的采访，有关于效率、数字生活等。目前只看他的免费内容……
+<ul>
+<li><a target="_blank" rel="noopener" href="https://superorganizers.substack.com/p/how-to-build-a-learning-machine">How to Make Yourself Into a Learning Machine - Superorganizers</a>：对一名高中辍学的小哥的采访，介绍来一些自我教育的方法。</li>
+</ul>
+</li>
+</ul>
+<h2 id="阅读"><a class="markdownIt-Anchor" href="#阅读"></a> 阅读</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://sspai.com/post/60466">How to take smart notes，方法及工具 - 少数派</a>：Zettelkasten 这种做笔记方法慢慢开始要在国内流行起来，自己已经关注差不多超过半年的时间，接下来也在计划写一篇相关的博客文章。</li>
+<li><a target="_blank" rel="noopener" href="https://beepb00p.xyz/hpi.html">Human Programming Interface</a> 简单看来一下，利用 py 包和 Emacs 管理所有相关的个人数据，挺疯狂的。</li>
+<li>上古论坛差不多十年前的帖子， <a target="_blank" rel="noopener" href="https://www.hi-pda.com/forum/viewthread.php?tid=819978&amp;extra=&amp;authorid=1956&amp;page=1">我的千书阅读计划 - 意欲蔓延 - Hi!PDA Hi!PDA</a> fatdragoncat 通过阅读成为一名自由职业者。帖子中介绍大量篇幅介绍如何高效阅读、锻炼、自我管理等等。在印象笔记中找到几年前自己写的笔记，现在重新整理一下相关的内容，并分享给大家。</li>
+<li><a target="_blank" rel="noopener" href="https://www.twitch.tv/videos/611050187">AndyMatuschak - Making sense of Design Unbound vs. prior theories of collaborative design work - Twitch</a> [[Evergreen notes]]的创始人公开展示写作的过程。通过这个视频可以发现他使用的笔记软件是 [[Bear]]，看起来 Reference 和 Backlink 都是手动输入的，不过这样也符合 [[Zettelkasten]] 的原则。只是 [[Roam Research]] 这样的软件让我们变懒。</li>
+<li>莫言获得诺贝尔文学奖发表的演讲中有一个故事：到了荒滩上，我把牛羊放开，让它们自己吃草。蓝天如海，草地一望无际，周围看不到一个人影，没有人的声音，只有鸟儿在天上鸣叫。我感到很孤独，很寂寞，心里空空荡荡。有时候，我躺在草地上，望着天上懒洋洋地飘动着的白云，脑海里便浮现出许多莫名其妙的幻象。我们那地方流传着许多狐狸变成美女的故事，我幻想着能有一个狐狸变成美女与我来作伴放牛，但她始终没有出现。但有一次，一只火红色的狐狸从我面前的草丛中跳出来时，我被吓得一屁股蹲在地上。狐狸跑没了踪影，我还在那里颤抖。有时候我会蹲在牛的身旁，看着湛蓝的牛眼和牛眼中的我的倒影。有时候我会模仿着鸟儿的叫声试图与天上的鸟儿对话，有时候我会对一棵树诉说心声。但鸟儿不理我，树也不理我。许多年后，当我成为一个小说家，当年的许多幻想，都被我写进了小说。很多人夸我想象力丰富，有一些文学爱好者，希望我能告诉他们培养想象力的秘诀，对此，我只能报以苦笑。</li>
+</ul>
+<h2 id="机器学习"><a class="markdownIt-Anchor" href="#机器学习"></a> 机器学习</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138136777">谈谈推荐系统中的用户行为序列建模 - 知乎</a> 一篇关于用户行为序列建模的文章，基本上常用的方法都介绍了。
+<ul>
+<li>和上一次  “<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/125507748">从谷歌到阿里，谈谈工业界推荐系统多目标预估的两种范式 - 知乎</a>[[机器学习实践]][[MTL]]” 属于同一个作者</li>
+<li>目前主流推荐系统框架 [[Deep Neural Networks for YouTube Recommendations]] 中的 Matching 和 Ranking。另外可能还有规则模块。</li>
+<li>pooling-based architecture 范式，用户行为是无序集合，使用 sum/max pooling 或各种 attention
+<ul>
+<li>[[Deep Neural Networks for YouTube Recommendations]] 中将用户观看过的视频序列取到 embedding 后，做一个 mean pooling 作为用户历史兴趣的表达</li>
+<li>Ranking 阶段：[[DIN]] target item 和行为序列的 item 做一个 attention，得到一个 weight，然后加权求和。</li>
+<li>结合 [[Transformer]] 做 self-attention 并行的建模长序列依赖，除去用户行为序列中的噪声：[[Behavior Sequence Transformer for E-commerce Recommendation in Alibaba]]</li>
+</ul>
+</li>
+<li>sequential-modeling architecture 范式，用户行为当成一个具有时间属性的序列，使用 RNN、LSTM、GRU 等
+<ul>
+<li>[[Perceive Your Users in Depth: Learning Universal User Representations from Multiple E-commerce Tasks]] Property Gated LSTM</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30720579">推荐中的序列化建模：Session-based neural recommendation - 知乎</a></li>
+</ul>
+</li>
+<li>上面两种方法都是将用户行为经过 pooling/attention/rnn 的处理，聚合成用户行为序列的 embedding，再和其他的特征 concat 在一起，经过 mlp 后接 sigmod/softmax</li>
+<li>抽取聚类出用户多峰兴趣，Capsule
+<ul>
+<li>阿里 [[MIND]] 胶囊网络</li>
+</ul>
+</li>
+<li>辅助损失函数
+<ul>
+<li>[[DIEN]] 兴趣提取和兴趣演化，以最后一个 hidden state 做为用户兴趣的表达。兴趣提取模块，使用隐状态和下一件商品预测做二分类。不加入辅助loss，GRU 的隐变量完全受限于最终点击的 label，加入后能约束 GRU 每个隐状态表示其本身的兴趣。</li>
+</ul>
+</li>
+<li>提升用户序列长度，可以带来可观的 auc 提升。[[MIMN]]</li>
+</ul>
+</li>
+<li>Applying Deep Learning To Airbnb Search：一篇关于从 GBDT 模型迁移到深度模型的工业实践记录 paper。对于我这种没有经历过这种技术迭代的人来说，工业级的深度模型上线比想象中的要困难。作者们针对自己遇到的比如 listing embedding 训练不充分、如何判断 feature 的重要性等问题设计实验去验证以及给出解释。严谨的精神值得吾辈学习。</li>
+</ul>
+<h2 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h2>
+<p>出于对 Roam Research 开发者的不放心，已将全部文档迁移到 Obsidian。目前还在探索新的工作流，5 月分享不可避免产生拖延。另外还在寻找一种建立 Digital Garden 的方法。</p>
+</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-05-01T08:55:11.000Z" title="2020-05-01T08:55:11.000Z">2020-05-01</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.469Z" title="2024-05-12T11:15:03.469Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 18 分钟读完 (大约2701个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/monthly-issue-202004.html">【每月分享】 202004 新的尝试</a></p><div class="content  e-content"><p>不知不觉又到更新每月分享的时间。</p>
+<p>想写一下我为什么做这件事情？分享自己平时看到有意思的内容，现实世界认识的人，很少对我关注的内容感兴趣，所幸能借助博客超越时间和空间限制的分享。</p>
+<p>另外一点，我希望自己能将这个系列当成一个产品去迭代，每一期都有形式和内容上的进步。这件事看起来很简单，但却需要耗费很大的精力。其实在网上看到很多人通过这种形式分享，到头来还在坚持的大概也没有多少人（比如阮一峰的科技爱好者周刊）。</p>
+<h2 id="zettelkasten-以及-roam-research"><a class="markdownIt-Anchor" href="#zettelkasten-以及-roam-research"></a> Zettelkasten 以及 Roam Research</h2>
+<p>Zettlekasten 是一个德语单词，意思是卡片盒。现在主要指一种记笔记的思路。Roam Research 是目前国外很火的一个笔记软件，最大的特点是实现不同笔记之间的双向链接。好几个月前就开始尝试 Zettlekasten 的方法，4 月开始才使用 Roam Research。这里先分享一些我看过的文章。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/Tisoga/status/1244856639439515649">Roam Research 入门指南（thread）</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@dongyangvic/%E7%94%A8-roam-research-%E6%9D%A5%E6%89%93%E8%8D%89%E7%A8%BF-a3b1d3873aa4">用 Roam Research 来打草稿 - Dongyang Vic - Medium</a></li>
+<li>Roam Fu
+<ul>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1247260599760736256">Part I: My plan for using @RoamResearch for a thesis</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1252669427125895169">Part II: Using Twitter as an inter-brain zettelkasten</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/kcorazo/status/1255296825566920705">Part III: Beyond the Empire</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="阅读"><a class="markdownIt-Anchor" href="#阅读"></a> 阅读</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.gcores.com/articles/121924">中文互联网中“讨论”的消亡 | 机核 GCORES</a>：从产品设计角度分析国内主流网站如何限制用户讨论，互联网缩短人与人之间的距离，但我们用来互喷。</li>
+<li><a target="_blank" rel="noopener" href="https://www.huxiu.com/article/350854.html">互联网是人类历史的一段弯路吗？-虎嗅网</a>：又一篇深度长文，很多观点可以背下来出去装B。</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/135281778">ByteDance程序员生存指南 - 知乎</a>
+<ul>
+<li>有些年轻人，在结束一整天的工作后，拖着疲惫不堪的肉体回到出租屋，这时候只想躺着啥都不想干，躺在好几周没有换过的床单上点开了抖音，不一会儿就刷到了凌晨，第二天再拖着疲惫不堪的肉体上班。到了周末也没有任何心力出去玩，只能睡到中午然后随便吃点东西看看剧。没有生活，没有朋友，一晃就单身了四五年，长此以往不仅仅是肉体在亚健康和崩溃的边缘，心理健康更是会出现问题。 孤独、焦虑、易怒等等情绪时刻伴随着一个人。</li>
+<li>每个月仅仅只有收到工资短信时可以高兴几分钟。但这笔钱并不敢轻易花出去，因为都是血汗积攒而来，付出的多自然不敢随意花出去。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA3MzM0MjUyMQ==&amp;mid=2652149604&amp;idx=1&amp;sn=3c96ebfe992694e5c57affe9ef5ba33f&amp;scene=21#wechat_redirect">构建优雅的知识创造系统</a> [[阳志平]] [[卡片写作法]]
+<ul>
+<li>利用电子卡片后，如何量化每天的产出？是不是可以换算成 github 更新多少字？</li>
+<li>卡片是自己看的，不需要分享：<strong>在卡片层级最大的误区是：分享</strong>。<strong>不少人误将卡片、文件和项目三个层级混为一谈，喜欢在卡片层级搞分享</strong>。这样每次撰写卡片时就增加了一个选择项：<strong>这张卡片我是该分享还是该存着自己看？增加的认知操作加大了认知负荷，从简单反应时变为选择反应时</strong>。所以尽可能在卡片层级少做分享。</li>
+<li>一周、一月、一年、十年与数十年，进行自己的实践。</li>
+</ul>
+</li>
+<li>所有人问俞军
+<ul>
+<li>[[金字塔原理]] 和 [[学会提问]]</li>
+<li>优秀的思维方式以及对人性和世界的底层理解</li>
+<li>我不是说人工智能不好，而是我自己只关心我能想明白一两年内能给创造什么用户价值的产品(或技术等)，如果我想不明白这东西马上能给用户创造什么价值，我就毫无兴趣。</li>
+<li>看《搜索研究院》页首页尾的那句话，“我们若能更妥善地搜寻资料，实在已经改变世界。”</li>
+</ul>
+</li>
+<li>前百度首席科学家吴恩达谈学习
+<ul>
+<li>如果你学习，两天后的周一，你不会很快的就在工作中出彩，你的老板也不会知道你花了整天的时间学习，更不会夸奖你什么。你几乎找不到任何东西可以证明你在努力学习。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://blog.jimmylv.info/2016-07-12-pkm-again-to-innovate-my-note-system/">再谈个人知识管理：革新我的笔记系统 | 吕立青的博客</a> 好久没有看到立青写文章
+<ul>
+<li>不同软件之间，单条笔记的迁移相当于一次对知识进行提炼的过程。</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://tundrazone.com/guanyudongwuzhisendesanze/">关于动物之森的三则 – 苔原带</a>
+<ul>
+<li>以前玩家渴望在游戏里杀死巨龙，飞向人马座，击败外星侵入者。而现在我们只需要在游戏里“正常”的生活就乐呵呵了。和朋友一起野餐，请朋友到家里来玩，一个人傻乎乎做开心的事情在现实世界中已经有这么高的门槛了么？又或者只是因为在游戏里做这些事情的成本足够低，多巴胺回报足够快？</li>
+</ul>
+</li>
+</ul>
+<h2 id="机器学习"><a class="markdownIt-Anchor" href="#机器学习"></a> 机器学习</h2>
+<ul>
+<li>内部开始尝试 MCTS 相关的项目。正好接这个机会看一下 DeeepMind 前几年的论文 <a href="">Mastering the game of Go with deep neural networks and tree search</a> 以及 <a href="">Mastering the game of Go without human knowledge</a>。推荐去看一下田渊栋在知乎上 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20607684">AlphaGo的分析</a> ，当时他在 Facebook 参与类似围棋相关的项目。另外就是木遥的 <a target="_blank" rel="noopener" href="https://36kr.com/p/5042969">关于 AlphaGo 论文的阅读笔记</a> 有更多关于现实的思考。最后推荐 <a target="_blank" rel="noopener" href="https://movie.douban.com/subject/27012433/">阿尔法围棋</a>，记录从 DeepMind 开发 AlphaGo 到战胜李世石的全过程。有一个疑问第四局之后，他们有没有增加使用的 GPU 和 CPU？</li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/32218407">在你做推荐系统的过程中都遇到过什么坑？ - 知乎</a> [[CTR]]
+<ul>
+<li>没有明确的指标：CTR，staytime，read/unread</li>
+<li>精准推荐以及兴趣探索</li>
+<li>线下auc涨，线上 ctr 跌</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/125507748">从谷歌到阿里，谈谈工业界推荐系统多目标预估的两种范式 - 知乎</a>[[机器学习实践]][[多任务学习]]
+<ul>
+<li>范式一：[[MMOE]] 替换 hard parameter sharing
+<ul>
+<li>[[Recommending what video to watch next: a multitask ranking system]]</li>
+</ul>
+</li>
+<li>范式二：任务序列依赖关系建模
+<ul>
+<li>[[ESMM]]</li>
+</ul>
+</li>
+<li>模型负采样，存在 CTR 漂移问题 U5Jvma3de</li>
+</ul>
+</li>
+</ul>
+<h2 id="放弃的事情emacs"><a class="markdownIt-Anchor" href="#放弃的事情emacs"></a> 放弃的事情：Emacs</h2>
+<p>写作软件中积累一些文章的草稿，不过由于我的兴趣变化太快，很多文章还没有完成就已经被我放弃。借这个机会，展示一些有意思的东西。</p>
+<p>程序员圈子中编辑器战争一直是一个绕不过去的话题。自己日常的工作中会使用多种编辑器：</p>
+<ul>
+<li>Sublime Text 简单处理文本</li>
+<li>IDEA 处理 Scala Spark 相关的代码</li>
+<li>PyCharm  连接 GPU 服务器处理 python 相关的代码</li>
+<li>VS Code 本机上写 python、shell、cpp、sql 等脚本</li>
+<li>Vim 服务器上修改文件</li>
+</ul>
+<p>不论选择什么编辑器，都推荐大家去看陈斌的<a target="_blank" rel="noopener" href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org"> 一年成为Emacs高手 (像神一样使用编辑器) </a>。</p>
+<p>去年底的时候，由于想尝试 <code>org-mode</code> 做任务管理（下个月再分享相关的内容），开始尝试使用 Emacs。Emacs 最大的有点是基于 Elisp 开发，软件中的每一个功能都对应一个函数，一个快捷键对应一个按键和函数的 map。修改功能和配置非常的方法。比如有人完全将 Vim 在文本操作上的功能迁移过来做成 evil 这个插件（号称所有和 Vim 中表现不同的情况都是 bug）。</p>
+<p>Emacs 需要大量时间调教才能用起来舒心，对于初学者推荐去网上找一些成熟的配置直接使用。目前比较流行的有 Spacemacs 和 Doom emacs，这些配置维护以及使用的人很多，方便解决你遇到的各种问题。另外那些某些大佬个人分享的配置，如果你和大佬的技术栈不同，没有必要强行 clone。把它当成是一个学习素材，更好的理解 Emacs 背后的哲学。再这些基础上，成为高效的程序员的第一步，就是打造属于你自己的专门的配置文件。</p>
+<p>使用好的编辑器是为了更快的工作。那如何更快的工作？</p>
 <ol>
-<li>每一次修改源文件后都需要重新生成一边静态文件，当大量修改时，步骤就变得繁琐且无趣。</li>
-<li>生成静态文件依赖电脑中的 hexo 和 node.js 环境，不方便在外出时临时写或修改博客。</li>
-<li>博客源文件没有自动的备份功能，不符合安全原则。</li>
+<li>在加快敲击键盘的速度</li>
+<li>减少敲击键盘的次数</li>
+<li>减少鼠标和键盘之间的切换</li>
 </ol>
-<p>Travis CI 是一种持续集成开发所使用的工具，在写作过程中引入他可以解决上面我提到的痛点。Travis CI 具体的含义也不是很清楚，直接介绍我是怎么使用的。</p>
-<p>博客依赖 3 个 git 仓库：</p>
-<ul>
-<li>原始文件 <a target="_blank" rel="noopener" href="https://github.com/xiang578/blog">xiang578/blog</a></li>
-<li>主题文件 <a target="_blank" rel="noopener" href="https://github.com/xiang578/hexo-theme-even">xiang578/hexo-theme-even: A super concise theme for Hexo</a>（我对这个主题有一些修改，所以自己 fork 了一份</li>
-<li>发布文件 <a target="_blank" rel="noopener" href="https://github.com/xiang578/xiang578.github.io">xiang578/xiang578.github.io: Welcome to My blog!</a>。</li>
-</ul>
-<p>和大部分人一样，这个博客的静态文件保存在 github 的 <a target="_blank" rel="noopener" href="http://xiang578.github.io">xiang578.github.io</a> 仓库 master 分支中。但是，我还创建了一个新的分支 hexo，用来保存博客源文件。每一次修改博客源文件之后，我不在本地生成静态文件，而是利用 git 命令，将所有的修改内容推送到仓库中的 hexo 分支。Travis CI 服务监听到新的 push 时，会根据你的配置将 git 仓库拉倒他的服务器上，编译源文件成为静态文件，并推送生成的文件到指定仓库的指定分支中。而且，如果编译静态文件失败，他也会通过邮件通知你结果。</p>
-<p><img src="https://media.xiang578.com/15359362837525.jpg" alt="编译成功截图" /></p>
-<h2 id="流程"><a class="markdownIt-Anchor" href="#流程"></a> 流程</h2>
+<p>关于 2，我在之前的文章中提到过一点，改变中文的输入方式（从全拼切换到小鹤双拼）。另外一点就是多使用快捷功能，比如 vim 里面的行号跳转。大部分软件的快捷键都是开发商配置好的，不过每一人主要使用的功能其实是完全不一样的。Emacs 中所有的快捷键可以查到定义的文件，从而进行修改。想象一种情况，为了减少我们按快捷键的次数以及难度。我们统计一段时间内使用 Emacs 各个功能的次数（插件 keyfreq），然后重新定义对应的快捷键。</p>
+<p>由于我自己之前主要使用的是 vim，所以也给 vim 用户一个相对于合理的替换过程：</p>
 <ol>
-<li>将 github 上存放静态博客源文件的仓库拉下来，利用 <code>git checkout -b hexo</code> 创建并进入新的分支，删除分支内所有的文件。</li>
-<li>将博客源文件复制到第一步中的文件夹中。</li>
-<li>添加一个 <code>.travis.yml</code> 文件，文件内容可以参考下一节 Travis-ci 配置文件。</li>
-<li><a target="_blank" rel="noopener" href="https://travis-ci.org/">https://travis-ci.org/</a> 提供免费的持续集成服务，可以通过 github 登入，直接选择需要管理相关的项目。</li>
-<li>第一次将源文件上传到 github 时，可能会遇到问题。主题 <code>themes/xxx</code> 是通过 git clone 下载的，无法直接 push 包含嵌套关系的 git 库。<s>删除 themes/xxx/.git</s> 正确的姿势是，最开始就使用 <code>git modules</code> 引用依赖库。所幸还能编辑 <code>.git/config</code>，添加下面几行代码解决：<br />
-<img src="https://media.xiang578.com/15274942502764.jpg" alt="" /></li>
-<li>打开 <code>themes</code> 对应的 github 网页，你会看到主题链接到其他仓库（其中 @commitid 控制对应的版本）<br />
-<img src="https://media.xiang578.com/15274943487052.jpg" alt="" /></li>
-<li>完成这样的设置，修改主题文件后，需要先将修改 push 到主题的仓库，然后在博客文件夹下 push 修改到远端仓库（修改依赖的 commitid）。最终，才能再网页上看到修改效果。</li>
+<li>当成普通的 vim 使用</li>
+<li>逐步接触 org-mode 相关的功能</li>
+<li>使用 emacs 其他的特性</li>
 </ol>
-<h2 id="travis-ci-配置文件"><a class="markdownIt-Anchor" href="#travis-ci-配置文件"></a> Travis-ci 配置文件</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">node_js:</span><br><span class="line">- 9.11.1</span><br><span class="line">cache:</span><br><span class="line">  directories:</span><br><span class="line">  - node_modules</span><br><span class="line">before_install:</span><br><span class="line">- export TZ=&#x27;Asia/Shanghai&#x27;</span><br><span class="line">- npm install hexo-cli -g</span><br><span class="line">install:</span><br><span class="line">- npm install</span><br><span class="line">script:</span><br><span class="line">- hexo clean</span><br><span class="line">- hexo generate</span><br><span class="line">after_script:</span><br><span class="line">  -  git clone https://$&#123;GH_REF&#125; .deploy_git  # GH_REF是最下面配置的仓库地址</span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ../</span><br><span class="line">  - mv .deploy_git/.git/ ./public/ </span><br><span class="line">  - cd ./public</span><br><span class="line">  - git config user.name &quot;xiang578&quot;</span><br><span class="line">  - git config user.email &quot;xiang578@foxmail.com&quot;</span><br><span class="line">  - git add .</span><br><span class="line">  # - git commit -m &quot;Deploy at $(date +&quot;%Y-%m-%d %T&quot;)&quot;</span><br><span class="line">  - git commit -m &quot;Travis CI Auto Builder at `date +&quot;%Y-%m-%d %H:%M&quot;`&quot;</span><br><span class="line">  # Github Pages</span><br><span class="line">  - git push --force --quiet &quot;https://$&#123;CI_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:master </span><br><span class="line">  # Coding Pages</span><br><span class="line">  # - git push --force --quiet &quot;https://xiang578:$&#123;Coding_TOKEN&#125;@$&#123;CO_REF&#125;&quot; master:master</span><br><span class="line"></span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">  - hexo</span><br><span class="line"></span><br><span class="line">env:</span><br><span class="line"> global:</span><br><span class="line">   # Github Pages</span><br><span class="line">   - GH_REF: github.com/xiang578/xiang578.github.io</span><br><span class="line">   # Coding Pages</span><br><span class="line">   # - CO_REF: git.coding.net/xiang578/xiang578.git</span><br></pre></td></tr></table></figure>
-<h2 id="hexo-两个错误"><a class="markdownIt-Anchor" href="#hexo-两个错误"></a> hexo 两个错误</h2>
-<p>在这一次的过程中，又遇到两个本地编译 hexo 的错误，一同记录一下。错误表现如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ERROR Plugin load failed: hexo-renderer-sass</span><br><span class="line">Error: Cannot find module &#x27;node-sass&#x27;</span><br><span class="line">    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)</span><br><span class="line">   ...</span><br><span class="line">ERROR Plugin load failed: hexo-renderer-scss</span><br><span class="line">Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)</span><br><span class="line">For more information on which environments are supported please see:</span><br><span class="line">https://github.com/sass/node-sass/releases/tag/v4.8.3</span><br><span class="line">   ...</span><br></pre></td></tr></table></figure>
-<p>网上的建议是修改 npm 的源地址为淘宝的镜像，并且重新下载这两个包。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm install hexo-renderer-sass --save</span><br><span class="line">npm install hexo-renderer-scss --save</span><br></pre></td></tr></table></figure>
-<h2 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h2>
+</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2020-03-28T08:55:11.000Z" title="2020-03-28T08:55:11.000Z">2020-03-28</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-12T11:15:03.469Z" title="2024-05-12T11:15:03.469Z">2024-05-12</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 7 分钟读完 (大约1046个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/monthly-issue-202003.html">【每月分享】 202003</a></p><div class="content  e-content"><h2 id="读书"><a class="markdownIt-Anchor" href="#读书"></a> 读书</h2>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23079443/article/details/79015225">用TravisCI持续集成自动部署Hexo博客的个人实践 - CSDN博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009928515">关于 git-submodule 的一些基本操作 - 个人文章 - SegmentFault 思否</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/260832">安装 npm install hexo-renderer-sass --save 出错，有什么办法没 - V2EX</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xs20691718/article/details/81873921">hexo 发布之后 gitpage 自定义域名失效 - CSDN博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.zthxxx.me/posts/Build-Hexo-Blog-by-Travis-CI/">使用 Travis 自动构建 Hexo 到 GitHub | Zthxxx’s Blog</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5afe61f5f265da0b8d422a3e">使用travis-ci自动部署Hexo到github和coding - 掘金</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.douban.com/subject/34672176/">呼吸 (豆瓣)</a>：这是一本由 Byte.Coffee 主播 MilkShake 🐑 推荐的一本科幻小说集（前几天看其他东西的时候学会科幻小说的英文 sci-fi）。之前看到过，小说的价值在于作者用一个故事告诉你一个道理。最喜欢的是《商人和炼金术士之门》这篇：在传统的穿越小说无法改变未来和过去的基础上，论证穿越能更深刻理解生活。书中其他探讨的几个问题也很有价值，值得一读。</li>
 </ul>
-<h2 id="changelog"><a class="markdownIt-Anchor" href="#changelog"></a> ChangeLog</h2>
+<h2 id="我看"><a class="markdownIt-Anchor" href="#我看"></a> 我看</h2>
 <ul>
-<li>180904：完成初稿</li>
+<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/390461123/">徐大sao的个人空间 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili</a>：最近挑着看完大 sao 做饭视频，被他展示的生活激情所吸引。</li>
 </ul>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/blog/">blog, </a><a class="link-muted p-category" rel="tag" href="/tags/hexo/">hexo, </a><a class="link-muted p-category" rel="tag" href="/tags/github/">github, </a><a class="link-muted p-category" rel="tag" href="/tags/travisci/">travisci </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-08-05T08:40:14.000Z" title="2018-08-05T08:40:14.000Z">2018-08-05</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.585Z" title="2024-05-05T14:05:13.585Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 4 分钟读完 (大约529个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/week-issue-10.html">每周分享第 10 期</a></p><div class="content  e-content"><blockquote>
-<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。</p>
-</blockquote>
 <h2 id="文章"><a class="markdownIt-Anchor" href="#文章"></a> 文章</h2>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://tech.meituan.com/deep_understanding_of_ffm_principles_and_practices.html">深入FFM原理与实践 -</a>：美团技术博客的文章之一，感觉比网上很多文章讲解的都深刻。不知道为什么文章中很多的参考资料都是网上的博文，有点遗憾。</li>
-<li><a target="_blank" rel="noopener" href="https://daily.zhihu.com/story/9691148">「华为公积金下调到 5%」，刚毕业的应届生可能不懂，这当中有什么套路</a>：前一段时间的热门，华为真是一家神奇的企业。从奋斗者协议到今天的调整公积金比例，不断地压榨着员工的极限。之前还看到有人说夸华为，至少给得钱对得起员工的时间，这次的调整无疑给已经买房的员工致命一击。</li>
-<li><a target="_blank" rel="noopener" href="http://erning.net/blog/2012/07/09/readme-driven-development/">Readme驱动开发 - Erning.write()</a>：这种开发方式又称 RDD。目前在公司开发时，发现大部分项目没有开发文档或者 wiki，项目的内容也只能靠口口相传。造成这样的局面，可能是公司之前发展速度太快。从另外一个角度来说，没有外部的文档是否可以开发人员本身有一些优势，防止被快速的替代？</li>
-</ul>
-<h2 id="图片"><a class="markdownIt-Anchor" href="#图片"></a> 图片</h2>
+<li><a target="_blank" rel="noopener" href="https://writings.stephenwolfram.com/2019/02/seeking-the-productive-life-some-details-of-my-personal-infrastructure">Seeking the Productive Life: Some Details of My Personal Infrastructure—Stephen Wolfram Writings</a>：这篇超长的文章是 Stephen Wolfram (Mathematica CEO) 介绍自己几十年在家办公的经验，包括如何搭建一个适合自己的工作环境、如何管理文件和个人数据等等。不过这次疫情期间在家办公，大部分同事反应最大的问题是沟通效率降低。另外想想，或许是我们在这方面的思考不够。总之，互联网行业居家办公才是光明的未来。</li>
+<li><a target="_blank" rel="noopener" href="https://fs.blog/knowledge-project/naval-ravikant/">Naval Ravikant: The Angel Philosopher</a>：AngelList 的 CEO Naval Ravikant 的播客访谈，Naval 的公司投资 Uber Twitter 等 100 多家科技公司。主要介绍 Naval 的一些哲学，文字版在 <a target="_blank" rel="noopener" href="https://fs.blog/wp-content/uploads/2017/02/Naval-Ravikant-TKP.pdf">Naval-Ravikant-TKP.pdf</a>
 <ul>
-<li>新奇的创意，通过缺失表达战争造成的伤害。<br />
-<img src="https://media.xiang578.com/IMG_0664.jpg" alt="IMG_0664" /></li>
-</ul>
-<h2 id="金句"><a class="markdownIt-Anchor" href="#金句"></a> 金句</h2>
-<ul>
-<li>我经常骂孙笑川，心机自私膨胀，后来才发现我自己就是孙笑川，骂的都是现实中不争气的自己，人人都是孙笑川，却又都不想当孙笑川。每个人都在骂孙笑川，每个人都恶心孙笑川，因为每个人都知道自己就是孙笑川，但每个人都不想承认自己就是孙笑川。—— 网络时代，每个人都是小丑</li>
-</ul>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-07-28T07:07:55.000Z" title="2018-07-28T07:07:55.000Z">2018-07-28</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.585Z" title="2024-05-05T14:05:13.585Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 9 分钟读完 (大约1313个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/week-issue-9.html">每周分享第 9 期 看不懂的拼多多</a></p><div class="content  e-content"><blockquote>
-<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。</p>
-</blockquote>
-<h2 id="文章"><a class="markdownIt-Anchor" href="#文章"></a> 文章</h2>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIyMzg4MzE2OA==&amp;mid=2247483772&amp;idx=1&amp;sn=eac158cf591dca115ec96ac39422293d&amp;chksm=e8163bb3df61b2a5c2c85c35d86dd04e9d396ce6b14782c8b9b3469176d85759af892cec80d3&amp;mpshare=1&amp;scene=1&amp;srcid=07176nUXGlwcQDGmEjHWpHZq%23rd">拼多多的多和少</a>：拼多多应该会在本周上市，这篇文章是上周的微信热门文章之一，也是我见过分析拼多多最仔细的文章。说句实话，我对拼多多了解不多，也没有研究过他们的商业模式，从文章中可以看到拼多多的成长。现在也有一点为当初拒掉拼多多的 offer 而后悔，虽然辛苦但是给的多啊。</li>
-<li><a target="_blank" rel="noopener" href="http://malisper.me/my-approach-to-getting-dramatically-better-as-a-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=rss">My Approach to Getting Dramatically Better as a Programmer – malisper.me</a>：程序员成长相关。常思考两个问题：
-<ul>
-<li>Learning how to solve problems I didn’t know how to solve before.</li>
-<li>Learning how to write correct programs faster.<br />
-以及掌握方法：</li>
-</ul>
-<ul>
-<li>Reading a paper.</li>
-<li>Learning a new tool.</li>
-<li>Reading several chapters of a book.</li>
-<li>Recording my screen as I write a program. Then reviewing the footage and seeing how I could have written the program faster.</li>
+<li>利用 Kindle 阅读，遇到喜欢的书，购买实体书收藏。对比书的价格，从书中学到可以改变自己人生的内容更重要。</li>
+<li>发现一个新的博客后，会在 Archived 页面挑选几篇仔细阅读。读书时也可以使用这个技巧。</li>
 </ul>
 </li>
-<li><a target="_blank" rel="noopener" href="https://blog.codingnow.com/2018/07/share3.html">云风的 BLOG: 三人合租的房租公平分配方案</a>：现实中我也遇到了租房问题，不过还不太需要这些高深的知识来处理。这篇文章提供了2 、3 人分房的方案。
+<li><a target="_blank" rel="noopener" href="https://superorganizers.substack.com/p/how-to-build-a-learning-machine">How to Make Yourself Into a Learning Machine - Superorganizers</a>：一位高中毕业后离开丹麦来到加拿大创业公司工作人的自我学习之路。
 <ul>
-<li>2 人版：A 和 B 分两间房，由 A 写下对两间房的报价，然后由 B 选择自己住哪间房。如果两个人都在理性下完成这个任务，房间的价格会趋向于它本身的价值。</li>
-<li>2 人版另外一种解法：A 和 B 同时写下对两间房的心里价格（两个房间的价格总和一定），然后每间房由开价最高的人居住，每个月需要支付的价格是两个人对这间房子开价的平均值。</li>
-<li>3 人版：这个问题比前面两种情况更加复杂。A、B、C 三个人有不同的职责。
+<li>自我定位 T 型人才。</li>
+<li>兴趣面广，主题阅读。</li>
+<li>高亮关键内容，使用 anki 记忆，相关的想法用 zettelkasten 记录。</li>
+<li>zettelkasten 使用纯文本 + 脚本实现。（如果只记录英文 vim 和 emacs 真的是很强大的软件）</li>
+<li>利用谷歌检索的数量判断单词的重要性</li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://fortelabs.co/blog/para/">The PARA Method: A Universal System for Organizing Digital Information - Forte Labs</a>：介绍 PARA 这种数字信息整理方法。</li>
+<li><a target="_blank" rel="noopener" href="https://tim.blog/2020/01/08/reading-recommendations/">The Best Books and Articles I Read in 2019 – The Blog of Author Tim Ferriss</a>：一篇 2019 年阅读总结文章。对作者介绍的阅读流程比较感兴趣：
 <ul>
-<li>A：写下对三间房的报价（报价的总和一定），A 是最后一个选择房间。</li>
-<li>B：首先查看 A 对三间房的报价，思考是否有两间价格是合理的。如果是，那么在 C 选择一个房间后，依然有一个价格合理的房间可以选择。如果不是，那么标记两间他认为价格不合理的房间。</li>
-<li>C：也是查看 A 对三间房的报价，思考是否有两间房的价格是合理的。如果是，那么他可以让 B 先进行选择，即使 B 认为有两间房价格是不合理的，还是有一间价格是合理的，C 也有至少有一间价格合理的房子可以选择。如果不是，那么标记两间价格不合理的房子，如果 B 认为是合理的，让 B 先进行选择，C 第二个进行选择。否则，B 与 C 标记的房子中重复的分给 A ，然后由 B 和 C 进入两人分房间。</li>
+<li>Evernote 搭配 web clipper 收集文章。 利用 <code>***</code> 以及高亮在文章中做笔记，方便之后进行快速回顾。</li>
+<li>阅读 Kindle 格式的电子书，定期从亚马逊官网导出高亮笔记（国内不支持）。</li>
+<li>利用 Readwise 回顾之前提到的高亮。</li>
+<li>阅读实体书时，写简单的索引卡片，然后将卡片拍照导入 Evernote 中。</li>
 </ul>
 </li>
 </ul>
-</li>
-<li><a target="_blank" rel="noopener" href="http://macshuo.com/?p=1454">如何「收集」知识 | MacTalk-池建强的随想录</a>：这一段时间一直思考的如何与知识更好相处的问题，这篇文章可以当成是入门参考，不要陷入研究工具的怪圈，而是找到一个适合自己的知识处理系统。</li>
-</ol>
-<h2 id="视频"><a class="markdownIt-Anchor" href="#视频"></a> 视频</h2>
+<h2 id="机器学习"><a class="markdownIt-Anchor" href="#机器学习"></a> 机器学习</h2>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=IeaD0ZaUJ3Y">How to Read a Paper Efficiently (By Prof. Pete Carr) - YouTube</a>：虽然没有去读研究生，但由于工作的性质也需要去大量的阅读论文。这一段小视频在如何读论文这个问题上提出了一种框架化的方法，适合新人去模仿实践。</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/111842425">为什么有些深度学习网络要加入Product层？ - 知乎</a>：解释为什么 MLP 只包含特征累加而有学习特征交叉的能力，后面展开讲了一些提高模型特征交叉能力的方法。</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011508640/article/details/72815981">详解最大似然估计（MLE）、最大后验概率估计（MAP），以及贝叶斯公式的理解_网络_nebulaf91的博客-CSDN博客</a>：看过讲 MLE 和 MAP 比较清晰的文章。刚看开头的时候，想到自己大学上过《概率论和统计》居然没有考虑过概率和统计有什么区别……</li>
 </ul>
-<h2 id="金句"><a class="markdownIt-Anchor" href="#金句"></a> 金句</h2>
-<ul>
-<li>第三届国际华语辩论公开赛复赛，重温了经典辩题“金钱是不是万恶之源”。正方恐龙复生队对“恶”做了全新的定义：人世间所有的恶，都可以概括为“不把人当人”。—— 有感于前一段时间的疫苗问题，看到这一段文字依旧有力量。</li>
-</ul>
-<h2 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/hunkim/DeepLearningZeroToAll">hunkim/DeepLearningZeroToAll: TensorFlow Basic Tutorial Labs</a>：非常好的 tensorflow 教程。另外说一句，利用 tensorflow 来写机器学习真是轻松。</li>
-<li><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%C2%B7%E7%8C%9C%E4%BD%A0%E5%96%9C%E6%AC%A2/ngjddnobeppdekpmimhiamkoonoaccdf">哔哩哔哩·猜你喜欢</a>：BiliBili 的客户端中有一个猜你喜欢的功能，杀时间利器。在信息化的时代，还有什么比调试一个符合自己口味的信息流更有成就感的事情？通过使用这个插件，可以在网页版上实现猜你喜欢功能。</li>
-</ul>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-07-21T09:28:48.000Z" title="2018-07-21T09:28:48.000Z">2018-07-21</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.581Z" title="2024-05-05T14:05:13.581Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/">文渊阁</a></span><span class="level-item"><i class="far fa-clock"></i> 20 分钟读完 (大约3004个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/Sleep.html">月读 | 睡眠革命</a></p><div class="content  e-content"><p>前一段时间作息混乱，晚上躺在床上睡不着，然后玩手机，导致更加睡不着。第二天下午又很困，只好趴着睡一会儿。从而导致晚上睡不着又玩手机的恶性循环。当时一度觉得自己都不能从这个圈里面走出来了。不过，想起来之前在少数派看到过一篇文章，推荐过一本和睡眠相关的书——<a target="_blank" rel="noopener" href="https://book.douban.com/subject/27023900/">睡眠革命</a>，抱着死马当活马医的心态看了一下。</p>
-<p>书中作者主要介绍昼夜节律、睡眠类型、睡眠周期、睡前醒后、日间小睡、睡眠环境等多个方面的内容，我将自己在阅读时候记录的笔记整理一下，与大家分享。</p>
-<h2 id="核心收获"><a class="markdownIt-Anchor" href="#核心收获"></a> 核心收获</h2>
-<p>读完这本书最大的几个收获：</p>
-<ul>
-<li>人的睡眠类型有两种：早睡类型和晚睡类型。</li>
-<li>失眠是过度清醒造成的，过度清醒又是担心自己会失眠所产生的。</li>
-</ul>
-<h2 id="昼夜节律"><a class="markdownIt-Anchor" href="#昼夜节律"></a> 昼夜节律</h2>
-<p><img src="https://media.xiang578.com/15321615677483.jpg" alt="" /></p>
-<blockquote>
-<p>昼夜节律是生命体24小时的内循环，受我们的内置生物钟的管理。我们大脑中的这一生物钟，24小时调节着我们的多个内部系统，包括睡眠和饮食习惯、激素的分泌、体温、灵敏度、情绪和消化，使其与地球的自转相一致。我们的生物钟是根据一些外部线索而设定的，其中最主要的是日光，此外还包括温度、进食时间等其他因素。</p>
-</blockquote>
-<p>上面是书中的一张插图和一段文字。核心思想是，人的一天活动受自然规律控制，所以要在正确的时间干正确的事情。如同我最开始描述的状态一样，人体内也有一种正常的循环状态。在晚上褪黑素产生的时候，开始准备睡觉，我们会在2~3点时进入一个高效的睡眠阶段，从而在早晨可以按时起床，那么晚上对于睡眠的需求又会达到峰值，为我们再一次提供最佳的入睡时机。</p>
-<h2 id="睡眠类型"><a class="markdownIt-Anchor" href="#睡眠类型"></a> 睡眠类型</h2>
-<p>一直以来，我们的文化都提倡一点：早睡早起。但是在现实中，我们很多人却很喜欢睡懒觉。作者在书中指出，从基因上来看，人的睡眠分成两类：早睡早起类型 和 晚睡晚起类型。不应该强制两类人在相同的时间躺下和起床，而是寻找最合适他们的睡眠规律，如果昼夜节律图中描述的内容一样。当然，作者强调需要严格遵守自己的睡眠规律，不要轻易的打破，比如周末睡懒觉之类的。</p>
-<blockquote>
-<p>睡眠类型：智慧睡眠的7个要点<br />
-1．了解你和你的亲朋好友属于哪种睡眠类型。如果你不能确定，可以使用慕尼黑大学的问卷调查表。<br />
-2．巧妙规划好你一天的日程，在你状态最佳时做最重要的工作。<br />
-3．把咖啡因当成高效的表现增强剂使用，而不是出于习惯去喝咖啡，并且一天的咖啡因摄入量不要超过400毫克。<br />
-4．晚睡星人——如果你想要克服社交时差，就不要在周末睡懒觉。<br />
-5．在会议室、办公室和办公桌配置日光灯，提高员工的灵敏度、工作效率，并改善他们的工作情绪。<br />
-6．知道何时该上前、何时该退后。如果你是一个早起型的人，那么你该不该自告奋勇地在深夜比赛中参加点球大战呢？<br />
-7．如果你和你的伴侣属于不同的睡眠类型，你们应该学会彼此协调、彼此适应。</p>
-</blockquote>
-<h2 id="睡眠周期"><a class="markdownIt-Anchor" href="#睡眠周期"></a> 睡眠周期</h2>
-<p>在我们的常识中，一直有一个8小时的推荐睡眠时间。作者澄清，8小时是每晚人均睡眠时间，一味追求8小时的睡眠会造成巨大的压力，反而对我们的睡眠起着破坏性极强的反作用，让我们无法获得真正需要的、因人而异的睡眠时间。</p>
-<p>作者提倡一种新的睡眠时间方法：</p>
-<blockquote>
-<p>“R90”指的是以90分钟为一个周期，获得身体修复。“90”这个数字，并不是我从1—100中随意选择的。从临床上说，90分钟是一个人经历各个睡眠阶段所需的时间。这些睡眠阶段组成了一个睡眠周期。 我们的睡眠周期由4个（有时是5个）不同的睡眠阶段组成。你可以把度过不同的睡眠阶段、完成一个睡眠周期的过程，想象成走下几段楼梯、完成一段行程。当我们关灯上床、准备睡觉时，就像站在这几段楼梯之上，而想要得到的深睡眠，就像走到了这几段楼梯之下。</p>
-</blockquote>
-<p>实践这个 R90 睡眠方法的关键是，对睡眠进行统计。以周为统计周期，争取每周达到 35 个睡眠周期。然后根据自己的工作性质，确定一个固定的起床时间，反向推导出你应该在什么时候入睡。</p>
-<h2 id="睡前醒后"><a class="markdownIt-Anchor" href="#睡前醒后"></a> 睡前醒后</h2>
-<p>一般而言，我们只关心什么时候睡觉，而忽视了睡眠前以及醒来后的90分钟。从作者观点来看，应该利用好这一段时间，提高睡眠的质量。</p>
-<blockquote>
-<p>睡眠前后的例行程序：智慧睡眠的7个要点<br />
-1．睡眠前后的例行程序将直接影响你睡眠的质量，以及你清醒的一天：如果予以重视，整个白天和整个晚上就会更加高效。<br />
-2．在日间偶尔脱离电子设备，将此作为一种犒劳，并通过这种方式训练你的身体和心灵。<br />
-3．对于晚睡星人来说，睡眠后例行程序至关重要，如果他们不想输给早起星人的话。不要因为青睐于止闹按钮，而轻易放弃这些睡眠后例行程序。<br />
-4．不要在头脑不清醒的时候发送消息！先让自己清醒一点，再去拿手机。<br />
-5．让你的身体感受从温暖到凉爽的变化，有利于带来自然的体温下降。快速洗个温水浴，然后选择较凉爽的睡眠环境，能帮助你达到目的。<br />
-6．在上床前整理你的卧室，放空你的大脑，“下载”你的一天，就不会在该睡觉的时候想东想西、难以入眠。<br />
-7．执行睡眠前例行程序，是为了结束过去的一天——用鼻子呼吸、放松心情、实现从明亮到昏暗的过渡。执行睡眠后例行程序，是为了开启不匆不忙的新一天。这两段时间都只属于你，不属于别人。</p>
-</blockquote>
-<h2 id="日间小睡"><a class="markdownIt-Anchor" href="#日间小睡"></a> 日间小睡</h2>
-<p>日间小睡分成两个部分：午睡以及傍晚的小憩。这一部分的睡眠的作用是对夜晚睡眠周期的补充，一般而言30分钟的小睡可以媲美晚上的一整个睡眠周期。</p>
-<p>书中引用到美国国家航空航天局的一项调查专门研究了日间小睡的功效，在对执行长途飞行的飞行员进行调查后，他们得出结论：“日间小睡有助于维持或改善随后的表现，提高生理和心理的灵敏度，并能有效改善情绪。”</p>
-<blockquote>
-<p>日间小睡：智慧睡眠的7个要点<br />
-1．利用午后休憩时机（下午1—3点）给自己安排一个可控修复期，是弥补夜间睡眠周期的完美方法，这也与你的昼夜节律彼此协调。<br />
-2．黄昏（下午5—7点）是次优的休憩时机，因为此时人的睡眠需求极高。但这一时段的日间小睡应控制在30分钟之内，这样才不会影响晚上的睡眠。<br />
-3．白天睡不着？没关系。只要花30分钟放松一会儿，暂时脱离周围的世界片刻。<br />
-4．至少每隔90分钟休息一会儿，消除大脑的疲劳，提高注意力的集中水平。在休息时不要使用电子设备，你无需让自己自始至终地受到电子设备的控制。<br />
-5．不要受到你所在的企业文化的影响，切莫先入为主地给那些白天睡觉的人贴上“懒惰”的标签，而应着手构建一种接受日间小睡和休憩的企业文化——你若不打盹儿，就会输得很惨。<br />
-6．使用冥想或正念应用软件，或者把玩某个珍爱的私人物品，暂时脱离当前的环境。<br />
-7．如果你真的无法脱身，那就巧妙地安排一天的工作。在午后倦怠期，不要让自己困于太费神的工作</p>
-</blockquote>
-<h2 id="睡眠环境"><a class="markdownIt-Anchor" href="#睡眠环境"></a> 睡眠环境</h2>
-<p>上面讲了那么多，都是一些比较虚的东西，最后分享一些作者对于睡眠环境的建议。首先一点，作者提倡在卧室中尽量只睡觉，不干其他活动。其次，作者提倡采用像婴儿一样的侧卧睡眠方式，要点包括：膝盖自然弯曲、两条手臂放在身前，并轻轻交叠在一起，颈部、脊柱和臀部形成一条平滑的直线。</p>
-<p>最后，是一些关于寝具套装选择的建议：</p>
-<blockquote>
-<p>1．学会以胎儿姿势睡眠，躺向非主要的身体一侧（惯用左手的人向右侧睡，惯用右手的人向左侧睡）。<br />
-2．检测床垫，了解什么样的床垫对你来说软硬适中。让你的伴侣也这样做。<br />
-3．循序渐进：7年间分两次各花500英镑在你的床垫上，而不是一次花1000英镑。可以考虑购买能够经常换洗的床垫。<br />
-4．使用低过敏性、透气舒适的床上用品，无论你是否属于过敏体质。避免潜在的睡眠障碍因素，并注意调节好温度。<br />
-5．床的尺寸很重要——能买多大，就买多大。特大号床垫是值得一对儿夫妇考虑的最小型号（只要卧室中放得下）。双人床是给一个人睡的。<br />
-6．不要盲目购置寝具！可以根据销售人员的介绍，了解你能买到什么样的寝具。但在做出最后决定时，记得运用你在本章中学到的知识。<br />
-7．记住床垫和床架重要性比率：你可以把100％的预算全部花在购置床垫上，因为床架主要是装饰性的</p>
-</blockquote>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/Sleep/">Sleep </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-07-20T13:37:00.000Z" title="2018-07-20T13:37:00.000Z">2018-07-20</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.585Z" title="2024-05-05T14:05:13.585Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 3 分钟读完 (大约461个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/week-issue-8.html">每周分享第 8 期</a></p><div class="content  e-content"><blockquote>
-<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。</p>
-</blockquote>
-<h2 id="文章"><a class="markdownIt-Anchor" href="#文章"></a> 文章</h2>
-<ol>
-<li>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/FoyDuO_iTxfp1gltRi97Zw">唐爽：坦途的人生有时候经不起一次搭错车</a>：前一段时间很火的周立波事件，当事人之一回复，唐爽说的话很有逻辑，不愧是博士。</p>
-</li>
-<li>
-<p>德鲁克谈《自我管理》——《哈佛商业评论》史上最受欢迎的文章(某些原因不提供链接，拿关键字搜索一下就可以找到原文)：开始工作之后，越来越关注自我提升的内容。</p>
-</li>
-<li>
-<p><a target="_blank" rel="noopener" href="http://blog.richardweitech.cn/2018/07/01/use-zsh/">Shell 中的极品-- Zsh - Richard Wei</a>：推荐的几个插件都很有用，shell 的美观程度又提高了一个层次。</p>
-</li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://www.phodal.com/blog/evolution-how-to-practise/">演进：在工作的前三年里快速成长（练习篇） - Phodal | Phodal - A Growth Engineer</a>：职业成长系列。</p>
-</li>
-</ol>
-<h2 id="金句"><a class="markdownIt-Anchor" href="#金句"></a> 金句</h2>
-<ul>
-<li>为什么越长大觉得时间过得越快？因为小时候是在发现发掘，而长大后是在不断重复。“有的人30岁就死了，80岁才埋葬。”这句话说的就是这个理，小时候，我们把一年过成了365天，长大后，我们把一年过成了365次。“回程总比去程快”佐证了一件事情：“时间”和我们接收了多少信息有关——信息能够延长时间。</li>
-<li>区块链是一种分布式数据存储、点对点传输、共识机制、加密算法等计算机技术的新型应用模式，这是一个典型的去中心化应用，建立在 p2p 网络之上。</li>
-</ul>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-07-15T23:05:03.000Z" title="2018-07-15T23:05:03.000Z">2018-07-16</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.585Z" title="2024-05-05T14:05:13.585Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 5 分钟读完 (大约780个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/week-issue-7.html">每周分享第 7 期</a></p><div class="content  e-content"><blockquote>
-<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。</p>
-</blockquote>
-<h2 id="文章"><a class="markdownIt-Anchor" href="#文章"></a> 文章</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://ift.tt/2EV2F86">I have forgotten how to read</a>：碎片化时代对于阅读的反思。</li>
-<li><a target="_blank" rel="noopener" href="http://blog.devtang.com/2016/06/05/tech-talk-notes/">技术演讲中最容易被忽视的问题</a>：参考文章，内容不错</li>
-</ul>
-<h2 id="金句"><a class="markdownIt-Anchor" href="#金句"></a> 金句</h2>
-<ul>
-<li>感谢大学四年里遇到的所有人，或萍水，或至交；或平平淡淡四年的柴米油盐，或惊鸿一瞥不期的遇见；或心酸的讥讽，不屑的嘲笑；或热情的洋溢，真心的赞美；所有形形色色的人和林林总总的事，无论是相逢于青山绿水还是最终相忘于江湖，感谢你们漫步庭前看花谢，坐卧塔下笑清风。人生匆忙，百年过往，他日相逢，此情莫忘。泛菊杯深，吹梅角远， 同在京城，聚散匆匆， 教人怎不伤情？ 觉几度，魂飞梦惊。 后夜相思，尘随马去，月逐舟行。诸位，一世顺意！（毕业论文结束语）</li>
-<li>直到毕业的时候我才明白，当你要致谢的人和环境并没有那么美好时，有些话是无论如何都说不出口的。于是乎，我也使用了前人的套路，留下几句客套话后便匆匆赶往下一站了。</li>
-<li>高考做错的每一道题，都是为了遇见对的人。</li>
-<li>那些办公室的白领们，总是自以为自己的表现领先于父母。认为父母落伍了……其实，这不过是因为经济结构转型造成的误会而已。 现在各种写字楼里格子间里，哼哧哼哧做重复 ppt 的年轻人，和当年踩着缝纫机的女工们，其实没有本质区别。 同理，当年父母在菜场讨价还价，多一份还是少一分，和现在年轻人在群里争先恐后的抢红包，状态也都差不多。 父母当年非要给电视剧遥控器套个塑料袋，和现在年轻人非要给手机套个壳差不多。 当然，现在每天拿着手机刷朋友圈和微博的人，和当年蹲在墙角嗑瓜子的人，也没什么区别！ 点评：从某种意义上来说，社会从未改变。它只是在不停的轮回。所谓的变化，只不过是外在形式和工具而已。 也同样，随着新一轮经济的转型，这些在写字楼里做 PPT 的白领，也即将重复当年那些纺织女工被淘汰时的情景……</li>
-<li>互联网时代的学习，学得太多，做得太少。恰恰正是“学习”知识剥夺了我们实践和内化知识的机会。</li>
-</ul>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-07-07T06:09:22.000Z" title="2018-07-07T06:09:22.000Z">2018-07-07</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.581Z" title="2024-05-05T14:05:13.581Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/">生活志</a></span><span class="level-item"><i class="far fa-clock"></i> 14 分钟读完 (大约2103个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/auto-workflow.html">我常用的自动化流程</a></p><div class="content  e-content"><h2 id="什么是自动化"><a class="markdownIt-Anchor" href="#什么是自动化"></a> 什么是自动化</h2>
-<p>日常工作学习中，我们需要使用不同的工具来应对各种各样的任务。比如，用印象笔记收集网页，利用图库管理博客中的图片。但是，由于大部分工具不是同一家公司发布的，彼此之间很难进行简单的协作。如果你有编程能力，可以利用很多工具提供的 API（应用程序接口），让信息在不同的软件中流动。<br />
-对于普通人而言，目前市面上也有很多 App 提供这种功能，可以解决少部分的问题。我对这些功能的定义就是自动化流程，通过使用这些功能，可以减少一些重复机械的工作，使我们更好的享受生活。老罗在吹锤子系统时，提到过「One Step」，在我心目中也是自动化的一种。自动化流程指的是我自己在实践中，配置的一些软件使用流程。</p>
-<h2 id="workflow"><a class="markdownIt-Anchor" href="#workflow"></a> Workflow</h2>
-<p>Workflow (新手入门请看<a target="_blank" rel="noopener" href="https://sspai.com/post/43849">iOS 效率神器 Workflow 怎么用？跟着这篇入门指南从零开始 | 新手问号</a>）是 iOS 上的一款自动化软件。似乎是去年被苹果收购，现在在 App Store 中可以免费下载。前一段时间的 WWDC 上，也公布了进行版本，能利用 Siri 的「捷径」App。</p>
-<p><img src="https://media.xiang578.com/15309425389934.jpg" alt="" /></p>
-<p>在 iPhone 上，我最常用的 workflow 动作是碎片知识摘记，实现利用 iPhone 阅读时，将值得多次阅读的内容，集中保存到印象笔记中。有关这个动作更多的介绍可以查看 <a target="_blank" rel="noopener" href="https://sspai.com/post/35281">Workflow + 印象笔记，定制高效碎片知识管理工作流 | Matrix 精选 - 少数派</a>。</p>
-<p>《奇特的一生》在时间管理领域如雷贯耳，很多人都按照柳比歇夫的那种方法进行时间。如果你希望可以使用 Workflow 来记录时间，可以进一步阅读少数派中 <a target="_blank" rel="noopener" href="https://sspai.com/post/44579">想学柳比歇夫？用这个Workflow来帮你一把</a>。</p>
-<p>最后，授人以鱼不如授人以渔，少数派的 <a target="_blank" rel="noopener" href="http://workflow.sspai.com/#/main/workflow">Workflow Gallery</a> 提供很多相关的工作下载，可以自行前往挑选。</p>
-<h2 id="aflred"><a class="markdownIt-Anchor" href="#aflred"></a> Aflred</h2>
-<p>Aflred 是 Mac 上的一款效率工具。之前我在自己的博客中也有分享过，<a target="_blank" rel="noopener" href="https://xiang578.com/2017/07/02/alfred-lists/">Alfred 使用记录 - RyenX</a>。这里，我就补充介绍几个自己目前在用的功能。</p>
-<p>由于我平时是使用 Markdown 进行写作的，难免会遇到需要插入很多链接的时候，比如现在正在写的这一篇文章。Afled 中有一个 workflows 「<a target="_blank" rel="noopener" href="https://github.com/fallroot/copy-url-for-alfred">fallroot/copy-url-for-alfred</a>」，通过这个动作可以将 Chrome 或者 Safari 中的当前正在浏览的网页的标题以及网址以 Anchor 、URL、Title、Markdown 等多种形式复制到当前的输入框或者是剪贴板。<br />
-<img src="https://media.xiang578.com/15309430608042.png" alt="" /><br />
-<a target="_blank" rel="noopener" href="https://github.com/ngreenstein/alfred-process-killer">ngreenstein/alfred-process-killer: An Alfred 2 workflow that makes it easy to kill misbehaving processes. It is, in essence, a way to easily find processes by name and kill them using <code>kill -9</code>.</a>：快速结束 Mac 中的某些进程。<br />
-<img src="https://media.xiang578.com/15309434519054.jpg" alt="-w607" /></p>
-<h2 id="ifttt"><a class="markdownIt-Anchor" href="#ifttt"></a> IFTTT</h2>
-<p>Workflow 和 Aflred 需要在自己的 iPhone 或者 Mac 上才可以运行，说起来多少还有些不自动。我经常使用的另外一个自动化服务「<a target="_blank" rel="noopener" href="https://ifttt.com/">IFTTT</a>」就可以解决这个问题。IFTTT 是什么？它是英文 <strong>IF This Then That</strong> 的首字母缩写，它是一个提供自动化服务的网站。它的功能可以从字面猜测出来大概，完整地解释是「如果A完成事件1，那么就让B完成事件2」。简单来说，你可以通过设置一些规则，让它帮你自动完成一些重复工作。比如设置规则实现当你发布一条微博后，IFTTT 自动将微博同步到印象笔记中。所以，IFTTT 对我的意义是将不同的应用连接在了一下，方便我造各种工作流。</p>
-<p><img src="https://media.xiang578.com/15309318778409.png" alt="" /></p>
-<p>与上面的形式相同，继续介绍一下我目前在使用的规则。</p>
-<h3 id="碎片阅读"><a class="markdownIt-Anchor" href="#碎片阅读"></a> 碎片阅读</h3>
-<p>互联网的发展，使每个人有更多表达自己的机会，越来越多的人开始通过文字展示自己。碎片阅读指的正是阅读这些散落在不同平台上的文章。对于我而言，一般是先将在网上看到的想要阅读的文章放到稍后读软件 <a target="_blank" rel="noopener" href="https://getpocket.com/">Pocket</a> 中。之后在自己空闲时，打开 Pocket 网站阅读。比起直接阅读这样的好处有二：</p>
-<ol>
-<li>不是每一个网站或者平台都有良好的阅读环境，比如很多广告、字体字号。</li>
-<li>Pocket 提供丰富的 API 接口，通过 IFTTT 可以很好的和 Evernote、Airtable 等软件写作。</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://ifttt.com/applets/79292089d-if-new-favorite-item-then-append-to-a-note-in-evernote">If New favorite item, then Append to a note in Evernote - IFTTT</a>：古语「不动笔墨不读书」，很多文章有值得记录地方，而且也希望可以将自己所做的笔记集中在一处。针对这个问题，很多人会复杂，并且再粘贴到某一个文档中。这种方法做起来简单粗暴，却打断了阅读的连续性。通过我这个动作，可以将在 Pocket 中高亮的句子，直接添加到印象笔记的一条特定笔记中。</p>
-<p><img src="https://media.xiang578.com/15309335067450.jpg" alt="印象笔记中效果" /></p>
-<p><a target="_blank" rel="noopener" href="https://ifttt.com/applets/75619425d-if-item-archived-then-create-record-in-airtable">If item archived , then create record in airtable</a>：这一个动作是实现阅读数据的统计，当我在 Pocket 中归档一篇文章之后，会在 Airatble 指定的表单里添加一条相关的阅读记录。</p>
-<p><img src="https://media.xiang578.com/15309336298823.jpg" alt="Airtable record" /></p>
-<h3 id="任务管理"><a class="markdownIt-Anchor" href="#任务管理"></a> 任务管理</h3>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://ifttt.com/applets/75605766d-github-issues-assigned-to-me-todoist">Github issues assigned to me Todoist</a>：这个规则可以实现，在 Github 中有人分配给我 issue 时，自动在 Todoist 中创建相关任务。</li>
-<li><a target="_blank" rel="noopener" href="https://ifttt.com/applets/75612887d-log-completed-todoist-tasks-to-airtable">Log completed Todoist Tasks to Airtable</a>：记录所有完成的任务到 Airtable 中。</li>
-<li><a target="_blank" rel="noopener" href="https://ifttt.com/applets/75612567d-if-todoist-task-with-label-is-completed-create-new-task">If Todoist task with label is completed, create new task - IFTTT</a>：实现 Todoist 中的任务循环。</li>
-</ul>
-<h3 id="创意"><a class="markdownIt-Anchor" href="#创意"></a> 创意</h3>
-<p>IFTTT 中有一个与 RSS 相关的触发器，而且如下图所示，提供了对文章进行关键字匹配的选项。<br />
-<img src="https://media.xiang578.com/15309338021730.jpg" alt="IFTTT RSS" /></p>
-<p>前一阵子是 618 年中大促，正好我想购买一个 QC35 的耳机。为了追求优惠，大部分人会不停的查看想购买商品的页面，看看有没有什么新的变化。而我利用 IFTTT 搞了一个监控 QC35 全网优惠的监控。具体思路如下：什么值得买中有一个<a target="_blank" rel="noopener" href="https://www.smzdm.com/jingxuan/">精选好价</a>的频道，很多人会在上面爆料商品的优惠信息。幸运的是，这个频道提供 RSS 订阅链接。所以，配合上面提到的 RSS 相关触发器，我写了 <a target="_blank" rel="noopener" href="https://ifttt.com/applets/75671738d-if-new-feed-item-matches-qc35-from-http-faxian-smzdm-com-feed-then-send-me-an-email-at-xiang578-foxmail-com">If new feed item matches ‘qc35’ from http://faxian.smzdm.com/feed, then send me an email at xiang578@foxmail.com - IFTTT</a> 以及 <a target="_blank" rel="noopener" href="https://ifttt.com/applets/75621100d-if-new-feed-item-matches-qc35-from-http-feed-smzdm-com-then-send-me-an-email-at-xiang578-foxmail-com">If new feed item matches ‘QC35’ from http://feed.smzdm.com, then send me an email at xiang578@foxmail.com - IFTTT</a> 两个规则。从而实现，有人爆料 QC35 相关的价格优惠时，我会收到一条由 IFTTT 发送的邮件。</p>
-<p><img src="https://media.xiang578.com/15309346475002.jpg" alt="qc" /></p>
-<h2 id="reference"><a class="markdownIt-Anchor" href="#reference"></a> Reference</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://sspai.com/post/43731">玩转 IFTTT，互联网自动化也可以很简单 - 少数派</a></li>
-</ul>
-<h2 id="changelog"><a class="markdownIt-Anchor" href="#changelog"></a> Changelog</h2>
-<ul>
-<li>20180707：完成初稿</li>
-</ul>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/workflow/">workflow, </a><a class="link-muted p-category" rel="tag" href="/tags/alfred/">alfred, </a><a class="link-muted p-category" rel="tag" href="/tags/ifttt/">ifttt </a></div></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2018-07-07T02:06:17.000Z" title="2018-07-07T02:06:17.000Z">2018-07-07</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-05T14:05:13.585Z" title="2024-05-05T14:05:13.585Z">2024-05-05</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/">随想集</a></span><span class="level-item"><i class="far fa-clock"></i> 6 分钟读完 (大约941个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/post/week-issue-6.html">每周分享第 6 期</a></p><div class="content  e-content"><blockquote>
-<p>这里记录过去一周，我看到的值得分享的东西，每周六更新。</p>
-</blockquote>
-<h2 id="卡片写作"><a class="markdownIt-Anchor" href="#卡片写作"></a> 卡片写作</h2>
-<h3 id="熊猫慢递"><a class="markdownIt-Anchor" href="#熊猫慢递"></a> 熊猫慢递</h3>
-<p>上周《纪实72小时》，北京熊猫慢递。写给未来的一封这个概念很早就接触过，自己之前也尝试写过。再看那封信会有一些伤心，辜负了过去努力的自己。有一段时间为了使自己在考试时集中注意力，都会在试卷写上一句，不要辜负过去点点滴滴的努力。有机会，就去这个熊猫慢递写给两年后的自己一封信。</p>
-<h2 id="文章"><a class="markdownIt-Anchor" href="#文章"></a> 文章</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://ifoxfactory.com/2017/01/17/2016-and-My-Digital-Life/">细枝末节都交给 App，我只负责享受生活 | 2016与我的数字生活 - 沨沄的博客 | FoxGeeker Blog</a>：博主从意识到数字生活开始的一系列改变，文章内容很充实。</li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38850313">LPL心理教练黄菁：“心”备竞赛（上）——RNG的锐变</a>：看了半年多的 LPL，了解一下背后的故事。</li>
-<li><a target="_blank" rel="noopener" href="http://ishanshan.top/selfedu/HbOutputOwetoWorkFlowy.html">卡片助力输入输出，工具我选 WorkFlowy | ishanshan’s blog</a>：使用印象笔记之后，创建了很多只有几句话的笔记。这种情况下印象笔记很难管理，需要去寻找另外一个工具，有幸发现 Workflowy 这类大纲软件。</li>
-<li><a target="_blank" rel="noopener" href="http://ishanshan.top/selfedu/TipsWeekly.html">用心写周报的同事，绩效不会太差 | ishanshan’s blog</a>：与上一篇文章的作者相同，最近自己也要入职了，拿这一篇文章来参考一下，其实不光工作可以写周报，学习也可以尝试写周报，反思是取得进步的途径。题外话，作者是来自开智学堂的，从我侧面的一些了解，这家公司对于工作规范要求比较高，也可以当成数字生活的参考。</li>
-</ul>
-<h2 id="金句"><a class="markdownIt-Anchor" href="#金句"></a> 金句</h2>
-<ul>
-<li>哪里会有人喜欢孤独，不过不喜欢失望。（挪威森林）</li>
-<li>感谢大学四年里遇到的所有人，或萍水，或至交；或平平淡淡四年的柴米油盐，或惊鸿一瞥不期的遇见；或心酸的讥讽，不屑的嘲笑；或热情的洋溢，真心的赞美；所有形形色色的人和林林总总的事，无论是相逢于青山绿水还是最终相忘于江湖，感谢你们漫步庭前看花谢，坐卧塔下笑清风。人生匆忙，百年过往，他日相逢，此情莫忘。泛菊杯深，吹梅角远， 同在京城，聚散匆匆， 教人怎不伤情？ 觉几度，魂飞梦惊。 后夜相思，尘随马去，月逐舟行。诸位，一世顺意！</li>
-<li>直到毕业的时候我才明白，当你要致谢的人和环境并没有那么美好时，有些话是无论如何都说不出口的。于是乎，我也使用了前人的套路，留下几句客套话后便匆匆赶往下一站了。</li>
-<li>高考做错的每一道题，都是为了遇见对的人。</li>
-</ul>
-<h2 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h2>
-<ul>
-<li><code>Mweb 3</code>：是 Mac 上一款专业的 markdown 写作软件。目前，我自己用它来管理平时的卡片写作、机器学习笔记以及博客文章更新。最近，这个软件正在搞首发优惠，比较惊喜得是发现软件中隐藏的沉浸模式。<br />
-<img src="https://media.xiang578.com/15307063751497.jpg" alt="Mweb3" /></li>
-</ul>
-</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/6/">上一页</a></div><div class="pagination-next"><a href="/page/8/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/6/">6</a></li><li><a class="pagination-link is-current" href="/page/7/">7</a></li><li><a class="pagination-link" href="/page/8/">8</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/13/">13</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hangzhou</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">123</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">97</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/problem/"><span class="level-start"><span class="level-item">problem</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E4%B8%8D%E8%80%81%E9%98%81/"><span class="level-start"><span class="level-item">不老阁</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"><span class="level-start"><span class="level-item">军机处</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/"><span class="level-start"><span class="level-item">文渊阁</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%97%B6%E5%85%89%E6%9C%BA/"><span class="level-start"><span class="level-item">时光机</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/"><span class="level-start"><span class="level-item">智能路</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"><span class="level-start"><span class="level-item">生活志</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"><span class="level-start"><span class="level-item">程序园</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%A1%8C%E6%97%85%E8%AE%B0/"><span class="level-start"><span class="level-item">行旅记</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%AF%BB%E4%B9%A6%E8%AE%B0/"><span class="level-start"><span class="level-item">读书记</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/"><span class="level-start"><span class="level-item">随想集</span></span><span class="level-end"><span class="level-item tag">29</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/"><span class="level-start"><span class="level-item">随手记</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://haihongblog.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">海虹不老阁</span></span><span class="level-right"><span class="level-item tag">haihongblog.com</span></span></a></li><li><a class="level is-mobile" href="https://www.cnblogs.com/zufezzt" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Fighting Heart</span></span><span class="level-right"><span class="level-item tag">www.cnblogs.com</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-19T13:22:44.000Z">2024-04-19</time></p><p class="title"><a href="/note/WU1iILMFdH3RZAbJKFU4WA.html">@didi food中的智能补贴实战漫谈</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-11T16:00:00.000Z">2024-04-12</time></p><p class="title"><a href="/problem/202404121039.html">LC2923.找到冠军 I</a></p><p class="categories"><a href="/categories/problem/">problem</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-10T16:00:00.000Z">2024-04-11</time></p><p class="title"><a href="/note/202404111048.html">git pull 报错 MERGE_HEAD exists</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-07T16:00:00.000Z">2024-04-08</time></p><p class="title"><a href="/note/today-i-learned.html">Today I Learned</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-03T16:00:00.000Z">2024-04-04</time></p><p class="title"><a href="/note/github-publisher.html">Github Publisher</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/weekly/"><span class="tag">weekly</span><span class="tag">27</span></a></div><div class="control"><a class="tags has-addons" href="/tags/life/"><span class="tag">life</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/acm/"><span class="tag">acm</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/movie/"><span class="tag">movie</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zufe/"><span class="tag">zufe</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gtd/"><span class="tag">gtd</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Reinforcement-Learning/"><span class="tag">Reinforcement Learning</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/game/"><span class="tag">game</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wordpress/"><span class="tag">wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ml/"><span class="tag">ml</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/7/"><span class="tag">7</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/didiglobal/"><span class="tag">didiglobal</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/omnifocus/"><span class="tag">omnifocus</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/network/"><span class="tag">network</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LeetCode/"><span class="tag">LeetCode</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2015-2024 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+</div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/weekly/">weekly </a></div></div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/page/6/">上一页</a></div><div class="pagination-next"><a href="/page/8/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/6/">6</a></li><li><a class="pagination-link is-current" href="/page/7/">7</a></li><li><a class="pagination-link" href="/page/8/">8</a></li><li><span class="pagination-ellipsis">&hellip;</span></li><li><a class="pagination-link" href="/page/16/">16</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hangzhou</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">156</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">124</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/problem/"><span class="level-start"><span class="level-item">problem</span></span><span class="level-end"><span class="level-item tag">36</span></span></a></li><li><a class="level is-mobile" href="/categories/%E4%B8%8D%E8%80%81%E9%98%81/"><span class="level-start"><span class="level-item">不老阁</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%86%9B%E6%9C%BA%E5%A4%84/"><span class="level-start"><span class="level-item">军机处</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E6%B8%8A%E9%98%81/"><span class="level-start"><span class="level-item">文渊阁</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%97%B6%E5%85%89%E6%9C%BA/"><span class="level-start"><span class="level-item">时光机</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%99%BA%E8%83%BD%E8%B7%AF/"><span class="level-start"><span class="level-item">智能路</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%9F%E6%B4%BB%E5%BF%97/"><span class="level-start"><span class="level-item">生活志</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A8%8B%E5%BA%8F%E5%9B%AD/"><span class="level-start"><span class="level-item">程序园</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%A1%8C%E6%97%85%E8%AE%B0/"><span class="level-start"><span class="level-item">行旅记</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%AF%BB%E4%B9%A6%E8%AE%B0/"><span class="level-start"><span class="level-item">读书记</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%83%B3%E9%9B%86/"><span class="level-start"><span class="level-item">随想集</span></span><span class="level-end"><span class="level-item tag">29</span></span></a></li><li><a class="level is-mobile" href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/"><span class="level-start"><span class="level-item">随手记</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://haihongblog.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">海虹不老阁</span></span><span class="level-right"><span class="level-item tag">haihongblog.com</span></span></a></li><li><a class="level is-mobile" href="https://www.cnblogs.com/zufezzt" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Fighting Heart</span></span><span class="level-right"><span class="level-item tag">www.cnblogs.com</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-02T16:00:00.000Z">2024-05-03</time></p><p class="title"><a href="/problem/lc1491.html">lc1491. 去掉最低工资和最高工资后的工资平均值</a></p><p class="categories"><a href="/categories/problem/">problem</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-18T16:00:00.000Z">2024-04-19</time></p><p class="title"><a href="/note/WU1iILMFdH3RZAbJKFU4WA.html">@didi food中的智能补贴实战漫谈</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-11T16:00:00.000Z">2024-04-12</time></p><p class="title"><a href="/problem/lc2923.html">lc2923.找到冠军 i</a></p><p class="categories"><a href="/categories/problem/">problem</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-10T16:00:00.000Z">2024-04-11</time></p><p class="title"><a href="/note/202404111048.html">git pull 报错 MERGE_HEAD exists</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-04-07T16:00:00.000Z">2024-04-08</time></p><p class="title"><a href="/note/today-i-learned.html">Today I Learned</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/LeetCode/"><span class="tag">LeetCode</span><span class="tag">36</span></a></div><div class="control"><a class="tags has-addons" href="/tags/weekly/"><span class="tag">weekly</span><span class="tag">28</span></a></div><div class="control"><a class="tags has-addons" href="/tags/life/"><span class="tag">life</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/acm/"><span class="tag">acm</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/movie/"><span class="tag">movie</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zufe/"><span class="tag">zufe</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gtd/"><span class="tag">gtd</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hdu/"><span class="tag">hdu</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Reinforcement-Learning/"><span class="tag">Reinforcement Learning</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/two-pointer/"><span class="tag">two pointer</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Problems/"><span class="tag">Problems</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/implementation/"><span class="tag">implementation</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/game/"><span class="tag">game</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/wordpress/"><span class="tag">wordpress</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ml/"><span class="tag">ml</span><span class="tag">3</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2015-2024 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

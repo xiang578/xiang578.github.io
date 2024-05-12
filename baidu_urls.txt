@@ -1,10 +1,10 @@
+https://blog.xiang578.com/problem/lc1491.html
 https://blog.xiang578.com/note/WU1iILMFdH3RZAbJKFU4WA.html
-https://blog.xiang578.com/problem/202404121039.html
+https://blog.xiang578.com/problem/lc2923.html
 https://blog.xiang578.com/note/202404111048.html
 https://blog.xiang578.com/note/today-i-learned.html
 https://blog.xiang578.com/note/github-publisher.html
 https://blog.xiang578.com/note/fix-github-action-build-error.html
-https://blog.xiang578.com/weekly/thinking-8.html
-https://blog.xiang578.com/post/eta-ref-list.html
-https://blog.xiang578.com/note/umami-docker.html
-https://blog.xiang578.com/travel/san-feng-huan-chuan.html
+https://blog.xiang578.com/problem/lc2575.html
+https://blog.xiang578.com/problem/lc2917.html
+https://blog.xiang578.com/problem/lc1976.html
