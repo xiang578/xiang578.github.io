@@ -1,3 +1,4 @@
+https://blog.xiang578.com/note/zhihu486343380.html
 https://blog.xiang578.com/problem/lc1491.html
 https://blog.xiang578.com/note/WU1iILMFdH3RZAbJKFU4WA.html
 https://blog.xiang578.com/problem/lc2923.html
@@ -7,4 +8,3 @@ https://blog.xiang578.com/note/github-publisher.html
 https://blog.xiang578.com/note/fix-github-action-build-error.html
 https://blog.xiang578.com/problem/lc2575.html
 https://blog.xiang578.com/problem/lc2917.html
-https://blog.xiang578.com/problem/lc1976.html
