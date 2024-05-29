@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh"><head><!-- hexo injector head_begin start --><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><script async src="https://umami.xiang578.com/script.js" data-website-id="0bf958fd-ca98-4a54-b1c0-bf3384802fcc"></script><script data-goatcounter="https://xiang578.goatcounter.com/count" async src="/count.js"></script><link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" /> <link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" /><link title="Follow me on Twitter" rel="me" href="https://twitter.com/xiang578"/><!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>rerank - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="推荐系统中的一环，考虑上下文信息对推荐结果的影响。"><meta property="og:type" content="blog"><meta property="og:title" content="rerank"><meta property="og:url" content="https://blog.xiang578.com/note/rerank.html"><meta property="og:site_name" content="算法花园"><meta property="og:description" content="推荐系统中的一环，考虑上下文信息对推荐结果的影响。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/img/og_image.png"><meta property="article:published_time" content="2024-05-28T16:00:00.000Z"><meta property="article:modified_time" content="2024-05-28T23:54:21.000Z"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="机器学习"><meta property="article:tag" content="深度学习"><meta property="article:tag" content="阅读"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com/note/rerank.html"},"headline":"rerank","image":["https://blog.xiang578.com/img/og_image.png"],"datePublished":"2024-05-28T16:00:00.000Z","dateModified":"2024-05-28T23:54:21.000Z","author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":"推荐系统中的一环，考虑上下文信息对推荐结果的影响。"}</script><link rel="canonical" href="https://blog.xiang578.com/note/rerank.html"><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/books/index.html">阅读</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2024-05-28T16:00:00.000Z" title="2024-05-28T16:00:00.000Z">2024-05-29</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-05-28T23:54:21.000Z" title="2024-05-28T23:54:21.000Z">2024-05-29</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></span><span class="level-item"><i class="far fa-clock"></i> 14 分钟读完 (大约2104个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="p-name title is-3 is-size-4-mobile">rerank</h1><div class="content  e-content"><p>推荐系统中的一环，考虑上下文信息对推荐结果的影响。</p>
+<span id="more"></span>
+<h2 id="解决三大问题"><a class="markdownIt-Anchor" href="#解决三大问题"></a> 解决三大问题</h2>
+<p>用户体验</p>
+<ul>
+<li>打散</li>
+<li>多样性</li>
+</ul>
+<p>算法效率</p>
+<ul>
+<li>多任务融合</li>
+<li>上下文感知</li>
+<li>实时性提升</li>
+</ul>
+<p>流量调控</p>
+<ul>
+<li>保量：流量扶持、生态建设</li>
+<li>调权：业务需求、实时干预</li>
+</ul>
+<h2 id="用户体验"><a class="markdownIt-Anchor" href="#用户体验"></a> 用户体验</h2>
+<h3 id="打散"><a class="markdownIt-Anchor" href="#打散"></a> 打散</h3>
+<ul>
+<li>对同类目、同作者、相似封面图的 item 进行打散，有效防止用户疲劳和系统过度个性化</li>
+<li>打散常用的方法
+<ul>
+<li>分桶打散法
+<ul>
+<li>不同属性 item 放入不同的桶中，一次从各桶取出 item 即可。
+<ul>
+<li>按高中低价格分桶，排序结果价格呈现多样性</li>
+</ul>
+</li>
+<li>简单，效果好。末尾容易扎堆，对原始序列改变大，可能带来指标的下降。</li>
+</ul>
+</li>
+<li>权重分配法
+<ul>
+<li>对每一个 item 定义一个分数，计算 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>W</mi><mi>i</mi></msub><mo>∗</mo></mrow><annotation encoding="application/x-tex">f(x)=\sum_i W_i *</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0497100000000001em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16195399999999993em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∗</span></span></span></span> Count <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow></mrow><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46166399999999996em;vertical-align:-0.15em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+<ul>
+<li>w 为每个属性的权重，代表打散需求的优先级</li>
+<li>Count 为同属性 item 已经出现的次数</li>
+</ul>
+</li>
+<li>fx 为打散加权分数，从低到高对 item 进行排序，完成打散。</li>
+<li>实现简单，充分考虑多种属性的叠加，扩展性强，末尾容易扎堆</li>
+</ul>
+</li>
+<li>滑动窗口
+<ul>
+<li>在一个长度可控的滑动窗口内，同属性 item 超过一定次数后，交换出 session。</li>
+<li>考虑局部，计算量小，对原序的破坏比较低，最大限度保留相关性，也有末尾扎堆。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="多样性"><a class="markdownIt-Anchor" href="#多样性"></a> 多样性</h3>
+<ul>
+<li>评估方法
+<ul>
+<li>数据指标分析
+<ul>
+<li>user 和 item 角度，用户曝光一二级类目数，曝光item同属一个类目的概率</li>
+<li>类目、作者、标签多个维度分析</li>
+</ul>
+</li>
+<li>人工评估</li>
+</ul>
+</li>
+<li>发展里程
+<ul>
+<li>规则约束
+<ul>
+<li>硬规则约束</li>
+<li>规则引擎</li>
+<li>个性化约束
+<ul>
+<li>不同类目、不同时段、不同活跃度用户配置不同</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>启发式方法：结合多样性和相关性
+<ul>
+<li>[[MMR]] 最大边缘相关模型
+<ul>
+<li>[[@The use of MMR, diversity-based reranking for reordering documents and producing summaries]]</li>
+</ul>
+</li>
+<li>[[DPP]] 点行列式矩阵
+<ul>
+<li>[[@Fast Greedy MAP Inference for Determinantal Point Process to Improve Recommendation Diversity]]</li>
+</ul>
+</li>
+<li>[[Deep-DPP]] 结合深度神经网络
+<ul>
+<li>[[@Practical Diversified Recommendations on YouTube with Determinantal Point Processes]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>深度模型，加入上下文感知</li>
+</ul>
+</li>
+</ul>
+<h2 id="算法效率"><a class="markdownIt-Anchor" href="#算法效率"></a> 算法效率</h2>
+<h3 id="多任务融合"><a class="markdownIt-Anchor" href="#多任务融合"></a> 多任务融合</h3>
+<ul>
+<li>精排输出多个任务的分数，在重排阶段融合。</li>
+<li>常用方法
+<ul>
+<li>人工调权</li>
+<li>Grid Search</li>
+<li>模型法
+<ul>
+<li>轻量模型融合多个打分以及其他比较重要的特征</li>
+<li>point-wise</li>
+<li>业务场景的最终指标必须单一，重排模型的监督目标必须是一个单一任务。</li>
+</ul>
+</li>
+<li>强化学习
+<ul>
+<li>根据用户在不同状态下的行为，利用强化学习建模状态转移过程，提升业务核心目标。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="上下文感知"><a class="markdownIt-Anchor" href="#上下文感知"></a> 上下文感知</h3>
+<ul>
+<li>context-aware Learning-To-Rank
+<ul>
+<li>优化目标
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>min</mi><mo>⁡</mo><mfrac><mn>1</mn><mrow><mi mathvariant="normal">∣</mi><mi>B</mi><mi mathvariant="normal">∣</mi></mrow></mfrac><msub><mo>∑</mo><mrow><mo stretchy="false">(</mo><mi>S</mi><mo separator="true">,</mo><mi>Y</mi><mo stretchy="false">)</mo><mo>∈</mo><mi>B</mi><mi>i</mi><mo>∈</mo><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mi>S</mi><mo stretchy="false">[</mo><mo stretchy="false">]</mo></mrow></msub><msub><mo>∑</mo><mo stretchy="false" lspace="0em" rspace="0em">[</mo></msub><mi mathvariant="normal">Loss</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><msub><mi>Y</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mrow><mtext> </mtext><mi mathvariant="normal">F</mi></mrow><mi mathvariant="normal">r</mi></msub><mrow><mo fence="true">(</mo><msub><mi>S</mi><mi>i</mi></msub><mo separator="true">,</mo><mi mathvariant="normal">Context</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>S</mi><mo separator="true">,</mo><mi>i</mi><mo stretchy="false">)</mo><mo fence="true">)</mo></mrow><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\min \frac{1}{|B|} \sum_{(S, Y) \in B i \in[1, S[]} \sum_{[} \operatorname{Loss}\left(Y_i, \mathrm{~F}_{\mathrm{r}}\left(S_i, \operatorname{Context}(S, i)\right)\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.365108em;vertical-align:-0.52em;"></span><span class="mop">min</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∣</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span><span class="mord mtight">∣</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.22528999999999993em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.22222em;">Y</span><span class="mclose mtight">)</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span><span class="mord mathnormal mtight">i</span><span class="mrel mtight">∈</span><span class="mopen mtight">[</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span><span class="mopen mtight">[</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.47471em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.22528999999999993em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">[</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.47471em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">L</span><span class="mord mathrm">o</span><span class="mord mathrm">s</span><span class="mord mathrm">s</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mspace nobreak"> </span><span class="mord mathrm">F</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">r</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">C</span><span class="mord mathrm">o</span><span class="mord mathrm">n</span><span class="mord mathrm">t</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span><span class="mord mathrm">t</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">i</span><span class="mclose">)</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>
+<ul>
+<li>S 是曝光的物料序列，Y 是用户对 S 的反馈序列</li>
+<li>Yi 是对 Si 的反馈</li>
+<li>Fr 重排模型，预测 Si 被用户交互的概率。</li>
+<li>Loss 可以是普通的交叉熵损失函数。</li>
+</ul>
+</li>
+<li>如何表达序列中的物料 Si
+<ul>
+<li>用户针对 Si 的个性化信息，精排模型打分</li>
+<li>Si 在整个候选集中的排名、位置信息，刻画Si和邻居之间的相对关系，价格排名，精排序列排名</li>
+</ul>
+</li>
+<li>Fr 是能对序列建模的模型</li>
+</ul>
+</li>
+<li>如何生成序列
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi><munder><mo><mi mathvariant="normal">argmax</mi><mo>⁡</mo></mo><mrow><mi>S</mi><mo>∈</mo><mtext> Permute </mtext><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow></munder></mi><msub><mo>∑</mo><mrow><mi>i</mi><mo>∈</mo><mo stretchy="false">[</mo><mn>1</mn><mo separator="true">,</mo><mo>∣</mo><mi>S</mi><mo stretchy="false">[</mo><mo stretchy="false">]</mo></mrow></msub><mi mathvariant="normal">Utility</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><msub><mi>S</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mrow><mtext> </mtext><mi mathvariant="normal">F</mi></mrow><mi mathvariant="normal">n</mi></msub><mrow><mo fence="true">(</mo><msub><mi>S</mi><mi>i</mi></msub><mo separator="true">,</mo><mi mathvariant="normal">Context</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>S</mi><mo separator="true">,</mo><mi>i</mi><mo stretchy="false">)</mo><mo fence="true">)</mo></mrow><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\underset{S \in \text { Permute }(X)}{\operatorname{argmax}} \sum_{i \in[1, \mid S[]} \operatorname{Utility}\left(S_i, \mathrm{~F}_{\mathrm{n}}\left(S_i, \operatorname{Context}(S, i)\right)\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.91044em;vertical-align:-1.16044em;"></span><span class="mord"><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.43056000000000016em;"><span style="top:-2.11456em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span><span class="mrel mtight">∈</span><span class="mord text mtight"><span class="mord mtight"> Permute </span></span><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.07847em;">X</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.0000000000000004em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop"><span class="mop"><span class="mord mathrm">a</span><span class="mord mathrm">r</span><span class="mord mathrm" style="margin-right:0.01389em;">g</span><span class="mord mathrm">m</span><span class="mord mathrm">a</span><span class="mord mathrm">x</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.16044em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.22528999999999993em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">∈</span><span class="mopen mtight">[</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mrel mtight">∣</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span><span class="mopen mtight">[</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.47471em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">U</span><span class="mord mathrm">t</span><span class="mord mathrm">i</span><span class="mord mathrm">l</span><span class="mord mathrm">i</span><span class="mord mathrm">t</span><span class="mord mathrm" style="margin-right:0.01389em;">y</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mspace nobreak"> </span><span class="mord mathrm">F</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">n</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">C</span><span class="mord mathrm">o</span><span class="mord mathrm">n</span><span class="mord mathrm">t</span><span class="mord mathrm">e</span><span class="mord mathrm">x</span><span class="mord mathrm">t</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">i</span><span class="mclose">)</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>
+<ul>
+<li>permute 代表排列组合能够生成的所有序列</li>
+<li>Utility 收益函数，Si 被购买的概率等</li>
+</ul>
+</li>
+<li>Greedy Search
+<ul>
+<li>每次挑选剩下无聊中带来最大收益的那个。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>pair-wise 类
+<ul>
+<li>构建 pair 对比两个 item 之间的相对关系，仍然忽略全局信息。
+<ul>
+<li>正样本好于负样本的概率，利用交叉熵来拟合目标</li>
+<li>对比学习loss，hinge loss， [[Triplet Loss]]</li>
+</ul>
+</li>
+<li>RankSVM、GBRank、RankNet、</li>
+<li>LambdaRank
+<ul>
+<li>RankNet 基础上引入 NDCG 目标</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>list-wise 类
+<ul>
+<li>直接对序列进行优化，建模 item 序列的整体信息和对比信息
+<ul>
+<li>即是使用List-Wise方法得到的候选序列，可以从list维度考虑排序，但在最终得到序列时也是逐个使用贪心方法选择候选item，还是不能做到充分上下文感知以及从整体(“长期”)收益的序列生成。</li>
+<li>通过序列生成方法和强化重排解决。</li>
+</ul>
+</li>
+<li>树模型：lambdaMart</li>
+<li>RNN：DLCM\、seq2slate
+<ul>
+<li>分别利用 rnn+attention 和 pointer-network 来构建 seq2seq 模型</li>
+<li>阿里巴巴 miRNN([[mutual influence RNN]])</li>
+</ul>
+</li>
+<li>两段式：PRS
+<ul>
+<li>PMatch 和 PRank 两个链路，通过两段式结构得到最终输出</li>
+</ul>
+</li>
+<li>self-attention：[[PRM]]、setRank
+<ul>
+<li>self-attention 解决长序列建模问题</li>
+</ul>
+</li>
+<li>强化学习：京东LIRO、阿里GRN</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="实时性提升"><a class="markdownIt-Anchor" href="#实时性提升"></a> 实时性提升</h3>
+<ul>
+<li>实时性分类
+<ul>
+<li>系统响应实时性
+<ul>
+<li>用户实时行为捕捉，端上重排</li>
+</ul>
+</li>
+<li>特征实时性
+<ul>
+<li>链路数据回收延迟，用户本身行为延迟反馈</li>
+</ul>
+</li>
+<li>模型实时性
+<ul>
+<li>在线学习，实时更新模型</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在线学习 ODL
+<ul>
+<li>延迟反馈
+<ul>
+<li>原因：链路数据回收延迟，用户本身行为延迟反馈</li>
+<li>解决方法
+<ul>
+<li>负例校正法：先标记样本为负样本，真正转化后重新插入正样本。保证模型新鲜度，但假负例对模型有一定副作用。
+<ul>
+<li>Addressing delayed feedback for continuous training with neural networks in CTR prediction</li>
+</ul>
+</li>
+<li>等待法：一定时间内等待真实的成交转化，没等到就不校正。label 置信度提升，模型新鲜度有折损。
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2002.02068">A Feedback Shift Correction in Predicting Conversion Rates under Delayed Feedback (arxiv.org)</a></li>
+</ul>
+</li>
+<li>纠偏法：ES-DFM，对观测转化分布和真实转化分布之间的关系建模，降低假负例的权重和增加真正例的权重，来纠正样本不置信问题。
+<ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2012.03245">Delayed Feedback (arxiv.org)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据稳定性
+<ul>
+<li>电商 CVR 用户白天浏览点击，晚上下单。cvr 晚上比白天高，需要做修正。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="端上重排"><a class="markdownIt-Anchor" href="#端上重排"></a> 端上重排</h2>
+<p>优点</p>
+<ul>
+<li><strong>推荐响应实时性</strong>：不用请求下一页，实现即时更新</li>
+<li><strong>行为特征实时性</strong>：端上即时计算，不用回传云端</li>
+<li><strong>行为特征丰富度</strong>：负反馈、滚动速度、曝光时长等多种用户行为都可以在模型中使用，基于云端的方式受限于数据传输和存储，一般只会选择点击等关键的用户行为。</li>
+</ul>
+<p>引擎</p>
+<ul>
+<li>TF-lite</li>
+<li>MNN</li>
+<li>TNN</li>
+</ul>
+<p>基于双塔内积模型的实现方式</p>
+<ul>
+<li>服务端一次下发几十个item，包括item的embedding</li>
+<li>端上基于本地存储的user静态特征、统计特征，和实时行为特征，实时计算user embedding</li>
+<li>user和item embedding进行内积计算，对list中未展现的剩余item做重排</li>
+<li>下次请求时，将更新后的user特征回传云端，方便云端模型实时更新。</li>
+</ul>
+<p>发展进程</p>
+<ul>
+<li>端上推理 EdgeRec</li>
+<li>端上训练 DCCL</li>
+</ul>
+<h2 id="流量调控"><a class="markdownIt-Anchor" href="#流量调控"></a> 流量调控</h2>
+<h3 id="保量流量扶持-生态建设"><a class="markdownIt-Anchor" href="#保量流量扶持-生态建设"></a> 保量：流量扶持、生态建设</h3>
+<ul>
+<li>规则引擎
+<ul>
+<li>冷启动、买卖家结构调整、曝光保量</li>
+</ul>
+</li>
+<li>探索和利用：通过e-greedy、Thompson sampling、UCB等EE类的方法，可以有效探索冷启item，同时利用已有item，保障效率折损最低。</li>
+</ul>
+<h3 id="调权业务需求-实时干预"><a class="markdownIt-Anchor" href="#调权业务需求-实时干预"></a> 调权：业务需求、实时干预</h3>
+<ul>
+<li>规则引擎
+<ul>
+<li>时效性要求高的场景，大促 item 加权</li>
+</ul>
+</li>
+<li>样本加权
+<ul>
+<li>命中调权规则的样本，增加其在 loss 中的权重。</li>
+<li>实现个性化，对效率折损较低。</li>
+<li>适合长期调权场景，大店和大 V</li>
+</ul>
+</li>
+</ul>
+<h2 id="ref"><a class="markdownIt-Anchor" href="#ref"></a> Ref</h2>
+<p>[[@推荐算法架构4：重排]]</p>
+<p>[[@互联网大厂推荐算法实战]] 6.2 重排</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/359330317">搜索推荐广告排序艺术-重排序 - 知乎 (zhihu.com)</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>rerank</p><p><a href="https://blog.xiang578.com/note/rerank.html">https://blog.xiang578.com/note/rerank.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ryen Xiang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-05-29</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-05-29</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/note/librerank.html"><span class="level-item">librerank</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><script>var webmentionContext = { baseUrl:'https://webmention.io'}; </script><script src="/js/webmention.js"></script><div class="card"><div class="card-content"><h2 class="title is-5">网络回响</h2><div class="webmention-timeline"></div><script src="/js/webmention-timeline.js"></script></div></div><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><script src="https://utteranc.es/client.js" repo="xiang578/xiang578.github.io" issue-term="title" label="utterances" theme="github-light" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#解决三大问题"><span class="level-left"><span class="level-item">1</span><span class="level-item"> 解决三大问题</span></span></a></li><li><a class="level is-mobile" href="#用户体验"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 用户体验</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#打散"><span class="level-left"><span class="level-item">2.1</span><span class="level-item"> 打散</span></span></a></li><li><a class="level is-mobile" href="#多样性"><span class="level-left"><span class="level-item">2.2</span><span class="level-item"> 多样性</span></span></a></li></ul></li><li><a class="level is-mobile" href="#算法效率"><span class="level-left"><span class="level-item">3</span><span class="level-item"> 算法效率</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#多任务融合"><span class="level-left"><span class="level-item">3.1</span><span class="level-item"> 多任务融合</span></span></a></li><li><a class="level is-mobile" href="#上下文感知"><span class="level-left"><span class="level-item">3.2</span><span class="level-item"> 上下文感知</span></span></a></li><li><a class="level is-mobile" href="#实时性提升"><span class="level-left"><span class="level-item">3.3</span><span class="level-item"> 实时性提升</span></span></a></li></ul></li><li><a class="level is-mobile" href="#端上重排"><span class="level-left"><span class="level-item">4</span><span class="level-item"> 端上重排</span></span></a></li><li><a class="level is-mobile" href="#流量调控"><span class="level-left"><span class="level-item">5</span><span class="level-item"> 流量调控</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#保量流量扶持-生态建设"><span class="level-left"><span class="level-item">5.1</span><span class="level-item"> 保量：流量扶持、生态建设</span></span></a></li><li><a class="level is-mobile" href="#调权业务需求-实时干预"><span class="level-left"><span class="level-item">5.2</span><span class="level-item"> 调权：业务需求、实时干预</span></span></a></li></ul></li><li><a class="level is-mobile" href="#ref"><span class="level-left"><span class="level-item">6</span><span class="level-item"> Ref</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hangzhou</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">167</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">129</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-28T16:00:00.000Z">2024-05-29</time></p><p class="title"><a href="/note/rerank.html">rerank</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-25T16:00:00.000Z">2024-05-26</time></p><p class="title"><a href="/note/librerank.html">librerank</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-24T16:00:00.000Z">2024-05-25</time></p><p class="title"><a href="/note/Luhmann_discuss_logseq_com.html">luhmann@discuss.logseq.com</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-24T16:00:00.000Z">2024-05-25</time></p><p class="title"><a href="/note/a-brief-history-of-my-task-management.html">@从终端到纯文本：我的任务管理简史</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-05-24T16:00:00.000Z">2024-05-25</time></p><p class="title"><a href="/note/productivity_text_file.html">@my productivity app is a never-ending txt file</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2015-2024 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
