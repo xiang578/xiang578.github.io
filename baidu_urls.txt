@@ -1,3 +1,6 @@
+https://blog.xiang578.com/problem/lc1630.html
+https://blog.xiang578.com/note/sieve.html
+https://blog.xiang578.com/note/yjango_learning.html
 https://blog.xiang578.com/note/rerank.html
 https://blog.xiang578.com/note/librerank.html
 https://blog.xiang578.com/note/Luhmann_discuss_logseq_com.html
@@ -5,6 +8,3 @@ https://blog.xiang578.com/note/a-brief-history-of-my-task-management.html
 https://blog.xiang578.com/note/productivity_text_file.html
 https://blog.xiang578.com/note/qncd.html
 https://blog.xiang578.com/note/soren_bjornstad.html
-https://blog.xiang578.com/note/wx_o0frUpRNdkKQ-yaUk9onlw.html
-https://blog.xiang578.com/note/plain_text_gtd.html
-https://blog.xiang578.com/note/yayu_net_4140.html
