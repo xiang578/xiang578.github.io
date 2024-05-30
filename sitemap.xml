@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xiang578.com/tech/index.html</loc>
+    
+    <lastmod>2024-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiang578.com/categories/index.html</loc>
     
     <lastmod>2024-05-30</lastmod>
@@ -20,15 +29,6 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/posts/Github%20Publisher.html</loc>
-    
-    <lastmod>2024-05-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.xiang578.com/tags/index.html</loc>
     
     <lastmod>2024-05-30</lastmod>
@@ -38,25 +38,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/tech/index.html</loc>
-    
-    <lastmod>2024-05-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/wide-and-deep.html</loc>
-    
-    <lastmod>2024-05-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/zjp-2016.html</loc>
+    <loc>https://blog.xiang578.com/posts/Github%20Publisher.html</loc>
     
     <lastmod>2024-05-30</lastmod>
     
@@ -416,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</loc>
+    <loc>https://blog.xiang578.com/post/wide-and-deep.html</loc>
     
     <lastmod>2024-05-30</lastmod>
     
@@ -425,16 +407,7 @@
   </url>
   
   <url>
-    <loc>https://blog.xiang578.com/post/auto-workflow.html</loc>
-    
-    <lastmod>2024-05-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
+    <loc>https://blog.xiang578.com/post/zjp-2016.html</loc>
     
     <lastmod>2024-05-30</lastmod>
     
@@ -1073,6 +1046,51 @@
   </url>
   
   <url>
+    <loc>https://blog.xiang578.com/post/are-transformers-effective-for-time-series-forecasting.html</loc>
+    
+    <lastmod>2024-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/auto-workflow.html</loc>
+    
+    <lastmod>2024-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/post/before-go-to-univisity.html</loc>
+    
+    <lastmod>2024-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/note/alibaba_mirnn.html</loc>
+    
+    <lastmod>2024-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/note/rerank.html</loc>
+    
+    <lastmod>2024-05-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xiang578.com/problem/lc887.html</loc>
     
     <lastmod>2024-05-30</lastmod>
@@ -1103,15 +1121,6 @@
     <loc>https://blog.xiang578.com/note/yjango_learning.html</loc>
     
     <lastmod>2024-05-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xiang578.com/note/rerank.html</loc>
-    
-    <lastmod>2024-05-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2291,6 +2300,27 @@
   
   <url>
     <loc>https://blog.xiang578.com/tags/Ship-90-for-90/</loc>
+    <lastmod>2024-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/Alibaba/</loc>
+    <lastmod>2024-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/ReRank/</loc>
+    <lastmod>2024-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xiang578.com/tags/IJCA-2018/</loc>
     <lastmod>2024-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
