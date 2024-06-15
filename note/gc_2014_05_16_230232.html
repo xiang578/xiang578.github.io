@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh"><head><!-- hexo injector head_begin start --><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><script async src="https://umami.xiang578.com/script.js" data-website-id="0bf958fd-ca98-4a54-b1c0-bf3384802fcc"></script><script data-goatcounter="https://xiang578.goatcounter.com/count" async src="/count.js"></script><link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention" /> <link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc" /><link title="Follow me on Twitter" rel="me" href="https://twitter.com/xiang578"/><!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>@好读书，不求甚解 - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="链接：马平：好读书 不求甚解 (guancha.cn)"><meta property="og:type" content="blog"><meta property="og:title" content="@好读书，不求甚解"><meta property="og:url" content="https://blog.xiang578.com/note/gc_2014_05_16_230232.html"><meta property="og:site_name" content="算法花园"><meta property="og:description" content="链接：马平：好读书 不求甚解 (guancha.cn)"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/img/og_image.png"><meta property="article:published_time" content="2024-06-14T16:00:00.000Z"><meta property="article:modified_time" content="2024-06-15T17:20:39.000Z"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="web"><meta property="article:tag" content="马前卒"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com/note/gc_2014_05_16_230232.html"},"headline":"@好读书，不求甚解","image":["https://blog.xiang578.com/img/og_image.png"],"datePublished":"2024-06-14T16:00:00.000Z","dateModified":"2024-06-15T17:20:39.000Z","author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":"链接：马平：好读书 不求甚解 (guancha.cn)"}</script><link rel="canonical" href="https://blog.xiang578.com/note/gc_2014_05_16_230232.html"><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/books/index.html">阅读</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt"> </i><time dateTime="2024-06-14T16:00:00.000Z" title="2024-06-14T16:00:00.000Z">2024-06-15</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check"> </i><time dateTime="2024-06-15T17:20:39.000Z" title="2024-06-15T17:20:39.000Z">2024-06-16</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i> <a class="link-muted" href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></span><span class="level-item"><i class="far fa-clock"></i> 34 分钟读完 (大约5126个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="p-name title is-3 is-size-4-mobile">@好读书，不求甚解</h1><div class="content  e-content"><p>链接：<a target="_blank" rel="noopener" href="https://www.guancha.cn/MaPing/2014_05_16_230232.shtml">马平：好读书 不求甚解 (guancha.cn)</a></p>
+<span id="more"></span>
+<h2 id="想法"><a class="markdownIt-Anchor" href="#想法"></a> 想法</h2>
+<p>可以已经大学毕业，没有机会让我一天读一本书，高强度读上一千本书。</p>
+<p>如何建立一个世界模型？</p>
+<ul>
+<li>人类行为背后的原理</li>
+<li>人类生存环境感性模型，人在宇宙中的定位
+<ul>
+<li>天体数字感性模型，天数数字转化成自己能理解的数字</li>
+<li>地理的尺度，人类世界很难超过一立方公里。</li>
+<li>推测自己能看到什么</li>
+</ul>
+</li>
+<li>历史大趋势
+<ul>
+<li>时间感性模型</li>
+<li>经济基础和上层建筑的互动</li>
+</ul>
+</li>
+</ul>
+<p>用世界模型去理解当代的信息</p>
+<p>马克思主义是唯物主义的逻辑系统，而不是信仰。</p>
+<h2 id="摘录"><a class="markdownIt-Anchor" href="#摘录"></a> 摘录</h2>
+<h3 id="读书当学诸葛亮"><a class="markdownIt-Anchor" href="#读书当学诸葛亮"></a> 读书当学诸葛亮</h3>
+<ul>
+<li>我不求逐字逐句，只求看个大概，再加上我读书快一点，逃课率高一些，一天读一本书其实不算难，我还有空每天踢球打游戏呢。</li>
+<li>造纸术带来的信息爆炸改变了两个事实。一个是书籍总量爆炸性增长，一个是书籍便宜了，普通人买一本、借一本，最不济抄一本也很容易弄到书。
+<ul>
+<li>纸质书普及之前，人真的有可能看完当时全部的书。</li>
+</ul>
+</li>
+</ul>
+<h3 id="给外星人当导游"><a class="markdownIt-Anchor" href="#给外星人当导游"></a> 给外星人当导游</h3>
+<ul>
+<li>我来之前看了我自己的讲座海报，上面写的很清楚：“无法对各位做出人生指导，也没能力帮各位设计职业规划，只想分享一下个人读书的喜好”。所以，今天来听我聊读书的各位，应该也没打算听我说怎么当副局级干部，也不是来听专业课的，而是像诸葛亮那样，<mark>打算通过阅读来全面了解这个世界，在自己的脑子里建立一个世界模型。</mark> 诸葛亮用这个模型可以去管理国家，我们至少可以满足自己的好奇心。接下来我就聊聊我在这方面读书的经验。</li>
+<li>如何用一系列的书籍来了解世界？人类学、天文、地理、历史。</li>
+</ul>
+<h3 id="人类学"><a class="markdownIt-Anchor" href="#人类学"></a> [[人类学]]</h3>
+<ul>
+<li>要认识人类自身，必须做到两个前提：
+<ul>
+<li>一是脱出日常生活，从俯瞰的角度分析人类活动，</li>
+<li>二是观察各种环境中的人类生活模式，总结共性，分析差异。</li>
+</ul>
+</li>
+<li>人类学，是从生物和文化的角度对人类进行全面研究的学科群，人类学研究不同环境下的人类。
+<ul>
+<li>包括考古，去挖古代遗址和古人类的骨头；</li>
+<li>包括研究各个民族的宗教和巫术，看看为什么各地的信仰如此相似又为啥有那么多不同；</li>
+<li>甚至现代城市里大家怎么上班，怎么娱乐，怎么相亲，也是人类学的研究对象。</li>
+</ul>
+</li>
+<li>人类学案例：研究人们从原始部落进入现代社会的反应
+<ul>
+<li>从原始社会到现在过去一万年，但是地球上任何两个民族都可以直接通婚，不存在基因障碍。石器时代祖先的基因不仅决定我们的身体，还决定我们的思考方式，研究石器时代的部落生活，可以解释今天我们的行为。</li>
+<li>肉食、甜食和坚果</li>
+<li>部落集体打猎，对应现代社会基层组织的单位基本都是10多个人，体育运动团队人数（足球、橄榄球等等）</li>
+<li>原始女性采集对应现代女性逛街</li>
+<li>足球和逛街的例子，说明人类的行为并不神秘，完全可以像研究动物行为那样归纳总结。读人类学，让我们在认识中摆正人类的位置。既不用宗教神秘主义去解释人类的行为，也不会两手一伸，说人类行为完全没有规律，没法预测。</li>
+</ul>
+</li>
+<li>[[@裸猿]]
+<ul>
+<li>第一本就是《裸猿》，非常精确了描述了人类学家眼中的人类，就是没有毛的一种猿猴，从生物学和进化的角度来定位我们人类，讨论人类各种行为的原因。</li>
+<li>第二本是《人类动物园》，讨论了把这么多没毛的猴子扔到现代都市的水泥丛林里，我们会做什么反应。足球其实就是男人远离能打猎的草原之后，做出的一种补偿动作。</li>
+<li>第三本是《亲密行为》，讨论人类作为一种智能生物，怎么表达彼此的好感。</li>
+</ul>
+</li>
+</ul>
+<h3 id="通过-天文学-理解天文数字的概念"><a class="markdownIt-Anchor" href="#通过-天文学-理解天文数字的概念"></a> 通过 [[天文学]] 理解天文数字的概念</h3>
+<ul>
+<li>在大家的直观感受里，中国现在的空间站，天宫一号的轨道离地面近，还是上海到徐州近？
+<ul>
+<li>天宫一号距地面三四百公里，比南京远点，肯定比徐州近的多，从我们头顶上飞过的时候，差不多和合肥离我们一样远。</li>
+</ul>
+</li>
+<li>天宫一号飞行飞行高度为什么选择三四百公里？
+<ul>
+<li>避开人类日常生活环境</li>
+<li>大气层边缘约 40 公里，飞行高度是十倍这个距离，需要避开更稀薄的大气层。</li>
+</ul>
+</li>
+<li>天体数字模型
+<ul>
+<li>地球（直径12,742 公里）缩小成一个一米大小的地球仪</li>
+<li>人类生存极限在 10 公里左右，加起来是20 公里，在模型中接近于 2 毫米</li>
+<li>天宫一号在距离地面几厘米的地方飞</li>
+<li>同步卫星在三米外</li>
+<li>月球距离地球 30 多米，相当于篮球场的长度，大小比篮球略大</li>
+<li>太阳是 15 公里外一个 100 多米大的球，相当于虹桥机场看人民广场的上海市政府大楼</li>
+<li>海王星在 500 公里外的太阳系边缘，是 5 米大的球，徐州到上海的距离</li>
+<li>最近的恒星（4 光年），距离我们 400 万公里</li>
+</ul>
+</li>
+<li>数字模型的意义，理解教科书上所的天文单位的概念。在太阳系里面找地球生物圈，像在一个省那么大的范围内找一个一米大的玻璃球。</li>
+<li>科普书籍
+<ul>
+<li>推荐一本毛泽东喜欢读的天文科普书《大众天文学》，1973年法国总统访华，毛泽东还专门问这个作者的情况。</li>
+<li>美国人尼尔.德格拉斯.泰森写的《万物起源》和卡尔萨根的一系列书籍都不错。</li>
+</ul>
+</li>
+</ul>
+<h3 id="地理的尺度地理学和地质学"><a class="markdownIt-Anchor" href="#地理的尺度地理学和地质学"></a> 地理的尺度，地理学和地质学</h3>
+<ul>
+<li>立方公里的理解，衡量河流的流量，冰川和岩层的规模。
+<ul>
+<li>一立方公里等于十亿立方米</li>
+<li>70 亿人类如何把中间的缝隙去除，最多就是 0.7 立方公里</li>
+<li>这个单位实际上就是70亿人类合力改造地球能力的极限数量级。
+<ul>
+<li>三峡工程是作为千年工程设计的，物理尺度只有一两亿立方米，也就是0.1-0.2立方公里。</li>
+<li>京杭大运河挖了两千年，算上现代疏浚成果，不过是几立方公里的土方量。</li>
+<li>全世界每年上千万矿工，几百万台机械，日夜不停的挖矿石，一年能挖多少矿石呢？才4立方公里。这还亏得我们有许多露天矿，沿着地面挖就能挖到矿石。</li>
+<li>这些所有的工程成果堆起来只能算个中等山头，倒下去填不平一个普通的山谷。</li>
+</ul>
+</li>
+<li>考虑人类世界的事情，不要随便超过这个单位。</li>
+</ul>
+</li>
+<li>测量距离大于 300 米，需要考虑地球弧度对高程的影响。人类肉眼可以看到地球和平面的偏差。</li>
+<li>有一本比尔·布莱森的《万物简史》不错，但更重要的是自己常备几套精美直观的地图册，买一个比较详细的地球仪。</li>
+<li>我建议大家出门的时候，不要查一下路线，就完全听手机导航的，怎么说怎么走。
+<ul>
+<li>最好提前看一下自己要去地方的地形图和卫星图，推测一下自己能看到什么。</li>
+<li>回来以后再看看地图，看看自己为什么会看到那些东西。这是我坐火车和坐飞机时候的最大乐趣之一。</li>
+<li>如果你按照导航的路线，走到哪里就看看，实际上你只走了一条线，是一维生物。</li>
+<li>你能对沿途地理学有所理解的话，你至少是二维生物。</li>
+<li>我们作为一种三维生物，被地球引力限制在二维球面上，已经是个很郁闷的事情了，千万不要因为地理学知识的缺乏，把自己限制到手机导航软件里，变成一维生物。</li>
+</ul>
+</li>
+</ul>
+<h3 id="历史学"><a class="markdownIt-Anchor" href="#历史学"></a> 历史学</h3>
+<ul>
+<li>时间感性认识，一世纪是三代人，1000 年是 30 代人
+<ul>
+<li>孔子出生于 [[-551]] 年，距现在 2500 多年，79 代后裔孔垂长。相当于一代人是 三十多年。</li>
+<li>人类文明史一万年左右，相当于 300 多代的差距</li>
+</ul>
+</li>
+<li>建立理想化历史模型再研究具体案例</li>
+<li>经济基础和上层建筑的互动
+<ul>
+<li>人类各种制度，包括政治制度，包括宗教，包括所有的文化模式，甚至包括吃甜的多还是吃咸的多，穿衣服能不能露小腿，女人要不要带头巾，都是上层建筑的一部分。</li>
+<li>这些生活方式之间不断的在竞争，争夺支持者。</li>
+<li>但是呢，他们之间的竞争最终不是靠软实力来对抗的，两个宗教抢信徒，从长期来看，是要看经济基础的。
+<ul>
+<li>[[伊斯兰教]]发展最快的派系：[[瓦哈比派]]，原因是沙特王室的国教，有钱传教
+<ul>
+<li>历史，18 世纪出现</li>
+<li>道德，土匪行为</li>
+<li>虔诚，摧毁穆罕穆德的墓地，刨了伊斯兰教的祖坟</li>
+</ul>
+</li>
+<li>历史上各种文化宗教和社会制度能在竞争中胜利，不是某某制度更好，更美，更有诱惑力，而是有经济基础。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>历史的主流趋势是生产力水平高的才有钱，才有强大的军队和政治影响力。
+<ul>
+<li>如果某种社会制度从长期来看不促进强大的生产力，不创造更多的物质财富，那迟早会被其他的制度吞并，或是被逼着改革。</li>
+<li>[[周朝]] 贵族社会，贵族武士的后代住在城里，叫国人，负责打仗，负责当官，负责搞学术，其他的人叫野人，在城外种地。这符合青铜时代的生产力水平。</li>
+<li>等到战国时期，铁器普及了，农民不需要城里人也能获得金属工具，能打仗也能开垦新的土地，原来的统治制度就不合适了，需要变法。哪个国家能先消灭国人和野人的区别，调动所有人的积极性去占领新的土地，开垦新的土地，哪个国家就占优势。不愿意改变的国家就被干掉，当了别人的踏脚石。在这个过程中，哪个国家取得胜利并不重要，也不是历史大势，历史大势是新的制度一定胜利。你这个国家不愿意主动接受，就会被别人吞并之后被动接受</li>
+</ul>
+</li>
+<li>[[沙特阿拉伯]] 能发展不是他们符合生产力的发展，而是冷战后期大国对抗夹缝中的特殊情况。
+<ul>
+<li>历史大趋势偶尔会倒流，很少会倒流太久。</li>
+</ul>
+</li>
+<li>牛津版科学史，了解生产力发展的脉络。</li>
+<li>还有些偶然因素纯粹和自然界有关。
+<ul>
+<li>比如说沙特的石油，本身就是个偶然因素。</li>
+<li>贾雷德·戴蒙德 有一本[[@枪炮、病菌与钢铁]]，就举了好多类似的例子。
+<ul>
+<li>比如说，为什么欧亚大陆的文明要比美洲大陆的文明发达？</li>
+<li>他论证，说欧亚大陆的主要轴线是东西方向的，美洲大陆的主要轴线是南北方向的。</li>
+<li>地球上的气候带主要和纬度有关系，受南北方向的影响大。</li>
+<li>所以美洲大陆的农业文明没法沿着大陆的主要轴线传播，亚欧大陆的农业文明技术进步可以很方便地沿着大陆主要轴线传播。</li>
+<li>所以是欧亚大陆的哥伦布去发现美洲的印第安人，而不是印第安人开着船，拿着火枪来屠杀欧亚大陆的原始人。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>读通史
+<ul>
+<li>《泰晤士历史地图册》、谭其骧《中国历史地理地图册》</li>
+<li>斯塔夫里阿诺斯的《世界通史》、汤因比的《历史研究》、《人类与大地母亲》最近刚出的那套《世界：一部历史》也可以作为入门读物。</li>
+<li>国内的通史，我建议找一套解放后的和一套解放前的对照看，比如白寿彝的《中国通史》和咱们华东师大吕思勉的《中国通史》放到一起。</li>
+<li>然后再读分段的史书，而且最好也是全球史，比如说刚刚去世的霍布斯鲍姆写的十九世纪三部曲。</li>
+</ul>
+</li>
+<li>用代当单位，画年表
+<ul>
+<li>看看各个历史人物和各个王朝都是哪一“代”的，你心里差不多就有一个历史框架了。</li>
+<li>再进一步可以找一张空白世界地图，自己选择几个典型年代，把国家和重大事件画在上面。画几张，心里就有一套简史了。</li>
+<li>读其他历史书籍，把这些把具体的段落挂到原有的框架下，你学到的所有历史知识就能成为一体，要用的时候可以一起发挥作用。</li>
+</ul>
+</li>
+</ul>
+<h3 id="了解当代"><a class="markdownIt-Anchor" href="#了解当代"></a> 了解当代</h3>
+<ul>
+<li>整理人文方面知识：先了解自己，了解周围的环境，再了解人类社会都做过什么。这等于在时间、空间、历史渊源和生物本性几方面给自己定位。定了位置，我们才知道自己的视角，才能确定自己看到的现实。</li>
+<li>社科院政治学所所长房宁评价过民国那些大师。
+<ul>
+<li>他们出生在一个大转折的年代，是一个汉语都彻底变化的年代。</li>
+<li>他们一方面掌握了许多中国历史的旧资料，另一方面引入了西方许多分析方法、研究方法，比如马克思的理论。</li>
+<li>他们是新人读旧书，拥有最好的研究机会。</li>
+<li>只要拿西方的方法去研究过去的资料，就是开创性的大师，因为没人这么做过。</li>
+<li>今天的学问还能这么做吗？显然不能了。</li>
+</ul>
+</li>
+<li>当代社会问题相当于中国几千年的历史知识之和。</li>
+<li><a href="../note/gc_2014_05_16_230232_2.html">@马前卒谈如何选择新闻</a></li>
+<li>如何了解现在的社会
+<ul>
+<li>建立模型，用有意义的资料完善自己的模型</li>
+<li>如果每天有空，不妨看看新闻联播，读读人民日报。过滤无效信息，保留有效信息。</li>
+<li>尤其是看新闻联播后20分钟的东西，看人民日报前面八股社论之后的内容。里面会谈到许多数据的变动，许多社会细节在大范围内的渐变，对你构建自己的社会模型很有帮助。</li>
+</ul>
+</li>
+</ul>
+<h3 id="理工科硬件"><a class="markdownIt-Anchor" href="#理工科硬件"></a> 理工科硬件</h3>
+<ul>
+<li>即便我们只想从社会科学的角度去考虑问题，也必须有最基本的自然科学背景，有基本的工程技术概念。</li>
+<li>基础科学方面的科普书。
+<ul>
+<li>湖南科学技术出版社出了几个系列的《第一推动丛书》，算是很好的科普书。</li>
+<li>还有写科幻小说的那个阿西莫夫，也写了很多的科普书籍。虽然有点旧了，但大多数还是值得一读。</li>
+<li>乔治·伽莫夫写的《从一到无穷大》，</li>
+<li>柯朗 H·罗宾写的《什么是数学》都是很不错的书</li>
+<li>最近有一本书叫《信息简史》，詹姆斯·格雷克写的，也推荐大家翻一翻。</li>
+</ul>
+</li>
+<li>经济学可以读萨缪尔森，也可以读曼昆。</li>
+<li>生物学呢，我完全不知道该读什么</li>
+<li>了解一门使用工程技术，看一个工程实例。
+<ul>
+<li>工程是在各个指标之前妥协</li>
+</ul>
+</li>
+</ul>
+<h3 id="读点马克思"><a class="markdownIt-Anchor" href="#读点马克思"></a> 读点马克思</h3>
+<ul>
+<li>这是因为我是来分享经验的，基于客观事实的东西对大家都一样，才能分享，而哲学和信仰，在很大程度上受个人的主观判断影响，就算分享了别人也很难用上。</li>
+<li>[[马克思主义]] 不是信仰，是一套基于唯物主义的逻辑系统，是思考方式，是加工知识原料的一种模式。
+<ul>
+<li>我前面谈到历史的时候，用的就是标准的马克思主义唯物主义历史观。</li>
+<li>我给自己搭建的全套人文知识体系，基本结构就是从马克思主义的世界观照搬的。</li>
+<li>以外星人的视角来观测人类和人类社会，这个视角也是从马克思那里学的。</li>
+<li>就是读点马克思，读点马克思列宁毛泽东的原著。</li>
+</ul>
+</li>
+<li>为什么不推荐从马克思开始阅读？
+<ul>
+<li>马克思和当代人有 150 年的差，马克思思的那一年全世界人口等于中国人口。</li>
+<li>马克思基于19世纪的现实和科学搭建了自己的理论体系。这个体系既包括逻辑和原则，也包括细节和很多具体结论。</li>
+<li>如果对历史学和经济学没有初步认识，直接读马克思，很难区分那些理性原则和具体结论，很有可能是全盘接受，改也改不掉，也可能是发现错误之后全面排斥，产生逆反心理。</li>
+</ul>
+</li>
+<li>其实现在主流的马克思主义宣传就是起到了这种恶劣作用。马克思主义的原则本来很简明，逻辑非常清晰。但自从被苏联中国捧为官方信仰，这东西就成了神学。不仅基本原则不能讨论，具体细节也不能讨论。甚至连创始人的个人经历都不能讨论。
+<ul>
+<li>没有介绍一生的电影，只能从具体时间里出现他们的伟大形象，把科学变成神学，神是不能描画的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="不求甚解是时代精神"><a class="markdownIt-Anchor" href="#不求甚解是时代精神"></a> 不求甚解是时代精神</h3>
+<ul>
+<li>可以不背书，但是要知道这本书大概在讲什么。</li>
+<li>信息时代读书要多，要学会泛读。</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>@好读书，不求甚解</p><p><a href="https://blog.xiang578.com/note/gc_2014_05_16_230232.html">https://blog.xiang578.com/note/gc_2014_05_16_230232.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ryen Xiang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-06-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-06-16</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted p-category" rel="tag" href="/tags/web/">web, </a><a class="link-muted p-category" rel="tag" href="/tags/%E9%A9%AC%E5%89%8D%E5%8D%92/">马前卒 </a></div></div><!--!--></article></div><div class="card"><div class="card-content"><h2>相关文章</h2><span><ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/note/gc_2014_05_16_230232_2.html" title="@马前卒谈如何选择新闻" rel="bookmark">@马前卒谈如何选择新闻</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/note/WU1iILMFdH3RZAbJKFU4WA.html" title="@didi food中的智能补贴实战漫谈" rel="bookmark">@didi food中的智能补贴实战漫谈</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/note/a-brief-history-of-my-task-management.html" title="@从终端到纯文本：我的任务管理简史" rel="bookmark">@从终端到纯文本：我的任务管理简史</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/note/bi_BV1zi4y1u7Z5.html" title="@onenote 嵌套表格" rel="bookmark">@onenote 嵌套表格</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/note/i_6657cc09e4b0d84daad98015.html" title="@强化学习在推荐系统中的实践探索与业界进展" rel="bookmark">@强化学习在推荐系统中的实践探索与业界进展</a></h3></div></li></ul></span></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/note/bi_BV1zi4y1u7Z5.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">@onenote 嵌套表格</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/note/i_6657cc09e4b0d84daad98015.html"><span class="level-item">@强化学习在推荐系统中的实践探索与业界进展</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><script>var webmentionContext = { baseUrl:'https://webmention.io'}; </script><script src="/js/webmention.js"></script><div class="card"><div class="card-content"><h2 class="title is-5">网络回响</h2><div class="webmention-timeline"></div><script src="/js/webmention-timeline.js"></script></div></div><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><script src="https://utteranc.es/client.js" repo="xiang578/xiang578.github.io" issue-term="title" label="utterances" theme="github-light" crossorigin="anonymous" async></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#想法"><span class="level-left"><span class="level-item">1</span><span class="level-item"> 想法</span></span></a></li><li><a class="level is-mobile" href="#摘录"><span class="level-left"><span class="level-item">2</span><span class="level-item"> 摘录</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#读书当学诸葛亮"><span class="level-left"><span class="level-item">2.1</span><span class="level-item"> 读书当学诸葛亮</span></span></a></li><li><a class="level is-mobile" href="#给外星人当导游"><span class="level-left"><span class="level-item">2.2</span><span class="level-item"> 给外星人当导游</span></span></a></li><li><a class="level is-mobile" href="#人类学"><span class="level-left"><span class="level-item">2.3</span><span class="level-item"> [[人类学]]</span></span></a></li><li><a class="level is-mobile" href="#通过-天文学-理解天文数字的概念"><span class="level-left"><span class="level-item">2.4</span><span class="level-item"> 通过 [[天文学]] 理解天文数字的概念</span></span></a></li><li><a class="level is-mobile" href="#地理的尺度地理学和地质学"><span class="level-left"><span class="level-item">2.5</span><span class="level-item"> 地理的尺度，地理学和地质学</span></span></a></li><li><a class="level is-mobile" href="#历史学"><span class="level-left"><span class="level-item">2.6</span><span class="level-item"> 历史学</span></span></a></li><li><a class="level is-mobile" href="#了解当代"><span class="level-left"><span class="level-item">2.7</span><span class="level-item"> 了解当代</span></span></a></li><li><a class="level is-mobile" href="#理工科硬件"><span class="level-left"><span class="level-item">2.8</span><span class="level-item"> 理工科硬件</span></span></a></li><li><a class="level is-mobile" href="#读点马克思"><span class="level-left"><span class="level-item">2.9</span><span class="level-item"> 读点马克思</span></span></a></li><li><a class="level is-mobile" href="#不求甚解是时代精神"><span class="level-left"><span class="level-item">2.10</span><span class="level-item"> 不求甚解是时代精神</span></span></a></li></ul></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hangzhou</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">182</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">142</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-15T16:00:00.000Z">2024-06-16</time></p><p class="title"><a href="/note/gc_2014_05_16_230232_2.html">@马前卒谈如何选择新闻</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-14T16:00:00.000Z">2024-06-15</time></p><p class="title"><a href="/note/bi_BV1zi4y1u7Z5.html">@onenote 嵌套表格</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-14T16:00:00.000Z">2024-06-15</time></p><p class="title"><a href="/note/gc_2014_05_16_230232.html">@好读书，不求甚解</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-13T16:00:00.000Z">2024-06-14</time></p><p class="title"><a href="/note/i_6657cc09e4b0d84daad98015.html">@强化学习在推荐系统中的实践探索与业界进展</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-08T16:00:00.000Z">2024-06-09</time></p><p class="title"><a href="/note/pointer_network.html">pointer network</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>&copy; 2015-2024 Ryen Xiang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
