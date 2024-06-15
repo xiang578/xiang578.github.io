@@ -1,3 +1,4 @@
+https://blog.xiang578.com/note/bi_BV1zi4y1u7Z5.html
 https://blog.xiang578.com/note/i_6657cc09e4b0d84daad98015.html
 https://blog.xiang578.com/note/pointer_network.html
 https://blog.xiang578.com/note/wx_MzU1NTMyOTI4Mw_2.html
@@ -7,4 +8,3 @@ https://blog.xiang578.com/note/wx_OTyEbPCBh1NHogPM7bBtvA.html
 https://blog.xiang578.com/note/alibaba_mirnn.html
 https://blog.xiang578.com/problem/lc1630.html
 https://blog.xiang578.com/note/sieve.html
-https://blog.xiang578.com/note/yjango_learning.html
