@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="zh"><head><!-- hexo injector head_begin start --><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><script async="" src="https://umami.xiang578.com/script.js" data-website-id="0bf958fd-ca98-4a54-b1c0-bf3384802fcc"></script><script data-goatcounter="https://xiang578.goatcounter.com/count" async="" src="/count.js"></script><link rel="webmention" href="https://webmention.io/blog.xiang578.com/webmention"> <link rel="pingback" href="https://webmention.io/blog.xiang578.com/xmlrpc"><link title="Follow me on Twitter" rel="me" href="https://twitter.com/xiang578"><!-- hexo injector head_begin end --><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>vs code menus - 算法花园</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="算法花园"><meta name="msapplication-TileImage" content="/img/logo.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="算法花园"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="跟着 [[@如何提高编程速度：Emacs高手教授轻松精通所有编辑器和IDE的秘诀]] 过 VS Code 菜单的笔记，有些功能不看真不知道。"><meta property="og:type" content="blog"><meta property="og:title" content="vs code menus"><meta property="og:url" content="https://blog.xiang578.com/note/vs_code_menus.html"><meta property="og:site_name" content="算法花园"><meta property="og:description" content="跟着 [[@如何提高编程速度：Emacs高手教授轻松精通所有编辑器和IDE的秘诀]] 过 VS Code 菜单的笔记，有些功能不看真不知道。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.xiang578.com/assets/image_1718822131511_0.png"><meta property="og:image" content="https://blog.xiang578.com/assets/image_1718824319331_0.png"><meta property="og:image" content="https://blog.xiang578.com/assets/image_1718824742736_0.png"><meta property="og:image" content="https://blog.xiang578.com/assets/image_1718825591059_0.png"><meta property="og:image" content="https://blog.xiang578.com/assets/image_1718980695727_0.png"><meta property="article:published_time" content="2024-06-20T16:00:00.000Z"><meta property="article:modified_time" content="2024-06-22T15:45:50.000Z"><meta property="article:author" content="Ryen Xiang"><meta property="article:tag" content="VS Code"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://blog.xiang578.com/assets/image_1718822131511_0.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.xiang578.com/note/vs_code_menus.html"},"headline":"vs code menus","image":["https://blog.xiang578.com/assets/image_1718822131511_0.png","https://blog.xiang578.com/assets/image_1718824319331_0.png","https://blog.xiang578.com/assets/image_1718824742736_0.png","https://blog.xiang578.com/assets/image_1718825591059_0.png","https://blog.xiang578.com/assets/image_1718980695727_0.png"],"datePublished":"2024-06-20T16:00:00.000Z","dateModified":"2024-06-22T15:45:50.000Z","author":{"@type":"Person","name":"Ryen Xiang"},"publisher":{"@type":"Organization","name":"算法花园","logo":{"@type":"ImageObject","url":"https://blog.xiang578.com/img/logo.svg"}},"description":"跟着 [[@如何提高编程速度：Emacs高手教授轻松精通所有编辑器和IDE的秘诀]] 过 VS Code 菜单的笔记，有些功能不看真不知道。"}</script><link rel="canonical" href="https://blog.xiang578.com/note/vs_code_menus.html"><link rel="alternate" href="/atom.xml" title="算法花园" type="application/atom+xml"><link rel="icon" href="/img/logo.svg"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a4147d4821ff8f39796b456847e5ce38";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer=""></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about.html">关于</a><a class="navbar-item" href="/books/index.html">阅读</a><a class="navbar-item" href="/link">链接</a><a class="navbar-item" href="/tech">技术</a><a class="navbar-item" target="_blank" rel="noopener" href="https://xiang578.goatcounter.com/">统计</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container h-entry"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><i class="far fa-calendar-alt">&nbsp;</i><time datetime="2024-06-20T16:00:00.000Z" title="2024-06-20T16:00:00.000Z">2024-06-21</time></span><span class="level-item is-hidden-mobile"><i class="far fa-calendar-check">&nbsp;</i><time datetime="2024-06-22T15:45:50.000Z" title="2024-06-22T15:45:50.000Z">2024-06-22</time></span><span class="level-item"><i class="far fa-folder-open has-text-grey"></i>&nbsp;<a class="link-muted" href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></span><span class="level-item"><i class="far fa-clock"></i>&nbsp;6 分钟读完 (大约829个字)</span><span class="level-item" id="busuanzi_container_page_pv"><i class="far fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="p-name title is-3 is-size-4-mobile">vs code menus</h1><div class="content  e-content"><p>跟着 [[@如何提高编程速度：Emacs高手教授轻松精通所有编辑器和IDE的秘诀]] 过 VS Code 菜单的笔记，有些功能不看真不知道。</p>
+<span id="more"></span>
+<h2 id="vs-code-menusfile"><a class="markdownIt-Anchor" href="#vs-code-menusfile"></a> [[VS Code Menus/File]]</h2>
+<p><code>Auto Save</code> 可以打开，自动保存文件</p>
+<h2 id="vs-code-menusedit"><a class="markdownIt-Anchor" href="#vs-code-menusedit"></a> [[VS Code Menus/Edit]]</h2>
+<h3 id="find-and-replace"><a class="markdownIt-Anchor" href="#find-and-replace"></a> Find And Replace</h3>
+<p>id:: 667326cf-0a8d-41ff-8547-b68b7f1e0b57</p>
+<ul>
+<li>移动搜索框到下方，解决部分文件路径过长。<code>"search.location": "panel"</code></li>
+<li>Advanced search options 中支持 glob syntax 语法指定搜索路径，具体用法见 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options">Basic Editing in Visual Studio Code</a>
+<ul>
+<li><img src="../assets/image_1718822131511_0.png/webp" alt="image.png" srcset="../assets/image_1718822131511_0.png/webp 1530w, ../assets/image_1718822131511_0.png/webp400 400w, ../assets/image_1718822131511_0.png/webp800 800w" sizes="(min-width: 1150px) 723px, (min-width: 48em) calc((100vw - 120px) * 3 / 4 - 50px), (min-width: 35.5em) calc((100vw - 75px), calc(100vw - 40px)" width="1530" height="1218"></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="toggle-comment-注释"><a class="markdownIt-Anchor" href="#toggle-comment-注释"></a> Toggle Comment 注释</h3>
+<p>id:: 66725943-fac6-4128-be3a-7b6d4a174567</p>
+<ul>
+<li>Toggle Line Comment <code>cmd+/</code> 单行注释</li>
+<li>Toggle Block Comment 多行注释</li>
+</ul>
+<h3 id="emmet"><a class="markdownIt-Anchor" href="#emmet"></a> [[Emmet]]</h3>
+<ul>
+<li><code>Emmet is a plugin for many popular text editors which greatly improves HTML &amp; CSS workflow.</code> 前面是官网介绍，简单说是加快写 HTML 和 CSS 的速度</li>
+<li>写前端重复代码时使用，现在前端框架不太依赖这些。</li>
+<li><code>Emmet: Go to Matching Pair</code> 实现从 tag 的开头跳到结尾</li>
+</ul>
+<h2 id="vs-code-menusselection"><a class="markdownIt-Anchor" href="#vs-code-menusselection"></a> [[VS Code Menus/Selection]]</h2>
+<p>文本选择 <code>shift + 方向键</code>，以词为单位文本选择  <code>ctrl + shift + 方向键</code></p>
+<p>Expand Selection/Shrink Selection 选中从中心词往智能扩展/缩减选择区域，web 编程可以使用<br>
+id:: 66732c74-eb6d-420e-80a5-cd2c840ee84d</p>
+<ul>
+<li><img src="../assets/image_1718824319331_0.png/webp" alt="image.png" srcset="../assets/image_1718824319331_0.png/webp 646w, ../assets/image_1718824319331_0.png/webp400 400w" sizes="(min-width: 1150px) 723px, (min-width: 48em) calc((100vw - 120px) * 3 / 4 - 50px), (min-width: 35.5em) calc((100vw - 75px), calc(100vw - 40px)" width="646" height="146"></li>
+</ul>
+<p><code>Copy Line Down</code> 在下方复制当前选中的行</p>
+<p>Multi-Cursor [[Sublime Text]] 中的多行光标<br>
+id:: 66732e6c-43ed-41aa-8e0a-35c0b1002538</p>
+<ul>
+<li>Add Next Occurrence 选中当前词的下一个词，每个词后面加一个光标。实现的部分功能可能和 Replace 重复</li>
+<li><img src="../assets/image_1718824742736_0.png/webp" alt="image.png" srcset="../assets/image_1718824742736_0.png/webp 624w, ../assets/image_1718824742736_0.png/webp400 400w" sizes="(min-width: 1150px) 723px, (min-width: 48em) calc((100vw - 120px) * 3 / 4 - 50px), (min-width: 35.5em) calc((100vw - 75px), calc(100vw - 40px)" width="624" height="288"></li>
+</ul>
+<h2 id="vs-code-menusview"><a class="markdownIt-Anchor" href="#vs-code-menusview"></a> [[VS Code Menus/View]]</h2>
+<h3 id="command-palette"><a class="markdownIt-Anchor" href="#command-palette"></a> Command Palette</h3>
+<ul>
+<li>[[滴答清单]] 和 cmd shift p 有冲突 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/67324821/vscode-command-palette-ctrl-shift-p-keyboard-shortcut-isnt-working-on-new">visual studio code - VSCode Command Palette (Ctrl + Shift + P) keyboard shortcut isn’t working on new installation - Stack Overflow</a></li>
+</ul>
+<h3 id="open-view"><a class="markdownIt-Anchor" href="#open-view"></a> Open view</h3>
+<ul>
+<li>view 打开左侧或下面的面板</li>
+<li><code>Source Control</code> 源代码管理器</li>
+<li>windows 系统支持按住 alt + 下划线对应的快捷键打开功能</li>
+</ul>
+<h3 id="appearance"><a class="markdownIt-Anchor" href="#appearance"></a> Appearance</h3>
+<ul>
+<li>Zen Mode 隐藏边栏，全屏<br>
+id:: 66733278-d445-4fbd-8353-3d368e3fe6d5</li>
+<li>Primary Side Bar 左侧面板 Secondary Side Bar 右侧面板</li>
+<li>Activity Bar Position 左侧几个大的图标</li>
+<li>Zoom In/out <code>cmd -/=</code> 调整字体大小</li>
+<li><img src="../assets/image_1718825591059_0.png/webp" alt="image.png" srcset="../assets/image_1718825591059_0.png/webp 540w, ../assets/image_1718825591059_0.png/webp400 400w" sizes="(min-width: 1150px) 723px, (min-width: 48em) calc((100vw - 120px) * 3 / 4 - 50px), (min-width: 35.5em) calc((100vw - 75px), calc(100vw - 40px)" width="540" height="1032"></li>
+</ul>
+<h3 id="editor-layout"><a class="markdownIt-Anchor" href="#editor-layout"></a> Editor Layout</h3>
+<p>id:: 66733451-cb08-4074-931e-fc45908c3c03</p>
+<ul>
+<li><code>split Editor Down/Up/Left/Right</code> 创建子窗口</li>
+<li><code>Single</code> 单列</li>
+<li><code>three column</code> 三列，默认不打开</li>
+<li><code>Flip Layout</code> 行列布局互换</li>
+</ul>
+<h3 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h3>
+<ul>
+<li>word wrap 软换行</li>
+<li>show minimap 右侧代码视图</li>
+<li>show breadcrumbs 文件地址面包屑，点击跳转</li>
+<li>Render Control Characters  显示老式打印机对应的一些字符。</li>
+<li>render Whitespace 查看隐藏字符</li>
+</ul>
+<h2 id="vs-code-menusgo"><a class="markdownIt-Anchor" href="#vs-code-menusgo"></a> [[VS Code Menus/GO]]</h2>
+<h3 id="跳转相关"><a class="markdownIt-Anchor" href="#跳转相关"></a> 跳转相关</h3>
+<ul>
+<li><img src="../assets/image_1718980695727_0.png/webp" alt="image.png" srcset="../assets/image_1718980695727_0.png/webp 512w, ../assets/image_1718980695727_0.png/webp400 400w" sizes="(min-width: 1150px) 723px, (min-width: 48em) calc((100vw - 120px) * 3 / 4 - 50px), (min-width: 35.5em) calc((100vw - 75px), calc(100vw - 40px)" width="512" height="278"></li>
+</ul>
+<h3 id="switch-group-和-switch-editor"><a class="markdownIt-Anchor" href="#switch-group-和-switch-editor"></a> Switch Group 和 Switch Editor</h3>
+<ul>
+<li>group 对应子窗口</li>
+<li>editor 对应group里面不同的 tab</li>
+<li><code>cmd + 数字</code> 切换光标到不同的 group</li>
+</ul>
+<h3 id="其他-2"><a class="markdownIt-Anchor" href="#其他-2"></a> 其他</h3>
+<ul>
+<li>Go File 文件名模糊搜索</li>
+<li>Back 返回</li>
+<li>Last Edit Location 返回最后编辑</li>
+<li>Go to Line/Column 跳到指定行</li>
+<li>[[Go to Bracket]] 跳转括号</li>
+</ul>
+<h3 id="peek"><a class="markdownIt-Anchor" href="#peek"></a> Peek</h3>
+<ul>
+<li>弹出窗口查看定义之类的，和 go to 对应。</li>
+</ul>
+<h3 id="nextprevious-problem"><a class="markdownIt-Anchor" href="#nextprevious-problem"></a> Next/Previous  Problem</h3>
+<ul>
+<li>错误之间跳转</li>
+</ul>
+<h3 id="nextprevious-change"><a class="markdownIt-Anchor" href="#nextprevious-change"></a> Next/Previous  Change</h3>
+<ul>
+<li>在没有提交到 Git 的改动之间跳转</li>
+<li>Emacs [[git-gutters]] 支持模糊搜索改动，更加使用</li>
+</ul>
+<h2 id="debug"><a class="markdownIt-Anchor" href="#debug"></a> Debug</h2>
+<p>建议使用语言对应的第三方调试器</p>
+<h2 id="terminal"><a class="markdownIt-Anchor" href="#terminal"></a> Terminal</h2>
+<p>run task</p>
+<h2 id="help"><a class="markdownIt-Anchor" href="#help"></a> Help</h2>
+<p>Documentation 跳转到文档</p>
+<p>Open Process Explorer 打开进程管理器</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>vs code menus</p><p><a href="https://blog.xiang578.com/note/vs_code_menus.html">https://blog.xiang578.com/note/vs_code_menus.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ryen Xiang</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2024-06-21</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2024-06-22</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><hr style="height:1px;margin:1rem 0"><div class="level is-mobile is-flex"><div class="article-tags is-size-7 is-uppercase"><i class="fas fa-tags has-text-grey"></i>&nbsp;<a class="link-muted p-category" rel="tag" href="/tags/VS-Code/">VS Code </a></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/post/hexo_photo_webp.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">hexo 博客图片 webp 优化</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/note/blog_fix_2024.html"><span class="level-item">博客折腾记 2024</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><script>var webmentionContext = { baseUrl:'https://webmention.io'}; </script><script src="/js/webmention.js"></script><div class="card"><div class="card-content"><h2 class="title is-5">网络回响</h2><div class="webmention-timeline"></div><script src="/js/webmention-timeline.js"></script></div></div><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><script src="https://utteranc.es/client.js" repo="xiang578/xiang578.github.io" issue-term="title" label="utterances" theme="github-light" crossorigin="anonymous" async=""></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#vs-code-menusfile"><span class="level-left"><span class="level-item">1</span><span class="level-item"> [[VS Code Menus/File]]</span></span></a></li><li><a class="level is-mobile" href="#vs-code-menusedit"><span class="level-left"><span class="level-item">2</span><span class="level-item"> [[VS Code Menus/Edit]]</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#find-and-replace"><span class="level-left"><span class="level-item">2.1</span><span class="level-item"> Find And Replace</span></span></a></li><li><a class="level is-mobile" href="#toggle-comment-注释"><span class="level-left"><span class="level-item">2.2</span><span class="level-item"> Toggle Comment 注释</span></span></a></li><li><a class="level is-mobile" href="#emmet"><span class="level-left"><span class="level-item">2.3</span><span class="level-item"> [[Emmet]]</span></span></a></li></ul></li><li><a class="level is-mobile" href="#vs-code-menusselection"><span class="level-left"><span class="level-item">3</span><span class="level-item"> [[VS Code Menus/Selection]]</span></span></a></li><li><a class="level is-mobile" href="#vs-code-menusview"><span class="level-left"><span class="level-item">4</span><span class="level-item"> [[VS Code Menus/View]]</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#command-palette"><span class="level-left"><span class="level-item">4.1</span><span class="level-item"> Command Palette</span></span></a></li><li><a class="level is-mobile" href="#open-view"><span class="level-left"><span class="level-item">4.2</span><span class="level-item"> Open view</span></span></a></li><li><a class="level is-mobile" href="#appearance"><span class="level-left"><span class="level-item">4.3</span><span class="level-item"> Appearance</span></span></a></li><li><a class="level is-mobile" href="#editor-layout"><span class="level-left"><span class="level-item">4.4</span><span class="level-item"> Editor Layout</span></span></a></li><li><a class="level is-mobile" href="#其他"><span class="level-left"><span class="level-item">4.5</span><span class="level-item"> 其他</span></span></a></li></ul></li><li><a class="level is-mobile" href="#vs-code-menusgo"><span class="level-left"><span class="level-item">5</span><span class="level-item"> [[VS Code Menus/GO]]</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#跳转相关"><span class="level-left"><span class="level-item">5.1</span><span class="level-item"> 跳转相关</span></span></a></li><li><a class="level is-mobile" href="#switch-group-和-switch-editor"><span class="level-left"><span class="level-item">5.2</span><span class="level-item"> Switch Group 和 Switch Editor</span></span></a></li><li><a class="level is-mobile" href="#其他-2"><span class="level-left"><span class="level-item">5.3</span><span class="level-item"> 其他</span></span></a></li><li><a class="level is-mobile" href="#peek"><span class="level-left"><span class="level-item">5.4</span><span class="level-item"> Peek</span></span></a></li><li><a class="level is-mobile" href="#nextprevious-problem"><span class="level-left"><span class="level-item">5.5</span><span class="level-item"> Next/Previous  Problem</span></span></a></li><li><a class="level is-mobile" href="#nextprevious-change"><span class="level-left"><span class="level-item">5.6</span><span class="level-item"> Next/Previous  Change</span></span></a></li></ul></li><li><a class="level is-mobile" href="#debug"><span class="level-left"><span class="level-item">6</span><span class="level-item"> Debug</span></span></a></li><li><a class="level is-mobile" href="#terminal"><span class="level-left"><span class="level-item">7</span><span class="level-item"> Terminal</span></span></a></li><li><a class="level is-mobile" href="#help"><span class="level-left"><span class="level-item">8</span><span class="level-item"> Help</span></span></a></li></ul></div></div><script src="/js/toc.js" defer=""></script></div><div class="card widget h-card p-author" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar" src="/img/avatar-ryenxx.jpeg" alt="Runye"></figure><p class="title is-size-4 is-block p-name" rel="author" style="line-height:inherit;">Runye</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hangzhou</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">188</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">147</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://twitter.com/xiang578" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener me" title="Twitter" href="https://twitter.com/xiang578"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="Github" href="https://github.com/xiang578"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless u-url" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time datetime="2024-06-22T16:00:00.000Z">2024-06-23</time></p><p class="title"><a href="/post/hexo_photo_webp.html">hexo 博客图片 webp 优化</a></p><p class="categories"><a href="/categories/%E4%B8%8D%E8%80%81%E9%98%81/">不老阁</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-06-20T16:00:00.000Z">2024-06-21</time></p><p class="title"><a href="/note/vs_code_menus.html">vs code menus</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-06-18T16:00:00.000Z">2024-06-19</time></p><p class="title"><a href="/note/blog_fix_2024.html">博客折腾记 2024</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-06-15T16:00:00.000Z">2024-06-16</time></p><p class="title"><a href="/note/gc_2014_05_16_230232_2.html">@马前卒谈如何选择新闻</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time datetime="2024-06-15T16:00:00.000Z">2024-06-16</time></p><p class="title"><a href="/note/logseq.html">logseq</a></p><p class="categories"><a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/">随手记</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="算法花园" height="28"></a><p class="is-size-7"><span>© 2015-2024 Ryen Xiang</span>&nbsp;&nbsp;Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>&nbsp;&amp;&nbsp;<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/previous">←</a> <a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍<a target="_blank" rel="noopener" href="https://xn--sr8hvo.ws/%F0%9F%9B%90%E2%9A%A1%EF%B8%8F%E2%80%BC%EF%B8%8F/next">→</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="浙ICP备17004638号-1" href="https://beian.miit.gov.cn/#/Integrated/index">浙ICP备17004638号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer=""></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer=""></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer=""></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer=""></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer=""></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer=""></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer=""></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer=""></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer=""></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer=""></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
